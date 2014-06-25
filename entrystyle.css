@@ -1,0 +1,139 @@
+@font-face
+{
+	font-family: Bitter-Regular;
+	src: url('Bitter-Regular.otf');
+}
+
+body
+{
+	background-image: url('edited-3.png');
+}
+
+h3
+{
+	font-family: Bitter-Regular;
+	font-size: 22px;
+	text-align: center;
+}
+
+#step-2
+{
+	position: absolute;
+	height: 40px;
+	width: inherit;
+}
+
+p
+{
+	font-size: 22px;
+	font-family: Bitter-Regular;
+	line-height: 150%;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#s2
+{
+	position: absolute;
+	top: 80px;
+}
+
+.content
+{	
+	padding-top: 20px;
+	height: 550px;
+	width: 820px;
+	background-color: white;
+	position: relative;
+	top:180px;
+	left: 200px;
+}
+
+.links-list
+{
+	position: absolute;
+	top:240px;
+	height: 60px;
+	width: inherit;
+}
+
+.links-box
+{
+	float: left;
+	margin-left: 110px;
+	height:50px;
+	width: 270px; 
+}
+
+.links
+{
+	font-size: 20px;
+	font-family: monospace;
+	text-decoration: none;
+	padding:10px;
+	border-style: inset;
+	border-color: transparent;
+	border-width: 2px;
+	background-color: #75A3FF;
+	color: white;
+	border-radius: 10px;
+}
+
+.links:hover
+{
+	background-color: #5E82CC;
+	color: white;
+	border-style: outset;
+}
+
+.bottom-panel
+{
+	position: absolute;
+	bottom: -40px;
+	width: inherit;
+	left: -10px;
+	height:40px;
+	margin-bottom: 0px;
+}
+
+.bottom-panel-list
+{
+	list-style: none;
+}
+
+.home-about-contact
+{
+	display: inline-block;
+}
+
+.bottom-links
+{
+	text-decoration: none;
+	padding-left: 60px;
+	padding-right: 60px;
+	font-size: 20px;
+	font-style: italic;
+	color: black;
+} 
+
+.bottom-links:hover
+{
+	color: green;
+	text-decoration: underline;
+	-webkit-transition: all 0.4s ease-in;	
+	-moz-transition:all 0.4s ease-in;
+	-o-transition:all 0.4s ease-in;
+	-ms-transition:all 0.4s ease-in;
+}
+
+#co-developed
+{
+	position: absolute;
+	bottom: -90px;
+	color: black;
+	background-color: #2EFE64;
+	padding-top: 10px;
+	height: 25px;
+	width: inherit;
+}

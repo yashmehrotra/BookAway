@@ -1,0 +1,60 @@
+@font-face
+{
+	font-family: Bitter Regular;
+	src: url('Bitter-Regular.otf');
+}
+
+body
+{
+	background-image: url('edited-3.png');
+	margin: 0 auto;
+	padding: 0;
+	border:0;
+}
+
+#top-container
+{
+	width: 800px;
+	height: 60px;
+	margin: auto;
+	margin-top: 150px;
+	border-style: solid;
+	font-size: 22px;
+	font-family: Bitter Regular;
+	text-align: center;
+}
+
+#container
+{
+	height: 250px;
+	width: 400px;
+	border-style: solid;
+	font-size: 20px; 
+	margin: auto;
+	margin-top:10px;
+	padding-left: 100px;
+	text-align: left;
+}
+
+.sub
+{
+	margin-top: 15px;
+	width: inherit;
+	line-height: 150%;
+}
+
+input
+{
+	float: right;
+	margin-right: 100px;
+}
+
+#submit
+{
+	width: 90px;
+	height: 40px;
+	font-size: 16px;
+	margin: auto;
+	margin-top: 40px;
+	margin-right: 205px;
+}

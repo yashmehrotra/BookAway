@@ -1,0 +1,113 @@
+@font-face
+{
+	font-family:Bitter-Regular;
+	src: url('Bitter-Regular.otf');
+}
+
+body
+{
+	background-image: url('edited-3.png');
+}
+
+.main
+{
+	height: 755px;
+	width: 800px;
+	position: relative;
+	top: 140px;
+	margin: 0 auto;
+	border-style: solid;
+}
+
+h3
+{
+	font-family: Bitter-Regular;
+	font-size: 22px;
+	text-align: center;
+}
+
+#step-1
+{
+	position: absolute;
+	height: 40px;
+	width: inherit;
+}
+
+#sell-form
+{
+	width:690px;
+	height: 640px;
+	position: absolute;
+	top: 70px;
+	text-align: left;
+	line-height: 180%;
+	font-size: 130%;
+	left: 55px;
+}
+
+.sell-input
+{
+	float: right;
+	font-size: 80%;
+	line-height: 120%;
+}
+
+#submit-button
+{
+	height: 40px;
+	width: 90px;
+	font-size: 17px;
+}
+
+.bottom-panel
+{
+	position: absolute;
+	bottom: -42px;
+	width: inherit;
+	left: 0px;
+	height:40px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: gray;
+}
+
+.bottom-panel-list
+{
+	list-style: none;
+}
+
+.home-about-contact
+{
+	display: inline-block;
+}
+
+.bottom-links
+{
+	text-decoration: none;
+	padding-left: 60px;
+	padding-right: 60px;
+	font-size: 20px;
+	font-style: italic;
+	color: black;
+} 
+
+.bottom-links:hover
+{
+	color: green;
+	text-decoration: underline;
+	-webkit-transition: all 0.4s ease-in;	
+	-moz-transition:all 0.4s ease-in;
+	-o-transition:all 0.4s ease-in;
+	-ms-transition:all 0.4s ease-in;
+}
+
+#co-developed
+{
+	position: absolute;
+	bottom: -90px;
+	color: black;
+	background-color: #2EFE64;
+	padding-top: 10px;
+	height: 25px;
+	width: inherit;
+}
