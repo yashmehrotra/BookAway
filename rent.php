@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		BooksforBucks- Buy,Sell,Rent Books!!
+		BooksforBucks- Buy,Sell,Rent Books
 	</title>
 	<link rel="stylesheet" type="text/css" href="rentstyle.css">
 </head>
@@ -42,10 +42,10 @@
 	<div class="sub-select">
 		<p id="sub">Select subject:</p>
 		<div class="subs"><input type="radio" name="sub" checked>All</div>
+		<div class="subs"><input type="radio" name="sub">Literature</div>
 		<div class="subs"><input type="radio" name="sub">Computers</div>
 		<div class="subs"><input type="radio" name="sub">Electronics</div>
 		<div class="subs"><input type="radio" name="sub">Mathematics</div>
-		<div class="subs"><input type="radio" name="sub">Literature</div>
 		<div class="subs"><input type="radio" name="sub">Physics</div>
 		<div class="subs"><input type="radio" name="sub">Miscellaneous</div>
 	</div>
