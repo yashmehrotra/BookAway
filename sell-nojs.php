@@ -3,7 +3,7 @@
 <head>
 	<title>Sell Books | BooksforBucks.com</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="Data/Styles/MAIN.css">
+	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 </head>
 <body>
 	<div id="wrapper">

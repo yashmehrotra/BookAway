@@ -236,7 +236,7 @@ Mobile Number:*  <div id="error2"></div>   <input type="tel" name="phone" id="ph
 <br>	
 Password:* <div id="error3"></div>  <input type="password" name="password" class="sell-input" required>
 <br>
-Confirm Password:* <div id="error4"></div>	<input type="password" name="password1" class="sell-input" required>
+Confirm Password:* <div id="error4"></div>	<input type="password" name="password1" class="sell-input" required onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
 <br>
 Subject:* <select name="subject" id="subject" class="sell-input" required>
 					<option value="all" selected>All</option>
@@ -265,9 +265,9 @@ The book is for:*	<select name="sellrent" id="sell-rent" class="sell-input" requ
 						<option value="3" selected>Both Sale and Rent</option>
 					</select>
 					<br>
-Sale Cost(INR): <div id="error7"></div> <input type="number" min="0" name="sellprice" class="sell-input">
+Sale Cost(INR): <div id="error7"></div> <input type="number" min="0" name="sellprice" class="sell-input" id="s-cost">
 <br>
-Rent Cost(INR): <div id="error8"></div> <input type="number" min="0" name="rentprice" class="sell-input" autocomplete="on">
+Rent Cost(INR): <div id="error8"></div> <input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on">
 <select name="rentpricetime" id="rent-price" class="sell-input">
 	<option value="week">per Week</option>
 	<option value="month">per Month</option>

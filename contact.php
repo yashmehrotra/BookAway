@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Contact Us</title>
-	<link rel="stylesheet" type="text/css" href="Data/Styles/MAIN.css">
-	<script type="text/javascript" src="Data/Scripts/top-panel.js"></script>
+	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
 	<div id="wrapper">

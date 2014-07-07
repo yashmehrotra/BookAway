@@ -3,8 +3,8 @@
 <head>
 	<title>About Us</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="Data/Styles/MAIN.css">
-	<script type="text/javascript" src="Data/Scripts/top-panel.js"></script>
+	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
 		<div id="wrapper">
@@ -22,7 +22,7 @@
 	<h2 id="about-us-text">About Us</h2>
 	<div class="main-container">
 		<div id="c1">
-			<a href="Data/Styles/Images/avijit.jpg"><img src="Data/Styles/Images/avijit.jpg" id="m1" alt="img1"></a>
+			<a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" id="m1" alt="img1"></a>
 			<p class="desc">Avijit Gupta
 				<br><br>
 				Web Designer
@@ -31,7 +31,7 @@
 			<div onclick="location.href='http://www.google.com';" class="f-t" id="ict1"></div>
 		</div>
 		<div id="c2">
-			<a href="Data/Styles/Images/yash.jpg"><img src="Data/Styles/Images/yash.jpg" id="m2" alt="img2"></a>
+			<a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" id="m2" alt="img2"></a>
 			<p class="desc">Yash Mehrotra
 				<br><br>
 				Web Developer
@@ -40,7 +40,7 @@
 			<div onclick="location.href='http://www.google.com';" class="f-t" id="ict2"></div>
 		</div>
 		<div id="c3">
-			<a href="Data/Styles/Images/tanmay.jpg"><img src="Data/Styles/Images/tanmay.jpg" id="m3" alt="img3"></a>
+			<a href="Styles/Images/tanmay.jpg"><img src="Styles/Images/tanmay.jpg" id="m3" alt="img3"></a>
 			<p class="desc">Tanmay Datta
 				<br><br>
 				Board of Directors
@@ -49,7 +49,7 @@
 			<div onclick="location.href='http://www.google.com';" class="f-t" id="ict3"></div>
 		</div>
 		<div id="c4">
-			<a href="Data/Styles/Images/sidhant.jpg"><img src="Data/Styles/Images/sidhant.jpg" id="m4" alt="img4"></a>
+			<a href="Styles/Images/sidhant.jpg"><img src="Styles/Images/sidhant.jpg" id="m4" alt="img4"></a>
 			<p class="desc">Sidhant Sharma
 				<br><br>
 				Advising Committee

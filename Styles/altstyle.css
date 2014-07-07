@@ -1,0 +1,280 @@
+body
+{
+	background-image: url('Images/edited-3.png');
+	opacity: 0.9;
+	border:0;
+	padding: 0;
+	margin: 0 auto;
+}
+
+@font-face
+{
+	font-family: Bitter-Regular;
+	src: url('Fonts/Bitter-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.main-head
+{
+	
+	width: 1050px;
+	height: 80px;
+	margin:0 auto;
+	margin-top: 75px;
+}
+
+h1, .head
+{
+	text-align: center;
+	font-family: Bitter-Regular;
+	font-size: 30px;
+	color: white;
+}
+
+.head
+{
+	font-size: 40px;
+}
+
+#wrapper
+{
+	width: 880px;
+	height: 65px;
+	position: fixed;
+	left: 205px;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	z-index: 50;
+}
+
+.top-panel
+{
+	width: inherit;
+	margin-left: auto;
+	margin-right: auto;
+	height: inherit;
+	left: 0;
+	text-transform: uppercase;
+	/*border-style: solid;*/
+	background-color: #E25A5A;black;
+	font-family: ‘Lucida Console’, Monaco, monospace;
+	/*font-family: Gill Sans / Gill Sans MT, sans-serif;*/
+	position: relative;
+	top:0px;
+	z-index: 50;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.top-panel-list
+{
+	list-style: none;
+}
+
+.top-opt
+{
+	display: inline-block;
+}
+
+.top-panel-links
+{
+	text-decoration: none;
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 28px;
+	padding-right: 28px;
+	font-size: 20px;
+	margin-left: 0px;
+	margin-right: 15px;
+	margin-top: 0px;
+	color: white;
+	display: block;
+}
+
+.top-panel-links:hover
+{
+	-webkit-transition: background-color .4s linear;
+	-moz-transition: background-color .4s linear;
+	-o-transition: background-color .4s linear;
+	-ms-transition: background-color .4s linear;
+	background-color: #ea8585;
+}
+
+.top-panel-links:visited
+{
+	text-decoration: underline;
+}
+
+#container
+{
+	position: relative;
+	height: 500px;
+	width: 1100px;
+	margin: 0 auto;
+	padding: 0;
+	margin-top: 55px;
+}
+
+.buy-box, .sell-box, .rent-box
+{
+	display: inline-block;
+	height: 420px;
+	width: 280px;
+	position: relative;
+	margin-bottom: 50px;
+	color: white;
+	float: left;
+	box-shadow: 10px 10px 5px black;
+	top: 0px;
+	padding: 20px;
+	border-style: solid;double;groove;inset;ridge;outset;
+	border-width: 2px;
+	border-color: white;
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	line-height: 180%;
+	border-radius: 15px;
+}
+
+.buy-box
+{
+	background-color: #E44424;#D9853B;
+}
+
+.sell-box
+{
+	background-color: #67BCDB;#558C89;
+}
+
+ol
+{
+	text-align: left;
+}
+
+.rent-box
+{
+	background-color: #A2AB58;#67BCDB;#558C89;
+}
+
+h2
+{
+	font-family: monospace;
+	text-align: center;
+}
+
+p
+{
+	margin-top: 30px;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+.continue-buy, .continue-sell, .continue-rent
+{
+	position: absolute;
+	bottom: 60px;
+	left: 80px;
+}
+
+.buy-link, .sell-link, .rent-link
+{
+	color: white;
+	background-color: transparent;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 15px;
+}
+
+.buy-link:hover
+{
+	background-color:white; 
+	color: #E44424;
+}
+
+.sell-link:hover
+{
+	background-color:white; 
+	color: #67BCDB;
+}
+
+.rent-link:hover
+{
+	background-color:white; 
+	color: #A2AB58;#E44424;
+}
+
+.bottom-panel
+{
+	position: absolute;
+	bottom: -80px;
+	width: inherit;
+	height:40px;
+	margin-bottom: 0px;
+	border-top-style: solid;
+	border-width: 1px;
+	border-color: gray;
+	text-align: center;
+}
+
+.bottom-panel-list
+{
+	list-style: none;
+}
+
+.home-about-contact
+{
+	display: inline-block;
+}
+
+.bottom-links
+{
+	text-decoration: none;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 20px;
+	font-style: italic;
+	color: black;
+} 
+
+.bottom-links:hover
+{
+	color: green;
+	text-decoration: underline;
+	-webkit-transition: all 0.3s ease-in;	
+	-moz-transition:all 0.3s ease-in;
+	-o-transition:all 0.3s ease-in;
+	-ms-transition:all 0.3s ease-in;
+}
+
+#co-developed
+{
+	position: absolute;
+	bottom: -130px;
+	color: black;
+	background-color: #2EFE64;
+	padding-top: 10px;
+	height: 25px;
+	left: 0px;
+	width: inherit;
+	text-align: center;
+}
+
+p, ol
+{
+font-family: 'Comic Sans MS', sans-serif;
+font-weight: 500;
+font-style: normal;
+line-height: 1.1;
+font-size: 18px;
+color: white;
+}

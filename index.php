@@ -4,8 +4,8 @@
 	<title>BooksforBucks | Buy | Sell | Rent | Books</title>
 	<meta name="Keywords" content="Books,JIIT,Buy,Sell,Rent,Bucks,Computers,Electronics,Mathematics,Literature,Novels,Physics">
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="Data/Styles/MAIN.css">
-	<script type="text/javascript" src="Data/Scripts/top-panel.js"></script>
+	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
 	<div id="wrapper">
