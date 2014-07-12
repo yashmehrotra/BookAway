@@ -1,16 +1,49 @@
 <?php
 	
-	$name=$_POST['name'];
-	$email=$_POST['email'];
-	$phone=$_POST['phone'];
-	$password=md5($_POST['password']);
-	$subject=$_POST['subject'];
-	$book=$_POST['book'];
-	$author=$_POST['author'];
-	$cost=$_POST['cost'];
-	$year=$_POST['year'];
-	$cond=$_POST['cond'];
+	$name        = $_POST['name'];
+	$email       = $_POST['email'];
+	$phone       = $_POST['phone'];
+	$password    = md5($_POST['password']);
+	$subject     = $_POST['subject'];
+	$book        = $_POST['book'];
+	$author      = $_POST['author'];
+	$sell_rent   = $_POST['sellrent'];
+	$sell_price  = $_POST['sellprice'];
+	$rent_price  = $_POST['rentprice'];
+	$rent_time   = $_POST['rentpricetime'];
+	$rent_period = $_POST['rentperiod'];
 
+	echo "<br>";
+	echo $name;
+	echo "<br>";
+	echo $email;
+	echo "<br>";
+	echo $phone;
+	echo "<br>";
+	echo $password;
+	echo "<br>";
+	echo $subject;
+	echo "<br>";
+	echo $book;
+	echo "<br>";
+	echo $author;
+	echo "<br>";
+	echo $sell_rent;
+	echo "<br>";
+	echo $sell_price;
+	echo "<br>";
+	echo $rent_price;
+	echo "<br>";
+	echo $rent_time;
+	echo "<br>";
+	echo $rent_period;
+	echo "<br>";
+	//
+	//For Sell rent - 3 is both,1 is sale , 2 is rent
+	//
+	//
+	//
+	//
 	// Create connection
 	$con=mysqli_connect("localhost","root","44rrff","bfb");
 
@@ -23,7 +56,7 @@
 	{
 		echo "epic";
 	}
-	mysqli_query($con,"INSERT INTO books (year,subject,book,author,cost,cond,name,phone,email,password) VALUES ('$year','$subject','$book','$author','$cost','$cond','$name','$phone','$email','$password')");
+	//mysqli_query($con,"INSERT INTO books (year,subject,book,author,cost,cond,name,phone,email,password) VALUES ('$year','$subject','$book','$author','$cost','$cond','$name','$phone','$email','$password')");
 	
 	mysqli_close($con);
 ?>
