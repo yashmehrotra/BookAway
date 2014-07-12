@@ -256,13 +256,13 @@ Subject:* <select name="subject" id="subject" class="sell-input" required>
 Book Title:*  <div id="error5"></div>    <input type="text" name="book" class="sell-input" autocomplete="on" required>
 <br>
 Author:*  <div id="error6"></div>  <input type="text" name="author" class="sell-input" autocomplete="on" required>
-<br>
-ISBN Number:	<input type="number" name="isbn" class="sell-input" autocomplete="on" required>
+<!-- <br>
+ISBN Number:	<input type="number" name="isbn" class="sell-input" autocomplete="on" required> -->
 <br>
 The book is for:*	<select name="sellrent" id="sell-rent" class="sell-input" required>
+						<option value="3" selected>Both Sale and Rent</option>
 						<option value="1">Sale</option>
 						<option value="2">Rent</option>
-						<option value="3" selected>Both Sale and Rent</option>
 					</select>
 					<br>
 Sale Cost(INR): <div id="error7"></div> <input type="number" min="0" name="sellprice" class="sell-input" id="s-cost">
