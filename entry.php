@@ -11,7 +11,6 @@
 	$sell_price  = $_POST['sellprice'];
 	$rent_price  = $_POST['rentprice'];
 	$rent_time   = $_POST['rentpricetime'];
-	$rent_period = $_POST['rentperiod'];
 
 	echo "<br>";
 	echo $name;
@@ -36,8 +35,7 @@
 	echo "<br>";
 	echo $rent_time;
 	echo "<br>";
-	echo $rent_period;
-	echo "<br>";
+
 	//
 	//For Sell rent - 3 is both,1 is sale , 2 is rent
 	//
@@ -45,20 +43,22 @@
 	//
 	//
 	// Create connection
-	$con=mysqli_connect("localhost","root","44rrff","bfb");
+	$database_connection=mysqli_connect("localhost","root","44rrff","bfb");
 
 	//Check connection
-	if (mysqli_connect_errno()) 
-	{
+	if (mysqli_connect_errno()) {
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-	else
-	{
+	else {
 		echo "epic";
 	}
-	//mysqli_query($con,"INSERT INTO books (year,subject,book,author,cost,cond,name,phone,email,password) VALUES ('$year','$subject','$book','$author','$cost','$cond','$name','$phone','$email','$password')");
-	
-	mysqli_close($con);
+
+	$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time')";
+	mysqli_query($database_connection,$query);
+	echo "added";
+	$book_id = mysqli_insert_id($database_connection);
+	echo $book_id;
+	mysqli_close($database_connection);
 ?>
 <!DOCTYPE html>
 <head>
@@ -86,6 +86,7 @@
 		</div>
 		<div id="s2">
 			<p id="successful-text">Thankyou for contributing!!!<br>
+			Your book id is <?php echo $book_id; ?> , Please remember it to check it's status<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">
