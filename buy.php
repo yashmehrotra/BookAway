@@ -4,7 +4,10 @@
 	<title>BooksforBucks- Buy, Sell, Rent Books!!</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script type="text/javascript" src="Scripts/buypage.js"></script>
 </head>
 <body>
 	<div id="wrapper">

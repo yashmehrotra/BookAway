@@ -241,8 +241,8 @@ function hide()	{
 			<br>
 			The book is for:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<select name="sellrent" id="sell-rent" class="sell-input" required>
 			<option value="3" selected>Both Sale and Rent</option>
-			<option value="1">Sale</option>
-			<option value="2">Rent</option>
+			<option value="1">Sale Only</option>
+			<option value="2">Rent Only</option>
 		</select>
 		<br>
 		Sale Cost(INR): <div id="error7"></div> <input type="number" min="0" name="sellprice" class="sell-input" id="s-cost">
@@ -253,7 +253,6 @@ function hide()	{
 			<option value="month">per Month</option>
 		</select>
 		<br><br>
-		<!-- <div><input type="submit" value="Submit" id="submit-button" title="Please fill in the required fields before submitting"></div> -->
 		<button class="button-success pure-button" id = "new-button">Submit</button>
 	</form>
 </div>
