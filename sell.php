@@ -4,6 +4,7 @@
 	<title>Sell Books | BooksforBucks.com</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript">
@@ -258,12 +259,12 @@ function hide()	{
 			</select><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>
 			<div id="error9"></div>
 			<br>
-			<input type="text" name="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
+			<input type="text" name="book" class="sell-input" autocomplete="on" placeholder="Book Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
 			<br>
 			<input type="text" name="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
 			<br>
 			<select name="sellrent" id="sell-rent" class="sell-input" required>
-			<option value="" selected>The Book is Added to:</option>	
+			<option value="" selected>The Book is For:</option>	
 			<option value="3">Both Sale and Rent</option>
 			<option value="1">Sale</option>
 			<option value="2">Rent</option>
