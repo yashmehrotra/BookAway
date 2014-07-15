@@ -12,7 +12,6 @@
 
 	function validate()		{
 		var node = document.getElementById('error');
-		var node1 = document.getElementById('error1');
 		var node2 = document.getElementById('error2');
 		var node3 = document.getElementById('error3');
 		var node4 = document.getElementById('error4');
@@ -23,9 +22,6 @@
 
 		while (node.hasChildNodes()) {
 			node.removeChild(node.firstChild);
-		}
-		while (node1.hasChildNodes()) {
-			node1.removeChild(node1.firstChild);
 		}
 		while (node2.hasChildNodes()) {
 			node2.removeChild(node2.firstChild);
@@ -58,18 +54,9 @@
 			document.getElementById('error').style.display="inline-block";
 			flag = true;;
 		}
-		var x= document.myform.email.value;
-		atpos = x.indexOf("@");
-		dotpos = x.lastIndexOf(".");
-		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length || x.indexOf("@") == -1) {
-			document.getElementById('error1').innerHTML = "Please provide a valid email address" ;
-			document.getElementById('error1').style.display="inline-block";
-			document.myform.email.focus() ;
-			flag = true;;
-		}
-		if( document.myform.phone.value == ""  || document.myform.phone.value.length < 10 || isNaN(document.myform.phone.value)||document.myform.phone.value.indexOf(" ")!=-1)
+		if( document.myform.phone.value == ""  || document.myform.phone.value.length != 11 || isNaN(document.myform.phone.value)||document.myform.phone.value.indexOf(" ")!=-1)
 		{
-			document.getElementById('error2').innerHTML = "Please provide a phone number of 10 digits" ;
+			document.getElementById('error2').innerHTML = "Phone number must start with 0 and contain 11 digits" ;
 			document.getElementById('error2').style.display="inline-block";
 			document.myform.phone.focus() ;
 			flag = true;;
@@ -195,8 +182,6 @@ function hide()	{
 	{
 		document.myform.rentprice.style.display="none";
 		document.myform.rentpricetime.style.display="none";
-		document.myform.rentperiodnumber.style.display="none";
-		document.myform.rentperiod.style.display="none";
 		document.myform.sellprice.style.display="block";
 	}
 	if(strUser == 2)
@@ -204,15 +189,11 @@ function hide()	{
 		document.myform.sellprice.style.display="none";
 		document.myform.rentprice.style.display="block";
 		document.myform.rentpricetime.style.display="block";
-		document.myform.rentperiodnumber.style.display="block";
-		document.myform.rentperiod.style.display="block";
 	}
 	if(strUser == 3)
 	{
 		document.myform.rentprice.style.display="block";
 		document.myform.rentpricetime.style.display="block";
-		document.myform.rentperiodnumber.style.display="block";
-		document.myform.rentperiod.style.display="block";
 		document.myform.sellprice.style.display="block";
 	}
 }
@@ -229,17 +210,17 @@ function hide()	{
 		<div id="sell-form">
 			<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
 			<form name="myform" novalidate action="entry.php" method="POST" onsubmit="return validate();">
-				Name:*	<div id="error"></div>      <input type="text" name="name" id="name" class="sell-input" placeholder="Name" autocomplete="on" required>
+				Name:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<div id="error"></div>      <input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required>
 				<br>
-				E-mail:* <div id="error1"></div>   <input type="email" name="email" id="email" class="sell-input" autocomplete="on" required>
+				E-mail:<input type="email" name="email" id="email" class="sell-input" autocomplete="on">
 				<br>
-				Mobile Number:*  <div id="error2"></div>   <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" required>
+				Mobile Number:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error2"></div>   <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="0XXXXXXXXXX" required>
 				<br>	
-				Password:* <div id="error3"></div>  <input type="password" name="password" class="sell-input" required>
+				Password:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error3"></div>  <input type="password" name="password" class="sell-input" placeholder="at least 4 characters" required>
 				<br>
-				Confirm Password:* <div id="error4"></div>	<input type="password" name="password1" class="sell-input" required onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
+				Confirm Password:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error4"></div>	<input type="password" name="password1" class="sell-input" required onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
 				<br>
-				Subject:* <select name="subject" id="subject" class="sell-input" required>
+				Subject:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <select name="subject" id="subject" class="sell-input" required>
 				<option value="All" selected>All</option>
 				<option value="Computers">Computers</option>
 				<option value="Electronics">Electronics</option>
@@ -254,11 +235,11 @@ function hide()	{
 
 			</select>
 			<br>
-			Book Title:*  <div id="error5"></div>    <input type="text" name="book" class="sell-input" autocomplete="on" required>
+			Book Title:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    <input type="text" name="book" class="sell-input" autocomplete="on" required>
 			<br>
-			Author:*  <div id="error6"></div>  <input type="text" name="author" class="sell-input" autocomplete="on" required>
+			Author:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  <input type="text" name="author" class="sell-input" autocomplete="on" required>
 			<br>
-			The book is for:*	<select name="sellrent" id="sell-rent" class="sell-input" required>
+			The book is for:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<select name="sellrent" id="sell-rent" class="sell-input" required>
 			<option value="3" selected>Both Sale and Rent</option>
 			<option value="1">Sale</option>
 			<option value="2">Rent</option>
