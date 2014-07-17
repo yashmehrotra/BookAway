@@ -4,6 +4,7 @@
 	<title>Sell Books | BooksforBucks.com</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript">
@@ -201,6 +202,24 @@ if( $b == 3 )
 			}
 	});
 		});
+
+ $( document ).ready( function () {
+
+        var click_password = 0;
+    $("#myform>.pure-g>#show-password").click(function () {
+        if(click_password === 0) {
+                var password = $("#password").val()
+                        $("#password").attr("type","text");
+                        $("#password").text(password);
+                        click_password = 1;
+                }
+                else {
+                        $("#password").attr("type","password");
+                        click_password = 0;
+                }
+        });
+});
+
 	 
 </script>
 
@@ -269,7 +288,7 @@ if( $a == 3 )
 				
 				<br>
 				
-				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <!--<button id="show-password">Show Password</button>--> <img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>
+				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>
 				
 				<br>
 				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
@@ -328,6 +347,7 @@ if( $a == 3 )
 </div>
 <div id="co-developed">
 	<code>Copyright2014 .All Rights Reserved. BooksforBucks.com</code>
+	<span class="ionicon">&#xf133;</span>
 </div>
 </div>
 </body>
