@@ -4,7 +4,6 @@
 	<title>Sell Books | BooksforBucks.com</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript">
@@ -12,6 +11,7 @@
 
 	function validate()		{
 		var node = document.getElementById('error');
+		var node1 = document.getElementById('error1');
 		var node2 = document.getElementById('error2');
 		var node3 = document.getElementById('error3');
 		var node4 = document.getElementById('error4');
@@ -19,9 +19,13 @@
 		var node6 = document.getElementById('error6');
 		var node7 = document.getElementById('error7');
 		var node8 = document.getElementById('error8');
+		var node9 = document.getElementById('error9');
 
 		while (node.hasChildNodes()) {
 			node.removeChild(node.firstChild);
+		}
+		while (node1.hasChildNodes()) {
+			node1.removeChild(node1.firstChild);
 		}
 		while (node2.hasChildNodes()) {
 			node2.removeChild(node2.firstChild);
@@ -44,6 +48,9 @@
 		while (node8.hasChildNodes()) {
 			node8.removeChild(node8.firstChild);
 		}
+		while (node9.hasChildNodes()) {
+			node9.removeChild(node9.firstChild);
+		}
 
 		var flag = false;
 
@@ -54,10 +61,10 @@
 			document.getElementById('error').style.display="inline-block";
 			flag = true;;
 		}
-		if( document.myform.phone.value == ""  || document.myform.phone.value.length != 11 || isNaN(document.myform.phone.value)||document.myform.phone.value.indexOf(" ")!=-1)
+		if( document.myform.phone.value == ""  || document.myform.phone.value.length != 10 || isNaN(document.myform.phone.value)||document.myform.phone.value.indexOf(" ")!=-1)
 		{
-			document.getElementById('error2').innerHTML = "Phone number must start with 0 and contain 11 digits" ;
-			document.getElementById('error2').style.display="inline-block";
+			document.getElementById('error1').innerHTML = "Phone number must contain 10 digits" ;
+			document.getElementById('error1').style.display="inline-block";
 			document.myform.phone.focus() ;
 			flag = true;;
 		}
@@ -75,21 +82,15 @@
 			document.myform.password1.focus() ;
 			flag = true;;
 		}
-	/*var e = document.myform.subject;
+	var e = document.myform.subject;
 	strUser = e.options[e.selectedIndex].value;
 	if( strUser == "" )
 	{
-		alert( "Please select the subject!" );
+		document.getElementById('error9').innerHTML = "Please select the subject" ;
+		document.getElementById('error9').style.display="inline-block";
 		document.myform.subject.focus() ;
 		flag = true;;
 	}
- 	if( document.myform.book.value == "" )
-   {
-     document.getElementById('error5').innerHTML = "Please provide a name" ;
-     document.getElementById('error5').style.display="inline-block";
-     document.myform.book.focus() ;
-     flag = true;;
- }*/
  if(document.myform.book.value == "" )
  {
  	document.getElementById('error5').innerHTML = "Please provide the name of the book" ;
@@ -106,6 +107,13 @@
  }
  var e = document.myform.sellrent;
  strUser = e.options[e.selectedIndex].value;
+ if( strUser == "" )
+ {
+ 	document.getElementById('error2').innerHTML = "Please select one of the options" ;
+ 	document.getElementById('error2').style.display="inline-block";
+ 	document.myform.sellrent.focus();
+ 	flag = true;;
+ }
  if( strUser == 1 )
  {
  	if( document.myform.sellprice.value == "" )
@@ -168,6 +176,8 @@
 		}
 	}
 	if(flag)	{
+		document.getElementById('sell-container').style.width="880px";
+		document.getElementById('new-button').style.left="300px";
 		return false;
 	}
 	else 	{
@@ -182,21 +192,33 @@ function hide()	{
 	{
 		document.myform.rentprice.style.display="none";
 		document.myform.rentpricetime.style.display="none";
-		document.myform.sellprice.style.display="block";
+		document.myform.sellprice.style.display="inline-block";
 	}
 	if(strUser == 2)
 	{
 		document.myform.sellprice.style.display="none";
-		document.myform.rentprice.style.display="block";
-		document.myform.rentpricetime.style.display="block";
+		document.myform.rentprice.style.display="inline-block";
+		document.myform.rentpricetime.style.display="inline-block";
 	}
 	if(strUser == 3)
 	{
-		document.myform.rentprice.style.display="block";
-		document.myform.rentpricetime.style.display="block";
-		document.myform.sellprice.style.display="block";
+		document.myform.rentprice.style.display="inline-block";
+		document.myform.rentpricetime.style.display="inline-block";
+		document.myform.sellprice.style.display="inline-block";
 	}
 }
+</script>
+<script src="Scripts/jquery.js"></script>
+<script>
+
+	$(function () {
+		$('#help').next("span").hide();
+		$("#help").hover(function () {
+		$(this).next("span").show("300");
+	}, function() {
+		$(this).next("span").hide("300");
+		})
+	});
 </script>
 </head>
 <body>
@@ -210,18 +232,19 @@ function hide()	{
 		<div id="sell-form">
 			<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
 			<form name="myform" novalidate action="entry.php" method="POST" onsubmit="return validate();">
-				Name:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<div id="error"></div>      <input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required>
+				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error"></div>      
 				<br>
-				E-mail:<input type="email" name="email" id="email" class="sell-input" autocomplete="on">
+				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email">
 				<br>
-				Mobile Number:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error2"></div>   <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="0XXXXXXXXXX" required>
+				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error1"></div>   
 				<br>	
-				Password:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error3"></div>  <input type="password" name="password" class="sell-input" placeholder="at least 4 characters" required>
+				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" placeholder="Password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>  
 				<br>
-				Confirm Password:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error4"></div>	<input type="password" name="password1" class="sell-input" required onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
+				<input type="password" name="password1" class="sell-input" required onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" placeholder="Confirm Password"><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error4"></div>	
 				<br>
-				Subject:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <select name="subject" id="subject" class="sell-input" required>
-				<option value="All" selected>All</option>
+				<select name="subject" id="subject" class="sell-input" required>
+				<option value="" selected>Select Subject</option>
+				<option value="All">All</option>
 				<option value="Computers">Computers</option>
 				<option value="Electronics">Electronics</option>
 				<option value="Maths">Maths</option>
@@ -232,27 +255,31 @@ function hide()	{
 				<option value="Music">Music</option>
 				<option value="Business">Business</option>
 				<option value="Miscellaneous">Miscellaneous</option>
-
-			</select>
+			</select><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>
+			<div id="error9"></div>
 			<br>
-			Book Title:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    <input type="text" name="book" class="sell-input" autocomplete="on" required>
+			<input type="text" name="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
 			<br>
-			Author:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  <input type="text" name="author" class="sell-input" autocomplete="on" required>
+			<input type="text" name="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
 			<br>
-			The book is for:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<select name="sellrent" id="sell-rent" class="sell-input" required>
-			<option value="3" selected>Both Sale and Rent</option>
-			<option value="1">Sale Only</option>
-			<option value="2">Rent Only</option>
-		</select>
+			<select name="sellrent" id="sell-rent" class="sell-input" required>
+			<option value="" selected>The Book is Added to:</option>	
+			<option value="3">Both Sale and Rent</option>
+			<option value="1">Sale</option>
+			<option value="2">Rent</option>
+		</select><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>
+		<div id="error2"></div>
 		<br>
-		Sale Cost(INR): <div id="error7"></div> <input type="number" min="0" name="sellprice" class="sell-input" id="s-cost">
+		<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"><div id="error7"></div> 
 		<br>
-		Rent Cost(INR): <div id="error8"></div> <input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on">
+		<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
 		<select name="rentpricetime" id="rent-price" class="sell-input">
 			<option value="week">per Week</option>
 			<option value="month">per Month</option>
 		</select>
+		<div id="error8"></div> 
 		<br><br>
+		<!-- <div><input type="submit" value="Submit" id="submit-button" title="Please fill in the required fields before submitting"></div> -->
 		<button class="button-success pure-button" id = "new-button">Submit</button>
 	</form>
 </div>

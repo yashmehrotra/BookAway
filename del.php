@@ -38,7 +38,7 @@
 		</ul>
 	</div>
 		<div id="co-developed">
-			<code>Copyright</code><code>2014 .All Rights Reserved. Website co-developed by Avijit Gupta and Yash Mehrotra</code>
+			<code>Copyright</code><code>2014 .All Rights Reserved. Booksforbucks.com</code>
 		</div>
 	</div>
 </body>

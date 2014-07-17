@@ -24,6 +24,14 @@ body
 	font-style: normal;
 }
 
+@font-face
+{
+	font-family: Proxima-Nova;
+	src: url('Fonts/Proxima-Nova/ProximaNova-Bold.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
 a#focus:link
 {
 	background-color: #ea8585;
@@ -104,8 +112,8 @@ h1, h2, h3
 .bottom-panel
 {
 	position: absolute;
-	bottom: -100px;
-	width: inherit;
+	bottom: -150px;
+	width: 100%;inherit;
 	height:40px;
 	margin-bottom: 0px;
 	border-top-style: solid;
@@ -149,12 +157,13 @@ h1, h2, h3
 #co-developed
 {
 	position: absolute;
-	bottom: -150px;
+	opacity: 0.9;
+	bottom: -200px;
 	color: black;
 	background-color: #2EFE64;
 	padding-top: 10px;
 	height: 25px;
-	width: inherit;
+	width: 100%;inherit;
 	text-align: center;
 }
 
@@ -164,6 +173,8 @@ Different for different pages...
 /*
 Homepage
 */
+
+
 #home-main-head
 {
 	
@@ -197,7 +208,7 @@ h1
 	margin: 0 auto;
 	padding: 0;
 	margin-top: 55px;
-	margin-bottom: 200px;
+	margin-bottom: 250px;
 }
 
 .buy-box, .sell-box, .rent-box
@@ -270,6 +281,7 @@ ol
 	border-style: solid;
 	border-color: white;
 	border-radius: 15px;
+	border-width: 2px;
 }
 
 .buy-link:hover, .sell-link:hover, .rent-link:hover
@@ -316,7 +328,7 @@ About..
 	margin-top: 30px;
 	text-align: justify;
 	background-color: white;
-	margin-bottom: 200px;
+	margin-bottom: 250px;
 }
 
 /*.main-container:after
@@ -338,7 +350,7 @@ About..
 
 #c1,#c2,#c3,#c4
 {
-	height: 350px;
+	height: 300px;
 	border-style: ridge;
 	border-width: 2px;
 	padding-left: 20px;
@@ -346,59 +358,72 @@ About..
 	padding-top: 20px;
 	padding-bottom: 40px;
 	float: left;
-	width: 161px;
+	width: 180px;
 	display: inline-block;
-	margin-left: 70px;
-	margin-right: 15px;
-	margin-top: 35px;
+	/*margin-left: 70px;
+	margin-right: 10px;
+	margin-top: 35px;*/
+	margin: 55px 0px 0px 60px;
 	text-align: center;
 }
 
-#icf1, #icf2, #icf3, #icf4
+.f-t
 {
-	margin: auto;
-	margin-top:30px;
-	bottom: 0;
-	left: 20px;
-	width: 54px;
-	height: 54px;
-	z-index: -10;
-}
-
-#ict1, #ict2, #ict3,  #ict4
-{
-	margin: auto;
-	margin-top:15px; 
-	top: 50px;
-	bottom: 0;
-	left: 20px;
-	width: 54px;
-	height: 54px;
-	z-index: -10;
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin: 10px 1px 0px 1px;
+	border-width: 1.5px;
 }
 
 #icf1, #icf2, #icf3, #icf4
 {
-	background: url("Images/socials-fade.png") no-repeat;
+	background: url("Images/icon-logos.png") no-repeat 0px 0px;
+	border-style: solid;
 }
 
 #icf1:hover, #icf2:hover, #icf3:hover, #icf4:hover
 {
-	background: url('Images/socials-fade.png') 0px 54px;
+	/*background: url('Images/icon-logos.png') no-repeat 20px 50px;*/
 	cursor: pointer;
 }
 
 #ict1, #ict2, #ict3, #ict4
 {
-	background: url("Images/socials-fade.png") -108px 0px;
+	background: url("Images/icon-logos.png") -155px 0px;
+	border-style: solid;
 }
 
 #ict1:hover, #ict2:hover, #ict3:hover, #ict4:hover
 {
-	background: url('Images/socials-fade.png') -108px 54px;
+	/*background: url('Images/icon-logos.png');*/
 	cursor: pointer;
 }
 
+#icl1, #icl2, #icl3, #icl4
+{
+	background: url("Images/icon-logos.png") no-repeat -103px 0px;
+	border-style: solid;
+	/*clear: both;*/
+}
+
+#icl1:hover, #icl2:hover, #icl3:hover, #icl4:hover
+{
+	/*background: url('Images/icon-logos.png') no-repeat 20px 50px;*/
+	cursor: pointer;
+}
+
+#icg1, #icg2, #icg3, #icg4
+{
+	background: url("Images/icon-logos.png") -24px 40px;
+	border-style: solid;
+}
+
+#icg1:hover, #icg2:hover, #icg3:hover, #icg4:hover
+{
+	/*background: url('Images/icon-logos.png');*/
+	cursor: pointer;
+}
 
 
 /*
@@ -414,7 +439,7 @@ Buy..
 	height: 650px;
 	margin: 0 auto;
 	padding: 0;
-	margin-bottom: 200px;
+	margin-bottom: 250px;
 }
 
 #buy-main-head
@@ -602,6 +627,7 @@ Contact Us...
 	text-align: center;
 	margin-top: 70px;
 	position: relative;
+	margin-bottom: 250px;
 }
 
 #contact-us-text
@@ -623,6 +649,7 @@ Delete....
 	width: 950px;
 	margin: auto;
 	top:60px;
+	margin-bottom: 250px;
 }
 
 #delete-text
@@ -644,12 +671,7 @@ Delete....
 	position: absolute;
 	top:-60px;
 	left: 70px;
-	background-color: white;
 	padding-top: 15px;
-	border-style: solid;
-	border-color: gray;
-	border-width: 1px;
-	border-radius: 10px;
 }
 
 #del-main
@@ -664,11 +686,6 @@ Delete....
 	position: absolute;
 	bottom:55px;
 	left: 190px;
-	background-color: white;
-	border-style: solid;
-	border-color: gray;
-	border-width: 1px;
-	border-radius: 10px;
 }
 
 .sub
@@ -720,6 +737,8 @@ Entry...
 	text-align: center;
 	padding-left: 10px;
 	padding-right: 10px;
+	position: relative;
+	left: 40px;
 }
 
 #s2
@@ -731,12 +750,13 @@ Entry...
 .content
 {	
 	padding-top: 20px;
-	height: 500px;
+	height: 400px;
 	width: 820px;
 	background-color: white;
 	position: relative;
 	top:180px;
 	left: 238px;
+	margin-bottom: 250px;
 }
 
 .links-list
@@ -790,7 +810,7 @@ Rent....
 	height: 720px;
 	margin: 0 auto;
 	padding: 0;
-	margin-bottom: 200px;
+	margin-bottom: 250px;
 }
 
 #main-head
@@ -926,8 +946,8 @@ Sell...
 
 #sell-container
 {
-	height: 715px;
-	width: 950px;
+	height:770px;
+	width: 700px;
 	position: relative;
 	top: 60px;
 	margin: 0 auto;
@@ -936,7 +956,7 @@ Sell...
 	border-width: 1px;
 	border-color: gray;
 	border-radius: 10px;
-	margin-bottom: 200px;
+	margin-bottom: 250px;
 }
 
 #sell-main-head
@@ -977,26 +997,65 @@ Sell...
 #sell-form
 {
 	width:850px;
-	height: 640px;
+	height: 600px;
 	position: absolute;
-	top: 60px;
+	top: 80px;
 	text-align: left;
 	line-height: 180%;
 	font-size: 130%;
-	left: 45px;
+	left: 70px;
 }
 
 .sell-input
 {
-	float: right;
 	font-size: 80%;
 	line-height: 100%;
-	width: 180px;
+	width: 380px;
+	height: 30px;
 	box-shadow: 0px 1px 3px 1px #ddd;
 	border: inset 1px solid #ccc;
-	border-radius: 4px;
+	border-radius: 8px;
 	padding: 0.2em 0.2em;
 	box-sizing: border-box;
+	margin-left: 10px;
+	font-family: Proxima-Nova;
+	margin-bottom: 5px;
+}
+
+#before-phone
+{
+	width: 50px;
+	border-style: outset;
+	color: black;
+}
+
+#phone
+{
+	width: 312px;
+}
+
+#help
+{
+	height: 22px;
+	width: 20px;
+	display: inline-block;
+}
+
+#help-popup
+{
+	height: 40px;
+	width: 380px;
+	box-shadow: 1px 1px 1px black;
+	border-style: solid;
+	border-width: 1px;
+	position: absolute;
+	right: 250px;
+	top:160px;
+	font-size: 15px;
+	padding: 5px;
+	background-color: white;
+	line-height: 150%;
+	display: none;
 }
 
 #s-cost, #r-cost
@@ -1008,47 +1067,18 @@ Sell...
 	background-repeat: no-repeat;
 }
 
-/*
-#submit-button
+#rent-price
 {
-	height: 30px;
-	width: 80px;
-	font-size: 17px;
-	position: absolute;
-	left: 400px;
-	top:580px;
+	width: 150px;
 }
-*/
 
-#error, #error1, #error2, #error3, #error4, #error5, #error6
+#error, #error1, #error2, #error3, #error4, #error5, #error6, #error7, #error8, #error9
 {
 	height: 10px;
-	width: 380px;
+	width: 400px;
 	font-size: 16px;
 	color: red;
 	display: none;
-}
-
-#error7, #error8
-{
-	height: 10px;
-	width: 240px;
-	font-size: 16px;
-	color: red;
-	display: none;
-}
-
-#verify-phone:hover span
-{
-	position: absolute;
-	z-index: 100;
-	border-style: outset;
-	height: 100px;
-	width: 100px;
-	left: 500px;
-	top: 500px;
-	font-size: 16px;
-	line-height: 18px;
 }
 
 #new-button
@@ -1060,11 +1090,12 @@ Sell...
     /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
     background: #0078E7;#45C463;#6ED186;
     font-size: 105%;
-    left:350px;
+    left:200px;
 	margin-right: auto;
 	width: 19%;
 	height: 8%;
 	position: absolute;
+	bottom: -50px;
 }
 
 #new-button:hover
@@ -1072,3 +1103,17 @@ Sell...
 	cursor: pointer;
 }
 
+
+/*
+Sell-nojs....
+*/
+
+#sell-nojs-container
+{
+	background-color: white;
+	height: 230px;
+	width: 700px;
+	margin: auto;
+	margin-top:100px;
+	padding: 50px;
+}

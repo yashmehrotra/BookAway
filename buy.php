@@ -93,7 +93,7 @@
 		</ul>
 	</div>
 		<div id="co-developed">
-			<code>Copyright2014. All Rights Reserved. Booksforbucks.com</code>
+			<code>Copyright2014</code><code>.All Rights Reserved. Booksforbucks.com</code>
 		</div>
 	</div>
 </body>
