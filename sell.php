@@ -19,17 +19,8 @@
 		var $f1 = false;
 		var $f2 = false;
 
-		$('#error').css("display","none");
-		$('#error1').css("display","none");
-		$('#error2').css("display","none");
-		$('#error3').css("display","none");
-		$('#error4').css("display","none");
-		$('#error5').css("display","none");
-		$('#error6').css("display","none");
-		$('#error7').css("display","none");
-		$('#error8').css("display","none");
-		$('#error9').css("display","none");
-
+	$('.pure-g').find('div').css("display","none");
+	
 		if( $('#name').val() == "" || $('#name').val().length < 2)
 		{
 			$('#error').html("Please provide your name");
