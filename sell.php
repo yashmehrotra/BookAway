@@ -5,206 +5,205 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript">
-	
-	function validate()		{
-		document.getElementById('error').style.display="none";
-		document.getElementById('error1').style.display="none";;
-		document.getElementById('error2').style.display="none";;
-		document.getElementById('error3').style.display="none";;
-		document.getElementById('error5').style.display="none";;
-		document.getElementById('error6').style.display="none";;
-		document.getElementById('error7').style.display="none";;
-		document.getElementById('error8').style.display="none";;
-		document.getElementById('error9').style.display="none";;
 
-		var flag = false;
-		var count = 0;
-		var f1 = false;
-		var f2 = false; 
+	$(document).ready(function () {
+		$('#myform').submit(function(fr){
+			fr.preventDefault();
 
-		if( document.myform.name.value == "" || document.myform.name.value.length < 2)
+		$('#error').css("display","none");
+		$('#error1').css("display","none");
+		$('#error2').css("display","none");
+		$('#error3').css("display","none");
+		$('#error4').css("display","none");
+		$('#error5').css("display","none");
+		$('#error6').css("display","none");
+		$('#error7').css("display","none");
+		$('#error8').css("display","none");
+		$('#error9').css("display","none");
+
+		var $flag = false;
+		var $count = 0;
+		var $f1 = false;
+		var $f2 = false; 
+
+		if( $('#name').val() == "" || $('#name').val().length < 2)
 		{
-			document.getElementById('error').innerHTML = "Please provide your name" ;
-			document.myform.name.focus() ;
-			document.getElementById('error').style.display="inline-block";
-			flag = true;;
-			var count = count + 1;
-			f1 = true;;
+			$('#error').html("Please provide your name");
+			$('#name').focus() ;
+			$('#error').css("display","inline-block");
+			$flag = true;;
+			var $count = $count + 1;
+			$f1 = true;;
 		}
-		if( document.myform.phone.value == ""  || document.myform.phone.value.length != 10 || isNaN(document.myform.phone.value)||document.myform.phone.value.indexOf(" ")!=-1)
+		if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1)
 		{
-			document.getElementById('error1').innerHTML = "Phone number must contain 10 digits" ;
-			document.getElementById('error1').style.display="inline-block";
-			document.myform.phone.focus() ;
-			flag = true;;
-			var count = count + 1;
-			f2 = true;;
+			$('#error1').html("Phone number must contain 10 digits");
+			$('#error1').css("display","inline-block");
+			$('#phone').focus() ;
+			$flag = true;;
+			var $count = $count + 1;
+			$f2 = true;;
 		}
-		if( document.myform.password.value == "" || document.myform.password.value.length < 4 )
+		if( $('#password').val() == "" || $('#password').val().length < 4 )
 		{
-			document.getElementById('error3').innerHTML = "Password must contain at least 4 characters" ;
-			document.getElementById('error3').style.display="inline-block";
-			document.myform.password.focus() ;
-			flag = true;;
-			var count = count + 1;
+			$('#error3').html("Password must contain at least 4 characters");
+			$('#error3').css("display","inline-block");
+			$('#password').focus() ;
+			$flag = true;;
+			var $count = $count + 1;
 		}
-	var e = document.myform.subject;
-	strUser = e.options[e.selectedIndex].value;
+
+	strUser = $('#subject').val();
 	if( strUser == "" )
 	{
-		document.getElementById('error9').innerHTML = "Please select the subject" ;
-		document.getElementById('error9').style.display="inline-block";
-		document.myform.subject.focus() ;
-		flag = true;;
-		var count = count + 1;
+		$('#error9').html("Please select the subject");
+		$('#error9').css("display","inline-block");
+		$('#subject').focus() ;
+		$flag = true;;
+		var $count = $count + 1;
 	}
- if(document.myform.book.value == "" )
+
+	console.log($('#book').val());
+
+ if($('#book').val() == "" )
  {
- 	document.getElementById('error5').innerHTML = "Please provide the name of the book" ;
- 	document.getElementById('error5').style.display="inline-block";
- 	document.myform.book.focus() ;
- 	flag = true;;
- 	var count = count + 1;
+ 	$('#error5').html("Please provide the name of the book");
+ 	$('#error5').css("display","inline-block");
+ 	$('#book').focus() ;
+ 	$flag = true;;
+ 	var $count = $count + 1;
  }
- if( document.myform.author.value == "" )
+ if( $('#author').val() == "" )
  {
- 	document.getElementById('error6').innerHTML = "Please provide the name of the author" ;
- 	document.getElementById('error6').style.display="inline-block";
- 	document.myform.author.focus() ;
- 	flag = true;;
- 	var count = count + 1;
+ 	$('#error6').html("Please provide the name of the author");
+ 	$('#error6').css("display","inline-block");
+ 	$('#author').focus() ;
+ 	$flag = true;;
+ 	var $count = $count + 1;
  }
- var e = document.myform.sellrent;
- strUser = e.options[e.selectedIndex].value;
- if( strUser == "" )
+var $b = $('#sell-rent option:selected').val();
+
+console.log($b);
+
+ if( $b == 1 )
  {
- 	document.getElementById('error2').innerHTML = "Please select one of the options" ;
- 	document.getElementById('error2').style.display="inline-block";
- 	document.myform.sellrent.focus();
- 	flag = true;;
- 	var count = count + 1;
- }
- if( strUser == 1 )
- {
- 	if( document.myform.sellprice.value == "" )
+ 	if( $('#s-cost').val() == "" )
  	{
- 		document.getElementById('error7').innerHTML = "Please provide the sale price" ;
- 		document.getElementById('error7').style.display="inline-block";
- 		document.myform.sellprice.focus();
- 		flag = true;;
- 		var count = count + 1;
+ 		$('#error7').html("Please provide the sale price");
+ 		$('#error7').css("display","inline-block");
+ 		$('#s-cost').focus();
+ 		$flag = true;;
+ 		var $count = $count + 1;
  	}
  }
- if( strUser == 2 )
+ if( $b == 2 )
  {	
- 	if( document.myform.rentprice.value == "" )
+ 	if( $('#r-cost').val() == "" )
  	{
- 		document.getElementById('error8').innerHTML = "Please provide rent price" ;
- 		document.getElementById('error8').style.display="inline-block";
- 		document.myform.rentprice.focus();
- 		flag = true;;
- 		var count = count + 1;
+ 		$('#error8').html("Please provide rent price");
+ 		$('#error8').css("display","inline-block");
+ 		$('#r-cost').focus();
+ 		$flag = true;;
+ 		var $count = $count + 1;
  	}
-	}
-	if( strUser == 3 )
+}
+if( $b == 3 )
+{
+	if( $('#s-cost').val() == "" )
 	{
-		if( document.myform.sellprice.value == "" )
-		{
-			document.getElementById('error7').innerHTML = "Please provide the sale price" ;
-			document.getElementById('error7').style.display="inline-block";
-			document.myform.sellprice.focus();
-			flag = true;;
-			var count = count + 1;
-		}
-
-		if( document.myform.rentprice.value == "" )
-		{
-			document.getElementById('error8').innerHTML = "Please provide the rent price" ;
-			document.getElementById('error8').style.display="inline-block";
-			document.myform.rentprice.focus();
-			flag = true;;
-			var count = count + 1;
-		}
+		$('#error7').html("Please provide the sale price");
+		$('#error7').css("display","inline-block");
+		$('#s-cost').focus();
+		$flag = true;;
+		var $count = $count + 1;
 	}
-	if(flag)	{
-		if( count ==1 )
-		{
-			document.getElementById('sell-container').style.height="840px";
-			document.getElementById('new-button').style.bottom="10px";
-			
-		}
-		if( count ==2 )
-		{
-			document.getElementById('sell-container').style.height="880px";
-			document.getElementById('new-button').style.bottom="-45px";
-		}
-			
-		if( count ==3 )
-		{
-			document.getElementById('sell-container').style.height="915px";
-			document.getElementById('new-button').style.bottom="-80px";
-			
-		}
-		if( count ==4 )
-		{
-			document.getElementById('sell-container').style.height="950px";
-			document.getElementById('new-button').style.bottom="-115px";
-			
-		}
-		if( count ==5 )
-		{
-			document.getElementById('sell-container').style.height="985px";
-			document.getElementById('new-button').style.bottom="-150px";
-			
-		}
-		if( count ==6 )
-		{
-			document.getElementById('sell-container').style.height="1020px";
-			document.getElementById('new-button').style.bottom="-185px";
-			
-		}
-		if( count ==7 )
-		{
-			document.getElementById('sell-container').style.height="1055px";
-			document.getElementById('new-button').style.bottom="-220px";
-			
-		}
-		if( count ==8 )
-		{
-			document.getElementById('sell-container').style.height="1090px";
-			document.getElementById('new-button').style.bottom="-255px";
-		}
-		if( count ==9 )
-		{
-			document.getElementById('sell-container').style.height="1125px";
-			document.getElementById('new-button').style.bottom="-290px";
-			
-		}
 
-		if(f1 || f2)
-		{
-			document.getElementById('help-popup').style.top="208px" ;
-		}
-
-		if(f1 && f2)
-		{
-			document.getElementById('help-popup').style.top="246px" ;
-		}
-
-		if(!f1 && !f2)
-		{
-			document.getElementById('help-popup').style.top="170px" ;
-		}
-		return false;
-	}
-	else 	{
-		return( true );
+	if( $('#r-cost').val() == "" )
+	{
+		$('#error8').html("Please provide the rent price");
+		$('#error8').css("display","inline-block");
+		$('#r-cost').focus();
+		$flag = true;;
+		var $count = $count + 1;
 	}
 }
+	if($flag)	{
+		if( $count ==1 )
+		{
+			$('#sell-container').css("height","840px");
+			$('#new-button').css("bottom","10px");
+			
+		}
+		if( $count ==2 )
+		{
+			$('#sell-container').css("height","880px");
+			$('#new-button').css("bottom","-45px");
+		}
+			
+		if( $count ==3 )
+		{
+			$('#sell-container').css("height","915px");
+			$('#new-button').css("bottom","-80px");
+			
+		}
+		if( $count ==4 )
+		{
+			$('#sell-container').css("height","950px");
+			$('#new-button').css("bottom","-115px");
+			
+		}
+		if( $count ==5 )
+		{
+			$('#sell-container').css("height","985px");
+			$('#new-button').css("bottom","-150px");
+			
+		}
+		if( $count ==6 )
+		{
+			$('#sell-container').css("height","1020px");
+			$('#new-button').css("bottom","-185px");
+			
+		}
+		if( $count ==7 )
+		{
+			$('#sell-container').css("height","1055px");
+			$('#new-button').css("bottom","-220px");
+			
+		}
+		if( $count ==8 )
+		{
+			$('#sell-container').css("height","1090px");
+			$('#new-button').css("bottom","-255px");
+		}
+		if( $count ==9 )
+		{
+			$('#sell-container').css("height","1125px");
+			$('#new-button').css("bottom","-290px");
+			
+		}
+
+		if($f1 || $f2)
+		{
+			$('#help-popup').css("top","208px") ;
+		}
+
+		if($f1 && $f2)
+		{
+			$('#help-popup').css("top","246px") ;
+		}
+
+		if(!$f1 && !$f2)
+		{
+			$('#help-popup').css("top","170px") ;
+		}
+			}
+	});
+		});
+	 
 </script>
 
-<script src="Scripts/jquery.js"></script>
 <script>
 
 	$(function () {
@@ -219,56 +218,33 @@
 <script>
   $(function () {
   	setInterval(function() {
-  	var a =  $('#sell-rent option:selected').val();
-if( a == 1 )
+  	var $a =  $('#sell-rent option:selected').val();
+if( $a == 1 )
 		{
 			$('#r-cost').slideUp(300);
 			$('#rent-price').slideUp(300);
 			$('#s-cost').slideDown(300);
-			flag = true;
+			$flag = true;
 		}
-if(a == 2 )
+if( $a == 2 )
 	{
 		$('#s-cost').slideUp(300);
 		$('#r-cost').slideDown(300);
 		$('#rent-price').slideDown(300);
-		flag = true;
+		$flag = true;
 	}
-if(a == 3 )
+if( $a == 3 )
 	{
 		$('#s-cost').slideDown(300);
 		$('#r-cost').slideDown(300);
 		$('#rent-price').slideDown(300);
-		flag = true;
+		$flag = true;
 	}
 			}, 100);
   });
 
-  /*$(function () {
-  $("#password").each(function (index, '#password') {
-    var $input = $('#password');
-    $("#show-password").click(function () {
-      var change = "";
-      if ($(this).html() == "Show Password") {
-        $(this).html("Hide Password")
-        change = "text";
-      } else {
-        $(this).html("Show Password");
-        change = "password";
-      }
-      var rep = $("<input type='" + change + "' />")
-        .attr("id", $input.attr("id"))
-        .attr("name", $input.attr("name"))
-        .attr('class', $input.attr('class'))
-        .val($input.val())
-        .insertBefore($input);
-      $input.remove();
-      $input = rep;
-    }).insertAfter($input);
-  });
-});
-*/
   </script>
+
 </head>
 <body>
 	<div id="sell-main-head">
@@ -314,10 +290,10 @@ if(a == 3 )
 			
 			<br>
 			
-			<input type="text" name="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
+			<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
 			<br>
 			
-			<input type="text" name="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
+			<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
 			<br>
 			<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
 			<select name="sellrent" id="sell-rent" class="sell-input" required>
