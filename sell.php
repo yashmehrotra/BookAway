@@ -8,10 +8,17 @@
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript">
-
+	$copy = 0; 
+	$bcopy = 0;
 	$(document).ready(function () {
 		$('#myform').submit(function(fr){
 			fr.preventDefault();
+		var $height = $('#sell-container').css('height');
+		var $bheight = $('#new-button').css('bottom');
+		var $flag = false;
+		var $count = 0;
+		var $f1 = false;
+		var $f2 = false;
 
 		$('#error').css("display","none");
 		$('#error1').css("display","none");
@@ -23,11 +30,6 @@
 		$('#error7').css("display","none");
 		$('#error8').css("display","none");
 		$('#error9').css("display","none");
-
-		var $flag = false;
-		var $count = 0;
-		var $f1 = false;
-		var $f2 = false; 
 
 		if( $('#name').val() == "" || $('#name').val().length < 2)
 		{
@@ -66,8 +68,6 @@
 		var $count = $count + 1;
 	}
 
-	console.log($('#book').val());
-
  if($('#book').val() == "" )
  {
  	$('#error5').html("Please provide the name of the book");
@@ -85,8 +85,6 @@
  	var $count = $count + 1;
  }
 var $b = $('#sell-rent option:selected').val();
-
-console.log($b);
 
  if( $b == 1 )
  {
@@ -131,59 +129,23 @@ if( $b == 3 )
 	}
 }
 	if($flag)	{
-		if( $count ==1 )
-		{
-			$('#sell-container').css("height","840px");
-			$('#new-button').css("bottom","10px");
-			
-		}
-		if( $count ==2 )
-		{
-			$('#sell-container').css("height","880px");
-			$('#new-button').css("bottom","-45px");
-		}
-			
-		if( $count ==3 )
-		{
-			$('#sell-container').css("height","915px");
-			$('#new-button').css("bottom","-80px");
-			
-		}
-		if( $count ==4 )
-		{
-			$('#sell-container').css("height","950px");
-			$('#new-button').css("bottom","-115px");
-			
-		}
-		if( $count ==5 )
-		{
-			$('#sell-container').css("height","985px");
-			$('#new-button').css("bottom","-150px");
-			
-		}
-		if( $count ==6 )
-		{
-			$('#sell-container').css("height","1020px");
-			$('#new-button').css("bottom","-185px");
-			
-		}
-		if( $count ==7 )
-		{
-			$('#sell-container').css("height","1055px");
-			$('#new-button').css("bottom","-220px");
-			
-		}
-		if( $count ==8 )
-		{
-			$('#sell-container').css("height","1090px");
-			$('#new-button').css("bottom","-255px");
-		}
-		if( $count ==9 )
-		{
-			$('#sell-container').css("height","1125px");
-			$('#new-button').css("bottom","-290px");
-			
-		}
+			var $c = $count - $copy;
+			var $newheight = parseInt($height) + 35*$c ;
+			var $change = $newheight + 'px' ;
+
+		$('#sell-container').css({
+			"height" : $change
+		});
+
+		var $c = $count - $bcopy;
+			var $bnewheight = parseInt($bheight) - 35*$c ;
+			var $bchange = $bnewheight + 'px' ;
+
+		$('#new-button').css({
+			"bottom" : $bchange
+		});
+		$copy = $count;
+		$bcopy = $count;
 
 		if($f1 || $f2)
 		{
@@ -218,20 +180,14 @@ if( $b == 3 )
                         click_password = 0;
                 }
         });
-});
-
-	 
+});	 
 </script>
 
 <script>
-
-	$(function () {
-		$('#help').next("span").hide();
-		$("#help").hover(function () {
-		$(this).next("span").fadeIn(300);
-	}, function() {
-		$(this).next("span").fadeOut(300);
-		})
+		$(function () {
+		$('#help').on(' mouseenter mouseleave', function () {
+			$('#help-popup').fadeToggle('300');
+		});
 	});
 </script>
 <script>
@@ -275,7 +231,7 @@ if( $a == 3 )
 		</div>
 	<div id="sell-form">
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
-		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate action="entry.php" method="POST" onsubmit= "return validate();">
+		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate action="entry.php" method="POST">
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error"></div> 
 				<br>
@@ -288,7 +244,7 @@ if( $a == 3 )
 				
 				<br>
 				
-				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>
+				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>
 				
 				<br>
 				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
@@ -315,11 +271,11 @@ if( $a == 3 )
 			<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
 			<br>
 			<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
-			<select name="sellrent" id="sell-rent" class="sell-input" required>
+			<select name="sellrent" id="sell-rent" class="sell-input">
 			<option value="3" selected>Both Sale and Rent</option>
 			<option value="1">Sale</option>
 			<option value="2">Rent</option>
-		</select><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>
+		</select>
 		<div id="error2"></div>
 		<br>
 		
