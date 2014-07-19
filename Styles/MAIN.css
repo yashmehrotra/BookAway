@@ -1129,12 +1129,13 @@ Sell...
     /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
     background: #0078E7;#45C463;#6ED186;
     font-size: 105%;
-    left:180px;
+    left:80px;180px;
 	margin-right: auto;
-	width: 19%;
+	width: 39%;19%;
 	height: 8%;
 	position: absolute;
 	bottom: 25px;
+	border-radius: 15px;
 }
 
 #new-button:hover
