@@ -43,6 +43,7 @@
 			<div onclick="location.href='in.linkedin.com/in/yashmehrotra';" class="f-t" id="icl2" ></div>
 			<div onclick="location.href='https://github.com/yashmehrotra/';" class="f-t" id="icg2"></div>
 		</div>
+		<!--
 		<div id="c3">
 			<a href="Styles/Images/tanmay.jpg"><img src="Styles/Images/tanmay.jpg" id="m3" alt="img3"></a>
 			<p class="desc">Tanmay Datta
@@ -54,16 +55,17 @@
 			<div onclick="location.href='https://www.linkedin.com/pub/tanmay-datta/9b/51a/409';" class="f-t" id="icl3" ></div>
 			<div onclick="location.href='https://github.com/tanmaydatta/';" class="f-t" id="icg3"></div>
 		</div>
-		<div id="c4">
-			<a href="Styles/Images/sidhant.jpg"><img src="Styles/Images/sidhant.jpg" id="m4" alt="img4"></a>
+	-->
+		<div id="c3">
+			<a href="Styles/Images/sidhant.jpg"><img src="Styles/Images/sidhant.jpg" id="m3" alt="img3"></a>
 			<p class="desc">Sidhant Sharma
 				<br><br>
 				Content Manager
 			</p>
-			<div onclick="location.href='https://www.facebook.com/sid.sharma15';" class="f-t" id="icf4" ></div>
-			<div onclick="location.href='http://www.twitter.com/SidMail15';" class="f-t" id="ict4"></div>
-			<div onclick="location.href='http://in.linkedin.com/pub/sidhant-sharma/91/960/230';" class="f-t" id="icl4" ></div>
-			<div onclick="location.href='http://www.twitter.com/yashm95';" class="f-t" id="icg4"></div>
+			<div onclick="location.href='https://www.facebook.com/sid.sharma15';" class="f-t" id="icf3" ></div>
+			<div onclick="location.href='http://www.twitter.com/SidMail15';" class="f-t" id="ict3"></div>
+			<div onclick="location.href='http://in.linkedin.com/pub/sidhant-sharma/91/960/230';" class="f-t" id="icl3" ></div>
+			<div onclick="location.href='http://www.twitter.com/yashm95';" class="f-t" id="icg3"></div>
 		</div>
 		<div class="bottom-panel">
 		<ul class="bottom-panel-list">

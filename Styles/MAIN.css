@@ -338,9 +338,9 @@ About..
 	display: inline-block;
 }*/
 
-#m1,#m2,#m3,#m4
+#m1,#m2,#m3
 {
-	height: 150px;
+	height: 160px;
 	width: 160px;
 	border-style: solid;
 	border-color: transparent;
@@ -348,7 +348,7 @@ About..
 }
 
 
-#c1,#c2,#c3,#c4
+#c1,#c2,#c3
 {
 	height: 300px;
 	border-style: ridge;
@@ -358,12 +358,9 @@ About..
 	padding-top: 20px;
 	padding-bottom: 40px;
 	float: left;
-	width: 180px;
+	width: 220px;
 	display: inline-block;
-	/*margin-left: 70px;
-	margin-right: 10px;
-	margin-top: 35px;*/
-	margin: 55px 0px 0px 60px;
+	margin: 55px 0px 0px 100px;
 	text-align: center;
 }
 
@@ -372,54 +369,54 @@ About..
 	height: 40px;
 	width: 40px;
 	float: left;
-	margin: 10px 1px 0px 1px;
+	margin: 10px 5px 0px 7.5px;
 	border-width: 1.5px;
 }
 
-#icf1, #icf2, #icf3, #icf4
+#icf1, #icf2, #icf3
 {
 	background: url("Images/icon-logos.png") no-repeat 0px 0px;
 	border-style: solid;
 }
 
-#icf1:hover, #icf2:hover, #icf3:hover, #icf4:hover
+#icf1:hover, #icf2:hover, #icf3:hover
 {
 	/*background: url('Images/icon-logos.png') no-repeat 20px 50px;*/
 	cursor: pointer;
 }
 
-#ict1, #ict2, #ict3, #ict4
+#ict1, #ict2, #ict3
 {
 	background: url("Images/icon-logos.png") -155px 0px;
 	border-style: solid;
 }
 
-#ict1:hover, #ict2:hover, #ict3:hover, #ict4:hover
+#ict1:hover, #ict2:hover, #ict3:hover
 {
 	/*background: url('Images/icon-logos.png');*/
 	cursor: pointer;
 }
 
-#icl1, #icl2, #icl3, #icl4
+#icl1, #icl2, #icl3
 {
 	background: url("Images/icon-logos.png") no-repeat -103px 0px;
 	border-style: solid;
 	/*clear: both;*/
 }
 
-#icl1:hover, #icl2:hover, #icl3:hover, #icl4:hover
+#icl1:hover, #icl2:hover, #icl3:hover
 {
 	/*background: url('Images/icon-logos.png') no-repeat 20px 50px;*/
 	cursor: pointer;
 }
 
-#icg1, #icg2, #icg3, #icg4
+#icg1, #icg2, #icg3
 {
 	background: url("Images/icon-logos.png") -24px 40px;
 	border-style: solid;
 }
 
-#icg1:hover, #icg2:hover, #icg3:hover, #icg4:hover
+#icg1:hover, #icg2:hover, #icg3:hover
 {
 	/*background: url('Images/icon-logos.png');*/
 	cursor: pointer;
