@@ -1031,12 +1031,24 @@ Sell...
 	width: 410px;
 }
 
+#show-password
+{
+	font-size: 32px;
+	position: absolute;
+	left: 440px;
+	top: 240px;
+	cursor: pointer;
+}
+
 #help
 {
-	height: 22px;
-	width: 20px;
+	height: 30px;
+	width: 28px;
+	margin-top: 5px;
 	display: inline-block;
-	margin-left: 5px;
+	position: absolute;
+	left: -35px;
+	top: 233px;
 }
 
 #help-popup
@@ -1047,7 +1059,7 @@ Sell...
 	border-style: solid;
 	border-width: 1px;
 	position: absolute;
-	right: 200px;
+	left: -100px;
 	top:170px;
 	font-size: 15px;
 	padding: 5px;

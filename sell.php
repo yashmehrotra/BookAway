@@ -12,7 +12,6 @@
 	$bcopy = 0;
 	$(document).ready(function () {
 		$('#myform').submit(function(fr){
-			fr.preventDefault();
 		var $height = $('#sell-container').css('height');
 		var $bheight = $('#new-button').css('bottom');
 		var $flag = false;
@@ -129,6 +128,7 @@ if( $b == 3 )
 	}
 }
 	if($flag)	{
+			fr.preventDefault();
 			var $c = $count - $copy;
 			var $newheight = parseInt($height) + 35*$c ;
 			var $change = $newheight + 'px' ;
@@ -149,17 +149,23 @@ if( $b == 3 )
 
 		if($f1 || $f2)
 		{
-			$('#help-popup').css("top","208px") ;
+			$('#help-popup').css("top","213px") ;
+			$('#show-password').css("top","277px") ;
+			$('#help').css("top","277px") ;
 		}
 
 		if($f1 && $f2)
 		{
-			$('#help-popup').css("top","246px") ;
+			$('#help-popup').css("top","250px") ;
+			$('#show-password').css("top","313px") ;
+			$('#help').css("top","313px") ;
 		}
 
 		if(!$f1 && !$f2)
 		{
-			$('#help-popup').css("top","170px") ;
+			$('#help-popup').css("top","176px") ;
+			$('#show-password').css("top","240px") ;
+			$('#help').css("top","240px") ;
 		}
 			}
 	});
@@ -231,7 +237,7 @@ if( $a == 3 )
 		</div>
 	<div id="sell-form">
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
-		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate action="entry.php" method="POST">
+		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="entry.php" method="POST" novalidate>
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error"></div> 
 				<br>
@@ -292,6 +298,7 @@ if( $a == 3 )
 		<!-- <div><input type="submit" value="Submit" id="submit-button" title="Please fill in the required fields before submitting"></div> -->
 		</div>
 		<button class="button-success pure-button" id = "new-button">Submit</button>
+		<!--<input type="submit" value="Submit" class="button-success pure-button" id="new-button">-->
 	</form>
 </div>
 <div class="bottom-panel">
