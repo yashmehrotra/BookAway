@@ -1,17 +1,17 @@
-setInterval ( "size()", 100 );
+$(function () {
+		move();
+	$(window).resize(move);
+});
 
-		function size()	{
-			var w = window.innerWidth;
-			if( w < 950 )
-			{
-				change();
-			}
-			else rechange();
+function move() {
+		var $width = $(this).width();
+		var $wrapper = parseInt($('#wrapper').css('width'));
+		if($width < $wrapper)
+		{
+			$('#wrapper').css('left','-30px');	
 		}
-
-		function change()	{
-			document.getElementById("wrapper").style.left="-35px";
+		else
+		{
+			$('#wrapper').css('left',0.46*($width - $wrapper));
 		}
-		function rechange()	{
-			document.getElementById("wrapper").style.left="205px";
-		}
+	}

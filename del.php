@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>BooksforBucks | Delete the Book Added</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
