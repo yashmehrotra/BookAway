@@ -58,15 +58,11 @@ h1, h2, h3
 .top-panel
 {
 	width: inherit;
-	margin-left: auto;
-	margin-right: auto;
 	height: inherit;
 	left: 15px;
 	text-transform: uppercase;
-	/*border-style: solid;*/
 	background-color: #E25A5A;black;
 	font-family: ‘Lucida Console’, Monaco, monospace;
-	/*font-family: Gill Sans / Gill Sans MT, sans-serif;*/
 	position: relative;
 	top:0px;
 	display: inline-block;
@@ -88,10 +84,6 @@ h1, h2, h3
 {
 	text-decoration: none;
 	text-transform: uppercase;
-	/*padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 28px;
-	padding-right: 28px;*/
 	padding: 5px 28px 5px 28px;
 	font-size: 22px;
 	margin-right: 15px;
@@ -134,10 +126,8 @@ h1, h2, h3
 .bottom-links
 {
 	text-decoration: none;
-	padding-left: 50px;
-	padding-right: 50px;
-	margin-left: 20px;
-	margin-right: 20px;
+	padding: 0px 50px 0px 50px;
+	margin: 0px 20px 0px 20px;
 	font-size: 20px;
 	font-style: italic;
 	color: black;
@@ -204,10 +194,8 @@ h1
 	position: relative;
 	height: 500px;
 	width: 1100px;
-	margin: 0 auto;
 	padding: 0;
-	margin-top: 55px;
-	margin-bottom: 250px;
+	margin: 55px auto 250px auto;
 }
 
 .buy-box, .sell-box, .rent-box
@@ -216,7 +204,6 @@ h1
 	height: 450px;
 	width: 280px;
 	position: relative;
-	margin-bottom: 50px;
 	color: white;
 	float: left;
 	box-shadow: 9px 9px 5px black;
@@ -226,8 +213,7 @@ h1
 	border-width: 2px;
 	border-color: white;
 	text-align: center;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 0px 20px 50px 20px;
 	line-height: 180%;
 	border-radius: 15px;
 }
@@ -312,11 +298,10 @@ About..
 
 #about-us-text
 {
-	margin-top: 70px;
 	text-align: center;
 	font-size: 32px;
 	color: white;
-	margin-bottom: 60px;
+	margin: 70px 0px 60px 0px;
 }
 
 .main-container
@@ -324,11 +309,9 @@ About..
 	height: 490px;
 	width:1200px;
 	position: relative;
-	margin: auto;
-	margin-top: 30px;
+	margin: 30px auto 250px auto;
 	text-align: justify;
 	background-color: white;
-	margin-bottom: 250px;
 }
 
 #m1,#m2,#m3
@@ -345,10 +328,7 @@ About..
 	height: 300px;
 	border-style: ridge;
 	border-width: 2px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 20px;
-	padding-bottom: 40px;
+	padding:20px 20px 40px 20px;
 	float: left;
 	width: 220px;
 	display: inline-block;
@@ -363,59 +343,49 @@ About..
 
 .f-t
 {
-	height: 40px;
-	width: 40px;
+	height: 43px;
+	width: 43px;
 	float: left;
 	margin: 10px 5px 0px 7px;
-	border-width: 1.5px;
 }
 
 #icf1, #icf2, #icf3
 {
 	background: url("Images/icon-logos.png") no-repeat 0px 0px;
-	border-style: solid;
 }
 
 #icf1:hover, #icf2:hover, #icf3:hover
 {
-	/*background: url('Images/icon-logos.png') no-repeat 20px 50px;*/
 	cursor: pointer;
 }
 
 #ict1, #ict2, #ict3
 {
 	background: url("Images/icon-logos.png") -155px 0px;
-	border-style: solid;
 }
 
 #ict1:hover, #ict2:hover, #ict3:hover
 {
-	/*background: url('Images/icon-logos.png');*/
 	cursor: pointer;
 }
 
 #icl1, #icl2, #icl3
 {
 	background: url("Images/icon-logos.png") no-repeat -103px 0px;
-	border-style: solid;
-	/*clear: both;*/
 }
 
 #icl1:hover, #icl2:hover, #icl3:hover
 {
-	/*background: url('Images/icon-logos.png') no-repeat 20px 50px;*/
 	cursor: pointer;
 }
 
 #icg1, #icg2, #icg3
 {
-	background: url("Images/icon-logos.png") -24px 40px;
-	border-style: solid;
+	background: url("Images/icon-logos.png") -24px 43px;
 }
 
 #icg1:hover, #icg2:hover, #icg3:hover
 {
-	/*background: url('Images/icon-logos.png');*/
 	cursor: pointer;
 }
 
@@ -462,9 +432,7 @@ Buy..
 #price-max, #home-search
 {
 	font-family: fantasy;
-	left-margin:auto;
-	right-margin:auto; 
-	margin-top: 10%;
+	margin: 10% auto 0px auto;
 }
 
 #home-search
@@ -477,17 +445,13 @@ Buy..
 	font-size: 18px;
 	width:300px;
 	font-family: serif;
-	margin-left: 7px;
-	margin-right: 14px;
 	float: left;
-	margin-bottom: 5px;
-	margin-top:15px;
+	margin: 15px 14px 5px 7px;
 }
 
 .search
 {
 	margin-top: 15px;
-	margin-bottom: 0px;
 	font-size: 15px;
 	width:100px;
 	height:32px;
@@ -617,11 +581,9 @@ Contact Us...
 {
 	height: 500px;
 	width: 1000px;
-	margin: auto;
+	margin: 70px auto 250px auto;
 	text-align: center;
-	margin-top: 70px;
 	position: relative;
-	margin-bottom: 250px;
 }
 
 #contact-us-text
@@ -700,9 +662,7 @@ Delete....
 	width: 90px;
 	height: 40px;
 	font-size: 16px;
-	margin: auto;
-	margin-top: 40px;
-	margin-right: 205px;
+	margin: 40px 205px 0px auto;
 }
 
 /*
@@ -729,8 +689,7 @@ Entry...
 	font-family: Bitter-Regular;
 	line-height: 150%;
 	text-align: center;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0px 10px 0px 10px;
 	position: relative;
 	left: 40px;
 }
@@ -831,19 +790,15 @@ Rent....
 #rent-search
 {
 	font-family: fantasy;
-	left-margin:auto;
-	right-margin:auto; 
-	margin-top: 5%;
+	margin:5% auto 0px auto;
 }
 
 #input
 {
-	margin-top: 7px;
 	font-size: 18px;
 	width:180px;
 	font-family: serif;
-	margin-left: 7px;
-	margin-right: 10px;
+	margin: 7px 10px 0px 7px;
 	float: left;
 }
 
@@ -857,9 +812,8 @@ Rent....
 	border-radius: 15px;
 	background-color:black;
 	color: white;
-	margin-top: 7px;
 	float: left;
-	margin-bottom: 10px;
+	margin: 7px 0px 10px 0px;
 }
 
 #search-btn::before
@@ -890,8 +844,7 @@ Rent....
 .rent-period
 {
 	height: 112px;
-	margin-top:10px;
-	margin-bottom: 60px;
+	margin: 10px 0px 60px 0px;
 }
 
 .rent-time
@@ -1011,9 +964,8 @@ Sell...
 	border-radius: 8px;
 	padding: 0.2em 0.2em;
 	box-sizing: border-box;
-	margin-left: 20px;
 	font-family: Proxima-Nova;
-	margin-bottom: 5px;
+	margin: 0px 0px 5px 20px;
 }
 
 #before-phone
@@ -1165,8 +1117,7 @@ Sell-nojs....
 .pure-form-stacked input[type=text],.pure-form-stacked input[type=password],.pure-form-stacked input[type=email],.pure-form-stacked input[type=url],.pure-form-stacked input[type=date],.pure-form-stacked input[type=month],.pure-form-stacked input[type=time],.pure-form-stacked input[type=datetime],.pure-form-stacked input[type=datetime-local],.pure-form-stacked input[type=week],.pure-form-stacked input[type=number],.pure-form-stacked input[type=search],.pure-form-stacked input[type=tel],.pure-form-stacked input[type=color],.pure-form-stacked select,.pure-form-stacked textarea
 {
 	display:block;
-	margin:0.35em 0;
-	margin-left: 0.3em;
+	margin:0.35em 0px 0px 0.3em;
 }
 .pure-form-stacked input:not([type])
 {
