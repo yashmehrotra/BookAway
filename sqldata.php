@@ -19,6 +19,8 @@
 	class Bookdata {
 		public $book_name;
 		public $book_author;
+		public $seller_name;
+		public $seller_phone;
 	}
 
 	$x = new Bookdata();
@@ -28,13 +30,19 @@
 	while($row = mysqli_fetch_array($book_data)) {
 
 		// array_push($bookname,$row['book']);
+		$x->book_id = $row['id'];
 		$x->book_name = $row['book'];
 		$x->book_author = $row['author'];
+		$x->seller_name = $row['name'];
+		$x->seller_phone = $row['phone'];
 		//array_push($y,$x);
 		//echo $x->book_name;
 		
-		$y[$i]['bookname']=$x->book_name;
-		$y[$i]['authorname']=$x->book_author;
+		$y[$i]['book_id']       = $x->book_id;
+		$y[$i]['book_name']     = $x->book_name;
+		$y[$i]['author_name']   = $x->book_author;
+		$y[$i]['seller_name']   = $x->seller_name;
+		$y[$i]['seller_phone']  = $x->seller_phone;
 		//echo $y;
 		//print_r($y);
 		$i=$i+1;
