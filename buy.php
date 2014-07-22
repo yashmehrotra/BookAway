@@ -1,3 +1,20 @@
+<?php
+function curPageURL() {
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $pageURL;
+}
+
+echo curPageURL();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,12 +93,12 @@
 	</div>
 	<div id="latest-outer">
 		<div class="latest-additions">
-		<h2>Some Latest Additions</h2>
+		<!-- <h2>Some Latest Additions</h2>
 		<a href="" class="book-link"><img src="" class="books" alt="book1"></a>
 		<a href="" class="book-link"><img src="" class="books" alt="book2"></a>
 		<a href="" class="book-link"><img src="" class="books" alt="book3"></a>
 		<a href="" class="book-link"><img src="" class="books" alt="book4"></a>
-		<a href="" class="book-link"><img src="" class="books" alt="book5"></a>
+		<a href="" class="book-link"><img src="" class="books" alt="book5"></a> -->
 		</div>
 	</div>
 	<div class="bottom-panel">

@@ -14,9 +14,10 @@ $.ajax({
 				//booklist_autocomplete.push(/*Correct Response*/);
 				//authorlist_autocomplete.push(/*Correct Response*/);
 				console.log(json[counter].bookname + " " + json[counter].authorname);
+				$('#latest-outer > .latest-additions').append("<span id='books-data' >"+json[counter].bookname + " " + json[counter].authorname+"</span><br>");
 				//console.log("2");
 				counter = counter +1;
 			}
 		}
 	}
-})
+});
