@@ -3,12 +3,9 @@ Books-for-bucks
 
 Recent Changes--
 
-1. Optimised Jquery code even further.
-2. Added the title "Show Password" to the ion-eye icon.
-(try hovering over the eye icon)
-3. Left some margin b/w the eye icon and the help icon.
-4. Removed the red star which was place after the select field "
-Both Sale and Rent".
-5. Created the ionicon folder in the Fonts folder and placed all the ionicon files in it.
-6. Corrected the path in the ionicons.css
-7. Removed the fonts folder from main.
+1. Font Size increased- top-panel-links
+2. Better styled errors in sell.php
+3. Increase Font size in about.php - .desc
+4. Correct top-panel.js file
+5. Include top-panel.js at the right position in every .php file (after including the jquery file in each)
+6. Resized pics of each member (appearing in about.php) 
