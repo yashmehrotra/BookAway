@@ -230,14 +230,14 @@ if( $a == 3 )
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
 		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="entry.php" method="POST" novalidate>
 			<div class="pure-g">
-				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error"></div> 
+				 <input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div> 
 				<br>
 
 				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email">
 				
 				<br>
 				
-				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error1"></div>   
+				 <input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error1"></div>   
 				
 				<br>
 				
@@ -275,6 +275,7 @@ if( $a == 3 )
 		</select>
 		<div id="error2"></div>
 		<br>
+		
 		
 		<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"><div id="error7"></div> 
 		<br>
