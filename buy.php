@@ -33,7 +33,7 @@ echo curPageURL();
 			<li class="top-opt"><a href="buy.php" class="top-panel-links" id="focus">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>

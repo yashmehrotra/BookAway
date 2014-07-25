@@ -15,21 +15,25 @@
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links" id="focus">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links" id="focus">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>
 	</div>
 	<div id="del-main-container">
 		<h2 id="delete-text">Delete</h2>
-	<div id="del-top-container">Enter the following details to remove the book you previously added!!</div>
 	<div id="del-main">
-	<form>
-	<div class="sub">User Name:	<input type="text" class="del-input" required></div>
-	<div class="sub">Book Title: <input type="text" class="del-input" required></div>
-	<div class="sub">Password:   <input type="password" class="del-input" required></div>
-	<div><input class="del-input" type="submit" value="Submit" id="submit"></div>
-	</form>
+		<div id="del-desc">
+			Not satisfied with the price, or want to edit some details about the book, or want to remove the book you added!!
+			<br><br>
+			Enter the following details:
+		</div>
+		<form id="del-form" class="pure-form pure-form-stacked">
+		<div class="sub"> <input type="text" class="del-input" placeholder="Email Address" required></div>
+		<div class="sub"> <input type="text" class="del-input" placeholder="Book ID" required></div>
+		<div class="sub"> <input type="password" class="del-input" placeholder="Password" required></div>
+		<div><input class="del-input" type="submit" value="Submit" id="submit"></div>
+		</form>
 	</div>
 	<div class="bottom-panel">
 		<ul class="bottom-panel-list">

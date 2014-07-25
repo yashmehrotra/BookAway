@@ -8,10 +8,11 @@ function move() {
 		var $wrapper = parseInt($('#wrapper').css('width'));
 		if($width < $wrapper)
 		{
-			$('#wrapper').css('left','-30px');	
+			$('#wrapper').css('display','none');
 		}
 		else
 		{
+			$('#wrapper').css('display','block');
 			$('#wrapper').css('left',0.46*($width - $wrapper));
 		}
 	}

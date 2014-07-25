@@ -21,6 +21,8 @@
 			var $count = 0;
 			var $f1 = false;
 			var $f2 = false;
+			var $f3 = false;
+			var $fcount = 0;
 
 			$('.pure-g').find('div').css("display","none");
 	
@@ -32,8 +34,24 @@
 				$flag = true;;
 				var $count = $count + 1;
 				$f1 = true;;
+				var $fcount = $fcount + 1;
 			}
-		
+			
+			var emval = $('#email').val(); 
+			var emat = emval.indexOf("@");
+			var emdot = emval.lastIndexOf(".");
+
+			if( emval == "" || emat < -1 || emdot - emat < 2 ||  emval.length - emdot <= 2 ) {
+				
+				$('#error4').html("Please provide a valid email address");
+				$('#email').focus() ;
+				$('#error4').css("display","inline-block");
+				$flag = true;;
+				var $count = $count + 1;
+				$f2 = true;;
+				var $fcount = $fcount + 1;
+			}
+
 			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
 				
 				$('#error1').html("Phone number must contain 10 digits");
@@ -41,7 +59,8 @@
 				$('#phone').focus() ;
 				$flag = true;;
 				var $count = $count + 1;
-				$f2 = true;;
+				$f3 = true;;
+				var $fcount = $fcount + 1;
 			}
 			if( $('#password').val() == "" || $('#password').val().length < 4 ) {
 				
@@ -147,26 +166,33 @@
 				$copy = $count;
 				$bcopy = $count;
 
-				if($f1 || $f2) {
+				if($fcount == 0) {
+				
+					$('#help-popup').css("top","176px") ;
+					$('#show-password').css("top","240px") ;
+					$('#help').css("top","240px") ;
+				}
+
+				if($fcount == 1) {
 					
 					$('#help-popup').css("top","213px") ;
 					$('#show-password').css("top","277px") ;
 					$('#help').css("top","277px") ;
 				}
 
-				if($f1 && $f2) {
+				if($fcount == 2) {
 					
 					$('#help-popup').css("top","250px") ;
 					$('#show-password').css("top","313px") ;
 					$('#help').css("top","313px") ;
 				}
 
-				if(!$f1 && !$f2) {
-				
-					$('#help-popup').css("top","176px") ;
-					$('#show-password').css("top","240px") ;
-					$('#help').css("top","240px") ;
-				}
+				if($fcount == 3) {
+
+					$('#help-popup').css("top","287px") ;
+					$('#show-password').css("top","350px") ;
+					$('#help').css("top","350px") ;
+				}	
 			}
 		});
 	});
@@ -240,9 +266,9 @@ if( $a == 3 )
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
 		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="entry.php" method="POST" novalidate>
 			<div class="pure-g">
-				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div> 
+				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div>
 				<br>
-				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email">
+				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error4"></div> 
 				<br>
 				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error1"></div>   
 				<br>
@@ -261,7 +287,6 @@ if( $a == 3 )
 					<option value="Music">Music</option>
 					<option value="Business">Business</option>
 					<option value="Miscellaneous">Miscellaneous</option>
-				</select><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>
 			<div id="error9"></div>
 			<br>
 			<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    

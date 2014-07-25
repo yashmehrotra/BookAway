@@ -7,9 +7,9 @@ Globals...
 
 body
 {
-	background-image: url('Images/edited-3.png');
-	opacity: 0.9;
+	background: url('Images/edited-3.png');
 	background-size: 1500px 2500px;
+	opacity: 0.9;
 	border:0;
 	padding: 0;
 	margin: 0 auto;
@@ -45,7 +45,7 @@ h1, h2, h3
 
 #wrapper
 {
-	width: 900px;
+	width: 875px;
 	height: 65px;
 	position: fixed;
 	left: 203px;
@@ -615,54 +615,70 @@ Delete....
 	text-align: center;
 }
 
-#del-top-container
+#del-main
 {
-	width: 800px;
-	height: 50px;
+	height: 500px;
+	width: inherit;480px;
+	font-size: 20px; 
+	text-align: left;
+	position: absolute;
+	top:55px;
+	left: -8px;
+	background-color: white;
+	padding: 10px 10px 0px 10px;
+}
+
+#del-form
+{
+	position: absolute;
+	top:205px;
+	height: 230px;
+	left: 250px;
+	width: 400px;inherit;
+}
+
+#del-desc
+{
+	width: inherit;800px;
+	height: 130px;
 	margin: auto;
-	margin-top: 150px;
 	font-size: 22px;
 	font-family: Bitter Regular;
 	text-align: center;
 	position: absolute;
-	top:-60px;
-	left: 70px;
+	left: 0px;
+	top:30px;
 	padding-top: 15px;
-}
-
-#del-main
-{
-	height: 250px;
-	width: 480px;
-	font-size: 20px; 
-	margin: auto;
-	margin-top:10px;
-	padding-left: 100px;
-	text-align: left;
-	position: absolute;
-	bottom:55px;
-	left: 190px;
 }
 
 .sub
 {
-	margin-top: 15px;
-	width: inherit;
-	line-height: 150%;
+	margin-bottom: 15px;
+	margin-left:90px;
+	width: 250px;
+	height: 40px;
+	line-height: 130%;
 }
 
 .del-input
 {
-	float: right;
-	margin-right: 100px;
+	display: block;
+	width: inherit;
+	height: inherit;
+	font-size: 14px;
 }
 
 #submit
 {
-	width: 90px;
+	width: 130px;
 	height: 40px;
-	font-size: 16px;
-	margin: 40px 205px 0px auto;
+	font-size: 18px;
+	margin: 35px 160px 0px;
+	background: #0078E7;
+	color: white;
+	border-width: 1px;
+    border-color: transparent;
+	border-radius: 10px;
 }
 
 /*
@@ -1065,8 +1081,9 @@ Sell...
 	height: 30px;
 	width: 470px;
 	font-size: 16px;
+	font-weight: bold;
 	margin-top:0px;
-	background-color: red;
+	background-color: #FF4D4D;red;
 	color: white;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
