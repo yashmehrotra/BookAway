@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>BooksforBucks | Buy | Sell | Rent | Books</title>
-	<meta name="Keywords" content="Books,JIIT,Buy,Sell,Rent,Bucks,Computers,Electronics,Mathematics,Literature,Novels,Physics,Music,Medical">
+	<meta name="Description" content="booksforbucks.com - Online portal for buying, selling and renting books">
+	<meta name="Keywords" content="books,jiit,buy,sell,rent,textbook,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
@@ -27,22 +28,21 @@
 	<div id="home-container">
 	<div class="buy-box">
 		<h1>BUY</h1>
-		<p class="home-desc">BUY books with references to both new as well as used ones</p><p class="home-desc">Search through the expanding database with the use of filters to make your search results more relevant</p>
+		<p class="home-desc">Search and buy.<br><br> Directly contact the seller through phone.</p>
 		<div  class="continue-buy"><a href="buy.php" class="buy-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
 	<div class="sell-box">
 		<h1>SELL</h1>
-		<p class="home-desc">SELLing as a 3 Step Process:</p>
+		<p class="home-desc">Add your books for selling or renting in 2 easy steps:</p>
 			<ol>
 				<li>Fill and submit a form with the complete details and contact info.</li><br>
-				<li>Verify yourself by giving a missed call to a sytem generated number.</li><br>
-				<li>Congratulations!! You have just added your book to be sold!!</li>
+				<li>Wait 24 hours for the book to be added to database and be available for buying or renting.</li><br>
 			</ol>
 			<div class="continue-sell"><a href="sell.php" class="sell-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
 	<div class="rent-box">
 		<h1>RENT</h1>
-		<p class="home-desc">Now books are available for RENTing too, thanks to this new feature!! </p>
+		<p class="home-desc">Don't want to buy books?<br>Rent them.<br><br>Pay as per week or month.</p>
 		<div class="continue-rent"><a href="rent.php" class="rent-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
 	<div class="bottom-panel">

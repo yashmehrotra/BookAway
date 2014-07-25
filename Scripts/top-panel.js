@@ -12,7 +12,6 @@ function move() {
 		}
 		else
 		{
-			$('#wrapper').css('display','block');
-			$('#wrapper').css('left',0.46*($width - $wrapper));
+			$('#wrapper').css({"display":"block","left":0.46*($width - $wrapper)});
 		}
 	}

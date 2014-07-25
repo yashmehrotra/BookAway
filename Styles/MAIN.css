@@ -107,9 +107,7 @@ h1, h2, h3
 	width: 100%;inherit;
 	height:40px;
 	margin-bottom: 0px;
-	border-top-style: solid;
-	border-width: 1px;
-	border-color: gray;
+	border-top: 1px solid gray;
 	text-align: center;
 }
 
@@ -201,7 +199,7 @@ h1
 .buy-box, .sell-box, .rent-box
 {
 	display: inline-block;
-	height: 450px;
+	height: 440px;
 	width: 280px;
 	position: relative;
 	color: white;
@@ -209,9 +207,7 @@ h1
 	box-shadow: 9px 9px 5px black;
 	top: 0px;
 	padding: 20px;
-	border-style: solid;double;groove;inset;ridge;outset;
-	border-width: 2px;
-	border-color: white;
+	border: 2px solid white;
 	text-align: center;
 	margin: 0px 20px 50px 20px;
 	line-height: 180%;
@@ -263,10 +259,8 @@ ol
 	padding: 12px;
 	text-decoration: none;
 	font-size: 18px;
-	border-style: solid;
-	border-color: white;
+	border: 2px solid white;
 	border-radius: 15px;
-	border-width: 2px;
 }
 
 .buy-link:hover, .sell-link:hover, .rent-link:hover
@@ -318,16 +312,14 @@ About..
 {
 	height: 160px;
 	width: 160px;
-	border-style: solid;
-	border-color: transparent;
+	border: solid transparent;
 	border-radius: 100px;
 }
 
 #c1,#c2,#c3
 {
 	height: 300px;
-	border-style: ridge;
-	border-width: 2px;
+	border: 2px ridge;
 	padding:20px 20px 40px 20px;
 	float: left;
 	width: 220px;
@@ -417,9 +409,7 @@ Buy..
 .buy-left-panel
 {
 	float: left;
-	border-style: solid;ridge;
-	border-width: 1px;
-	border-color: gray;
+	border: 1px solid gray;
 	width: 320px;
 	height: 450px;
 	background-color: white;
@@ -455,8 +445,7 @@ Buy..
 	font-size: 15px;
 	width:100px;
 	height:32px;
-	border-style: outset;
-	border-width: 1px;
+	border: 1px outset;
 	border-radius: 15px;
 	background-color:black;
 	color: white;
@@ -504,9 +493,7 @@ Buy..
 {
 	width: 282px;
 	height: 45px;
-	border-color: black;
-	border-width: 1px;
-	border-style: solid;
+	border: 1px solid black;
 	background-color: white;
 	position: relative;
 	font-size: 19px;
@@ -544,8 +531,7 @@ Buy..
 	width: 140px;
 	float: left;
 	margin-left: 20px;
-	border-style: solid;
-	border-width: 1px;
+	border:1px solid;
 	border-collapse: collapse;
 	text-align: left;
 	padding-left: 10px;
@@ -653,8 +639,7 @@ Delete....
 
 .sub
 {
-	margin-bottom: 15px;
-	margin-left:90px;
+	margin: 0px 0px 15px 90px;
 	width: 250px;
 	height: 40px;
 	line-height: 130%;
@@ -750,9 +735,7 @@ Entry...
 	font-family: monospace;
 	text-decoration: none;
 	padding:10px;
-	border-style: inset;
-	border-color: transparent;
-	border-width: 2px;
+	border: 2px inset transparent;
 	background-color: #75A3FF;
 	color: white;
 	border-radius: 10px;
@@ -793,9 +776,7 @@ Rent....
 {
 	margin-left: 0;
 	float: left;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
+	border: 1px solid black;
 	width: 320px;
 	height: 355px;
 	background-color: white;
@@ -823,8 +804,7 @@ Rent....
 	font-size: 15px;
 	width:100px;
 	height:32px;
-	border-style: outset;
-	border-width: 1px;
+	border: 1px outset;
 	border-radius: 15px;
 	background-color:black;
 	color: white;
@@ -869,8 +849,7 @@ Rent....
 	width: 130px;
 	float: left;
 	margin-left: 20px;
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid;
 	border-collapse: collapse;
 	text-align: left;
 	padding-left: 10px;
@@ -915,9 +894,7 @@ Sell...
 	top: 60px;
 	margin: 0 auto;
 	background-color: white;
-	border-style: solid;
-	border-width: 1px;
-	border-color: gray;
+	border: 1px solid gray;
 	border-radius: 10px;
 	margin-bottom: 250px;
 }
@@ -1021,8 +998,7 @@ Sell...
 	height: 40px;
 	width: 380px;
 	box-shadow: 1px 1px 1px black;
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid;
 	position: absolute;
 	left: -100px;
 	top:170px;
@@ -1085,8 +1061,7 @@ Sell...
 	margin-top:0px;
 	background-color: #FF4D4D;red;
 	color: white;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+	border-radius: 0px 10px 0px 10px;
 	padding-left: 5px;
 	display: none;
 	font-family: 'Courier' , monospace;
@@ -1097,7 +1072,6 @@ Sell...
 	color: white;
     border-width: 1px;
     border-color: transparent;
-    /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);*/
     background: #0078E7;#45C463;#6ED186;
     font-size: 105%;
     left:80px;180px;
