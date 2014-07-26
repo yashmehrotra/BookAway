@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Contact Us</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
@@ -14,7 +15,7 @@
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>
@@ -30,7 +31,7 @@
 		</ul>
 	</div>
 		<div id="co-developed">
-			<code>Copyright</code><code>2014 .All Rights Reserved. Website co-developed by Avijit Gupta and Yash Mehrotra</code>
+			<code>Copyright</code><code>2014 .All Rights Reserved. Booksforbucks.com</code>
 		</div>	
 </div>
 </body>

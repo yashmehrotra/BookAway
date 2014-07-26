@@ -4,200 +4,255 @@
 	<title>Sell Books | BooksforBucks.com</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript">
-	setInterval ( "hide()", 100 );
+	
+	$copy = 0; 
+	$bcopy = 0;
+	
+	$(document).ready(function () {
+		
+		$('#myform').submit(function(fr){
+			var $height = $('#sell-container').css('height');
+			var $bheight = $('#new-button').css('bottom');
+			var $flag = false;
+			var $count = 0;
+			var $f1 = false;
+			var $f2 = false;
+			var $f3 = false;
+			var $fcount = 0;
 
-	function validate()		{
-		var node = document.getElementById('error');
-		var node2 = document.getElementById('error2');
-		var node3 = document.getElementById('error3');
-		var node4 = document.getElementById('error4');
-		var node5 = document.getElementById('error5');
-		var node6 = document.getElementById('error6');
-		var node7 = document.getElementById('error7');
-		var node8 = document.getElementById('error8');
+			$('.pure-g').find('div').css("display","none");
+	
+			if( $('#name').val() == "" || $('#name').val().length < 2) {
+				
+				$('#error').html("Please provide your name");
+				$('#name').focus() ;
+				$('#error').css("display","inline-block");
+				$flag = true;;
+				var $count = $count + 1;
+				$f1 = true;;
+				var $fcount = $fcount + 1;
+			}
+			
+			var emval = $('#email').val(); 
+			var emat = emval.indexOf("@");
+			var emdot = emval.lastIndexOf(".");
 
-		while (node.hasChildNodes()) {
-			node.removeChild(node.firstChild);
-		}
-		while (node2.hasChildNodes()) {
-			node2.removeChild(node2.firstChild);
-		}
-		while (node3.hasChildNodes()) {
-			node3.removeChild(node3.firstChild);
-		}
-		while (node4.hasChildNodes()) {
-			node4.removeChild(node4.firstChild);
-		}
-		while (node5.hasChildNodes()) {
-			node5.removeChild(node5.firstChild);
-		}
-		while (node6.hasChildNodes()) {
-			node6.removeChild(node6.firstChild);
-		}
-		while (node7.hasChildNodes()) {
-			node7.removeChild(node7.firstChild);
-		}
-		while (node8.hasChildNodes()) {
-			node8.removeChild(node8.firstChild);
-		}
+			if( emval == "" || emat < -1 || emdot - emat < 2 ||  emval.length - emdot <= 2 ) {
+				
+				$('#error4').html("Please provide a valid email address");
+				$('#email').focus() ;
+				$('#error4').css("display","inline-block");
+				$flag = true;;
+				var $count = $count + 1;
+				$f2 = true;;
+				var $fcount = $fcount + 1;
+			}
 
-		var flag = false;
+			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
+				
+				$('#error1').html("Phone number must contain 10 digits");
+				$('#error1').css("display","inline-block");
+				$('#phone').focus() ;
+				$flag = true;;
+				var $count = $count + 1;
+				$f3 = true;;
+				var $fcount = $fcount + 1;
+			}
+			if( $('#password').val() == "" || $('#password').val().length < 4 ) {
+				
+				$('#error3').html("Password must contain at least 4 characters");
+				$('#error3').css("display","inline-block");
+				$('#password').focus() ;
+				$flag = true;;
+				var $count = $count + 1;
+			}
 
-		if( document.myform.name.value == "" || document.myform.name.value.length < 2)
-		{
-			document.getElementById('error').innerHTML = "Please provide your name" ;
-			document.myform.name.focus() ;
-			document.getElementById('error').style.display="inline-block";
-			flag = true;;
-		}
-		if( document.myform.phone.value == ""  || document.myform.phone.value.length != 11 || isNaN(document.myform.phone.value)||document.myform.phone.value.indexOf(" ")!=-1)
-		{
-			document.getElementById('error2').innerHTML = "Phone number must start with 0 and contain 11 digits" ;
-			document.getElementById('error2').style.display="inline-block";
-			document.myform.phone.focus() ;
-			flag = true;;
-		}
-		if( document.myform.password.value == "" || document.myform.password.value.length < 4 )
-		{
-			document.getElementById('error3').innerHTML = "Password must contain at least 4 characters" ;
-			document.getElementById('error3').style.display="inline-block";
-			document.myform.password.focus() ;
-			flag = true;;
-		}
-		if(document.myform.password.value != document.myform.password1.value)
-		{
-			document.getElementById('error4').innerHTML = "The passwords do not match" ;
-			document.getElementById('error4').style.display="inline-block";
-			document.myform.password1.focus() ;
-			flag = true;;
-		}
-	/*var e = document.myform.subject;
-	strUser = e.options[e.selectedIndex].value;
-	if( strUser == "" )
-	{
-		alert( "Please select the subject!" );
-		document.myform.subject.focus() ;
-		flag = true;;
-	}
- 	if( document.myform.book.value == "" )
-   {
-     document.getElementById('error5').innerHTML = "Please provide a name" ;
-     document.getElementById('error5').style.display="inline-block";
-     document.myform.book.focus() ;
-     flag = true;;
- }*/
- if(document.myform.book.value == "" )
- {
- 	document.getElementById('error5').innerHTML = "Please provide the name of the book" ;
- 	document.getElementById('error5').style.display="inline-block";
- 	document.myform.book.focus() ;
- 	flag = true;;
- }
- if( document.myform.author.value == "" )
- {
- 	document.getElementById('error6').innerHTML = "Please provide the name of the author" ;
- 	document.getElementById('error6').style.display="inline-block";
- 	document.myform.author.focus() ;
- 	flag = true;;
- }
- var e = document.myform.sellrent;
- strUser = e.options[e.selectedIndex].value;
- if( strUser == 1 )
- {
- 	if( document.myform.sellprice.value == "" )
- 	{
- 		document.getElementById('error7').innerHTML = "Please provide the sale price" ;
- 		document.getElementById('error7').style.display="inline-block";
- 		document.myform.sellprice.focus();
- 		flag = true;;
- 	}
- }
- if( strUser == 2 )
- {	
- 	if( document.myform.rentprice.value == "" )
- 	{
- 		document.getElementById('error8').innerHTML = "Please provide rent price" ;
- 		document.getElementById('error8').style.display="inline-block";
- 		document.myform.rentprice.focus();
- 		flag = true;;
- 	}
-		/*var e = document.myform.rentpricetime;
-		strUser1 = e.options[e.selectedIndex].value;
-		if( strUser1 == "" )
-		{
-			document.getElementById('error8').innerHTML = "Please provide the time for the  ." ;
-     		document.getElementById('error8').style.display="inline-block";
-			document.myform.rentpricetime.focus() ;
-			flag = true;;
-		}
-		if( document.myform.rentperiodnumber.value == "" )
-		{
-			alert( "Please enter the number of weeks/months to rent the book!" );
-			document.myform.rentperiodnumber.focus();
-			flag = true;;
-		}
-		var e = document.myform.rentperiod;
-		strUser2 = e.options[e.selectedIndex].value;
-		if( strUser2 == "" )
-		{
-			alert( "Please enter the time for the renting the book!" );
-			document.myform.rentperiod.focus() ;
-			flag = true;;
-		}*/
-	}
-	if( strUser == 3 )
-	{
-		if( document.myform.sellprice.value == "" )
-		{
-			document.getElementById('error7').innerHTML = "Please provide the sale price" ;
-			document.getElementById('error7').style.display="inline-block";
-			document.myform.sellprice.focus();
-			flag = true;;
-		}
+			strUser = $('#subject').val();
+			
+			if( strUser == "" ) {
+				
+				$('#error9').html("Please select the subject");
+				$('#error9').css("display","inline-block");
+				$('#subject').focus() ;
+				$flag = true;;
+				var $count = $count + 1;
+			}
 
-		if( document.myform.rentprice.value == "" )
-		{
-			document.getElementById('error8').innerHTML = "Please provide the rent price" ;
-			document.getElementById('error8').style.display="inline-block";
-			document.myform.rentprice.focus();
-			flag = true;;
-		}
-	}
-	if(flag)	{
-		return false;
-	}
-	else 	{
-		return( true );
-	}
-}
+ 			if($('#book').val() == "" ) {
+ 	
+				$('#error5').html("Please provide the name of the book");
+				$('#error5').css("display","inline-block");
+				$('#book').focus() ;
+				$flag = true;;
+				var $count = $count + 1;
+		 	}
 
-function hide()	{
-	var e = document.myform.sellrent;
-	strUser = e.options[e.selectedIndex].value;
-	if(strUser == 1)
-	{
-		document.myform.rentprice.style.display="none";
-		document.myform.rentpricetime.style.display="none";
-		document.myform.sellprice.style.display="block";
-	}
-	if(strUser == 2)
-	{
-		document.myform.sellprice.style.display="none";
-		document.myform.rentprice.style.display="block";
-		document.myform.rentpricetime.style.display="block";
-	}
-	if(strUser == 3)
-	{
-		document.myform.rentprice.style.display="block";
-		document.myform.rentpricetime.style.display="block";
-		document.myform.sellprice.style.display="block";
-	}
-}
+ 			if( $('#author').val() == "" ) {
+ 	
+				$('#error6').html("Please provide the name of the author");
+				$('#error6').css("display","inline-block");
+				$('#author').focus() ;
+				$flag = true;;
+				var $count = $count + 1;
+			}
+
+			var $b = $('#sell-rent option:selected').val();
+
+			if( $b == 1 ) {
+				if( $('#s-cost').val() == "" ) {
+					
+					$('#error7').html("Please provide the sale price");
+					$('#error7').css("display","inline-block");
+					$('#s-cost').focus();
+					$flag = true;;
+					var $count = $count + 1;
+				}
+			}
+
+			if( $b == 2 ) {	
+				if( $('#r-cost').val() == "" ) {
+					
+					$('#error8').html("Please provide rent price");
+					$('#error8').css("display","inline-block");
+					$('#r-cost').focus();
+					$flag = true;;
+					var $count = $count + 1;
+				}
+			}
+
+			if( $b == 3 ) {
+				if( $('#s-cost').val() == "" ) {
+				
+					$('#error7').html("Please provide the sale price");
+					$('#error7').css("display","inline-block");
+					$('#s-cost').focus();
+					$flag = true;;
+					var $count = $count + 1;
+				}
+
+				if( $('#r-cost').val() == "" ) {
+				
+					$('#error8').html("Please provide the rent price");
+					$('#error8').css("display","inline-block");
+					$('#r-cost').focus();
+					$flag = true;;
+					var $count = $count + 1;
+				}
+			}
+
+			if($flag) {
+				
+				fr.preventDefault();
+				var $c = $count - $copy;
+				var $newheight = parseInt($height) + 35*$c ;
+				var $change = $newheight + 'px' ;
+
+				$('#sell-container').css({
+					"height" : $change
+				});
+
+				var $c = $count - $bcopy;
+				var $bnewheight = parseInt($bheight) - 35*$c ;
+				var $bchange = $bnewheight + 'px' ;
+
+				$('#new-button').css({
+					"bottom" : $bchange
+				});
+		
+				$copy = $count;
+				$bcopy = $count;
+
+				if($fcount == 0) {
+				
+					$('#help-popup').css("top","176px") ;
+					$('#show-password').css("top","240px") ;
+					$('#help').css("top","240px") ;
+				}
+
+				if($fcount == 1) {
+					
+					$('#help-popup').css("top","213px") ;
+					$('#show-password').css("top","277px") ;
+					$('#help').css("top","277px") ;
+				}
+
+				if($fcount == 2) {
+					
+					$('#help-popup').css("top","250px") ;
+					$('#show-password').css("top","313px") ;
+					$('#help').css("top","313px") ;
+				}
+
+				if($fcount == 3) {
+
+					$('#help-popup').css("top","287px") ;
+					$('#show-password').css("top","350px") ;
+					$('#help').css("top","350px") ;
+				}	
+			}
+		});
+	});
+
+	$( document ).ready( function () {
+
+		var click_password = 0;
+		$("#myform>.pure-g>#show-password").click(function () {
+			
+			if(click_password === 0) {
+				var password = $("#password").val()
+				$("#password").attr("type","text");
+				$("#password").text(password);
+				click_password = 1;
+			}
+			else {
+				$("#password").attr("type","password");
+				click_password = 0;
+			}
+		});
+	});	 
 </script>
+
+<script>
+		$(function () {
+		$('#help').on(' mouseenter mouseleave', function () {
+			$('#help-popup').fadeToggle('300');
+		});
+	});
+</script>
+<script>
+  $(function () {
+  	setInterval(function() {
+  	var $a =  $('#sell-rent option:selected').val();
+if( $a == 1 )
+		{
+			$('#r-cost').slideUp(300);
+			$('#rent-price').slideUp(300);
+			$('#s-cost').slideDown(300);
+			$flag = true;
+		}
+if( $a == 2 )
+	{
+		$('#s-cost').slideUp(300);
+		$('#r-cost').slideDown(300);
+		$('#rent-price').slideDown(300);
+		$flag = true;
+	}
+if( $a == 3 )
+	{
+		$('#s-cost').slideDown(300);
+		$('#r-cost').slideDown(300);
+		$('#rent-price').slideDown(300);
+		$flag = true;
+	}
+			}, 100);
+  });
+
+  </script>
+
 </head>
 <body>
 	<div id="sell-main-head">
@@ -207,52 +262,55 @@ function hide()	{
 		<div id="step-1">
 			<h3 id="step-1-text"><u>Step 1:</u> Fill out and submit the form below with your complete details</h3>
 		</div>
-		<div id="sell-form">
-			<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
-			<form name="myform" novalidate action="entry.php" method="POST" onsubmit="return validate();">
-				Name:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<div id="error"></div>      <input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required>
+	<div id="sell-form">
+		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
+		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="entry.php" method="POST" novalidate>
+			<div class="pure-g">
+				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div>
 				<br>
-				E-mail:<input type="email" name="email" id="email" class="sell-input" autocomplete="on">
+				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error4"></div> 
 				<br>
-				Mobile Number:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error2"></div>   <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="0XXXXXXXXXX" required>
-				<br>	
-				Password:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error3"></div>  <input type="password" name="password" class="sell-input" placeholder="at least 4 characters" required>
+				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error1"></div>   
 				<br>
-				Confirm Password:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <div id="error4"></div>	<input type="password" name="password1" class="sell-input" required onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
+				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>
 				<br>
-				Subject:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <select name="subject" id="subject" class="sell-input" required>
-				<option value="All" selected>All</option>
-				<option value="Computers">Computers</option>
-				<option value="Electronics">Electronics</option>
-				<option value="Maths">Maths</option>
-				<option value="Literature">Literature</option>
-				<option value="Physics">Physics</option>
-				<option value="Medical">Medical</option>
-				<option value="Law">Law</option>
-				<option value="Music">Music</option>
-				<option value="Business">Business</option>
-				<option value="Miscellaneous">Miscellaneous</option>
-
+				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
+				<select name="subject" id="subject" class="sell-input" required>
+					<option value="All">All</option>
+					<option value="Computers">Computers</option>
+					<option value="Electronics">Electronics</option>
+					<option value="Maths">Maths</option>
+					<option value="Literature">Literature</option>
+					<option value="Physics">Physics</option>
+					<option value="Medical">Medical</option>
+					<option value="Law">Law</option>
+					<option value="Music">Music</option>
+					<option value="Business">Business</option>
+					<option value="Miscellaneous">Miscellaneous</option>
+			<div id="error9"></div>
+			<br>
+			<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
+			<br>
+			<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
+			<br>
+			<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
+			<select name="sellrent" id="sell-rent" class="sell-input">
+				<option value="3" selected>Both Sale and Rent</option>
+				<option value="1">Sale</option>
+				<option value="2">Rent</option>
 			</select>
+			<div id="error2"></div>
 			<br>
-			Book Title:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    <input type="text" name="book" class="sell-input" autocomplete="on" required>
+			<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"><div id="error7"></div> 
 			<br>
-			Author:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  <input type="text" name="author" class="sell-input" autocomplete="on" required>
-			<br>
-			The book is for:<p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>	<select name="sellrent" id="sell-rent" class="sell-input" required>
-			<option value="3" selected>Both Sale and Rent</option>
-			<option value="1">Sale Only</option>
-			<option value="2">Rent Only</option>
-		</select>
-		<br>
-		Sale Cost(INR): <div id="error7"></div> <input type="number" min="0" name="sellprice" class="sell-input" id="s-cost">
-		<br>
-		Rent Cost(INR): <div id="error8"></div> <input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on">
-		<select name="rentpricetime" id="rent-price" class="sell-input">
-			<option value="week">per Week</option>
-			<option value="month">per Month</option>
-		</select>
-		<br><br>
+			<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
+			<select name="rentpricetime" id="rent-price" class="sell-input">
+				<option value="week">per Week</option>
+				<option value="month">per Month</option>
+			</select>
+			<div id="error8"></div> 
+			<br><br>
+			</div>
 		<button class="button-success pure-button" id = "new-button">Submit</button>
 	</form>
 </div>

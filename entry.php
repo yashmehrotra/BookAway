@@ -11,6 +11,7 @@
 	$sell_price  = $_POST['sellprice'];
 	$rent_price  = $_POST['rentprice'];
 	$rent_time   = $_POST['rentpricetime'];
+	$rent_period = $_POST['rentperiod'];
 
 	echo "<br>";
 	echo $name;
@@ -46,13 +47,15 @@
 	$database_connection=mysqli_connect("localhost","root","44rrff","bfb");
 
 	//Check connection
-	if (mysqli_connect_errno()) {
+	if (mysqli_connect_errno()) 
+	{
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-	else {
+	else
+	{
 		echo "epic";
 	}
-
+	
 	$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time')";
 	mysqli_query($database_connection,$query);
 	echo "added";
@@ -65,6 +68,7 @@
 	<title>Books for Bucks</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
@@ -75,7 +79,7 @@
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links" id="focus">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>

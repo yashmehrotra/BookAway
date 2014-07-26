@@ -1,11 +1,27 @@
+<?php
+function curPageURL() {
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $pageURL;
+}
+
+echo curPageURL();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>BooksforBucks- Buy, Sell, Rent Books!!</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
 </head>
@@ -17,7 +33,7 @@
 			<li class="top-opt"><a href="buy.php" class="top-panel-links" id="focus">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>
@@ -77,12 +93,12 @@
 	</div>
 	<div id="latest-outer">
 		<div class="latest-additions">
-		<h2>Some Latest Additions</h2>
+		<!-- <h2>Some Latest Additions</h2>
 		<a href="" class="book-link"><img src="" class="books" alt="book1"></a>
 		<a href="" class="book-link"><img src="" class="books" alt="book2"></a>
 		<a href="" class="book-link"><img src="" class="books" alt="book3"></a>
 		<a href="" class="book-link"><img src="" class="books" alt="book4"></a>
-		<a href="" class="book-link"><img src="" class="books" alt="book5"></a>
+		<a href="" class="book-link"><img src="" class="books" alt="book5"></a> -->
 		</div>
 	</div>
 	<div class="bottom-panel">
@@ -93,7 +109,7 @@
 		</ul>
 	</div>
 		<div id="co-developed">
-			<code>Copyright2014. All Rights Reserved. Booksforbucks.com</code>
+			<code>Copyright2014</code><code>.All Rights Reserved. Booksforbucks.com</code>
 		</div>
 	</div>
 </body>

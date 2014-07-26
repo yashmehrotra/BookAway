@@ -4,17 +4,18 @@
 	<title>Rent Books | BooksforBucks.com</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
 	<div id="wrapper">
 	<div class="top-panel">
 		<ul class="top-panel-list">
-			<li class="top-opt"><div class="top-divs"><a href="althomepage.php" class="top-panel-links">Home</a></div></li>
+			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links" id="focus">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>
@@ -77,7 +78,7 @@
 	</div>
 	<div class="bottom-panel">
 		<ul class="bottom-panel-list">
-			<li class="home-about-contact"><a href="althomepage.php" class="bottom-links">Home</a></li>
+			<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>
 			<li class="home-about-contact"><a href="about.php" class="bottom-links">About</a></li>
 			<li class="home-about-contact"><a href="contact.php" class="bottom-links">Contact</a></li>
 		</ul>
