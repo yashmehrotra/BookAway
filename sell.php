@@ -214,44 +214,44 @@
 			}
 		});
 	});	 
-</script>
 
-<script>
-		$(function () {
+	$(function () {
 		$('#help').on(' mouseenter mouseleave', function () {
 			$('#help-popup').fadeToggle('300');
 		});
 	});
-</script>
-<script>
-  $(function () {
-  	setInterval(function() {
-  	var $a =  $('#sell-rent option:selected').val();
-if( $a == 1 )
-		{
-			$('#r-cost').slideUp(300);
-			$('#rent-price').slideUp(300);
-			$('#s-cost').slideDown(300);
-			$flag = true;
-		}
-if( $a == 2 )
-	{
-		$('#s-cost').slideUp(300);
-		$('#r-cost').slideDown(300);
-		$('#rent-price').slideDown(300);
-		$flag = true;
-	}
-if( $a == 3 )
-	{
-		$('#s-cost').slideDown(300);
-		$('#r-cost').slideDown(300);
-		$('#rent-price').slideDown(300);
-		$flag = true;
-	}
-			}, 100);
-  });
+	
+	$(function () {
+		setInterval(function() {
+			var $a =  $('#sell-rent option:selected').val();
+			if( $a == 1 ) {
+				
+				$('#r-cost').slideUp(300);
+				$('#rent-price').slideUp(300);
+				$('#s-cost').slideDown(300);
+				$flag = true;
+			}
 
-  </script>
+			if( $a == 2 ) {
+				
+				$('#s-cost').slideUp(300);
+				$('#r-cost').slideDown(300);
+				$('#rent-price').slideDown(300);
+				$flag = true;
+			}
+			
+			if( $a == 3 ) {
+				
+				$('#s-cost').slideDown(300);
+				$('#r-cost').slideDown(300);
+				$('#rent-price').slideDown(300);
+				$flag = true;
+			}
+
+		}, 100);
+	});
+
+	</script>
 
 </head>
 <body>
