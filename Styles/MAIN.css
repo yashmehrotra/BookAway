@@ -157,9 +157,9 @@ h1, h2, h3
 /*
 Different for different pages...
 */
-/*
-Homepage
-*/
+
+
+/********************  INDEX.PHP   ************************/
 
 
 #home-main-head
@@ -284,9 +284,7 @@ ol
 }
 
 
-/*
-About..
-*/
+/********************    ABOUT     ************************/
 
 
 
@@ -558,9 +556,7 @@ Buy..
 }
 
 
-/*
-Contact Us...
-*/
+/*********************  CONTACT US  ***********************/
 
 
 #contact-container
@@ -579,9 +575,7 @@ Contact Us...
 }
 
 
-/*
-Delete....
-*/
+/********************  DEL.PHP  ************************/
 
 
 #del-main-container
@@ -666,10 +660,7 @@ Delete....
 	border-radius: 10px;
 }
 
-/*
-Entry...
-*/
-
+/********************  ENTRY.PHP  ************************/
 
 #step-2-text
 {
@@ -749,10 +740,7 @@ Entry...
 }
 
 
-/*
-Rent....
-*/
-
+/******************  RENT.PHP   **************************/
 
 #rent-container
 {
@@ -879,12 +867,7 @@ Rent....
 	top:10px;
 }
 
-
-/*
-Sell...
-*/
-
-
+/*******************  SELL.PHP   *************************/
 
 #sell-container
 {
@@ -1089,9 +1072,7 @@ Sell...
 }
 
 
-/*
-Sell-nojs....
-*/
+/********************SELL NO JS************************/
 
 #sell-nojs-container
 {
@@ -1103,7 +1084,7 @@ Sell-nojs....
 	padding: 50px;
 }
 
-
+/**********************PURE-MIN CSS**********************/
 
 .pure-form-stacked input[type=text],.pure-form-stacked input[type=password],.pure-form-stacked input[type=email],.pure-form-stacked input[type=url],.pure-form-stacked input[type=date],.pure-form-stacked input[type=month],.pure-form-stacked input[type=time],.pure-form-stacked input[type=datetime],.pure-form-stacked input[type=datetime-local],.pure-form-stacked input[type=week],.pure-form-stacked input[type=number],.pure-form-stacked input[type=search],.pure-form-stacked input[type=tel],.pure-form-stacked input[type=color],.pure-form-stacked select,.pure-form-stacked textarea
 {

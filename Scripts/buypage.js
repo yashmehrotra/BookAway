@@ -33,7 +33,7 @@ function book_data_display () {
 	
 	$.ajax({
 		type: "GET",
-		url: "/Books-for-bucks/sqldata.php",
+		url: "sqldata.php", //Make sure URL Doesnt cause problem in future
 		success: function (result) {
 			if(result) {
 				var counter = 0;
@@ -41,11 +41,17 @@ function book_data_display () {
 				while(json[counter]) {
 					//booklist_autocomplete.push(/*Correct Response*/);
 					//authorlist_autocomplete.push(/*Correct Response*/);
+					console.log(json);
 					console.log(json[counter].book_name + " " + json[counter].author_name);
-					$('#latest-outer > .latest-additions').append("<div class='books-data' id='books-data-"+json[counter].book_id+"' >"+json[counter].book_name + " " + json[counter].author_name+"</div>");
-					$('#latest-outer > .latest-additions').append("<div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:none;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
+					if(json[counter].sell_rent !="2") {
+						$('#latest-outer > .latest-additions').append("<div class='books-data' id='books-data-"+json[counter].book_id+"' >"+json[counter].book_name + " " + json[counter].author_name+"</div>");
+						$('#latest-outer > .latest-additions').append("<div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:none;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
 					//console.log("2");
-					counter = counter +1;
+						counter = counter +1;
+					}
+					else{
+						counter = counter +1;
+					}
 				}
 			}
 		}
