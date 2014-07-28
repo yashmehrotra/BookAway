@@ -55,15 +55,28 @@
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);
-						//console.log(response);
+						console.log(response);
 						console.log(response['status']);
 						if(response['status'] == 'success') {
 							console.log('correct');
+							
 							$('#del-main').css('display','none');
 							$('#edit-form').css('display','block');
+							
+							$('#name').attr('value',response['seller_name']);
+							$('#email-form').attr('value',response['seller_email']);
+							$('#phone').attr('value',response['seller_phone']);
+							$('#subject').attr('value',response['subject']);
+							$('#book').attr('value',response['book_name']);
+							$('#author').attr('value',response['author']);
+							$('#sell-rent').attr('value',response['sell_rent']);
+							$('#s-cost').attr('value',response['sell_price']);
+							$('#r-cost').attr('value',response['rent_price']);
+							$('#rent-price').attr('value',response['rent_time']);
 						}
 						else {
 							console.log('wrong');
+							//Add error message here that Email, id or password is wrong
 						}
 					}
 					else {
@@ -81,7 +94,7 @@
 			$.ajax({
 				type: "POST",
 				url: "sqldata.php",
-				data: {'user_id':user_id, 'user_email':user_email, 'user_password':user_password , 'source':'edit' },
+				data: {'user_id':user_id, 'user_email':user_email, 'user_password':user_password , 'source':'delete' },
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);
@@ -130,12 +143,12 @@
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required disabled>
 				<br>
-				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email" required disabled>
+				<input type="email" name="email" id="email-form" class="sell-input" autocomplete="on" placeholder="Email" required disabled>
 				<br>
 				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required>  
 				<br>
-				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required disabled>
-				<br>
+				<!-- <input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required disabled>
+				<br> -->
 				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
 				<select name="subject" id="subject" class="sell-input" required>
 					<option value="All">All</option>

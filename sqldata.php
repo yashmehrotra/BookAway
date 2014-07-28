@@ -25,7 +25,16 @@
 
 	// 		//Give all the data back
 			$response['status'] = 'success';
-			$response['name']   = $row['name'];
+			$response['seller_name']   = $row['name'];
+			$response['seller_email']  = $row['email'];
+			$response['seller_phone']  = $row['phone'];
+			$response['subject']       = $row['subject'];
+			$response['book_name']     = $row['book'];
+			$response['author']        = $row['author'];
+			$response['sell_rent']     = $row['sell_rent'];
+			$response['sell_price']    = $row['sell_price'];
+			$response['rent_price']    = $row['rent_price'];
+			$response['rent_time']     = $row['rent_price'];
 	// 		//Then through ajax , head it towards different file
 	// 		//Where user can edit all of them
 		}
@@ -40,6 +49,27 @@
 		echo $response;
 	}
 
+	elseif ($source == 'edit_book') {
+
+		$new_phone = $_POST['phone'];
+		$new_subject = $_POST['subject'];
+		$new_book = $_POST['book'];
+		$new_author = $_POST['author'];
+		$new_sellrent = $_POST['sellrent'];
+		$new_sellprice = $_POST['sellprice'];
+		$new_rentprice = $_POST['rentprice'];
+		$new_renttime = $_POST['rentpricetime'];
+
+		$query = ""; //Set it for update
+		mysqli_query($database_connection,$query);
+		mysqli_close($database_connection);
+
+		$response = array();
+		$response['status'] = 'success';
+		$response = json_encode($response);
+
+		echo $response;
+	}
 	elseif ($source == 'delete') {
 
 		$delete_seller_id = $_POST[''];

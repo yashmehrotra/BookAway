@@ -11,7 +11,6 @@
 	$sell_price  = $_POST['sellprice'];
 	$rent_price  = $_POST['rentprice'];
 	$rent_time   = $_POST['rentpricetime'];
-	$rent_period = $_POST['rentperiod'];
 
 	echo "<br>";
 	echo $name;
