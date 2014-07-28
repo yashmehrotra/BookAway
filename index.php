@@ -24,7 +24,7 @@
 	</div>
 	</div>
 	<div id="home-main-head">
-	<h1 class="head">Welcome to BooksforBucks.com</h1>
+	<h1 class="head">Welcome to rebuse.com</h1>
 	</div>
 	<div id="home-container">
 	<div class="box" id="buy-box">
