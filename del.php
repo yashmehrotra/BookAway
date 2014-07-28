@@ -49,6 +49,8 @@
 			var user_id = $('#bookid').val();
 			var user_email = $('#email').val();
 			var user_password = $('#password').val();
+			console.log("hi");
+			console.log(user_email);
 			$.ajax({
 				type: "POST",
 				url: "sqldata.php",
@@ -56,7 +58,14 @@
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);
-						console.log(response);
+						//console.log(response);
+						console.log(response['status']);
+						if(response['status'] == 'success') {
+							console.log('correct');
+						}
+						else {
+							console.log('wrong');
+						}
 					}
 					else {
 						console.log("Problem with Ajax Edit Request");
