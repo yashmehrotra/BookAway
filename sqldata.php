@@ -58,7 +58,6 @@
 		$new_sellprice  = $_POST['sellprice'];
 		$new_rentprice  = $_POST['rentprice'];
 		$new_renttime   = $_POST['rentpricetime'];
-		echo $book_id;
 
 		$query = "UPDATE books SET phone = '$new_phone', subject = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'"; //Set it for update
 		mysqli_query($database_connection,$query);
@@ -86,7 +85,7 @@
 		echo $response;
 	}
 	
-	else {
+	elseif ($source == 'view') {
 
 		$query = "SELECT * FROM books";
 		$book_data = mysqli_query($database_connection,$query);

@@ -53,7 +53,12 @@
 			$.ajax({
 				type: "POST",
 				url: "sqldata.php",
-				data: {'user_id':user_id, 'user_email':user_email, 'user_password':user_password , 'source':'edit' },
+				data: {
+					'user_id':user_id, 
+					'user_email':user_email, 
+					'user_password':user_password , 
+					'source':'edit' 
+				},
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);
@@ -89,6 +94,28 @@
 			});
 		}
 
+		function edit_book() {
+			//Submit the form here
+			//Change IT
+			/* $(function() {
+                $("#myform").on("submit", function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr("action"),
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        beforeSend: function() {
+                            $("#message").html("sending...");
+                        },
+                        success: function(data) {
+                            $("#message").hide();       //Here Show Edit is successful
+                            $("#response").html(data);  //Hide the form
+                        }
+                    });
+                });
+            });*/
+		}
+
 		function delete_request() {
 
 			var user_id = $('#bookid').val();
@@ -97,7 +124,11 @@
 			$.ajax({
 				type: "POST",
 				url: "sqldata.php",
-				data: {'user_id':user_id, 'user_password':user_password , 'source':'delete' },
+				data: {
+					'user_id':user_id, 
+					'user_password':user_password , 
+					'source':'delete' 
+				},
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);

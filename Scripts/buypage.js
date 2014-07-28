@@ -32,8 +32,9 @@ function showthis(bookid) {
 function book_data_display () {
 	
 	$.ajax({
-		type: "GET",
+		type: "POST",
 		url: "sqldata.php", //Make sure URL Doesnt cause problem in future
+		data: { 'source': 'view'},
 		success: function (result) {
 			if(result) {
 				var counter = 0;
