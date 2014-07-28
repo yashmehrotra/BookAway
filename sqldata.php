@@ -23,7 +23,6 @@
 		$response = array();
 		if($edit_seller_password == $row['password'] && $edit_seller_email == $row['email']) {
 
-	// 		//Give all the data back
 			$response['status'] = 'success';
 			$response['seller_name']   = $row['name'];
 			$response['seller_email']  = $row['email'];
@@ -35,8 +34,7 @@
 			$response['sell_price']    = $row['sell_price'];
 			$response['rent_price']    = $row['rent_price'];
 			$response['rent_time']     = $row['rent_price'];
-	// 		//Then through ajax , head it towards different file
-	// 		//Where user can edit all of them
+
 		}
 		else {
 			//Wrong id or password or email
@@ -51,36 +49,38 @@
 
 	elseif ($source == 'edit_book') {
 
-		$new_phone = $_POST['phone'];
-		$new_subject = $_POST['subject'];
-		$new_book = $_POST['book'];
-		$new_author = $_POST['author'];
-		$new_sellrent = $_POST['sellrent'];
-		$new_sellprice = $_POST['sellprice'];
-		$new_rentprice = $_POST['rentprice'];
-		$new_renttime = $_POST['rentpricetime'];
+		$book_id        = $_POST['book_id_hid'];
+		$new_phone      = $_POST['phone'];
+		$new_subject    = $_POST['subject'];
+		$new_book       = $_POST['book'];
+		$new_author     = $_POST['author'];
+		$new_sellrent   = $_POST['sellrent'];
+		$new_sellprice  = $_POST['sellprice'];
+		$new_rentprice  = $_POST['rentprice'];
+		$new_renttime   = $_POST['rentpricetime'];
+		echo $book_id;
 
-		$query = ""; //Set it for update
+		$query = "UPDATE books SET phone = '$new_phone', subject = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'"; //Set it for update
 		mysqli_query($database_connection,$query);
 		mysqli_close($database_connection);
 
 		$response = array();
-		$response['status'] = 'success';
+		$response['status'] = 'success edited';
 		$response = json_encode($response);
 
 		echo $response;
 	}
 	elseif ($source == 'delete') {
 
-		$delete_seller_id = $_POST[''];
-		$delete_seller_password = $_POST[''];
+		$delete_seller_id = $_POST['user_id'];
+		$delete_seller_password = md5($_POST['user_password']);
 
 		$query = "DELETE FROM books WHERE id = '$delete_seller_id' AND password = '$delete_seller_password'";
 		mysqli_query($database_connection,$query);
 		mysqli_close($database_connection);
 		
 		$response = array();
-		$response['status'] = 'success';
+		$response['status'] = 'success delete';
 		$response = json_encode($response);
 
 		echo $response;

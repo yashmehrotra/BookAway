@@ -37,6 +37,8 @@
 				};
 				if (!$check) {
 					edit_request();
+					var book_id = $('#bookid').val();
+					$('#book_id_hid').val(book_id);
 				};
 			});
 		});
@@ -63,16 +65,17 @@
 							$('#del-main').css('display','none');
 							$('#edit-form').css('display','block');
 							
-							$('#name').attr('value',response['seller_name']);
-							$('#email-form').attr('value',response['seller_email']);
-							$('#phone').attr('value',response['seller_phone']);
-							$('#subject').attr('value',response['subject']);
-							$('#book').attr('value',response['book_name']);
-							$('#author').attr('value',response['author']);
-							$('#sell-rent').attr('value',response['sell_rent']);
-							$('#s-cost').attr('value',response['sell_price']);
-							$('#r-cost').attr('value',response['rent_price']);
+							$('#name').val(response['seller_name']);
+							$('#email-form').val(response['seller_email']);
+							$('#phone').val(response['seller_phone']);
+							$('#subject').val(response['subject']);
+							$('#book').val(response['book_name']);
+							$('#author').val(response['author']);
+							$('#sell-rent').val(response['sell_rent']);
+							$('#s-cost').val(response['sell_price']);
+							$('#r-cost').val(response['rent_price']);
 							$('#rent-price').attr('value',response['rent_time']);
+
 						}
 						else {
 							console.log('wrong');
@@ -94,19 +97,20 @@
 			$.ajax({
 				type: "POST",
 				url: "sqldata.php",
-				data: {'user_id':user_id, 'user_email':user_email, 'user_password':user_password , 'source':'delete' },
+				data: {'user_id':user_id, 'user_password':user_password , 'source':'delete' },
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);
 						console.log(response);
+						console.log("Delete successful");
 					}
 					else {
 						console.log("Problem with Ajax delete request")
 					}
 				}
-
 			});
 		}
+
 	</script>
 </head>
 <body>
@@ -139,7 +143,7 @@
 	</div>
 	<div id="edit-form">
 
-		<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" novalidate>
+		<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required disabled>
 				<br>
@@ -180,7 +184,11 @@
 			<select name="rentpricetime" id="rent-price" class="sell-input">
 				<option value="week">per Week</option>
 				<option value="month">per Month</option>
-			</select> 
+			</select>
+			<div hidden>
+				<input type="text" id="source" name="source" value="edit_book">
+				<input type="text" id="book_id_hid" name="book_id_hid">
+			</div> 
 			<br><br>
 			</div>
 		<button class="button-success pure-button" id = "del-new-button">Submit</button>
