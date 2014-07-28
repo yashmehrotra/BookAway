@@ -13,7 +13,9 @@
 				$("div[id^='del-error']").css("display","none");
 
 				var $check = false;
-				var $emval = $('#email').val();
+				$emval = $('#email').val();
+				$bookval = $('#bookid').val();
+				$passval = $('#password').val();
 	
 				if( $emval == "" || $emval.indexOf("@") == -1 || $emval.indexOf(".") == -1 ) {
 					$('#del-error1').html('Invalid email address!');
@@ -21,13 +23,13 @@
 					$('#del-error1').css("display","inline-block");
 					$check = true;
 				};
-				if( $('#bookid').val() == "" ) {
+				if( $bookval == "" ) {
 					$('#del-error2').html('Fill in this field!');
 					$('#bookid').focus();
 					$('#del-error2').css("display","inline-block");
 					$check = true;
 				};
-				if( $('#password').val() == "" || $('#password').val().length < 4 ) {
+				if( $passval == "" || $passval.length < 4 ) {
 					$('#del-error3').html('At least 4 characters long!');
 					$('#password').focus();
 					$('#del-error3').css("display","inline-block");
@@ -37,15 +39,16 @@
 					// If (matches from database)
 					$('#del-main').css('display','none');
 					$('#edit-form').css('display','block');
+					edit_request();
 				};
 			});
 		});
 		
 		function edit_request() {
 
-			var user_id = "";
-			var user_email = "";
-			var user_password = "";
+			var user_id = $('#bookid').val();
+			var user_email = $('#email').val();
+			var user_password = $('#password').val();
 			$.ajax({
 				type: "POST",
 				url: "sqldata.php",
@@ -64,8 +67,8 @@
 
 		function delete_request() {
 
-			var user_id = "";
-			var user_password = "";
+			var user_id = $('#bookid').val();
+			var user_password = $('#password').val();
 
 			$.ajax({
 				type: "POST",
