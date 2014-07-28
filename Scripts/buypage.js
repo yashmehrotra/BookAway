@@ -54,6 +54,9 @@ function book_data_display () {
 					}
 				}
 			}
+			else {
+				console.log("Problem with Ajax Request")
+			}
 		}
 	});
 }

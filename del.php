@@ -40,6 +40,49 @@
 				};
 			});
 		});
+		
+		function edit_request() {
+
+			var user_id = "";
+			var user_email = "";
+			var user_password = "";
+			$.ajax({
+				type: "POST",
+				url: "sqldata.php",
+				data: {'user_id':user_id, 'user_email':user_email, 'user_password':user_password , 'source':'edit' },
+				success: function(result) {
+					if(result) {
+						var response = JSON.parse(result);
+						console.log(response);
+					}
+					else {
+						console.log("Problem with Ajax Edit Request");
+					}
+				}
+			});
+		}
+
+		function delete_request() {
+
+			var user_id = "";
+			var user_password = "";
+
+			$.ajax({
+				type: "POST",
+				url: "sqldata.php",
+				data: {'user_id':user_id, 'user_email':user_email, 'user_password':user_password , 'source':'edit' },
+				success: function(result) {
+					if(result) {
+						var response = JSON.parse(result);
+						console.log(response);
+					}
+					else {
+						console.log("Problem with Ajax delete request")
+					}
+				}
+
+			});
+		}
 	</script>
 </head>
 <body>
