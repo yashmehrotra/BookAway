@@ -36,9 +36,6 @@
 					$check = true;
 				};
 				if (!$check) {
-					// If (matches from database)
-					$('#del-main').css('display','none');
-					$('#edit-form').css('display','block');
 					edit_request();
 				};
 			});
@@ -62,6 +59,8 @@
 						console.log(response['status']);
 						if(response['status'] == 'success') {
 							console.log('correct');
+							$('#del-main').css('display','none');
+							$('#edit-form').css('display','block');
 						}
 						else {
 							console.log('wrong');
