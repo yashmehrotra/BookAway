@@ -264,7 +264,7 @@
 		</div>
 	<div id="sell-form">
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
-		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="entry.php" method="POST" novalidate>
+		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="sqldata.php" method="POST" novalidate>
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div>
 				<br>
@@ -287,29 +287,32 @@
 					<option value="Music">Music</option>
 					<option value="Business">Business</option>
 					<option value="Miscellaneous">Miscellaneous</option>
-			<div id="error9"></div>
-			<br>
-			<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
-			<br>
-			<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
-			<br>
-			<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
-			<select name="sellrent" id="sell-rent" class="sell-input">
-				<option value="3" selected>Both Sale and Rent</option>
-				<option value="1">Sale</option>
-				<option value="2">Rent</option>
-			</select>
-			<div id="error2"></div>
-			<br>
-			<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error7"></div> 
-			<br>
-			<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
-			<select name="rentpricetime" id="rent-price" class="sell-input">
-				<option value="week">per Week</option>
-				<option value="month">per Month</option>
-			</select>
-			<div id="error8"></div> 
-			<br><br>
+				<div id="error9"></div>
+				<br>
+				<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
+				<br>
+				<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
+				<br>
+				<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
+				<select name="sellrent" id="sell-rent" class="sell-input">
+					<option value="3" selected>Both Sale and Rent</option>
+					<option value="1">Sale</option>
+					<option value="2">Rent</option>
+				</select>
+				<div id="error2"></div>
+				<br>
+				<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error7"></div> 
+				<br>
+				<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
+				<select name="rentpricetime" id="rent-price" class="sell-input">
+					<option value="week">per Week</option>
+					<option value="month">per Month</option>
+				</select>
+				<div id="error8"></div> 
+				<br><br>
+				<div hidden>
+					<input type="text" id="source" name="source" value="add_book">
+				</div>
 			</div>
 		<button class="button-success pure-button" id = "new-button">Submit</button>
 	</form>

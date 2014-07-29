@@ -10,7 +10,37 @@
 
 	$source = $_POST['source'];
 	
-	if($source == 'edit' ) {
+	if($source == 'add_book') {
+
+		$name        = $_POST['name'];
+		$email       = $_POST['email'];
+		$phone       = $_POST['phone'];
+		$password    = md5($_POST['password']);
+		$subject     = $_POST['subject'];
+		$book        = $_POST['book'];
+		$author      = $_POST['author'];
+		$sell_rent   = $_POST['sellrent'];
+		$sell_price  = $_POST['sellprice'];
+		$rent_price  = $_POST['rentprice'];
+		$rent_time   = $_POST['rentpricetime'];
+
+		$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time')";
+		mysqli_query($database_connection,$query);
+
+		$book_id = mysqli_insert_id($database_connection);
+		mysqli_close($database_connection);
+
+		$response = array();
+		
+		$response['status'] = 'success';
+		$response['seller_name'] = $name;
+		$response['book_id'] = $book_id;
+
+		$response = json_encode($response);
+		echo $response;
+	}
+
+	elseif($source == 'edit_user' ) {
 
 		$edit_seller_email = $_POST['user_email'];
 		$edit_book_id = $_POST['user_id'];

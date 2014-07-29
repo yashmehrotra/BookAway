@@ -55,7 +55,6 @@
 			var user_id = $('#bookid').val();
 			var user_email = $('#email').val();
 			var user_password = $('#password').val();
-			console.log("hi");
 			console.log(user_email);
 			$.ajax({
 				type: "POST",
@@ -64,7 +63,7 @@
 					'user_id':user_id, 
 					'user_email':user_email, 
 					'user_password':user_password , 
-					'source':'edit' 
+					'source':'edit_user' 
 				},
 				success: function(result) {
 					if(result) {
@@ -91,7 +90,7 @@
 						}
 						else {
 							console.log('wrong');
-							$('#del-error4').html('The email, password or bookid you entered are incorrect!')
+							$('#del-error4').html('The email, password or Book ID you entered are incorrect!')
 							$('#del-error4').css('display','block');
 							//Add error message here that Email, id or password is wrong
 						}
@@ -246,11 +245,12 @@
                         },
                         success: function(data) {
                             $("#message").hide();       //Here Show Edit is successful
-                            $("#response").html(data);  //Hide the form
+							$("#response").html(data);  //Hide the form
                         }
                     });
-                     $('#edit-form').css('display','none');
-                     $('#edit-success').css('display','block');
+                    console.log("Edit successful");
+                    $('#edit-form').css('display','none');
+                    $('#edit-success').css('display','block');
                 });
             });
 
@@ -364,7 +364,7 @@
 			</div> 
 			<br><br>
 			</div>
-		<button class="button-success pure-button" id = "del-new-button">Submit</button>
+		<button class="button-success pure-button" id = "del-new-button">Edit</button>
 	</form>
 
 	</div>
