@@ -43,7 +43,7 @@
 	//
 	//
 	// Create connection
-	$database_connection=mysqli_connect("localhost","root","44rrff","bfb");
+	$database_connection=mysqli_connect("localhost","root","","bfb");
 
 	//Check connection
 	if (mysqli_connect_errno()) 

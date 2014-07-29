@@ -646,19 +646,40 @@ ol
 	border-radius: 10px;
 }
 
-#del-error1, #del-error2, #del-error3
+#del-error1, #del-error2, #del-error3, #del-error4
 {
 	color: red;
 	font-size: 16px;
 	margin-left: 15px;
 }
 
+#del-error4
+{
+	margin-left: 130px;
+}
+
 #edit-form
 {
 	display: none;
-	height: 600px;
+	height: 620px;
 	width: inherit;800px;
 	background-color: white;
+}
+
+#delete-button
+{
+	height: 40px;
+	width: 180px;
+	background-color: red;
+	color: white;
+	margin: 10px auto 0px 380px;
+	border: 1px solid white;
+	font-size: 16px;
+}
+
+#delete-button:hover
+{
+	cursor: pointer;
 }
 
 #eform
@@ -666,7 +687,7 @@ ol
 	height: inherit;
 	margin-left: 230px;
 	font-size: 21px;
-	margin-top: 10px;
+	margin-top: 30px;
 }
 
 #del-new-button
@@ -680,7 +701,7 @@ ol
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
-	bottom: -25px;
+	bottom: -45px;
     left: 390px;
 }
 
@@ -689,7 +710,19 @@ ol
 	cursor: pointer;
 }
 
-
+#edit-success
+{
+	display: none;
+	height: 200px;
+	width: inherit;
+	color: black;
+	font-family: Bitter-Regular;
+	font-size: 20px;
+	text-align: center;
+	margin: 30px auto;
+	background-color: white;
+	padding-top: 50px;
+}
 
 /********************  ENTRY.PHP  ************************/
 

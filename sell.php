@@ -301,7 +301,7 @@
 			</select>
 			<div id="error2"></div>
 			<br>
-			<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"><div id="error7"></div> 
+			<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error7"></div> 
 			<br>
 			<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
 			<select name="rentpricetime" id="rent-price" class="sell-input">

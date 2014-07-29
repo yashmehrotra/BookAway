@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>BooksforBucks | Buy | Sell | Rent | Books</title>
-	<meta name="Description" content="booksforbucks.com - Online portal for buying, selling and renting books">
+	<meta name="Description" content="Booksforbucks.com - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
 	<meta name="Keywords" content="books,jiit,buy,sell,rent,textbook,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
