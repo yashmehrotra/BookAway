@@ -202,9 +202,6 @@
 				var password = $("#password").val()
 				$("#password").attr("type","text");
 				$("#password").text(password);
-				setTimeout(function() {
-		        $('#show-password').trigger('click');
-	    		}, 2000);
 				click_password = 1;
 			}
 			else {
