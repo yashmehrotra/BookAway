@@ -228,31 +228,31 @@
 	*/
 			//Change IT
 
-			 $(function() {
+		$(function() {
 
-			 	$('#delete-button').on('click', function () {
-			 		delete_request();
-			 	});
+		 	$('#delete-button').on('click', function () {
+		 		delete_request();
+		 	});
 
-                $("#eform").on("submit", function(e) {
-                    e.preventDefault();
-                    $.ajax({
-                        url: $(this).attr("action"),
-                        type: 'POST',
-                        data: $(this).serialize(),
-                        beforeSend: function() {
-                            $("#message").html("sending...");
-                        },
-                        success: function(data) {
-                            $("#message").hide();       //Here Show Edit is successful
-							$("#response").html(data);  //Hide the form
-                        }
-                    });
-                    console.log("Edit successful");
-                    $('#edit-form').css('display','none');
-                    $('#edit-success').css('display','block');
+            $("#eform").on("submit", function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr("action"),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(result_editbook) {
+                    	var response = JSON.parse(result_editbook);
+                    	console.log(response.status);
+                    	if(response.status == "success") {
+                    		console.log("Edit successful");
+                    		$('#edit-form').css('display','none');
+                    		$('#edit-success').css('display','block');
+                    	}
+                    }
                 });
             });
+        
+        });
 
 		function delete_request() {
 
@@ -270,8 +270,12 @@
 				success: function(result) {
 					if(result) {
 						var response = JSON.parse(result);
-						console.log(response);
-						console.log("Delete successful");
+						console.log(response.status);
+						if(response.status == "success") {
+							console.log('Hogaya Delete');
+							//Add here that shows form is deleted.
+							//Same as for edit successful
+						}
 					}
 					else {
 						console.log("Problem with Ajax delete request")

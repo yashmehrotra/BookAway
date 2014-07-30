@@ -94,7 +94,7 @@
 		mysqli_close($database_connection);
 
 		$response = array();
-		$response['status'] = 'success edited';
+		$response['status'] = 'success';
 		$response = json_encode($response);
 
 		echo $response;
@@ -109,7 +109,7 @@
 		mysqli_close($database_connection);
 		
 		$response = array();
-		$response['status'] = 'success delete';
+		$response['status'] = 'success';
 		$response = json_encode($response);
 
 		echo $response;

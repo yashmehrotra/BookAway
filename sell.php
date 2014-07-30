@@ -251,6 +251,28 @@
 		}, 100);
 	});
 
+	// //Add similar function as del.php which submits to sqldata.php, see /*
+	// $("#eform").on("submit", function(e) {
+ //                e.preventDefault();
+ //                $.ajax({
+ //                    url: $(this).attr("action"),
+ //                    type: 'POST',
+ //                    data: $(this).serialize(),
+ //                    success: function(result_addbook) {
+ //                    	var response = JSON.parse(result_addbook);
+ //                    	console.log(response.status);
+ //                    	if(response.status == "success") {
+ //                    		console.log("Book addition successful");
+ //                    		$('#add-form').css('display','none');
+ //                    		$('#add-success').css('display','block');
+ //                    	}
+ //                    }
+ //                });
+ //            });
+	// //
+
+	
+
 	</script>
 
 </head>
