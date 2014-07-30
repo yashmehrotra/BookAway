@@ -53,7 +53,6 @@ echo curPageURL();
 			<option value="booktitle">By Book Title</option>
 			<option value="authorname">By Author</option>
 			<option value="publication">By Publication</option>
-			<option value="isbn">By ISBN</option>
 		</select>
 		<p>Select Maximum Price:</p>
 		<div class="price-bar">
