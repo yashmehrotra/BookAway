@@ -92,7 +92,6 @@
 							console.log('wrong');
 							$('#del-error4').html('The email, password or Book ID you entered are incorrect!')
 							$('#del-error4').css('display','block');
-							//Add error message here that Email, id or password is wrong
 						}
 					}
 					else {
@@ -102,22 +101,62 @@
 			});
 		}
 
-		/*
-		$copy = 0; 
-		$bcopy = 0;
+		$(function () {
+		setInterval(function() {
+			var $a =  $('#sell-rent option:selected').val();
+			if( $a == 1 ) {
+				
+				$('#r-cost').slideUp(300);
+				$('#rent-price').slideUp(300);
+				$('#s-cost').slideDown(300);
+				$('#error8').slideUp(300);
+				if( $('#error7').html() != "" ) {
+				$('#error7').slideDown(300);
+				}
+				$flag = true;
+			}
 
-		function edit_book() {
-			//Submit the form here
+			if( $a == 2 ) {
+				
+				$('#s-cost').slideUp(300);
+				$('#r-cost').slideDown(300);
+				$('#rent-price').slideDown(300);
+				$('#error7').slideUp(300);
+				if( $('#error8').html() != "" ) {
+				$('#error8').slideDown(300);
+				}
+				$flag = true;
+			}
+			
+			if( $a == 3 ) {
+				
+				$('#s-cost').slideDown(300);
+				$('#r-cost').slideDown(300);
+				$('#rent-price').slideDown(300);
+				if( $('#error7').html() != "" ) {
+				$('#error7').slideDown(300);
+				}
+				if( $('#error8').html() != "" ) {
+				$('#error8').slideDown(300);
+				}
+				$flag = true;
+			}
+
+		}, 100);
+	});
 		
-		$('#eform').submit(function(fr){
-			var $height = $('.del-pure-g').css('height');
-			var $bheight = $('#del-new-button').css('bottom');
+		$copy = 0; 
+
+	$(function() {
+		$('#del-new-button').click( function(fr) {
+			var $height = $('#del-main-container').css('height');
+			var $eheight = $('#edit-form').css('height');
 			var $flag = false;
 			var $count = 0;
 			var $fcount = 0;
-
+			console.log('1');
 			$('div[id^="error"]').css("display","none");
-
+			console.log('2')
 			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
 				
 				$('#error1').html("Phone number must contain 10 digits");
@@ -205,28 +244,25 @@
 				
 				fr.preventDefault();
 				var $c = $count - $copy;
+
 				var $newheight = parseInt($height) + 35*$c ;
 				var $change = $newheight + 'px' ;
 
-				$('.del-pure-g').css({
+				$('#del-main-container').css({
 					"height" : $change
 				});
-
-				var $c = $count - $bcopy;
-				var $bnewheight = parseInt($bheight) - 35*$c ;
-				var $bchange = $bnewheight + 'px' ;
-
-				$('#del-new-button').css({
-					"bottom" : $bchange
+				
+				var $enewheight = parseInt($eheight) + 35*$c ;
+				var $echange = $enewheight + 'px' ;
+	
+				$('#edit-form').css({
+					"height" : $echange
 				});
-		
-				$copy = $count;
-				$bcopy = $count;	
+
+				$copy = $count;	
 			}
 		});
-	}
-	*/
-			//Change IT
+	});
 
 		$(function() {
 
@@ -273,8 +309,10 @@
 						console.log(response.status);
 						if(response.status == "success") {
 							console.log('Hogaya Delete');
-							//Add here that shows form is deleted.
-							//Same as for edit successful
+
+							$('#edit-form').css('display','none');
+							$('#edit-success').html('You have successfully deleted your book!');
+							$('#edit-success').css('display','block');
 						}
 					}
 					else {
@@ -318,7 +356,7 @@
 	<div id="edit-form">
 		<button id="delete-button">Delete this book</button>
 		<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
-			<div class="del-pure-g">
+			<div class="del-pure-g" id="del-pure-g-del">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required disabled>
 				<br>
 				<input type="email" name="email" id="email-form" class="sell-input" autocomplete="on" placeholder="Email" required disabled>

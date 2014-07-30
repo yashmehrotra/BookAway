@@ -10,7 +10,6 @@
 	<script type="text/javascript">
 	
 	$copy = 0; 
-	$bcopy = 0;
 	
 	$(document).ready(function () {
 		
@@ -155,7 +154,6 @@
 					"height" : $change
 				});
 
-				var $c = $count - $bcopy;
 				var $bnewheight = parseInt($bheight) - 35*$c ;
 				var $bchange = $bnewheight + 'px' ;
 
@@ -164,7 +162,6 @@
 				});
 		
 				$copy = $count;
-				$bcopy = $count;
 
 				if($fcount == 0) {
 				
@@ -199,13 +196,15 @@
 
 	$( document ).ready( function () {
 
-		var click_password = 0;
+		click_password = 0;
 		$("#myform>.pure-g>#show-password").click(function () {
-			
 			if(click_password === 0) {
 				var password = $("#password").val()
 				$("#password").attr("type","text");
 				$("#password").text(password);
+				setTimeout(function() {
+		        $('#show-password').trigger('click');
+	    		}, 2000);
 				click_password = 1;
 			}
 			else {
@@ -214,6 +213,8 @@
 			}
 		});
 	});	 
+
+
 
 	$(function () {
 		$('#help').on(' mouseenter mouseleave', function () {
@@ -229,6 +230,10 @@
 				$('#r-cost').slideUp(300);
 				$('#rent-price').slideUp(300);
 				$('#s-cost').slideDown(300);
+				$('#error8').slideUp(300);
+				if( $('#error7').html() != "" ) {
+				$('#error7').slideDown(300);
+				}
 				$flag = true;
 			}
 
@@ -237,6 +242,10 @@
 				$('#s-cost').slideUp(300);
 				$('#r-cost').slideDown(300);
 				$('#rent-price').slideDown(300);
+				$('#error7').slideUp(300);
+				if( $('#error8').html() != "" ) {
+				$('#error8').slideDown(300);
+				}
 				$flag = true;
 			}
 			
@@ -245,6 +254,12 @@
 				$('#s-cost').slideDown(300);
 				$('#r-cost').slideDown(300);
 				$('#rent-price').slideDown(300);
+				if( $('#error7').html() != "" ) {
+				$('#error7').slideDown(300);
+				}
+				if( $('#error8').html() != "" ) {
+				$('#error8').slideDown(300);
+				}
 				$flag = true;
 			}
 
