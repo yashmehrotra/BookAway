@@ -1,5 +1,7 @@
+<!--
+
 <?php
-	
+/*	
 	$name        = $_POST['name'];
 	$email       = $_POST['email'];
 	$phone       = $_POST['phone'];
@@ -61,7 +63,10 @@
 	$book_id = mysqli_insert_id($database_connection);
 	echo $book_id;
 	mysqli_close($database_connection);
+	*/
 ?>
+-->
+
 <!DOCTYPE html>
 <head>
 	<title>Books for Bucks</title>
@@ -89,7 +94,7 @@
 		</div>
 		<div id="s2">
 			<p id="successful-text">Thankyou for contributing!!!<br>
-			Your book id is <?php echo $book_id; ?> , Please remember it to check it's status<br>
+			Your book id is <?php echo $book_id; ?> , Please remember to check it's status<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">

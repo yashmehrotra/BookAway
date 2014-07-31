@@ -157,7 +157,7 @@
 			console.log('1');
 			$('div[id^="error"]').css("display","none");
 			console.log('2')
-			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
+			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || !$.isNumeric('#phone').val() || $('#phone').val().indexOf(" ")!=-1) {
 				
 				$('#error1').html("Phone number must contain 10 digits");
 				$('#error1').css("display","inline-block");

@@ -1142,6 +1142,13 @@ ol
 	cursor: pointer;
 }
 
+#entry
+{
+	height: 600px;
+	width: 820px;
+	display: none;
+}
+
 
 /********************SELL NO JS.PHP************************/
 

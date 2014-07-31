@@ -143,9 +143,10 @@
 				}
 			}
 
+			fr.preventDefault();
+
 			if($flag) {
-				
-				fr.preventDefault();
+		
 				var $c = $count - $copy;
 				var $newheight = parseInt($height) + 35*$c ;
 				var $change = $newheight + 'px' ;
@@ -191,6 +192,28 @@
 					$('#help').css("top","350px") ;
 				}	
 			}
+			else {
+
+                $.ajax({
+                    url: "sqldata.php",
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(result_addbook) {
+                    	var response = JSON.parse(result_addbook);
+                    	console.log(response.status);
+                    	if(response.status == "success") {
+                    		console.log("Book addition successful");
+                    		$('#sell-form').css('display','none');
+                    		$('#step-1').css('display','none');
+                    		$('#entry').css('display','block');
+                    		$('#sell-container').css({
+                    			'height':'450px',
+                    			'width':'800px'
+                    		});
+                    	}
+                    }
+                });
+			};
 		});
 	});
 
@@ -263,28 +286,6 @@
 		}, 100);
 	});
 
-	// //Add similar function as del.php which submits to sqldata.php, see /*
-	// $("#eform").on("submit", function(e) {
- //                e.preventDefault();
- //                $.ajax({
- //                    url: $(this).attr("action"),
- //                    type: 'POST',
- //                    data: $(this).serialize(),
- //                    success: function(result_addbook) {
- //                    	var response = JSON.parse(result_addbook);
- //                    	console.log(response.status);
- //                    	if(response.status == "success") {
- //                    		console.log("Book addition successful");
- //                    		$('#add-form').css('display','none');
- //                    		$('#add-success').css('display','block');
- //                    	}
- //                    }
- //                });
- //            });
-	// //
-
-	
-
 	</script>
 
 </head>
@@ -298,7 +299,7 @@
 		</div>
 	<div id="sell-form">
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
-		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="sqldata.php" method="POST" novalidate>
+		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div>
 				<br>
@@ -351,6 +352,23 @@
 		<button class="button-success pure-button" id = "new-button">Submit</button>
 	</form>
 </div>
+
+<div id="entry">
+	<div id="step-2">
+			<h3 id="step-2-text"><u>Step 2:</u> Verification Process...</h3>
+		</div>
+		<div id="s2">
+			<p id="successful-text">Thankyou for contributing!!!<br>
+			Your book id is <?php //echo $book_id; ?> , Please remember to check it's status<br>
+			Your response will be processed and implemented within 24 hours.</p>
+		</div>
+		<div class="links-list">
+			<div class="links-box"><a href="index.php" class="links">Return 
+			to homepage</a></div>
+			<div class="links-box"><a href="sell.php" class="links">Sell another Book</a></div>
+		</div>
+</div>
+
 <div class="bottom-panel">
 	<ul class="bottom-panel-list">
 		<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>

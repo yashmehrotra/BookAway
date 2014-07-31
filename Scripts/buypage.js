@@ -11,14 +11,20 @@
 	book_data_display();
 	click_toggle();
 
-});
-
-
-var booklist_autocomplete   = [];
-var authorlist_autocomplete = [];
-var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+ booklist_autocomplete   = [];
+ authorlist_autocomplete = [];
+ newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 console.log(newURL);
 
+$max_price = $('#a').val();
+$search_by = $('#search_by option:selected').val();
+$buy_subject = $('#buy_subject option:selected').val();
+
+console.log($max_price);
+console.log($search_by);
+console.log($buy_subject);
+
+});
 
 function showthis(bookid) {
 	

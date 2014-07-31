@@ -11,7 +11,7 @@ function curPageURL() {
  return $pageURL;
 }
 
-echo curPageURL();
+//echo curPageURL();
 ?>
 
 
@@ -49,7 +49,7 @@ echo curPageURL();
 	<div class="search-filters">
 		<h3 id="search-filter-text">Search Filters:-</h3>
 		<p>Search By:</p>
-		<select name="search-by" class="search-by">
+		<select name="search-by" class="search-by" id="search_by">
 			<option value="booktitle">By Book Title</option>
 			<option value="authorname">By Author</option>
 			<option value="publication">By Publication</option>
@@ -63,7 +63,7 @@ echo curPageURL();
 	</div>
 	<div class="sub-select">
 		<p id="sub">Select subject:</p>
-		<select name="select-subject" class="search-by">
+		<select name="select-subject" class="search-by" id="buy_subject">
 			<option value="all" selected>All</option>
 			<option value="computers">Computers</option>
 			<option value="electronics">Electronics</option>
