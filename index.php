@@ -6,6 +6,7 @@
 	<meta name="Keywords" content="books,jiit,buy,sell,rent,textbook,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="shortcut icon" href="favicon.ico">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/mainpage.js"></script>
@@ -13,6 +14,7 @@
 <body>
 	<div id="wrapper">
 	<div class="top-panel">
+		<img src="Styles/Images/favicon1.png" id="favicon">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links" id="focus">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>

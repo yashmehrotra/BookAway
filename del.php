@@ -327,6 +327,7 @@
 <body>
 	<div id="wrapper">
 	<div class="top-panel">
+		<img src="Styles/Images/favicon1.png" id="favicon">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>

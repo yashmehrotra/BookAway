@@ -40,7 +40,7 @@ h1, h2, h3
 
 #wrapper
 {
-	width: 875px;
+	width: 960px;
 	height: 65px;
 	z-index: 50;
 	padding: 0;
@@ -65,9 +65,24 @@ h1, h2, h3
 	left: 15px;
 }
 
+#favicon
+{
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	top:0px;
+	left: 15px;
+}
+
+#favicon:hover
+{
+	cursor: pointer;
+}
+
 .top-panel-list
 {
 	list-style: none;
+	margin-left: 74px;
 }
 
 .top-opt
@@ -83,7 +98,7 @@ h1, h2, h3
 	font-size: 22px;
 	margin-right: 15px;
 	color: white;
-	display: block;
+	display: inline-block;
 }
 
 .top-panel-links:hover
@@ -367,7 +382,7 @@ ol
 
 #icg1, #icg2, #icg3
 {
-	background: url("Images/icon-logos.png") -24px 43px;
+	background: url("Images/icon-logos.png") -24px 41px;
 }
 
 

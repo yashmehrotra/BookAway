@@ -7,11 +7,17 @@ function move() {
 		var $width = $(this).width();
 		var $wrapper = parseInt($('#wrapper').css('width'));
 		if($width < $wrapper)
-		{
-			$('#wrapper').css('display','none');
+		{	
+			$('#wrapper').css({"left":"0px"});
+			if(parseInt($width) < 750) {
+			$('#wrapper').css({"display":"none"});
+			}
+			else {
+				$('#wrapper').css({"display":"block"});
+			}
 		}
 		else
 		{
-			$('#wrapper').css({"display":"block","left":0.46*($width - $wrapper)});
+			$('#wrapper').css({"left":0.445*($width - $wrapper),"display":"block"});
 		}
 	}
