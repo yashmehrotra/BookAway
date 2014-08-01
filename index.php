@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script type="text/javascript" src="Scripts/mainpage.js"></script>
+	<!--<script type="text/javascript" src="Scripts/mainpage.js"></script>-->
 </head>
 <body>
 	<div id="wrapper">
@@ -31,24 +31,24 @@
 	<div id="home-container">
 	<div class="box" id="buy-box">
 		<h1>BUY</h1>
-		<!--<p class="home-desc">Search and buy.<br><br> Directly contact the seller through phone.</p>
-		<div  class="continue-buy"><a href="buy.php" class="buy-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>-->
+		<p class="home-desc">Search and buy.<br><br> Directly contact the seller through phone.</p>
+		<div  class="continue-buy"><a href="buy.php" class="buy-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
 	<div class="box" id="sell-box">
 		<h1>SELL</h1>
-		<!--<p class="home-desc">Add your books for selling or renting in 2 easy steps:</p>
+		<p class="home-desc">Add your books for selling or renting in 2 easy steps:</p>
 			<ol>
 				<li>Fill and submit a form with the complete details and contact info.</li><br>
 				<li>Wait 24 hours for the book to be added to database and be available for buying or renting.</li><br>
 			</ol>
-			<div class="continue-sell"><a href="sell.php" class="sell-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>-->
+			<div class="continue-sell"><a href="sell.php" class="sell-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
 	<div class="box" id="rent-box">
 		<h1>RENT</h1>
-		<!--<p class="home-desc">Don't want to buy books?<br>Rent them.<br><br>Pay as per week or month.</p>
-		<div class="continue-rent"><a href="rent.php" class="rent-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>-->
+		<p class="home-desc">Don't want to buy books?<br>Rent them.<br><br>Pay as per week or month.</p>
+		<div class="continue-rent"><a href="rent.php" class="rent-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
-	<!--<div class="bottom-panel">
+	<div class="bottom-panel">
 		<ul class="bottom-panel-list">
 			<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>
 			<li class="home-about-contact"><a href="about.php" class="bottom-links">About</a></li>
@@ -57,7 +57,7 @@
 	</div>
 		<div id="co-developed">
 			<code>Copyright</code><code>2014 .All Rights Reserved. Booksforbucks.com</code>
-		</div>-->
+		</div>
 	</div>
 </body>
 </html>

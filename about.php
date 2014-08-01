@@ -6,6 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.c123').on('mouseenter mouseleave', function(){
+				$(this).toggleClass('blue');
+			});
+			$('.m123').on('mouseenter mouseleave', function(){
+				$(this).toggleClass('img-blue');
+			});
+		});
+	</script>
 </head>
 <body>
 		<div id="wrapper">
@@ -23,8 +33,8 @@
 	</div>
 	<h2 id="about-us-text">About Us</h2>
 	<div class="main-container">
-		<div id="c1">
-			<a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" id="m1" alt="img1"></a>
+		<div class="c123" id="c1">
+			<a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="m123" id="m1" alt="img1"></a>
 			<p class="desc">Avijit Gupta
 				<br><br>
 				Frontend Developer
@@ -34,8 +44,8 @@
 			<div onclick="location.href='https://www.linkedin.com/pub/avijit-gupta/9a/22/6';" class="f-t" id="icl1" ></div>
 			<div onclick="location.href='https://github.com/526avijitgupta';" class="f-t" id="icg1"></div>
 		</div>
-		<div id="c2">
-			<a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" id="m2" alt="img2"></a>
+		<div class="c123" id="c2">
+			<a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="m123" id="m2" alt="img2"></a>
 			<p class="desc">Yash Mehrotra
 				<br><br>
 				Backend Developer
@@ -45,8 +55,8 @@
 			<div onclick="location.href='in.linkedin.com/in/yashmehrotra';" class="f-t" id="icl2" ></div>
 			<div onclick="location.href='https://github.com/yashmehrotra/';" class="f-t" id="icg2"></div>
 		</div>
-		<div id="c3">
-			<a href="Styles/Images/sidhant.jpg"><img src="Styles/Images/sidhant.jpg" id="m3" alt="img3"></a>
+		<div class="c123" id="c3">
+			<a href="Styles/Images/sidhant.jpg"><img src="Styles/Images/sidhant.jpg" class="m123" id="m3" alt="img3"></a>
 			<p class="desc">Sidhant Sharma
 				<br><br>
 				Content Manager

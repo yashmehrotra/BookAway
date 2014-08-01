@@ -7,8 +7,10 @@ Globals...
 
 body
 {
-	background: url('Images/edited-3.png');
-	background-size: 1500px 2500px;
+	/*background: url('Images/edited-3.png');*/
+	background: url('Images/test-back.jpg');
+	background-size: 1500px 1300px;
+	background-position: fixed;
 	opacity: 0.9;
 	border:0;
 	padding: 0;
@@ -173,7 +175,7 @@ Different for different pages...
 
 #home-main-head
 {
-	
+
 	width: 1050px;
 	height: 80px;
 	margin:0 auto;
@@ -197,62 +199,53 @@ h1
 
 
 #home-container
-{	
+{
+	position: relative;
 	height: 500px;
 	width: 1100px;
-	position: relative;
 	padding: 0;
-	margin: 25px auto 250px;
-	border: solid;
+	margin: 55px auto 250px auto;
 }
 
 .box
-{	
-	height: 100px;
-	width: 260px;
+{
 	display: inline-block;
-	position: absolute;
+	height: 450px;
+	width: 280px;
+	position: relative;
 	color: white;
+	float: left;
 	box-shadow: 9px 9px 5px black;
+	top: 0px;
 	padding: 20px;
+	border-style: solid;double;groove;inset;ridge;outset;
+	border-width: 2px;
+	border-color: white;
 	text-align: center;
-	border: 2px solid white;
+	margin: 0px 20px 50px 20px;
 	line-height: 180%;
 	border-radius: 15px;
-	-webkit-transition: width 1s ease;  
-    -moz-transition: width 1s ease;  
-    -o-transition: width 1s ease;  
-    transition: width 1s ease; 
 }
 
-.box-new
+.buy-box
 {
-	width: 1040px;	
+	background-color: #E44424;#D9853B;
 }
 
-#buy-box
+.sell-box
 {
-	background-color: #E44424;
-	top: 0px;
-	left: 0px;
-}
-
-#sell-box
-{
-	background-color: #67BCDB;
-	top: 160px;
-	left: 360px;
+	background-color: #67BCDB;#558C89;
 }
 
 .home-desc, ol
 {
-	font-family: 'Verdana', sans-serif;
-	font-weight: 500;
-	font-style: normal;
-	line-height: 1.1;
-	color: white;
-	margin-top: 30px;
-	font-size: 16px;
+font-family: 'Verdana', sans-serif;
+font-weight: 500;
+font-style: normal;
+line-height: 1.1;
+color: white;
+margin-top: 30px;
+font-size: 16px;
 }
 
 ol
@@ -260,11 +253,9 @@ ol
 	text-align: left;
 }
 
-#rent-box
+.rent-box
 {
-	background-color: #A2AB58;
-	top: 320px;
-	left: 730px;
+	background-color: #A2AB58;#67BCDB;#558C89;
 }
 
 .continue-buy, .continue-sell, .continue-rent
@@ -281,8 +272,10 @@ ol
 	padding: 12px;
 	text-decoration: none;
 	font-size: 18px;
-	border: 2px solid white;
+	border-style: solid;
+	border-color: white;
 	border-radius: 15px;
+	border-width: 2px;
 }
 
 .buy-link:hover, .sell-link:hover, .rent-link:hover
@@ -327,7 +320,7 @@ ol
 	background-color: white;
 }
 
-#m1,#m2,#m3
+.m123, .img-blue
 {
 	height: 160px;
 	width: 160px;
@@ -335,7 +328,12 @@ ol
 	border-radius: 100px;
 }
 
-#c1,#c2,#c3
+.img-blue
+{
+	opacity: 0.9;
+}
+
+.c123, .blue
 {
 	height: 300px;
 	width: 220px;
@@ -345,6 +343,24 @@ ol
 	float: left;
 	display: inline-block;
 	text-align: center;
+}
+
+.blue
+{
+	-webkit-transition:background-color .4s linear;
+	-moz-transition:background-color .4s linear;
+	-o-transition:background-color .4s linear;
+	-ms-transition:background-color .4s linear;
+	-webkit-transition:color .4s linear;
+	-moz-transition:color .4s linear;
+	-o-transition:color .4s linear;
+	-ms-transition:color .4s linear;
+}
+
+.blue:hover
+{
+	color: white;
+	background-color: black;#1ABC9C;#5C9DFF;#0066FF;#D494D4;#990099;blue;
 }
 
 .desc

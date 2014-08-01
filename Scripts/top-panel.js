@@ -18,6 +18,6 @@ function move() {
 		}
 		else
 		{
-			$('#wrapper').css({"left":0.445*($width - $wrapper),"display":"block"});
+			$('#wrapper').css({"left":0.447*($width - $wrapper),"display":"block"});
 		}
 	}
