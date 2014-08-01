@@ -38,6 +38,7 @@
 
 		$response = json_encode($response);
 		echo $response;
+		exit();
 	}
 
 	elseif($source == 'edit_user' ) {
@@ -75,6 +76,7 @@
 
 		$response = json_encode($response);
 		echo $response;
+		exit();
 	}
 
 	elseif ($source == 'edit_book') {
@@ -98,6 +100,7 @@
 		$response = json_encode($response);
 
 		echo $response;
+		exit();
 	}
 	elseif ($source == 'delete') {
 
@@ -113,6 +116,7 @@
 		$response = json_encode($response);
 
 		echo $response;
+		exit();
 	}
 	
 	elseif ($source == 'view') {
@@ -144,6 +148,7 @@
 		
 		$response = json_encode($Book_JSON);
 		echo $response;
+		exit();
 	}
 	
 

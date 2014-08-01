@@ -21,7 +21,9 @@ function curPageURL() {
 	<title>BooksforBucks- Buy, Sell, Rent Books!!</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 	<script src="Scripts/jquery.js"></script>
+	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
 </head>
@@ -43,7 +45,9 @@ function curPageURL() {
 		<h2 id="buy-main-head">Buy Books</h2>
 	<div class="buy-left-panel">
 	<form id="home-search">
-	<div><input class="input" type="search" placeholder="Search here" maxlength="200" autofocus></div>
+	<div><!-- <input class="input" id="search-bar" type="search" placeholder="Search here" maxlength="200" autofocus>-->
+		<div class="ui-widget"><input id="search-bar"></div>
+	</div> 
 	<div><button class="search" type="submit">Search</button></div>
 	</form>
 	<br>
