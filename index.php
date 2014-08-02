@@ -10,11 +10,12 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<!--<script type="text/javascript" src="Scripts/mainpage.js"></script>-->
+	<script src="Scripts/scroll.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
 	<div class="top-panel">
-		<img src="Styles/Images/favicon1.png" id="favicon">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links" id="focus">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
@@ -25,7 +26,8 @@
 		</ul>
 	</div>
 	</div>
-	<div id="home-main-head">
+
+	<div class="main-heads" id="home-main-head">
 	<h1 class="head">Welcome to rebuse.com</h1>
 	</div>
 	<div id="home-container">

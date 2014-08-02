@@ -6,11 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script type="text/javascript" src="Scripts/scroll.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
 	<div class="top-panel">
-		<img src="Styles/Images/favicon1.png" id="favicon">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
@@ -21,8 +22,10 @@
 		</ul>
 	</div>
 	</div>
-	<div id="rent-container">
+	<div class="main-heads">
 		<h2 id="main-head">Rent Books</h2>
+	</div>
+	<div id="rent-container">
 	<div class="rent-left-panel">
 	<form id="rent-search">
 	<div><input class="input" type="search" placeholder="Search here" maxlength="200" results=3 autofocus></div>

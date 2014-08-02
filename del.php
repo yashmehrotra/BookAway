@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('#del-form').submit(function (e) {
@@ -325,9 +326,9 @@
 	</script>
 </head>
 <body>
-	<div id="wrapper">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
 	<div class="top-panel">
-		<img src="Styles/Images/favicon1.png" id="favicon">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
@@ -338,8 +339,10 @@
 		</ul>
 	</div>
 	</div>
+	<div class="main-heads">
+		<h2 id="delete-text">Edit</h2>
+	</div>
 	<div id="del-main-container">
-		<h2 id="delete-text">Delete</h2>
 	<div id="del-main">
 		<div id="del-desc">
 			To edit the details of your book or to remove the book you added,

@@ -76,7 +76,7 @@
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<div class="wrapper">
 	<div class="top-panel">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>

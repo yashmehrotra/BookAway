@@ -26,11 +26,12 @@ function curPageURL() {
 	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
+	<script type="text/javascript" src="Scripts/scroll.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
 	<div class="top-panel">
-		<img src="Styles/Images/favicon1.png" id="favicon">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links" id="focus">Buy</a></li>
@@ -41,8 +42,10 @@ function curPageURL() {
 		</ul>
 	</div>
 	</div>
+	<div class="main-heads">
+			<h2 id="buy-main-head">Buy Books</h2>
+	</div>
 	<div id="buy-container">
-		<h2 id="buy-main-head">Buy Books</h2>
 	<div class="buy-left-panel">
 	<form id="home-search">
 	<div><!-- <input class="input" id="search-bar" type="search" placeholder="Search here" maxlength="200" autofocus>-->
