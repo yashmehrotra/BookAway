@@ -212,6 +212,7 @@
                     			'height':'450px',
                     			'width':'800px'
                     		});
+                    		$('#book_id_span').html(response.book_id);
                     	}
                     }
                 });
@@ -379,7 +380,7 @@
 		</div>
 		<div id="s2">
 			<p id="successful-text">Thankyou for contributing!!!<br>
-			Your book id is <?php echo $book_id; ?> , Please remember to check it's status<br>
+			Your book id is <span id="book_id_span"></span> , Please remember to check it's status<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">
