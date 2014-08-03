@@ -1,17 +1,17 @@
-setInterval ( "size()", 100 );
+$(function () {
+		move();
+	$(window).resize(move);
+});
 
-		function size()	{
-			var w = window.innerWidth;
-			if( w < 950 )
-			{
-				change();
-			}
-			else rechange();
-		}
-
-		function change()	{
-			document.getElementById("wrapper").style.left="-35px";
-		}
-		function rechange()	{
-			document.getElementById("wrapper").style.left="205px";
-		}
+function move() {
+		var $width = $(this).width();
+		//var $wrapper = parseInt($('.top-panel-list').css('width'));
+		//if($width < $wrapper)
+		//{	
+		//	$('.top-panel-list').css({"marginLeft":"0px"});
+		//}
+		//else
+		//{
+			$('.top-panel-list').css({"marginLeft":0.155*$width});
+		//}
+	}

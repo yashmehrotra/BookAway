@@ -1,5 +1,7 @@
+<!--
+
 <?php
-	
+/*	
 	$name        = $_POST['name'];
 	$email       = $_POST['email'];
 	$phone       = $_POST['phone'];
@@ -46,36 +48,42 @@
 	$database_connection=mysqli_connect("localhost","root","44rrff","bfb");
 
 	//Check connection
-	if (mysqli_connect_errno()) {
+	if (mysqli_connect_errno()) 
+	{
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-	else {
+	else
+	{
 		echo "epic";
 	}
-
+	
 	$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time')";
 	mysqli_query($database_connection,$query);
 	echo "added";
 	$book_id = mysqli_insert_id($database_connection);
 	echo $book_id;
 	mysqli_close($database_connection);
+	*/
 ?>
+-->
+
 <!DOCTYPE html>
 <head>
 	<title>Books for Bucks</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<div class="wrapper">
 	<div class="top-panel">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
 			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
 			<li class="top-opt"><a href="sell.php" class="top-panel-links" id="focus">Sell</a></li>
 			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Delete</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
 			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
 		</ul>
 	</div>
@@ -86,7 +94,7 @@
 		</div>
 		<div id="s2">
 			<p id="successful-text">Thankyou for contributing!!!<br>
-			Your book id is <?php echo $book_id; ?> , Please remember it to check it's status<br>
+			Your book id is <?php echo $book_id; ?> , Please remember to check it's status<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">
