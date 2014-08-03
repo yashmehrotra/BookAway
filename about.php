@@ -12,9 +12,6 @@
 			$('.c123').on('mouseenter mouseleave', function(){
 				$(this).toggleClass('blue');
 			});
-			$('.m123').on('mouseenter mouseleave', function(){
-				$(this).toggleClass('img-blue');
-			});
 		});
 	</script>
 </head>
@@ -33,7 +30,7 @@
 	</div>
 	</div>
 	<div class="main-heads">
-		<h2 id="about-us-text">About Us</h2>
+		<h2>About Us</h2>
 	</div>
 	<div class="main-container">
 		<div class="c123" id="c1">

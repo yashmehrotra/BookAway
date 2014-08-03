@@ -10,8 +10,6 @@ function curPageURL() {
  }
  return $pageURL;
 }
-
-//echo curPageURL();
 ?>
 
 
@@ -43,12 +41,12 @@ function curPageURL() {
 	</div>
 	</div>
 	<div class="main-heads">
-			<h2 id="buy-main-head">Buy Books</h2>
+			<h2>Buy Books</h2>
 	</div>
 	<div id="buy-container">
 	<div class="buy-left-panel">
 	<form id="home-search">
-	<div><!-- <input class="input" id="search-bar" type="search" placeholder="Search here" maxlength="200" autofocus>-->
+	<div>
 		<div class="ui-widget"><input id="search-bar"></div>
 	</div> 
 	<div><button class="search" type="submit">Search</button></div>
@@ -72,41 +70,28 @@ function curPageURL() {
 	<div class="sub-select">
 		<p id="sub">Select subject:</p>
 		<select name="select-subject" class="search-by" id="buy_subject">
-			<option value="all" selected>All</option>
-			<option value="computers">Computers</option>
-			<option value="electronics">Electronics</option>
-			<option value="mathematics">Mathematics</option>
-			<option value="literature">Literature</option>
-			<option value="physics">Physics</option>
-			<option value="medical">Medical</option>
-			<option value="law">Law</option>
-			<option value="music">Music</option>
-			<option value="business">Business</option>
-			<option value="miscellaneous">Miscellaneous</option>
+			<option value="All">All</option>
+			<option value="Computers">Computers</option>
+			<option value="Electronics">Electronics</option>
+			<option value="Maths">Maths</option>
+			<option value="Novels">Novels(Fiction + Non-Fiction)</option>
+			<option value="Magazines">Magazines</option>
+			<option value="Biographies">Biographies</option>
+			<option value="Physics">Physics</option>
+			<option value="Health">Health</option>
+			<option value="Travel">Travel</option>
+			<option value="Medical">Medical</option>
+			<option value="Law">Law</option>
+			<option value="Music">Music</option>
+			<option value="Business">Business</option>
+			<option value="Religion">Religion & Spiritual</option>
+			<option value="Miscellaneous">Miscellaneous</option>
 		</select>
 		</div>
-		<!--<div class="subs"><input type="radio" name="sub" checked>All</div>
-		<div class="subs"><input type="radio" name="sub">Computers</div>
-		<div class="subs"><input type="radio" name="sub">Electronics</div>
-		<div class="subs"><input type="radio" name="sub">Mathematics</div>
-		<div class="subs"><input type="radio" name="sub">Literature</div>
-		<div class="subs"><input type="radio" name="sub">Physics</div>
-		<div class="subs"><input type="radio" name="sub">Medical</div>
-		<div class="subs"><input type="radio" name="sub">Law</div>
-		<div class="subs"><input type="radio" name="sub">Music</div>
-		<div class="subs"><input type="radio" name="sub">Business</div>
-		<div class="subs"><input type="radio" name="sub">Miscellaneous</div>-->
 	</div>
 	</div>
 	<div id="latest-outer">
-		<div class="latest-additions">
-		<!-- <h2>Some Latest Additions</h2>
-		<a href="" class="book-link"><img src="" class="books" alt="book1"></a>
-		<a href="" class="book-link"><img src="" class="books" alt="book2"></a>
-		<a href="" class="book-link"><img src="" class="books" alt="book3"></a>
-		<a href="" class="book-link"><img src="" class="books" alt="book4"></a>
-		<a href="" class="book-link"><img src="" class="books" alt="book5"></a> -->
-		</div>
+		<div class="latest-additions"></div>
 	</div>
 	<div class="bottom-panel">
 		<ul class="bottom-panel-list">

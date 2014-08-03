@@ -330,12 +330,17 @@
 					<option value="Computers">Computers</option>
 					<option value="Electronics">Electronics</option>
 					<option value="Maths">Maths</option>
-					<option value="Literature">Literature</option>
+					<option value="Novels">Novels(Fiction + Non-Fiction)</option>
+					<option value="Magazines">Magazines</option>
+					<option value="Biographies">Biographies</option>
 					<option value="Physics">Physics</option>
+					<option value="Health">Health</option>
+					<option value="Travel">Travel</option>
 					<option value="Medical">Medical</option>
 					<option value="Law">Law</option>
 					<option value="Music">Music</option>
 					<option value="Business">Business</option>
+					<option value="Religion">Religion & Spiritual</option>
 					<option value="Miscellaneous">Miscellaneous</option>
 				<div id="error9"></div>
 				<br>
@@ -374,7 +379,7 @@
 		</div>
 		<div id="s2">
 			<p id="successful-text">Thankyou for contributing!!!<br>
-			Your book id is <?php //echo $book_id; ?> , Please remember to check it's status<br>
+			Your book id is <?php echo $book_id; ?> , Please remember to check it's status<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">

@@ -23,7 +23,7 @@
 	</div>
 	</div>
 <div class="main-heads">
-	<h2 id="contact-us-text">Contact Us</h2>
+	<h2>Contact Us</h2>
 </div>
 <div id="contact-container">
 	<div class="bottom-panel">

@@ -340,7 +340,7 @@
 	</div>
 	</div>
 	<div class="main-heads">
-		<h2 id="delete-text">Edit</h2>
+		<h2>Edit</h2>
 	</div>
 	<div id="del-main-container">
 	<div id="del-main">
@@ -367,8 +367,6 @@
 				<br>
 				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required>  <div id="error1"></div> 
 				<br>
-				<!-- <input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required disabled>
-				<br> -->
 				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
 				<select name="subject" id="subject" class="sell-input" required>
 					<option value="All">All</option>

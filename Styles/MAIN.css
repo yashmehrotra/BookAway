@@ -26,6 +26,12 @@ body
 	src: url('Fonts/Proxima-Nova/ProximaNova-Regular.otf');
 }
 
+@font-face
+{
+	font-family: Josefin-Slab;
+	src: url('Fonts/Josefin-Slab/JosefinSlab-SemiBold.ttf');
+}
+
 a#focus:link
 {
 	border-bottom: 2px solid white;
@@ -77,7 +83,8 @@ h1, h2, h3
 	padding: 0;
 	text-transform: uppercase;
 	background-color: #0078E7;#E25A5A;
-	font-family: ‘Lucida Console’, Monaco, monospace;
+	/*font-family: ‘Lucida Console’, Monaco, monospace;*/
+	font-family: Josefin-Slab;
 	position: relative;
 	top:0px;
 	left: 0px;
@@ -92,12 +99,12 @@ h1, h2, h3
 	top:0px;
 	left: 15px;
 }
-
+/*
 #favicon:hover
 {
 	cursor: pointer;
 }
-
+*/
 .top-panel-list
 {
 	list-style: none;
@@ -329,7 +336,7 @@ ol
 
 .img-blue
 {
-	opacity: 0.9;
+
 }
 
 .c123, .blue
@@ -355,12 +362,13 @@ ol
 .blue:hover
 {
 	color: white;
-	background-color: black;#1ABC9C;#5C9DFF;#0066FF;#D494D4;#990099;blue;
+	background-color: #3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f;
 }
 
 .desc
 {
-	font-size: 18px;
+	font-size: 19px;
+	font-style: italic;
 }
 
 .f-t
@@ -543,13 +551,16 @@ ol
 
 #latest-outer
 {
-	height: 600px;
+	height: 610px;
 	width: 922px;
 	background-color: white;
 	position: absolute;
 	top:80px;
 	left:340px;
 	text-align: center;
+	border:1px solid black;
+	border-radius: 10px;
+	padding-bottom: 20px;
 }
 
 .latest-additions
@@ -558,7 +569,7 @@ ol
 	width: 700px;
 	position: absolute;
 	left: 115px;
-	top:10px;
+	top:5px;
 }
 
 .books-data
@@ -593,12 +604,12 @@ ol
 	width: 950px;
 	margin: auto auto 250px;
 	position: relative;
-	top:60px;
+	top:20px;
 }
 
 #del-main
 {
-	height: 500px;
+	height: 480px;
 	width: inherit;
 	font-size: 20px; 
 	text-align: left;
@@ -607,6 +618,8 @@ ol
 	left: -8px;
 	background-color: white;
 	padding: 10px 10px 0px;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 
 #del-form
@@ -614,7 +627,7 @@ ol
 	height: 310px;
 	width: 700px;inherit;
 	position: absolute;
-	top:185px;
+	top:165px;
 	left: 150px;
 }
 
@@ -634,9 +647,9 @@ ol
 
 .sub
 {
-	width: 250px;
-	height: 40px;
-	margin: 0px 0px 15px 190px;
+	width: 270px;
+	height: 50px;
+	margin: 0px 0px 15px 180px;
 	line-height: 130%;
 	display: inline-block;
 }
@@ -654,7 +667,7 @@ ol
 	height: 40px;
 	font-size: 18px;
 	margin: 35px 250px 0px;
-	background: #0078E7;
+	background: #3c948b;#0078E7;
 	color: white;
 	border: 1px transparent;
 	border-radius: 10px;
@@ -711,7 +724,7 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #0078E7;
+    background: #3c948b;#0078E7;
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
@@ -929,6 +942,8 @@ ol
 	position: relative;
 	left:340px;
 	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 
 .latest-additions
@@ -1112,7 +1127,7 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #0078E7;
+    background: #3c948b;#0078E7;
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;

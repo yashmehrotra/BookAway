@@ -3,13 +3,12 @@
 <head>
 	<title>BooksforBucks | Buy | Sell | Rent | Books</title>
 	<meta name="Description" content="Booksforbucks.com - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
-	<meta name="Keywords" content="books,jiit,buy,sell,rent,textbook,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
+	<meta name="Keywords" content="book,books,jiit,used,buy,sell,rent,textbook,india,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<!--<script type="text/javascript" src="Scripts/mainpage.js"></script>-->
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
 </head>
 <body>
@@ -27,8 +26,8 @@
 	</div>
 	</div>
 
-	<div class="main-heads" id="home-main-head">
-	<h1 class="head">Welcome to rebuse.com</h1>
+	<div class="main-heads">
+	<h2>Welcome to rebuse.com</h2>
 	</div>
 	<div id="home-container">
 	<div class="box" id="buy-box">
