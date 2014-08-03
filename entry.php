@@ -1,5 +1,7 @@
+<!--
+
 <?php
-	
+/*	
 	$name        = $_POST['name'];
 	$email       = $_POST['email'];
 	$phone       = $_POST['phone'];
@@ -11,7 +13,6 @@
 	$sell_price  = $_POST['sellprice'];
 	$rent_price  = $_POST['rentprice'];
 	$rent_time   = $_POST['rentpricetime'];
-	$rent_period = $_POST['rentperiod'];
 
 	echo "<br>";
 	echo $name;
@@ -62,7 +63,10 @@
 	$book_id = mysqli_insert_id($database_connection);
 	echo $book_id;
 	mysqli_close($database_connection);
+	*/
 ?>
+-->
+
 <!DOCTYPE html>
 <head>
 	<title>Books for Bucks</title>
@@ -72,7 +76,7 @@
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<div class="wrapper">
 	<div class="top-panel">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
@@ -90,7 +94,7 @@
 		</div>
 		<div id="s2">
 			<p id="successful-text">Thankyou for contributing!!!<br>
-			Your book id is <?php echo $book_id; ?> , Please remember it to check it's status<br>
+			Your book id is <?php echo $book_id; ?> , Please remember to check it's status<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">

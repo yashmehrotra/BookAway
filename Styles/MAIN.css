@@ -7,34 +7,35 @@ Globals...
 
 body
 {
-	background: url('Images/edited-3.png');
-	background-size: 1500px 2500px;
+	background-color: white;
 	opacity: 0.9;
 	border:0;
 	padding: 0;
 	margin: 0 auto;
-	/*font-size-adjust: 0.50;*/
 }
 
 @font-face
 {
 	font-family: Bitter-Regular;
 	src: url('Fonts/Bitter-Regular.otf');
-	font-weight: normal;
-	font-style: normal;
 }
 
 @font-face
 {
 	font-family: Proxima-Nova;
 	src: url('Fonts/Proxima-Nova/ProximaNova-Regular.otf');
-	font-weight: normal;
-	font-style: normal;
+}
+
+@font-face
+{
+	font-family: Josefin-Slab;
+	src: url('Fonts/Josefin-Slab/JosefinSlab-SemiBold.ttf');
 }
 
 a#focus:link
 {
-	background-color: #ea8585;
+	border-bottom: 2px solid white;
+	background-color: #009fE7;  
 }
 
 h1, h2, h3
@@ -43,36 +44,71 @@ h1, h2, h3
 	text-align: center;
 }
 
-#wrapper
+.main-heads
 {
-	width: 875px;
+	width: 100%;1050px;
+	height: 150px;
+	margin:0 auto;
+	text-align: center;
+	background-color: #0078E7;
+	padding-top: 5px;
+	color: white;
+	font-size: 26px;
+	font-family: Bitter-Regular;
+}
+
+.index-wrapper
+{
+	width: 100%;
 	height: 65px;
-	position: fixed;
-	left: 203px;
-	padding: 0;
-	margin: 0;
-	top: 0;
+	position: absolute;
+	top:100px;
+}
+
+.wrapper
+{
+	width: 100%;
+	height: 65px;
 	z-index: 50;
+	position: fixed;
+	top: 0px;
+	left: 0px;
 }
 
 .top-panel
 {
 	width: inherit;
 	height: inherit;
-	left: 15px;
+	display: inline-block;
+	padding: 0;
 	text-transform: uppercase;
-	background-color: #E25A5A;black;
-	font-family: ‘Lucida Console’, Monaco, monospace;
+	background-color: #0078E7;#E25A5A;
+	/*font-family: ‘Lucida Console’, Monaco, monospace;*/
+	font-family: Josefin-Slab;
 	position: relative;
 	top:0px;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
+	left: 0px;
+	border: 1px outset transparent;
 }
 
+#favicon
+{
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	top:0px;
+	left: 15px;
+}
+/*
+#favicon:hover
+{
+	cursor: pointer;
+}
+*/
 .top-panel-list
 {
 	list-style: none;
+	margin-left: 200px;
 }
 
 .top-opt
@@ -84,11 +120,12 @@ h1, h2, h3
 {
 	text-decoration: none;
 	text-transform: uppercase;
-	padding: 5px 28px 5px 28px;
+	padding: 5px 28px;
 	font-size: 22px;
 	margin-right: 15px;
 	color: white;
-	display: block;
+	display: inline-block;
+	
 }
 
 .top-panel-links:hover
@@ -97,16 +134,17 @@ h1, h2, h3
 	-moz-transition: background-color .4s linear;
 	-o-transition: background-color .4s linear;
 	-ms-transition: background-color .4s linear;
-	background-color: #ea8585;
+	background-color: ;#ea8585;
+	background-color: #009fE7;
 }
 
 .bottom-panel
 {
-	position: absolute;
-	bottom: -150px;
-	width: 100%;inherit;
+	width: 100%;
 	height:40px;
 	margin-bottom: 0px;
+	position: absolute;
+	bottom: -150px;
 	border-top: 1px solid gray;
 	text-align: center;
 }
@@ -124,8 +162,8 @@ h1, h2, h3
 .bottom-links
 {
 	text-decoration: none;
-	padding: 0px 50px 0px 50px;
-	margin: 0px 20px 0px 20px;
+	padding: 0px 50px;
+	margin: 0px 20px;
 	font-size: 20px;
 	font-style: italic;
 	color: black;
@@ -143,33 +181,22 @@ h1, h2, h3
 
 #co-developed
 {
-	position: absolute;
+	height: 25px;
+	width: 100%;
 	opacity: 0.9;
-	bottom: -200px;
 	color: black;
 	background-color: #2EFE64;
 	padding-top: 10px;
-	height: 25px;
-	width: 100%;inherit;
+	position: absolute;
+	bottom: -200px;
 	text-align: center;
 }
 
 /*
 Different for different pages...
 */
-/*
-Homepage
-*/
 
-
-#home-main-head
-{
-	
-	width: 1050px;
-	height: 80px;
-	margin:0 auto;
-	margin-top: 75px;
-}
+/********************  INDEX.PHP   ************************/
 
 h1, .head
 {
@@ -190,36 +217,37 @@ h1
 #home-container
 {
 	position: relative;
-	height: 500px;
+	height: 480px;
 	width: 1100px;
 	padding: 0;
-	margin: 55px auto 250px auto;
+	margin: 80px auto 250px auto;
 }
 
-.buy-box, .sell-box, .rent-box
+.box
 {
 	display: inline-block;
-	height: 440px;
+	height: 420px;
 	width: 280px;
 	position: relative;
-	color: white;
 	float: left;
 	box-shadow: 9px 9px 5px black;
 	top: 0px;
 	padding: 20px;
-	border: 2px solid white;
+	border-style: solid;double;groove;inset;ridge;outset;
+	border-width: 2px;
+	border-color: white;
 	text-align: center;
 	margin: 0px 20px 50px 20px;
 	line-height: 180%;
 	border-radius: 15px;
 }
 
-.buy-box
+#buy-box
 {
 	background-color: #E44424;#D9853B;
 }
 
-.sell-box
+#sell-box
 {
 	background-color: #67BCDB;#558C89;
 }
@@ -240,7 +268,7 @@ ol
 	text-align: left;
 }
 
-.rent-box
+#rent-box
 {
 	background-color: #A2AB58;#67BCDB;#558C89;
 }
@@ -259,8 +287,10 @@ ol
 	padding: 12px;
 	text-decoration: none;
 	font-size: 18px;
-	border: 2px solid white;
+	border-style: solid;
+	border-color: white;
 	border-radius: 15px;
+	border-width: 2px;
 }
 
 .buy-link:hover, .sell-link:hover, .rent-link:hover
@@ -284,31 +314,19 @@ ol
 }
 
 
-/*
-About..
-*/
-
-
-
-#about-us-text
-{
-	text-align: center;
-	font-size: 32px;
-	color: white;
-	margin: 70px 0px 60px 0px;
-}
+/********************    ABOUT.PHP    ************************/
 
 .main-container
 {
 	height: 490px;
 	width:1200px;
 	position: relative;
-	margin: 30px auto 250px auto;
+	margin: 30px auto 250px;
 	text-align: justify;
 	background-color: white;
 }
 
-#m1,#m2,#m3
+.m123, .img-blue
 {
 	height: 160px;
 	width: 160px;
@@ -316,21 +334,41 @@ About..
 	border-radius: 100px;
 }
 
-#c1,#c2,#c3
+.img-blue
+{
+
+}
+
+.c123, .blue
 {
 	height: 300px;
-	border: 2px ridge;
-	padding:20px 20px 40px 20px;
-	float: left;
 	width: 220px;
-	display: inline-block;
+	border: 2px ridge;
 	margin: 55px 0px 0px 100px;
+	padding:20px 20px 40px;
+	float: left;
+	display: inline-block;
 	text-align: center;
+}
+
+.blue
+{
+	-webkit-transition:background-color .4s linear, color .4s linear;
+	-moz-transition:background-color .4s linear, color .4s linear;
+	-o-transition:background-color .4s linear, color .4s linear;
+	-ms-transition:background-color .4s linear, color .4s linear;
+}
+
+.blue:hover
+{
+	color: white;
+	background-color: #3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f;
 }
 
 .desc
 {
-	font-size: 18px;
+	font-size: 19px;
+	font-style: italic;
 }
 
 .f-t
@@ -346,7 +384,7 @@ About..
 	background: url("Images/icon-logos.png") no-repeat 0px 0px;
 }
 
-#icf1:hover, #icf2:hover, #icf3:hover
+.f-t:hover
 {
 	cursor: pointer;
 }
@@ -356,62 +394,36 @@ About..
 	background: url("Images/icon-logos.png") -155px 0px;
 }
 
-#ict1:hover, #ict2:hover, #ict3:hover
-{
-	cursor: pointer;
-}
-
 #icl1, #icl2, #icl3
 {
 	background: url("Images/icon-logos.png") no-repeat -103px 0px;
 }
 
-#icl1:hover, #icl2:hover, #icl3:hover
-{
-	cursor: pointer;
-}
-
 #icg1, #icg2, #icg3
 {
-	background: url("Images/icon-logos.png") -24px 43px;
-}
-
-#icg1:hover, #icg2:hover, #icg3:hover
-{
-	cursor: pointer;
+	background: url("Images/icon-logos.png") -24px 41px;
 }
 
 
-/*
-Buy..
-*/
+/********************    BUY.PHP    ************************/
 
 
 #buy-container
 {
-	position: relative;
-	top: 45px;
 	width: 1270px;
 	height: 650px;
-	margin: 0 auto;
+	margin: 0 auto 250px;
 	padding: 0;
-	margin-bottom: 250px;
-}
-
-#buy-main-head
-{
-	font-family: Bitter-Regular;
-	font-size: 32px;
-	color: white;
-	text-align: center;
+	position: relative;
+	top: 0px;
 }
 
 .buy-left-panel
 {
-	float: left;
-	border: 1px solid gray;
 	width: 320px;
 	height: 450px;
+	float: left;
+	border: 1px solid gray;
 	background-color: white;
 	position: absolute;
 	top:80px;
@@ -422,7 +434,7 @@ Buy..
 #price-max, #home-search
 {
 	font-family: fantasy;
-	margin: 10% auto 0px auto;
+	margin: 10% auto 0px;
 }
 
 #home-search
@@ -496,8 +508,8 @@ Buy..
 	border: 1px solid black;
 	background-color: white;
 	position: relative;
-	font-size: 19px;
 	left: -15px;
+	font-size: 19px;
 }
 
 #price-max
@@ -531,123 +543,119 @@ Buy..
 	width: 140px;
 	float: left;
 	margin-left: 20px;
+	padding-left: 10px;
 	border:1px solid;
 	border-collapse: collapse;
 	text-align: left;
-	padding-left: 10px;
 }
 
 #latest-outer
 {
-	background-color: white;
-	height: 600px;
+	height: 610px;
 	width: 922px;
+	background-color: white;
 	position: absolute;
 	top:80px;
 	left:340px;
 	text-align: center;
+	border:1px solid black;
+	border-radius: 10px;
+	padding-bottom: 20px;
 }
 
 .latest-additions
 {
-	position: absolute;
 	height: 200px;
 	width: 700px;
+	position: absolute;
 	left: 115px;
-	top:10px;
+	top:5px;
 }
 
+.books-data
+{
+	height: 80px;
+	width: 150px;
+	float: left;
+	margin: 20px 10px;
+	border: 1px solid black;
+	font-size: 18px;
+}
 
-/*
-Contact Us...
-*/
+/*********************  CONTACT US  ***********************/
 
 
 #contact-container
 {
 	height: 500px;
 	width: 1000px;
-	margin: 70px auto 250px auto;
+	margin: 70px auto 250px;
 	text-align: center;
 	position: relative;
 }
 
-#contact-us-text
-{
-	font-size: 32px;
-	color: white;
-}
 
-
-/*
-Delete....
-*/
+/********************  DEL.PHP  ************************/
 
 
 #del-main-container
 {
-	position: relative;
-	height: 500px;
+	height: 600px;
 	width: 950px;
-	margin: auto;
-	top:60px;
-	margin-bottom: 250px;
-}
-
-#delete-text
-{
-	font-size: 32px;
-	color: white;
-	text-align: center;
+	margin: auto auto 250px;
+	position: relative;
+	top:20px;
 }
 
 #del-main
 {
-	height: 500px;
-	width: inherit;480px;
+	height: 480px;
+	width: inherit;
 	font-size: 20px; 
 	text-align: left;
 	position: absolute;
 	top:55px;
 	left: -8px;
 	background-color: white;
-	padding: 10px 10px 0px 10px;
+	padding: 10px 10px 0px;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 
 #del-form
 {
+	height: 310px;
+	width: 700px;inherit;
 	position: absolute;
-	top:205px;
-	height: 230px;
-	left: 250px;
-	width: 400px;inherit;
+	top:165px;
+	left: 150px;
 }
 
 #del-desc
 {
-	width: inherit;800px;
+	width: inherit;
 	height: 130px;
 	margin: auto;
+	padding-top: 15px;
 	font-size: 22px;
 	font-family: Bitter Regular;
 	text-align: center;
 	position: absolute;
 	left: 0px;
 	top:30px;
-	padding-top: 15px;
 }
 
 .sub
 {
-	margin: 0px 0px 15px 90px;
-	width: 250px;
-	height: 40px;
+	width: 270px;
+	height: 50px;
+	margin: 0px 0px 15px 180px;
 	line-height: 130%;
+	display: inline-block;
 }
 
 .del-input
 {
-	display: block;
 	width: inherit;
 	height: inherit;
 	font-size: 14px;
@@ -658,17 +666,92 @@ Delete....
 	width: 130px;
 	height: 40px;
 	font-size: 18px;
-	margin: 35px 160px 0px;
-	background: #0078E7;
+	margin: 35px 250px 0px;
+	background: #3c948b;#0078E7;
 	color: white;
-	border-width: 1px;
-    border-color: transparent;
+	border: 1px transparent;
 	border-radius: 10px;
 }
 
-/*
-Entry...
-*/
+#del-error1, #del-error2, #del-error3, #del-error4
+{
+	color: red;
+	font-size: 16px;
+	margin-left: 15px;
+}
+
+#del-error4
+{
+	margin-left: 130px;
+}
+
+#edit-form
+{
+	display: none;
+	height: 620px;
+	width: inherit;800px;
+	background-color: white;
+}
+
+#delete-button
+{
+	height: 40px;
+	width: 180px;
+	background-color: red;
+	color: white;
+	margin: 10px auto 0px 380px;
+	border: 1px solid white;
+	font-size: 16px;
+}
+
+#delete-button:hover
+{
+	cursor: pointer;
+}
+
+#eform
+{
+	height: inherit;
+	margin-left: 230px;
+	font-size: 21px;
+	margin-top: 30px;
+}
+
+#del-new-button
+{
+	width: 19%;
+	height: 8%;
+	color: white;
+	border: 1px transparent;
+	border-radius: 15px;
+    background: #3c948b;#0078E7;
+    font-size: 105%;
+	margin-right: auto;
+	position: absolute;
+	bottom: -55px;
+    left: 390px;
+}
+
+#del-new-button:hover
+{
+	cursor: pointer;
+}
+
+#edit-success
+{
+	display: none;
+	height: 200px;
+	width: inherit;
+	color: black;
+	font-family: Bitter-Regular;
+	font-size: 20px;
+	text-align: center;
+	margin: 30px auto;
+	background-color: white;
+	padding-top: 50px;
+}
+
+/********************  ENTRY.PHP  ************************/
 
 
 #step-2-text
@@ -679,9 +762,9 @@ Entry...
 
 #step-2
 {
-	position: absolute;
 	height: 40px;
 	width: inherit;
+	position: absolute;
 }
 
 #successful-text
@@ -690,7 +773,7 @@ Entry...
 	font-family: Bitter-Regular;
 	line-height: 150%;
 	text-align: center;
-	padding: 0px 10px 0px 10px;
+	padding: 0px 10px;
 	position: relative;
 	left: 40px;
 }
@@ -703,30 +786,30 @@ Entry...
 
 .content
 {	
-	padding-top: 20px;
 	height: 400px;
 	width: 820px;
+	margin-bottom: 250px;
+	padding-top: 20px;
 	background-color: white;
 	position: relative;
 	top:180px;
 	left: 238px;
-	margin-bottom: 250px;
 }
 
 .links-list
 {
-	position: absolute;
-	top:240px;
 	height: 60px;
 	width: inherit;
+	position: absolute;
+	top:240px;
 }
 
 .links-box
 {
-	float: left;
-	margin-left: 110px;
 	height:50px;
 	width: 270px; 
+	float: left;
+	margin-left: 110px;
 }
 
 .links
@@ -736,9 +819,9 @@ Entry...
 	text-decoration: none;
 	padding:10px;
 	border: 2px inset transparent;
+	border-radius: 10px;
 	background-color: #75A3FF;
 	color: white;
-	border-radius: 10px;
 }
 
 .links:hover
@@ -749,51 +832,42 @@ Entry...
 }
 
 
-/*
-Rent....
-*/
+
+/******************  RENT.PHP   **************************/
 
 
 #rent-container
 {
-	position: relative;
-	top: 60px;
 	width: 1270px;
 	height: 720px;
-	margin: 0 auto;
+	position: relative;
+	top: 60px;
+	margin: 0 auto 250px;
 	padding: 0;
-	margin-bottom: 250px;
-}
-
-#main-head
-{
-	font-size: 32px;
-	color: white;
-	text-align: center;
 }
 
 .rent-left-panel
 {
+	height: 355px;
+	width: 320px;
 	margin-left: 0;
 	float: left;
 	border: 1px solid black;
-	width: 320px;
-	height: 355px;
-	background-color: white;
 	border-collapse: collapse;
+	background-color: white;
 	text-align: center;
 }
 
 #rent-search
 {
 	font-family: fantasy;
-	margin:5% auto 0px auto;
+	margin:5% auto 0px;
 }
 
 #input
 {
-	font-size: 18px;
 	width:180px;
+	font-size: 18px;
 	font-family: serif;
 	margin: 7px 10px 0px 7px;
 	float: left;
@@ -801,22 +875,22 @@ Rent....
 
 #search-btn
 {
-	font-size: 15px;
-	width:100px;
 	height:32px;
+	width:100px;
+	font-size: 15px;
 	border: 1px outset;
 	border-radius: 15px;
 	background-color:black;
 	color: white;
 	float: left;
-	margin: 7px 0px 10px 0px;
+	margin: 7px 0px 10px;
 }
 
 #search-btn::before
 {
-	display: inline-block;
 	width: 16px;
 	height: 15px;
+	display: inline-block;
 	content: "";
 	background: url('Images/search.jpg') no-repeat 0 0;
 	background-size: 100%;
@@ -840,7 +914,7 @@ Rent....
 .rent-period
 {
 	height: 112px;
-	margin: 10px 0px 60px 0px;
+	margin: 10px 0px 60px;
 }
 
 .rent-time
@@ -849,10 +923,10 @@ Rent....
 	width: 130px;
 	float: left;
 	margin-left: 20px;
+	padding-left: 10px;
 	border: 1px solid;
 	border-collapse: collapse;
 	text-align: left;
-	padding-left: 10px;
 }
 
 .sub-select
@@ -862,28 +936,27 @@ Rent....
 
 .main
 {
-	background-color: white;
 	height: 665px;
 	width: 922px;
+	background-color: white;
 	position: relative;
 	left:340px;
 	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 
 .latest-additions
 {
-	position: absolute;
 	height: 200px;
 	width: 700px;
+	position: absolute;
 	left: 115px;
 	top:10px;
 }
 
 
-/*
-Sell...
-*/
-
+/*******************  SELL.PHP   *************************/
 
 
 #sell-container
@@ -892,27 +965,10 @@ Sell...
 	width: 700px;
 	position: relative;
 	top: 60px;
-	margin: 0 auto;
+	margin: 0 auto 250px;
 	background-color: white;
 	border: 1px solid gray;
 	border-radius: 10px;
-	margin-bottom: 250px;
-}
-
-#sell-main-head
-{
-	width: 745px;
-	height: 40px;
-	margin: auto;
-	text-align: center;
-	margin-top: 50px;
-}
-
-#sell-books-text
-{
-	font-size: 32px;
-	text-align: center;
-	color: white;
 }
 
 #step-1-text
@@ -923,9 +979,9 @@ Sell...
 
 #step-1
 {
-	position: absolute;
 	height: 40px;
 	width: inherit;
+	position: absolute;
 	top:8px;
 }
 
@@ -940,25 +996,25 @@ Sell...
 	height: 710px;
 	position: absolute;
 	top: 70px;
+	left: 100px;
 	text-align: left;
 	line-height: 180%;
 	font-size: 130%;
-	left: 100px;
 }
 
 .sell-input
 {
+	height: 37px;
+	width: 470px;
 	font-size: 80%;
 	line-height: 100%;
-	width: 470px;
-	height: 37px;
 	box-shadow: 0px 1px 3px 1px #ddd;
 	border: inset 1px solid #ccc;
 	border-radius: 8px;
+	margin: 0px 0px 15px 20px;
 	padding-top: 0.2em;
 	box-sizing: border-box;
 	font-family: Proxima-Nova;
-	margin: 0px 0px 15px 20px;
 }
 
 #before-phone
@@ -1011,11 +1067,8 @@ Sell...
 
 #s-cost, #r-cost
 {
-	background: url('Images/ruppee.gif');
-	background-size: 20px 20px;
-	background-position: right;
+	background: url('Images/ruppee.gif') no-repeat top right;
 	padding-right: 0px;
-	background-repeat: no-repeat;
 }
 
 #r-cost
@@ -1069,18 +1122,17 @@ Sell...
 
 #new-button
 {
-	color: white;
-    border-width: 1px;
-    border-color: transparent;
-    background: #0078E7;#45C463;#6ED186;
-    font-size: 105%;
-    left:80px;180px;
-	margin-right: auto;
-	width: 39%;19%;
+	width: 39%;
 	height: 8%;
+	color: white;
+	border: 1px transparent;
+	border-radius: 15px;
+    background: #3c948b;#0078E7;
+    font-size: 105%;
+	margin-right: auto;
 	position: absolute;
 	bottom: 25px;
-	border-radius: 15px;
+    left:80px;
 }
 
 #new-button:hover
@@ -1088,21 +1140,27 @@ Sell...
 	cursor: pointer;
 }
 
+#entry
+{
+	height: 600px;
+	width: 820px;
+	display: none;
+}
 
-/*
-Sell-nojs....
-*/
+
+/********************SELL NO JS.PHP************************/
+
 
 #sell-nojs-container
 {
-	background-color: white;
 	height: 230px;
 	width: 700px;
-	margin: auto;
-	margin-top:100px;
+	background-color: white;
+	margin: 100px auto auto;
 	padding: 50px;
 }
 
+/**********************PURE-MIN CSS**********************/
 
 
 .pure-form-stacked input[type=text],.pure-form-stacked input[type=password],.pure-form-stacked input[type=email],.pure-form-stacked input[type=url],.pure-form-stacked input[type=date],.pure-form-stacked input[type=month],.pure-form-stacked input[type=time],.pure-form-stacked input[type=datetime],.pure-form-stacked input[type=datetime-local],.pure-form-stacked input[type=week],.pure-form-stacked input[type=number],.pure-form-stacked input[type=search],.pure-form-stacked input[type=tel],.pure-form-stacked input[type=color],.pure-form-stacked select,.pure-form-stacked textarea
@@ -1113,7 +1171,7 @@ Sell-nojs....
 .pure-form-stacked input:not([type])
 {
 	display:block;
-	margin:.25em 0;
+	margin:0.25em 0;
 }
 
 

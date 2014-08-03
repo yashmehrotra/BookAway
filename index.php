@@ -2,15 +2,18 @@
 <html>
 <head>
 	<title>BooksforBucks | Buy | Sell | Rent | Books</title>
-	<meta name="Description" content="booksforbucks.com - Online portal for buying, selling and renting books">
-	<meta name="Keywords" content="books,jiit,buy,sell,rent,textbook,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
+	<meta name="Description" content="Booksforbucks.com - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
+	<meta name="Keywords" content="book,books,jiit,used,buy,sell,rent,textbook,india,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="shortcut icon" href="favicon.ico">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script src="Scripts/scroll.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
 	<div class="top-panel">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links" id="focus">Home</a></div></li>
@@ -22,16 +25,17 @@
 		</ul>
 	</div>
 	</div>
-	<div id="home-main-head">
-	<h1 class="head">Welcome to BooksforBucks.com</h1>
+
+	<div class="main-heads">
+	<h2>Welcome to rebuse.com</h2>
 	</div>
 	<div id="home-container">
-	<div class="buy-box">
+	<div class="box" id="buy-box">
 		<h1>BUY</h1>
 		<p class="home-desc">Search and buy.<br><br> Directly contact the seller through phone.</p>
 		<div  class="continue-buy"><a href="buy.php" class="buy-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
-	<div class="sell-box">
+	<div class="box" id="sell-box">
 		<h1>SELL</h1>
 		<p class="home-desc">Add your books for selling or renting in 2 easy steps:</p>
 			<ol>
@@ -40,7 +44,7 @@
 			</ol>
 			<div class="continue-sell"><a href="sell.php" class="sell-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
-	<div class="rent-box">
+	<div class="box" id="rent-box">
 		<h1>RENT</h1>
 		<p class="home-desc">Don't want to buy books?<br>Rent them.<br><br>Pay as per week or month.</p>
 		<div class="continue-rent"><a href="rent.php" class="rent-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>

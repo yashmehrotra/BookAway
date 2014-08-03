@@ -7,10 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>
 	<script src="Scripts/jquery.js"></script>
+	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	
 	$copy = 0; 
-	$bcopy = 0;
 	
 	$(document).ready(function () {
 		
@@ -144,9 +145,10 @@
 				}
 			}
 
+			fr.preventDefault();
+
 			if($flag) {
-				
-				fr.preventDefault();
+		
 				var $c = $count - $copy;
 				var $newheight = parseInt($height) + 35*$c ;
 				var $change = $newheight + 'px' ;
@@ -155,7 +157,6 @@
 					"height" : $change
 				});
 
-				var $c = $count - $bcopy;
 				var $bnewheight = parseInt($bheight) - 35*$c ;
 				var $bchange = $bnewheight + 'px' ;
 
@@ -164,7 +165,6 @@
 				});
 		
 				$copy = $count;
-				$bcopy = $count;
 
 				if($fcount == 0) {
 				
@@ -194,14 +194,36 @@
 					$('#help').css("top","350px") ;
 				}	
 			}
+			else {
+
+                $.ajax({
+                    url: "sqldata.php",
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(result_addbook) {
+                    	var response = JSON.parse(result_addbook);
+                    	console.log(response.status);
+                    	if(response.status == "success") {
+                    		console.log("Book addition successful");
+                    		$('#sell-form').css('display','none');
+                    		$('#step-1').css('display','none');
+                    		$('#entry').css('display','block');
+                    		$('#sell-container').css({
+                    			'height':'450px',
+                    			'width':'800px'
+                    		});
+                    		$('#book_id_span').html(response.book_id);
+                    	}
+                    }
+                });
+			}
 		});
 	});
 
 	$( document ).ready( function () {
 
-		var click_password = 0;
+		click_password = 0;
 		$("#myform>.pure-g>#show-password").click(function () {
-			
 			if(click_password === 0) {
 				var password = $("#password").val()
 				$("#password").attr("type","text");
@@ -214,48 +236,77 @@
 			}
 		});
 	});	 
-</script>
 
-<script>
-		$(function () {
+
+
+	$(function () {
 		$('#help').on(' mouseenter mouseleave', function () {
 			$('#help-popup').fadeToggle('300');
 		});
 	});
-</script>
-<script>
-  $(function () {
-  	setInterval(function() {
-  	var $a =  $('#sell-rent option:selected').val();
-if( $a == 1 )
-		{
-			$('#r-cost').slideUp(300);
-			$('#rent-price').slideUp(300);
-			$('#s-cost').slideDown(300);
-			$flag = true;
-		}
-if( $a == 2 )
-	{
-		$('#s-cost').slideUp(300);
-		$('#r-cost').slideDown(300);
-		$('#rent-price').slideDown(300);
-		$flag = true;
-	}
-if( $a == 3 )
-	{
-		$('#s-cost').slideDown(300);
-		$('#r-cost').slideDown(300);
-		$('#rent-price').slideDown(300);
-		$flag = true;
-	}
-			}, 100);
-  });
+	
+	$(function () {
+		setInterval(function() {
+			var $a =  $('#sell-rent option:selected').val();
+			if( $a == 1 ) {
+				
+				$('#r-cost').slideUp(300);
+				$('#rent-price').slideUp(300);
+				$('#s-cost').slideDown(300);
+				$('#error8').slideUp(300);
+				if( $('#error7').html() != "" ) {
+				$('#error7').slideDown(300);
+				}
+				$flag = true;
+			}
 
-  </script>
+			if( $a == 2 ) {
+				
+				$('#s-cost').slideUp(300);
+				$('#r-cost').slideDown(300);
+				$('#rent-price').slideDown(300);
+				$('#error7').slideUp(300);
+				if( $('#error8').html() != "" ) {
+				$('#error8').slideDown(300);
+				}
+				$flag = true;
+			}
+			
+			if( $a == 3 ) {
+				
+				$('#s-cost').slideDown(300);
+				$('#r-cost').slideDown(300);
+				$('#rent-price').slideDown(300);
+				if( $('#error7').html() != "" ) {
+				$('#error7').slideDown(300);
+				}
+				if( $('#error8').html() != "" ) {
+				$('#error8').slideDown(300);
+				}
+				$flag = true;
+			}
 
+		}, 100);
+	});
+
+	</script>
 </head>
 <body>
-	<div id="sell-main-head">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
+	<div class="top-panel">
+		<ul class="top-panel-list">
+			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
+			<li class="top-opt"><a href="buy.php" class="top-panel-links">Buy</a></li>
+			<li class="top-opt"><a href="sell.php" class="top-panel-links" id="focus">Sell</a></li>
+			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
+			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
+			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
+		</ul>
+	</div>
+	</div>
+
+	<div class="main-heads" id="sell-main-head">
 		<h2 id="sell-books-text">Sell Books</h2>
 	</div>
 	<div id="sell-container">
@@ -264,7 +315,7 @@ if( $a == 3 )
 		</div>
 	<div id="sell-form">
 		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
-		<form name="myform" class="pure-form pure-form-stacked" id="myform" action="entry.php" method="POST" novalidate>
+		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div>
 				<br>
@@ -280,40 +331,65 @@ if( $a == 3 )
 					<option value="Computers">Computers</option>
 					<option value="Electronics">Electronics</option>
 					<option value="Maths">Maths</option>
-					<option value="Literature">Literature</option>
+					<option value="Novels">Novels(Fiction + Non-Fiction)</option>
+					<option value="Magazines">Magazines</option>
+					<option value="Biographies">Biographies</option>
 					<option value="Physics">Physics</option>
+					<option value="Health">Health</option>
+					<option value="Travel">Travel</option>
 					<option value="Medical">Medical</option>
 					<option value="Law">Law</option>
 					<option value="Music">Music</option>
 					<option value="Business">Business</option>
+					<option value="Religion">Religion & Spiritual</option>
 					<option value="Miscellaneous">Miscellaneous</option>
-			<div id="error9"></div>
-			<br>
-			<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
-			<br>
-			<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
-			<br>
-			<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
-			<select name="sellrent" id="sell-rent" class="sell-input">
-				<option value="3" selected>Both Sale and Rent</option>
-				<option value="1">Sale</option>
-				<option value="2">Rent</option>
-			</select>
-			<div id="error2"></div>
-			<br>
-			<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"><div id="error7"></div> 
-			<br>
-			<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
-			<select name="rentpricetime" id="rent-price" class="sell-input">
-				<option value="week">per Week</option>
-				<option value="month">per Month</option>
-			</select>
-			<div id="error8"></div> 
-			<br><br>
+				<div id="error9"></div>
+				<br>
+				<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    
+				<br>
+				<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error6"></div>  
+				<br>
+				<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
+				<select name="sellrent" id="sell-rent" class="sell-input">
+					<option value="3" selected>Both Sale and Rent</option>
+					<option value="1">Sale</option>
+					<option value="2">Rent</option>
+				</select>
+				<div id="error2"></div>
+				<br>
+				<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error7"></div> 
+				<br>
+				<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
+				<select name="rentpricetime" id="rent-price" class="sell-input">
+					<option value="week">per Week</option>
+					<option value="month">per Month</option>
+				</select>
+				<div id="error8"></div> 
+				<br><br>
+				<div hidden>
+					<input type="text" id="source" name="source" value="add_book">
+				</div>
 			</div>
 		<button class="button-success pure-button" id = "new-button">Submit</button>
 	</form>
 </div>
+
+<div id="entry">
+	<div id="step-2">
+			<h3 id="step-2-text"><u>Step 2:</u> Verification Process...</h3>
+		</div>
+		<div id="s2">
+			<p id="successful-text">Thankyou for contributing!!!<br>
+			Your book id is <span id="book_id_span"></span> , Please remember to check it's status<br>
+			Your response will be processed and implemented within 24 hours.</p>
+		</div>
+		<div class="links-list">
+			<div class="links-box"><a href="index.php" class="links">Return 
+			to homepage</a></div>
+			<div class="links-box"><a href="sell.php" class="links">Sell another Book</a></div>
+		</div>
+</div>
+
 <div class="bottom-panel">
 	<ul class="bottom-panel-list">
 		<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>

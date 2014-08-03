@@ -6,9 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script type="text/javascript" src="Scripts/scroll.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<img src="Styles/Images/favicon1.png" id="favicon">
+	<div class="index-wrapper">
 	<div class="top-panel">
 		<ul class="top-panel-list">
 			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
@@ -20,8 +22,10 @@
 		</ul>
 	</div>
 	</div>
+	<div class="main-heads">
+		<h2>Rent Books</h2>
+	</div>
 	<div id="rent-container">
-		<h2 id="main-head">Rent Books</h2>
 	<div class="rent-left-panel">
 	<form id="rent-search">
 	<div><input class="input" type="search" placeholder="Search here" maxlength="200" results=3 autofocus></div>
@@ -40,30 +44,24 @@
 	<div class="sub-select">
 		<p id="sub">Select subject:</p>
 		<select name="select-subject" class="search-by">
-			<option value="all" selected>All</option>
-			<option value="computers">Computers</option>
-			<option value="electronics">Electronics</option>
-			<option value="mathematics">Mathematics</option>
-			<option value="literature">Literature</option>
-			<option value="physics">Physics</option>
-			<option value="medical">Medical</option>
-			<option value="law">Law</option>
-			<option value="music">Music</option>
-			<option value="business">Business</option>
-			<option value="miscellaneous">Miscellaneous</option>
+			<option value="All">All</option>
+			<option value="Computers">Computers</option>
+			<option value="Electronics">Electronics</option>
+			<option value="Maths">Maths</option>
+			<option value="Novels">Novels(Fiction + Non-Fiction)</option>
+			<option value="Magazines">Magazines</option>
+			<option value="Biographies">Biographies</option>
+			<option value="Physics">Physics</option>
+			<option value="Health">Health</option>
+			<option value="Travel">Travel</option>
+			<option value="Medical">Medical</option>
+			<option value="Law">Law</option>
+			<option value="Music">Music</option>
+			<option value="Business">Business</option>
+			<option value="Religion">Religion & Spiritual</option>
+			<option value="Miscellaneous">Miscellaneous</option>
 		</select>
 		</div>
-		<!--<div class="subs"><input type="radio" name="sub" checked>All</div>
-		<div class="subs"><input type="radio" name="sub">Computers</div>
-		<div class="subs"><input type="radio" name="sub">Electronics</div>
-		<div class="subs"><input type="radio" name="sub">Mathematics</div>
-		<div class="subs"><input type="radio" name="sub">Literature</div>
-		<div class="subs"><input type="radio" name="sub">Physics</div>
-		<div class="subs"><input type="radio" name="sub">Medical</div>
-		<div class="subs"><input type="radio" name="sub">Law</div>
-		<div class="subs"><input type="radio" name="sub">Music</div>
-		<div class="subs"><input type="radio" name="sub">Business</div>
-		<div class="subs"><input type="radio" name="sub">Miscellaneous</div>-->
 	</div>
 	</div>
 	<div class="main">
