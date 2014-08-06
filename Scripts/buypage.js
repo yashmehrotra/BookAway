@@ -34,6 +34,7 @@ function showthis(bookid) {
 }
 
 Ultimate_data       = [];
+search_data = [];
 booklist_array      = [];
 authorlist_array    = [];
 sellername_array    = [];
@@ -82,6 +83,12 @@ function book_data_display () {
 						'rent_time':json[counter].rent_time
 					});
 
+
+					search_data.push(
+						{ label: json[counter].book_name, category: "Books" },
+						{ label: json[counter].author_name, category: "Author" }
+					)
+
 					console.log(json[counter].book_name + " " + json[counter].author_name);
 					
 					if(json[counter].sell_rent !="2") {
@@ -97,9 +104,34 @@ function book_data_display () {
 				}
 				//console.log(booklist_array);
 				console.log(Ultimate_data);
+				console.log(search_data);
+				//For Autocomplete
+				/////////////////////
+				$.widget( "custom.catcomplete", $.ui.autocomplete, {
+				    _create: function() {
+				      this._super();
+				      this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+				    },
+				    _renderMenu: function( ul, items ) {
+				      var that = this,
+				        currentCategory = "";
+				      $.each( items, function( index, item ) {
+				        var li;
+				        if ( item.category != currentCategory ) {
+				          ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+				          currentCategory = item.category;
+				        }
+				        li = that._renderItemData( ul, item );
+				        if ( item.category ) {
+				          li.attr( "aria-label", item.category + " : " + item.label );
+				        }
+				      });
+				    }
+				  });
 				
-				$( "#search-bar" ).autocomplete({
-					source: booklist_array
+				$( "#search-bar" ).catcomplete({
+					delay: 0,
+					source: search_data
 				});
 			}
 			else {
