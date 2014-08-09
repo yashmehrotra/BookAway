@@ -579,14 +579,34 @@ ol
 	top:5px;
 }
 
-.books-data
+.outer-divs
 {
-	height: 80px;
+	height: 150px;
 	width: 150px;
 	float: left;
 	margin: 20px 10px;
 	border: 1px solid black;
 	font-size: 18px;
+}
+
+.books-data
+{
+	height: 90px;
+	width: 150px;
+	float: left;
+	/*margin: 20px 10px;*/
+	border: 1px solid black;
+	font-size: 18px;
+}
+
+.seller-data
+{
+	height: 50px;
+	width: 150px;
+	float: left;
+	/*margin: 0px 10px 10px;*/
+	border: 1px solid black;
+	font-size: 16px;
 }
 
 /*********************  CONTACT US  ***********************/

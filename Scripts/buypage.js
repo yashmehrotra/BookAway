@@ -93,8 +93,8 @@ function book_data_display () {
 					
 					if(json[counter].sell_rent !="2") {
 						
-						$('#latest-outer > .latest-additions').append("<div class='books-data' id='books-data-"+json[counter].book_id+"' >"+json[counter].book_name + " " + json[counter].author_name+"</div>");
-						$('#latest-outer > .latest-additions').append("<div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:none;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
+						$('#latest-outer > .latest-additions').append("<div class='outer-divs'><div class='books-data' id='books-data-"+json[counter].book_id+"' >"+json[counter].book_name + " " + json[counter].author_name+"</div>");
+						$('#latest-outer > .latest-additions').append("<div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:none;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div></div>");
 					
 						counter = counter +1;
 					}
@@ -148,6 +148,6 @@ function click_toggle () {
 		var book_id = $(this).attr('id');
 		book_id = book_id.split("books-data-").join("");
 		var seller_data =  "#seller-data-" + book_id;
-		$(seller_data).toggle();
+		$(seller_data).slideToggle(300);
 	});
 }
