@@ -362,7 +362,7 @@ ol
 .blue:hover
 {
 	color: white;
-	background-color: #3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f;
+	background-color: #AA3DA6;#3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f;
 }
 
 .desc
@@ -406,7 +406,14 @@ ol
 
 
 /********************    BUY.PHP    ************************/
+/*Buy Yash*/
 
+.ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+  }
 
 #buy-container
 {
@@ -572,14 +579,49 @@ ol
 	top:5px;
 }
 
-.books-data
+/*
+.outer-divs
 {
-	height: 80px;
+	height: 150px;
 	width: 150px;
 	float: left;
 	margin: 20px 10px;
 	border: 1px solid black;
 	font-size: 18px;
+}
+
+.books-data
+{
+	height: 90px;
+	width: 150px;
+	float: left;
+	/*margin: 20px 10px;*/
+	/*
+	border: 1px solid black;
+	font-size: 18px;
+}
+
+.seller-data
+{
+	height: 50px;
+	width: 150px;
+	overflow: hidden;
+	*/
+	/*float: left;
+	margin: 0px 10px 10px;
+	border: 1px solid black;*/
+	/*
+	font-size: 16px;
+}
+*/
+#load-more
+{
+	height: 45px;
+	width: 90px;
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	right: 45%;
 }
 
 /*********************  CONTACT US  ***********************/
@@ -667,10 +709,20 @@ ol
 	height: 40px;
 	font-size: 18px;
 	margin: 35px 250px 0px;
-	background: #3c948b;#0078E7;
+	background: #403C94;#3c948b;#0078E7;
 	color: white;
 	border: 1px transparent;
 	border-radius: 10px;
+}
+
+#submit:hover
+{
+	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #del-error1, #del-error2, #del-error3, #del-error4
@@ -691,6 +743,8 @@ ol
 	height: 620px;
 	width: inherit;800px;
 	background-color: white;
+	border: 1px solid black;
+	border-radius: 20px;
 }
 
 #delete-button
@@ -711,7 +765,7 @@ ol
 
 #eform
 {
-	height: inherit;
+	height: 530px;
 	margin-left: 230px;
 	font-size: 21px;
 	margin-top: 30px;
@@ -724,17 +778,22 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #3c948b;#0078E7;
+    background: #403C94;#3c948b;#0078E7;
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
-	bottom: -55px;
+	bottom: -5px;
     left: 390px;
 }
 
 #del-new-button:hover
 {
 	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #edit-success
@@ -1127,7 +1186,7 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #3c948b;#0078E7;
+    background: #403C94;#3c948b;#0078E7;
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
@@ -1138,6 +1197,11 @@ ol
 #new-button:hover
 {
 	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #entry
