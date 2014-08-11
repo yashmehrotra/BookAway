@@ -6,11 +6,11 @@
 //
 
 
- $(document).ready(function(){
-	
+ $(document).ready(function() {
+	$c = 0;
 	book_data_display();
-	click_toggle();
-
+	//click_toggle();
+	load_more();
 	newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 	console.log(newURL);
 
@@ -34,6 +34,7 @@ function showthis(bookid) {
 }
 
 Ultimate_data       = [];
+search_data = [];
 booklist_array      = [];
 authorlist_array    = [];
 sellername_array    = [];
@@ -82,13 +83,20 @@ function book_data_display () {
 						'rent_time':json[counter].rent_time
 					});
 
+
+					search_data.push(
+						{ label: json[counter].book_name, category: "Books" },
+						{ label: json[counter].author_name, category: "Author" }
+					)
+
 					console.log(json[counter].book_name + " " + json[counter].author_name);
-					
-					if(json[counter].sell_rent !="2") {
+					 //
+					if(json[counter].sell_rent !="2" && $c != 12 ) {
 						
-						$('#latest-outer > .latest-additions').append("<div class='books-data' id='books-data-"+json[counter].book_id+"' >"+json[counter].book_name + " " + json[counter].author_name+"</div>");
-						$('#latest-outer > .latest-additions').append("<div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:none;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
-					
+						$('#latest-outer > .latest-additions').append('<div class="outer-divs"><div class="books-data" id="books-data-'+json[counter].book_id+'"' + ">"+ json[counter].book_name + " " + json[counter].author_name + "</div>");
+						$('#latest-outer > .latest-additions').append("<div class='inner-divs'><div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:inherit;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
+						$c = $c + 1;
+						console.log($c);
 						counter = counter +1;
 					}
 					else{
@@ -97,9 +105,34 @@ function book_data_display () {
 				}
 				//console.log(booklist_array);
 				console.log(Ultimate_data);
+				console.log(search_data);
+				//For Autocomplete
+				/////////////////////
+				$.widget( "custom.catcomplete", $.ui.autocomplete, {
+				    _create: function() {
+				      this._super();
+				      this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+				    },
+				    _renderMenu: function( ul, items ) {
+				      var that = this,
+				        currentCategory = "";
+				      $.each( items, function( index, item ) {
+				        var li;
+				        if ( item.category != currentCategory ) {
+				          ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+				          currentCategory = item.category;
+				        }
+				        li = that._renderItemData( ul, item );
+				        if ( item.category ) {
+				          li.attr( "aria-label", item.category + " : " + item.label );
+				        }
+				      });
+				    }
+				  });
 				
-				$( "#search-bar" ).autocomplete({
-					source: booklist_array
+				$( "#search-bar" ).catcomplete({
+					delay: 0,
+					source: search_data
 				});
 			}
 			else {
@@ -109,13 +142,27 @@ function book_data_display () {
 	});
 }
 
-function click_toggle () {
+/*function click_toggle () {
 	
 	$('#latest-outer > .latest-additions').on('click', '.books-data', function() {
-		console.log("click");
+		//console.log("click");
 		var book_id = $(this).attr('id');
 		book_id = book_id.split("books-data-").join("");
 		var seller_data =  "#seller-data-" + book_id;
-		$(seller_data).toggle();
+		$(seller_data).slideToggle(300);
 	});
+}
+*/
+function load_more () {
+	if( $c < 11 ) {
+		//$('#load-more').css('display','none');
+	}
+	else {
+		//$('#load-more').css('display','block');
+		$('#load-more').on('click', function(){
+			console.log("click");
+			$c = $c + 1;
+			book_data_display();
+		})
+	}
 }

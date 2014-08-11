@@ -12,7 +12,6 @@ function curPageURL() {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,21 +24,17 @@ function curPageURL() {
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
 	<script type="text/javascript" src="Scripts/scroll.js"></script>
+	<script>
+		$(function(){
+			$('#buy').attr('id','focus');
+		});
+	</script>
 </head>
 <body>
 	<img src="Styles/Images/favicon1.png" id="favicon">
-	<div class="index-wrapper">
-	<div class="top-panel">
-		<ul class="top-panel-list">
-			<li class="top-opt"><div class="top-divs"><a href="index.php" class="top-panel-links">Home</a></div></li>
-			<li class="top-opt"><a href="buy.php" class="top-panel-links" id="focus">Buy</a></li>
-			<li class="top-opt"><a href="sell.php" class="top-panel-links">Sell</a></li>
-			<li class="top-opt"><a href="rent.php" class="top-panel-links">Rent</a></li>
-			<li class="top-opt"><a href="del.php" class="top-panel-links">Edit</a></li>
-			<li class="top-opt"><a href="feedback.php" class="top-panel-links">Feedback</a></li>
-		</ul>
-	</div>
-	</div>
+	<?php
+	require_once('topbar.php');
+	?>
 	<div class="main-heads">
 			<h2>Buy Books</h2>
 	</div>
@@ -92,6 +87,7 @@ function curPageURL() {
 	</div>
 	<div id="latest-outer">
 		<div class="latest-additions"></div>
+		<button id="load-more">Load more</button>
 	</div>
 	<div class="bottom-panel">
 		<ul class="bottom-panel-list">

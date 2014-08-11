@@ -36,9 +36,6 @@
 		$response['seller_name'] = $name;
 		$response['book_id'] = $book_id;
 
-		$response = json_encode($response);
-		echo $response;
-		exit();
 	}
 
 	elseif($source == 'edit_user' ) {
@@ -74,9 +71,6 @@
 		}
 		mysqli_close($database_connection);
 
-		$response = json_encode($response);
-		echo $response;
-		exit();
 	}
 
 	elseif ($source == 'edit_book') {
@@ -97,11 +91,9 @@
 
 		$response = array();
 		$response['status'] = 'success';
-		$response = json_encode($response);
 
-		echo $response;
-		exit();
 	}
+	
 	elseif ($source == 'delete') {
 
 		$delete_seller_id = $_POST['user_id'];
@@ -113,10 +105,7 @@
 		
 		$response = array();
 		$response['status'] = 'success';
-		$response = json_encode($response);
 
-		echo $response;
-		exit();
 	}
 	
 	elseif ($source == 'view') {
@@ -124,33 +113,33 @@
 		$query = "SELECT * FROM books";
 		$book_data = mysqli_query($database_connection,$query);
 
-		$Book_JSON = array();
+		$response = array();
 		$i=0;
 
 		while($row = mysqli_fetch_array($book_data)) {
 
-			$Book_JSON[$i]['book_id']       = $row['id'];
-			$Book_JSON[$i]['book_name']     = $row['book'];
-			$Book_JSON[$i]['author_name']   = $row['author'];
-			$Book_JSON[$i]['seller_name']   = $row['name'];
-			$Book_JSON[$i]['seller_phone']  = $row['phone'];
-			$Book_JSON[$i]['seller_email']  = $row['email'];
-			$Book_JSON[$i]['sell_rent']     = $row['sell_rent'];
-			$Book_JSON[$i]['sell_price']    = $row['sell_price'];
-			$Book_JSON[$i]['rent_price']    = $row['rent_price'];
-			$Book_JSON[$i]['rent_time']     = $row['rent_time'];
+			$response[$i]['book_id']       = $row['id'];
+			$response[$i]['book_name']     = $row['book'];
+			$response[$i]['author_name']   = $row['author'];
+			$response[$i]['seller_name']   = $row['name'];
+			$response[$i]['seller_phone']  = $row['phone'];
+			$response[$i]['seller_email']  = $row['email'];
+			$response[$i]['sell_rent']     = $row['sell_rent'];
+			$response[$i]['sell_price']    = $row['sell_price'];
+			$response[$i]['rent_price']    = $row['rent_price'];
+			$response[$i]['rent_time']     = $row['rent_time'];
 
 			$i=$i+1;
 
 		}
 
 		mysqli_close($database_connection);
-		
-		$response = json_encode($Book_JSON);
-		echo $response;
-		exit();
+
 	}
-	
+
+	$response = json_encode($response);
+	echo $response;
+	exit();
 
 ?>
 
