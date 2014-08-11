@@ -12,7 +12,6 @@ function curPageURL() {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +24,11 @@ function curPageURL() {
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
 	<script type="text/javascript" src="Scripts/scroll.js"></script>
+	<script>
+		$(function(){
+			$('#buy').attr('id','focus');
+		});
+	</script>
 </head>
 <body>
 	<img src="Styles/Images/favicon1.png" id="favicon">
@@ -83,6 +87,7 @@ function curPageURL() {
 	</div>
 	<div id="latest-outer">
 		<div class="latest-additions"></div>
+		<button id="load-more">Load more</button>
 	</div>
 	<div class="bottom-panel">
 		<ul class="bottom-panel-list">

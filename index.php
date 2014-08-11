@@ -10,6 +10,11 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			$('#home').attr('id','focus');
+		});
+	</script>
 </head>
 <body>
 	<img src="Styles/Images/favicon1.png" id="favicon">

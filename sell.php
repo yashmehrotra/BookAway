@@ -9,6 +9,11 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
+	<script>
+	$(function(){
+			$('#sell').attr('id','focus');
+		});
+	</script>
 	<script type="text/javascript">
 	
 	$copy = 0; 

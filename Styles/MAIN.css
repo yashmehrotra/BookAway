@@ -603,10 +603,21 @@ ol
 {
 	height: 50px;
 	width: 150px;
-	float: left;
-	/*margin: 0px 10px 10px;*/
-	border: 1px solid black;
+	overflow: hidden;
+	/*float: left;
+	margin: 0px 10px 10px;
+	border: 1px solid black;*/
 	font-size: 16px;
+}
+
+#load-more
+{
+	height: 45px;
+	width: 90px;
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	right: 45%;
 }
 
 /*********************  CONTACT US  ***********************/
@@ -694,10 +705,20 @@ ol
 	height: 40px;
 	font-size: 18px;
 	margin: 35px 250px 0px;
-	background: #3c948b;#0078E7;
+	background: #403C94;#3c948b;#0078E7;
 	color: white;
 	border: 1px transparent;
 	border-radius: 10px;
+}
+
+#submit:hover
+{
+	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #del-error1, #del-error2, #del-error3, #del-error4
@@ -718,6 +739,8 @@ ol
 	height: 620px;
 	width: inherit;800px;
 	background-color: white;
+	border: 1px solid black;
+	border-radius: 20px;
 }
 
 #delete-button
@@ -738,7 +761,7 @@ ol
 
 #eform
 {
-	height: inherit;
+	height: 530px;
 	margin-left: 230px;
 	font-size: 21px;
 	margin-top: 30px;
@@ -751,17 +774,22 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #3c948b;#0078E7;
+    background: #403C94;#3c948b;#0078E7;
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
-	bottom: -55px;
+	bottom: -5px;
     left: 390px;
 }
 
 #del-new-button:hover
 {
 	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #edit-success
@@ -1154,7 +1182,7 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #3c948b;#0078E7;
+    background: #403C94;#3c948b;#0078E7;
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
@@ -1165,6 +1193,11 @@ ol
 #new-button:hover
 {
 	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #entry

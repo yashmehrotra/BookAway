@@ -7,6 +7,11 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/scroll.js"></script>
+	<script>
+	$(function(){
+			$('#rent').attr('id','focus');
+		});
+	</script>
 </head>
 <body>
 	<img src="Styles/Images/favicon1.png" id="favicon">

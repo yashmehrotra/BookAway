@@ -7,6 +7,11 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
+	<script>
+	$(function(){
+			$('#del').attr('id','focus');
+		});
+	</script>
 	<script type="text/javascript">
 		$(function() {
 			$('#del-form').submit(function (e) {
