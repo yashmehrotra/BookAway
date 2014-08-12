@@ -273,7 +273,12 @@
 		$(function() {
 
 		 	$('#delete-button').on('click', function () {
-		 		delete_request();
+		 		var user_choice = confirm("Are you sure you want to Delete this Book");
+
+		 		if (user_choice == true) {
+		 			console.log("Book Deleted")
+		 			delete_request();
+		 		}
 		 	});
 
             $("#eform").on("submit", function(e) {
