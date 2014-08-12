@@ -32,6 +32,12 @@ body
 	src: url('Fonts/Josefin-Slab/JosefinSlab-SemiBold.ttf');
 }
 
+@font-face
+{
+	font-family: Ubuntu;
+	src: url('Fonts/Ubuntu/Ubuntu-R.ttf');
+}
+
 a#focus:link
 {
 	border-bottom: 2px solid white;

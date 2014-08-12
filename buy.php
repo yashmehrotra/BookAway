@@ -18,9 +18,9 @@ function curPageURL() {
 	<title>BooksforBucks- Buy, Sell, Rent Books!!</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="Styles/jquery-ui.css">
 	<script src="Scripts/jquery.js"></script>
-	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script src="Scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
 	<script type="text/javascript" src="Scripts/scroll.js"></script>

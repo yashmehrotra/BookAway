@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="Scripts/top-panel.js"></script>
 <?php
 echo '<img src="Styles/Images/favicon1.png" id="favicon">';
 echo '<div class="index-wrapper">';
