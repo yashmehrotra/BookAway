@@ -1224,6 +1224,37 @@ ol
 	padding: 50px;
 }
 
+
+/********************* FAQs.php *************************/
+
+
+#faq-main-container
+{
+	height: 600px;
+	width: 950px;
+	margin: auto auto 250px;
+	position: relative;
+	top:20px;
+}
+
+.ques
+{
+	text-align: left;
+}
+
+#faq-main-container .ans
+{
+	display: none;
+	font-size: 20px;
+}
+
+#faq-main-container .ans-close
+{
+	display: initial;
+	font-size: 50px;
+}
+
+
 /**********************PURE-MIN CSS**********************/
 
 

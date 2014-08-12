@@ -336,7 +336,6 @@
 	</script>
 </head>
 <body>
-	<img src="Styles/Images/favicon1.png" id="favicon">
 	<?php
 	require_once('topbar.php');
 	?>
@@ -414,16 +413,9 @@
 
 	</div>
 	<div id="edit-success">Congratulations!!<br>You have successfully edited your response.</div>
-	<div class="bottom-panel">
-		<ul class="bottom-panel-list">
-			<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>
-			<li class="home-about-contact"><a href="about.php" class="bottom-links">About</a></li>
-			<li class="home-about-contact"><a href="contact.php" class="bottom-links">Contact</a></li>
-		</ul>
-	</div>
-		<div id="co-developed">
-			<code>Copyright</code><code>2014 .All Rights Reserved. Booksforbucks.com</code>
-		</div>
+	<?php
+		require_once('footer.php');
+	?>
 	</div>
 </body>
 </html>
