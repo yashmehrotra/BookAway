@@ -23,8 +23,9 @@
 		$sell_price  = $_POST['sellprice'];
 		$rent_price  = $_POST['rentprice'];
 		$rent_time   = $_POST['rentpricetime'];
+		$date_added =  date("Y-m-d H:i:s", time());
 
-		$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time')";
+		$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time,date_added) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$date_added')";
 		mysqli_query($database_connection,$query);
 
 		$book_id = mysqli_insert_id($database_connection);
