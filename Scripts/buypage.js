@@ -35,7 +35,7 @@ function showthis(bookid) {
 }
 
 Ultimate_data       = [];
-search_data = [];
+search_data         = [];
 booklist_array      = [];
 authorlist_array    = [];
 sellername_array    = [];
@@ -46,6 +46,9 @@ bookfor_array       = [];
 rentprice_array     = [];
 sellprice_array     = [];
 renttime_array      = [];
+
+search_books        = [];
+search_authors      = [];
 
 function book_data_display () {
 	
@@ -85,24 +88,43 @@ function book_data_display () {
 					});
 
 
-					search_data.push(
-						{ label: json[counter].book_name, category: "Books" },
-						{ label: json[counter].author_name, category: "Author" }
-					)
+					// search_data.push(
+					// 	{ label: json[counter].book_name, category: "Books" },
+					// 	{ label: json[counter].author_name, category: "Author" }
+					// )
 
-					console.log(json[counter].book_name + " " + json[counter].author_name);
+					//To add different inputs
+					if( $.inArray(json[counter].book_name,search_books) == -1 ) {
+						search_books.push(json[counter].book_name);
+						search_data.push(
+							{ label: json[counter].book_name, category: "Books" }
+						)
+					}
+
+					if( $.inArray(json[counter].author_name,search_authors) == -1 ) {
+						search_authors.push(json[counter].author_name);
+						search_data.push(
+							{ label: json[counter].author_name, category: "Author" }
+						)
+					}
+					//
+					//console.log("Above");
+
+					//
+
+					//console.log(json[counter].book_name + " " + json[counter].author_name);
 					 //
-					if($c != 12 ) {
+					//if($c != 12 ) {
 						
 						$('#latest-outer > .latest-additions').append('<div class="outer-divs"><div class="books-data" id="books-data-'+json[counter].book_id+'"' + ">"+ json[counter].book_name + " " + json[counter].author_name + "</div>");
 						$('#latest-outer > .latest-additions').append("<div class='inner-divs'><div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:inherit;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
 						$c = $c + 1;
 						console.log($c);
 						counter = counter +1;
-					}
-					else{
-						counter = counter +1;
-					}
+					//}
+					//else{
+					//	counter = counter +1;
+					//}
 				}
 				//console.log(booklist_array);
 				console.log(Ultimate_data);
