@@ -133,7 +133,11 @@ function book_data_display () {
 				
 				$( "#search-bar" ).catcomplete({
 					delay: 0,
-					source: search_data
+					source: search_data,
+					select: function(event, ui) {
+						$('#search-button').append("<div hidden id='category-search'></div>")
+                		$('#category-search').val(ui.item.category);
+                	}
 				});
 			}
 			else {
@@ -173,6 +177,30 @@ function show_search() {
 	$('#search-button').on('click',function(e) {
 		// console.log()
 		e.preventDefault();
-		console.log($("#search-bar").val());
+		var search_value = $("#search-bar").val();
+		var search_category = $("#category-search").val();
+		console.log(search_value);
+		console.log(search_category);
+		load_specific(search_value,search_category);
 	})
+}
+
+function load_specific(search_value, search_category) {
+	$('.outer-divs').remove();
+	$('.inner-divs').remove();
+	//$('#latest-outer > .latest-additions').append(book_name_search);
+	$.ajax({
+		type: "GET",
+		url: "sqldata.php", //Make sure URL Doesnt cause problem in future
+		data: { 'source': 'search',
+				'search_category': search_category,
+				'search_value': search_value
+			},
+		success: function (result) {
+			if(result) {
+
+			}
+		}
+	});
+
 }
