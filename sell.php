@@ -305,10 +305,10 @@
 	</div>
 	<div id="sell-container">
 		<div id="step-1">
-			<h3 id="step-1-text"><u>Step 1:</u> Fill out and submit the form below with your complete details</h3>
+			<h3 id="step-1-text">Fill the form with correct details:</h3>
 		</div>
 	<div id="sell-form">
-		<p id="compulsary-text"><strong><u>Note:</u></strong> (Fields Marked with * are compulsary)</p>
+		<p id="compulsary-text"><strong><u>Note</u>:</strong> Fields Marked with * are compulsary.</p>
 		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
 			<div class="pure-g">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error"></div>
@@ -373,8 +373,8 @@
 			<h3 id="step-2-text"><u>Step 2:</u> Verification Process...</h3>
 		</div>
 		<div id="s2">
-			<p id="successful-text">Thankyou for contributing!!!<br>
-			Your book id is <span id="book_id_span"></span> , Please remember to check it's status<br>
+			<p id="successful-text">Form Successfully Submitted.<br>
+			Your book id is <span id="book_id_span"></span> .<br> Please remember to check it's status.<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">
