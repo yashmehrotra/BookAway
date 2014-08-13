@@ -10,6 +10,7 @@
 	$c = 0;
 	book_data_display();
 	//click_toggle();
+	show_search();
 	load_more();
 	newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 	console.log(newURL);
@@ -91,7 +92,7 @@ function book_data_display () {
 
 					console.log(json[counter].book_name + " " + json[counter].author_name);
 					 //
-					if(json[counter].sell_rent !="2" && $c != 12 ) {
+					if($c != 12 ) {
 						
 						$('#latest-outer > .latest-additions').append('<div class="outer-divs"><div class="books-data" id="books-data-'+json[counter].book_id+'"' + ">"+ json[counter].book_name + " " + json[counter].author_name + "</div>");
 						$('#latest-outer > .latest-additions').append("<div class='inner-divs'><div class='seller-data' id='seller-data-"+json[counter].book_id+"' style='display:inherit;'>"+json[counter].seller_name + " " + json[counter].seller_phone+"</div>");
@@ -165,4 +166,13 @@ function load_more () {
 			book_data_display();
 		})
 	}
+}
+
+function show_search() {
+
+	$('#search-button').on('click',function(e) {
+		// console.log()
+		e.preventDefault();
+		console.log($("#search-bar").val());
+	})
 }

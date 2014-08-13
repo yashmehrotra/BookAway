@@ -43,7 +43,7 @@ function curPageURL() {
 	<div>
 		<div class="ui-widget"><input id="search-bar"></div>
 	</div> 
-	<div><button class="search" type="submit">Search</button></div>
+	<div><button class="search" id="search-button">Search</button></div>
 	</form>
 	<br>
 	<div class="search-filters">
