@@ -155,14 +155,14 @@
 			if($flag) {
 		
 				var $c = $count - $copy;
-				var $newheight = parseInt($height) + 35*$c ;
+				var $newheight = parseInt($height) + 40*$c ;
 				var $change = $newheight + 'px' ;
 
 				$('#sell-container').css({
 					"height" : $change
 				});
 
-				var $bnewheight = parseInt($bheight) - 35*$c ;
+				var $bnewheight = parseInt($bheight) - 40*$c ;
 				var $bchange = $bnewheight + 'px' ;
 
 				$('#new-button').css({
@@ -180,23 +180,23 @@
 
 				if($fcount == 1) {
 					
-					$('#help-popup').css("top","213px") ;
-					$('#show-password').css("top","277px") ;
-					$('#help').css("top","277px") ;
+					$('#help-popup').css("top","219px") ;
+					$('#show-password').css("top","283px") ;
+					$('#help').css("top","283px") ;
 				}
 
 				if($fcount == 2) {
 					
-					$('#help-popup').css("top","250px") ;
-					$('#show-password').css("top","313px") ;
-					$('#help').css("top","313px") ;
+					$('#help-popup').css("top","262px") ;
+					$('#show-password').css("top","325px") ;
+					$('#help').css("top","325px") ;
 				}
 
 				if($fcount == 3) {
 
-					$('#help-popup').css("top","287px") ;
-					$('#show-password').css("top","350px") ;
-					$('#help').css("top","350px") ;
+					$('#help-popup').css("top","308px") ;
+					$('#show-password').css("top","368px") ;
+					$('#help').css("top","368px") ;
 				}	
 			}
 			else {

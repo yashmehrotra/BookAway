@@ -648,7 +648,7 @@ ol
 
 #del-main-container
 {
-	height: 600px;
+	height: 750px;
 	width: 950px;
 	margin: auto auto 250px;
 	position: relative;
@@ -657,13 +657,13 @@ ol
 
 #del-main
 {
-	height: 480px;
+	height: 550px;
 	width: inherit;
 	font-size: 20px; 
 	text-align: left;
 	position: absolute;
 	top:55px;
-	left: -8px;
+	/*left: -8px;*/
 	background-color: white;
 	padding: 10px 10px 0px;
 	border: 1px solid black;
@@ -672,7 +672,7 @@ ol
 
 #del-form
 {
-	height: 310px;
+	height: 340px;
 	width: 700px;inherit;
 	position: absolute;
 	top:165px;
@@ -685,7 +685,7 @@ ol
 	height: 130px;
 	margin: auto;
 	padding-top: 15px;
-	font-size: 22px;
+	font-size: 24px;
 	font-family: Bitter Regular;
 	text-align: center;
 	position: absolute;
@@ -711,11 +711,12 @@ ol
 
 #submit
 {
-	width: 130px;
-	height: 40px;
-	font-size: 18px;
-	margin: 35px 250px 0px;
-	background: #403C94;#3c948b;#0078E7;
+	width: 150px;
+	height: 60px;
+	font-family: Ubuntu;
+	font-size: 22px;
+	margin: 55px 250px 0px;
+	background: #403C94;
 	color: white;
 	border: 1px transparent;
 	border-radius: 10px;
@@ -746,7 +747,7 @@ ol
 #edit-form
 {
 	display: none;
-	height: 620px;
+	height: 785px;
 	width: inherit;800px;
 	background-color: white;
 	border: 1px solid black;
@@ -755,26 +756,70 @@ ol
 
 #delete-button
 {
-	height: 40px;
-	width: 180px;
+	height: 70px;
+	width: 280px;
 	background-color: red;
 	color: white;
-	margin: 10px auto 0px 380px;
+	margin: 10px auto 0px 330px;
 	border: 1px solid white;
-	font-size: 16px;
+	font-size: 24px;
+	font-family: Ubuntu;
+	border: 1px solid transparent;
+	border-radius: 20px;
 }
 
 #delete-button:hover
 {
 	cursor: pointer;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	opacity: 0.8;
 }
 
 #eform
 {
-	height: 530px;
+	height: 640px;
 	margin-left: 230px;
 	font-size: 21px;
-	margin-top: 30px;
+	margin-top: 150px;
+}
+
+#edit-head
+{
+	position: absolute;
+	height: 80px;
+	width: inherit;
+	margin: 10px auto;
+	font-size: 20px;
+	text-align: center;
+}
+
+#or
+{
+	height: 35px;
+	width: 45px;
+	margin: auto;
+	margin-top: 20px;
+	padding-bottom: 24px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 1px solid black;
+	border-radius: 33px;
+	background-color: black;
+}
+
+#or-text
+{
+	/*font: Bitter-Regular;*/
+	color: white;
+	font-size: 20px;
+}
+
+#edit-desc
+{
+	margin-bottom:15px; 
 }
 
 #del-new-button
@@ -784,12 +829,13 @@ ol
 	color: white;
 	border: 1px transparent;
 	border-radius: 15px;
-    background: #403C94;#3c948b;#0078E7;
-    font-size: 105%;
+    background: #403C94;
+    font-size: 24px;
 	margin-right: auto;
 	position: absolute;
 	bottom: -5px;
     left: 390px;
+    font-family: Ubuntu;
 }
 
 #del-new-button:hover
@@ -1176,7 +1222,7 @@ ol
 	width: 470px;
 	font-size: 16px;
 	font-weight: bold;
-	margin-top:0px;
+	margin-bottom:10px;
 	background-color: #FF4D4D;red;
 	color: white;
 	border-radius: 0px 10px 0px 10px;
@@ -1198,6 +1244,7 @@ ol
 	position: absolute;
 	bottom: 25px;
     left:80px;
+    font-family: Ubuntu;
 }
 
 #new-button:hover

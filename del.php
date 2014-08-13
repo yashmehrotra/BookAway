@@ -163,7 +163,7 @@
 			console.log('1');
 			$('div[id^="error"]').css("display","none");
 			console.log('2')
-			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || !$.isNumeric('#phone').val() || $('#phone').val().indexOf(" ")!=-1) {
+			if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
 				
 				$('#error1').html("Phone number must contain 10 digits");
 				$('#error1').css("display","inline-block");
@@ -359,6 +359,10 @@
 	</div>
 	<div id="edit-form">
 		<button id="delete-button">Delete this book</button>
+		<div id="edit-head">
+				<div id="or"><h3 id="or-text">OR</h3></div>
+				<p id="edit-desc"> Edit the details you want and click on "Edit" button when finished.</p>
+		</div>
 		<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
 			<div class="del-pure-g" id="del-pure-g-del">
 				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required disabled>
