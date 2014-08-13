@@ -369,17 +369,23 @@
 				<br>
 				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
 				<select name="subject" id="subject" class="sell-input" required>
-					<option value="All">All</option>
-					<option value="Computers">Computers</option>
-					<option value="Electronics">Electronics</option>
-					<option value="Maths">Maths</option>
-					<option value="Literature">Literature</option>
-					<option value="Physics">Physics</option>
-					<option value="Medical">Medical</option>
-					<option value="Law">Law</option>
-					<option value="Music">Music</option>
-					<option value="Business">Business</option>
-					<option value="Miscellaneous">Miscellaneous</option>
+			<option value="All">All</option>
+			<option value="Computers">Computers</option>
+			<option value="Electronics">Electronics</option>
+			<option value="Maths">Maths</option>
+			<option value="Novels">Novels(Fiction + Non-Fiction)</option>
+			<option value="Magazines">Magazines</option>
+			<option value="Biographies">Biographies</option>
+			<option value="Physics">Physics</option>
+			<option value="Health">Health</option>
+			<option value="Travel">Travel</option>
+			<option value="Medical">Medical</option>
+			<option value="Law">Law</option>
+			<option value="Music">Music</option>
+			<option value="Business">Business</option>
+			<option value="Religion">Religion & Spiritual</option>
+			<option value="Miscellaneous">Miscellaneous</option>
+		</select>
 			<div id="error9"></div>
 			<br>
 			<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required>  <div id="error5"></div>
