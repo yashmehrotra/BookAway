@@ -190,15 +190,19 @@ function load_specific(search_value, search_category) {
 	$('.inner-divs').remove();
 	//$('#latest-outer > .latest-additions').append(book_name_search);
 	$.ajax({
-		type: "GET",
-		url: "sqldata.php", //Make sure URL Doesnt cause problem in future
-		data: { 'source': 'search',
-				'search_category': search_category,
-				'search_value': search_value
-			},
+		type: "POST",
+		url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
+		data: { 'source': 'search', 'search_category': search_category, 'search_value': search_value },  //, 'search_category': search_category, 'search_value': search_value
 		success: function (result) {
 			if(result) {
-
+				console.log(search_category);
+				console.log(search_value);
+				var json = JSON.parse(result);
+				console.log(json);
+				
+			}
+			else {
+				console.log("Thenga")
 			}
 		}
 	});
