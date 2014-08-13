@@ -1236,11 +1236,15 @@ ol
 
 #faq-main-container
 {
-	height: 600px;
+	height: 450px;
 	width: 950px;
-	margin: auto auto 250px;
+	margin: 50px auto 20px;
 	position: relative;
 	top:20px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px 20px 0px;
+	/*text-align: left; */
 }
 
 .ques
@@ -1248,16 +1252,10 @@ ol
 	text-align: left;
 }
 
-#faq-main-container .ans
+.ans
 {
 	display: none;
 	font-size: 20px;
-}
-
-#faq-main-container .ans-close
-{
-	display: initial;
-	font-size: 50px;
 }
 
 

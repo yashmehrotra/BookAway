@@ -5,18 +5,17 @@
 	<title>BooksforBucks | FAQs</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<script>
-		$(document).ready(function(){
-			$('#faq-main-container .ques').click(function(){
+		$(function(){
+			$('.ques').click(function(){
 				$(this).next().slideToggle(400);
 			});
 		});
 	</script>
 </head>
 <body>
-	<img src="Styles/Images/favicon1.png" id="favicon">
 	<?php
 	require_once('topbar.php');
 	?>
@@ -38,18 +37,9 @@
 		<div class="ans"><i>Yes. Click on edit tab and fill up your e-mail address, book id and password. To remove the book click on the "Delete" tab. To submit the edited details, click on "Submit" tab.</i></div>
 		<h2 class="ques">I have added my book for rent first. Is it possible to keep it for both sale and rent?</h2>
 		<div class="ans"><i>Yes it can be done. Click on the edit tab and change it.</i></div>
-	</div>
-		
-	<div class="bottom-panel">
-		<ul class="bottom-panel-list">
-			<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>
-			<li class="home-about-contact"><a href="about.php" class="bottom-links">About</a></li>
-			<li class="home-about-contact"><a href="contact.php" class="bottom-links">Contact</a></li>
-		</ul>
-	</div>
-		<div id="co-developed">
-			<code>Copyright</code><code>2014 .All Rights Reserved. Booksforbucks.com</code>
-		</div>
+	<?php
+		require_once('footer.php');
+	?>
 	</div>
 </body>
 </html>

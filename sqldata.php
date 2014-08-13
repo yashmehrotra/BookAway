@@ -24,8 +24,6 @@
 		$rent_price  = $_POST['rentprice'];
 		$rent_time   = $_POST['rentpricetime'];
 
-		//$time =  date("Y-m-d H:i:s", time());
-
 		$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time')";
 		mysqli_query($database_connection,$query);
 
