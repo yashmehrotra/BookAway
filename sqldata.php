@@ -148,7 +148,7 @@
 		}
 		elseif ($category == "Author") {
 			
-			$query = "SELECT *  FROM `books` WHERE `book` LIKE '".$search_value."'";
+			$query = "SELECT *  FROM `books` WHERE `author` LIKE '".$search_value."'";
 		}
 
 		$response = array();
