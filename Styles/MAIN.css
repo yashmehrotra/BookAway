@@ -412,7 +412,7 @@ ol
 
 
 /********************    BUY.PHP    ************************/
-/*Buy Yash*/
+
 
 .ui-autocomplete-category {
     font-weight: bold;
@@ -564,7 +564,7 @@ ol
 
 #latest-outer
 {
-	height: 610px;
+	height: 620px;
 	width: 922px;
 	background-color: white;
 	position: absolute;
@@ -576,6 +576,7 @@ ol
 	padding-bottom: 20px;
 }
 
+/*
 .latest-additions
 {
 	height: 200px;
@@ -585,7 +586,7 @@ ol
 	top:5px;
 }
 
-/*
+
 .outer-divs
 {
 	height: 150px;
@@ -629,6 +630,40 @@ ol
 	bottom: 15px;
 	right: 45%;
 }
+
+#buy-table
+{
+	height: 80px;
+	width: inherit;160px;
+	font-family: Ubuntu;
+	font-size: 20px;
+	/*border: 1px solid black;
+	border-collapse: collapse; */
+	text-align: justify;
+}
+
+.books-header
+{
+	height: 50px;
+	font-size: 22px;
+	color: black;gray;
+	border-bottom: 1px solid black;
+	background-color: #a9c6c9;
+}
+
+.books-data
+{
+	height: 40px;
+	background-color: #d4e3e5;
+}
+
+.books-data:hover
+{
+	cursor: pointer;
+	background-color: #ffff66;
+	text-decoration: underline;
+}
+
 
 /*********************  CONTACT US  ***********************/
 

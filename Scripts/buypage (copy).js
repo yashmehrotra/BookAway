@@ -22,7 +22,7 @@
 	console.log($max_price);
 	console.log($search_by);
 	console.log($buy_subject);
-	//books_data();
+	books_data();
 
 });
 
@@ -115,17 +115,8 @@ function book_data_display () {
 					//console.log(json[counter].book_name + " " + json[counter].author_name);
 					 //
 					//if($c != 12 ) {
-						if( json[counter].rent_price == "" ) {
-							json[counter].rent_price = "-";
-							json[counter].rent_time = "";
-							$('#latest-outer > #buy-table > tbody > .books-header').after("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].seller_name+"</td><td>"+json[counter].seller_phone+"</td></tr>");
-						} 
-						else if( json[counter].sell_price == "" ) {
-							json[counter].sell_price = "-";
-						} 
-						else {
-							$('#latest-outer > #buy-table > tbody > .books-header').after("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " - per " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].seller_name+"</td><td>"+json[counter].seller_phone+"</td></tr>");
-						}
+						
+						$('#latest-outer > #buy-table > tbody > .books-header').after("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+"</td></tr><tr class='seller-data' style='display:none;' id='seller-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].seller_name+"</td><td>"+json[counter].seller_phone+"</td></tr>");
 						//$('#latest-outer >').append("");
 						$c = $c + 1;
 						console.log($c);
@@ -134,13 +125,7 @@ function book_data_display () {
 					//else{
 					//	counter = counter +1;
 					//}
-					
 				}
-				//console.log(counter+"yash");
-				if(Ultimate_data.length===counter) {
-						console.log("Hoola");
-						books_data();
-					}
 				//console.log(booklist_array);
 				console.log(Ultimate_data);
 				console.log(search_data);
@@ -183,7 +168,7 @@ function book_data_display () {
 		}
 	});
 
-	// books_data();
+	books_data();
 }
 
 /*function click_toggle () {
@@ -249,13 +234,11 @@ function load_specific(search_value, search_category) {
 }
 
 function books_data() {
-	$('#buy-container > #latest-outer > #buy-table > tbody > .seller-data').slideUp(50);
-	//});
 	// $('tr[id^="books-data"]').click(function(){
-	//console.log("fucjjjjj");
+	console.log("fucjjjjj");
 	// $('#buy-container > #latest-outer >#buy-table>tbody>.books-data').click(function(){
 	$('#buy-container > #latest-outer >#buy-table>tbody').on('click', '.books-data', function() {
-		//console.log("ABCD");
+		console.log("ABCD");
 		$id = $(this).attr('id');
 		$copy = $id;
 		console.log($id);
@@ -267,15 +250,14 @@ function books_data() {
 		//console.log($disp);
 		$copy = "#seller-data-" + $id;
 		//$($copy).slideToggle(3000);
-		$style =  $($copy).slideToggle(300);
+		$style =  $($copy).attr('style');
 		/*if( $style == 'display:none;' ) {
 			console.log("HRlloWorld");*/
-		//	$($copy).attr('style','display:block;');
+			$($copy).attr('style','display:block;');
 			$height = $('#buy-container').css('height');
 			$change = 20;
 			$('#buy-container').css('height',parseInt($height)+$change+'px');
 			$('#latest-outer').css('height',parseInt($height)+$change+'px');
-
 		/*}
 		else {
 			$($copy).attr('style','display:none;');

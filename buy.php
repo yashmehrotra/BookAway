@@ -85,7 +85,16 @@ function curPageURL() {
 	</div>
 	</div>
 	<div id="latest-outer">
-		<div class="latest-additions"></div>
+		<table id="buy-table">
+			<tbody>
+				<tr class="books-header">
+					<th>Book name</th>
+					<th>Author</th>
+					<th>Buy Price(INR)</th>
+					<th>Rent Price(INR)</th>
+				</tr>
+			</tbody>
+		</table>
 		<button id="load-more">Load more</button>
 	</div>
 	<?php
