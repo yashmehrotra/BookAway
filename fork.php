@@ -5,26 +5,26 @@
   white-space: nowrap;
   /* top left corner */
   position: absolute;
-  right: -55px;
-  top: 45px;
+  right: -65px;
+  top: 50px;
   /* 45 deg ccw rotation */
-  -webkit-transform: rotate(+50deg);
-     -moz-transform: rotate(+50deg);
-      -ms-transform: rotate(+50deg);
-       -o-transform: rotate(+50deg);
-          transform: rotate(+50deg);
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
   /* shadow */
   -webkit-box-shadow: 0 0 10px #888;
      -moz-box-shadow: 0 0 10px #888;
           box-shadow: 0 0 10px #888;
 }
 .ribbon a {
-  border: 1px solid #faa;
+  border: 1px solid white;
   color: #fff;
   display: block;
-  font: bold 110.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: bold 110% 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 1px 0;
-  padding: 10px 40px;
+  padding: 15px 70px;
   text-align: center;
   text-decoration: none;
   /* shadow */
@@ -32,5 +32,5 @@
 }
 </style>
 <div class="ribbon">
-  <a href="#">Fork on GitHub</a>
+  <a href="https://github.com/yashmehrotra/Books-for-bucks/tree/production">Fork on GitHub</a>
 </div>

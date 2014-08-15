@@ -299,6 +299,7 @@
 <body>
 	<?php
 	require_once('topbar.php');
+	require_once('fork.php');
 	?>
 	<div class="main-heads" id="sell-main-head">
 		<h2 id="sell-books-text">Sell Books</h2>
