@@ -424,7 +424,7 @@ ol
 #buy-container
 {
 	width: 1270px;
-	height: 650px;
+	height: 700px;
 	margin: 0 auto 250px;
 	padding: 0;
 	position: relative;
@@ -571,8 +571,8 @@ ol
 	top:80px;
 	left:340px;
 	text-align: center;
-	border:1px solid black;
-	border-radius: 10px;
+	/*border:1px solid black;
+	border-radius: 10px;*/
 	padding-bottom: 20px;
 }
 
@@ -624,11 +624,17 @@ ol
 #load-more
 {
 	height: 45px;
-	width: 90px;
+	width: 120px;
 	display: block;
 	position: absolute;
 	bottom: 15px;
 	right: 45%;
+	color: white;
+	border: 1px transparent;
+	/*border-radius: 15px;*/
+    background: #403C94;
+    font-size: 18px;
+    font-family: Ubuntu;
 }
 
 #buy-table
@@ -661,7 +667,6 @@ ol
 {
 	cursor: pointer;
 	background-color: #ffff66;
-	text-decoration: underline;
 }
 
 
@@ -947,7 +952,7 @@ ol
 	height: 60px;
 	width: inherit;
 	position: absolute;
-	top:240px;
+	top:280px;
 }
 
 .links-box

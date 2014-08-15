@@ -369,12 +369,9 @@
 </div>
 
 <div id="entry">
-	<div id="step-2">
-			<h3 id="step-2-text"><u>Step 2:</u> Verification Process...</h3>
-		</div>
 		<div id="s2">
 			<p id="successful-text">Form Successfully Submitted.<br>
-			Your book id is <span id="book_id_span"></span> .<br> Please remember to check it's status.<br>
+			Your book id is <span id="book_id_span" style="color: red;"></span> .<br>
 			Your response will be processed and implemented within 24 hours.</p>
 		</div>
 		<div class="links-list">

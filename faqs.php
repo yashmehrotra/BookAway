@@ -5,12 +5,16 @@
 	<title>BooksforBucks | FAQs</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
-	
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<script>
 		$(function(){
+			$('#faqs').attr('id','focus');
 			$('.ques').click(function(){
 				$(this).next().slideToggle(400);
+				$height = $('#faq-main-container').css('height');
+				$change = $('.ans').css('height');
+				$height = parseInt($height) + parseInt($change);
+				$('#faq-main-container').css('height',$height + 'px');
 			});
 		});
 	</script>
