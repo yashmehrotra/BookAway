@@ -296,6 +296,9 @@ function books_data() {
 	// $('#buy-container > #latest-outer >#buy-table>tbody>.books-data').click(function(){
 	$('#buy-container > #latest-outer >#buy-table>tbody').on('click', '.books-data', function() {
 		//console.log("ABCD");
+		if( $('.seller-data').is(':visible') ) {
+			$('.seller-data').slideUp(50);
+		}
 		$id = $(this).attr('id');
 		$copy = $id;
 		console.log($id);

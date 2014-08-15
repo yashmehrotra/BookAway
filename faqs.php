@@ -10,11 +10,10 @@
 		$(function(){
 			$('#faqs').attr('id','focus');
 			$('.ques').click(function(){
+				if( $('.ans').is(":visible") ) {
+					$('.ans').slideUp(400);
+				}
 				$(this).next().slideToggle(400);
-				$height = $('#faq-main-container').css('height');
-				$change = $('.ans').css('height');
-				$height = parseInt($height) + parseInt($change);
-				$('#faq-main-container').css('height',$height + 'px');
 			});
 		});
 	</script>

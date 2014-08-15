@@ -38,7 +38,13 @@ function curPageURL() {
 			<h2>Buy Books</h2>
 	</div>
 	<div id="buy-container">
-	<div class="buy-left-panel">
+	<div id="buy-new-search">
+		<div class="ui-widget">
+			<input id="search-bar-new">
+		</div>
+		<button class="search-new" id="search-button-new">Search</button>	
+	</div>
+	<!--<div class="buy-left-panel">
 	<form id="home-search">
 	<div>
 		<div class="ui-widget"><input id="search-bar"></div>
@@ -83,7 +89,7 @@ function curPageURL() {
 		</select>
 		</div>
 	</div>
-	</div>
+	</div>-->
 	<div id="latest-outer">
 		<table id="buy-table">
 			<tbody>

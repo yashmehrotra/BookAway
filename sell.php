@@ -305,7 +305,7 @@
 	</div>
 	<div id="sell-container">
 		<div id="step-1">
-			<h3 id="step-1-text">Fill the form with correct details:</h3>
+			<h3 id="step-1-text">To add your book for sale/rent, Fill the form below with correct details:</h3>
 		</div>
 	<div id="sell-form">
 		<p id="compulsary-text"><strong><u>Note</u>:</strong> Fields Marked with * are compulsary.</p>

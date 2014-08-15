@@ -7,7 +7,7 @@ Globals...
 
 body
 {
-	background-color: white;
+	background-color: rgb(243, 246, 246);white;
 	opacity: 0.9;
 	border:0;
 	padding: 0;
@@ -566,13 +566,10 @@ ol
 {
 	height: 620px;
 	width: 922px;
-	background-color: white;
 	position: absolute;
-	top:80px;
-	left:340px;
+	top:120px;
+	left:180px;
 	text-align: center;
-	/*border:1px solid black;
-	border-radius: 10px;*/
 	padding-bottom: 20px;
 }
 
@@ -627,7 +624,7 @@ ol
 	width: 120px;
 	display: block;
 	position: absolute;
-	bottom: 15px;
+	bottom: 0px;
 	right: 45%;
 	color: white;
 	border: 1px transparent;
@@ -667,6 +664,57 @@ ol
 {
 	cursor: pointer;
 	background-color: #ffff66;
+}
+
+#buy-new-search
+{
+	width: 100%;
+	height: 70px;
+	position: relative;
+	top:25px;
+}
+
+#search-bar-new
+{
+	height: 30px;
+	width: 300px;
+	position: absolute;
+	top:20px;
+	right: 520px;
+	display: inline-block;
+}
+
+.search-new
+{
+	margin-top: 5px;
+	font-size: 15px;
+	width:100px;
+	height:32px;
+	border: 1px outset;
+	border-radius: 15px;
+	background-color:black;
+	color: white;
+	position: absolute;
+	top:17px;
+	right: 390px;
+}	
+
+.search-new::before
+{
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	content: "";
+	background: url('Images/search.jpg') no-repeat 0 0;
+	background-size: 100%;
+}
+
+.search-new:hover
+{
+	border-style: inset;
+	cursor:pointer;
+	background-color: white;
+	color: black;
 }
 
 
