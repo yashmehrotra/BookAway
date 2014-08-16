@@ -24,7 +24,7 @@
   display: block;
   font: bold 110% 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 1px 0;
-  padding: 15px 70px;
+  padding: 15px 50px;
   text-align: center;
   text-decoration: none;
   /* shadow */
@@ -32,5 +32,5 @@
 }
 </style>
 <div class="ribbon">
-  <a href="https://github.com/yashmehrotra/Books-for-bucks/tree/production">Fork on GitHub</a>
+  <a href="https://github.com/yashmehrotra/Books-for-bucks/">Fork Us on GitHub</a>
 </div>
