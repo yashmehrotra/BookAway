@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sell Books | BooksforBucks.com</title>
+	<title>Sell Books | Bookaway.in</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php" /></noscript>

@@ -6,5 +6,5 @@
     </ul>
  </div>
  <div id="co-developed">
-	<code>Copyright</code><code>2014 .All Rights Reserved. Booksforbucks.com</code>
+	<code>Copyright</code><code>2014 .All Rights Reserved. Bookaway.in</code>
  </div>

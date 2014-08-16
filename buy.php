@@ -15,8 +15,9 @@ function curPageURL() {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BooksforBucks- Buy, Sell, Rent Books!!</title>
+	<title>Buy and Rent Books | Bookaway.in</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" href="Styles/jquery-ui.css">
 	<script src="Scripts/jquery.js"></script>

@@ -2,7 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>BooksforBucks | FAQs</title>
+	<title> FAQs | Bookaway.in</title>
+	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>

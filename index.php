@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BooksforBucks | Buy | Sell | Rent | Books</title>
+	<title>Bookaway.in | Buy | Sell | Rent | Books</title>
 	<meta name="Description" content="Booksforbucks.com - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
 	<meta name="Keywords" content="book,books,jiit,used,buy,sell,rent,textbook,india,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="Scripts/jquery.js"></script>
@@ -19,10 +20,10 @@
 <body>
 	<?php
 	require_once('topbar.php');
-	//require_once('fork.php');
+	require_once('fork.php');
 	?>
 	<div class="main-heads">
-	<h2>Welcome to rebuse.com</h2>
+	<h2>Welcome to bookaway.in</h2>
 	</div>
 	<div id="home-container">
 	<div class="box" id="buy-box">
