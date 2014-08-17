@@ -321,24 +321,11 @@
 				<br>
 				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error3"></div>
 				<br>
-				<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
+				<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
 				<select name="subject" id="subject" class="sell-input" required>
-					<option value="All">All</option>
-					<option value="Computers">Computers</option>
-					<option value="Electronics">Electronics</option>
-					<option value="Maths">Maths</option>
-					<option value="Novels">Novels(Fiction + Non-Fiction)</option>
-					<option value="Magazines">Magazines</option>
-					<option value="Biographies">Biographies</option>
-					<option value="Physics">Physics</option>
-					<option value="Health">Health</option>
-					<option value="Travel">Travel</option>
-					<option value="Medical">Medical</option>
-					<option value="Law">Law</option>
-					<option value="Music">Music</option>
-					<option value="Business">Business</option>
-					<option value="Religion">Religion & Spiritual</option>
-					<option value="Miscellaneous">Miscellaneous</option>
+				<?php
+					require_once ('categories.php');
+				?>
 				<div id="error9"></div>
 				<br>
 				<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error5"></div>    

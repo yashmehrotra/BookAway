@@ -8,6 +8,7 @@ Globals...
 body
 {
 	background-color: white;
+	/*background: url('/Styles/Images/best.jpg');*/
 	opacity: 0.9;
 	border:0;
 	padding: 0;
@@ -147,12 +148,16 @@ h1, h2, h3
 .bottom-panel
 {
 	width: 100%;
-	height:40px;
+	height: 90px;
 	margin-bottom: 0px;
 	position: absolute;
-	bottom: -150px;
-	border-top: 1px solid gray;
+	bottom: -250px;
+	border-top: 10px solid yellow;orange;
 	text-align: center;
+	background-color: rgba(31, 30, 30, 0.89);rgb(248, 247, 252);black;
+	/*background: linear-gradient(to top,rgba(255,0,0,0.5),rgba(255,0,0,1));*/
+	color: white;
+	font-size: 14px;
 }
 
 .bottom-panel-list
@@ -170,9 +175,9 @@ h1, h2, h3
 	text-decoration: none;
 	padding: 0px 50px;
 	margin: 0px 20px;
-	font-size: 20px;
+	font-size: 16px;
 	font-style: italic;
-	color: black;
+	color: white;
 } 
 
 .bottom-links:hover
@@ -185,6 +190,7 @@ h1, h2, h3
 	-ms-transition:all 0.3s ease-in;
 }
 
+/*
 #co-developed
 {
 	height: 25px;
@@ -196,6 +202,14 @@ h1, h2, h3
 	position: absolute;
 	bottom: -200px;
 	text-align: center;
+}
+*/
+
+#bottom-desc
+{
+	height: 30px;
+	width: inherit;
+	padding-top: 10px;
 }
 
 /*
@@ -542,7 +556,6 @@ ol
 	font-family: Ubuntu;
 	font-size: 24px;
 	margin-left: 5px;
-	text-decoration: underline;
 	color: red;
 }
 
@@ -565,7 +578,7 @@ ol
 
 #latest-outer
 {
-	height: 620px;
+	height: 500px;
 	width: 922px;
 	position: absolute;
 	top:120px;
@@ -630,11 +643,11 @@ ol
 #load-more
 {
 	height: 45px;
-	width: 120px;
+	width: inherit;420px;
 	display: block;
 	position: absolute;
 	bottom: 0px;
-	right: 45%;
+	right: 0px;15%;
 	color: white;
 	border: 1px transparent;
 	/*border-radius: 15px;*/
@@ -654,8 +667,8 @@ ol
 	width: inherit;160px;
 	font-family: Ubuntu;
 	font-size: 20px;
-	/*border: 1px solid black;
-	border-collapse: collapse; */
+	border: 1px solid black;
+	border-collapse: collapse; 
 	text-align: justify;
 }
 
@@ -670,8 +683,8 @@ ol
 
 .books-data
 {
-	height: 40px;
-	background-color: #d4e3e5;
+	height: 150px;
+	/*background-color: #d4e3e5;*/
 }
 
 .books-data:hover
@@ -684,6 +697,13 @@ ol
 {
 	cursor: pointer;
 	background-color: #ffff66;
+}
+
+.books-data-images
+{
+	height: 120px;
+	width: 80px;
+	margin-left:10px;
 }
 
 .seller-data td

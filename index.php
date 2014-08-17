@@ -23,7 +23,7 @@
 	require_once('fork.php');
 	?>
 	<div class="main-heads">
-	<h2>Welcome to bookaway.in</h2>
+	<h2>Bookaway.in</h2>
 	</div>
 	<div id="home-container">
 	<div class="box" id="buy-box">
@@ -45,9 +45,9 @@
 		<p class="home-desc">Don't want to buy books?<br>Rent them.<br><br>Pay as per week or month.</p>
 		<div class="continue-rent"><a href="rent.php" class="rent-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
 	</div>
+	</div>
 	<?php
 		require_once('footer.php');
 	?>
-	</div>
 </body>
 </html>

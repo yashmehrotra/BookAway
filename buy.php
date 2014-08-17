@@ -63,46 +63,35 @@ function curPageURL() {
 			<option value="booktitle">By Book Title</option>
 			<option value="authorname">By Author</option>
 			<option value="publication">By Publication</option>
-		</select>-->
+		</select>
 		<p>Select Maximum Price:</p>
 		<div class="price-bar">
 		<form oninput="x.value=parseInt(10*a.value)" class="pure-form pure-form-stacked" id="price-max">100
 	<input type="range" id="a" min="10" max="100" value="100">1000 
 	<output name="x" for="a" id="output"></output>
 	</form>
+	</div>-->
+	<div class="clg-select">
+		<p id="sub">Select College:</p>
+		<select name="select-college" class="clg-by" id="select_clg">
+			<?php
+			require_once ('list.php');
+			?>
+		</select>
 	</div>
 	<div class="sub-select">
 		<p id="sub">Select subject:</p>
 		<select name="select-subject" class="search-by" id="buy_subject">
-			<option value="All">All</option>
-			<option value="Computers">Computers</option>
-			<option value="Electronics">Electronics</option>
-			<option value="Maths">Maths</option>
-			<option value="Novels">Novels(Fiction + Non-Fiction)</option>
-			<option value="Magazines">Magazines</option>
-			<option value="Biographies">Biographies</option>
-			<option value="Physics">Physics</option>
-			<option value="Health">Health</option>
-			<option value="Travel">Travel</option>
-			<option value="Medical">Medical</option>
-			<option value="Law">Law</option>
-			<option value="Music">Music</option>
-			<option value="Business">Business</option>
-			<option value="Religion">Religion & Spiritual</option>
-			<option value="Miscellaneous">Miscellaneous</option>
+			<?php
+			require_once ('categories.php');
+			?>
 		</select>
-		</div>
+	</div>
 	</div>
 	</div>
 	<div id="latest-outer">
 		<table id="buy-table">
 			<tbody>
-				<tr class="books-header">
-					<th>Book name</th>
-					<th>Author</th>
-					<th>Buy Price(INR)</th>
-					<th>Rent Price(INR)</th>
-				</tr>
 			</tbody>
 		</table>
 		<button id="load-more">Load more</button>

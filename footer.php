@@ -1,10 +1,11 @@
  <div class="bottom-panel">
+ 	<div id="bottom-desc"><code>Copyright</code><code>2014 .All Rights Reserved. Bookaway.in</code></div>
     <ul class="bottom-panel-list">
-	       <li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>
-	       <li class="home-about-contact"><a href="about.php" class="bottom-links">About</a></li>
-	       <li class="home-about-contact"><a href="contact.php" class="bottom-links">Contact</a></li>
+	       <li class="home-about-contact"><a href="about.php" class="bottom-links">About Us</a></li>
+	       &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	       <li class="home-about-contact"><a href="contact.php" class="bottom-links">Contact Us</a></li>
     </ul>
  </div>
- <div id="co-developed">
-	<code>Copyright</code><code>2014 .All Rights Reserved. Bookaway.in</code>
- </div>
+ <!--<div id="co-developed">
+	
+ </div>-->
