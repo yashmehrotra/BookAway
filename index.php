@@ -17,7 +17,7 @@
 		});
 	</script>
 </head>
-<body>
+<body id="index-home">
 	<?php
 	require_once('topbar.php');
 	require_once('fork.php');

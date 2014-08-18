@@ -1,18 +1,13 @@
-//It sends a post request to a php file which fetches all the data about books from database
-//Also need to add the whole jquery widget of autocomplete and also need to include jquery as link src in main file
+//It sends a post request to a sqldata.php file which fetches all the data about books from database
 
-//
 //CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
-//
 
-
+var c = 0;
  $(document).ready(function() {
-	$c = 0;
 	book_data_display();
-	//click_toggle();
 	show_search();
 	load_more();
-	console.log("Main--",$c);
+	console.log("Main--",c);
 	newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 	console.log(newURL);
 
@@ -23,8 +18,6 @@
 	console.log($max_price);
 	console.log($search_by);
 	console.log($buy_subject);
-	//books_data();
-
 });
 
 function showthis(bookid) {
@@ -88,12 +81,6 @@ function book_data_display () {
 						'rent_time':json[counter].rent_time
 					});
 
-
-					// search_data.push(
-					// 	{ label: json[counter].book_name, category: "Books" },
-					// 	{ label: json[counter].author_name, category: "Author" }
-					// )
-
 					//To add different inputs
 					if( $.inArray(json[counter].book_name,search_books) == -1 ) {
 						search_books.push(json[counter].book_name);
@@ -108,144 +95,100 @@ function book_data_display () {
 							{ label: json[counter].author_name, category: "Author" }
 						)
 					}
-					//
-					//console.log("Above");
+			
+					c = c + 1;
+					counter = counter +1;
+			}
 
-					//
-
-					//console.log(json[counter].book_name + " " + json[counter].author_name);
-					 //
-					//if($c != 12 ) {
-						if( json[counter].rent_price == "" ) {
-							console.log("No rent price");
-							json[counter].rent_price = "-";
-							json[counter].rent_time = "";
-							//$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter].seller_name+"</td><td><u>Contact:</u> "+json[counter].seller_phone+"</td></tr>");
-							$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ "" +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter].seller_name+"</td><td><u>Contact:</u> "+json[counter].seller_phone+"</td></tr>");
-						} 
-						else if( json[counter].sell_price == "" ) {
-							json[counter].sell_price = "-";
-							//$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " - per " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter].seller_name+"</td><td><u>Contact:</u> "+json[counter].seller_phone+"</td></tr>");
-							$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " - per " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter].seller_name+"</td><td><u>Contact:</u> "+json[counter].seller_phone+"</td></tr>");
-						} 
-						else {
-							//$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " - per " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter].seller_name+"</td><td><u>Contact:</u> "+json[counter].seller_phone+"</td></tr>");
-							$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter].book_name+"</td><td>"+json[counter].author_name+"</td><td>"+json[counter].sell_price+"</td><td>"+json[counter].rent_price+ " - per " +json[counter].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter].seller_name+"</td><td><u>Contact:</u> "+json[counter].seller_phone+"</td></tr>");
-						}
-						//$('#latest-outer >').append("");
-						$c = $c + 1;
-						console.log($c);
-						counter = counter +1;
-					//}
-					//else{
-					//	counter = counter +1;
-					//}
-					
-				}
-				//console.log(counter+"yash");
-				if(Ultimate_data.length===counter) {
-						console.log("Hoola");
-						books_data();
+			var counter_clone = counter;
+			while(counter_clone--) {
+				if( json[counter_clone].rent_price == "" ) {
+						console.log("No rent price");
+						json[counter_clone].rent_price = "-";
+						json[counter_clone].rent_time = "";
+						$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter_clone].book_name+"</td><td>"+json[counter_clone].author_name+"</td><td>"+json[counter_clone].sell_price+"</td><td>"+json[counter_clone].rent_price+ "" +json[counter_clone].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter_clone].seller_name+"</td><td><u>Contact:</u> "+json[counter_clone].seller_phone+"</td></tr>");
+					} else if( json[counter_clone].sell_price == "" ) {
+						json[counter_clone].sell_price = "-";
+						$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter_clone].book_name+"</td><td>"+json[counter_clone].author_name+"</td><td>"+json[counter_clone].sell_price+"</td><td>"+json[counter_clone].rent_price+ " - per " +json[counter_clone].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter_clone].seller_name+"</td><td><u>Contact:</u> "+json[counter_clone].seller_phone+"</td></tr>");
+					} else {
+						$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter_clone].book_name+"</td><td>"+json[counter_clone].author_name+"</td><td>"+json[counter_clone].sell_price+"</td><td>"+json[counter_clone].rent_price+ " - per " +json[counter_clone].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter_clone].seller_name+"</td><td><u>Contact:</u> "+json[counter_clone].seller_phone+"</td></tr>");
 					}
-				//console.log(booklist_array);
-				console.log(Ultimate_data);
-				console.log(search_data);
-				//For Autocomplete
-				/////////////////////
-				$.widget( "custom.catcomplete", $.ui.autocomplete, {
-				    _create: function() {
-				      this._super();
-				      this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
-				    },
-				    _renderMenu: function( ul, items ) {
-				      var that = this,
-				        currentCategory = "";
-				      $.each( items, function( index, item ) {
-				        var li;
-				        if ( item.category != currentCategory ) {
-				          ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
-				          currentCategory = item.category;
-				        }
-				        li = that._renderItemData( ul, item );
-				        if ( item.category ) {
-				          li.attr( "aria-label", item.category + " : " + item.label );
-				        }
-				      });
-				    }
-				  });
-				
-				$( "#search-bar" ).catcomplete({
+			}
+
+			if(Ultimate_data.length===counter) {
+					books_data();
+				};
+
+			//For Autocomplete
+			$.widget( "custom.catcomplete", $.ui.autocomplete, {
+			    _create: function() {
+			    	this._super();
+			    	this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+				},
+			    _renderMenu: function( ul, items ) {
+			    	var that = this,
+			        currentCategory = "";
+			    	$.each( items, function( index, item ) {
+			    		var li;
+			        	if ( item.category != currentCategory ) {
+			        		ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+			        		currentCategory = item.category;
+			        	}
+			        	li = that._renderItemData( ul, item );
+			        	if ( item.category ) {
+			        		li.attr( "aria-label", item.category + " : " + item.label );
+			        	}
+			    	});
+			    }
+			});
+			
+			$( "#search-bar" ).catcomplete({
 					delay: 0,
 					source: search_data,
 					select: function(event, ui) {
 						$('#search-button').append("<div hidden id='category-search'></div>")
-                		$('#category-search').val(ui.item.category);
-                	}
+               			$('#category-search').val(ui.item.category);
+               		}
 				});
-			}
-			else {
+			} else {
 				console.log("Problem with Ajax Request")
 			}
 		}
 	});
-
-	// books_data();
 }
 
-/*function click_toggle () {
-	
-	$('#latest-outer > .latest-additions').on('click', '.books-data', function() {
-		//console.log("click");
-		var book_id = $(this).attr('id');
-		book_id = book_id.split("books-data-").join("");
-		var seller_data =  "#seller-data-" + book_id;
-		$(seller_data).slideToggle(300);
-	});
-}
-*/
 function load_more () {
-		$('#load-more').on('click', function(){
-			console.log("click");
-			$height = $('#buy-table').height();
-			$num = parseInt(($height)/150);
-			$cnum = $num;
-			if( $num >= $c ) {
-				$('#load-more').css('display','none');
-			}
-			console.log($num, $cnum, $c);
-			if( $c - $num < 12 ) {
-				$num = $c;
-				$flag = 1;
-			}
-			else {
-				$num = $num + 12;
-				$flag = 0;
-			}
-			if( $num == $c ) {
-				$('#load-more').css('display','none');
-			}
-			console.log($num, $cnum, $c);
-			$num = $num - 1;
-			$cnum = $cnum - 1; 
-			$('#buy-container > #latest-outer > #buy-table > tbody > tr[class="books-data"]:gt(' + $cnum + '):lt(13)').slideDown(600);
-			//$num = $num + 11;
-			//console.log($num, $cnum, $c);
-			$bheight = $('#buy-container').css('height');
-			$lheight = $('#latest-outer').css('height');
-			$change = 150*($num - $cnum);
-			//$change = 52.5*($num - $cnum);
-			//if( $flag == 1 ){
-			//	$change = $change - 40;
-			//}
-			$('#buy-container').css('height',parseInt($bheight)+$change+'px');
-			$('#latest-outer').css('height',parseInt($lheight)+$change+'px');
-		});
+	$('#load-more').on('click', function(){
+		var height = $('#buy-table').height();
+		var num = parseInt((height)/150);
+		var cnum = num;
+		if( num >= c ) {
+			$('#load-more').css('display','none');
+		}
+		if( c - num < 12 ) {
+			num = c;
+			var flag = 1;
+		}
+		else {
+			num = num + 12;
+			var flag = 0;
+		}
+		if( num == c ) {
+			$('#load-more').css('display','none');
+		}
+		num = num - 1;
+		cnum = cnum - 1; 
+		$('#buy-container > #latest-outer > #buy-table > tbody > tr[class="books-data"]:gt(' + cnum + '):lt(13)').slideDown(600);
+		var bheight = $('#buy-container').css('height');
+		var lheight = $('#latest-outer').css('height');
+		var change = 150*(num - cnum);
+		$('#buy-container').css('height',parseInt(bheight)+change+'px');
+		$('#latest-outer').css('height',parseInt(lheight)+change+'px');
+	});
 }
 
 function show_search() {
-
 	$('#search-button').on('click',function(e) {
-		// console.log()
 		e.preventDefault();
 		var search_value = $("#search-bar").val();
 		var search_category = $("#category-search").val();
@@ -258,7 +201,6 @@ function show_search() {
 function load_specific(search_value, search_category) {
 	$('.outer-divs').remove();
 	$('.inner-divs').remove();
-	//$('#latest-outer > .latest-additions').append(book_name_search);
 	$.ajax({
 		type: "POST",
 		url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
@@ -269,51 +211,42 @@ function load_specific(search_value, search_category) {
 				console.log(search_value);
 				var json = JSON.parse(result);
 				console.log(json);
-				
-			}
-			else {
+			} else {
 				console.log("Thenga")
 			}
 		}
 	});
-
 }
 
 function books_data() {
 	$('#buy-container > #latest-outer > #buy-table > tbody > .seller-data').css("display","none");
-	$n=0;
-	
+	var n=0;
 	$('#buy-container > #latest-outer > #buy-table > tbody > tr[class="books-data"]:gt(11)').css("display","none");
-	if( $c < 12) {
+	if( c < 12) {
 		$('#load-more').css("display","none");
-		$n = $c;
+		n = c;
 	}
 	else {
-		$n = 12;
+		n = 12;
 	}
-
-	$bheight = $('#buy-container').css('height');
-	$lheight = $('#latest-outer').css('height');
-
-	$('#buy-container').css('height',parseInt($bheight)+115*$n+'px');
-	$('#latest-outer').css('height',parseInt($lheight)+115*$n+'px');
-	$scopy = 0;
-
+	bheight = $('#buy-container').css('height');
+	lheight = $('#latest-outer').css('height');
+	$('#buy-container').css('height',parseInt(bheight)+115*n+'px');
+	$('#latest-outer').css('height',parseInt(lheight)+115*n+'px');
+	var scopy = 0;
 	$('#buy-container > #latest-outer > #buy-table > tbody').on('click', '.books-data', function() {
-		$visible = 0;
-		$id = $(this).attr('id');
-		$copy = $id;
-		$id = $id.split("book-data-").join("");
-		$disp = $(this).find("#seller-data-"+$id);
-		$copy = "#seller-data-" + $id;
-		$style =  $($copy).slideToggle(100);
-		$size = $('tr[id^="seller-data"] :visible').size()/4;
-		$bheight = $('#buy-container').css('height');
-		$lheight = $('#latest-outer').css('height');
-		console.log($size,$scopy); 
-		$change = 30*($size-$scopy);
-		$('#buy-container').css('height',parseInt($bheight)+$change+'px');
-		$('#latest-outer').css('height',parseInt($lheight)+$change+'px');
-		$scopy = $size;
+		var id = $(this).attr('id');
+		var copy = id;
+		id = id.split("book-data-").join("");
+		copy = "#seller-data-" + id;
+		var style =  $(copy).slideToggle(100);
+		var size = $('tr[id^="seller-data"] :visible').size()/4;
+		bheight = $('#buy-container').css('height');
+		lheight = $('#latest-outer').css('height');
+		console.log(size,scopy); 
+		change = 30*(size-scopy);
+		$('#buy-container').css('height',parseInt(bheight)+change+'px');
+		$('#latest-outer').css('height',parseInt(lheight)+change+'px');
+		scopy = size;
 	});
 }

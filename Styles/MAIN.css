@@ -8,8 +8,6 @@ Globals...
 body
 {
 	background-color: white;
-	/*background: url('/Styles/Images/best.jpg');*/
-	opacity: 0.9;
 	border:0;
 	padding: 0;
 	margin: 0 auto;
@@ -218,6 +216,13 @@ Different for different pages...
 
 /********************  INDEX.PHP   ************************/
 
+#index-home
+{
+	background: url('Images/img1.jpg');
+	background-size: cover;
+	opacity: 1;0.9;
+}
+
 h1, .head
 {
 	color: white;
@@ -246,30 +251,32 @@ h1
 .box
 {
 	display: inline-block;
-	height: 420px;
-	width: 280px;
+	height: 280px;420px;
+	width: 240px;280px;
 	position: relative;
 	float: left;
-	box-shadow: 9px 9px 5px black;
 	top: 0px;
 	padding: 20px;
-	border-style: solid;double;groove;inset;ridge;outset;
-	border-width: 2px;
-	border-color: white;
 	text-align: center;
 	margin: 0px 20px 50px 20px;
 	line-height: 180%;
-	border-radius: 15px;
+	/*box-shadow: 9px 9px 5px black;
+	border: 2px solid white;
+	border-radius: 15px;*/
 }
 
 #buy-box
 {
-	background-color: #E44424;#D9853B;
+	-webkit-transition:rotate(+45deg);
+	-moz-transition:;
+	-o-transition:;
+	-ms-transition:;
+	/*background-color: #E44424;#D9853B;*/
 }
 
 #sell-box
 {
-	background-color: #67BCDB;#558C89;
+	/*background-color: #67BCDB;#558C89;*/
 }
 
 .home-desc, ol
@@ -278,7 +285,7 @@ font-family: 'Verdana', sans-serif;
 font-weight: 500;
 font-style: normal;
 line-height: 1.1;
-color: white;
+color: black;white;
 margin-top: 30px;
 font-size: 16px;
 }
@@ -290,9 +297,9 @@ ol
 
 #rent-box
 {
-	background-color: #A2AB58;#67BCDB;#558C89;
+	/*background-color: #A2AB58;#67BCDB;#558C89;*/
 }
-
+/*
 .continue-buy, .continue-sell, .continue-rent
 {
 	position: absolute;
@@ -332,7 +339,7 @@ ol
 {
 	color: #A2AB58;
 }
-
+*/
 
 /********************    ABOUT.PHP    ************************/
 
@@ -867,14 +874,15 @@ ol
 	opacity: 0.8;
 }
 
-#del-error1, #del-error2, #del-error3, #del-error4
+/*#del-error1, #del-error2, #del-error3, #del-error4*/
+div[id^="del-error"]
 {
 	color: red;
 	font-size: 16px;
 	margin-left: 15px;
 }
 
-#del-error4
+#del-error_incorrect
 {
 	margin-left: 130px;
 }
@@ -1207,7 +1215,7 @@ ol
 
 #sell-container
 {
-	height:810px;
+	height:850px;
 	width: 700px;
 	position: relative;
 	top: 60px;
@@ -1240,7 +1248,7 @@ ol
 #sell-form
 {
 	width:860px;
-	height: 710px;
+	height: 750px;
 	position: absolute;
 	top: 70px;
 	left: 100px;
@@ -1352,7 +1360,7 @@ ol
 	width: 300px;
 }
 
-#error, #error1, #error2, #error3, #error4, #error5, #error6, #error7, #error8, #error9
+div[id^="error"]
 {
 	height: 30px;
 	width: 470px;
@@ -1378,7 +1386,7 @@ ol
     font-size: 105%;
 	margin-right: auto;
 	position: absolute;
-	bottom: 25px;
+	bottom: -10px;
     left:80px;
     font-family: Ubuntu;
 }
