@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Bookaway.in | Buy | Sell | Rent | Books</title>
-	<meta name="Description" content="Booksforbucks.com - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
+	<meta name="Description" content="Bookaway.in - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
 	<meta name="Keywords" content="book,books,jiit,used,buy,sell,rent,textbook,india,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
@@ -20,7 +20,6 @@
 <body id="index-home">
 	<?php
 	require_once('topbar.php');
-	require_once('fork.php');
 	?>
 	<div class="main-heads">
 	<h2>Bookaway.in</h2>

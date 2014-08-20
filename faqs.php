@@ -43,9 +43,9 @@
 		<div class="ans"><i>Yes. Click on edit tab and fill up your e-mail address, book id and password. To remove the book click on the "Delete" tab. To submit the edited details, click on "Submit" tab.</i></div>
 		<h2 class="ques">I had added my book for rent first. Is it possible now to keep it for both sale and rent?</h2>
 		<div class="ans"><i>Yes it can be done. Click on the edit tab and change it.</i></div>
+	</div>
 	<?php
 		require_once('footer.php');
 	?>
-	</div>
 </body>
 </html>

@@ -281,25 +281,25 @@
 <option value="">Mangalore University, Mangalore</option>
 <option value="">Manipal University, Manipal</option> 
 <option value="">Manipur University, Imphal</option>
-Manonmaniam Sundaranar University, Tirunelveli</option>
-Marathwada Agricultural University, Parbhani</option>
-Martin Luther Christian University, Shillong</option>
-MATS University, Raipur</option>
-Maulana Azad National Institute of Technology, Bhopal</option>
-Maulana Azad National Urdu University, Hyderabad</option>
-Maulana Mazharul Haque Arabic and Persian University, Patna</option>
-Mewar University, Chittorgarh</option>
-MGM Institute of Health Sciences, Navi Mumbai</option>
-Mizoram University, Aizawl</option>
-Mohammad Ali Jauhar University, Rampur</option>
-Mohanlal Sukhadia University, Udaipur</option>
-Mother Teresa Women's University, Kodaikanal</option>
-Motilal Nehru National Institute of Technology, Allahabad</option>
-Nagaland University, Kohima</option>
-NALSAR University of Law, Hyderabad</option>
-Narendra Dev University of Agriculture and Technology, Faizabad</option>
-Narsee Monjee Institute of Management and Higher Studies, Mumbai</option>
-National Dairy Research Institute, Karnal</option> 
+<option value="">Manonmaniam Sundaranar University, Tirunelveli</option>
+<option value="">Marathwada Agricultural University, Parbhani</option>
+<option value="">Martin Luther Christian University, Shillong</option>
+<option value="">MATS University, Raipur</option>
+<option value="">Maulana Azad National Institute of Technology, Bhopal</option>
+<option value="">Maulana Azad National Urdu University, Hyderabad</option>
+<option value="">Maulana Mazharul Haque Arabic and Persian University, Patna</option>
+<option value="">Mewar University, Chittorgarh</option>
+<option value="">MGM Institute of Health Sciences, Navi Mumbai</option>
+<option value="">Mizoram University, Aizawl</option>
+<option value="">Mohammad Ali Jauhar University, Rampur</option>
+<option value="">Mohanlal Sukhadia University, Udaipur</option>
+<option value="">Mother Teresa Women's University, Kodaikanal</option>
+<option value="">Motilal Nehru National Institute of Technology, Allahabad</option>
+<option value="">Nagaland University, Kohima</option>
+<option value="">NALSAR University of Law, Hyderabad</option>
+<option value="">Narendra Dev University of Agriculture and Technology, Faizabad</option>
+<option value="">Narsee Monjee Institute of Management and Higher Studies, Mumbai</option>
+<option value="">National Dairy Research Institute, Karnal</option> 
 <option value="">National Institute of Design, Ahmedabad</option> 
 <option value="">National Institute of Fashion Technology, New Delhi</option> 
 <option value="">National Institute of Mental Health and Neuro Sciences, Bangalore</option>

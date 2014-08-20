@@ -180,40 +180,39 @@
 
 				if(before_pass == 2) {
 					
-					$('#help-popup').css("top","262px") ;
-					$('#show-password').css("top","325px") ;
-					$('#help').css("top","325px") ;
+					$('#help-popup').css("top","255px") ;
+					$('#show-password').css("top","320px") ;
+					$('#help').css("top","320px") ;
 				}
 
 				if(before_pass == 3) {
 
-					$('#help-popup').css("top","308px") ;
-					$('#show-password').css("top","368px") ;
-					$('#help').css("top","368px") ;
+					$('#help-popup').css("top","303px") ;
+					$('#show-password').css("top","363px") ;
+					$('#help').css("top","363px") ;
 				}	
-			}
-			else {
+			} else {
 
-                $.ajax({
-                    url: "sqldata.php",
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    success: function(result_addbook) {
-                    	var response = JSON.parse(result_addbook);
-                    	console.log(response.status);
-                    	if(response.status == "success") {
-                    		console.log("Book addition successful");
-                    		$('#sell-form').css('display','none');
-                    		$('#step-1').css('display','none');
-                    		$('#entry').css('display','block');
-                    		$('#sell-container').css({
-                    			'height':'450px',
-                    			'width':'800px'
-                    		});
-                    		$('#book_id_span').html(response.book_id);
-                    	}
-                    }
-                });
+	        $.ajax({
+	            url: "sqldata.php",
+	            type: 'POST',
+	            data: $(this).serialize(),
+	            success: function(result_addbook) {
+	            	var response = JSON.parse(result_addbook);
+	            	console.log(response.status);
+	            	if(response.status == "success") {
+	            		console.log("Book addition successful");
+	            		$('#sell-form').css('display','none');
+	            		$('#step-1').css('display','none');
+	            		$('#entry').css('display','block');
+	            		$('#sell-container').css({
+	            			'height':'450px',
+	            			'width':'800px'
+	            		});
+	            		$('#book_id_span').html(response.book_id);
+	            	}
+	            }
+	        });
 			}
 		});
 	}
@@ -321,6 +320,8 @@
 				<br>
 				<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_author"></div>  
 				<br>
+				<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="250" placeholder="Description(max 250 characters)"></textarea>
+				<br>
 				<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><br>
 				<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
 				<select name="sellrent" id="sell-rent" class="sell-input">
@@ -349,7 +350,7 @@
 		<div id="s2">
 			<p id="successful-text">Form Successfully Submitted.<br>
 			Your book id is <span id="book_id_span" style="color: red;"></span> .<br>
-			Your response will be processed and implemented within 24 hours.</p>
+			Your response will be processed and implemented within a few hours.</p>
 		</div>
 		<div class="links-list">
 			<div class="links-box"><a href="index.php" class="links">Return 
@@ -357,9 +358,9 @@
 			<div class="links-box"><a href="sell.php" class="links">Sell another Book</a></div>
 		</div>
 	</div>
+	</div>
 	<?php
 		require_once('footer.php');
 	?>
-	</div>
 </body>
 </html>

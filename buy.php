@@ -40,8 +40,8 @@ function curPageURL() {
 			<h2>Buy Books</h2>
 	</div>
 	<div id="buy-container">
-		<h2 id="latest-text">Latest Additions</h2>
-	<!--<div id="buy-new-search">
+		<!--<h2 id="latest-text">Latest Additions</h2>
+		<div id="buy-new-search">
 		<form class="pure-form pure-form-stacked" id="home-search-new">
 		<div class="ui-widget">
 			<input id="search-bar-new" placeholder="Search Here">
@@ -90,15 +90,15 @@ function curPageURL() {
 	</div>
 	</div>
 	<div id="latest-outer">
-		<table id="buy-table">
+		<!--<table id="buy-table">
 			<tbody>
 			</tbody>
-		</table>
+		</table>-->
 		<button id="load-more">Load more</button>
+	</div>
 	</div>
 	<?php
 		require_once('footer.php');
 	?>
-	</div>
 </body>
 </html>

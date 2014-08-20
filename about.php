@@ -19,7 +19,6 @@
 <body>
 	<?php
 	require_once('topbar.php');
-	require_once('fork.php');
 	?>
 	<div class="main-heads">
 		<h2>About Us</h2>
@@ -58,9 +57,9 @@
 			<div onclick="location.href='http://in.linkedin.com/pub/sidhant-sharma/91/960/230';" class="f-t" id="icl3" ></div>
 			<div onclick="location.href='https://github.com/sid15sharma';" class="f-t" id="icg3"></div>
 		</div>
-		<?php
-			require_once('footer.php');
-		?>
 	</div>
+	<?php
+		require_once('footer.php');
+	?>
 </body>
 </html>

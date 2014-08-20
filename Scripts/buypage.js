@@ -2,12 +2,11 @@
 
 //CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
 
-var c = 0;
+var total_results = 0;
  $(document).ready(function() {
 	book_data_display();
 	show_search();
-	load_more();
-	console.log("Main--",c);
+	//console.log("Main--",c);
 	newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 	console.log(newURL);
 
@@ -96,23 +95,26 @@ function book_data_display () {
 						)
 					}
 			
-					c = c + 1;
+					total_results = total_results + 1;
 					counter = counter +1;
 			}
 
-			var counter_clone = counter;
-			while(counter_clone--) {
+			//var counter_clone = counter;
+			var counter_clone = 0;
+			//while(counter_clone--) {
+			while(counter_clone != counter) {
 				if( json[counter_clone].rent_price == "" ) {
 						console.log("No rent price");
 						json[counter_clone].rent_price = "-";
 						json[counter_clone].rent_time = "";
-						$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter_clone].book_name+"</td><td>"+json[counter_clone].author_name+"</td><td>"+json[counter_clone].sell_price+"</td><td>"+json[counter_clone].rent_price+ "" +json[counter_clone].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter_clone].seller_name+"</td><td><u>Contact:</u> "+json[counter_clone].seller_phone+"</td></tr>");
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='sell-wrapper'> Buy price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
 					} else if( json[counter_clone].sell_price == "" ) {
 						json[counter_clone].sell_price = "-";
-						$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter_clone].book_name+"</td><td>"+json[counter_clone].author_name+"</td><td>"+json[counter_clone].sell_price+"</td><td>"+json[counter_clone].rent_price+ " - per " +json[counter_clone].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter_clone].seller_name+"</td><td><u>Contact:</u> "+json[counter_clone].seller_phone+"</td></tr>");
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='rent-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'> " +json[counter_clone].rent_price+ " per " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
 					} else {
-						$('#latest-outer > #buy-table > tbody').append("<tr class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<td><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></td><td>"+json[counter_clone].book_name+"</td><td>"+json[counter_clone].author_name+"</td><td>"+json[counter_clone].sell_price+"</td><td>"+json[counter_clone].rent_price+ " - per " +json[counter_clone].rent_time+"</td></tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<td><u>Seller Name:</u> "+json[counter_clone].seller_name+"</td><td><u>Contact:</u> "+json[counter_clone].seller_phone+"</td></tr>");
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='sell-wrapper'>  Buy price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'> " +json[counter_clone].sell_price+"</div><div class='rent-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'> " +json[counter_clone].rent_price+ " per " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
 					}
+					counter_clone = counter_clone + 1;
 			}
 
 			if(Ultimate_data.length===counter) {
@@ -159,31 +161,36 @@ function book_data_display () {
 
 function load_more () {
 	$('#load-more').on('click', function(){
-		var height = $('#buy-table').height();
-		var num = parseInt((height)/150);
-		var cnum = num;
-		if( num >= c ) {
+		var counter_visible = $('.books-data:visible').size();
+		var clone_visible = counter_visible;
+		var visible_flag = 0;
+		if( counter_visible >= total_results ) {
 			$('#load-more').css('display','none');
+			visible_flag = 1;
 		}
-		if( c - num < 12 ) {
-			num = c;
+		if( total_results - counter_visible < 12 ) {
+			counter_visible = total_results;
 			var flag = 1;
 		}
 		else {
-			num = num + 12;
+			counter_visible = counter_visible + 12;
 			var flag = 0;
 		}
-		if( num == c ) {
+		if( counter_visible == total_results ) {
 			$('#load-more').css('display','none');
 		}
-		num = num - 1;
-		cnum = cnum - 1; 
-		$('#buy-container > #latest-outer > #buy-table > tbody > tr[class="books-data"]:gt(' + cnum + '):lt(13)').slideDown(600);
-		var bheight = $('#buy-container').css('height');
-		var lheight = $('#latest-outer').css('height');
-		var change = 150*(num - cnum);
-		$('#buy-container').css('height',parseInt(bheight)+change+'px');
-		$('#latest-outer').css('height',parseInt(lheight)+change+'px');
+		//counter_visible = counter_visible - 1;
+		//clone_visible = clone_visible - 1; 
+		$('#buy-container > #latest-outer > div[class="books-data"]:gt(' + clone_visible + '):lt(13)').slideDown(600);
+		var buy_height = $('#buy-container').height();
+		var latest_outer_height = $('#latest-outer').height();
+		console.log(buy_height,latest_outer_height);
+		var change = 220*(counter_visible - clone_visible);
+		//if( visible_flag == 1 ) {
+		//	change = change - 100;
+		//}
+		$('#buy-container').css('height',parseInt(buy_height)+change+'px');
+		$('#latest-outer').css('height',parseInt(latest_outer_height)+change+'px');
 	});
 }
 
@@ -219,20 +226,20 @@ function load_specific(search_value, search_category) {
 }
 
 function books_data() {
-	$('#buy-container > #latest-outer > #buy-table > tbody > .seller-data').css("display","none");
-	var n=0;
-	$('#buy-container > #latest-outer > #buy-table > tbody > tr[class="books-data"]:gt(11)').css("display","none");
-	if( c < 12) {
+	//$('#buy-container > #latest-outer > #buy-table > tbody > .seller-data').css("display","none");
+	var results_counter = 0;
+	$('#buy-container > #latest-outer > div[class="books-data"]:gt(11)').css("display","none");
+	if( total_results < 12) {
 		$('#load-more').css("display","none");
-		n = c;
+		results_counter= total_results;
 	}
 	else {
-		n = 12;
+		results_counter= 12;
 	}
-	bheight = $('#buy-container').css('height');
-	lheight = $('#latest-outer').css('height');
-	$('#buy-container').css('height',parseInt(bheight)+115*n+'px');
-	$('#latest-outer').css('height',parseInt(lheight)+115*n+'px');
+	buy_height = $('#buy-container').css('height');
+	latest_outer_height = $('#latest-outer').css('height');
+	$('#buy-container').css('height',parseInt(buy_height)+200*results_counter+'px');
+	$('#latest-outer').css('height',parseInt(latest_outer_height)+200*results_counter+'px');
 	var scopy = 0;
 	$('#buy-container > #latest-outer > #buy-table > tbody').on('click', '.books-data', function() {
 		var id = $(this).attr('id');
@@ -240,13 +247,14 @@ function books_data() {
 		id = id.split("book-data-").join("");
 		copy = "#seller-data-" + id;
 		var style =  $(copy).slideToggle(100);
-		var size = $('tr[id^="seller-data"] :visible').size()/4;
-		bheight = $('#buy-container').css('height');
-		lheight = $('#latest-outer').css('height');
+		var size = $('tr[id^="seller-data"]:visible').size();
+		buy_height = $('#buy-container').css('height');
+		latest_outer_height = $('#latest-outer').css('height');
 		console.log(size,scopy); 
 		change = 30*(size-scopy);
-		$('#buy-container').css('height',parseInt(bheight)+change+'px');
-		$('#latest-outer').css('height',parseInt(lheight)+change+'px');
+		$('#buy-container').css('height',parseInt(buy_height)+change+'px');
+		$('#latest-outer').css('height',parseInt(latest_outer_height)+change+'px');
 		scopy = size;
 	});
+	load_more();
 }

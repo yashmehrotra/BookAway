@@ -401,9 +401,9 @@
 			</form>
 		</div>
 		<div id="edit-success">Congratulations!!<br>You have successfully edited your response.</div>
-		<?php
-			require_once('footer.php');
-		?>
 	</div>
+	<?php
+			require_once('footer.php');
+	?>
 </body>
 </html>
