@@ -715,6 +715,18 @@ ol
 	padding-left: 35px;	
 }
 
+.desc-wrapper
+{
+	height: 80px;
+	width: 600px;
+	position: relative;
+	left: 140px;
+	top: -100px;
+	font-size: 19px;
+	color: gray;
+	padding-left: 35px;	
+}
+
 .sell-wrapper
 {
 	height: 50px;
@@ -1196,7 +1208,7 @@ div[id^="del-error"]
 
 #sell-container
 {
-	height:970px;
+	height:990px;
 	width: 700px;
 	position: relative;
 	top: 60px;

@@ -101,6 +101,14 @@
 				error_count = error_count + 1;
 			}
 
+ 			if( $('#cover-url').val() != "" && !/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val())) {
+				$('#error_url').html("Please provide a valid link");
+				$('#error_url').css("display","inline-block");
+				$('#cover-url').focus() ;
+				flag = true;;
+				error_count = error_count + 1;
+			}
+
 			var sell_or_rent = $('#sell-rent option:selected').val();
 
 			if( sell_or_rent == 1 ) {
@@ -288,7 +296,6 @@
 <body>
 	<?php
 	require_once('topbar.php');
-	require_once('fork.php');
 	?>
 	<div class="main-heads" id="sell-main-head">
 		<h2 id="sell-books-text">Sell Books</h2>
@@ -322,7 +329,8 @@
 				<br>
 				<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="250" placeholder="Description(max 250 characters)"></textarea>
 				<br>
-				<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><br>
+				<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><div id="error_url"></div>
+				<br>
 				<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
 				<select name="sellrent" id="sell-rent" class="sell-input">
 					<option value="3" selected>Both Sale and Rent</option>

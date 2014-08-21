@@ -39,6 +39,9 @@ bookfor_array       = [];
 rentprice_array     = [];
 sellprice_array     = [];
 renttime_array      = [];
+description_array   = [];
+image_source_array  = [];
+college_name_array 	= [];
 
 search_books        = [];
 search_authors      = [];
@@ -66,6 +69,9 @@ function book_data_display () {
 					rentprice_array.push(json[counter].rent_price);
 					sellprice_array.push(json[counter].sell_price);
 					renttime_array.push(json[counter].rent_time);
+					description_array.push(json[counter].book_description);
+					image_source_array.push(json[counter].image_source);
+					college_name_array.push(json[counter].college);
 
 					Ultimate_data.push({
 						'book_id':json[counter].book_id,
@@ -77,7 +83,10 @@ function book_data_display () {
 						'book_for':json[counter].sell_rent,
 						'rent_price':json[counter].rent_price,
 						'sell_price':json[counter].sell_price,
-						'rent_time':json[counter].rent_time
+						'rent_time':json[counter].rent_time,
+						'book_description':json[counter].book_description,
+						'image_source':json[counter].image_source,
+						'college_name':json[counter].college,
 					});
 
 					//To add different inputs
@@ -107,7 +116,7 @@ function book_data_display () {
 						console.log("No rent price");
 						json[counter_clone].rent_price = "-";
 						json[counter_clone].rent_time = "";
-						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='sell-wrapper'> Buy price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-wrapper'> Buy price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
 					} else if( json[counter_clone].sell_price == "" ) {
 						json[counter_clone].sell_price = "-";
 						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='Styles/Images/Five+Point+Someone1-site1.n'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='rent-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'> " +json[counter_clone].rent_price+ " per " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
@@ -168,15 +177,14 @@ function load_more () {
 			$('#load-more').css('display','none');
 			visible_flag = 1;
 		}
-
 		if( total_results - counter_visible < 12 ) {
 			counter_visible = total_results;
 			var flag = 1;
-		} else {
+		}
+		else {
 			counter_visible = counter_visible + 12;
 			var flag = 0;
 		}
-		
 		if( counter_visible == total_results ) {
 			$('#load-more').css('display','none');
 		}
@@ -233,7 +241,8 @@ function books_data() {
 	if( total_results < 12) {
 		$('#load-more').css("display","none");
 		results_counter= total_results;
-	} else {
+	}
+	else {
 		results_counter= 12;
 	}
 	buy_height = $('#buy-container').css('height');

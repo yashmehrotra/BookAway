@@ -34,7 +34,6 @@ function curPageURL() {
 <body>
 	<?php
 	require_once('topbar.php');
-	require_once('fork.php');
 	?>
 	<div class="main-heads">
 			<h2>Buy Books</h2>
