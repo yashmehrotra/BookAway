@@ -12,21 +12,21 @@
 	
 	if($source == 'add_book') {
 
-		$name             = $_POST['name'];
+		$name             = addslashes($_POST['name']);
 		$email            = $_POST['email'];
 		$phone            = $_POST['phone'];
 		$password         = md5($_POST['password']);
-		$subject          = $_POST['subject'];
-		$book             = $_POST['book'];
-		$author           = $_POST['author'];
+		$category         = $_POST['subject'];
+		$book             = addslashes($_POST['book']);
+		$author           = addslashes($_POST['author']);
 		$sell_rent        = $_POST['sellrent'];
 		$sell_price       = $_POST['sellprice'];
 		$rent_price       = $_POST['rentprice'];
 		$rent_time        = $_POST['rentpricetime'];
 		$image_source     = $_POST['cover-url'];
-		$college          = $_POST['clg'];
-		$book_description = $_POST['book-desc'];
-		$date_added       =  date("Y-m-d H:i:s", time());
+		$college          = addslashes($_POST['clg']);
+		$book_description = addslashes($_POST['book-desc']);
+		$date_added       = date("Y-m-d H:i:s", time());
 
 		//
 		// Sanitize database input , use regex on client side
@@ -36,7 +36,7 @@
 		// Check Book Deletion
 
 		//$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time,date_added) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$date_added')";
-		$query = "INSERT INTO tbl_books (category,book,author,sell_rent,sell_price,rent_price,rent_time,college,date_added,image_source,`book_description`) VALUES ('$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$college','$date_added','$image_source','$book_description')";
+		$query = "INSERT INTO tbl_books (category,book,author,sell_rent,sell_price,rent_price,rent_time,college,date_added,image_source,`book_description`) VALUES ('$category','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$college','$date_added','$image_source','$book_description')";
 		mysqli_query($database_connection,$query);
 		$book_id = mysqli_insert_id($database_connection);
 
