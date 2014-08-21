@@ -168,14 +168,15 @@ function load_more () {
 			$('#load-more').css('display','none');
 			visible_flag = 1;
 		}
+
 		if( total_results - counter_visible < 12 ) {
 			counter_visible = total_results;
 			var flag = 1;
-		}
-		else {
+		} else {
 			counter_visible = counter_visible + 12;
 			var flag = 0;
 		}
+		
 		if( counter_visible == total_results ) {
 			$('#load-more').css('display','none');
 		}
@@ -232,13 +233,11 @@ function books_data() {
 	if( total_results < 12) {
 		$('#load-more').css("display","none");
 		results_counter= total_results;
-	}
-	else {
+	} else {
 		results_counter= 12;
 	}
 	buy_height = $('#buy-container').css('height');
 	latest_outer_height = $('#latest-outer').css('height');
-	while( results_counter > 2 )
 	$('#buy-container').css('height',parseInt(buy_height)+200*results_counter+'px');
 	$('#latest-outer').css('height',parseInt(latest_outer_height)+200*results_counter+'px');
 	var scopy = 0;
