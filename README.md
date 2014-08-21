@@ -3,7 +3,6 @@ Books-for-bucks
 
 Recent Changes--
 
-1. Add details -- description, clg name, img src.
-2. Add regex for img src.
-3. Display description in buy.php (store it in a variable).
-
+1. Added Faqs and removed rent.php
+2. Added common Footer
+3. Added favicon to topbar.php

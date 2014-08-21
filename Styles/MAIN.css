@@ -25,11 +25,13 @@ body
 	src: url('Fonts/Proxima-Nova/ProximaNova-Regular.otf');
 }
 
+/*
 @font-face
 {
 	font-family: Josefin-Slab;
 	src: url('Fonts/Josefin-Slab/JosefinSlab-SemiBold.ttf');
 }
+*/
 
 @font-face
 {
@@ -87,9 +89,8 @@ h1, h2, h3
 	display: inline-block;
 	padding: 0;
 	text-transform: uppercase;
-	background-color: #0078E7;#E25A5A;
-	/*font-family: ‘Lucida Console’, Monaco, monospace;*/
-	font-family: Ubuntu;Josefin-Slab;
+	background-color: #0078E7;
+	font-family: Ubuntu;
 	position: relative;
 	top:0px;
 	left: 0px;
@@ -104,12 +105,14 @@ h1, h2, h3
 	top:0px;
 	left: 15px;
 }
+
 /*
 #favicon:hover
 {
 	cursor: pointer;
 }
 */
+
 .top-panel-list
 {
 	list-style: none;
@@ -149,11 +152,8 @@ h1, h2, h3
 	height: 100px;
 	margin-bottom: 0px;
 	position: relative;
-	/*bottom: -250px;
-	border-top: 10px solid yellow;orange;*/
 	text-align: center;
-	background-color: #0078E7;rgba(31, 30, 30, 0.89);rgb(248, 247, 252);black;
-	/*background: linear-gradient(to top,rgba(255,0,0,0.5),rgba(255,0,0,1));*/
+	background-color: #0078E7;
 	color: white;
 	font-size: 14px;
 }
@@ -189,28 +189,7 @@ h1, h2, h3
 .bottom-links:hover
 {
 	text-decoration: underline;
-	/*
-	color: green;
-	-webkit-transition: all 0.3s ease-in;	
-	-moz-transition:all 0.3s ease-in;
-	-o-transition:all 0.3s ease-in;
-	-ms-transition:all 0.3s ease-in;*/
 }
-
-/*
-#co-developed
-{
-	height: 25px;
-	width: 100%;
-	opacity: 0.9;
-	color: black;
-	background-color: #2EFE64;
-	padding-top: 10px;
-	position: absolute;
-	bottom: -200px;
-	text-align: center;
-}
-*/
 
 #bottom-desc
 {	
@@ -229,6 +208,7 @@ Different for different pages...
 
 /********************  INDEX.PHP   ************************/
 
+/*
 #index-home
 {
 	background: url('Images/img1.jpg');
@@ -273,23 +253,25 @@ h1
 	text-align: center;
 	margin: 0px 20px 50px 20px;
 	line-height: 180%;
-	/*box-shadow: 9px 9px 5px black;
+	box-shadow: 9px 9px 5px black;
 	border: 2px solid white;
-	border-radius: 15px;*/
+	border-radius: 15px;
 }
-
+*/
+/*
 #buy-box
 {
 	-webkit-transition:rotate(+45deg);
 	-moz-transition:;
 	-o-transition:;
 	-ms-transition:;
-	/*background-color: #E44424;#D9853B;*/
+	background-color: #E44424;#D9853B;
 }
-
+*/
+/*
 #sell-box
 {
-	/*background-color: #67BCDB;#558C89;*/
+	background-color: #67BCDB;#558C89;
 }
 
 .home-desc, ol
@@ -310,9 +292,9 @@ ol
 
 #rent-box
 {
-	/*background-color: #A2AB58;#67BCDB;#558C89;*/
+	/*background-color: #A2AB58;#67BCDB;#558C89;
 }
-/*
+
 .continue-buy, .continue-sell, .continue-rent
 {
 	position: absolute;
@@ -373,12 +355,6 @@ ol
 	border: solid transparent;
 	border-radius: 100px;
 }
-/*
-.img-blue
-{
-
-}
-*/
 
 .c123, .blue
 {
@@ -407,6 +383,7 @@ ol
 	background-color: #AA3DA6;#3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f;
 }
 */
+
 .desc
 {
 	font-size: 19px;
@@ -421,14 +398,14 @@ ol
 	margin: 10px 5px 0px 7px;
 }
 
-#icf1, #icf2, #icf3
-{
-	background: url("Images/icon-logos.png") no-repeat 0px 0px;
-}
-
 .f-t:hover
 {
 	cursor: pointer;
+}
+
+#icf1, #icf2, #icf3
+{
+	background: url("Images/icon-logos.png") no-repeat 0px 0px;
 }
 
 #ict1, #ict2, #ict3
@@ -450,12 +427,13 @@ ol
 /********************    BUY.PHP    ************************/
 
 
-.ui-autocomplete-category {
+.ui-autocomplete-category
+{
     font-weight: bold;
     padding: .2em .4em;
     margin: .8em 0 .2em;
     line-height: 1.2;
-  }
+}
 
 #buy-container
 {
@@ -470,7 +448,7 @@ ol
 .buy-left-panel
 {
 	width: 320px;
-	height: 380px;
+	height: 480px;
 	float: left;
 	border: 1px solid gray;
 	background-color: white;
@@ -482,7 +460,7 @@ ol
 
 #price-max, #home-search
 {
-	font-family: Ubuntu;fantasy;
+	font-family: Ubuntu;
 	margin: 10% auto 0px;
 }
 
@@ -494,10 +472,10 @@ ol
 .input
 {
 	font-size: 18px;
-	width:300px;
+	width:250px;
 	font-family: serif;
 	float: left;
-	margin: 15px 14px 5px 7px;
+	margin: 15px 14px 15px 7px;
 }
 
 .search
@@ -583,7 +561,7 @@ ol
 
 .sub-select
 {
-	margin-top: 10px;
+	margin-top: 100px;
 }
 
 .subs
@@ -596,6 +574,34 @@ ol
 	border:1px solid;
 	border-collapse: collapse;
 	text-align: left;
+}
+
+#sub-scroll-bar
+{
+	height: 140px;
+	width: 220px;
+	overflow-y: auto; 
+	overflow-x: hidden; 
+}
+
+.sub-cbox:hover
+{
+	background-color: gray;
+}
+
+.clg-select
+{
+	margin-bottom: 10px; 
+}
+
+.price-range
+{
+	margin-top: 30px;
+}
+
+#range-min, #range-max
+{
+	width: 90px;
 }
 
 #latest-outer
@@ -618,37 +624,6 @@ ol
 }
 
 /*
-.latest-additions
-{
-	height: 200px;
-	width: 700px;
-	position: absolute;
-	left: 115px;
-	top:5px;
-}
-
-
-.outer-divs
-{
-	height: 150px;
-	width: 150px;
-	float: left;
-	margin: 20px 10px;
-	border: 1px solid black;
-	font-size: 18px;
-}
-
-.books-data
-{
-	height: 90px;
-	width: 150px;
-	float: left;
-	/*margin: 20px 10px;*/
-	/*
-	border: 1px solid black;
-	font-size: 18px;
-}
-
 .seller-data
 {
 	height: 50px;
@@ -662,6 +637,7 @@ ol
 	font-size: 16px;
 }
 */
+
 #load-more
 {
 	height: 45px;
@@ -671,7 +647,6 @@ ol
 	right: 0px;15%;
 	color: white;
 	border: 1px transparent;
-	/*border-radius: 15px;*/
     background: #403C94;
     font-size: 18px;
     font-family: Ubuntu;
@@ -681,27 +656,6 @@ ol
 {
 	cursor: pointer;
 }
-/*
-#buy-table
-{
-	height: 80px;
-	width: inherit;160px;
-	font-family: Ubuntu;
-	font-size: 20px;
-	border: 1px solid black;
-	border-collapse: collapse; 
-	text-align: justify;
-}
-
-.books-header
-{
-	height: 50px;
-	font-size: 22px;
-	color: black;gray;
-	border-bottom: 1px solid black;
-	background-color: #64B4BD;#a9c6c9;
-}
-*/
 
 .books-data
 {
@@ -709,13 +663,11 @@ ol
 	margin: 30px 0px;
 	font-family: Ubuntu;
 	border: 1px solid gray;
-	/*background-color: #d4e3e5;*/
 }
 
 .books-data:hover
 {
 	cursor: pointer;
-	/*background-color: #ffff66;*/
 	border-color:blue;
 }
 
@@ -766,7 +718,7 @@ ol
 .sell-wrapper
 {
 	height: 50px;
-	width: 200px;
+	width: 210px;
 	font-size: 22px;
 	position: relative;
 	top: -180px;
@@ -803,58 +755,6 @@ ol
 }
 */
 
-#buy-new-search
-{
-	width: 100%;
-	height: 70px;
-	position: relative;
-	top:25px;
-}
-
-#search-bar-new
-{
-	height: 30px;
-	width: 300px;
-	position: absolute;
-	top:20px;
-	right: 520px;
-	display: inline-block;
-}
-
-.search-new
-{
-	margin-top: 5px;
-	font-size: 15px;
-	width:100px;
-	height:32px;
-	border: 1px outset;
-	border-radius: 15px;
-	background-color:black;
-	color: white;
-	position: absolute;
-	top:17px;
-	right: 400px;
-}	
-
-.search-new::before
-{
-	display: inline-block;
-	width: 16px;
-	height: 15px;
-	content: "";
-	background: url('Images/search.jpg') no-repeat 0 0;
-	background-size: 100%;
-}
-
-.search-new:hover
-{
-	border-style: inset;
-	cursor:pointer;
-	background-color: white;
-	color: black;
-}
-
-
 /*********************  CONTACT US  ***********************/
 
 
@@ -873,7 +773,7 @@ ol
 
 #del-main-container
 {
-	height: 750px;
+	height: 550px;
 	width: 950px;
 	margin: auto auto 250px;
 	position: relative;
@@ -888,7 +788,6 @@ ol
 	text-align: left;
 	position: absolute;
 	top:55px;
-	/*left: -8px;*/
 	background-color: white;
 	padding: 10px 10px 0px;
 	border: 1px solid black;
@@ -898,7 +797,7 @@ ol
 #del-form
 {
 	height: 340px;
-	width: 700px;inherit;
+	width: 700px;
 	position: absolute;
 	top:165px;
 	left: 150px;
@@ -957,7 +856,6 @@ ol
 	opacity: 0.8;
 }
 
-/*#del-error1, #del-error2, #del-error3, #del-error4*/
 div[id^="del-error"]
 {
 	color: red;
@@ -1038,7 +936,6 @@ div[id^="del-error"]
 
 #or-text
 {
-	/*font: Bitter-Regular;*/
 	color: white;
 	font-size: 20px;
 }
@@ -1305,8 +1202,6 @@ div[id^="del-error"]
 	top: 60px;
 	margin: 0 auto 250px;
 	background-color: white;
-	/*border: 1px solid gray;
-	border-radius: 10px;*/
 	box-shadow: 0px 2px 2px 2px gray;
 }
 

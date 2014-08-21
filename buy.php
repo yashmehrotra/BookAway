@@ -40,60 +40,100 @@ function curPageURL() {
 			<h2>Buy Books</h2>
 	</div>
 	<div id="buy-container">
-		<!--<h2 id="latest-text">Latest Additions</h2>
-		<div id="buy-new-search">
-		<form class="pure-form pure-form-stacked" id="home-search-new">
-		<div class="ui-widget">
-			<input id="search-bar-new" placeholder="Search Here">
-		</div>
-		<button class="search-new" id="search-button-new">Search</button>	
-	</div>-->
 	<div class="buy-left-panel">
-	<form id="home-search">
+	<form class="pure-form pure-form-stacked" id="home-search">
 	<div>
-		<div class="ui-widget"><input id="search-bar"></div>
+		<div class="ui-widget"><input id="search-bar" placeholder="Search Here"></div>
 	</div> 
-	<div><button class="search" id="search-button">Search</button></div>
-	</form>
 	<br>
 	<div class="search-filters">
-		<h3 id="search-filter-text">Search Filters:-</h3>
-		<!--<p>Search By:</p>
-		<select name="search-by" class="search-by" id="search_by">
-			<option value="booktitle">By Book Title</option>
-			<option value="authorname">By Author</option>
-			<option value="publication">By Publication</option>
-		</select>
-		<p>Select Maximum Price:</p>
-		<div class="price-bar">
-		<form oninput="x.value=parseInt(10*a.value)" class="pure-form pure-form-stacked" id="price-max">100
-	<input type="range" id="a" min="10" max="100" value="100">1000 
-	<output name="x" for="a" id="output"></output>
-	</form>
-	</div>-->
 	<div class="clg-select">
-		<p id="sub">Select College:</p>
-		<select name="select-college" class="clg-by" id="select_clg">
-			<?php
-			require_once ('list.php');
-			?>
-		</select>
+		<input type="text" class="input" id="" placeholder="Enter Name of the College">
 	</div>
 	<div class="sub-select">
-		<p id="sub">Select subject:</p>
-		<select name="select-subject" class="search-by" id="buy_subject">
-			<?php
-			require_once ('categories.php');
-			?>
-		</select>
+		<p id="sub">Subject:</p>
+		<div id="sub-scroll-bar">
+			<div class="sub-cbox">
+				<input type="checkbox" value="All">All
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Computers">Computers
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Electronics">Electronics
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Maths">Maths
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Fiction">Fiction
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Non-Fiction">Non-Fiction
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Physics">Physics
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Magazines">Magazines
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Biographies">Biographies
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Health">Health
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Travel">Travel
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Medical">Medical
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Law">Law
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Music">Music
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Business">Business
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Religion">Religion &amp; Spiritual
+				<br>
+			</div>
+			<div class="sub-cbox">
+				<input type="checkbox" value="Miscellaneous">Miscellaneous
+				<br>
+			</div>
+		</div>
+	</div>
+	<div class="price-range">
+		Price Range
+		<br>
+		<input type="number" id="range-min"> to <input type="number" id="range-max">
+		<button>Go</button>
 	</div>
 	</div>
+
+	</form>
 	</div>
 	<div id="latest-outer">
-		<!--<table id="buy-table">
-			<tbody>
-			</tbody>
-		</table>-->
 		<button id="load-more">Load more</button>
 	</div>
 	</div>

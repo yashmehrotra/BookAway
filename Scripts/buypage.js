@@ -238,6 +238,7 @@ function books_data() {
 	}
 	buy_height = $('#buy-container').css('height');
 	latest_outer_height = $('#latest-outer').css('height');
+	while( results_counter > 2 )
 	$('#buy-container').css('height',parseInt(buy_height)+200*results_counter+'px');
 	$('#latest-outer').css('height',parseInt(latest_outer_height)+200*results_counter+'px');
 	var scopy = 0;
