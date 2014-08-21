@@ -12,47 +12,65 @@
 	
 	if($source == 'add_book') {
 
-		$name        = $_POST['name'];
-		$email       = $_POST['email'];
-		$phone       = $_POST['phone'];
-		$password    = md5($_POST['password']);
-		$subject     = $_POST['subject'];
-		$book        = $_POST['book'];
-		$author      = $_POST['author'];
-		$sell_rent   = $_POST['sellrent'];
-		$sell_price  = $_POST['sellprice'];
-		$rent_price  = $_POST['rentprice'];
-		$rent_time   = $_POST['rentpricetime'];
-		$date_added =  date("Y-m-d H:i:s", time());
+		$name             = $_POST['name'];
+		$email            = $_POST['email'];
+		$phone            = $_POST['phone'];
+		$password         = md5($_POST['password']);
+		$subject          = $_POST['subject'];
+		$book             = $_POST['book'];
+		$author           = $_POST['author'];
+		$sell_rent        = $_POST['sellrent'];
+		$sell_price       = $_POST['sellprice'];
+		$rent_price       = $_POST['rentprice'];
+		$rent_time        = $_POST['rentpricetime'];
+		$image_source     = $_POST['cover-url'];
+		$college          = $_POST['clg'];
+		$book_description = $_POST['book-desc'];
+		$date_added       =  date("Y-m-d H:i:s", time());
 
-		$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time,date_added) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$date_added')";
+		//
+		// Sanitize database input , use regex on client side
+		//
+		// Convert it all into functions
+		//
+		// Check Book Deletion
+
+		//$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time,date_added) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$date_added')";
+		$query = "INSERT INTO tbl_books (category,book,author,sell_rent,sell_price,rent_price,rent_time,college,date_added,image_source,`book_description`) VALUES ('$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$college','$date_added','$image_source','$book_description')";
+		mysqli_query($database_connection,$query);
+		$book_id = mysqli_insert_id($database_connection);
+
+		$query = "INSERT INTO tbl_seller (name,email,phone,password,college,book_id) VALUES ('$name','$email','$phone','$password','$college','$book_id')";
 		mysqli_query($database_connection,$query);
 
-		$book_id = mysqli_insert_id($database_connection);
 		mysqli_close($database_connection);
 
 		$response = array();
 		
-		$response['status'] = 'success';
-		$response['seller_name'] = $name;
-		$response['book_id'] = $book_id;
+		$response['status']        = 'success';
+		$response['seller_name']   = $name;
+		$response['book_id']       = $book_id;
 
-	}
+	} elseif ($source == 'edit_user' ) {
 
-	elseif($source == 'edit_user' ) {
-
-		$edit_seller_email = $_POST['user_email'];
-		$edit_book_id = $_POST['user_id'];
+		$edit_seller_email    = $_POST['user_email'];
+		$edit_book_id         = $_POST['user_id'];
 		$edit_seller_password = md5($_POST['user_password']);
 
-		$query = "SELECT * FROM books WHERE id='$edit_book_id'";
-		$edit_user_data = mysqli_query($database_connection,$query);
+		$query = "SELECT password FROM tbl_seller WHERE book_id='$edit_book_id'";
+		$user_data = mysqli_query($database_connection,$query);
 
-		$row = mysqli_fetch_array($edit_user_data);
-		$response = array();
-		if($edit_seller_password == $row['password'] && $edit_seller_email == $row['email']) {
+		$sql_password = mysqli_fetch_array($user_data);
 
-			$response['status'] = 'success';
+		if ($edit_seller_password == $sql_password['password']) {
+			
+			$response = array();
+			$query_nested = "SELECT * FROM tbl_books WHERE id='$edit_book_id'";
+
+			$books_data = mysqli_query($database_connection,$query_nested);
+			$row = mysqli_fetch_array($books_data);
+
+			$response['status']        = 'success';
 			$response['seller_name']   = $row['name'];
 			$response['seller_email']  = $row['email'];
 			$response['seller_phone']  = $row['phone'];
@@ -64,17 +82,15 @@
 			$response['rent_price']    = $row['rent_price'];
 			$response['rent_time']     = $row['rent_price'];
 
-		}
-		else {
+		} else {
 			//Wrong id or password or email
 			$response['status'] = 'failed';
 			$response['error'] = 'wrong password , email or id';
 		}
+		
 		mysqli_close($database_connection);
 
-	}
-
-	elseif ($source == 'edit_book') {
+	} elseif ($source == 'edit_book') {
 
 		$book_id        = $_POST['book_id_hid'];
 		$new_phone      = $_POST['phone'];
@@ -86,32 +102,33 @@
 		$new_rentprice  = $_POST['rentprice'];
 		$new_renttime   = $_POST['rentpricetime'];
 
-		$query = "UPDATE books SET phone = '$new_phone', subject = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'"; //Set it for update
+		$query = "UPDATE tbl_books SET phone = '$new_phone', subject = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'"; //Set it for update
 		mysqli_query($database_connection,$query);
 		mysqli_close($database_connection);
 
 		$response = array();
 		$response['status'] = 'success';
 
-	}
-	
-	elseif ($source == 'delete') {
+	} elseif ($source == 'delete') {
 
 		$delete_seller_id = $_POST['user_id'];
 		$delete_seller_password = md5($_POST['user_password']);
 
-		$query = "DELETE FROM books WHERE id = '$delete_seller_id' AND password = '$delete_seller_password'";
+		//$query = "DELETE FROM tbl_books WHERE id = '$delete_seller_id';\n"."DELETE FROM tbl_seller WHERE book_id = '$delete_seller_id' AND password = '$delete_seller_password'";
+		$query = "DELETE FROM tbl_books WHERE id = '$delete_seller_id'";
 		mysqli_query($database_connection,$query);
+
+		$query = "DELETE FROM tbl_seller WHERE book_id = '$delete_seller_id' AND password = '$delete_seller_password'";
+		mysqli_query($database_connection,$query);
+		
 		mysqli_close($database_connection);
 		
 		$response = array();
 		$response['status'] = 'success';
 
-	}
-	
-	elseif ($source == 'view') {
+	} elseif ($source == 'view') {
 
-		$query = "SELECT * FROM books";
+		$query = "SELECT * FROM tbl_books";
 		$book_data = mysqli_query($database_connection,$query);
 
 		$response = array();
@@ -122,13 +139,13 @@
 			$response[$i]['book_id']       = $row['id'];
 			$response[$i]['book_name']     = $row['book'];
 			$response[$i]['author_name']   = $row['author'];
-			$response[$i]['seller_name']   = $row['name'];
-			$response[$i]['seller_phone']  = $row['phone'];
-			$response[$i]['seller_email']  = $row['email'];
 			$response[$i]['sell_rent']     = $row['sell_rent'];
 			$response[$i]['sell_price']    = $row['sell_price'];
 			$response[$i]['rent_price']    = $row['rent_price'];
 			$response[$i]['rent_time']     = $row['rent_time'];
+			$response[$i]['college']       = $row['college'];
+			$response[$i]['image_source']  = $row['image_source'];
+			$response[$i]['date_added']    = $row['date_added'];
 
 			$i=$i+1;
 
@@ -136,19 +153,17 @@
 
 		mysqli_close($database_connection);
 
-	}
-	elseif ($source == 'search') {
+	} elseif ($source == 'search') {
 		
 		$category = $_POST['search_category'];
 		$search_value = $_POST['search_value'];
 
-		if($category == "Books") {
+		if ($category == "Books") {
 
-			$query = "SELECT *  FROM `books` WHERE `book` LIKE '".$search_value."'";
-		}
-		elseif ($category == "Author") {
+			$query = "SELECT *  FROM `tbl_books` WHERE `book` LIKE '".$search_value."'";
+		} elseif ($category == "Author") {
 			
-			$query = "SELECT *  FROM `books` WHERE `author` LIKE '".$search_value."'";
+			$query = "SELECT *  FROM `tbl_books` WHERE `author` LIKE '".$search_value."'";
 		}
 
 		$response = array();
@@ -168,13 +183,32 @@
 			$response[$i]['sell_price']    = $row['sell_price'];
 			$response[$i]['rent_price']    = $row['rent_price'];
 			$response[$i]['rent_time']     = $row['rent_time'];
+			$response[$i]['date_added']    = $row['date_added'];
+			$response[$i]['image_source']  = $row['image_source'];
 
 			$i=$i+1;
 		}
 
 		mysqli_close($database_connection);
-	}
-	else {
+	
+	} elseif ($source = 'seller_data') {
+
+		$book_id = $_POST['book_id'];
+
+		$query = "SELECT * FROM tbl_seller WHERE book_id = '$book_id'";
+
+		$response = array();
+
+		$search_data = mysqli_query($database_connection,$query);
+		$row = mysqli_fetch_array($search_data);
+
+		// $response[''] = 
+		// $response[''] = 
+		// $response['']
+		// $response['']
+		// $response['']
+		
+	} else {
 		$response = "hi".$source;
 	}
 
