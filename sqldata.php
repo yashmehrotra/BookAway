@@ -136,16 +136,17 @@
 
 		while($row = mysqli_fetch_array($book_data)) {
 
-			$response[$i]['book_id']       = $row['id'];
-			$response[$i]['book_name']     = $row['book'];
-			$response[$i]['author_name']   = $row['author'];
-			$response[$i]['sell_rent']     = $row['sell_rent'];
-			$response[$i]['sell_price']    = $row['sell_price'];
-			$response[$i]['rent_price']    = $row['rent_price'];
-			$response[$i]['rent_time']     = $row['rent_time'];
-			$response[$i]['college']       = $row['college'];
-			$response[$i]['image_source']  = $row['image_source'];
-			$response[$i]['date_added']    = $row['date_added'];
+			$response[$i]['book_id']          = $row['id'];
+			$response[$i]['book_name']        = $row['book'];
+			$response[$i]['author_name']      = $row['author'];
+			$response[$i]['sell_rent']        = $row['sell_rent'];
+			$response[$i]['sell_price']       = $row['sell_price'];
+			$response[$i]['rent_price']       = $row['rent_price'];
+			$response[$i]['rent_time']        = $row['rent_time'];
+			$response[$i]['college']          = $row['college'];
+			$response[$i]['image_source']     = $row['image_source'];
+			$response[$i]['date_added']       = $row['date_added'];
+			$response[$i]['book_description'] = $row['book_description'];
 
 			$i=$i+1;
 
