@@ -19,6 +19,7 @@ function curPageURL() {
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<link rel="stylesheet" href="Styles/jquery-ui.css">
 	<script src="Scripts/jquery.js"></script>
 	<script src="Scripts/jquery-ui.js"></script>
@@ -43,14 +44,18 @@ function curPageURL() {
 	<form class="pure-form pure-form-stacked" id="home-search">
 	<div>
 		<div class="ui-widget"><input id="search-bar" placeholder="Search Here"></div>
+		<span class="ion-android-search" id="search-icon"></span>
 	</div> 
 	<br>
 	<div class="search-filters">
 	<div class="clg-select">
-		<input type="text" class="input" id="" placeholder="Enter Name of the College">
+		<input type="text" class="input" id="" placeholder="Select College">
+		<button class="search-filters-go">Go</button>
 	</div>
 	<div class="sub-select">
-		<p id="sub">Subject:</p>
+		<div id="sub-text-wrapper">
+			Subject:
+		</div>
 		<div id="sub-scroll-bar">
 			<div class="sub-cbox">
 				<input type="checkbox" value="All">All
@@ -123,13 +128,12 @@ function curPageURL() {
 		</div>
 	</div>
 	<div class="price-range">
-		Price Range
-		<br>
+		Price Range:
+		<br><br>
 		<input type="number" id="range-min"> to <input type="number" id="range-max">
-		<button>Go</button>
+		<button class="search-filters-go">Go</button>
 	</div>
 	</div>
-
 	</form>
 	</div>
 	<div id="latest-outer">

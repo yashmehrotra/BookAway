@@ -57,7 +57,7 @@ h1, h2, h3
 	height: 150px;
 	margin:0 auto;
 	text-align: center;
-	background-color: #0078E7;
+	background-color: #1884E9;#0078E7;
 	padding-top: 5px;
 	color: white;
 	font-size: 26px;
@@ -89,7 +89,7 @@ h1, h2, h3
 	display: inline-block;
 	padding: 0;
 	text-transform: uppercase;
-	background-color: #0078E7;
+	background-color: #1884E9;#0078E7;
 	font-family: Ubuntu;
 	position: relative;
 	top:0px;
@@ -105,13 +105,6 @@ h1, h2, h3
 	top:0px;
 	left: 15px;
 }
-
-/*
-#favicon:hover
-{
-	cursor: pointer;
-}
-*/
 
 .top-panel-list
 {
@@ -438,7 +431,7 @@ ol
 #buy-container
 {
 	width: 1270px;
-	height: 100px;
+	height: 400px;
 	margin: 0 auto 250px;
 	padding: 0;
 	position: relative;
@@ -450,7 +443,9 @@ ol
 	width: 320px;
 	height: 480px;
 	float: left;
-	border: 1px solid gray;
+	border: 1px solid lightgray;
+	border-left: none;
+	border-right: none;
 	background-color: white;
 	position: absolute;
 	top:80px;
@@ -458,140 +453,121 @@ ol
 	text-align: center;
 }
 
+
 #price-max, #home-search
 {
 	font-family: Ubuntu;
-	margin: 10% auto 0px;
-}
-
-#home-search
-{
-	margin-top: 5%;
+	margin: 8% auto 0px;
 }
 
 .input
 {
 	font-size: 18px;
-	width:250px;
+	width:200px;
 	font-family: serif;
 	float: left;
 	margin: 15px 14px 15px 7px;
 }
 
-.search
+.search-filters-go
 {
-	margin-top: 15px;
+	height: 30px;
+	width: 50px;
+	margin: 10px 5px 10px;
+	background-color: rgb(204, 204, 204);
+	font-family: Ubuntu;
 	font-size: 15px;
-	width:100px;
-	height:32px;
-	border: 1px outset;
-	border-radius: 15px;
-	background-color:black;
-	color: white;
-}	
-
-.search::before
-{
-	display: inline-block;
-	width: 16px;
-	height: 15px;
-	content: "";
-	background: url('Images/search.jpg') no-repeat 0 0;
-	background-size: 100%;
+	border: 5px outset transparent;
+	/*box-shadow: 1px 1px 1px 1px outset black;*/
 }
 
-.search:hover
+.search-filters-go:hover
 {
+	cursor: pointer;
 	border-style: inset;
-	cursor:pointer;
-	background-color: white;
-	color: black;
-}
-
-#search-filter-text
-{
-	font-family: sans-serif;
-	padding-left: 0px;
-	text-align: center;
 }
 
 .search-filters
 {
+	height: 400px;
+	width: 280px;
 	text-align: left;
 	padding-left: 30px;
 }
 
-.search-by
+#search-icon
 {
-	width: 150px;
-	height: 30px;
-	font-size: 15px;
-}
-
-.price-bar
-{
-	width: 282px;
-	height: 45px;
-	/*border: 1px outset black;*/
-	background-color: white;;rgb(243, 246, 246);
-	position: relative;
-	left: -15px;
-	font-size: 19px;
-}
-
-#price-max
-{
+	font-size: 18px;
 	position: absolute;
-	top: -15px;
-	left: 20px;
+	top: 42px;
+	right: 65px;
 }
 
-#a
+#search-icon:hover
 {
-	width: 100px;
+	cursor: pointer;
 }
 
-#output
+#buy-container ::-webkit-scrollbar
 {
-	font-family: Ubuntu;
-	font-size: 24px;
-	margin-left: 5px;
-	color: red;
+	width: 15px;
 }
 
-.sub-select
+#buy-container ::-webkit-scrollbar-track
 {
-	margin-top: 100px;
+	background-color: white;
 }
 
-.subs
+#buy-container ::-webkit-scrollbar-thumb
 {
-	height: 22px;
-	width: 140px;
-	float: left;
-	margin-left: 20px;
-	padding-left: 10px;
-	border:1px solid;
-	border-collapse: collapse;
-	text-align: left;
+	background-color: rgb(199, 195, 195);rgb(162, 158, 158);
+	border: 1px solid transparent;
+	border-radius: 10px;
 }
+
+#buy-container ::-webkit-scrollbar-button
+{
+	border: 1px solid transparent;
+	border-radius: 10px;
+	background-color: gray;
+}
+
+::-webkit-scrollbar-corner
+{
+
+}
+
 
 #sub-scroll-bar
 {
-	height: 140px;
+	height: 130px;
 	width: 220px;
-	overflow-y: auto; 
+	overflow-y: scroll; 
 	overflow-x: hidden; 
+	margin-top: 0px;
+}
+
+#sub-text-wrapper
+{
+	height: 30px;
+	width: inherit;
+	margin-top: 0px;
+}
+
+.sub-cbox
+{
+	font-size: 16px;
 }
 
 .sub-cbox:hover
 {
-	background-color: gray;
+	color: orange;
 }
 
 .clg-select
 {
-	margin-bottom: 10px; 
+	height: 70px;
+	width: inherit;
 }
 
 .price-range
@@ -606,13 +582,14 @@ ol
 
 #latest-outer
 {
-	height: 100px;
+	height: 500px;
 	width: 922px;
 	position: absolute;
-	top:80px;
+	top:50px;
 	left:340px;
 	text-align: left;center;
 	padding-bottom: 20px;
+	/*border-left: 1px solid lightgray;*/
 }
 
 #latest-text
@@ -660,15 +637,15 @@ ol
 .books-data
 {
 	height: 170px;
-	margin: 30px 0px;
+	margin: 30px 10px;
 	font-family: Ubuntu;
-	border: 1px solid gray;
+	border: 1px solid lightgray;
 }
 
 .books-data:hover
 {
 	cursor: pointer;
-	border-color:blue;
+	border-color: orange;blue;
 }
 
 .books-data:visited
@@ -718,11 +695,11 @@ ol
 .desc-wrapper
 {
 	height: 80px;
-	width: 600px;
+	width: 450px;
 	position: relative;
 	left: 140px;
-	top: -100px;
-	font-size: 19px;
+	top: -110px;
+	font-size: 17px;
 	color: gray;
 	padding-left: 35px;	
 }
@@ -733,7 +710,7 @@ ol
 	width: 210px;
 	font-size: 22px;
 	position: relative;
-	top: -180px;
+	top: -240px;
 	left: 630px;
 }
 
@@ -743,7 +720,7 @@ ol
 	width: 280px;
 	font-size: 22px;
 	position: relative;
-	top: -170px;
+	top: -240px;
 	left: 630px;	
 }
 
@@ -1424,16 +1401,15 @@ div[id^="error"]
 
 #faq-main-container
 {
-	height: 465px;
+	height: 795px;
 	width: 950px;
-	margin: 50px auto 20px;
+	margin: 50px auto 40px;
 	background-color: white;
 	position: relative;
 	top:20px;
 	border: 1px solid black;
 	border-radius: 10px;
 	padding: 10px 20px 0px;
-	/*text-align: left; */
 }
 
 #faqs-head
@@ -1450,14 +1426,8 @@ div[id^="error"]
 	font-weight: lighter;
 }
 
-.ques:hover
-{
-	cursor: pointer;
-}
-
 .ans
 {
-	display: none;
 	font-size: 20px;
 }
 
