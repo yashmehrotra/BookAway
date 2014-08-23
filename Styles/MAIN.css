@@ -660,13 +660,13 @@ ol
 	width: 100px;
 	position: relative;absolute;
 	top: 10px;
-	left: 20px;
+	left: 15px;
 }
 
 .books-data-images
 {
-	height: inherit;140px;
-	width: inherit;px;
+	height: inherit;
+	width: inherit;
 }
 
 .name-wrapper
@@ -674,7 +674,7 @@ ol
 	height: 30px;
 	width: 600px;
 	position: relative;
-	left: 140px;
+	left: 135px;
 	top: -125px;
 	font-size: 22px;
 	padding-left: 35px;
@@ -685,7 +685,7 @@ ol
 	height: 30px;
 	width: 600px;
 	position: relative;
-	left: 140px;
+	left: 135px;
 	top: -120px;
 	font-size: 19px;
 	color: gray;
@@ -695,9 +695,9 @@ ol
 .desc-wrapper
 {
 	height: 80px;
-	width: 450px;
+	width: 445px;
 	position: relative;
-	left: 140px;
+	left: 135px;
 	top: -110px;
 	font-size: 17px;
 	color: gray;
@@ -711,25 +711,26 @@ ol
 	font-size: 22px;
 	position: relative;
 	top: -240px;
-	left: 630px;
+	left: 620px;
 }
 
 .rent-wrapper
 {
 	height: 50px;
-	width: 280px;
+	width: 275px;
 	font-size: 22px;
 	position: relative;
 	top: -240px;
-	left: 630px;	
+	left: 620px;	
 }
 
 .ruppee-img
 {
-	margin-left: 5px;
-	margin-right: 2px;
-	height: 20px;
-	width: 18px;
+	height: 18px;
+	width: 16px;
+	margin: 0px 1px 0px 2px;
+	/*margin-left: 5px;
+	margin-right: 2px;*/
 }
 
 /*
@@ -1185,13 +1186,15 @@ div[id^="del-error"]
 
 #sell-container
 {
-	height:990px;
-	width: 700px;
+	height:1020px;
+	width: 800px;
 	position: relative;
 	top: 60px;
 	margin: 0 auto 250px;
 	background-color: white;
-	box-shadow: 0px 2px 2px 2px gray;
+	border: 2px solid lightgray;
+	border-bottom: none;
+	border-top: none;
 }
 
 #step-1-text
@@ -1217,10 +1220,10 @@ div[id^="del-error"]
 #sell-form
 {
 	width:860px;
-	height:855px;
+	height:895px;
 	position: absolute;
 	top: 70px;
-	left: 100px;
+	left: 150px;
 	text-align: left;
 	line-height: 180%;
 	font-size: 130%;

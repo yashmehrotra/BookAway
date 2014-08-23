@@ -344,6 +344,7 @@
 				<select name="rentpricetime" id="rent-price" class="sell-input">
 					<option value="week">per Week</option>
 					<option value="month">per Month</option>
+					<option value="semester">per Semester</option>
 				</select>
 				<div id="error_rent_price"></div> 
 				<br><br>
