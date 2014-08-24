@@ -57,12 +57,12 @@
 		$edit_book_id         = $_POST['user_id'];
 		$edit_seller_password = md5($_POST['user_password']);
 
-		$query = "SELECT password FROM tbl_seller WHERE book_id='$edit_book_id'";
+		$query = "SELECT * FROM tbl_seller WHERE book_id='$edit_book_id'";
 		$user_data = mysqli_query($database_connection,$query);
 
-		$sql_password = mysqli_fetch_array($user_data);
+		$sql_user_data = mysqli_fetch_array($user_data);
 
-		if ($edit_seller_password == $sql_password['password']) {
+		if ($edit_seller_password == $sql_user_data['password']) {
 			
 			$response = array();
 			$query_nested = "SELECT * FROM tbl_books WHERE id='$edit_book_id'";
@@ -70,17 +70,19 @@
 			$books_data = mysqli_query($database_connection,$query_nested);
 			$row = mysqli_fetch_array($books_data);
 
-			$response['status']        = 'success';
-			$response['seller_name']   = $row['name'];
-			$response['seller_email']  = $row['email'];
-			$response['seller_phone']  = $row['phone'];
-			$response['subject']       = $row['subject'];
-			$response['book_name']     = $row['book'];
-			$response['author']        = $row['author'];
-			$response['sell_rent']     = $row['sell_rent'];
-			$response['sell_price']    = $row['sell_price'];
-			$response['rent_price']    = $row['rent_price'];
-			$response['rent_time']     = $row['rent_price'];
+			$response['status']           = 'success';
+			$response['seller_name']      = $sql_user_data['name'];
+			$response['seller_email']     = $sql_user_data['email'];
+			$response['seller_phone']     = $sql_user_data['phone'];
+			$response['subject']          = $row['category'];
+			$response['book_name']        = $row['book'];
+			$response['author']           = $row['author'];
+			$response['sell_rent']        = $row['sell_rent'];
+			$response['sell_price']       = $row['sell_price'];
+			$response['rent_price']       = $row['rent_price'];
+			$response['rent_time']        = $row['rent_price'];
+			$response['image_source']     = $row['image_source'];
+			$response['book_description'] = $row['book_description'];
 
 		} else {
 			//Wrong id or password or email
@@ -192,7 +194,7 @@
 
 		mysqli_close($database_connection);
 	
-	} elseif ($source = 'seller_data') {
+	} elseif ($source == 'seller_data') {
 
 		$book_id = $_POST['book_id'];
 
@@ -208,7 +210,26 @@
 		// $response['']
 		// $response['']
 		// $response['']
+
+		mysqli_close($database_connection);
 		
+	} elseif ($source == 'college_list') {
+
+		$query = "SELECT * FROM tbl_colleges";
+		$college_list = mysqli_query($database_connection,$query);
+
+		$response = array();
+		$i=0;
+
+		while($row = mysqli_fetch_array($college_list)) {
+
+			$response[$i] = $row['college'];
+
+			$i=$i+1;
+		}
+
+		mysqli_close($database_connection);
+
 	} else {
 		$response = "hi".$source;
 	}

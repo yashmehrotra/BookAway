@@ -43,6 +43,8 @@ description_array   = [];
 image_source_array  = [];
 college_name_array 	= [];
 
+college_list        = [];
+
 search_books        = [];
 search_authors      = [];
 
@@ -106,60 +108,64 @@ function book_data_display () {
 			
 					total_results = total_results + 1;
 					counter = counter +1;
-			}
-
-			//var counter_clone = counter;
-			var counter_clone = 0;
-			var NO_BOOK_IMAGE = 'Styles/Images/Five+Point+Someone1-site1.n';
-			//while(counter_clone--) {
-			while(counter_clone != counter) {
-
-				if( json[counter_clone].image_source == "" ) {					
-					json[counter_clone].image_source = NO_BOOK_IMAGE;
 				}
 
-				if( json[counter_clone].rent_price == "" ) {
+				var counter_clone = 0;
+				var NO_BOOK_IMAGE = 'Styles/Images/Five+Point+Someone1-site1.n';
+
+				while(counter_clone != counter) {
+
+					if( json[counter_clone].image_source == "" ) {					
+						json[counter_clone].image_source = NO_BOOK_IMAGE;
+					}
+
+					if( json[counter_clone].rent_price == "" ) {
+						
 						console.log("No rent price");
 						json[counter_clone].rent_price = "-";
 						json[counter_clone].rent_time = "";
-						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
-				} else if( json[counter_clone].sell_price == "" ) {
-					json[counter_clone].sell_price = "-";
-					$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='rent-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
-				} else {
-					$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+">"+"<div class='image-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div><div class='rent-wrapper'> Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+					
+					} else if( json[counter_clone].sell_price == "" ) {
+						json[counter_clone].sell_price = "-";
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='rent-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+					
+					} else {
+						$('#latest-outer').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div><div class='rent-wrapper'> Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+					}
+					counter_clone = counter_clone + 1;
 				}
-				counter_clone = counter_clone + 1;
-			}
 
-			if(Ultimate_data.length===counter) {
+				if(Ultimate_data.length===counter) {
+					
 					books_data();
-				};
+					filter();
+				}
 
-			//For Autocomplete
-			$.widget( "custom.catcomplete", $.ui.autocomplete, {
-			    _create: function() {
-			    	this._super();
-			    	this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
-				},
-			    _renderMenu: function( ul, items ) {
-			    	var that = this,
-			        currentCategory = "";
-			    	$.each( items, function( index, item ) {
-			    		var li;
-			        	if ( item.category != currentCategory ) {
-			        		ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
-			        		currentCategory = item.category;
-			        	}
-			        	li = that._renderItemData( ul, item );
-			        	if ( item.category ) {
-			        		li.attr( "aria-label", item.category + " : " + item.label );
-			        	}
-			    	});
-			    }
-			});
+				//For Autocomplete
+				$.widget( "custom.catcomplete", $.ui.autocomplete, {
+				    _create: function() {
+				    	this._super();
+				    	this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+					},
+				    _renderMenu: function( ul, items ) {
+				    	var that = this,
+				        currentCategory = "";
+				    	$.each( items, function( index, item ) {
+				    		var li;
+				        	if ( item.category != currentCategory ) {
+				        		ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+				        		currentCategory = item.category;
+				        	}
+				        	li = that._renderItemData( ul, item );
+				        	if ( item.category ) {
+				        		li.attr( "aria-label", item.category + " : " + item.label );
+				        	}
+				    	});
+				    }
+				});
 			
-			$( "#search-bar" ).catcomplete({
+				$( "#search-bar" ).catcomplete({
 					delay: 0,
 					source: search_data,
 					select: function(event, ui) {
@@ -167,7 +173,34 @@ function book_data_display () {
                			$('#category-search').val(ui.item.category);
                		}
 				});
-			} else {
+
+				//For College List
+
+				$.ajax({
+					type: "POST",
+					url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
+					data: { 'source': 'college_list' },
+					success: function (result_college) {
+						if(result_college) {
+							var ajax_college_list = JSON.parse(result_college);
+							console.log(ajax_college_list);
+							var counter_college = 0;
+							while(ajax_college_list[counter_college]) {
+
+								college_list.push(ajax_college_list[counter_college]);
+								counter_college += 1;
+							}
+							console.log('look down');
+							console.log(college_list);
+						}
+					}
+				});
+
+				$('#college-search').autocomplete({
+					source: college_list
+				});
+			} 
+			else {
 				console.log("Problem with Ajax Request")
 			}
 		}
@@ -270,4 +303,24 @@ function books_data() {
 		scopy = size;
 	});*/
 	load_more();
+}
+
+function filter() {
+
+	console.log('yash');
+	$('#price-range').on('click',function(e) {
+		e.preventDefault();
+		var min_price = $('#range-min').val();
+		var max_price = $('#range-max').val();
+		$('#buy-container > #latest-outer >.books-data').each(
+			function(index) {
+				$(this).show();
+				var sell_price_filter = $(this).data('sell-price');
+				console.log(sell_price_filter);
+				if( sell_price_filter <= min_price || sell_price_filter >= max_price) {
+					$(this).hide();
+				}
+			}
+		);
+	});
 }
