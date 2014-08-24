@@ -44,17 +44,17 @@ function curPageURL() {
 	<form class="pure-form pure-form-stacked" id="home-search">
 	<div>
 		<div class="ui-widget"><input id="search-bar" placeholder="Search Here"></div>
-		<span class="ion-android-search" id="search-icon"></span>
+		<button class="ion-android-search" id="search-icon"></button>
 	</div> 
 	<br>
 	<div class="search-filters">
 	<div class="clg-select">
-		<input type="text" class="input" id="" placeholder="Select College">
-		<button class="search-filters-go">Go</button>
+		<input type="text" class="input" id="college-search" placeholder="Select College">
+		<button class="ion-android-arrow-forward" id="clg-go"></button>
 	</div>
 	<div class="sub-select">
 		<div id="sub-text-wrapper">
-			Subject:
+			Category:
 		</div>
 		<div id="sub-scroll-bar">
 			<div class="sub-cbox">
@@ -131,7 +131,7 @@ function curPageURL() {
 		Price Range:
 		<br><br>
 		<input type="number" id="range-min"> to <input type="number" id="range-max">
-		<button class="search-filters-go">Go</button>
+		<button class="search-filters-go" id="price-range">Go</button>
 	</div>
 	</div>
 	</form>

@@ -27,6 +27,7 @@
 			$('#del-form').submit(function (event) {
 				event.preventDefault();				
 				$("div[id^='del-error']").css("display","none");
+				$('#del-main-container').css('height', '850px');
 
 				var check = false;
 				var emval = $('#email').val();
@@ -95,9 +96,11 @@
 							$('#name').val(response['seller_name']);
 							$('#email-form').val(response['seller_email']);
 							$('#phone').val(response['seller_phone']);
-							$('#subject').val(response['subject']);
+							$('#subject').val(response['category']);
 							$('#book').val(response['book_name']);
 							$('#author').val(response['author']);
+							$('#book-desc').val(response['book_description']);
+							$('#cover-url').val(response['image_source']);
 							$('#sell-rent').val(response['sell_rent']);
 							$('#s-cost').val(response['sell_price']);
 							$('#r-cost').val(response['rent_price']);
@@ -374,6 +377,10 @@
 					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required>  <div id="error_book_name"></div>
 					<br>
 					<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required> <div id="error_author"></div>
+					<br>
+					<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="250" placeholder="Description(max 250 characters)"></textarea>
+					<br>
+					<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><div id="error_url"></div>
 					<br>
 					<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
 					<select name="sellrent" id="sell-rent" class="sell-input">

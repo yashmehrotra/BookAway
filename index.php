@@ -11,6 +11,7 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
+	<script src="Scripts/homepage.js" type="text/javascript"></script>
 	<script>
 		$(function(){
 			$('#home').attr('id','focus');
@@ -25,7 +26,7 @@
 	<h2>Bookaway.in</h2>
 	</div>
 	<div id="home-container">
-	<div class="box" id="buy-box">
+	<!--<div class="box" id="buy-box">
 		<h1>BUY</h1>
 		<p class="home-desc">Search and buy.<br><br> Directly contact the seller through phone.</p>
 		<div  class="continue-buy"><a href="buy.php" class="buy-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
@@ -43,7 +44,19 @@
 		<h1>RENT</h1>
 		<p class="home-desc">Don't want to buy books?<br>Rent them.<br><br>Pay as per week or month.</p>
 		<div class="continue-rent"><a href="rent.php" class="rent-link"><code><strong>Continue &gt;&gt;&gt;</strong></code></a></div>
-	</div>
+	</div>-->
+	<!--<a href="#"><img src="Styles/Images/book-1.jpg"></a> -->
+	<ul id="index-nav">
+		<li class="index-nav-list">
+			<a href="#" class="index-nav-links" id="nav-link-1"></a>
+		</li>
+		<li class="index-nav-list">
+			<a href="#" class="index-nav-links" id="nav-link-1"></a>
+		</li>
+		<li class="index-nav-list">
+			<a href="#" class="index-nav-links" id="nav-link-1"></a>
+		</li>
+	</ul>
 	</div>
 	<?php
 		require_once('footer.php');

@@ -20,7 +20,7 @@
 	<div class="main-heads">
 		<h2>FAQs</h2>
 	</div>
-	<div id="faq-main-container">
+	<div id="faqs-container">
 		<h1 id="faqs-head">Frequently Asked Questions</h1>
 		<h2 class="ques">How to buy books?</h2>
 		<div class="ans"><i>Click on the Buy tab. Search the book you want to buy and click on the book’s name. Book’s owner name and mobile number will be displayed below. Call the seller and make the deal.</i></div>
