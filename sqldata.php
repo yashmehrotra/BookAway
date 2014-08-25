@@ -205,11 +205,10 @@
 		$search_data = mysqli_query($database_connection,$query);
 		$row = mysqli_fetch_array($search_data);
 
-		// $response[''] = 
-		// $response[''] = 
-		// $response['']
-		// $response['']
-		// $response['']
+		$response['seller_name']     = $row['name']; 
+		$response['seller_email']    = $row['email'];
+		$response['seller_phone']    = $row['phone'];
+		$response['seller_college']  = $row['college'];
 
 		mysqli_close($database_connection);
 		
@@ -230,9 +229,9 @@
 
 		mysqli_close($database_connection);
 
-	} else {
-		$response = "hi".$source;
-	}
+	} //else {
+	//	$response = "hi".$source;
+	//}
 
 	$response = json_encode($response);
 	echo $response;

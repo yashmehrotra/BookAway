@@ -1,7 +1,7 @@
-$(function () {
+setInterval( function () {
 		move();
 	$(window).resize(move);
-});
+	},1000);
 
 function move() {
 		var $width = $(this).width();

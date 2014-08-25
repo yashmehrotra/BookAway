@@ -4,14 +4,16 @@
 Globals...
 */
 
-
 body
 {
 	background-color: white;
 	border:0;
 	padding: 0;
 	margin: 0 auto;
+	overflow-x: hidden;
 }
+
+/*@font-face { font-family: "Ionicons"; src: url("Fonts/Ionicons/ionicons.eot?v=1.5.2"); src: url("Fonts/Ionicons/ionicons.eot?v=1.5.2#iefix") format("embedded-opentype"), url("Fonts/Ionicons/ionicons.ttf?v=1.5.2") format("truetype"), url("Fonts/Ionicons/ionicons.woff?v=1.5.2") format("woff"), url("Fonts/Ionicons/ionicons.svg?v=1.5.2#Ionicons") format("svg"); font-weight: normal; font-style: normal; }*/
 
 @font-face
 {
@@ -24,14 +26,6 @@ body
 	font-family: Proxima-Nova;
 	src: url('Fonts/Proxima-Nova/ProximaNova-Regular.otf');
 }
-
-/*
-@font-face
-{
-	font-family: Josefin-Slab;
-	src: url('Fonts/Josefin-Slab/JosefinSlab-SemiBold.ttf');
-}
-*/
 
 @font-face
 {
@@ -66,7 +60,7 @@ h1, h2, h3
 
 .index-wrapper
 {
-	width: 99.9%;
+	width: 100%;
 	height: 65px;
 	position: absolute;
 	top:100px;
@@ -74,8 +68,6 @@ h1, h2, h3
 
 .wrapper
 {
-	width: 100%;
-	height: 65px;
 	z-index: 50;
 	position: fixed;
 	top: 0px;
@@ -87,7 +79,6 @@ h1, h2, h3
 	width: inherit;
 	height: inherit;
 	display: inline-block;
-	padding: 0;
 	text-transform: uppercase;
 	background-color: #1884E9;#0078E7;
 	font-family: Ubuntu;
@@ -442,10 +433,10 @@ ol
 	top: 0px;
 }
 
-.buy-left-panel
+#buy-left-panel
 {
 	width: 320px;
-	height: 480px;
+	height: 580px;
 	float: left;
 	border: 1px solid lightgray;
 	border-left: none;
@@ -457,77 +448,88 @@ ol
 	text-align: center;
 }
 
-#search-bar
-{
-	width: 250px;
-}
-
-#price-max, #home-search
+#left-panel-search-form
 {
 	font-family: Ubuntu;
 	margin: 8% auto 0px;
 }
 
-.input
+.left-panel-input
 {
-	font-size: 18px;
-	width: 250px;
-	font-family: serif;
-	float: left;
-	margin: 15px 14px 15px 7px;
+	width: 220px;
+	position: relative;
 }
 
-.search-filters-go
+#left-panel-search-bar
+{
+	top: 0px;
+	left: -25px;
+}
+
+.search-filters-button
 {
 	height: 30px;
 	width: 50px;
-	margin: 10px 5px 10px;
 	background-color: rgb(204, 204, 204);
 	font-family: Ubuntu;
-	font-size: 15px;
+	font-size: 16px;
 	border: 5px outset transparent;
-	/*box-shadow: 1px 1px 1px 1px outset black;*/
+	position: relative;absolute;
+	top: 3px;
 }
 
-.search-filters-go:hover
+.search-filters-button:hover
 {
 	cursor: pointer;
 	background-color: black;
 	color: white;
 }
 
-.search-filters
+#left-panel-search-btn
 {
-	height: 400px;
-	width: 280px;
+	top: -40px;
+	right: -120px;
+}
+
+#buy-search-filters
+{
+	height: 500px;
+	width: 300px;
 	text-align: left;
 	padding-left: 30px;
 }
 
-#search-icon
+#search-filters-college-select
 {
+	height: 70px;
+	width: inherit;
+}
+
+#search-filters-college-search
+{
+	top:0px;
+	left:-10px;
+	font-size: 15px;
+}
+
+#search-filters-college-btn
+{
+	right: 4px;
+	top: 1px;
+}
+
+#left-panel-sub-select
+{
+	margin-top: 10px;
+}
+
+.left-panel-text-wrappers
+{
+	height: 30px;
+	width: inherit;
+	margin-top: 0px;
 	font-size: 18px;
-	position: absolute;
-	top: 38px;
-	right: 45px;
-}
-
-#search-icon:hover
-{
-	cursor: pointer;
-}
-
-#clg-go
-{
-	font-size: 18px;
-	position: absolute;
-	top: 106px;
-	right: 45px;
-}
-
-#clg-go:hover
-{
-	cursor: pointer;
+	font-weight: 600;	
 }
 
 #buy-container ::-webkit-scrollbar
@@ -566,14 +568,7 @@ ol
 	width: 220px;
 	overflow-y: scroll; 
 	overflow-x: hidden; 
-	margin-top: 0px;
-}
-
-#sub-text-wrapper
-{
-	height: 30px;
-	width: inherit;
-	margin-top: 0px;
+	margin-bottom: 20px;
 }
 
 .sub-cbox
@@ -586,23 +581,18 @@ ol
 	color: orange;
 }
 
-.clg-select
+#price-range-text-wrapper
 {
-	height: 70px;
-	width: inherit;
-}
-
-.price-range
-{
-	margin-top: 30px;
+	margin-top: 25px;
 }
 
 #range-min, #range-max
 {
 	width: 90px;
+	margin-right: 3px;
 }
 
-#latest-outer
+#buy-content-container
 {
 	height: 500px;
 	width: 922px;
@@ -637,11 +627,11 @@ ol
 }
 */
 
-#load-more
+#load-more-btn
 {
 	height: 45px;
 	width: inherit;420px;
-	display: block;
+	display: none;block;
 	position: absolute;
 	right: 0px;15%;
 	color: white;
@@ -651,7 +641,7 @@ ol
     font-family: Ubuntu;
 }
 
-#load-more:hover
+#load-more-btn:hover
 {
 	cursor: pointer;
 }
@@ -676,13 +666,17 @@ ol
 	background-color: #ffff66;
 }
 
-.image-wrapper
+div[class$="-buy-wrapper"]
+{
+	position: relative;	
+}
+
+.image-buy-wrapper
 {
 	height: 140px;
 	width: 100px;
-	position: relative;absolute;
 	top: 10px;
-	left: 15px;
+	left: 10px;
 }
 
 .books-data-images
@@ -691,57 +685,53 @@ ol
 	width: inherit;
 }
 
-.name-wrapper
+.name-buy-wrapper
 {
 	height: 30px;
-	width: 600px;
-	position: relative;
-	left: 135px;
+	width: 400px;
+	left: 125px;
 	top: -125px;
 	font-size: 22px;
 	padding-left: 35px;
+	overflow: hidden;
 }
 
-.author-wrapper
+.author-buy-wrapper
 {
 	height: 30px;
 	width: 600px;
-	position: relative;
-	left: 135px;
+	left: 125px;
 	top: -120px;
 	font-size: 19px;
 	color: gray;
 	padding-left: 35px;	
 }
 
-.desc-wrapper
+.desc-buy-wrapper
 {
 	height: 80px;
-	width: 445px;
-	position: relative;
-	left: 135px;
+	width: 455px;
+	left: 125px;
 	top: -110px;
 	font-size: 17px;
 	color: gray;
 	padding-left: 35px;	
 }
 
-.sell-wrapper
+.sell-buy-wrapper
 {
 	height: 50px;
 	width: 210px;
 	font-size: 22px;
-	position: relative;
 	top: -240px;
 	left: 620px;
 }
 
-.rent-wrapper
+.rent-buy-wrapper
 {
 	height: 50px;
 	width: 275px;
 	font-size: 22px;
-	position: relative;
 	top: -240px;
 	left: 620px;	
 }
@@ -751,21 +741,8 @@ ol
 	height: 18px;
 	width: 16px;
 	margin: 0px 1px 0px 2px;
-	/*margin-left: 5px;
-	margin-right: 2px;*/
 }
 
-/*
-.sell-wrapper::before
-{
-	display: inline-block;
-	width: 22px;
-	height: 20px;
-	content: "";
-	background: url('Images/ruppee.gif') no-repeat 0 0;
-	background-size: 100%;
-}
-*/
 
 /*********************  CONTACT US  ***********************/
 
@@ -1077,131 +1054,6 @@ div[id^="del-error"]
 	background-color: #5E82CC;
 	color: white;
 	border-style: outset;
-}
-
-
-
-/******************  RENT.PHP   **************************/
-
-
-#rent-container
-{
-	width: 1270px;
-	height: 720px;
-	position: relative;
-	top: 60px;
-	margin: 0 auto 250px;
-	padding: 0;
-}
-
-.rent-left-panel
-{
-	height: 355px;
-	width: 320px;
-	margin-left: 0;
-	float: left;
-	border: 1px solid black;
-	border-collapse: collapse;
-	background-color: white;
-	text-align: center;
-}
-
-#rent-search
-{
-	font-family: fantasy;
-	margin:5% auto 0px;
-}
-
-#input
-{
-	width:180px;
-	font-size: 18px;
-	font-family: serif;
-	margin: 7px 10px 0px 7px;
-	float: left;
-}
-
-#search-btn
-{
-	height:32px;
-	width:100px;
-	font-size: 15px;
-	border: 1px outset;
-	border-radius: 15px;
-	background-color:black;
-	color: white;
-	float: left;
-	margin: 7px 0px 10px;
-}
-
-#search-btn::before
-{
-	width: 16px;
-	height: 15px;
-	display: inline-block;
-	content: "";
-	background: url('Images/search.jpg') no-repeat 0 0;
-	background-size: 100%;
-}
-
-
-#search-btn:hover
-{
-	border-style: inset;
-	cursor:pointer;
-	background-color: white;
-	color: black;
-}
-
-#search-by
-{
-	width: 120px;
-	height: 30px;
-	font-size: 15px;
-}
-
-.rent-period
-{
-	height: 112px;
-	margin: 10px 0px 60px;
-}
-
-.rent-time
-{
-	height: 28px;
-	width: 130px;
-	float: left;
-	margin-left: 20px;
-	padding-left: 10px;
-	border: 1px solid;
-	border-collapse: collapse;
-	text-align: left;
-}
-
-.sub-select
-{
-	margin-top: 10px;
-}
-
-.main
-{
-	height: 665px;
-	width: 922px;
-	background-color: white;
-	position: relative;
-	left:340px;
-	text-align: center;
-	border: 1px solid black;
-	border-radius: 10px;
-}
-
-.latest-additions
-{
-	height: 200px;
-	width: 700px;
-	position: absolute;
-	left: 115px;
-	top:10px;
 }
 
 
@@ -1722,4 +1574,3 @@ div[id^="error"]
 	margin-bottom:.3em;
 	display:block;
 }
-

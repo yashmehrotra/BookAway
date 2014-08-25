@@ -6,14 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
+	<link rel="stylesheet" href="Styles/jquery-ui.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php"></noscript>
 	<script src="Scripts/jquery.js"></script>
+	<script src="Scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<script type="text/javascript">
 
 	var prev_error_count = 0; 
-
+	college_list         = [];
 	$(function () {
 
 		$('#sell').attr('id','focus');
@@ -23,6 +25,32 @@
 		help_popup();
 		hide_price();
 	});
+
+	$.ajax({
+			type: "POST",
+			url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
+			data: { 'source': 'college_list' },
+			success: function (result_college) {
+				if(result_college) {
+					var ajax_college_list = JSON.parse(result_college);
+					console.log(ajax_college_list);
+					var counter_college = 0;
+					while(ajax_college_list[counter_college]) {
+
+						college_list.push(ajax_college_list[counter_college]);
+						counter_college += 1;
+					}
+					console.log('look down');
+					console.log(college_list);
+					$('#sell-clg').autocomplete({
+						source: college_list
+					});
+				}
+			}
+	});
+
+	
+
 
 	function sell_validate_form(){
 
@@ -308,24 +336,24 @@
 		<p id="compulsary-text"><strong><u>Note</u>:</strong> Fields Marked with * are compulsary.</p>
 		<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
 			<div class="pure-g">
-				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on" required> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_name"></div>
+				<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_name"></div>
 				<br>
 				<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_email"></div> 
 				<br>
-				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_phone"></div>   
+				<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number"><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_phone"></div>   
 				<br>
-				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is required to later edit the response or to delete the book when it is sold!</span> <div id="error_pass"></div>
+				<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password is to later edit the response or to delete the book when it is sold!</span> <div id="error_pass"></div>
 				<br>
-				<input type="text" name="clg" id="clg" class="sell-input" autocomplete="on" placeholder="Name of College/Institute" required><br>
+				<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Name of College/Institute"><br>
 				<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
-				<select name="subject" id="subject" class="sell-input" required>
+				<select name="subject" id="subject" class="sell-input">
 				<?php
 					require_once ('categories.php');
 				?>
 				<br>
-				<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_book_name"></div>    
+				<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title"><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_book_name"></div>    
 				<br>
-				<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author" required><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_author"></div>  
+				<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_author"></div>  
 				<br>
 				<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="250" placeholder="Description(max 250 characters)"></textarea>
 				<br>
