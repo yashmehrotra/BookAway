@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Edit Details | Booksaway</title>
-	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
@@ -163,7 +162,7 @@
 
 	function sell_validate_form() {
 
-		$('#del-new-button').click( function(event) {
+		$('#del-new-btn').click( function(event) {
 			var del_height = $('#del-main-container').css('height');
 			var edit_form_height = $('#edit-form').css('height');
 			var flag = false;
@@ -268,7 +267,7 @@
 
 		function confirm_delete() {
 
-		 	$('#delete-button').on('click', function () {
+		 	$('#delete-btn').on('click', function () {
 		 		var user_choice = confirm("Are you sure you want to Delete this Book");
 
 		 		if (user_choice == true) {
@@ -332,12 +331,12 @@
 </head>
 <body>
 	<?php
-	require_once('topbar.php');
+	require_once('header.php');
 	?>
-	<div class="main-heads">
+	<div class="page-header">
 		<h2>Edit</h2>
 	</div>
-	<div id="del-main-container">
+	<div class="main-containers container-style" id="del-main-container">
 		<div id="del-main">
 			<div id="del-desc">
 				To edit the details of your book or to remove the book you added,
@@ -352,11 +351,11 @@
 				<div><input class="del-input" type="submit" value="Submit" id="submit"></div>
 			</form>
 		</div>
-		<div id="edit-form">
-			<button id="delete-button">Delete this book</button>
+		<div class="container-style" id="edit-form">
+			<button id="delete-btn">Delete this book</button>
 			<div id="edit-head">
 					<div id="or"><h3 id="or-text">OR</h3></div>
-					<p id="edit-desc"> Edit the details you want and click on "Edit" button when finished.</p>
+					<p id="edit-desc"> Edit the details you want and click on "Edit" btn when finished.</p>
 			</div>
 			<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
 				<div class="del-pure-g" id="del-pure-g-del">
@@ -395,7 +394,6 @@
 					<select name="rentpricetime" id="rent-price" class="sell-input">
 						<option value="week">per Week</option>
 						<option value="month">per Month</option>
-						<option value="semester">per Semester</option>
 					</select>
 					<div id="error_rent_price"></div>
 					<div hidden>
@@ -404,7 +402,7 @@
 					</div> 
 					<br><br>
 				</div>
-				<button class="button-success pure-button" id = "del-new-button">Edit</button>
+				<button class="btn-success pure-btn" id = "del-new-btn">Edit</button>
 			</form>
 		</div>
 		<div id="edit-success">Congratulations!!<br>You have successfully edited your response.</div>

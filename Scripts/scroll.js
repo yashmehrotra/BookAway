@@ -1,9 +1,9 @@
 $(function(){
 			$(window).scroll(function(){
 				if($(window).scrollTop() > 100) {
-					$('.index-wrapper').addClass('wrapper');
+					$('.header-wrapper').addClass('header-wrapper-fixed');
 				} else {
-					$('.index-wrapper').removeClass('wrapper');
+					$('.header-wrapper').removeClass('header-wrapper-fixed');
 				}
 			});
 	});

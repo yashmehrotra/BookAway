@@ -17,10 +17,8 @@ function curPageURL() {
 <head>
 	<title>Buy and Rent Books | Bookaway.in</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
-	<link rel="stylesheet" href="Styles/jquery-ui.css">
 	<script src="Scripts/jquery.js"></script>
 	<script src="Scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
@@ -36,9 +34,9 @@ function curPageURL() {
 </head>
 <body>
 	<?php
-	require_once('topbar.php');
+	require_once('header.php');
 	?>
-	<div class="main-heads">
+	<div class="page-header">
 			<h2>Buy Books</h2>
 	</div>
 	<div class="main-containers" id="buy-container">
@@ -46,13 +44,13 @@ function curPageURL() {
 			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
 				<div>
 					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
-					<button class="ion-android-search search-filters-button" id="left-panel-search-btn"></button>
+					<button class="ion-android-search search-filters-btn" id="left-panel-search-btn"></button>
 				</div> 
 				<br>
 				<div class="search-filters" id="buy-search-filters">
 					<div id="search-filters-college-select">
 						<input type="text" class="left-panel-input" id="search-filters-college-search" placeholder="Select College">
-						<button class="ion-android-arrow-forward search-filters-button" id="search-filters-college-btn"></button>
+						<button class="ion-android-arrow-forward search-filters-btn" id="search-filters-college-btn"></button>
 					</div>
 					<div class="sub-select" id="left-panel-sub-select">
 						<div class="left-panel-text-wrappers" id="sub-text-wrapper">
@@ -143,7 +141,7 @@ function curPageURL() {
 							Price Range:
 						</div>
 						<input type="number" id="range-min"> to <input type="number" id="range-max">
-						<button class="search-filters-button" id="price-range">Go</button>
+						<button class="search-filters-btn" id="price-range">Go</button>
 					</div>
 				</div>
 			</form>

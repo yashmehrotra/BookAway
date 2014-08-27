@@ -5,7 +5,6 @@
 	<title>
 		<!--Title Here-->
 	</title>
-	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
@@ -13,15 +12,15 @@
 </head>
 <body>
 	<?php
-		require_once('topbar.php');
+		require_once('header.php');
 	?>
-	<div class="main-heads">
+	<div class="page-header">
 	<h2>
 		<!--Heading Here-->
 	</h2>
 	</div>
 	<!--Mention id of the container-->
-	<div id="-container">	
+	<div class="main-containers" id="-container">	
 		<div id="book-details">
 			<!--Book Details will be displayed here-->
 		</div>

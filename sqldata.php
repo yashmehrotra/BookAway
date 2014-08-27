@@ -35,6 +35,7 @@
 		//
 		// Check Book Deletion
 
+		//$query = "INSERT INTO books (name,email,phone,password,subject,book,author,sell_rent,sell_price,rent_price,rent_time,date_added) VALUES ('$name','$email','$phone','$password','$subject','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$date_added')";
 		$query = "INSERT INTO tbl_books (category,book,author,sell_rent,sell_price,rent_price,rent_time,college,date_added,image_source,`book_description`) VALUES ('$category','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$college','$date_added','$image_source','$book_description')";
 		mysqli_query($database_connection,$query);
 		$book_id = mysqli_insert_id($database_connection);
@@ -73,7 +74,7 @@
 			$response['seller_name']      = $sql_user_data['name'];
 			$response['seller_email']     = $sql_user_data['email'];
 			$response['seller_phone']     = $sql_user_data['phone'];
-			$response['category']         = $row['category'];
+			$response['subject']          = $row['category'];
 			$response['book_name']        = $row['book'];
 			$response['author']           = $row['author'];
 			$response['sell_rent']        = $row['sell_rent'];
@@ -93,30 +94,22 @@
 
 	} elseif ($source == 'edit_book') {
 
-		$book_id          = $_POST['book_id_hid'];
-		$new_phone        = $_POST['phone'];
-		$new_category     = $_POST['category'];
-		$new_book         = addslashes($_POST['book']);
-		$new_author       = addslashes($_POST['author']);
-		$new_sellrent     = $_POST['sellrent'];
-		$new_sellprice    = $_POST['sellprice'];
-		$new_rentprice    = $_POST['rentprice'];
-		$new_renttime     = $_POST['rentpricetime'];
-		$new_image_source = addslashes($_POST['cover-url']);
-		$new_description  = addslashes($_POST['book-desc']);
+		$book_id        = $_POST['book_id_hid'];
+		$new_phone      = $_POST['phone'];
+		$new_subject    = $_POST['subject'];
+		$new_book       = $_POST['book'];
+		$new_author     = $_POST['author'];
+		$new_sellrent   = $_POST['sellrent'];
+		$new_sellprice  = $_POST['sellprice'];
+		$new_rentprice  = $_POST['rentprice'];
+		$new_renttime   = $_POST['rentpricetime'];
 
-		$query = "UPDATE tbl_books SET category = '$new_category', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime', `image_source` = '$new_image_source', `book_description` = '$new_description'  WHERE id = '$book_id'"; //Set it for update
+		$query = "UPDATE tbl_books SET phone = '$new_phone', subject = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'"; //Set it for update
 		mysqli_query($database_connection,$query);
-
-		$query = "UPDATE tbl_seller SET phone = '$new_phone' WHERE book_id = '$book_id'";
-		mysqli_query($database_connection,$query);
-		
 		mysqli_close($database_connection);
 
 		$response = array();
 		$response['status'] = 'success';
-		$response['desc']   = $new_description;
-		$response['book-name'] = $new_book;
 
 	} elseif ($source == 'delete') {
 
@@ -236,9 +229,9 @@
 
 		mysqli_close($database_connection);
 
-	} else {
-		$response = "hi".$source;
-	}
+	} //else {
+	//	$response = "hi".$source;
+	//}
 
 	$response = json_encode($response);
 	echo $response;

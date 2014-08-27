@@ -175,7 +175,7 @@ function book_data_display () {
 				delay: 0,
 				source: search_data,
 				select: function(event, ui) {
-					$('#search-button').append("<div hidden id='category-search'></div>")
+					$('#search-btn').append("<div hidden id='category-search'></div>")
            			$('#category-search').val(ui.item.category);
            		}
 			});
@@ -254,11 +254,12 @@ function show_search() {
 }
 
 function load_specific(search_value, search_category) {
-
+	//$('.outer-divs').remove();
+	//$('.inner-divs').remove();
 	$.ajax({
 		type: "POST",
-		url: "sqldata.php",
-		data: { 'source': 'search', 'search_category': search_category, 'search_value': search_value },
+		url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
+		data: { 'source': 'search', 'search_category': search_category, 'search_value': search_value },  //, 'search_category': search_category, 'search_value': search_value
 		success: function (result) {
 			if(result) {
 				console.log(search_category);
@@ -283,10 +284,10 @@ function books_data() {
 		results_counter= 12;
 	}
 	if ( results_counter > 3 ) {
-		buy_height = $('#buy-container').css('height');
-		latest_outer_height = $('#buy-content-container').css('height');
-		$('#buy-container').css('height',parseInt(buy_height)+150*results_counter+'px');
-		$('#buy-content-container').css('height',parseInt(latest_outer_height)+150*results_counter+'px');
+	buy_height = $('#buy-container').css('height');
+	latest_outer_height = $('#buy-content-container').css('height');
+	$('#buy-container').css('height',parseInt(buy_height)+150*results_counter+'px');
+	$('#buy-content-container').css('height',parseInt(latest_outer_height)+150*results_counter+'px');
 	}
 	/*var scopy = 0;
 	$('#buy-container > #buy-content-container > #buy-table > tbody').on('click', '.books-data', function() {

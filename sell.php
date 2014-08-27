@@ -3,10 +3,8 @@
 <head>
 	<title>Sell Books | Bookaway.in</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="Styles/ribbons.css">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
-	<link rel="stylesheet" href="Styles/jquery-ui.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php"></noscript>
 	<script src="Scripts/jquery.js"></script>
 	<script src="Scripts/jquery-ui.js"></script>
@@ -27,36 +25,33 @@
 	});
 
 	$.ajax({
-			type: "POST",
-			url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
-			data: { 'source': 'college_list' },
-			success: function (result_college) {
-				if(result_college) {
-					var ajax_college_list = JSON.parse(result_college);
-					console.log(ajax_college_list);
-					var counter_college = 0;
-					while(ajax_college_list[counter_college]) {
+		type: "POST",
+		url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
+		data: { 'source': 'college_list' },
+		success: function (result_college) {
+			if(result_college) {
+				var ajax_college_list = JSON.parse(result_college);
+				console.log(ajax_college_list);
+				var counter_college = 0;
+				while(ajax_college_list[counter_college]) {
 
-						college_list.push(ajax_college_list[counter_college]);
-						counter_college += 1;
-					}
-					console.log('look down');
-					console.log(college_list);
-					$('#sell-clg').autocomplete({
-						source: college_list
-					});
+					college_list.push(ajax_college_list[counter_college]);
+					counter_college += 1;
 				}
+				console.log('look down');
+				console.log(college_list);
+				$('#sell-clg').autocomplete({
+					source: college_list
+				});
 			}
+		}
 	});
-
-	
-
 
 	function sell_validate_form(){
 
 		$('#myform').submit(function(event){
 			var sell_height = $('#sell-container').css('height');
-			var submit_bottom = $('#new-button').css('bottom');
+			var submit_bottom = $('#new-btn').css('bottom');
 			var flag = false;
 			var error_count = 0;
 			var name_error = false;
@@ -194,7 +189,7 @@
 
 				var submit_new_bottom = parseInt(submit_bottom) - 40*count_change + 'px';
 
-				$('#new-button').css({
+				$('#new-btn').css({
 					"bottom" : submit_new_bottom
 				});
 		
@@ -323,12 +318,12 @@
 </head>
 <body>
 	<?php
-	require_once('topbar.php');
+	require_once('header.php');
 	?>
-	<div class="main-heads" id="sell-main-head">
+	<div class="page-header" id="sell-main-head">
 		<h2 id="sell-books-text">Sell Books</h2>
 	</div>
-	<div id="sell-container">
+	<div class="main-containers container-style" id="sell-container">
 		<div id="step-1">
 			<h3 id="step-1-text">To add your book for sale/rent, Fill the form below with correct details:</h3>
 		</div>
@@ -380,7 +375,7 @@
 					<input type="text" id="source" name="source" value="add_book">
 				</div>
 			</div>
-			<button class="button-success pure-button" id = "new-button">Submit</button>
+			<button class="btn-success pure-btn" id="new-btn">Submit</button>
 		</form>
 	</div>
 	<div id="entry">
