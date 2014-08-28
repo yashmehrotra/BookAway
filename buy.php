@@ -140,7 +140,7 @@ function curPageURL() {
 						<div class="left-panel-text-wrappers" id="price-range-text-wrapper">
 							Price Range:
 						</div>
-						<input type="number" id="range-min"> to <input type="number" id="range-max">
+						<input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">
 						<button class="search-filters-btn" id="price-range">Go</button>
 					</div>
 				</div>

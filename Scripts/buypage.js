@@ -50,11 +50,13 @@ search_authors      = [];
 
 function book_data_display () {
 	
+	$('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:150px; left:805px;">');	
 	$.ajax({
 		type: "POST",
 		url: "sqldata.php", //Make sure URL Doesnt cause problem in future
 		data: { 'source': 'view' },
 		success: function (result) {
+			$('#loading-gif').hide();
 			if(result) {
 				var counter = 0;
 				var json = JSON.parse(result);
