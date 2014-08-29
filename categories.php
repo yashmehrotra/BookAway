@@ -1,4 +1,4 @@
-<option value="All">All</option>
+<option value="">Select your category</option>
 <option value="Computers">Computers</option>
 <option value="Electronics">Electronics</option>
 <option value="Maths">Maths</option>

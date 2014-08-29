@@ -74,7 +74,7 @@
 			$response['seller_name']      = $sql_user_data['name'];
 			$response['seller_email']     = $sql_user_data['email'];
 			$response['seller_phone']     = $sql_user_data['phone'];
-			$response['subject']          = $row['category'];
+			$response['category']         = $row['category'];
 			$response['book_name']        = $row['book'];
 			$response['author']           = $row['author'];
 			$response['sell_rent']        = $row['sell_rent'];
@@ -96,15 +96,15 @@
 
 		$book_id        = $_POST['book_id_hid'];
 		$new_phone      = $_POST['phone'];
-		$new_subject    = $_POST['subject'];
-		$new_book       = $_POST['book'];
-		$new_author     = $_POST['author'];
+		$new_subject    = addslashes($_POST['subject']);
+		$new_book       = addslashes($_POST['book']);
+		$new_author     = addslashes($_POST['author']);
 		$new_sellrent   = $_POST['sellrent'];
 		$new_sellprice  = $_POST['sellprice'];
 		$new_rentprice  = $_POST['rentprice'];
 		$new_renttime   = $_POST['rentpricetime'];
 
-		$query = "UPDATE tbl_books SET phone = '$new_phone', subject = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'"; //Set it for update
+		$query = "UPDATE tbl_books SET category = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'";
 		mysqli_query($database_connection,$query);
 		mysqli_close($database_connection);
 
