@@ -5,6 +5,7 @@
 <option value="Fiction">Fiction</option>
 <option value="Non-Fiction">Non-Fiction</option>
 <option value="Physics">Physics</option>
+<option value="Chemistry">Chemistry</option>
 <option value="Magazines">Magazines</option>
 <option value="Biographies">Biographies</option>
 <option value="Health">Health</option>
@@ -13,5 +14,9 @@
 <option value="Law">Law</option>
 <option value="Music">Music</option>
 <option value="Business">Business</option>
+<option value="Management">Management</option>
+<option value="Management">Economics</option>
+<option value="Social-Science">Social Science</option>
+<option value="Entrance-Examinations">Entrance Examinations</option>
 <option value="Religion">Religion &amp; Spiritual</option>
 <option value="Miscellaneous">Miscellaneous</option>

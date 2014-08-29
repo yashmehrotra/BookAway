@@ -65,7 +65,7 @@
 	pagination_array = $('.pagination');
 		$(function(){
 
-			$('#home').css({'border-bottom':'2px solid black'});
+			$('#home').css({'border-bottom':'2px solid white'});
 			$('.header').css({'opacity':'0.7'});
 			$('footer').css({'background-color':'transparent', 'position':'fixed', 'bottom':'0px'});
 			$('#copyright').css('background-color','rgb(40,40,40)');
@@ -208,9 +208,10 @@
 		</div> -->
 		<div id="content-slider">
 			<h2 style="color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0;">Bookaway.in</h2>
-			<p style="color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; ">Online Portal<br>to<br>BUY &nbsp;&nbsp; SELL &nbsp;&nbsp; RENT<br>books</p>
+			<p style="color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; ">Online Portal<br>to<br>BUY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RENT<br>books</p>
 		</div>
-		<div id="pagination-wrap">
+
+		<!-- <div id="pagination-wrap">
 			<svg class="svg-nav" width="20" height="20">
 			   <circle class="pagination" cx="10" cy="10" r="7.5" stroke="black" stroke-width="2" fill="black" />
 			   Sorry, your browser does not support inline SVG.
@@ -228,6 +229,7 @@
 			   Sorry, your browser does not support inline SVG.
 			</svg>
 		</div>
+		 -->
 	<!-- </div> -->
 	</div>
 	<?php

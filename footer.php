@@ -8,7 +8,7 @@
 	    </ul>
 	</div>
     <div id="copyright">
-    	<code>Copyright</code><code>2014 .All Rights Reserved. Bookaway.in</code>
+    	<code>Copyright</code><code>2014 .All Rights Reserved.&nbsp;<a href="index.php" style="text-decoration:none; color:#0078E7;">Bookaway.in</a></code>
     </div>
  </footer>
  <!-- </div> -->
