@@ -68,6 +68,7 @@ function edit_request() {
 	var user_email = $('#email').val();
 	var user_password = $('#password').val();
 	console.log(user_email);
+	$('#del-main-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:800px; left:405px;">');
 	$.ajax({
 		type: "POST",
 		url: "sqldata.php",
@@ -78,6 +79,7 @@ function edit_request() {
 			'source':'edit_user' 
 		},
 		success: function(result) {
+			$('#loading-gif').hide();
 			if(result) {
 				var response = JSON.parse(result);
 				console.log(response);
