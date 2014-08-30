@@ -1,22 +1,20 @@
-<option value="All">All</option>
-<option value="Computers">Computers</option>
-<option value="Electronics">Electronics</option>
-<option value="Maths">Maths</option>
-<option value="Fiction">Fiction</option>
-<option value="Non-Fiction">Non-Fiction</option>
-<option value="Physics">Physics</option>
-<option value="Chemistry">Chemistry</option>
-<option value="Magazines">Magazines</option>
-<option value="Biographies">Biographies</option>
-<option value="Health">Health</option>
-<option value="Travel">Travel</option>
-<option value="Medical">Medical</option>
-<option value="Law">Law</option>
-<option value="Music">Music</option>
-<option value="Business">Business</option>
-<option value="Management">Management</option>
-<option value="Management">Economics</option>
-<option value="Social-Science">Social Science</option>
-<option value="Entrance-Examinations">Entrance Examinations</option>
-<option value="Religion">Religion &amp; Spiritual</option>
-<option value="Miscellaneous">Miscellaneous</option>
+<?php
+	require_once('settings.php');
+
+	$database_connection = mysqli_connect($host_name, $user_name, $mysql_password, $database_name);
+	
+	//Check connection
+	if (mysqli_connect_errno()) {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
+	echo "<option value=''>Select your category</option>";
+
+	$query = "SELECT * FROM tbl_categories";
+	$category_data = mysqli_query($database_connection,$query);
+
+	while($row = mysqli_fetch_array($category_data)) {
+
+		echo "<option value='".$row['category']."'>".$row['category']."</option>";
+	}
+?>
