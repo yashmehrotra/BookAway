@@ -170,13 +170,15 @@ ol { text-align:left; }
 
 .profile-image { height:160px; width:160px; border:solid transparent;	border-radius:100px; }
 
-.developer-profile, .profile-onhover { height:300px; width:220px; border:2px ridge; margin:55px 0px 0px 100px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
+.profile-image:hover { cursor:default; }
 
-/*
+.developer-profile, .profile-onhover { height:300px; width:220px; border:1px ridge lightgray; margin:55px 0px 0px 100px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
+
+.developer-profile:hover { cursor:pointer; }
+
 .profile-onhover { -webkit-transition:background-color .4s linear, color .4s linear; -moz-transition:background-color .4s linear, color .4s linear; -o-transition:background-color .4s linear, color .4s linear; -ms-transition:background-color .4s linear, color .4s linear; }
 
-.profile-onhover:hover { color:white; background-color:#AA3DA6;#3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f; }
-*/
+.profile-onhover:hover { border-color:transparent; background-color:rgb(220,220,220);silver;black;#AA3DA6;#3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f; }
 
 .developer-title { font-size:19px; font-style:italic; }
 
@@ -250,7 +252,7 @@ ol { text-align:left; }
 
 /*.seller-data { height:50px; width:150px; overflow:hidden; float:left; margin:0px 10px 10px; border:1px solid black; font-size:16px; }*/
 
-#load-more-btn { height:45px; width:inherit;420px; display:none;block; position:absolute; right:0px;15%; color:white; border:1px transparent; background:#403C94; font-size:18px; font-family:Ubuntu; }
+#load-more-btn { height:45px; width:inherit; display:none; position:absolute; right:0px;15%; color:white; border:1px transparent; background:#403C94; font-size:18px; font-family:Ubuntu; }
 
 #load-more-btn:hover { cursor:pointer; }
 
@@ -390,7 +392,7 @@ div[id^="error"] { height:30px;	width:470px; font-size:16px; font-weight:normal;
 
 #new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear;	-moz-transition:opacity .5s linear;	-o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
-#entry { height:600px; width:820px;	display:none; }
+#entry { height:600px; width:820px;	display:none; margin-top: 20px;  }
 
 #successful-text { font-size:22px; font-family:Bitter-Regular; line-height:150%; text-align:center; padding:0px 10px; position:relative; left:40px; }
 

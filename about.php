@@ -7,13 +7,7 @@
 	<script src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script src="Scripts/scroll.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.developer-profile').on('mouseenter mouseleave', function(){
-				$(this).toggleClass('profile-onhover');
-			});
-		});
-	</script>
+	<script type="text/javascript" src="Scripts/aboutpage.js"></script>
 </head>
 <body>
 	<?php

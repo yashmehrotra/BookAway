@@ -221,28 +221,32 @@ function load_more () {
 		var visible_flag = 0;
 		if( counter_visible >= total_results ) {
 			//$('#load-more-btn').css('display','none');
-			$('load-more-btn').hide();
+			$('#load-more-btn').hide();
 			visible_flag = 1;
 		}
 		if( total_results - counter_visible < 12 ) {
 			counter_visible = total_results;
+			$('#load-more-btn').hide();
+			visible_flag = 1;
 			var flag = 1;
 		}	else {
+			$('#load-more-btn').show();
 			counter_visible = counter_visible + 12;
 			var flag = 0;
 		}
-		if( counter_visible == total_results ) {
-			$('#load-more-btn').css('display','none');
-		}
 
-		$('#buy-container > #buy-content-container > div[class="books-data"]:gt(' + clone_visible + '):lt(13)').slideDown(600);
+		$('div[class="books-data"]:gt(' + clone_visible + '):lt(13)').slideDown(600);
 		var buy_height = $('#buy-container').height();
 		var latest_outer_height = $('#buy-content-container').height();
 		console.log(buy_height,latest_outer_height);
-		var change = 220*(counter_visible - clone_visible);
+		var change = 230*(counter_visible - clone_visible);
 	
-		$('#buy-container').css('height',parseInt(buy_height)+change+'px');
-		$('#buy-content-container').css('height',parseInt(latest_outer_height)+change+'px');
+		if(visible_flag == 1) {
+			change = change - 130;
+		}
+
+		$('#buy-container').css('height',buy_height+change+'px');
+		$('#buy-content-container').css('height',latest_outer_height+change+'px');
 	});
 }
 
@@ -254,9 +258,10 @@ function books_data() {
 	$('div[class="books-data"]:gt(11)').hide();
 	if( total_results < 12) {
 		// $('#load-more-btn').css("display","none");
-		$('#load-more-btn').hide();
+		// $('#load-more-btn').hide();
 		results_counter= total_results;
 	} else {
+		$('#load-more-btn').show();
 		results_counter= 12;
 	}
 	if ( results_counter > 3 ) {
@@ -265,7 +270,7 @@ function books_data() {
 	console.log(buy_height);
 	var latest_outer_height = $('#buy-content-container').height();
 	// console.log(latest_outer_height);
-	var h_change = 230*(results_counter-3);
+	var h_change = 220*(results_counter-3);
 	$('#buy-container').height(buy_height + h_change + 'px');
 	$('#buy-content-container').height( latest_outer_height + h_change + 'px');
 	}
