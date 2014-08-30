@@ -5,7 +5,6 @@
 var total_results = 0;
  $(document).ready(function() {
 	book_data_display();
-	show_search();
 	//console.log("Main--",c);
 	newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 	console.log(newURL);
@@ -118,28 +117,32 @@ function book_data_display () {
 				console.log("Problem with Ajax Request")
 			}
 			var counter_clone = 0;
-			var NO_BOOK_IMAGE = 'Styles/Images/Five+Point+Someone1-site1.n';
+			var NO_BOOK_IMAGE = "Styles/Images/noimage.jpg";
 
 			while(counter_clone != counter) {
 
 				if( json[counter_clone].image_source == "" ) {					
-					json[counter_clone].image_source = "Styles/Images/noimage.jpg";
+					json[counter_clone].image_source = NO_BOOK_IMAGE;
 				}
+
+				var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'"+" data-shown-by='default'"+ "data-college='"+ json[counter_clone].college +"'" +">"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description;
 
 				if( json[counter_clone].rent_price == "" ) {
 					
 					console.log("No rent price");
 					json[counter_clone].rent_price = "-";
 					json[counter_clone].rent_time = "";
-					//$('#buy-content-container').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>		<div class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<div class='seller-name-buy-wrapper'>"+json[counter_clone].seller_name+"</div><div class='seller-phone-buy-wrapper'>"+json[counter_clone].seller_phone+"</div><div class='seller-email-buy-wrapper'>"+json[counter_clone].seller_email+"</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");
-					$('#buy-content-container').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");
+
+					$('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div></div>");
 				
 				} else if( json[counter_clone].sell_price == "" ) {
+					
 					json[counter_clone].sell_price = "-";
-					$('#buy-content-container').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description+"</div><div class='rent-buy-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+					$('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='rent-buy-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
 				
 				} else {
-					$('#buy-content-container').prepend("<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'>"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description+"</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div><div class='rent-buy-wrapper'> Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+					
+					$('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div><div class='rent-buy-wrapper'> Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
 				}
 				counter_clone += 1;
 			}
@@ -177,7 +180,7 @@ function book_data_display () {
 				delay: 0,
 				source: search_data,
 				select: function(event, ui) {
-					$('#search-btn').append("<div hidden id='category-search'></div>")
+					$('#left-panel-search-bar').append("<div hidden id='category-search'></div>")
            			$('#category-search').val(ui.item.category);
            		}
 			});
@@ -243,38 +246,8 @@ function load_more () {
 	});
 }
 
-function show_search() {
-	// $('#search-bar').on('click',function(e) {
-	// 	e.preventDefault();
-	// 	var search_value = $("#search-bar").val();
-	// 	var search_category = $("#category-search").val();
-	// 	console.log(search_value);
-	// 	console.log(search_category);
-	// 	load_specific(search_value,search_category);
-	// })
-}
-
-function load_specific(search_value, search_category) {
-	//$('.outer-divs').remove();
-	//$('.inner-divs').remove();
-	$.ajax({
-		type: "POST",
-		url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
-		data: { 'source': 'search', 'search_category': search_category, 'search_value': search_value },  //, 'search_category': search_category, 'search_value': search_value
-		success: function (result) {
-			if(result) {
-				console.log(search_category);
-				console.log(search_value);
-				var json = JSON.parse(result);
-				console.log(json);
-			} else {
-				console.log("Thenga")
-			}
-		}
-	});
-}
-
 function books_data() {
+	console.log('total_results'+total_results);
 	//$('#buy-container > #buy-content-container > #buy-table > tbody > .seller-data').css("display","none");
 	var results_counter = 0;
 	// $('div[class="books-data"]:gt(11)').css("display","none");
@@ -289,10 +262,12 @@ function books_data() {
 	if ( results_counter > 3 ) {
 	// buy_height = $('#buy-container').css('height');
 	var buy_height = $('#buy-container').height();
+	console.log(buy_height);
 	var latest_outer_height = $('#buy-content-container').height();
-	var h_change = 260*(results_counter-3);
-	$('#buy-container').height(h_change + 'px');
-	$('#buy-content-container').height( h_change + 'px');
+	// console.log(latest_outer_height);
+	var h_change = 230*(results_counter-3);
+	$('#buy-container').height(buy_height + h_change + 'px');
+	$('#buy-content-container').height( latest_outer_height + h_change + 'px');
 	}
 	/*var scopy = 0;
 	$('#buy-container > #buy-content-container > #buy-table > tbody').on('click', '.books-data', function() {
@@ -316,6 +291,41 @@ function books_data() {
 function filter() {
 
 	console.log('yash');
+	//Search First
+
+	$('#left-panel-search-btn').click(function(e) {
+		e.preventDefault();
+		console.log('search');
+		var search_value = $("#left-panel-search-bar").val();
+		var search_category = $("#category-search").val();
+		console.log(search_value);
+		console.log(search_category);
+		load_specific(search_value,search_category);
+	});
+
+	$('#search-filters-college-btn').on('click',function(e) {
+
+		e.preventDefault();
+		var user_college_name = $('#search-filters-college-search').val();
+		var current_college_name = "";
+		$('#buy-container > #buy-content-container >.books-data').each(
+			function(index) {
+				current_college_name = $(this).data('college');
+
+				if( $(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search' ) {
+
+					$(this).show();
+				}
+
+				if( current_college_name != user_college_name ) {
+
+					$(this).attr('data-shown-by','not college')
+					$(this).hide();
+				}
+			}
+		);
+	});
+
 	$('#price-range').on('click',function(e) {
 		e.preventDefault();
 		var min_price = $('#range-min').val();
@@ -330,6 +340,48 @@ function filter() {
 				}
 			}
 		);
+	});
+}
+
+function load_specific(search_value, search_category) {
+
+	$.ajax({
+		type: "POST",
+		url: "sqldata.php", 
+		data: { 'source': 'search', 'search_category': search_category, 'search_value': search_value },
+		success: function (result) {
+			if(result) {
+				console.log(search_category);
+				console.log(search_value);
+				var search_result = JSON.parse(result);
+				console.log(search_result);
+
+				var search_list_book_id = [];
+				var counter = 0;
+				while (search_result[counter]) {
+
+					search_list_book_id.push(search_result[counter].book_id);
+					counter += 1;
+				}
+
+				$('#buy-container > #buy-content-container >.books-data').each(
+					function(index) {
+						$(this).show();
+						$(this).attr('data-shown-by','search');
+						var current_id = $(this).attr('id');
+						current_id = current_id.split('book-data-').join('');
+						if( $.inArray(current_id,search_list_book_id) == -1 ) {
+
+							$(this).attr('data-shown-by','not_search');
+							$(this).hide();
+						}
+					}
+				);
+				
+			} else {
+				console.log("Thenga")
+			}
+		}
 	});
 }
 

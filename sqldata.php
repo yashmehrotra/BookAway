@@ -159,7 +159,7 @@
 	} elseif ($source == 'search') {
 		
 		$category = $_POST['search_category'];
-		$search_value = $_POST['search_value'];
+		$search_value = addslashes($_POST['search_value']);
 
 		if ($category == "Books") {
 
@@ -176,18 +176,17 @@
 
 		while($row = mysqli_fetch_array($search_data)) {
 
-			$response[$i]['book_id']       = $row['id'];
-			$response[$i]['book_name']     = $row['book'];
-			$response[$i]['author_name']   = $row['author'];
-			$response[$i]['seller_name']   = $row['name'];
-			$response[$i]['seller_phone']  = $row['phone'];
-			$response[$i]['seller_email']  = $row['email'];
-			$response[$i]['sell_rent']     = $row['sell_rent'];
-			$response[$i]['sell_price']    = $row['sell_price'];
-			$response[$i]['rent_price']    = $row['rent_price'];
-			$response[$i]['rent_time']     = $row['rent_time'];
-			$response[$i]['date_added']    = $row['date_added'];
-			$response[$i]['image_source']  = $row['image_source'];
+			$response[$i]['book_id']           = $row['id'];
+			$response[$i]['book_name']         = $row['book'];
+			$response[$i]['author_name']       = $row['author'];
+			$response[$i]['category']          = $row['category'];
+			$response[$i]['sell_rent']         = $row['sell_rent'];
+			$response[$i]['sell_price']        = $row['sell_price'];
+			$response[$i]['rent_price']        = $row['rent_price'];
+			$response[$i]['rent_time']         = $row['rent_time'];
+			$response[$i]['date_added']        = $row['date_added'];
+			$response[$i]['image_source']      = $row['image_source'];
+			$response[$i]['book_description']  = $row['book_description'];
 
 			$i=$i+1;
 		}
@@ -229,9 +228,9 @@
 
 		mysqli_close($database_connection);
 
-	} //else {
-	//	$response = "hi".$source;
-	//}
+	} else {
+		$response = "hi".$source;
+	}
 
 	$response = json_encode($response);
 	echo $response;
