@@ -131,11 +131,11 @@ function curPageURL() {
 					<div class="left-panel-text-wrappers" id="book-for-text-wrapper">
 						Available For:
 					</div>
-					<input type="radio" value="Both">Both buying and renting
+					<input type="radio" name="radio-name" value="Both" checked>Both buying and renting
 					<br>
-					<input type="radio" value="Buying">Buy
+					<input type="radio" name="radio-name" value="Buying">Buy
 					<br>
-					<input type="radio" value="Renting">Rent
+					<input type="radio" name="radio-name" value="Renting">Rent
 					<br>
 				<!--</div>-->
 					<div id="left-panel-price-range">
