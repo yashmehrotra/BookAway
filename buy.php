@@ -15,15 +15,17 @@ function curPageURL() {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BooksforBucks- Buy, Sell, Rent Books!!</title>
+	<title>Buy and Rent Books | Bookaway.in</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<script src="Scripts/jquery.js"></script>
-	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script src="Scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
+	<script type="text/javascript" src="Scripts/buypage_new.js"></script>
 	<script type="text/javascript" src="Scripts/scroll.js"></script>
+	<script type="text/javascript" src="Scripts/bpopup-min.js"></script>
 	<script>
 		$(function(){
 			$('#buy').attr('id','focus');
@@ -31,74 +33,127 @@ function curPageURL() {
 	</script>
 </head>
 <body>
-	<img src="Styles/Images/favicon1.png" id="favicon">
 	<?php
-	require_once('topbar.php');
+	require_once('header.php');
 	?>
-	<div class="main-heads">
+	<div class="page-header">
 			<h2>Buy Books</h2>
 	</div>
-	<div id="buy-container">
-	<div class="buy-left-panel">
-	<form id="home-search">
-	<div>
-		<div class="ui-widget"><input id="search-bar"></div>
-	</div> 
-	<div><button class="search" type="submit">Search</button></div>
-	</form>
-	<br>
-	<div class="search-filters">
-		<h3 id="search-filter-text">Search Filters:-</h3>
-		<p>Search By:</p>
-		<select name="search-by" class="search-by" id="search_by">
-			<option value="booktitle">By Book Title</option>
-			<option value="authorname">By Author</option>
-			<option value="publication">By Publication</option>
-		</select>
-		<p>Select Maximum Price:</p>
-		<div class="price-bar">
-		<form oninput="x.value=parseInt(10*a.value)" id="price-max">100
-	<input type="range" id="a" min="10" max="100" value="100">1000 
-	<output name="x" for="a" id="output"></output>
-	</form>
-	</div>
-	<div class="sub-select">
-		<p id="sub">Select subject:</p>
-		<select name="select-subject" class="search-by" id="buy_subject">
-			<option value="All">All</option>
-			<option value="Computers">Computers</option>
-			<option value="Electronics">Electronics</option>
-			<option value="Maths">Maths</option>
-			<option value="Novels">Novels(Fiction + Non-Fiction)</option>
-			<option value="Magazines">Magazines</option>
-			<option value="Biographies">Biographies</option>
-			<option value="Physics">Physics</option>
-			<option value="Health">Health</option>
-			<option value="Travel">Travel</option>
-			<option value="Medical">Medical</option>
-			<option value="Law">Law</option>
-			<option value="Music">Music</option>
-			<option value="Business">Business</option>
-			<option value="Religion">Religion & Spiritual</option>
-			<option value="Miscellaneous">Miscellaneous</option>
-		</select>
+	<div class="main-containers" id="buy-container">
+		<div class="left-panel" id="buy-left-panel">
+			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
+				<div>
+					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
+					<button class="ion-android-search search-filters-btn" id="left-panel-search-btn"></button>
+				</div> 
+				<br>
+				<div class="search-filters" id="buy-search-filters">
+					<div id="search-filters-college-select">
+						<input type="text" class="left-panel-input" id="search-filters-college-search" placeholder="Select College">
+						<button class="ion-android-arrow-forward search-filters-btn" id="search-filters-college-btn"></button>
+					</div>
+					<div class="sub-select" id="left-panel-sub-select">
+						<div class="left-panel-text-wrappers" id="sub-text-wrapper">
+							Category:
+						</div>
+						<div id="sub-scroll-bar">
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="All">All
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Computers">Computers
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Electronics">Electronics
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Maths">Maths
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Fiction">Fiction
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Non-Fiction">Non-Fiction
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Physics">Physics
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Magazines">Magazines
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Biographies">Biographies
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Health">Health
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Travel">Travel
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Medical">Medical
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Law">Law
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Music">Music
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Business">Business
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Religion">Religion &amp; Spiritual
+								<br>
+							</div>
+							<div class="sub-cbox">
+								<input type="checkbox" class="sub-cbox-input" value="Miscellaneous">Miscellaneous
+								<br>
+							</div>
+						</div>
+					</div>
+				<!--<div class="sub-select">-->
+					<div class="left-panel-text-wrappers" id="book-for-text-wrapper">
+						Available For:
+					</div>
+					<input type="radio" value="Both">Both buying and renting
+					<br>
+					<input type="radio" value="Buying">Buy
+					<br>
+					<input type="radio" value="Renting">Rent
+					<br>
+				<!--</div>-->
+					<div id="left-panel-price-range">
+						<div class="left-panel-text-wrappers" id="price-range-text-wrapper">
+							Price Range:
+						</div>
+						<input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">
+						<button class="search-filters-btn" id="price-range">Go</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="buy-content-container">
+			<button id="load-more-btn">Load more</button>
 		</div>
 	</div>
-	</div>
-	<div id="latest-outer">
-		<div class="latest-additions"></div>
-		<button id="load-more">Load more</button>
-	</div>
-	<div class="bottom-panel">
-		<ul class="bottom-panel-list">
-			<li class="home-about-contact"><a href="index.php" class="bottom-links">Home</a></li>
-			<li class="home-about-contact"><a href="about.php" class="bottom-links">About</a></li>
-			<li class="home-about-contact"><a href="contact.php" class="bottom-links">Contact</a></li>
-		</ul>
-	</div>
-		<div id="co-developed">
-			<code>Copyright2014</code><code>.All Rights Reserved. Booksforbucks.com</code>
-		</div>
-	</div>
+	<?php
+		require_once('footer.php');
+	?>
 </body>
 </html>
