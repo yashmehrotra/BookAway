@@ -224,8 +224,7 @@ function load_more () {
 		if( total_results - counter_visible < 12 ) {
 			counter_visible = total_results;
 			var flag = 1;
-		}
-		else {
+		}	else {
 			counter_visible = counter_visible + 12;
 			var flag = 0;
 		}
@@ -278,18 +277,22 @@ function load_specific(search_value, search_category) {
 function books_data() {
 	//$('#buy-container > #buy-content-container > #buy-table > tbody > .seller-data').css("display","none");
 	var results_counter = 0;
-	$('#buy-container > #buy-content-container > div[class="books-data"]:gt(11)').css("display","none");
+	// $('div[class="books-data"]:gt(11)').css("display","none");
+	$('div[class="books-data"]:gt(11)').hide();
 	if( total_results < 12) {
-		$('#load-more-btn').css("display","none");
+		// $('#load-more-btn').css("display","none");
+		$('#load-more-btn').hide();
 		results_counter= total_results;
 	} else {
 		results_counter= 12;
 	}
 	if ( results_counter > 3 ) {
-	buy_height = $('#buy-container').css('height');
-	latest_outer_height = $('#buy-content-container').css('height');
-	$('#buy-container').css('height',parseInt(buy_height)+150*results_counter+'px');
-	$('#buy-content-container').css('height',parseInt(latest_outer_height)+150*results_counter+'px');
+	// buy_height = $('#buy-container').css('height');
+	var buy_height = $('#buy-container').height();
+	var latest_outer_height = $('#buy-content-container').height();
+	var h_change = 260*(results_counter-3);
+	$('#buy-container').height(h_change + 'px');
+	$('#buy-content-container').height( h_change + 'px');
 	}
 	/*var scopy = 0;
 	$('#buy-container > #buy-content-container > #buy-table > tbody').on('click', '.books-data', function() {

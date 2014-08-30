@@ -49,7 +49,7 @@
 			<a href="Styles/Images/sidhant.jpg"><img src="Styles/Images/sidhant.jpg" class="profile-image" id="profile-image3" alt="img3"></a>
 			<p class="developer-title">Sidhant Sharma
 				<br><br>
-				Content Manager
+				Graphics Designer
 			</p>
 			<div onclick="location.href='https://www.facebook.com/sid.sharma15';" class="profile-links fb"></div>
 			<div onclick="location.href='http://www.twitter.com/SidMail15';" class="profile-links tw"></div>

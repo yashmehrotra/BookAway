@@ -23,7 +23,7 @@
 		<h1 id="faqs-head">Frequently Asked Questions</h1>
 		<br>
 		<h2 class="ques">How to buy books?</h2>
-		<div class="ans"><i>Click on the Buy tab. Search the book you want to buy and click on the book’s name. Book’s owner name and mobile number will be displayed below. Call the seller and make the deal.</i></div>
+		<div class="ans"><i>Click on the Buy tab. Search the book you want to buy and click on the book’s name. Book’s owner name, mobile number and email address will be popped up. Call the seller and make the deal.</i></div>
 		<h2 class="ques">How to sell books?</h2>
 		<div class="ans"><i>Click on the Sell tab. Fill out the form and click on submit. Note the Book Id that appears after you successfully submit your book.</i></div>
 		<h2 class="ques">How to rent books?</h2>
