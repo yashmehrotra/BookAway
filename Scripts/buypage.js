@@ -406,13 +406,11 @@ function seller_data(book_id) {
 			data: { 'source':'seller_data', 'book_id':book_id },
 			success: function (result_seller_data) {
 				if(result_seller_data) {
-					//var counter = 0;
 					var ajax_seller_data = JSON.parse(result_seller_data);
 					console.log(ajax_seller_data);
 
 					sell_data_id = "seller-data-" + book_onclick_id;
-					$(''+id_clone+'').after('<div class="seller-data" id='+sell_data_id+' style="display:none;"><p id="seller-details-head"> To buy/rent this book, contact the seller directly through the mentioned contact details: </p><div class="name-seller-wrap"><span class="ion-person" id="name-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_name+'</div><div class="phone-seller-wrap"><span class="ion-android-call" id="phone-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_phone+'</div><div class="email-seller-wrap"><span class="ion-email" id="email-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_email+'</div><div class="college-seller-wrap"><span class="ion-android-location" id="college-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_college+'</div></div>');
-					// $(+id_clone+).after('<div class="seller-data" id='+sell_data_id+'><div class="seller-name-wrap">'+ajax_seller_data.seller_name+'</div><div class="seller-phone-wrap">'+ajax_seller_data.seller_phone+'</div><div class="seller-email-wrap">'+ajax_seller_data.seller_email+'</div><div class="seller-college-wrap">'+ajax_seller_data.seller_college+'</div></div>');
+					$(''+id_clone+'').after('<div class="seller-data" id='+sell_data_id+' style="display:none;"><p id="seller-details-head"> To get this book, contact the seller directly through the mentioned contact details: </p><div class="name-seller-wrap"><span class="ion-person" id="name-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_name+'</div><div class="phone-seller-wrap"><span class="ion-android-call" id="phone-seller-icon"></span>&nbsp;+91-'+ajax_seller_data.seller_phone+'</div><div class="email-seller-wrap"><span class="ion-email" id="email-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_email+'</div><div class="college-seller-wrap"><span class="ion-android-location" id="college-seller-icon"></span>&nbsp;'+ajax_seller_data.seller_college+'</div></div>');
 					$('#'+sell_data_id+'').bPopup();
 				} else {
 					console.log('Problem with seller request');

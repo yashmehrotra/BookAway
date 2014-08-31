@@ -74,6 +74,7 @@
 		</div>
 		<div id="entry">
 			<div id="success-submit-wrap">
+				<br>
 				<p id="successful-text">Form Successfully Submitted.<br>
 				Your book id is <span id="book_id_span" style="color: red;"></span> .<br>
 				Your response will be processed and implemented within a few hours.</p>

@@ -280,9 +280,11 @@ div[class$="-buy-wrapper"] { position:relative;	}
 
 .ruppee-img { height:18px; width:16px; margin:0px 1px 0px 2px; }
 
-.seller-data { width:550px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
+.seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
 
-div[class$="-seller-wrap"] { position:relative; height:50px; width:400px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:silver; font-size:20px; }
+div[class$="-seller-wrap"] { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:rgb(230,230,230); font-size:20px; }
+
+div[class$="-seller-wrap"]:hover { background-color: lightgray;silver; }
 
 span[id$="-seller-icon"] { font-size: 25px; }
 
@@ -399,7 +401,7 @@ div[id^="error"] { height:30px;	width:470px; font-size:16px; font-weight:normal;
 
 #new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear;	-moz-transition:opacity .5s linear;	-o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
-#entry { height:600px; width:820px;	display:none; margin-top: 20px;  }
+#entry { height:600px; width:820px;	display:none; }
 
 #successful-text { font-size:22px; font-family:Bitter-Regular; line-height:150%; text-align:center; padding:0px 10px; position:relative; left:40px; }
 
