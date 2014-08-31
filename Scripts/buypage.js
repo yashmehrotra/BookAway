@@ -125,7 +125,7 @@ function book_data_display () {
 					json[counter_clone].image_source = NO_BOOK_IMAGE;
 				}
 
-				var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'"+" data-shown-by='default'"+ "data-college='"+ json[counter_clone].college +"'" +">"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description;
+				var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'"+" data-shown-by='default'"+ "data-college='"+ json[counter_clone].college +"'" +" data-book-for='"+json[counter_clone].sell_rent+"' >"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description;
 
 				if( json[counter_clone].rent_price == "" ) {
 					
@@ -329,6 +329,24 @@ function filter() {
 				}
 			}
 		);
+	});
+
+	$('.radio-available-for').on('click',function(e) {
+		// e.preventDefault();
+		var radio_value = $('.radio-available-for:checked').val();
+		console.log(radio_value);
+		$('#buy-container > #buy-content-container >.books-data').each(
+			function(index) {
+				var available_for = $(this).data('book-for');
+				$(this).show();
+				if ( available_for != radio_value && radio_value != '4' ) {
+					console.log(available_for);
+					console.log('above radio');
+					$(this).hide();
+				}
+			}
+		);
+
 	});
 
 	$('#price-range').on('click',function(e) {
