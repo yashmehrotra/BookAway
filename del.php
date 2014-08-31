@@ -5,8 +5,6 @@
 	<title>Edit Details | Bookaway.in</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script type="text/javascript" src="Scripts/jquery.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script type="text/javascript" src="Scripts/scroll.js"></script>
 	<script type="text/javascript" src="Scripts/delpage.js"></script>
 </head>
 <body>

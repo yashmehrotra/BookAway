@@ -5,7 +5,6 @@
 	<title> FAQs | Bookaway.in</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery.js"></script>
-	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<script>
 		$(function(){
 			$('#faqs').attr('id','focus');

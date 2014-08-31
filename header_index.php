@@ -1,3 +1,4 @@
+<script type="text/javascript" src="Scripts/top-panel.js"></script>
 <div class="header-wrapper-fixed" style="width:100%; height:65px;">
 	<img src="Styles/Images/favicon1.png" id="favicon" onclick="location.href='index.php'" style="z-index:100">
 	<div class="header">

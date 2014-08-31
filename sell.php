@@ -8,8 +8,6 @@
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php"></noscript>
 	<script type="text/javascript" src="Scripts/jquery.js"></script>
 	<script type="text/javascript" src="Scripts/jquery-ui.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script type="text/javascript" src="Scripts/scroll.js"></script>
 	<script type="text/javascript" src="Scripts/sellpage.js"></script>
 </head>
 <body>

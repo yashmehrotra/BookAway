@@ -18,3 +18,11 @@
 .ion-help-buoy:before { content: "\f27c"; }
 
 .ion-help-circled:before { content: "\f142"; }
+
+.ion-person:before { content: "\f213"; }
+
+.ion-email:before { content: "\f132"; }
+
+.ion-android-call:before { content: "\f2d2"; }
+
+.ion-android-location:before { content: "\f2ea"; }

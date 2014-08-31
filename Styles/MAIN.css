@@ -224,7 +224,7 @@ ol { text-align:left; }
 
 #left-panel-sub-select { margin-top:10px; }
 
-.left-panel-text-wrappers {	height:30px; width:inherit;	margin-top:0px;	font-size:18px;	font-weight:600; }
+.left-panel-text-wrap {	height:30px; width:inherit;	margin-top:0px;	font-size:18px;	font-weight:600; }
 
 #buy-container ::-webkit-scrollbar { width:15px; }
 
@@ -258,7 +258,7 @@ ol { text-align:left; }
 
 .books-data { height:170px;	margin:30px 10px; font-family:Ubuntu; border:1px solid lightgray; }
 
-.books-data:hover {	cursor:pointer;	border-color:orange;blue; }
+.books-data:hover {	cursor:pointer;	border-color:orange; }
 
 .books-data:visited { cursor:pointer; background-color:#ffff66; }
 
@@ -280,6 +280,13 @@ div[class$="-buy-wrapper"] { position:relative;	}
 
 .ruppee-img { height:18px; width:16px; margin:0px 1px 0px 2px; }
 
+.seller-data { width:550px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
+
+div[class$="-seller-wrap"] { position:relative; height:50px; width:400px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:silver; font-size:20px; }
+
+span[id$="-seller-icon"] { font-size: 25px; }
+
+#seller-details-head { text-align: center; font-family:Ubuntu; font-size: 18px; }
 
 /*********************  CONTACT US  ***********************/
 

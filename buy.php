@@ -21,10 +21,7 @@ function curPageURL() {
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<script src="Scripts/jquery.js"></script>
 	<script src="Scripts/jquery-ui.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
-	<script type="text/javascript" src="Scripts/buypage_new.js"></script>
-	<script type="text/javascript" src="Scripts/scroll.js"></script>
 	<script type="text/javascript" src="Scripts/bpopup-min.js"></script>
 	<script>
 		$(function(){
@@ -53,7 +50,7 @@ function curPageURL() {
 						<button class="ion-android-arrow-forward search-filters-btn" id="search-filters-college-btn"></button>
 					</div>
 					<div class="sub-select" id="left-panel-sub-select">
-						<div class="left-panel-text-wrappers" id="sub-text-wrapper">
+						<div class="left-panel-text-wrap" id="sub-text-wrapper">
 							Category:
 						</div>
 						<div id="sub-scroll-bar">
@@ -128,7 +125,7 @@ function curPageURL() {
 						</div>
 					</div>
 				<!--<div class="sub-select">-->
-					<div class="left-panel-text-wrappers" id="book-for-text-wrapper">
+					<div class="left-panel-text-wrap" id="book-for-text-wrapper">
 						Available For:
 					</div>
 					<input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All
@@ -141,7 +138,7 @@ function curPageURL() {
 					<br>
 				<!--</div>-->
 					<div id="left-panel-price-range">
-						<div class="left-panel-text-wrappers" id="price-range-text-wrapper">
+						<div class="left-panel-text-wrap" id="price-range-text-wrapper">
 							Price Range:
 						</div>
 						<input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">

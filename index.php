@@ -8,8 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="Scripts/jquery.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script src="Scripts/scroll.js" type="text/javascript"></script>
 	<!--<script src="Scripts/homepage.js" type="text/javascript"></script>-->
 	<!-- 
 	<script type="text/javascript" src="Scripts/jquery-1.2.6.min.js"></script>
