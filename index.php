@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="shortcut icon" href="favicon.ico">
-	<script src="Scripts/jquery.js"></script>
+	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<!--<script src="Scripts/homepage.js" type="text/javascript"></script>-->
 	<!-- 
 	<script type="text/javascript" src="Scripts/jquery-1.2.6.min.js"></script>
