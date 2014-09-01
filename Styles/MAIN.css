@@ -31,7 +31,7 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 #favicon:hover { cursor:pointer; }
 
-#header-list { list-style:none;	margin-left:200px; }
+#header-list { list-style:none;	margin-left:200px; min-width:850px; }
 
 .header-list-module { display:inline-block; }
 
@@ -216,7 +216,7 @@ ol { text-align:left; }
 
 #buy-search-filters { height:500px;	width:300px; text-align:left; padding-left:30px; }
 
-#search-filters-college-select { height:70px; width:inherit; }
+#search-filters-college-select { height:70px; width:inherit; margin-bottom: 40px; }
 
 #search-filters-college-search { top:0px; left:-10px; font-size:15px; }
 
@@ -236,7 +236,7 @@ ol { text-align:left; }
 
 #buy-container ::-webkit-scrollbar-corner { }
 
-#sub-scroll-bar { height:130px;	width:220px; overflow-y:scroll; overflow-x:hidden; margin-bottom:20px; }
+#sub-scroll-bar { height:130px;	width:220px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
 
 .sub-cbox {	font-size:16px; }
 
@@ -535,3 +535,6 @@ div[id^="error"] { height:30px;	width:470px; font-size:16px; font-weight:normal;
 /* states and images */
 .ui-icon { width: 16px;	height: 16px; }
 .ui-icon, .ui-widget-content .ui-icon {	background-image: url("Images/ui-icons_222222_256x240.png"); }
+
+/*  */
+.ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }

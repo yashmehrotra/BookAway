@@ -5,7 +5,14 @@
 	<title>Edit Details | Bookaway.in</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
 	<script type="text/javascript" src="Scripts/delpage.js"></script>
+	<script src="Scripts/google_analytics.js"></script>
+	<script src="Scripts/top-panel.js"></script>
 </head>
 <body>
 	<?php

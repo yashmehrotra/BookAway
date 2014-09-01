@@ -20,9 +20,15 @@ function curPageURL() {
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
-	<script src="Scripts/jquery-ui.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
 	<script type="text/javascript" src="Scripts/bpopup-min.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
+	<script src="Scripts/google_analytics.js"></script>
+	<script src="Scripts/top-panel.js"></script>
 	<script>
 		$(function(){
 			$('#buy').attr('id','focus');
