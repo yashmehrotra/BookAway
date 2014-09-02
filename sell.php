@@ -23,12 +23,16 @@
 	<div class="page-header" id="sell-main-head">
 		<h2 id="sell-books-text">Sell Books</h2>
 	</div>
+	<article class="instructions" id="sell-instructions">
+			<h2>Instructions:</h2>
+			<ol class="instructions-list">
+				<li class="instructions-list-item">Fill the form below.</li>
+				<li class="instructions-list-item">On successfull submission, a book id will be displayed which will be useful for you to later edit the details about the book you added.</li>
+				<li class="instructions-list-item"><u>Note:</U> Fields marked with * are compulsary.</li>
+			</ol>
+	</article>
 	<div class="main-containers container-style" id="sell-container">
-		<div id="step-1">
-			<h3 id="step-1-text">To add your book for sale/rent, Fill the form below with correct details:</h3>
-		</div>
 		<div id="sell-form">
-			<p id="compulsary-text"><strong><u>Note</u>:</strong> Fields Marked with * are compulsary.</p>
 			<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
 				<div class="pure-g">
 					<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_name"></div>

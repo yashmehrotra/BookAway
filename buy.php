@@ -42,18 +42,28 @@ function curPageURL() {
 	<div class="page-header">
 			<h2>Buy Books</h2>
 	</div>
+	<blockquote>
+		<article class="instructions" id="buy-instructions">
+			<h2>Instructions:</h2>
+			<ol class="instructions-list">
+				<li class="instructions-list-item">Search for the book you want to get.</li>
+				<li class="instructions-list-item">Click on a displayed result to view the seller contact details.</li>
+				<li class="instructions-list-item">Contact the seller.</li>
+			</ol>
+		</article>
+	</blockquote>
 	<div class="main-containers" id="buy-container">
 		<div class="left-panel" id="buy-left-panel">
 			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
 				<div>
 					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
-					<button class="ion-android-search search-filters-btn" id="left-panel-search-btn"></button>
+					<button class="ion-android-search search-filters-btn pointer-onhover" id="left-panel-search-btn"></button>
 				</div> 
 				<br>
 				<div class="search-filters" id="buy-search-filters">
 					<div id="search-filters-college-select">
 						<input type="text" class="left-panel-input" id="search-filters-college-search" placeholder="Select College">
-						<button class="ion-android-arrow-forward search-filters-btn" id="search-filters-college-btn"></button>
+						<button class="ion-android-arrow-forward search-filters-btn pointer-onhover" id="search-filters-college-btn"></button>
 					</div>
 					<div class="sub-select" id="left-panel-sub-select">
 						<div class="left-panel-text-wrap" id="sub-text-wrapper">
@@ -148,7 +158,7 @@ function curPageURL() {
 							Price Range:
 						</div>
 						<input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">
-						<button class="search-filters-btn" id="price-range">Go</button>
+						<button class="search-filters-btn pointer-onhover" id="price-range">Go</button>
 					</div>
 				</div>
 			</form>

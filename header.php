@@ -1,6 +1,6 @@
 <script type="text/javascript" src="Scripts/top-panel.js"></script>
 <script src="Scripts/scroll.js" type="text/javascript"></script>
-<img src="Styles/Images/favicon1.png" id="favicon" onclick="location.href='index.php'">
+<img src="Styles/Images/favicon1.png" class="pointer-onhover" id="favicon" onclick="location.href='index.php'">
 <div class="header-wrapper">
 	<div class="header">
 		<ul id="header-list">
