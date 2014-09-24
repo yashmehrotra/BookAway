@@ -1,0 +1,3 @@
+Options All -Indexes
+
+RewriteRule ^sell sell.php [nc]
