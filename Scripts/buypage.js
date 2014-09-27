@@ -54,7 +54,7 @@ function book_data_display () {
 		url: "sqldata.php", //Make sure URL Doesnt cause problem in future
 		data: { 'source': 'view' },
 		success: function (result) {
-			$('#loading-gif').hide();
+			$('#loading-gif').remove();
 			if(result) {
 				var counter = 0;
 				var json = JSON.parse(result);
@@ -406,7 +406,7 @@ function seller_data(book_id) {
 			url: "sqldata.php",
 			data: { 'source':'seller_data', 'book_id':book_id },
 			success: function (result_seller_data) {
-				$('#loading-gif').hide();
+				$('#loading-gif').remove();
 				if(result_seller_data) {
 					var ajax_seller_data = JSON.parse(result_seller_data);
 					console.log(ajax_seller_data);
