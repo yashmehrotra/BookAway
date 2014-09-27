@@ -400,11 +400,13 @@ function seller_data(book_id) {
 		console.log(id_clone);
 		book_onclick_id = book_onclick_id.split("book-data-").join("");
 		book_id = book_onclick_id;
+		$('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:150px; left:805px;">');	
 		$.ajax({
 			type: "POST",
 			url: "sqldata.php",
 			data: { 'source':'seller_data', 'book_id':book_id },
 			success: function (result_seller_data) {
+				$('#loading-gif').hide();
 				if(result_seller_data) {
 					var ajax_seller_data = JSON.parse(result_seller_data);
 					console.log(ajax_seller_data);
