@@ -91,10 +91,10 @@
 			</div>
 			<div class="links-list">
 				<div class="links-box">
-					<a href="index.php" class="links">Return to homepage</a>
+					<a href="index" class="links">Return to homepage</a>
 				</div>
 				<div class="links-box">
-					<a href="sell.php" class="links">Sell another Book</a>
+					<a href="sell" class="links">Sell another Book</a>
 				</div>
 			</div>
 		</div>

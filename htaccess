@@ -1,3 +1,31 @@
 Options All -Indexes
 
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+Options +FollowSymlinks
+
+#ErrorDocument 404 /error/index_404.php
+
+#RewriteEngine on
+#RewriteCond %{http_host} ^pixpa.com [nc]
+#RewriteRule ^(.*)$ http://www.pixpa.com/$1 [nc]
+
 RewriteRule ^sell sell.php [nc]
+RewriteRule ^buy buy.php [nc]
+RewriteRule ^about about.php [nc]
+RewriteRule ^edit del.php [nc]
+RewriteRule ^del del.php [nc]
+RewriteRule ^contact contact.php [nc]
+RewriteRule ^ index.php [nc]
+RewriteRule ^faqs faqs.php [nc]
+RewriteRule ^feedback feedback.php [nc]
+
