@@ -342,7 +342,7 @@ function filter() {
 				$(this).show();
 				var sell_price_filter = $(this).data('sell-price');
 				console.log(sell_price_filter);
-				if( sell_price_filter <= min_price || sell_price_filter >= max_price) {
+				if( sell_price_filter < min_price || sell_price_filter > max_price) {
 					$(this).hide();
 				}
 			}
