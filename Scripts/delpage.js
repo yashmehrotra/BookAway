@@ -58,6 +58,7 @@ function del_validate_form() {
 			edit_request();
 			var book_id = $('#bookid').val();
 			$('#book_id_hid').val(book_id);
+			$('#del-main-container').height(900);
 		}
 	});
 }
@@ -297,6 +298,7 @@ function confirm_delete() {
             		console.log("Edit successful");
             		// $('#edit-form').css('display','none');
             		$('#edit-form').hide();
+            		$('#del-main-container').height(300);
             		// $('#edit-success').css('display','block');
             		$('#edit-success').show();
             	}

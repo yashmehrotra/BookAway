@@ -4,10 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Edit Details | Bookaway.in</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-	<script type="text/javascript" src="Scripts/jquery.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script type="text/javascript" src="Scripts/scroll.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
 	<script type="text/javascript" src="Scripts/delpage.js"></script>
+	<script src="Scripts/google_analytics.js"></script>
+	<script src="Scripts/top-panel.js"></script>
 </head>
 <body>
 	<?php
@@ -36,7 +41,7 @@
 			<button id="delete-btn">Delete this book</button>
 			<div id="edit-head">
 					<div id="or"><h3 id="or-text">OR</h3></div>
-					<p id="edit-desc"> Edit the details you want and click on "Edit" btn when finished.</p>
+					<p id="edit-desc"> Edit the details you want and click on "Edit" buttonn when finished.</p>
 			</div>
 			<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
 				<div class="del-pure-g" id="del-pure-g-del">

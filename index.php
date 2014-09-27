@@ -7,62 +7,12 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="shortcut icon" href="favicon.ico">
-	<script src="Scripts/jquery.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script src="Scripts/scroll.js" type="text/javascript"></script>
-	<!--<script src="Scripts/homepage.js" type="text/javascript"></script>-->
-	<!-- 
-	<script type="text/javascript" src="Scripts/jquery-1.2.6.min.js"></script>
-	<script type="text/javascript" src="Scripts/jquery.easing-1.3.pack.js"></script>
-	<script type="text/javascript" src="Scripts/jquery-easing-compatibility.1.2.pack.js"></script>
-	<script type="text/javascript" src="Scripts/coda-slider.1.1.1.pack.js"></script>
-	 -->
+	<script src="Scripts/jquery-2.1.1.min.js"></script>
+	<script src="Scripts/google_analytics.js"></script>
+	<script src="Scripts/top-panel.js"></script>
+	<script type="text/javascript" src="Scripts/hide_overflow_ribbon.js"></script>
 	<script type="text/javascript">
-	
-		// var theInt = null;
-		// var $crosslink, $navthumb;
-		// var curclicked = 0;
-		
-		// theInterval = function(cur){
-		// 	clearInterval(theInt);
-			
-		// 	if( typeof cur != 'undefined' )
-		// 		curclicked = cur;
-			
-		// 	$crosslink.removeClass("active-thumb");
-		// 	$navthumb.eq(curclicked).parent().addClass("active-thumb");
-		// 		$(".stripNav ul li a").eq(curclicked).trigger('click');
-			
-		// 	theInt = setInterval(function(){
-		// 		$crosslink.removeClass("active-thumb");
-		// 		$navthumb.eq(curclicked).parent().addClass("active-thumb");
-		// 		$(".stripNav ul li a").eq(curclicked).trigger('click');
-		// 		curclicked++;
-		// 		if( 6 == curclicked )
-		// 			curclicked = 0;
-				
-		// 	}, 3000);
-		// };
-		
-		// $(function(){
-		// 	//$('#home').attr('id','focus');
-		// 	$("#main-photo-slider").codaSlider();
-			
-		// 	$navthumb = $(".nav-thumb");
-		// 	$crosslink = $(".cross-link");
-			
-		// 	$navthumb
-		// 	.click(function() {
-		// 		var $this = $(this);
-		// 		theInterval($this.parent().attr('href').slice(1) - 1);
-		// 		return false;
-		// 	});
-			
-		// 	theInterval();
-		// });
 
-	// var i = 2;
-	// pagination_array = $('.pagination');
 		$(function(){
 
 			$('#home').css({'border-bottom':'2px solid white', 'background-color':'gray'});
@@ -70,31 +20,6 @@
 			$('footer').css({'background-color':'transparent', 'position':'fixed', 'bottom':'0px'});
 			$('#copyright').css('background-color','rgb(40,40,40)');
 			$('#header-list').css('marginLeft','210px');
-
-			// function pagination_autonav(){
-
-			// 	$('.pagination').attr('fill','transparent');
-			// 	if( i > 4 )
-			// 	{
-			// 		i = 1;
-			// 	}
-			// 	$('body :nth-child('+ i +') > circle').attr('fill','black');
-			// 	i = i + 1;  
-			// }
-
-			// loop = setInterval(pagination_autonav,3000);
-
-			//  $('.pagination').on('click',function(){
-
-			//  	console.log($(this).index());
-			//   //var	copy = i;
-			//  	//clearInterval(loop);
-			//  	//console.log(copy,i);
-			//  	//setInterval( pagination_autonav, 2000);
-			//  	$('.pagination').attr('fill','transparent');
-			//  	$(this).attr('fill','black');
-			//  });
-
 		});
 
 	</script>

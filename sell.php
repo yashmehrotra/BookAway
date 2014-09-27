@@ -6,11 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<noscript><meta http-equiv="refresh" content="0; url=sell-nojs.php"></noscript>
-	<script type="text/javascript" src="Scripts/jquery.js"></script>
-	<script type="text/javascript" src="Scripts/jquery-ui.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
-	<script type="text/javascript" src="Scripts/scroll.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
 	<script type="text/javascript" src="Scripts/sellpage.js"></script>
+	<script src="Scripts/google_analytics.js"></script>
+	<script src="Scripts/top-panel.js"></script>
 </head>
 <body>
 	<?php
@@ -19,12 +23,16 @@
 	<div class="page-header" id="sell-main-head">
 		<h2 id="sell-books-text">Sell Books</h2>
 	</div>
+	<article class="instructions" id="sell-instructions">
+			<h2>Instructions:</h2>
+			<ol class="instructions-list">
+				<li class="instructions-list-item">Fill the form below.</li>
+				<li class="instructions-list-item">On successfull submission, a book id will be displayed which will be useful for you to later edit the details about the book you added.</li>
+				<li class="instructions-list-item"><u>Note:</U> Fields marked with * are compulsary.</li>
+			</ol>
+	</article>
 	<div class="main-containers container-style" id="sell-container">
-		<div id="step-1">
-			<h3 id="step-1-text">To add your book for sale/rent, Fill the form below with correct details:</h3>
-		</div>
 		<div id="sell-form">
-			<p id="compulsary-text"><strong><u>Note</u>:</strong> Fields Marked with * are compulsary.</p>
 			<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
 				<div class="pure-g">
 					<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"> <p style="color:red; margin:0px; padding:0px; width:10px; display:inline-block;">*</p>  <div id="error_name"></div>
@@ -76,16 +84,17 @@
 		</div>
 		<div id="entry">
 			<div id="success-submit-wrap">
+				<br>
 				<p id="successful-text">Form Successfully Submitted.<br>
 				Your book id is <span id="book_id_span" style="color: red;"></span> .<br>
 				Your response will be processed and implemented within a few hours.</p>
 			</div>
 			<div class="links-list">
 				<div class="links-box">
-					<a href="index.php" class="links">Return to homepage</a>
+					<a href="index" class="links">Return to homepage</a>
 				</div>
 				<div class="links-box">
-					<a href="sell.php" class="links">Sell another Book</a>
+					<a href="sell" class="links">Sell another Book</a>
 				</div>
 			</div>
 		</div>

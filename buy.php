@@ -19,13 +19,16 @@ function curPageURL() {
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
-	<script src="Scripts/jquery.js"></script>
-	<script src="Scripts/jquery-ui.js"></script>
-	<script type="text/javascript" src="Scripts/top-panel.js"></script>
+	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="Scripts/buypage.js"></script>
-	<script type="text/javascript" src="Scripts/buypage_new.js"></script>
-	<script type="text/javascript" src="Scripts/scroll.js"></script>
 	<script type="text/javascript" src="Scripts/bpopup-min.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
+	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
+	<script src="Scripts/google_analytics.js"></script>
+	<script src="Scripts/top-panel.js"></script>
 	<script>
 		$(function(){
 			$('#buy').attr('id','focus');
@@ -39,21 +42,31 @@ function curPageURL() {
 	<div class="page-header">
 			<h2>Buy Books</h2>
 	</div>
+	<blockquote>
+		<article class="instructions" id="buy-instructions">
+			<h2>Instructions:</h2>
+			<ol class="instructions-list">
+				<li class="instructions-list-item">Search for the book you want to get.</li>
+				<li class="instructions-list-item">Click on a displayed result to view the seller contact details.</li>
+				<li class="instructions-list-item">Contact the seller.</li>
+			</ol>
+		</article>
+	</blockquote>
 	<div class="main-containers" id="buy-container">
 		<div class="left-panel" id="buy-left-panel">
 			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
 				<div>
 					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
-					<button class="ion-android-search search-filters-btn" id="left-panel-search-btn"></button>
+					<button class="ion-android-search search-filters-btn pointer-onhover" id="left-panel-search-btn"></button>
 				</div> 
 				<br>
 				<div class="search-filters" id="buy-search-filters">
 					<div id="search-filters-college-select">
 						<input type="text" class="left-panel-input" id="search-filters-college-search" placeholder="Select College">
-						<button class="ion-android-arrow-forward search-filters-btn" id="search-filters-college-btn"></button>
+						<button class="ion-android-arrow-forward search-filters-btn pointer-onhover" id="search-filters-college-btn"></button>
 					</div>
 					<div class="sub-select" id="left-panel-sub-select">
-						<div class="left-panel-text-wrappers" id="sub-text-wrapper">
+						<div class="left-panel-text-wrap" id="sub-text-wrapper">
 							Category:
 						</div>
 						<div id="sub-scroll-bar">
@@ -128,22 +141,24 @@ function curPageURL() {
 						</div>
 					</div>
 				<!--<div class="sub-select">-->
-					<div class="left-panel-text-wrappers" id="book-for-text-wrapper">
+					<div class="left-panel-text-wrap" id="book-for-text-wrapper">
 						Available For:
 					</div>
-					<input type="radio" value="Both">Both buying and renting
+					<input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All
 					<br>
-					<input type="radio" value="Buying">Buy
+					<input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent
 					<br>
-					<input type="radio" value="Renting">Rent
+					<input type="radio" name="radio-name" class="radio-available-for" value="1">Buy
+					<br>
+					<input type="radio" name="radio-name" class="radio-available-for" value="2">Rent
 					<br>
 				<!--</div>-->
 					<div id="left-panel-price-range">
-						<div class="left-panel-text-wrappers" id="price-range-text-wrapper">
+						<div class="left-panel-text-wrap" id="price-range-text-wrapper">
 							Price Range:
 						</div>
 						<input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">
-						<button class="search-filters-btn" id="price-range">Go</button>
+						<button class="search-filters-btn pointer-onhover" id="price-range">Go</button>
 					</div>
 				</div>
 			</form>
