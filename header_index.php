@@ -1,6 +1,6 @@
 <script type="text/javascript" src="Scripts/top-panel.js"></script>
 <div class="header-wrapper-fixed" style="width:100%; height:65px;">
-	<img src="Styles/Images/favicon1.png" id="favicon" onclick="location.href='index'" style="z-index:100">
+	<img src="Styles/Images/favicon1.png" class="pointer-onhover" id="favicon" onclick="location.href='index'" style="z-index:100">
 	<div class="header">
 		<ul id="header-list" style="margin-top:11px;">
 			<li class="header-list-module"><a href="index" class="index-header-links" id="home">Home</a></li>

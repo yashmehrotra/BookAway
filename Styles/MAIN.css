@@ -1,9 +1,10 @@
 
+/*use font shorthand property wherever required */
 
 /******************************** GLOBALS ****************************/
 
 
-body { background-color:white; border:0; padding:0; margin:0 auto; overflow-x:hidden; }
+body { background-color:white; border:0; margin:0 auto; padding:0; overflow-x:hidden; }
 
 @font-face { font-family:Bitter-Regular; src:url('Fonts/Bitter-Regular.otf'); }
 
@@ -13,13 +14,13 @@ body { background-color:white; border:0; padding:0; margin:0 auto; overflow-x:hi
 
 a, a:visited { outline:0; }
 
-a#focus:link { border-bottom:2px solid white; background-color:#009fE7; }
-
-.container-style { border:2px solid lightgray; border-top:none;	border-bottom:none;  }
+a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.page-header { width:100%; height:130px;	margin:0 auto; text-align:center; background-color:#1884E9;#0078E7;	padding-top:5px; color:white; font-size:26px; font-family:Bitter-Regular; }
+.container-style { border:2px solid lightgray; border-bottom:none; border-top:none;	}
+
+.page-header { background-color:#1884E9; color:white; width:100%; height:130px;	margin:0 auto; text-align:center;	padding-top:5px; font-size:26px; font-family:Bitter-Regular; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -27,11 +28,9 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .header-wrapper-fixed {	z-index:50;	position:fixed; top:0px; left:0px; }
 
-.header { width:inherit; height:inherit; display:inline-block; text-transform:uppercase; background-color:#1884E9;#0078E7; font-family:Ubuntu; position:relative; top:0px; left:0px; border:1px outset transparent; }
+.header { width:inherit; height:inherit; display:inline-block; text-transform:uppercase; background-color:#1884E9; font-family:Ubuntu; position:relative; top:0px; left:0px; border:1px outset transparent; }
 
 #favicon { width:64px; height:64px;	position:absolute; top:0px;	left:15px; }
-
-/*#favicon:hover { cursor:pointer; }*/
 
 #header-list { list-style:none;	margin-left:200px; min-width:850px; }
 
@@ -66,11 +65,15 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 .index-header-links, .index-header-links:link { text-decoration:none; text-transform:uppercase; padding:8px 28px; font-size:24px; margin-right:15px; color:white;black; display:inline-block; font-weight: 450; }
 
-.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -moz-transition:background-color .5s ease-in; -o-transition:background-color .5s ease-in; -ms-transition:background-color .5s ease-in; background-color:gray;#C2C2FF; }
+.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -moz-transition:background-color .5s ease-in; -o-transition:background-color .5s ease-in; -ms-transition:background-color .5s ease-in; background-color:gray; }
 
 #back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #index-container { height:460px; width:1100px; padding:0; margin:100px auto 50px auto; }
+
+
+/********************  ABOUT.PHP   ************************/
+
 
 #about-us-container { height:320px;	width:1200px; margin:30px auto 250px; text-align:justify; background-color:white; }
 
@@ -80,17 +83,13 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 .developer-profile, .profile-onhover { height:300px; width:220px; border:1px ridge lightgray; margin:55px 0px 0px 100px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
 
-/*.developer-profile:hover { cursor:pointer; }*/
-
 .profile-onhover { -webkit-transition:background-color .4s linear, color .4s linear; -moz-transition:background-color .4s linear, color .4s linear; -o-transition:background-color .4s linear, color .4s linear; -ms-transition:background-color .4s linear, color .4s linear; }
 
-.profile-onhover:hover { border-color:transparent; background-color:rgb(220,220,220);silver;black;#AA3DA6;#3c948b;#00FA9A;#9ECE08;#3CD070;#9EFD38;#66FF00;#78e700;#e70078;#00e76f; }
+.profile-onhover:hover { border-color:transparent; background-color:rgb(220,220,220); }
 
 .developer-title { font-size:19px; font-style:italic; }
 
 .profile-links { height:43px; width:43px; float:left; margin:10px 5px 0px 7px; }
-
-/*.profile-links:hover { cursor:pointer; }*/
 
 .fb { background:url("Images/icon-logos.png") 0px 0px; }
 
@@ -104,7 +103,7 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1270px; height:690px; margin:0 auto 250px; padding:0; top:-50px; }
+#buy-container { width:1270px; height:690px; margin:0 auto 100px; padding:0; top:-50px; }
 
 #buy-left-panel { width:320px; height:690px; float:left; border:1px solid lightgray; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; left:0px; text-align:center; }
 
@@ -152,7 +151,7 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 #range-min, #range-max { width:90px; margin-right:3px; }
 
-#buy-content-container { height:500px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
+#buy-content-container { height:690px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
 
 #latest-text { font-size:26px; position:absolute; right:400px; top:40px; }
 
@@ -299,7 +298,7 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 
 div[id^="error"] { height:30px;	width:470px; font-size:16px; font-weight:normal; margin-bottom:10px; color:red;	border-radius:0px 10px 0px 10px; padding-left:5px; display:none; font-family:Ubuntu; }
 
-#new-btn { width:39%; height:8%; color:white; border:1px transparent; border-radius:15px; background:#403C94;#3c948b;#0078E7; font-size:105%; margin-right:auto; position:absolute;	bottom:40px; left:80px; font-family:Ubuntu; }
+#new-btn { width:39%; height:8%; color:white; border:1px transparent; border-radius:15px; background:#403C94; font-size:105%; margin-right:auto; position:absolute;	bottom:40px; left:80px; font-family:Ubuntu; }
 
 #new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear;	-moz-transition:opacity .5s linear;	-o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 

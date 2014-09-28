@@ -164,7 +164,7 @@ function curPageURL() {
 			</form>
 		</div>
 		<div id="buy-content-container">
-			<button id="load-more-btn">Load more</button>
+			<!-- <button id="load-more-btn">Load more</button> -->
 		</div>
 	</div>
 	<?php
