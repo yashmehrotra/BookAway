@@ -70,74 +70,9 @@ function curPageURL() {
 							Category:
 						</div>
 						<div id="sub-scroll-bar">
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="All">All
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Computers">Computers
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Electronics">Electronics
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Maths">Maths
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Fiction">Fiction
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Non-Fiction">Non-Fiction
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Physics">Physics
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Magazines">Magazines
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Biographies">Biographies
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Health">Health
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Travel">Travel
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Medical">Medical
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Law">Law
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Music">Music
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Business">Business
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Religion">Religion &amp; Spiritual
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Miscellaneous">Miscellaneous
-								<br>
-							</div>
+							<?php 
+								require_once("categories.php"); 
+							?>
 						</div>
 					</div>
 				<!--<div class="sub-select">-->

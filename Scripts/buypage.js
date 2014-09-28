@@ -48,7 +48,7 @@ function book_data_display () {
     url: "sqldata.php",
     data: { 'source': 'view' },
     success: function (result) {
-      $('#loading-gif').hide();
+      $('#loading-gif').remove();
       if(result) {
         var counter = 0;
         var json = JSON.parse(result);
@@ -277,6 +277,7 @@ function filter() {
   console.log('yash');
   //Search First
 
+  // Name Based Search
   $('#left-panel-search-btn').click(function(e) {
     e.preventDefault();
     console.log('search');
@@ -287,6 +288,7 @@ function filter() {
     load_specific(search_value,search_category);
   });
 
+  // College Based Search
   $('#search-filters-college-btn').on('click',function(e) {
 
     e.preventDefault();
@@ -310,6 +312,7 @@ function filter() {
     );
   });
 
+  // Radio Based Search Available For
   $('.radio-available-for').on('click',function(e) {
     // e.preventDefault();
     var radio_value = $('.radio-available-for:checked').val();
@@ -328,6 +331,7 @@ function filter() {
 
   });
 
+  // Buy Price Range Filter
   $('#price-range').on('click',function(e) {
     e.preventDefault();
     var min_price = $('#range-min').val();
@@ -335,6 +339,11 @@ function filter() {
     $('#buy-container > #buy-content-container >.books-data').each(
       function(index) {
         $(this).show();
+        //TEst yash
+        var temp_id = $(this).attr('id');
+        index_current = convert_id_to_Ultimate_index(temp_id);
+        console.log(Ultimate_data[index_current]['book_name'],Ultimate_data[index_current]['author_name']);
+        // Test Yash Over
         var sell_price_filter = $(this).data('sell-price');
         console.log(sell_price_filter);
         if( sell_price_filter < min_price || sell_price_filter > max_price) {
@@ -342,6 +351,14 @@ function filter() {
         }
       }
     );
+  });
+
+  $('.sub-cbox-input').on('click',function(e) {
+    var checkbox_value = $(this).val();
+    if(checkbox_value == "All") {
+      //Add uncheck code --- to do Avijit
+    }
+
   });
 }
 
@@ -401,7 +418,7 @@ function seller_data(book_id) {
       url: "sqldata.php",
       data: { 'source':'seller_data', 'book_id':book_id },
       success: function (result_seller_data) {
-        $('#loading-gif').hide();
+        $('#loading-gif').remove();
         if(result_seller_data) {
           var ajax_seller_data = JSON.parse(result_seller_data);
           console.log(ajax_seller_data);
@@ -415,4 +432,10 @@ function seller_data(book_id) {
       }
     });
   });
+}
+
+function convert_id_to_Ultimate_index (html_id) {
+  var converted_book_id = html_id.split('book-data-').join('');
+  var index_id_book = $.inArray(converted_book_id,bookid_array)
+  return index_id_book;
 }
