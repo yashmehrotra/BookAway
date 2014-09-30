@@ -86,18 +86,28 @@ function book_data_display () {
             'college_name':json[counter].college,
           });
 
-          //To add different inputs
-          if( $.inArray(json[counter].book_name,search_books) == -1 ) {
-            search_books.push(json[counter].book_name);
+          String.prototype.toProperCase = function () {
+            return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+          };
+          
+          // Conversion to title case
+          book_name_title_case = json[counter].book_name.toProperCase();
+          author_name_title_case = json[counter].author_name.toProperCase();
+
+          console.log(book_name_title_case,author_name_title_case);
+
+          // To add different inputs
+          if( $.inArray(book_name_title_case,search_books) == -1 ) {
+            search_books.push(book_name_title_case);
             search_data.push(
-              { label: json[counter].book_name, category: "Books" }
+              { label: book_name_title_case, category: "Books" }
             )
           }
 
-          if( $.inArray(json[counter].author_name,search_authors) == -1 ) {
-            search_authors.push(json[counter].author_name);
+          if( $.inArray(author_name_title_case,search_authors) == -1 ) {
+            search_authors.push(author_name_title_case);
             search_data.push(
-              { label: json[counter].author_name, category: "Author" }
+              { label: author_name_title_case, category: "Author" }
             )
           }
       

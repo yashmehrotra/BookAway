@@ -278,7 +278,9 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 
 #help {	height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:-35px; top:150px; }
 
-#help-popup { height:40px; width:380px;	box-shadow:1px 1px 1px black; border:1px solid;	position:absolute; left:-100px;	top:90px; font-size:15px; padding:5px;	background-color:white;	line-height:150%; display:none; }
+#help-popup { height:44px; width:380px;	box-shadow:1px 1px 1px black; border:1px solid transparent;	position:absolute; left:-177px;	top:90px; font-family:Ubuntu; font-size:15px; padding:5px; background-color: black;white; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
+
+#help-popup:after { content: ""; position: absolute; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: black transparent transparent transparent; top: 55px; left: 144px; }
 
 #book-desc { height:80px; resize:none; }
 
