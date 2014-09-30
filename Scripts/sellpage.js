@@ -1,4 +1,4 @@
-
+// Global variables
 var prev_error_count = 0; 
 college_list         = [];
 
@@ -47,7 +47,7 @@ function sell_validate_form(){
 		var phone_error = false;
 		var before_pass = 0;
 
-		$('.pure-g').find('div').css("display","none");
+		$('.pure-g').find('div').hide();
 
 		if( $('#name').val() == "" || $('#name').val().length < 2) {
 			
@@ -181,33 +181,33 @@ function sell_validate_form(){
 				"bottom" : submit_new_bottom
 			});
 	
-			prev_error_count = error_count;
+			prev_error_count = error_count;	
 
 			if(before_pass == 0) {
 			
 				$('#help-popup').css("top","176px") ;
-				$('#show-password').css("top","240px") ;
+				$('#show-password').css("top","155px") ;
 				$('#help').css("top","240px") ;
 			}
 
 			if(before_pass == 1) {
 				
 				$('#help-popup').css("top","219px") ;
-				$('#show-password').css("top","283px") ;
+				$('#show-password').css("top","195px") ;
 				$('#help').css("top","283px") ;
 			}
 
 			if(before_pass == 2) {
 				
-				$('#help-popup').css("top","255px") ;
-				$('#show-password').css("top","320px") ;
+				$('#help-popup').css("top","262px") ;
+				$('#show-password').css("top","235px") ;
 				$('#help').css("top","320px") ;
 			}
 
 			if(before_pass == 3) {
 
-				$('#help-popup').css("top","303px") ;
-				$('#show-password').css("top","363px") ;
+				$('#help-popup').css("top","305px") ;
+				$('#show-password').css("top","275px") ;
 				$('#help').css("top","363px") ;
 			}	
 		} else {
@@ -217,14 +217,15 @@ function sell_validate_form(){
 	            type: 'POST',
 	            data: $(this).serialize(),
 	            success: function(result_addbook) {
-	            	$('#loading-gif').hide();
+	            	$('#loading-gif').remove();
 	            	var response = JSON.parse(result_addbook);
 	            	console.log(response.status);
 	            	if(response.status == "success") {
 	            		console.log("Book addition successful");
-	            		$('#sell-form').css('display','none');
-	            		$('#step-1').css('display','none');
-	            		$('#entry').css('display','block');
+
+	            		$('#sell-form').hide();
+	            		$('#step-1').hide();
+	            		$('#entry').show();
 	            		$('#sell-container').css({
 	            			'height':'450px',
 	            			'width':'800px'
