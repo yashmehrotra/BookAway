@@ -141,6 +141,7 @@
 			$response[$i]['book_id']          = $row['id'];
 			$response[$i]['book_name']        = $row['book'];
 			$response[$i]['author_name']      = $row['author'];
+			$response[$i]['category']         = $row['category'];
 			$response[$i]['sell_rent']        = $row['sell_rent'];
 			$response[$i]['sell_price']       = $row['sell_price'];
 			$response[$i]['rent_price']       = $row['rent_price'];

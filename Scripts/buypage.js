@@ -2,6 +2,12 @@
 
 //CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
 
+// Important Filter Logic , when any filter is clicked all the filters should be checked in an order of precedence which is pretty
+// messed up right now. Use data attributes like shown by and hidden by and then use Ultimate Data.
+
+// " A GENIUS NEEDS AN AUDIENCE. "
+//                          - Yash Mehrotra
+
 var total_results = 0;
 var RESULTS_SHOWN = 12;
  $(document).ready(function() {
@@ -20,7 +26,9 @@ function showthis(bookid) {
 }
 
 Ultimate_data       = [];
+
 search_data         = [];
+
 booklist_array      = [];
 authorlist_array    = [];
 sellername_array    = [];
@@ -34,6 +42,7 @@ renttime_array      = [];
 description_array   = [];
 image_source_array  = [];
 college_name_array  = [];
+category_array      = [];
 
 college_list        = [];
 
@@ -58,6 +67,7 @@ function book_data_display () {
           
           booklist_array.push(json[counter].book_name);
           authorlist_array.push(json[counter].author_name);
+          category_array.push(json[counter].category);
           sellername_array.push(json[counter].seller_name);
           sellerphone_array.push(json[counter].seller_phone);
           selleremail_array.push(json[counter].seller_email);
@@ -74,6 +84,7 @@ function book_data_display () {
             'book_id':json[counter].book_id,
             'book_name':json[counter].book_name,
             'author_name':json[counter].author_name,
+            'category':json[counter].category,
             'seller_name':json[counter].seller_name,
             'seller_phone':json[counter].seller_phone,
             'seller_email':json[counter].seller_email,
@@ -364,9 +375,43 @@ function filter() {
   });
 
   $('.sub-cbox-input').on('click',function(e) {
+    
     var checkbox_value = $(this).val();
+    var checkbox_array = [];
+
     if(checkbox_value == "All") {
       //Add uncheck code --- to do Avijit
+      //Woo Yash did that , cause avijit is a lazy bum , lazy , lazy bum.
+
+      $('.sub-cbox-input').each(function(index){
+        $(this).prop('checked',false);
+      });
+
+      $(this).prop('checked',true);
+
+      $('.books-data').each(
+        function(index) {
+          $(this).show();
+      });
+
+    } else {
+      
+      $('.sub-cbox-input').each(function(index){
+        if($(this).val() == "All") {
+          $(this).prop('checked',false);
+        } else {
+          checkbox_array.push($(this).val());
+        } 
+      });
+
+      $('.books-data').each(
+        function(index) {
+          $(this).hide();
+          var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
+          if( $.inArray(Ultimate_data[index_book]['category'],checkbox_array) !== -1 ) {
+            $(this).show();
+          }
+      });
     }
 
   });
@@ -415,14 +460,20 @@ function load_specific(search_value, search_category) {
 }
 
 function seller_data(book_id) {
+  
   $('.books-data').on('click', function(){
+    
     console.log("Hello");
+    
     var book_onclick_id = $(this).attr('id');
     var id_clone = '#'+book_onclick_id;
+    
     console.log(id_clone);
     book_onclick_id = book_onclick_id.split("book-data-").join("");
     book_id = book_onclick_id;
+    
     $('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:150px; left:805px;">'); 
+    
     $.ajax({
       type: "POST",
       url: "sqldata.php",
@@ -441,11 +492,14 @@ function seller_data(book_id) {
         }       
       }
     });
+
   });
 }
 
 function convert_id_to_Ultimate_index (html_id) {
+  
   var converted_book_id = html_id.split('book-data-').join('');
   var index_id_book = $.inArray(converted_book_id,bookid_array)
+  
   return index_id_book;
 }

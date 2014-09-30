@@ -16,7 +16,7 @@
 	
 	$sell_fixed = "<option value=''>Select your category</option>";
 
-	$buy_fixed = '<div class="sub-cbox"><input type="checkbox" class="sub-cbox-input" value="All">All<br></div>';
+	$buy_fixed = '<div class="sub-cbox"><input type="checkbox" class="sub-cbox-input" value="All" checked>All<br></div>';
 
 	$query = "SELECT * FROM tbl_categories";
 	$category_data = mysqli_query($database_connection,$query);
