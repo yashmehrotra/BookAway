@@ -266,7 +266,7 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 
 #sell-instructions { height:170px; }
 
-#sell-form { width:860px; height:940px;	position:absolute; top:20px; left:175px; text-align:left; line-height:180%;	font-size:130%; }
+#sell-form-wrap { width:860px; height:940px;	position:absolute; top:20px; left:175px; text-align:left; line-height:180%;	font-size:130%; }
 
 .sell-input { height:37px; width:470px; font-size:80%; line-height:100%; box-shadow:0px 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0px 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; font-family:Proxima-Nova; }
 
@@ -288,15 +288,15 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 
 #r-cost { width:310px; }
 
-#select-subject { width:140px; border-style:outset;	color:black; }
+#select-subject { width:150px; border-style:outset;	color:black; }
 
-#subject { width:320px; }
+#subject { width:310px; }
 
 #rent-price { width:150px; }
 
-#book-for {	width:160px; border-style:outset; color:black; }
+#book-for {	width:150px; border-style:outset; color:black; }
 
-#sell-rent { width:300px; }
+#sell-rent { width:310px; }
 
 div[id^="error"] { height:30px;	width:470px; font-size:16px; font-weight:normal; margin-bottom:10px; color:red;	border-radius:0px 10px 0px 10px; padding-left:5px; display:none; font-family:Ubuntu; }
 

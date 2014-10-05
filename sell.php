@@ -26,14 +26,17 @@
 	<article class="instructions" id="sell-instructions">
 			<h2>Instructions:</h2>
 			<ol class="instructions-list">
-				<li class="instructions-list-item">Fill the form below.</li>
+				<li class="instructions-list-item">The form given below is divided into 2 steps:<br>
+					a) Personal info - name, email, phone no, password, college name (cannot be edited later).<br>
+					b) Book info - book name, author, sell/rent price (can be edited later through edit option) 
+				</li>
 				<li class="instructions-list-item">On successfull submission, a book id will be displayed which will be useful for you to later edit the details about the book you added.</li>
 				<li class="instructions-list-item"><u>Note:</U> Fields marked with * are compulsary.</li>
 			</ol>
 	</article>
 	<div class="main-containers container-style" id="sell-container">
-		<div id="sell-form">
-			<form name="myform" class="pure-form pure-form-stacked" id="myform" novalidate>
+		<div id="sell-form-wrap">
+			<form class="pure-form pure-form-stacked" id="sell-form" novalidate>
 				<div class="pure-g">
 					<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_name"></div>
 					<br>

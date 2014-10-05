@@ -37,7 +37,7 @@ $.ajax({
 
 function sell_validate_form(){
 
-	$('#myform').submit(function(event){
+	$('#sell-form').submit(function(event){
 		var sell_height = $('#sell-container').css('height');
 		var submit_bottom = $('#new-btn').css('bottom');
 		var flag = false;
@@ -223,7 +223,7 @@ function sell_validate_form(){
 	            	if(response.status == "success") {
 	            		console.log("Book addition successful");
 
-	            		$('#sell-form').hide();
+	            		$('#sell-form-wrap').hide();
 	            		$('#step-1').hide();
 	            		$('#entry').show();
 	            		$('#sell-container').css({
@@ -255,8 +255,9 @@ function show_password() {
 }	 
 
 function help_popup() {
-	$('#help').on('mouseenter mouseleave', function () {
-		$('#help-popup').fadeToggle('300');
+
+	$('#help').on('mouseover mouseleave', function () {
+		$('#help-popup').fadeToggle('500');
 	});
 }
 
