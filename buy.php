@@ -79,13 +79,13 @@ function curPageURL() {
 					<div class="left-panel-text-wrap" id="book-for-text-wrapper">
 						Available For:
 					</div>
-					<input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All</label>
 					<br>
-					<input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent</label>
 					<br>
-					<input type="radio" name="radio-name" class="radio-available-for" value="1">Buy
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="1">Buy</label>
 					<br>
-					<input type="radio" name="radio-name" class="radio-available-for" value="2">Rent
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="2">Rent</label>
 					<br>
 				<!--</div>-->
 					<div id="left-panel-price-range">
@@ -99,7 +99,7 @@ function curPageURL() {
 			</form>
 		</div>
 		<div id="buy-content-container">
-			<!-- <button id="load-more-btn">Load more</button> -->
+			<!-- Books content appended here -->
 		</div>
 	</div>
 	<?php
