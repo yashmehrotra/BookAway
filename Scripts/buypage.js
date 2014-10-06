@@ -295,12 +295,13 @@ function books_data() {
 
 function filter() {
 
-  console.log('yash');
   //Search First
 
   // Name Based Search
   $('#left-panel-search-btn').click(function(e) {
+
     e.preventDefault();
+    $(document).scrollTop(150);
     console.log('search');
     var search_value = $("#left-panel-search-bar").val();
     var search_category = $("#category-search").val();
@@ -313,6 +314,7 @@ function filter() {
   $('#search-filters-college-btn').on('click',function(e) {
 
     e.preventDefault();
+    $(document).scrollTop(150);
     var user_college_name = $('#search-filters-college-search').val();
     var current_college_name = "";
     $('#buy-container > #buy-content-container >.books-data').each(
@@ -335,7 +337,9 @@ function filter() {
 
   // Radio Based Search Available For
   $('.radio-available-for').on('click',function(e) {
+
     // e.preventDefault();
+    $(document).scrollTop(150);
     var radio_value = $('.radio-available-for:checked').val();
     console.log(radio_value);
     $('#buy-container > #buy-content-container >.books-data').each(
@@ -354,7 +358,9 @@ function filter() {
 
   // Buy Price Range Filter
   $('#price-range').on('click',function(e) {
+
     e.preventDefault();
+    $(document).scrollTop(150);
     var min_price = $('#range-min').val();
     var max_price = $('#range-max').val();
     $('#buy-container > #buy-content-container >.books-data').each(
@@ -375,7 +381,9 @@ function filter() {
   });
 
   $('.sub-cbox-input').on('click',function(e) {
-    
+
+    $(document).scrollTop(150);
+
     var checkbox_value = $(this).val();
     var checkbox_array = [];
 

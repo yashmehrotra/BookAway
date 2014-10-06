@@ -43,13 +43,13 @@ a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.container-style { border:2px solid lightgray; border-bottom:none; border-top:none;	}
+.container-style { border:2px solid #d3d3d3; border-bottom:none; border-top:none;	}
 
 .page-header { background-color:#1884E9; color:white; width:100%; height:130px;	margin:0 auto; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
-.instructions { height:150px; width:900px; border-left:7px solid rgb(240,240,240); margin:50px auto 0px; padding-left:40px; font-family: Ubuntu; background-color:rgb(250,250,250); }
+.instructions { height:150px; width:900px; border-left:7px solid #F0F0F0; margin:50px auto 0px; padding-left:40px; font-family: Ubuntu; background-color:#FAFAFA; }
 
 .instructions-list-item { font-size:16px; margin:10px 0px; }
 
@@ -59,21 +59,21 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 /********************  HEADER   ************************/
 
 
+#favicon { width:64px; height:64px;	position:absolute; top:0px;	left:15px; }
+
 .header-wrapper { width:99.92%; height:65px; position:absolute; top:100px; }
 
 .header-wrapper-fixed {	z-index:50;	position:fixed; top:0px; left:0px; }
 
 .header { width:inherit; height:inherit; display:inline-block; text-transform:uppercase; background-color:#1884E9; font-family: Ubuntu; position:relative; top:0px; left:0px; border:1px outset transparent; }
 
-#favicon { width:64px; height:64px;	position:absolute; top:0px;	left:15px; }
+.header ul { list-style:none;	margin-left:200px; min-width:850px; }
 
-#header-list { list-style:none;	margin-left:200px; min-width:850px; }
+.header ul li { display:inline-block; }
 
-.header-list-module { display:inline-block; }
+.header ul li a { text-decoration:none; text-transform:uppercase; padding:5px 28px; font-size:22px; margin-right:15px; color:white; display:inline-block; border-radius: 8px; }
 
-.header-links, .header-links:link { text-decoration:none; text-transform:uppercase; padding:5px 28px; font-size:22px; margin-right:15px; color:white; display:inline-block; }
-
-.header-links:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
+.header ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
 
 /********************  FOOTER   ************************/
@@ -81,17 +81,17 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-align:center;	background-color:#0078E7; color:white; font-size:14px; }
 
-#footer-list-wrapper { height:20px; width:inherit; padding-top:1px;	margin-top:20px; }
+footer div { height:20px; width:inherit; padding-top:1px;	margin-top:20px; }
 
-#footer-list { list-style:none; }
+footer div ul { list-style:none; }
 
-.footer-list-module { display:inline-block; }
+footer div ul li { display:inline-block; }
 
-.footer-links {	text-decoration:none; padding:0px 50px;	margin:0px 20px; font:20px Proxima-Nova; color:white; } 
+footer div ul li a {	text-decoration:none; padding:0px 50px;	margin:0px 20px; font:20px Proxima-Nova; color:white; } 
 
-.footer-links:hover { text-decoration:underline; }
+footer div ul li a:hover { text-decoration:underline; }
 
-#copyright { margin-top:25px; height:30px; width:inherit; background-color:white; color:#0078E7; padding-top:10px; box-shadow:4px 0px 4px black; }
+footer #copyright { margin-top:25px; height:30px; width:inherit; background-color:white; color:#0078E7; padding-top:10px; box-shadow:4px 0px 4px black; }
 
 
 /********************  INDEX.PHP   ************************/
@@ -115,11 +115,11 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 .profile-image:hover { cursor:default; }
 
-.developer-profile, .profile-onhover { height:300px; width:220px; border:1px ridge lightgray; margin:55px 0px 0px 100px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
+.developer-profile, .profile-onhover { height:300px; width:220px; border:1px ridge #d3d3d3; margin:55px 0px 0px 100px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
 
 .profile-onhover { -webkit-transition:background-color .4s linear, color .4s linear; -moz-transition:background-color .4s linear, color .4s linear; -o-transition:background-color .4s linear, color .4s linear; -ms-transition:background-color .4s linear, color .4s linear; }
 
-.profile-onhover:hover { border-color:transparent; background-color:rgb(220,220,220); }
+.profile-onhover:hover { border-color:transparent; background-color:#DCDCDC; }
 
 .developer-title { font: italic 19px serif; }
 
@@ -139,7 +139,7 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 #buy-container { width:1270px; height:690px; margin:0 auto 100px; padding:0; top:-50px; }
 
-#buy-left-panel { width:320px; height:800px; float:left; border:1px solid lightgray; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; left:0px; text-align:center; }
+#buy-left-panel { width:320px; height:800px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; left:0px; text-align:center; }
 
 #left-panel-search-form { font-family:Ubuntu; margin:8% auto 0px; }
 
@@ -147,7 +147,7 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 #left-panel-search-bar { top:0px; left:-25px; }
 
-.search-filters-btn { height:30px; width:50px; background-color:rgb(204, 204, 204); font:16px Ubuntu; border:5px outset transparent; position:relative;absolute; top:3px; }
+.search-filters-btn { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative;absolute; top:3px; }
 
 .search-filters-btn:hover { background-color:black; color:white; }
 
@@ -169,7 +169,7 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 #buy-container ::-webkit-scrollbar-track { background-color:white; }
 
-#buy-container ::-webkit-scrollbar-thumb { background-color:rgb(199, 195, 195);rgb(162, 158, 158); border:1px solid transparent; border-radius:10px; }
+#buy-container ::-webkit-scrollbar-thumb { background-color:#C7C3C3; border:1px solid transparent; border-radius:10px; }
 
 #buy-container ::-webkit-scrollbar-button { border:1px solid transparent; border-radius:10px; background-color:gray; }
 
@@ -191,7 +191,7 @@ footer { width:100%; height:100px; margin-bottom:0px; position:relative; text-al
 
 #latest-text { font-size:26px; position:absolute; right:400px; top:40px; }
 
-.books-data { height:170px;	margin:30px 10px; font-family:Ubuntu; border:1px solid lightgray; }
+.books-data { height:170px;	margin:30px 10px; font-family:Ubuntu; border:1px solid #d3d3d3; }
 
 .books-data:hover {	cursor:pointer;	border-color:orange; }
 
@@ -217,9 +217,9 @@ div[class$="-buy-wrapper"] { position:relative;	}
 
 .seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
 
-div[class$="-seller-wrap"] { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:rgb(230,230,230); font-size:20px; }
+div[class$="-seller-wrap"] { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
 
-div[class$="-seller-wrap"]:hover { background-color: lightgray;silver; }
+div[class$="-seller-wrap"]:hover { background-color: #d3d3d3;silver; }
 
 span[id$="-seller-icon"] { font-size: 25px; }
 

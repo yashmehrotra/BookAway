@@ -1,10 +1,10 @@
  <!-- <div class="bottom-panel"> -->
  <footer>
- 	<div id="footer-list-wrapper">
-	    <ul id="footer-list">
-		    <li class="footer-list-module"><a href="about" class="footer-links">About Us</a></li>
+ 	<div>
+	    <ul>
+		    <li><a href="about">About Us</a></li>
 		       &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-		    <li class="footer-list-module"><a href="contact" class="footer-links">Contact Us</a></li>
+		    <li><a href="contact">Contact Us</a></li>
 	    </ul>
 	</div>
     <div id="copyright">
