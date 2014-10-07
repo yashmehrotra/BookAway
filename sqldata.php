@@ -104,6 +104,12 @@
 		$new_rentprice  = $_POST['rentprice'];
 		$new_renttime   = $_POST['rentpricetime'];
 
+		if($new_sellrent == 1) {
+			$new_rentprice = "";
+		} else if ($new_sellrent == 2) {
+			$new_sellprice = "";
+		}
+
 		$query = "UPDATE tbl_books SET category = '$new_subject', book = '$new_book', author = '$new_author', sell_rent = '$new_sellrent', sell_price = '$new_sellprice', rent_price = '$new_rentprice', rent_time = '$new_renttime' WHERE id = '$book_id'";
 		mysqli_query($database_connection,$query);
 		mysqli_close($database_connection);

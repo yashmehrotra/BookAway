@@ -11,6 +11,7 @@
 	$current_url = $_SERVER["REQUEST_URI"];
 	$sell_url = "sell";
 	$buy_url = "buy";
+	$edit_url = "del";
 	
 	$sql_result = "";
 	
@@ -21,7 +22,7 @@
 	$query = "SELECT * FROM tbl_categories";
 	$category_data = mysqli_query($database_connection,$query);
 
-	if (strstr($current_url,$sell_url)) {
+	if (strstr($current_url,$sell_url) || strstr($current_url,$edit_url)) {
 		echo $sell_fixed;
 		while($row = mysqli_fetch_array($category_data)) {
 			$sql_result = $row['category'];
