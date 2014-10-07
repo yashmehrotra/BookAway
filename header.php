@@ -1,5 +1,6 @@
 <script type="text/javascript" src="Scripts/top-panel.js"></script>
 <script src="Scripts/scroll.js" type="text/javascript"></script>
+<noscript><meta http-equiv="refresh" content="0; url=nojs"></noscript>
 <a href="index"><img src="Styles/Images/favicon1.png" class="pointer-onhover" id="favicon"></a>
 <div class="header-wrapper">
 	<div class="header">
@@ -14,5 +15,5 @@
 	</div>
 </div>
 <div class="ribbon right green">
-  <a href="https://github.com/yashmehrotra/Books-for-bucks">Fork us on GitHub</a>
+  <a href="https://github.com/yashmehrotra/Bookaway">Fork us on GitHub</a>
 </div>

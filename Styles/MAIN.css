@@ -43,8 +43,6 @@ a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.container-style { border:2px solid #d3d3d3; border-bottom:none; border-top:none;	}
-
 .page-header { background-color:#1884E9; color:white; width:100%; height:130px;	margin:0 auto; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
 
 .pointer-onhover:hover { cursor:pointer; }
@@ -54,6 +52,10 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 .instructions-list-item { font-size:16px; margin:10px 0px; }
 
 .main-containers { position:relative; }
+
+.container-style { border:2px solid #d3d3d3; border-bottom:none; border-top:none;	}
+
+ul { list-style-type: none; }
 
 
 /********************  HEADER   ************************/
@@ -103,7 +105,7 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 #back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
-#index-container { height:460px; width:1100px; padding:0; margin:100px auto 50px auto; }
+#index-container { height:460px; width:1100px; padding:0; margin:110px auto 50px auto; }
 
 
 /********************  ABOUT.PHP   ************************/
@@ -225,7 +227,7 @@ span[id$="-seller-icon"] { font-size: 25px; }
 
 #seller-details-head { text-align: center; font: 20px Ubuntu; }
 
-/*********************  CONTACT US  ***********************/
+/*********************  CONTACT.PHP  ***********************/
 
 
 #contact-us-container {	height:500px; width:1000px;	margin:70px auto 250px;	text-align:center; }
@@ -277,7 +279,7 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 #edit-success {	display:none; height:200px;	width:inherit; color:black;	font:20px Bitter-Regular;	text-align:center; margin:30px auto; background-color:white; padding-top:50px; }
 
 
-/********************* FAQs.php *************************/
+/*********************  FAQs.php  *************************/
 
 
 #faqs-container { height:1090px;	width:950px; margin:50px auto 250px; background-color:white; top:20px; padding:10px 20px 0px; line-height:180%; }
@@ -287,6 +289,16 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 .ques {	font:lighter 22px Bitter-Regular;	text-align:left; }
 
 .ans { font-size:20px; }
+
+
+/********************  NOJS.PHP  ************************/
+
+
+#sell-nojs-container { height:230px; width:700px; background-color:white; margin:100px auto auto; padding:50px; }
+
+#nojs-wrap { width: 80%; margin: 20px auto; height: 480px; }
+
+#nojs-wrap p { color: #000; font-size: 18px; text-align: center; padding: 50px 10px; }
 
 
 /*******************  SELL.PHP   *************************/
@@ -348,14 +360,8 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 
 .links:hover { background-color:#5E82CC; color:white; border-style:outset; }
 
-/********************SELL NO JS.PHP************************/
 
-
-#sell-nojs-container { height:230px; width:700px; background-color:white; margin:100px auto auto; padding:50px; }
-
-
-
-/**********************PURE-MIN CSS**********************/
+/**********************  PURE-MIN CSS  **********************/
 
 
 .pure-form-stacked input[type=text],.pure-form-stacked input[type=password],.pure-form-stacked input[type=email],.pure-form-stacked input[type=url],.pure-form-stacked input[type=date],.pure-form-stacked input[type=month],.pure-form-stacked input[type=time],.pure-form-stacked input[type=datetime],.pure-form-stacked input[type=datetime-local],.pure-form-stacked input[type=week],.pure-form-stacked input[type=number],.pure-form-stacked input[type=search],.pure-form-stacked input[type=tel],.pure-form-stacked input[type=color],.pure-form-stacked select,.pure-form-stacked textarea { display:block; margin:0.35em 0px 0px 0.3em; }
@@ -396,7 +402,7 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 .pure-form input:not([type]), .pure-form input[type=text], .pure-form input[type=password], .pure-form input[type=email], .pure-form input[type=url], .pure-form input[type=date], .pure-form input[type=month], .pure-form input[type=time], .pure-form input[type=datetime], .pure-form input[type=datetime-local], .pure-form input[type=week], .pure-form input[type=number], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=color], .pure-form label { margin-bottom:.3em; display:block; } }
 
 
-/********************* RIBBONS CSS ******************************/
+/*********************  RIBBONS CSS  ******************************/
 
 
 .ribbon{ overflow: hidden; position: absolute; top: 72px; width: 300px; padding: 1px 0; background: #000; color: #eee; -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 0 10px rgba(0,0,0,0.5); }
