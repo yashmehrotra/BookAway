@@ -28,4 +28,5 @@ RewriteRule ^contact contact.php [nc]
 RewriteRule ^ index.php [nc]
 RewriteRule ^faqs faqs.php [nc]
 RewriteRule ^feedback feedback.php [nc]
+RewriteRule ^nojs nojs.php [nc]
 

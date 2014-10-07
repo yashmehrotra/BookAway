@@ -53,7 +53,7 @@ function curPageURL() {
 		</article>
 	</blockquote>
 	<div class="main-containers" id="buy-container">
-		<div class="left-panel" id="buy-left-panel">
+		<aside class="left-panel" id="buy-left-panel">
 			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
 				<div>
 					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
@@ -97,7 +97,7 @@ function curPageURL() {
 					</div>
 				</div>
 			</form>
-		</div>
+		</aside>
 		<div id="buy-content-container">
 			<!-- Books content appended here -->
 		</div>

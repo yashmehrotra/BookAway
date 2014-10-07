@@ -3,7 +3,7 @@
 <noscript><meta http-equiv="refresh" content="0; url=nojs"></noscript>
 <a href="index"><img src="Styles/Images/favicon1.png" class="pointer-onhover" id="favicon"></a>
 <div class="header-wrapper">
-	<div class="header">
+	<section class="header">
 		<ul>
 			<li><div class="top-divs"><a href="index" id="home">Home</a></div></li>
 			<li><a href="buy" id="buy">Buy</a></li>
@@ -12,7 +12,7 @@
 			<li><a href="del" id="del">Edit</a></li>
 			<li><a href="feedback" id="feedback">Feedback</a></li>
 		</ul>
-	</div>
+	</section>
 </div>
 <div class="ribbon right green">
   <a href="https://github.com/yashmehrotra/Bookaway">Fork us on GitHub</a>
