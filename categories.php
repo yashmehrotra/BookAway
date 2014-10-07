@@ -19,7 +19,7 @@
 
 	$buy_fixed = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value="All" checked>All</label><br></div>';
 
-	$query = "SELECT * FROM tbl_categories";
+	$query = "SELECT * FROM tbl_categories ORDER BY category ASC ";
 	$category_data = mysqli_query($database_connection,$query);
 
 	if (strstr($current_url,$sell_url) || strstr($current_url,$edit_url)) {
