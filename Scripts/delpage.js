@@ -15,9 +15,7 @@ function del_validate_form() {
 
 	$('#del-form').submit(function (event) {
 		event.preventDefault();				
-		//$("div[id^='del-error']").css("display","none");
 		$("div[id^='del-error']").hide();
-		// $('#del-main-container').css('height', '600px');
 
 		var check = false;
 		var emval = $('#email').val();
@@ -80,7 +78,7 @@ function edit_request() {
 			'source':'edit_user' 
 		},
 		success: function(result) {
-			$('#loading-gif').hide();
+			$('#loading-gif').remove();
 			if(result) {
 				var response = JSON.parse(result);
 				console.log(response);
@@ -88,9 +86,7 @@ function edit_request() {
 				if(response['status'] == 'success') {
 					console.log('correct');
 					
-					// $('#del-main').css('display','none');
 					$('#del-main').hide();
-					// $('#edit-form').css('display','block');
 					$('#edit-form').show();
 					
 					$('#name').val(response['seller_name']);
@@ -109,7 +105,6 @@ function edit_request() {
 				} else {
 					console.log('wrong');
 					$('#del-error_incorrect').html('The email, password or Book ID you entered are incorrect!')
-					// $('#del-error_incorrect').css('display','block');
 					$('#del-error_incorrect').show();
 				}
 			} else {
@@ -167,15 +162,13 @@ function hide_price() {
 function sell_validate_form() {
 
 $('#del-new-btn').click( function(event) {
-	// var del_height = $('#del-main-container').css('height');
+	
 	var del_height = $('#del-main-container').height();
-	// var edit_form_height = $('#edit-form').css('height');
 	var edit_form_height = $('#edit-form').height();
 	var flag = false;
 	var error_count = 0;
 	var before_pass = 0;
 
-	// $('div[id^="error"]').css("display","none");
 	$('div[id^="error"]').hide();
 	
 	if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
@@ -296,10 +289,8 @@ function confirm_delete() {
             	console.log(response.status);
             	if(response.status == "success") {
             		console.log("Edit successful");
-            		// $('#edit-form').css('display','none');
             		$('#edit-form').hide();
             		$('#del-main-container').height(300);
-            		// $('#edit-success').css('display','block');
             		$('#edit-success').show();
             	}
             }
@@ -327,10 +318,8 @@ function delete_request() {
 				if(response.status == "success") {
 					console.log('Hogaya Delete');
 
-					// $('#edit-form').css('display','none');
 					$('#edit-form').hide();
 					$('#edit-success').html('You have successfully deleted your book!');
-					// $('#edit-success').css('display','block');
 					$('#edit-success').show();
 				}
 			}

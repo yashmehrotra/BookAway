@@ -7,13 +7,43 @@
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-	echo "<option value=''>Select your category</option>";
 
-	$query = "SELECT * FROM tbl_categories";
+	$current_url = $_SERVER["REQUEST_URI"];
+	$sell_url = "sell";
+	$buy_url = "buy";
+	$edit_url = "del";
+	
+	$sql_result = "";
+	
+	$sell_fixed = "<option value=''>Select your category</option>";
+
+	$buy_fixed = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value="All" checked>All</label><br></div>';
+
+	$query = "SELECT * FROM tbl_categories ORDER BY category ASC ";
 	$category_data = mysqli_query($database_connection,$query);
 
-	while($row = mysqli_fetch_array($category_data)) {
+	if (strstr($current_url,$sell_url) || strstr($current_url,$edit_url)) {
+		echo $sell_fixed;
+		while($row = mysqli_fetch_array($category_data)) {
+			$sql_result = $row['category'];
+			$sell_result = "<option value='".$sql_result."'>".$sql_result."</option>";
+			echo $sell_result;
+		}
 
-		echo "<option value='".$row['category']."'>".$row['category']."</option>";
+	} elseif (strstr($current_url,$buy_url)) {
+		echo $buy_fixed;
+		while($row = mysqli_fetch_array($category_data)) {
+			$sql_result = $row['category'];
+			$buy_result = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value='.$sql_result.'>'.$sql_result.'</label><br></div>';
+			echo $buy_result;
+		}
+	} else {
+		echo "abcd";
+		echo $current_url;
+		if (strstr($current_url,'categories')) {
+			echo "yash";
+		}
 	}
+
+	mysqli_close($database_connection);
 ?>
