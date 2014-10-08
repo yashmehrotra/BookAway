@@ -53,7 +53,7 @@ function curPageURL() {
 		</article>
 	</blockquote>
 	<div class="main-containers" id="buy-container">
-		<div class="left-panel" id="buy-left-panel">
+		<aside class="left-panel" id="buy-left-panel">
 			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
 				<div>
 					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
@@ -70,87 +70,22 @@ function curPageURL() {
 							Category:
 						</div>
 						<div id="sub-scroll-bar">
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="All">All
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Computers">Computers
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Electronics">Electronics
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Maths">Maths
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Fiction">Fiction
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Non-Fiction">Non-Fiction
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Physics">Physics
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Magazines">Magazines
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Biographies">Biographies
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Health">Health
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Travel">Travel
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Medical">Medical
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Law">Law
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Music">Music
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Business">Business
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Religion">Religion &amp; Spiritual
-								<br>
-							</div>
-							<div class="sub-cbox">
-								<input type="checkbox" class="sub-cbox-input" value="Miscellaneous">Miscellaneous
-								<br>
-							</div>
+							<?php 
+								require_once("categories.php"); 
+							?>
 						</div>
 					</div>
 				<!--<div class="sub-select">-->
 					<div class="left-panel-text-wrap" id="book-for-text-wrapper">
 						Available For:
 					</div>
-					<input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All</label>
 					<br>
-					<input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent</label>
 					<br>
-					<input type="radio" name="radio-name" class="radio-available-for" value="1">Buy
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="1">Buy</label>
 					<br>
-					<input type="radio" name="radio-name" class="radio-available-for" value="2">Rent
+					<label><input type="radio" name="radio-name" class="radio-available-for" value="2">Rent</label>
 					<br>
 				<!--</div>-->
 					<div id="left-panel-price-range">
@@ -162,9 +97,9 @@ function curPageURL() {
 					</div>
 				</div>
 			</form>
-		</div>
+		</aside>
 		<div id="buy-content-container">
-			<button id="load-more-btn">Load more</button>
+			<!-- Books content appended here -->
 		</div>
 	</div>
 	<?php
