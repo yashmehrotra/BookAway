@@ -167,7 +167,6 @@ $('#del-new-btn').click( function(event) {
 	var edit_form_height = $('#edit-form').height();
 	var flag = false;
 	var error_count = 0;
-	var before_pass = 0;
 
 	$('div[id^="error"]').hide();
 	
@@ -176,60 +175,70 @@ $('#del-new-btn').click( function(event) {
 		$('#error_phone').html("Phone number must contain 10 digits");
 		$('#error_phone').css("display","inline-block");
 		$('#phone').focus() ;
-		flag = true;;
+		flag = true;
 		error_count = error_count + 1;
-		before_pass = before_pass + 1;
 	}
 
-		if($('#book').val() == "" ) {
+	if($('#subject :selected').val() == "") {
+		$('#error_category').html("Please select a category");
+		$('#error_category').css("display","inline-block");
+		$('#subject').focus();
+		flag = true;
+		error_count = error_count + 1;
+	}
+
+	if($('#book').val() == "" ) {
 
 		$('#error_book_name').html("Please provide the name of the book");
 		$('#error_book_name').css("display","inline-block");
 		$('#book').focus() ;
-		flag = true;;
+		flag = true;
 		error_count = error_count + 1;
- 	}
+	}
 
-		if( $('#author').val() == "" ) {
+	if( $('#author').val() == "" ) {
 
 		$('#error_author').html("Please mention the author of the book");
 		$('#error_author').css("display","inline-block");
 		$('#author').focus() ;
-		flag = true;;
+		flag = true;
 		error_count = error_count + 1;
 	}
 
 	var sell_or_rent = $('#sell-rent option:selected').val();
 
 	if( sell_or_rent == 1 ) {
+
 		if( $('#s-cost').val() == "" ) {
 			
 			$('#error_sale_price').html("Please provide the sale price");
 			$('#error_sale_price').css("display","inline-block");
 			$('#s-cost').focus();
-			flag = true;;
+			flag = true;
 			error_count = error_count + 1;
 		}
 	}
 
 	if( sell_or_rent == 2 ) {	
+
 		if( $('#r-cost').val() == "" ) {
 			
 			$('#error_rent_price').html("Please provide rent price");
 			$('#error_rent_price').css("display","inline-block");
 			$('#r-cost').focus();
-			flag = true;;
+			flag = true;
 			error_count = error_count + 1;
 		}
 	}
 
 	if( sell_or_rent == 3 ) {
+
 		if( $('#s-cost').val() == "" ) {
 		
 			$('#error_sale_price').html("Please provide the sale price");
 			$('#error_sale_price').css("display","inline-block");
 			$('#s-cost').focus();
-			flag = true;;
+			flag = true;
 			error_count = error_count + 1;
 		}
 
@@ -238,7 +247,7 @@ $('#del-new-btn').click( function(event) {
 			$('#error_rent_price').html("Please provide the rent price");
 			$('#error_rent_price').css("display","inline-block");
 			$('#r-cost').focus();
-			flag = true;;
+			flag = true;
 			error_count = error_count + 1;
 		}
 	}
@@ -248,14 +257,12 @@ $('#del-new-btn').click( function(event) {
 		event.preventDefault();
 		var count_change = error_count - prev_error_count;
 
-		// var del_new_height = parseInt(del_height) + 35*count_change + 'px';
 		var del_new_height = del_height + 35*count_change + 'px';
 
 		$('#del-main-container').css({
 			"height" : del_new_height
 		});
 		
-		// var edit_new_height = parseInt(edit_form_height) + 35*count_change + 'px';
 		var edit_new_height = edit_form_height + 35*count_change + 'px';
 
 		$('#edit-form').css({

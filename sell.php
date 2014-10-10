@@ -48,9 +48,11 @@
 					<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
 					<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
 					<select name="subject" id="subject" class="sell-input">
-					<?php
-						require_once ('categories.php');
-					?>
+						<?php
+							require_once ('categories.php');
+						?>
+					</select><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>
+					<div id="error_category"></div>
 					<br>
 					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_book_name"></div>    
 					<br>

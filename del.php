@@ -41,7 +41,7 @@
 			<button id="delete-btn">Delete this book</button>
 			<div id="edit-head">
 					<div id="or"><h3 id="or-text">OR</h3></div>
-					<p id="edit-desc"> Edit the details you want and click on "Edit" buttonn when finished.</p>
+					<p id="edit-desc">Edit the details you want and click on "Edit" buttonn when finished.</p>
 			</div>
 			<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
 				<div class="del-pure-g" id="del-pure-g-del">
@@ -51,13 +51,13 @@
 					<br>
 					<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required>  <div id="error_phone"></div> 
 					<br>
-					<input id="select-subject" class="sell-input" placeholder="Select Subject" disabled>
+					<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
 					<select name="subject" id="subject" class="sell-input" required>
 						<?php
 							require_once('categories.php');
 						?>
 					</select>
-					<div id="error9"></div>
+					<div id="error_category"></div>
 					<br>
 					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title" required>  <div id="error_book_name"></div>
 					<br>

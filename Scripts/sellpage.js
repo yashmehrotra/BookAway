@@ -85,6 +85,7 @@ function sell_validate_form(){
 			phone_error = true;;
 			before_pass = before_pass + 1;
 		}
+
 		if( $('#password').val() == "" || $('#password').val().length < 4 ) {
 			
 			$('#error_pass').html("Password must contain at least 4 characters");
@@ -94,7 +95,16 @@ function sell_validate_form(){
 			error_count = error_count + 1;
 		}
 
-			if($('#book').val() == "" ) {
+		if( $('#subject :selected').val() == "" ) {
+
+			$('#error_category').html("Please select the category of the book");
+			$('#error_category').css("display","inline-block");
+			$('#subject').focus() ;
+			flag = true;;
+			error_count = error_count + 1;
+		}
+
+		if($('#book').val() == "" ) {
 	
 			$('#error_book_name').html("Please provide the name of the book");
 			$('#error_book_name').css("display","inline-block");
@@ -103,7 +113,7 @@ function sell_validate_form(){
 			error_count = error_count + 1;
 	 	}
 
-			if( $('#author').val() == "" ) {
+		if( $('#author').val() == "" ) {
 	
 			$('#error_author').html("Please mention the author of the book");
 			$('#error_author').css("display","inline-block");
@@ -113,6 +123,7 @@ function sell_validate_form(){
 		}
 
 			if( $('#cover-url').val() != "" && !/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val())) {
+
 			$('#error_url').html("Please provide a valid link");
 			$('#error_url').css("display","inline-block");
 			$('#cover-url').focus() ;
@@ -123,6 +134,7 @@ function sell_validate_form(){
 		var sell_or_rent = $('#sell-rent option:selected').val();
 
 		if( sell_or_rent == 1 ) {
+
 			if( $('#s-cost').val() == "" ) {
 				
 				$('#error_sale_price').html("Please provide the sale price");
@@ -134,6 +146,7 @@ function sell_validate_form(){
 		}
 
 		if( sell_or_rent == 2 ) {	
+
 			if( $('#r-cost').val() == "" ) {
 				
 				$('#error_rent_price').html("Please provide rent price");
@@ -145,6 +158,7 @@ function sell_validate_form(){
 		}
 
 		if( sell_or_rent == 3 ) {
+
 			if( $('#s-cost').val() == "" ) {
 			
 				$('#error_sale_price').html("Please provide the sale price");
@@ -185,30 +199,30 @@ function sell_validate_form(){
 
 			if(before_pass == 0) {
 			
-				$('#help-popup').css("top","176px") ;
+				$('#help-popup').css("top","96px") ;
 				$('#show-password').css("top","155px") ;
-				$('#help').css("top","240px") ;
+				$('#help').css("top","160px") ;
 			}
 
 			if(before_pass == 1) {
 				
-				$('#help-popup').css("top","219px") ;
-				$('#show-password').css("top","195px") ;
-				$('#help').css("top","283px") ;
+				$('#help-popup').css("top","139px") ;
+				$('#show-password').css("top","205px") ;
+				$('#help').css("top","203px") ;
 			}
 
 			if(before_pass == 2) {
 				
-				$('#help-popup').css("top","262px") ;
-				$('#show-password').css("top","235px") ;
-				$('#help').css("top","320px") ;
+				$('#help-popup').css("top","192px") ;
+				$('#show-password').css("top","255px") ;
+				$('#help').css("top","250px") ;
 			}
 
 			if(before_pass == 3) {
 
-				$('#help-popup').css("top","305px") ;
-				$('#show-password').css("top","275px") ;
-				$('#help').css("top","363px") ;
+				$('#help-popup').css("top","240px") ;
+				$('#show-password').css("top","305px") ;
+				$('#help').css("top","300px") ;
 			}	
 		} else {
 					$('#sell-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:1000px; left:405px;">');
