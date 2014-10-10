@@ -11,6 +11,7 @@
 var total_results = 0;
 var RESULTS_SHOWN = 12;
  $(document).ready(function() {
+  instructions_cookie();
   book_data_display();
   newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
   console.log(newURL);
@@ -23,6 +24,15 @@ function showthis(bookid) {
   console.log(str);
   str = "#seller-data-" + str;
   $(str).toggle();
+}
+
+function instructions_cookie() {
+  var cookies = document.cookie;
+  if ( cookies.indexOf('bookawaybuycookie') != -1 ) {
+    $('#buy-instructions').hide();
+  } else {
+    document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
+  }
 }
 
 Ultimate_data       = [];
