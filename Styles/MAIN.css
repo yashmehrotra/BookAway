@@ -113,11 +113,11 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 #about-us-container { height:320px;	width:1200px; margin:30px auto 250px; text-align:justify; background-color:white; }
 
+.developer-profile, .profile-onhover { height:300px; width:290px; border:1px ridge #d3d3d3; margin:55px 0px 0px 50px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
+
 .profile-image { height:160px; width:160px; border:solid transparent;	border-radius:100px; }
 
 .profile-image:hover { cursor:default; }
-
-.developer-profile, .profile-onhover { height:300px; width:220px; border:1px ridge #d3d3d3; margin:55px 0px 0px 100px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
 
 .profile-onhover { -webkit-transition:background-color .4s linear, color .4s linear; -moz-transition:background-color .4s linear, color .4s linear; -o-transition:background-color .4s linear, color .4s linear; -ms-transition:background-color .4s linear, color .4s linear; }
 
@@ -125,15 +125,17 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 .developer-title { font: italic 19px serif; }
 
-.profile-links { height:43px; width:43px; float:left; margin:10px 5px 0px 7px; }
+.profile-links { height:43px; width:45px; float:left; margin:10px 5px 0 7px; }
 
-.fb { background:url("Images/icon-logos.png") 0px 0px; }
+.fb { background:url("Images/icon-logos.png") 0 0; }
 
-.tw { background:url("Images/icon-logos.png") -155px 0px; }
+.tw { background:url("Images/icon-logos.png") -155px 0; }
 
-.li { background:url("Images/icon-logos.png") -103px 0px; }
+.li { background:url("Images/icon-logos.png") -103px 0; }
 
 .gi { background:url("Images/icon-logos.png") -24px 41px; }
+
+.ml { background:url("Images/gmail.jpg") -4px -4px;  }
 
 
 /********************    BUY.PHP    ************************/
@@ -290,6 +292,11 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 
 .ans { font-size:20px; }
 
+
+/********************  FEEDBACK.PHP  ************************/
+
+/*#feedback-container {  }*/
+iframe { height: 1100px; width: 700px; margin: 100px 0 50px 22%; }
 
 /********************  NOJS.PHP  ************************/
 
