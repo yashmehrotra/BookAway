@@ -7,6 +7,7 @@
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
+	<script src="Scripts/feedbackpage.js"></script>
 	<script type="text/javascript">
 	$(function () {
 		$('#feedback').attr('id','focus');
@@ -15,7 +16,7 @@
 </head>
 <body>
 	<?php
-	require_once('header.php');
+		require_once('header.php');
 	?>
 	<div class="page-header">
 		<h2>Feedback</h2>

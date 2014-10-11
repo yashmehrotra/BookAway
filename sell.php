@@ -37,13 +37,13 @@
 		<div id="sell-form-wrap">
 			<form class="pure-form pure-form-stacked" id="sell-form" novalidate>
 				<div class="pure-g">
-					<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_name"></div>
+					<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"><p class="compulsary-label">*</p>  <div id="error_name"></div>
 					<br>
-					<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_email"></div> 
+					<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"><p class="compulsary-label">*</p>  <div id="error_email"></div> 
 					<br>
-					<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_phone"></div>   
+					<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number"><p class="compulsary-label">*</p>  <div id="error_phone"></div>   
 					<br>
-					<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
+					<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
 					<br>
 					<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
 					<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
@@ -51,12 +51,12 @@
 						<?php
 							require_once ('categories.php');
 						?>
-					</select><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>
+					</select><p class="compulsary-label">*</p>
 					<div id="error_category"></div>
 					<br>
-					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_book_name"></div>    
+					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title"><p class="compulsary-label">*</p>  <div id="error_book_name"></div>    
 					<br>
-					<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p style="color:red; margin:0px; padding:0px; width:5px; display:inline-block;">*</p>  <div id="error_author"></div>  
+					<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p class="compulsary-label">*</p>  <div id="error_author"></div>  
 					<br>
 					<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="250" placeholder="Description(max 250 characters)"></textarea>
 					<br>

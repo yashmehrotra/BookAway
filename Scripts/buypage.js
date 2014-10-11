@@ -149,7 +149,7 @@ function book_data_display () {
           json[counter_clone].image_source = NO_BOOK_IMAGE;
         }
 
-        var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'"+" data-shown-by='default'"+ "data-college='"+ json[counter_clone].college +"'" +" data-book-for='"+json[counter_clone].sell_rent+"' >"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i>"+json[counter_clone].author_name+"</i></div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description;
+        var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-"+json[counter_clone].book_id+"'"+" data-sell-price='"+json[counter_clone].sell_price+"'"+" data-shown-by='default'"+ "data-college='"+ json[counter_clone].college +"'" +" data-book-for='"+json[counter_clone].sell_rent+"' >"+"<div class='image-buy-wrapper'><img class='books-data-images' src='"+json[counter_clone].image_source+"'></div><div class='name-buy-wrapper'>"+json[counter_clone].book_name+"</div><div class='author-buy-wrapper'><i> by "+json[counter_clone].author_name+"</i></div><div class='category-buy-wrapper'>Category : "+json[counter_clone].category+"</div><div class='desc-buy-wrapper'>"+json[counter_clone].book_description;
 
         if( json[counter_clone].rent_price == "" ) {
           
@@ -162,11 +162,11 @@ function book_data_display () {
         } else if( json[counter_clone].sell_price == "" ) {
           
           json[counter_clone].sell_price = "-";
-          $('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='rent-buy-wrapper'>  Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+          $('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='rent-buy-wrapper'>  Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
         
         } else {
           
-          $('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div><div class='rent-buy-wrapper'> Rent price: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
+          $('#buy-content-container').prepend( BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].sell_price+"</div><div class='rent-buy-wrapper'> Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +json[counter_clone].rent_price+ " / " +json[counter_clone].rent_time +"</div></div>");/*</tr><tr class='seller-data' id='seller-data-"+json[counter_clone].book_id+"'"+">"+"<u>Seller Name:</u> "+json[counter_clone].seller_name+"<u>Contact:</u> "+json[counter_clone].seller_phone+"</tr>"*/
         }
         counter_clone += 1;
       }
@@ -265,7 +265,7 @@ function auto_load_more() {
 
       var buy_height = $('#buy-container').height();
       var content_container_height = $('#buy-content-container').height();
-      var change = 202*(counter_visible - clone_visible);
+      var change = 242*(counter_visible - clone_visible);
       // if ( (change + buy_height) <= max_height ) {
         $('#buy-container').height(buy_height+change+'px');
         $('#buy-content-container').height(content_container_height+change+'px');
@@ -296,7 +296,7 @@ function books_data() {
   var buy_height = $('#buy-container').height();
   console.log("buy height",buy_height);
   var content_container_height = $('#buy-content-container').height();
-  var h_change = 202*(results_counter - 3);
+  var h_change = 242*(results_counter - 3);
   $('#buy-container').height(buy_height + h_change + 'px');
   $('#buy-content-container').height( content_container_height + h_change + 'px');
   }
