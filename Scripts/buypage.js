@@ -14,7 +14,7 @@ var RESULTS_SHOWN = 12;
   instructions_cookie();
   book_data_display();
   newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-  console.log(newURL);
+  console.log("Hello fellow developer , welcome to ",newURL,"\nTo peek behind the scenes go to Github");
 
 });
 
@@ -34,7 +34,7 @@ function instructions_cookie() {
     document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
   }
 }
-
+checkbox_array      = [];
 Ultimate_data       = [];
 
 search_data         = [];
@@ -390,12 +390,14 @@ function filter() {
     );
   });
 
+  // Category Filter
   $('.sub-cbox-input').on('click',function(e) {
 
     $(document).scrollTop(150);
 
     var checkbox_value = $(this).val();
-    var checkbox_array = [];
+    checkbox_array = [];
+    console.log(checkbox_value);
 
     if(checkbox_value == "All") {
       //Add uncheck code --- to do Avijit
@@ -417,18 +419,26 @@ function filter() {
       $('.sub-cbox-input').each(function(index){
         if($(this).val() == "All") {
           $(this).prop('checked',false);
-        } else {
-          checkbox_array.push($(this).val());
+        } else if ($(this).prop('checked')) {
+            if(checkbox_array.indexOf($(this).val(),checkbox_array) == -1) {
+              checkbox_array.push($(this).val());
+            }
         } 
       });
-
+      console.log(checkbox_array);
       $('.books-data').each(
         function(index) {
           $(this).hide();
           var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
-          if( $.inArray(Ultimate_data[index_book]['category'],checkbox_array) !== -1 ) {
+          var current_book_category = Ultimate_data[index_book]['category'];
+          //temp_shit = split_into_different_words(temp_shit)[0];
+          //checkbox_array = split_into_different_words(checkbox_array);
+          if(checkbox_array.indexOf(current_book_category) > -1) {
             $(this).show();
           }
+          // if( $.inArray(JSON.stringify(Ultimate_data[index_book]['category']),checkbox_array) != -1 ) {
+          //   $(this).show();
+          // }
       });
     }
 
@@ -520,4 +530,18 @@ function convert_id_to_Ultimate_index (html_id) {
   var index_id_book = $.inArray(converted_book_id,bookid_array)
   
   return index_id_book;
+}
+
+function split_into_different_words(param) {
+
+    var return_array = [];
+    if(typeof(param) == "string") {
+        return_array = param.split(/&/).join().split(',');
+    } else {
+        for (var i=0;i<param.length;i++) {
+            return_array.push(param[i].split(/&/).join().split(','));
+        }
+        return_array.map(Function.prototype.call, String.prototype.trim);
+    }
+    return return_array;
 }
