@@ -58,7 +58,7 @@
 					<br>
 					<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p class="compulsary-label">*</p>  <div id="error_author"></div>  
 					<br>
-					<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="250" placeholder="Description(max 250 characters)"></textarea>
+					<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="280" placeholder="Description(max 280 characters)"></textarea>
 					<br>
 					<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><div id="error_url"></div>
 					<br>
