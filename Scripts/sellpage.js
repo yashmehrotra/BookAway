@@ -55,7 +55,7 @@ function sell_validate_form(){
 			$('#name').focus() ;
 			$('#error_name').css("display","inline-block");
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 			name_error = true;;
 			before_pass = before_pass + 1;
 		}
@@ -70,7 +70,7 @@ function sell_validate_form(){
 			$('#email').focus() ;
 			$('#error_email').css("display","inline-block");
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 			email_error = true;;
 			before_pass = before_pass + 1;
 		}
@@ -81,7 +81,7 @@ function sell_validate_form(){
 			$('#error_phone').css("display","inline-block");
 			$('#phone').focus() ;
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 			phone_error = true;;
 			before_pass = before_pass + 1;
 		}
@@ -92,7 +92,7 @@ function sell_validate_form(){
 			$('#error_pass').css("display","inline-block");
 			$('#password').focus() ;
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 
 		if( $('#subject :selected').val() == "" ) {
@@ -101,7 +101,7 @@ function sell_validate_form(){
 			$('#error_category').css("display","inline-block");
 			$('#subject').focus() ;
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 
 		if($('#book').val() == "" ) {
@@ -110,7 +110,7 @@ function sell_validate_form(){
 			$('#error_book_name').css("display","inline-block");
 			$('#book').focus() ;
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 	 	}
 
 		if( $('#author').val() == "" ) {
@@ -119,16 +119,16 @@ function sell_validate_form(){
 			$('#error_author').css("display","inline-block");
 			$('#author').focus() ;
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 
-			if( $('#cover-url').val() != "" && !/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val())) {
+			if( $('#cover-url').val() != "" && !( (/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) && !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) || (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) && /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val()) )) ) {
 
 			$('#error_url').html("Please provide a valid link");
 			$('#error_url').css("display","inline-block");
 			$('#cover-url').focus() ;
 			flag = true;;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 
 		var sell_or_rent = $('#sell-rent option:selected').val();
@@ -141,7 +141,7 @@ function sell_validate_form(){
 				$('#error_sale_price').css("display","inline-block");
 				$('#s-cost').focus();
 				flag = true;;
-				error_count = error_count + 1;
+				error_count += 1;
 			}
 		}
 
@@ -153,7 +153,7 @@ function sell_validate_form(){
 				$('#error_rent_price').css("display","inline-block");
 				$('#r-cost').focus();
 				flag = true;;
-				error_count = error_count + 1;
+				error_count += 1;
 			}
 		}
 
@@ -165,7 +165,7 @@ function sell_validate_form(){
 				$('#error_sale_price').css("display","inline-block");
 				$('#s-cost').focus();
 				flag = true;;
-				error_count = error_count + 1;
+				error_count += 1;
 			}
 
 			if( $('#r-cost').val() == "" ) {
@@ -174,7 +174,7 @@ function sell_validate_form(){
 				$('#error_rent_price').css("display","inline-block");
 				$('#r-cost').focus();
 				flag = true;;
-				error_count = error_count + 1;
+				error_count += 1;
 			}
 		}
 

@@ -10,9 +10,17 @@
 
 var total_results = 0;
 var RESULTS_SHOWN = 12;
- $(document).ready(function() {
+
+ $(function() {
+
   instructions_cookie();
   book_data_display();
+
+  $(document).on('scroll',function () {
+
+    go_to_top();
+  });
+
   newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
   console.log("Hello fellow developer , welcome to ",newURL,"\nTo peek behind the scenes go to Github");
 
@@ -26,14 +34,30 @@ function showthis(bookid) {
   $(str).toggle();
 }
 
+function go_to_top() {
+
+  if($(document).scrollTop() > 1200) {
+
+    $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/gototop.png' alt='Go to top' title='Go to top'></a>");
+    console.log('Appended !');
+  } else {
+
+    $('.go-to-top-btn').parent().remove();
+  }
+}
+
 function instructions_cookie() {
+
   var cookies = document.cookie;
   if ( cookies.indexOf('bookawaybuycookie') != -1 ) {
+
     $('#buy-instructions').hide();
   } else {
+
     document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
   }
 }
+
 checkbox_array      = [];
 Ultimate_data       = [];
 
@@ -176,6 +200,7 @@ function book_data_display () {
         books_data();
         seller_data();
         filter();
+        go_to_top();
       }
 
       //For Autocomplete

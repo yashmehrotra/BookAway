@@ -176,7 +176,7 @@ $('#del-new-btn').click( function(event) {
 		$('#error_phone').css("display","inline-block");
 		$('#phone').focus() ;
 		flag = true;
-		error_count = error_count + 1;
+		error_count += 1;
 	}
 
 	if($('#subject :selected').val() == "") {
@@ -184,7 +184,7 @@ $('#del-new-btn').click( function(event) {
 		$('#error_category').css("display","inline-block");
 		$('#subject').focus();
 		flag = true;
-		error_count = error_count + 1;
+		error_count += 1;
 	}
 
 	if($('#book').val() == "" ) {
@@ -193,7 +193,7 @@ $('#del-new-btn').click( function(event) {
 		$('#error_book_name').css("display","inline-block");
 		$('#book').focus() ;
 		flag = true;
-		error_count = error_count + 1;
+		error_count += 1;
 	}
 
 	if( $('#author').val() == "" ) {
@@ -202,7 +202,16 @@ $('#del-new-btn').click( function(event) {
 		$('#error_author').css("display","inline-block");
 		$('#author').focus() ;
 		flag = true;
-		error_count = error_count + 1;
+		error_count += 1;
+	}
+
+	if( $('#cover-url').val() != "" && !( (/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) && !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) || (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) && /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val()) )) ) {
+
+			$('#error_url').html("Please provide a valid link");
+			$('#error_url').css("display","inline-block");
+			$('#cover-url').focus() ;
+			flag = true;;
+			error_count += 1;
 	}
 
 	var sell_or_rent = $('#sell-rent option:selected').val();
@@ -215,7 +224,7 @@ $('#del-new-btn').click( function(event) {
 			$('#error_sale_price').css("display","inline-block");
 			$('#s-cost').focus();
 			flag = true;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 	}
 
@@ -227,7 +236,7 @@ $('#del-new-btn').click( function(event) {
 			$('#error_rent_price').css("display","inline-block");
 			$('#r-cost').focus();
 			flag = true;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 	}
 
@@ -239,7 +248,7 @@ $('#del-new-btn').click( function(event) {
 			$('#error_sale_price').css("display","inline-block");
 			$('#s-cost').focus();
 			flag = true;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 
 		if( $('#r-cost').val() == "" ) {
@@ -248,7 +257,7 @@ $('#del-new-btn').click( function(event) {
 			$('#error_rent_price').css("display","inline-block");
 			$('#r-cost').focus();
 			flag = true;
-			error_count = error_count + 1;
+			error_count += 1;
 		}
 	}
 

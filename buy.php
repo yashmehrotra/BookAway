@@ -55,16 +55,13 @@ function curPageURL() {
 	<div class="main-containers" id="buy-container">
 		<aside class="left-panel" id="buy-left-panel">
 			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
-				<div>
-					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
-					<button class="ion-android-search search-filters-btn pointer-onhover" id="left-panel-search-btn"></button>
-				</div> 
-				<br>
 				<div class="search-filters" id="buy-search-filters">
 					<div id="search-filters-college-select">
 						<input type="text" class="left-panel-input" id="search-filters-college-search" placeholder="Select College">
 						<button class="ion-android-arrow-forward search-filters-btn pointer-onhover" id="search-filters-college-btn"></button>
 					</div>
+					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
+					<button class="ion-android-search search-filters-btn pointer-onhover" id="left-panel-search-btn"></button>
 					<div class="sub-select" id="left-panel-sub-select">
 						<div class="left-panel-text-wrap" id="sub-text-wrapper">
 							Category:

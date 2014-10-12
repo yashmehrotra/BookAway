@@ -41,7 +41,7 @@
 			<button id="delete-btn">Delete this book</button>
 			<div id="edit-head">
 					<div id="or"><h3 id="or-text">OR</h3></div>
-					<p id="edit-desc">Edit the details you want and click on "Edit" buttonn when finished.</p>
+					<p id="edit-desc">Edit the details you want and click on "Edit" button when finished.</p>
 			</div>
 			<form name="eform" class="pure-form pure-form-stacked" id="eform" method="POST" action="sqldata.php" novalidate>
 				<div class="del-pure-g" id="del-pure-g-del">
