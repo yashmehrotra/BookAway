@@ -203,11 +203,11 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 div[class$="-buy-wrapper"] { position:relative;	}
 
-.image-buy-wrapper { height:140px; width:100px;	top:10px; left:10px; }
+.image-buy-wrapper { height:140px; width:120px;	top:20px; left:10px; }
 
 .books-data-images { height:inherit; width:inherit; }
 
-.name-buy-wrapper { height:30px; width:400px; left:115px; top:-125px; font-size:21px; padding-left:35px; overflow:hidden; }
+.name-buy-wrapper { height:28px; width:400px; left:115px; top:-125px; font-size:21px; padding-left:35px; overflow:hidden; }
 
 .author-buy-wrapper { height:30px; width:400px; left:115px;	top:-120px;	font-size:19px;	color:gray;	padding-left:35px; }
 
@@ -231,13 +231,13 @@ span[id$="-seller-icon"] { font-size: 25px; }
 
 #seller-details-head { text-align: center; font: 20px Ubuntu; }
 
-#go-to-top { position: fixed; right: 0; top: 45%; height: 100px; width: 100px; }
+#go-to-top { position: fixed; left:58%; bottom: 0; height: 100px; width: 100px; }
 
 
 /*********************  CONTACT.PHP  ***********************/
 
 
-#contact-us-container {	height:500px; width:1000px;	margin:70px auto 250px;	text-align:center; }
+#contact-us-container {	height:500px; width:1000px;	margin:120px auto 130px;	text-align:center; }
 
 
 /********************  DEL.PHP  ************************/
@@ -302,7 +302,7 @@ div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none
 
 #feedback-container { margin-top: 90px; }
 
-iframe { height: 1090px; width: 700px; margin: 50px 0 50px 22%; }
+#feedback-container iframe { height: 1090px; width: 700px; margin: 50px 0 50px 22%; }
 
 /********************  NOJS.PHP  ************************/
 
