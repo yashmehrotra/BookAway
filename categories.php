@@ -34,7 +34,7 @@
 		echo $buy_fixed;
 		while($row = mysqli_fetch_array($category_data)) {
 			$sql_result = $row['category'];
-			$buy_result = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value='.$sql_result.'>'.$sql_result.'</label><br></div>';
+			$buy_result = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value="'.$sql_result.'"">'.$sql_result.'</label><br></div>';
 			echo $buy_result;
 		}
 	} else {
