@@ -14,8 +14,8 @@
 			<li><a href="feedback" id="feedback">Feedback</a></li>
 		</ul>
 		<a href="https://github.com/yashmehrotra/Bookaway" target="_blank">
-			<button id="fork-on-github">
-				Fork on Github
+			<button id="fork-on-github" class="pointer-onhover">
+				Fork us on Github
 			</button>
 		</a>
 	</section>

@@ -77,7 +77,7 @@ ul { list-style-type: none; }
 
 .header ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
-button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 12%; height: 40px; background-color: #047D8B;#1a6169; border: none; position: absolute; right: 4%; top:13px; }
+button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 15%; height: 40px; background-color: #047D8B;#1a6169; border: none; position: absolute; right: 4%; top:13px; }
 
 button#fork-on-github:hover { opacity: 0.9; }
 
