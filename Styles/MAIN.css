@@ -3,6 +3,8 @@
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
+a, a:visited, a:link { outline:0; }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 
 textarea { overflow: auto; vertical-align: top; }
@@ -37,8 +39,6 @@ body { background-color:white; border:0; margin:0 auto; padding:0; overflow-x:hi
 
 @font-face { font-family:Ubuntu; src:url('Fonts/Ubuntu/Ubuntu-R.ttf'); }
 
-a, a:visited { outline:0; }
-
 a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
@@ -61,21 +61,25 @@ ul { list-style-type: none; }
 /********************  HEADER   ************************/
 
 
-#favicon { width:64px; height:64px;	position:absolute; top:0;	left:15px; }
+#favicon { width: 54px;64px; height: 54px;64px;	position:absolute; top: 8px;0;	left:4%; }
 
 .header-wrapper { width:99.92%; height:65px; position:absolute; top:100px; }
 
 .header-wrapper-fixed {	z-index:50;	position:fixed; top:0; left:0; }
 
-.header { width:inherit; height:inherit; display:inline-block; text-transform:uppercase; background-color:#1884E9; font-family: Ubuntu; position:relative; top:0; left:0; border:1px outset transparent; }
+.header { width:inherit; display:inline-block; background-color:#1884E9; font-family: Ubuntu; position:relative; top:0; left:0; border:1px outset transparent; }
 
-.header ul { list-style:none;	margin-left:200px; min-width:850px; }
+.header ul { list-style:none; width:65%; display: inline-block;	margin-left:9%; }
 
 .header ul li { display:inline-block; }
 
-.header ul li a { text-decoration:none; text-transform:uppercase; padding:5px 28px; font-size:22px; margin-right:15px; color:white; display:inline-block; border-radius: 8px; }
+.header ul li a { text-decoration:none; padding:5px 28px 5px; font-size:20px; margin-right:15px; color:white; display:inline-block; border-radius: 8px; }
 
 .header ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
+
+button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 12%; height: 40px; background-color: #047D8B;#1a6169; border: none; position: absolute; right: 4%; top:13px; }
+
+button#fork-on-github:hover { opacity: 0.9; }
 
 
 /********************  FOOTER   ************************/
@@ -111,7 +115,7 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 /********************  ABOUT.PHP   ************************/
 
 
-#about-us-container { height:320px;	width:1200px; margin:30px auto 250px; text-align:justify; background-color:white; }
+#about-us-container { height:320px;	width:1200px; margin:40px auto 250px; text-align:justify; background-color:white; }
 
 .developer-profile, .profile-onhover { height:300px; width:290px; border:1px ridge #d3d3d3; margin:55px 0px 0px 50px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
 
@@ -143,31 +147,35 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 #buy-container { width:1270px; height:690px; margin:0 auto 100px; padding:0; top:10px; }
 
-#buy-left-panel { width:320px; height:800px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; left:0; text-align:center; }
+#buy-container aside { width:320px; height:800px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; left:0; text-align:center; }
 
-#left-panel-search-form { font-family:Ubuntu; margin:8% auto 0px; }
+#buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
 
-.left-panel-input { width:220px; position:relative; }
+#buy-container aside form input[type="text"], input[type="search"] { width:220px; position:relative; }
 
-#left-panel-search-bar { top:0; left:0; }
+#buy-container aside form input[type="checkbox"], input[type="radio"] { margin-right: 4px; }
 
-.search-filters-btn { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative; top:3px; }
+#buy-container aside form #buy-search-filters { width:300px; text-align:left; padding-left:30px; }
 
-.search-filters-btn:hover { background-color:black; color:white; }
+#buy-container aside form #buy-search-filters button { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative; top:3px; }
 
-#left-panel-search-btn { top:-40px;	right:-230px; }
+#buy-container aside form #buy-search-filters button:hover { background-color:black; color:white; }
 
-#buy-search-filters { height:500px;	width:300px; text-align:left; padding-left:30px; }
+#buy-container aside form #buy-search-filters #search-filters-college-select { height:70px; margin-bottom: 30px; }
 
-#search-filters-college-select { height:70px; width:inherit; margin-bottom: 30px; }
+#buy-container aside form #buy-search-filters #search-filters-college-select input#search-filters-college-search { top:0; left:-5px; font-size:15px; }
 
-#search-filters-college-search { top:0; left:-5px; font-size:15px; }
+#buy-container aside form #buy-search-filters #search-filters-college-select button { right:-1px; top:1px; }
 
-#search-filters-college-btn { right:-1px; top:1px; }
+#buy-container aside form #buy-search-filters .ui-widget input { top:0; left:0; }
 
-#left-panel-sub-select { margin-top:10px; }
+#buy-container aside form #buy-search-filters #left-panel-search-btn { top:-40px !important;	right:-230px !important; }
 
-.left-panel-text-wrap {	height:30px; width:inherit;	margin-top:0;	font-size:18px;	font-weight:600; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select { margin-top:10px; }
+
+#buy-container aside form #buy-search-filters #left-panel-sub-select .left-panel-text-wrap {	height:30px; width:inherit;	margin-top:0;	font-size:18px;	font-weight:600; }
+
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:250px;	width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
 
 #buy-container ::-webkit-scrollbar { width:15px; }
 
@@ -179,11 +187,11 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 #buy-container ::-webkit-scrollbar-corner { }
 
-#sub-scroll-bar { height:250px;	width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
-
 .sub-cbox {	font-size:16px; margin-top: 5px; }
 
-.sub-cbox:hover { color:orange; }
+.sub-cbox label { color: gray;orange; }
+
+.sub-cbox:hover label { color: black;orange; }
 
 .radio-available-for { margin-top: 5px; }
 
@@ -231,7 +239,7 @@ span[id$="-seller-icon"] { font-size: 25px; }
 
 #seller-details-head { text-align: center; font: 20px Ubuntu; }
 
-#go-to-top { position: fixed; left:58%; bottom: 0; height: 100px; width: 100px; }
+#go-to-top { position: fixed; left:58%; bottom: 0; height: 100px; width: 100px; z-index:500; }
 
 
 /*********************  CONTACT.PHP  ***********************/
@@ -413,8 +421,10 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 .pure-form .pure-input-1-4 { width:25%; }
 .pure-form .pure-help-inline, .pure-form-message-inline { display:inline-block; padding-left:.3em; color:#666; vertical-align:middle; font-size:.875em; }
 .pure-form-message { display:block;	color:#666;	font-size:.875em; }
-@media only screen and (max-width :480px) { .pure-form btn[type=submit]	{ margin:.7em 0 0; }
-.pure-form input:not([type]), .pure-form input[type=text], .pure-form input[type=password], .pure-form input[type=email], .pure-form input[type=url], .pure-form input[type=date], .pure-form input[type=month], .pure-form input[type=time], .pure-form input[type=datetime], .pure-form input[type=datetime-local], .pure-form input[type=week], .pure-form input[type=number], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=color], .pure-form label { margin-bottom:.3em; display:block; } }
+@media only screen and (max-width :480px) { 
+	.pure-form btn[type=submit]	{ margin:.7em 0 0; }
+	.pure-form input:not([type]), .pure-form input[type=text], .pure-form input[type=password], .pure-form input[type=email], .pure-form input[type=url], .pure-form input[type=date], .pure-form input[type=month], .pure-form input[type=time], .pure-form input[type=datetime], .pure-form input[type=datetime-local], .pure-form input[type=week], .pure-form input[type=number], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=color], .pure-form label { margin-bottom:.3em; display:block; }
+}
 
 
 /*********************  RIBBONS CSS  ******************************/
@@ -492,3 +502,87 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 
 /*  */
 .ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }
+
+
+
+
+
+/********************** MEDIA QUERIES **************************/
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+.header ul { margin-left:0; max-width:100%; }
+
+.header ul li a { padding:5px 5px; font-size:18px; margin-right:5px; border-radius: 5px; }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-device-width : 321px) and (max-device-width : 767px) {
+
+.header ul { margin-left:30px; max-width:100%; }
+
+.header ul li a { padding:5px 10px; font-size:18px; margin-right:10px; border-radius: 5px; }
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-device-width : 320px) {
+
+.header ul { margin-left:30px; max-width:100%; }
+
+.header ul li a { padding:5px 10px; font-size:18px; margin-right:10px; border-radius: 5px; }
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+.header ul li a { font-size:19px; border-radius: 5px; }
+
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+.header ul { margin-left:100px; }
+
+.header ul li a { padding:5px 12px; margin-right:10px; }
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+.header ul { margin-left:50px; }
+
+.header ul li a { padding:5px 10px; margin-right:7.5px; }
+
+}
+
+/* Desktops and laptops ----------- */
+/*@media only screen and (min-width : 1400px) {
+
+.header ul { margin-left:300px; }
+
+.header ul li a { padding:5px 15px; margin-right:15px; }
+
+}
+*/
+
+/* Large screens ----------- */
+/*@media only screen and (min-width : 1824px) {
+
+.header ul { margin-left:400px; }
+
+.header ul li a { padding:5px 20px; margin-right:15px; }
+
+}
+*/
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+
+}

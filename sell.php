@@ -54,7 +54,7 @@
 					</select><p class="compulsary-label">*</p>
 					<div id="error_category"></div>
 					<br>
-					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Books Title"><p class="compulsary-label">*</p>  <div id="error_book_name"></div>    
+					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Book Title"><p class="compulsary-label">*</p>  <div id="error_book_name"></div>    
 					<br>
 					<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p class="compulsary-label">*</p>  <div id="error_author"></div>  
 					<br>

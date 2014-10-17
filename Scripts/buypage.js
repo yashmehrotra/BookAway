@@ -39,7 +39,7 @@ function go_to_top() {
 
   if($(document).scrollTop() > 1000) {
 
-    $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/gototop.png' alt='Go to top' title='Go to top'></a>");
+    $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/arrow1.png' alt='Go to top' title='Go to top'></a>");
     console.log('Appended !');
   } else {
 
