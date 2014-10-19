@@ -17,6 +17,11 @@ var RESULTS_SHOWN = 12;
   book_data_display();
   left_panel_selected_inputs();
 
+  $('.sub-cbox,.radio-available-for').on('click',function () {
+
+    left_panel_selected_inputs();
+  });
+
   $(document).on('scroll',function () {
 
     go_to_top();
@@ -609,6 +614,29 @@ function split_into_different_words(param) {
 
 function left_panel_selected_inputs () {
 
-  $('.sub-cbox-input:checked').parent().css('color','black');
-  $('.radio-available-for:checked').parent().css('color','black')
+    // $('.sub-cbox-input:checked').parent().css('color','black');
+  $('.sub-cbox-input').each(function () {
+
+    if ( $(this).is(':checked') ) {
+
+      $(this).parent().css('color','black');
+    } else {
+
+      $(this).parent().css('color','gray');
+    }
+  });
+
+  // $('.radio-available-for:checked').parent().css('color','black');
+ 
+  $('.radio-available-for').each(function () {
+
+    if ( $(this).is(':checked') ) {
+
+      $(this).parent().css('color','black');
+    } else {
+
+      $(this).parent().css('color','gray');
+    }
+  });
+ 
 }
