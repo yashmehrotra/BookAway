@@ -2,7 +2,7 @@
 <noscript><meta http-equiv="refresh" content="0; url=nojs"></noscript>
 <div class="header-wrapper-fixed" style="width:100%; height:60px;">
 	<a href="index"><img src="Styles/Images/favicon1.png" class="pointer-onhover" id="favicon" style="z-index:100"></a>
-	<section class="header">
+	<section class="header" style="height:inherit;">
 		<ul id="header-list" style="margin-top:7px;">
 			<li class="header-list-module"><a href="index" class="index-header-links" id="home">Home</a></li>
 			<li class="header-list-module"><a href="buy" class="index-header-links" id="buy">Buy</a></li>

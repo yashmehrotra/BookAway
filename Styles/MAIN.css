@@ -167,13 +167,13 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 #buy-container aside form #buy-search-filters #search-filters-college-select button { right:-1px; top:1px; }
 
-#buy-container aside form #buy-search-filters .ui-widget input { top:0; left:0; }
+#buy-container aside form #buy-search-filters .ui-widget input#left-panel-search-bar { top:0; left:-3px; }
 
-#buy-container aside form #buy-search-filters #left-panel-search-btn { top:-40px !important;	right:-230px !important; }
+#buy-container aside form #buy-search-filters button#left-panel-search-btn { top:-40px !important;	right:-231px !important; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select { margin-top:10px; }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select .left-panel-text-wrap {	height:30px; width:inherit;	margin-top:0;	font-size:18px;	font-weight:600; }
+#buy-container aside form #buy-search-filters .left-panel-text-wrap {	height:30px; width:inherit;	margin-top:0;	font-size:18px;	font-weight:550; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:250px;	width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
 
@@ -187,57 +187,60 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 #buy-container ::-webkit-scrollbar-corner { }
 
-.sub-cbox {	font-size:16px; margin-top: 5px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox { font-size:16px; margin-top: 8px; }
 
-.sub-cbox label { color: gray;orange; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox label { color: gray;orange; }
 
-.sub-cbox:hover label { color: black;orange; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox:hover label { color: black;orange; }
 
-.radio-available-for { margin-top: 5px; }
+#buy-container aside form #buy-search-filters label { color: gray; }
 
-#price-range-text-wrapper { margin-top:25px; }
+#buy-container aside form #buy-search-filters label:hover { color: black; }
 
-#range-min, #range-max { width:90px; margin-right:3px; }
+#buy-container aside form #buy-search-filters label .radio-available-for { margin-top: 8px; }
 
-#buy-content-container { height:690px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
+#buy-container aside form #buy-search-filters  #left-panel-price-range #price-range-text-wrapper { margin-top:25px; }
 
-#latest-text { font-size:26px; position:absolute; right:400px; top:40px; }
+#buy-container aside form #buy-search-filters  #left-panel-price-range input { width:90px; margin-right:3px; }
 
-.books-data { height:200px; width:835px;	margin:30px 0 30px 30px; font-family:Ubuntu; border:1px solid #d3d3d3; }
+#buy-container #buy-content-container { height:690px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
 
-.books-data:hover {	cursor:pointer;	border-color:orange; }
+#buy-container #buy-content-container .books-data { height:200px; width:835px;	margin:30px 0 30px 30px; font-family:Ubuntu; border:1px solid #d3d3d3; }
 
-.books-data:visited { cursor:pointer; background-color:#ffff66; }
+#buy-container #buy-content-container .books-data:hover {	cursor:pointer;	border-color:orange; }
 
-div[class$="-buy-wrapper"] { position:relative;	}
+#buy-container #buy-content-container .books-data:visited { cursor:pointer; background-color:#ffff66; }
 
-.image-buy-wrapper { height:140px; width:120px;	top:20px; left:10px; }
+#buy-container #buy-content-container div { position:relative; }
 
-.books-data-images { height:inherit; width:inherit; }
+#buy-container #buy-content-container .image-buy-wrapper { height:140px; width:120px;	top:20px; left:10px; }
 
-.name-buy-wrapper { height:28px; width:400px; left:115px; top:-125px; font-size:21px; padding-left:35px; overflow:hidden; }
+#buy-container #buy-content-container .books-data-images { height:inherit; width:inherit; }
 
-.author-buy-wrapper { height:30px; width:400px; left:115px;	top:-120px;	font-size:19px;	color:gray;	padding-left:35px; }
+#buy-container #buy-content-container .name-buy-wrapper { height:28px; width:400px; left:115px; top:-125px; font-size:21px; padding-left:35px; overflow:hidden; }
 
-.category-buy-wrapper { height:35px; width:400px; left:115px;	top:-115px;	font-size:19px; color: gray; padding-left:35px; }
+#buy-container #buy-content-container .author-buy-wrapper { height:30px; width:400px; left:115px;	top:-120px;	font-size:19px;	color:gray;	padding-left:35px; }
 
-.desc-buy-wrapper {	height:70px; width:580px; left:115px; top:-115px; font-size:16px; color:gray; padding-left:35px; }
+#buy-container #buy-content-container .category-buy-wrapper { height:35px; width:400px; left:115px;	top:-115px;	font-size:19px; color: gray; padding-left:35px; }
 
-.sell-buy-wrapper {	height:40px; width:210px; font-size:21px; top:-275px; left:560px; }
+#buy-container #buy-content-container .desc-buy-wrapper {	height:70px; width:580px; left:115px; top:-115px; font-size:16px; color:gray; padding-left:35px; }
 
-.rent-buy-wrapper {	height:40px; width:275px;	font-size:21px;	top:-275px;	left:560px;	}
+#buy-container #buy-content-container .sell-buy-wrapper {	height:40px; width:210px; font-size:21px; top:-275px; left:560px; }
 
-.ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
+#buy-container #buy-content-container .rent-buy-wrapper {	height:40px; width:275px;	font-size:21px;	top:-275px;	left:560px;	}
+
+#buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
+#buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
 
 .seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
 
-div[class$="-seller-wrap"] { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
+.seller-data div { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
 
-div[class$="-seller-wrap"]:hover { background-color: #d3d3d3;silver; }
+.seller-data div:hover { background-color: #d3d3d3;silver; }
 
-span[id$="-seller-icon"] { font-size: 25px; }
+.seller-data div span { font-size: 25px; }
 
-#seller-details-head { text-align: center; font: 20px Ubuntu; }
+.seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; }
 
 #go-to-top { position: fixed; left:58%; bottom: 0; height: 100px; width: 100px; z-index:500; }
 

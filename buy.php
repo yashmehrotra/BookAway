@@ -74,7 +74,6 @@ function curPageURL() {
 							?>
 						</div>
 					</div>
-				<!--<div class="sub-select">-->
 					<div class="left-panel-text-wrap" id="book-for-text-wrapper">
 						Available For:
 					</div>
@@ -86,7 +85,6 @@ function curPageURL() {
 					<br>
 					<label><input type="radio" name="radio-name" class="radio-available-for" value="2">Rent</label>
 					<br>
-				<!--</div>-->
 					<div id="left-panel-price-range">
 						<div class="left-panel-text-wrap" id="price-range-text-wrapper">
 							Price Range:

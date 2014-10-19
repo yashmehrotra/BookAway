@@ -15,6 +15,7 @@ var RESULTS_SHOWN = 12;
 
   instructions_cookie();
   book_data_display();
+  left_panel_selected_inputs();
 
   $(document).on('scroll',function () {
 
@@ -586,7 +587,6 @@ function convert_id_to_Ultimate_index (html_id) {
   
   var converted_book_id = html_id.split('book-data-').join('');
   var index_id_book = $.inArray(converted_book_id,bookid_array)
-  
   return index_id_book;
 }
 
@@ -605,4 +605,10 @@ function split_into_different_words(param) {
         return_array.map(Function.prototype.call, String.prototype.trim);
     }
     return return_array;
+}
+
+function left_panel_selected_inputs () {
+
+  $('.sub-cbox-input:checked').parent().css('color','black');
+  $('.radio-available-for:checked').parent().css('color','black')
 }
