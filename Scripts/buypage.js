@@ -7,6 +7,8 @@
 
 // " A GENIUS NEEDS AN AUDIENCE. "
 //                          - Yash Mehrotra
+//
+// " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
 
 var total_results = 0;
 var RESULTS_SHOWN = 12;
