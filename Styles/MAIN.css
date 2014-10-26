@@ -191,11 +191,11 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox label { color: gray; }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox:hover label { color:black; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox:hover label { color:black !important; }
 
 #buy-container aside form #buy-search-filters > label { color: gray; }
 
-#buy-container aside form #buy-search-filters > label:hover { color: black; }
+#buy-container aside form #buy-search-filters > label:hover { color: black !important; }
 
 #buy-container aside form #buy-search-filters > label .radio-available-for { margin-top: 8px; }
 
