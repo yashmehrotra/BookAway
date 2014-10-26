@@ -52,7 +52,7 @@
 		<h2 class="ques" id="ques-6">Can we remove or change the details about the book added?</h2>
 		<div class="ans"><i>Yes. Click on edit tab and fill up your e-mail address, book id and password. To remove the book, click on the "Delete this Book" btn. To submit the edited details, click on "Edit" btn.</i></div>
 		<h2 class="ques" id="ques-7">I had added my book for rent first. Is it possible now to keep it for both sale and rent?</h2>
-		<div class="ans"><i>Yes it can be done. Click on the edit tab and change it.</i></div>
+		<div class="ans"><i>Yes it can be done. Click on the edit tab, enter the details as required and click on edit button. Then you will have the option to change it.</i></div>
 	</div>
 	<?php
 		require_once('footer.php');

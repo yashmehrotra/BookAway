@@ -13,6 +13,3 @@
 		</ul>
 	</section>
 </div>
-<!-- <div class="ribbon right green" style="z-index:100;">
-  <a href="https://github.com/yashmehrotra/Books-for-bucks">Fork us on GitHub</a>
-</div> -->

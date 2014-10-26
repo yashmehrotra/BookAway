@@ -29,14 +29,13 @@
 				Enter the following details:
 			</div>
 			<form id="del-form" class="pure-form pure-form-stacked" novalidate>
-				<div class="sub"><input type="text" class="del-input" id="email" placeholder="Email Address" required></div><div id="del-error_email"></div>
-				<div class="sub"><input type="text" class="del-input" id="bookid" placeholder="Book ID" required></div><div id="del-error_bookid"></div>
-				<div class="sub"><input type="password" class="del-input" id="password" placeholder="Password" required></div><div id="del-error_pass"></div>
+				<div class="sub"><input type="text" id="email" placeholder="Email Address" required></div><div id="del-error_email"></div>
+				<div class="sub"><input type="text" id="bookid" placeholder="Book ID" required></div><div id="del-error_bookid"></div>
+				<div class="sub"><input type="password" id="password" placeholder="Password" required></div><div id="del-error_pass"></div>
 				<div id="del-error_incorrect"></div>
-				<div><input class="del-input" type="submit" value="Submit" id="submit"></div>
+				<div><input type="submit" value="Submit" id="submit"></div>
 			</form>
 		</div>
-		<!-- <div class="container-style" id="edit-form"> -->
 		<div id="edit-form">
 			<button id="delete-btn">Delete this book</button>
 			<div id="edit-head">
@@ -49,7 +48,7 @@
 					<br>
 					<input type="email" name="email" id="email-form" class="sell-input" autocomplete="on" placeholder="Email" required disabled>
 					<br>
-					<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required>  <div id="error_phone"></div> 
+					<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required>  <div id="error_phone"></div>
 					<br>
 					<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
 					<select name="subject" id="subject" class="sell-input" required>
@@ -74,7 +73,7 @@
 						<option value="2">Rent</option>
 					</select>
 					<br>
-					<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error_sale_price"></div> 
+					<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error_sale_price"></div>
 					<br>
 					<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
 					<select name="rentpricetime" id="rent-price" class="sell-input">
@@ -86,7 +85,7 @@
 					<div hidden>
 						<input type="text" id="source" name="source" value="edit_book">
 						<input type="text" id="book_id_hid" name="book_id_hid">
-					</div> 
+					</div>
 					<br><br>
 				</div>
 				<button class="btn-success pure-btn" id = "del-new-btn">Edit</button>
