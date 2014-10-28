@@ -384,6 +384,22 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 
 .links:hover { background-color:#5E82CC; color:white; border-style:outset; }
 
+/*
+::-webkit-input-placeholder {
+   color: ;silver;blue;red;
+}
+
+:-moz-placeholder { 
+   color: red;  
+}
+
+::-moz-placeholder { 
+   color: red;  
+}
+
+:-ms-input-placeholder {  
+   color: red;  
+}*/
 
 /**********************  PURE-MIN CSS  **********************/
 
