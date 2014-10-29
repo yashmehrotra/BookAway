@@ -367,17 +367,34 @@ function filter_college() {
 
     e.preventDefault();
     $(document).scrollTop(150);
+
+    $('#left-panel-search-bar').val('');
+    $('.sub-cbox-input').each(function(index){
+      if($(this).val() == "All") {
+        $(this).prop('checked',true);
+      } else {
+        $(this).prop('checked',false);
+      }
+    });
+    
+    $('.radio-available-for').each(function(index){
+      if($(this).val() == "4") {
+        $(this).prop('checked',true);
+      } else{
+        $(this).prop('checked',false);
+      }
+    });
+
+    $('#range-min').val('');
+    $('#range-max').val('');
+
     var user_college_name = $('#search-filters-college-search').val();
     var current_college_name = "";
     $('#buy-container > #buy-content-container >.books-data').each(
       function(index) {
+        
         current_college_name = $(this).data('college');
-
-        if( $(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search' ) {
-
-          $(this).show();
-        }
-
+        $(this).show();
         if( current_college_name != user_college_name ) {
 
           $(this).attr('data-shown-by','not college')
@@ -400,58 +417,6 @@ function filter_name() {
     console.log(search_value);
     console.log(search_category);
     load_specific(search_value,search_category);
-  });
-}
-
-function filter_radio() {
-  // Radio Based Search Available For
-  $('.radio-available-for').on('click',function(e) {
-
-    $(document).scrollTop(150);
-    var radio_value = $('.radio-available-for:checked').val();
-    console.log(radio_value);
-    $('#buy-container > #buy-content-container >.books-data').each(
-
-      function(index) {
-
-        var available_for = $(this).data('book-for');
-        $(this).show();
-        if ( available_for != radio_value && radio_value != '4' ) {
-          console.log(available_for);
-          console.log('above radio');
-          $(this).hide();
-        }
-      }
-    );
-
-  });
-}
-function filter_range() {
-
-  // Buy Price Range Filter
-  $('#price-range').on('click',function(e) {
-
-    e.preventDefault();
-    $(document).scrollTop(150);
-    var min_price = $('#range-min').val();
-    var max_price = $('#range-max').val();
-    $('#buy-container > #buy-content-container >.books-data').each(
-
-      function(index) {
-
-        $(this).show();
-        //TEst yash
-        var temp_id = $(this).attr('id');
-        index_current = convert_id_to_Ultimate_index(temp_id);
-        console.log(Ultimate_data[index_current]['book_name'],Ultimate_data[index_current]['author_name']);
-        // Test Yash Over
-        var sell_price_filter = $(this).data('sell-price');
-        console.log(sell_price_filter);
-        if( sell_price_filter < min_price || sell_price_filter > max_price) {
-          $(this).hide();
-        }
-      }
-    );
   });
 }
 
@@ -505,6 +470,60 @@ function filter_category() {
     }
   });
 }
+
+function filter_radio() {
+  // Radio Based Search Available For
+  $('.radio-available-for').on('click',function(e) {
+
+    $(document).scrollTop(150);
+    var radio_value = $('.radio-available-for:checked').val();
+    console.log(radio_value);
+    $('#buy-container > #buy-content-container >.books-data').each(
+
+      function(index) {
+
+        var available_for = $(this).data('book-for');
+        $(this).show();
+        if ( available_for != radio_value && radio_value != '4' ) {
+          console.log(available_for);
+          console.log('above radio');
+          $(this).hide();
+        }
+      }
+    );
+
+  });
+}
+
+function filter_range() {
+
+  // Buy Price Range Filter
+  $('#price-range').on('click',function(e) {
+
+    e.preventDefault();
+    $(document).scrollTop(150);
+    var min_price = $('#range-min').val();
+    var max_price = $('#range-max').val();
+    $('#buy-container > #buy-content-container >.books-data').each(
+
+      function(index) {
+
+        $(this).show();
+        //TEst yash
+        var temp_id = $(this).attr('id');
+        index_current = convert_id_to_Ultimate_index(temp_id);
+        console.log(Ultimate_data[index_current]['book_name'],Ultimate_data[index_current]['author_name']);
+        // Test Yash Over
+        var sell_price_filter = $(this).data('sell-price');
+        console.log(sell_price_filter);
+        if( sell_price_filter < min_price || sell_price_filter > max_price) {
+          $(this).hide();
+        }
+      }
+    );
+  });
+}
+
 
 function filter() {
   
