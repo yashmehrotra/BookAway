@@ -27,7 +27,7 @@
 			<ol class="instructions-list">
 				<li class="instructions-list-item">The form given below is divided into 2 steps:<br>
 					a) Personal info - name, email, phone no, password, college name (cannot be edited later).<br>
-					b) Book info - book name, author, sell/rent price (can be edited later through edit option) 
+					b) Book info - book name, author, sell/rent price (can be edited later through edit option)
 				</li>
 				<li class="instructions-list-item">On successfull submission, a book id will be displayed which will be useful for you to later edit the details about the book you added.</li>
 				<li class="instructions-list-item"><u>Note:</U> Fields marked with * are compulsary.</li>
@@ -37,48 +37,57 @@
 		<div id="sell-form-wrap">
 			<form class="pure-form pure-form-stacked" id="sell-form" novalidate>
 				<div class="pure-g">
-					<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"><p class="compulsary-label">*</p>  <div id="error_name"></div>
-					<br>
-					<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"><p class="compulsary-label">*</p>  <div id="error_email"></div> 
-					<br>
-					<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number"><p class="compulsary-label">*</p>  <div id="error_phone"></div>   
-					<br>
-					<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
-					<br>
-					<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
-					<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
-					<select name="subject" id="subject" class="sell-input">
-						<?php
-							require_once ('categories.php');
-						?>
-					</select><p class="compulsary-label">*</p>
-					<div id="error_category"></div>
-					<br>
-					<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Book Title"><p class="compulsary-label">*</p>  <div id="error_book_name"></div>    
-					<br>
-					<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p class="compulsary-label">*</p>  <div id="error_author"></div>  
-					<br>
-					<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="280" placeholder="Description(max 280 characters)"></textarea>
-					<br>
-					<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><div id="error_url"></div>
-					<br>
-					<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
-					<select name="sellrent" id="sell-rent" class="sell-input">
-						<option value="3" selected>Both Sale and Rent</option>
-						<option value="1">Sale</option>
-						<option value="2">Rent</option>
-					</select>
-					<br>
-					<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error_sale_price"></div> 
-					<br>
-					<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
-					<select name="rentpricetime" id="rent-price" class="sell-input">
-						<option value="week">per Week</option>
-						<option value="month">per Month</option>
-						<option value="semester">per Semester</option>
-					</select>
-					<div id="error_rent_price"></div> 
-					<br><br>
+
+					<fieldset>
+						<legend>Personal Information</legend>
+						<input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"><p class="compulsary-label">*</p>  <div id="error_name"></div>
+						<br>
+						<input type="email" name="email" id="email" class="sell-input" autocomplete="on" placeholder="Email"><p class="compulsary-label">*</p>  <div id="error_email"></div>
+						<br>
+						<input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number"><p class="compulsary-label">*</p>  <div id="error_phone"></div>
+						<br>
+						<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
+						<br>
+					</fieldset>
+
+					<fieldset style="margin-top:10px;">
+						<legend>Book Details</legend>
+						<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
+						<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
+						<select name="subject" id="subject" class="sell-input">
+							<?php
+								require_once ('categories.php');
+							?>
+						</select><p class="compulsary-label">*</p>
+						<div id="error_category"></div>
+						<br>
+						<input type="text" name="book" id="book" class="sell-input" autocomplete="on" placeholder="Book Title"><p class="compulsary-label">*</p>  <div id="error_book_name"></div>
+						<br>
+						<input type="text" name="author" id="author" class="sell-input" autocomplete="on" placeholder="Author"><p class="compulsary-label">*</p>  <div id="error_author"></div>
+						<br>
+						<textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="280" placeholder="Description(max 280 characters)"></textarea>
+						<br>
+						<input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><div id="error_url"></div>
+						<br>
+						<input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
+						<select name="sellrent" id="sell-rent" class="sell-input">
+							<option value="3" selected>Both Sale and Rent</option>
+							<option value="1">Sale</option>
+							<option value="2">Rent</option>
+						</select>
+						<br>
+						<input type="number" min="0" name="sellprice" class="sell-input" id="s-cost" placeholder="Sale Cost(INR)"> <div id="error_sale_price"></div>
+						<br>
+						<input type="number" min="0" name="rentprice" class="sell-input" id="r-cost" autocomplete="on" placeholder="Rent Cost(INR)">
+						<select name="rentpricetime" id="rent-price" class="sell-input">
+							<option value="week">per Week</option>
+							<option value="month">per Month</option>
+							<option value="semester">per Semester</option>
+						</select>
+						<div id="error_rent_price"></div>
+						<br><br>
+					</fieldset>
+
 					<div hidden>
 						<input type="text" id="source" name="source" value="add_book">
 					</div>

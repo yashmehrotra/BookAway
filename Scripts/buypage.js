@@ -12,6 +12,7 @@
 
 var total_results = 0;
 var RESULTS_SHOWN = 12;
+var previousScroll = 0;
 
  $(function() {
 
@@ -46,14 +47,17 @@ function showthis(bookid) {
 
 function go_to_top() {
 
-  if($(document).scrollTop() > 1000) {
+  var currentScroll = $(document).scrollTop();
+  if (currentScroll < previousScroll && currentScroll > 1000) {
 
     $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/arrow1.png' alt='Go to top' title='Go to top'></a>");
     console.log('Appended !');
+    console.log(previousScroll,currentScroll);
   } else {
 
     $('.go-to-top-btn').parent().remove();
   }
+  previousScroll = currentScroll;
 }
 
 function instructions_cookie() {

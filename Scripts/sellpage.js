@@ -1,5 +1,5 @@
 // Global variables
-var prev_error_count = 0; 
+var prev_error_count = 0;
 college_list         = [];
 
 $(function () {
@@ -37,7 +37,12 @@ $.ajax({
 
 function sell_validate_form(){
 
+	var help_popup_top = $('#help-popup').css('top');
+	var show_pass_top = $('#show-password').css('top');
+	var help_top = $('#help').css('top');
+
 	$('#sell-form').submit(function(event){
+
 		var sell_height = $('#sell-container').css('height');
 		var submit_bottom = $('#new-btn').css('bottom');
 		var flag = false;
@@ -50,7 +55,7 @@ function sell_validate_form(){
 		$('.pure-g').find('div').hide();
 
 		if( $('#name').val() == "" || $('#name').val().length < 2) {
-			
+
 			$('#error_name').html("Please provide your name");
 			$('#name').focus() ;
 			$('#error_name').css("display","inline-block");
@@ -59,13 +64,13 @@ function sell_validate_form(){
 			name_error = true;;
 			before_pass = before_pass + 1;
 		}
-		
-		var emval = $('#email').val(); 
+
+		var emval = $('#email').val();
 		var emat = emval.indexOf("@");
 		var emdot = emval.lastIndexOf(".");
 
 		if( emval == "" || emat < -1 || emdot - emat < 2 ||  emval.length - emdot <= 2 ) {
-			
+
 			$('#error_email').html("Please provide a valid email address");
 			$('#email').focus() ;
 			$('#error_email').css("display","inline-block");
@@ -76,7 +81,7 @@ function sell_validate_form(){
 		}
 
 		if( $('#phone').val() == ""  || $('#phone').val().length != 10 || isNaN($('#phone').val())||$('#phone').val().indexOf(" ")!=-1) {
-			
+
 			$('#error_phone').html("Phone number must contain 10 digits");
 			$('#error_phone').css("display","inline-block");
 			$('#phone').focus() ;
@@ -87,7 +92,7 @@ function sell_validate_form(){
 		}
 
 		if( $('#password').val() == "" || $('#password').val().length < 4 ) {
-			
+
 			$('#error_pass').html("Password must contain at least 4 characters");
 			$('#error_pass').css("display","inline-block");
 			$('#password').focus() ;
@@ -105,7 +110,7 @@ function sell_validate_form(){
 		}
 
 		if($('#book').val() == "" ) {
-	
+
 			$('#error_book_name').html("Please provide the name of the book");
 			$('#error_book_name').css("display","inline-block");
 			$('#book').focus() ;
@@ -114,7 +119,7 @@ function sell_validate_form(){
 	 	}
 
 		if( $('#author').val() == "" ) {
-	
+
 			$('#error_author').html("Please mention the author of the book");
 			$('#error_author').css("display","inline-block");
 			$('#author').focus() ;
@@ -136,7 +141,7 @@ function sell_validate_form(){
 		if( sell_or_rent == 1 ) {
 
 			if( $('#s-cost').val() == "" ) {
-				
+
 				$('#error_sale_price').html("Please provide the sale price");
 				$('#error_sale_price').css("display","inline-block");
 				$('#s-cost').focus();
@@ -145,10 +150,10 @@ function sell_validate_form(){
 			}
 		}
 
-		if( sell_or_rent == 2 ) {	
+		if( sell_or_rent == 2 ) {
 
 			if( $('#r-cost').val() == "" ) {
-				
+
 				$('#error_rent_price').html("Please provide rent price");
 				$('#error_rent_price').css("display","inline-block");
 				$('#r-cost').focus();
@@ -160,7 +165,7 @@ function sell_validate_form(){
 		if( sell_or_rent == 3 ) {
 
 			if( $('#s-cost').val() == "" ) {
-			
+
 				$('#error_sale_price').html("Please provide the sale price");
 				$('#error_sale_price').css("display","inline-block");
 				$('#s-cost').focus();
@@ -169,7 +174,7 @@ function sell_validate_form(){
 			}
 
 			if( $('#r-cost').val() == "" ) {
-			
+
 				$('#error_rent_price').html("Please provide the rent price");
 				$('#error_rent_price').css("display","inline-block");
 				$('#r-cost').focus();
@@ -181,49 +186,26 @@ function sell_validate_form(){
 		event.preventDefault();
 
 		if(flag) {
-	
+
 			var count_change = error_count - prev_error_count;
-			var sell_new_height = parseInt(sell_height) + 40*count_change + 'px';
+			var sell_new_height = parseInt(sell_height) + 45 * count_change + 'px';
 
 			$('#sell-container').css({
 				"height" : sell_new_height
 			});
 
-			var submit_new_bottom = parseInt(submit_bottom) - 40*count_change + 'px';
+			var submit_new_bottom = parseInt(submit_bottom) - 45 * count_change + 'px';
 
 			$('#new-btn').css({
 				"bottom" : submit_new_bottom
 			});
-	
-			prev_error_count = error_count;	
 
-			if(before_pass == 0) {
-			
-				$('#help-popup').css("top","96px") ;
-				$('#show-password').css("top","155px") ;
-				$('#help').css("top","160px") ;
-			}
+			prev_error_count = error_count;
 
-			if(before_pass == 1) {
-				
-				$('#help-popup').css("top","139px") ;
-				$('#show-password').css("top","205px") ;
-				$('#help').css("top","203px") ;
-			}
+			$('#help-popup').css('top', parseInt(help_popup_top) + 48 * before_pass + 'px');
+			$('#show-password').css('top', parseInt(show_pass_top) + 50 * before_pass + 'px');
+			$('#help').css('top', parseInt(help_top) + 50 * before_pass + 'px');
 
-			if(before_pass == 2) {
-				
-				$('#help-popup').css("top","192px") ;
-				$('#show-password').css("top","255px") ;
-				$('#help').css("top","250px") ;
-			}
-
-			if(before_pass == 3) {
-
-				$('#help-popup').css("top","240px") ;
-				$('#show-password').css("top","305px") ;
-				$('#help').css("top","300px") ;
-			}	
 		} else {
 					$('#sell-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:1000px; left:405px;">');
 	        $.ajax({
@@ -266,7 +248,7 @@ function show_password() {
 			click_password = 0;
 		}
 	});
-}	 
+}
 
 function help_popup() {
 
@@ -280,7 +262,7 @@ function hide_price() {
 	setInterval(function() {
 		var sell_or_rent =  $('#sell-rent option:selected').val();
 		if( sell_or_rent == 1 ) {
-			
+
 			$('#r-cost').slideUp(300);
 			$('#rent-price').slideUp(300);
 			$('#s-cost').slideDown(300);
@@ -292,7 +274,7 @@ function hide_price() {
 		}
 
 		if( sell_or_rent == 2 ) {
-			
+
 			$('#s-cost').slideUp(300);
 			$('#r-cost').slideDown(300);
 			$('#rent-price').slideDown(300);
@@ -302,9 +284,9 @@ function hide_price() {
 			}
 			flag = true;
 		}
-		
+
 		if( sell_or_rent == 3 ) {
-			
+
 			$('#s-cost').slideDown(300);
 			$('#r-cost').slideDown(300);
 			$('#rent-price').slideDown(300);
@@ -318,4 +300,3 @@ function hide_price() {
 		}
 	}, 100);
 }
-

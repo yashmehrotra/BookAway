@@ -242,7 +242,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 .seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; }
 
-#go-to-top { position: fixed; left:58%; bottom: 0; height: 100px; width: 100px; z-index:500; }
+#go-to-top { position: fixed; right:4%; bottom: 0; height: 100px; width: 100px; z-index:500; }
 
 
 /*********************  CONTACT.PHP  ***********************/
@@ -326,11 +326,11 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { height:970px; width:850px; top:60px; margin:0 auto 250px; background-color:white; }
+#sell-container { height:1000px; width:850px; top:60px; margin:0 auto 250px; background-color:white; }
 
 #sell-instructions { height:170px; }
 
-#sell-form-wrap { width:860px; height:940px;	position:absolute; top:20px; left:175px; text-align:left; line-height:180%;	font-size:130%; }
+#sell-form-wrap { width:500px;860px; height:940px;	position:absolute; top:10px; left:182px; text-align:left; line-height:180%;	font-size:130%; }
 
 .sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; }
 
@@ -340,11 +340,11 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #phone { width:410px; }
 
-#show-password { font-size:32px; position:absolute;	left:440px;	top:153px; cursor:pointer; }
+#show-password { font-size:32px; position:absolute;	left:440px;	top:215px; cursor:pointer; }
 
-#help {	height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:-35px; top:150px; }
+#help {	height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:-35px; top:215px; }
 
-#help-popup { height:44px; width:380px;	box-shadow:1px 1px 1px black; border:1px solid transparent;	position:absolute; left:-177px;	top:90px; font:15px Ubuntu; padding:5px; background-color: black;white; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
+#help-popup { height:44px; width:380px;	box-shadow:1px 1px 1px black; border:1px solid transparent;	position:absolute; left:-177px;	top:150px; font:15px Ubuntu; padding:5px; background-color: black;white; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
 
 #help-popup:after { content: ""; position: absolute; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: black transparent transparent transparent; top: 55px; left: 144px; }
 
@@ -366,7 +366,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bottom:10px; color:red;	border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
 
-#new-btn { width:39%; height:8%; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:absolute;	bottom:40px; left:80px; }
+#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:absolute;	bottom:-30px; left:140px; }
 
 #new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear;	-moz-transition:opacity .5s linear;	-o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
@@ -389,16 +389,16 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
    color: ;silver;blue;red;
 }
 
-:-moz-placeholder { 
-   color: red;  
+:-moz-placeholder {
+   color: red;
 }
 
-::-moz-placeholder { 
-   color: red;  
+::-moz-placeholder {
+   color: red;
 }
 
-:-ms-input-placeholder {  
-   color: red;  
+:-ms-input-placeholder {
+   color: red;
 }*/
 
 /**********************  PURE-MIN CSS  **********************/
@@ -423,7 +423,7 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 .pure-form select[multiple]{ height:70px; }
 .pure-form label{ margin:.5em 0 .2em; }
 .pure-form fieldset { margin:0;	padding:.35em 0 .75em; border:0; }
-.pure-form legend{ display:block; width:100%; padding:.3em 0; margin-bottom:.3em; color:#333; border-bottom:1px solid #e5e5e5; }
+.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color:#C70000; border-bottom:1px solid #E28C8C; font-family: Proxima-Nova; }
 .pure-form input.pure-input-rounded, .pure-form .pure-input-rounded { border-radius:2em; padding:.5em 1em; }
 .pure-form .pure-group fieldset { margin-bottom:10px; }
 .pure-form .pure-group input { display:block;padding:10px; margin:0; border-radius:0; position:relative; top:-1px; }
