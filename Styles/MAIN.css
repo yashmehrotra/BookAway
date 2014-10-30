@@ -147,25 +147,23 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container { width:1270px; height:690px; margin:0 auto 100px; padding:0; top:10px; }
 
-#buy-container aside { width:320px; height:800px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; left:0; text-align:center; }
+#buy-container aside { width:300px; /*height:900px;*/ float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 45px; text-align:center; }
 
 #buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
 
 #buy-container aside form input[type="text"], input[type="search"] { width:220px; position:relative; }
 
-#buy-container aside form input[type="checkbox"], input[type="radio"] { margin-right: 4px; }
+#buy-container aside form input[type="checkbox"], input[type="radio"] { margin-right: 5px; }
 
-#buy-container aside form #buy-search-filters { width:300px; text-align:left; padding-left:30px; }
+#buy-container aside form #buy-search-filters { width:280px; text-align:left; padding-left:10px; margin-bottom: 30px; }
 
 #buy-container aside form #buy-search-filters button { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative; top:3px; }
 
 #buy-container aside form #buy-search-filters button:hover { background-color:black; color:white; }
 
-#buy-container aside form #buy-search-filters #search-filters-college-select { height:70px; margin-bottom: 30px; }
+#buy-container aside form #buy-search-filters #search-filters-college-select { height:43px;70px; margin-bottom: 60px; }
 
-#buy-container aside form #buy-search-filters #search-filters-college-select input#search-filters-college-search { top:0; left:-5px; font-size:15px; }
-
-#buy-container aside form #buy-search-filters #search-filters-college-select button { right:-1px; top:1px; }
+#buy-container aside form #buy-search-filters #search-filters-college-select input#search-filters-college-search { top:0; left:-5px; font-size: 17px; height: inherit; font-family: Verdana,Arial,sans-serif; }
 
 #buy-container aside form #buy-search-filters .ui-widget input#left-panel-search-bar { top:0; left:-3px; }
 
@@ -175,7 +173,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container aside form #buy-search-filters .left-panel-text-wrap {	height:30px; width:inherit;	margin-top:0;	font-size:18px;	font-weight:550; }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:250px;	width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
 
 #buy-container ::-webkit-scrollbar { width:15px; }
 
@@ -187,7 +185,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container ::-webkit-scrollbar-corner { }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox { font-size:16px; margin-top: 8px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox { font-size:16px; margin-top: 10px;8px; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox label { color: gray; }
 
@@ -197,7 +195,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container aside form #buy-search-filters > label:hover { color: black !important; }
 
-#buy-container aside form #buy-search-filters > label .radio-available-for { margin-top: 8px; }
+#buy-container aside form #buy-search-filters > label .radio-available-for { margin-top: 10px; }
 
 #buy-container aside form #buy-search-filters  #left-panel-price-range #price-range-text-wrapper { margin-top:25px; }
 
@@ -205,7 +203,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container #buy-content-container { height:690px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
 
-#buy-container #buy-content-container .books-data { height:200px; width:835px;	margin:30px 0 30px 30px; font-family:Ubuntu; border:1px solid #d3d3d3; }
+#buy-container #buy-content-container .books-data { height:200px; width:780px;835px;	margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3; }
 
 #buy-container #buy-content-container .books-data:hover {	cursor:pointer;	border-color:orange; }
 
@@ -217,17 +215,17 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container #buy-content-container .books-data-images { height:inherit; width:inherit; }
 
-#buy-container #buy-content-container .name-buy-wrapper { height:28px; width:400px; left:115px; top:-125px; font-size:21px; padding-left:35px; overflow:hidden; }
+#buy-container #buy-content-container .name-buy-wrapper { height:28px; width:400px; left:115px; top:-125px; font-size:19px;21px; padding-left:25px;35px; overflow:hidden; }
 
-#buy-container #buy-content-container .author-buy-wrapper { height:30px; width:400px; left:115px;	top:-120px;	font-size:19px;	color:gray;	padding-left:35px; }
+#buy-container #buy-content-container .author-buy-wrapper { height:30px; width:400px; left:115px;	top:-120px;	font-size:17px;19px;	color:gray;	padding-left:25px;35px; }
 
-#buy-container #buy-content-container .category-buy-wrapper { height:35px; width:400px; left:115px;	top:-115px;	font-size:19px; color: gray; padding-left:35px; }
+#buy-container #buy-content-container .category-buy-wrapper { height:35px; width:400px; left:115px;	top:-115px;	font-size:17px;19px; color: gray; padding-left:25px;35px; }
 
-#buy-container #buy-content-container .desc-buy-wrapper {	height:70px; width:580px; left:115px; top:-115px; font-size:16px; color:gray; padding-left:35px; }
+#buy-container #buy-content-container .desc-buy-wrapper {	height:70px; width:580px; left:115px; top:-115px; font-size:14px;16px; color:gray; padding-left:25px;35px; }
 
-#buy-container #buy-content-container .sell-buy-wrapper {	height:40px; width:210px; font-size:21px; top:-275px; left:560px; }
+#buy-container #buy-content-container .sell-buy-wrapper {	height:40px; font-size:19px;21px; top:-275px; left:550px; }
 
-#buy-container #buy-content-container .rent-buy-wrapper {	height:40px; width:275px;	font-size:21px;	top:-275px;	left:560px;	}
+#buy-container #buy-content-container .rent-buy-wrapper {	height:40px; font-size:19px;21px;	top:-275px;	left:550px;	}
 
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
@@ -423,7 +421,7 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 .pure-form select[multiple]{ height:70px; }
 .pure-form label{ margin:.5em 0 .2em; }
 .pure-form fieldset { margin:0;	padding:.35em 0 .75em; border:0; }
-.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color:#C70000; border-bottom:1px solid #E28C8C; font-family: Proxima-Nova; }
+.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color:#00BE0A; border-bottom:1px solid #00BE0A; font-family: Ubuntu;Proxima-Nova; font-weight: 590; }
 .pure-form input.pure-input-rounded, .pure-form .pure-input-rounded { border-radius:2em; padding:.5em 1em; }
 .pure-form .pure-group fieldset { margin-bottom:10px; }
 .pure-form .pure-group input { display:block;padding:10px; margin:0; border-radius:0; position:relative; top:-1px; }

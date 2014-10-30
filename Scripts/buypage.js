@@ -48,7 +48,7 @@ function showthis(bookid) {
 function go_to_top() {
 
   var currentScroll = $(document).scrollTop();
-  if (currentScroll < previousScroll && currentScroll > 1000) {
+  if (currentScroll < previousScroll && currentScroll > 900) {
 
     $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/arrow1.png' alt='Go to top' title='Go to top'></a>");
     console.log('Appended !');

@@ -17,6 +17,7 @@ function curPageURL() {
 <head>
 	<title>Buy and Rent Books | Bookaway.in</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
