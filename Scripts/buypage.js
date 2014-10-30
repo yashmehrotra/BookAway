@@ -361,10 +361,51 @@ function books_data() {
   auto_load_more();
 }
 
-function filter() {
+function filter_college() {
+  // College Based Search
+  $('#search-filters-college-btn').on('click',function(e) {
 
-  //Search First
+    e.preventDefault();
+    $(document).scrollTop(150);
 
+    $('#left-panel-search-bar').val('');
+    $('.sub-cbox-input').each(function(index){
+      if($(this).val() == "All") {
+        $(this).prop('checked',true);
+      } else {
+        $(this).prop('checked',false);
+      }
+    });
+    
+    $('.radio-available-for').each(function(index){
+      if($(this).val() == "4") {
+        $(this).prop('checked',true);
+      } else{
+        $(this).prop('checked',false);
+      }
+    });
+
+    $('#range-min').val('');
+    $('#range-max').val('');
+
+    var user_college_name = $('#search-filters-college-search').val();
+    var current_college_name = "";
+    $('#buy-container > #buy-content-container >.books-data').each(
+      function(index) {
+        
+        current_college_name = $(this).data('college');
+        $(this).show();
+        if( current_college_name != user_college_name ) {
+
+          $(this).attr('data-shown-by','not college')
+          $(this).hide();
+        }
+      }
+    );
+  });
+}
+
+function filter_name() {
   // Name Based Search
   $('#left-panel-search-btn').click(function(e) {
 
@@ -377,32 +418,60 @@ function filter() {
     console.log(search_category);
     load_specific(search_value,search_category);
   });
+}
 
-  // College Based Search
-  $('#search-filters-college-btn').on('click',function(e) {
+function filter_category() {
+    // Category Filter
+  $('.sub-cbox-input').on('click',function(e) {
 
-    e.preventDefault();
     $(document).scrollTop(150);
-    var user_college_name = $('#search-filters-college-search').val();
-    var current_college_name = "";
-    $('#buy-container > #buy-content-container >.books-data').each(
-      function(index) {
-        current_college_name = $(this).data('college');
 
-        if( $(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search' ) {
+    var checkbox_value = $(this).val();
+    checkbox_array = [];
+    console.log(checkbox_value);
 
+    if(checkbox_value == "All") {
+
+      $('.sub-cbox-input').each(function(index){
+        $(this).prop('checked',false);
+      });
+
+      $(this).prop('checked',true);
+
+      $('.books-data').each(function(index) {
           $(this).show();
+      });
+
+    } else {
+
+      $('.sub-cbox-input').each(function(index){
+        if($(this).val() == "All") {
+          $(this).prop('checked',false);
+        } else if ($(this).prop('checked')) {
+          if(checkbox_array.indexOf($(this).val(),checkbox_array) == -1) {
+            checkbox_array.push($(this).val());
+          }
         }
+      });
+      
+      console.log(checkbox_array);
+      $('.books-data').each(
 
-        if( current_college_name != user_college_name ) {
+        function(index) {
 
-          $(this).attr('data-shown-by','not college')
           $(this).hide();
-        }
-      }
-    );
-  });
+          var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
+          var current_book_category = Ultimate_data[index_book]['category'];
+          if(checkbox_array.indexOf(current_book_category) > -1) {
 
+            $(this).show();
+          }
+      });
+    }
+  });
+}
+
+function filter_radio() {
   // Radio Based Search Available For
   $('.radio-available-for').on('click',function(e) {
 
@@ -424,6 +493,9 @@ function filter() {
     );
 
   });
+}
+
+function filter_range() {
 
   // Buy Price Range Filter
   $('#price-range').on('click',function(e) {
@@ -450,62 +522,16 @@ function filter() {
       }
     );
   });
+}
 
-  // Category Filter
-  $('.sub-cbox-input').on('click',function(e) {
 
-    $(document).scrollTop(150);
-
-    var checkbox_value = $(this).val();
-    checkbox_array = [];
-    console.log(checkbox_value);
-
-    if(checkbox_value == "All") {
-
-      $('.sub-cbox-input').each(function(index){
-
-        $(this).prop('checked',false);
-      });
-
-      $(this).prop('checked',true);
-
-      $('.books-data').each(
-
-        function(index) {
-
-          $(this).show();
-      });
-
-    } else {
-
-      $('.sub-cbox-input').each(function(index){
-
-        if($(this).val() == "All") {
-
-          $(this).prop('checked',false);
-        } else if ($(this).prop('checked')) {
-
-            if(checkbox_array.indexOf($(this).val(),checkbox_array) == -1) {
-
-              checkbox_array.push($(this).val());
-            }
-        }
-      });
-      console.log(checkbox_array);
-      $('.books-data').each(
-
-        function(index) {
-
-          $(this).hide();
-          var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
-          var current_book_category = Ultimate_data[index_book]['category'];
-          if(checkbox_array.indexOf(current_book_category) > -1) {
-
-            $(this).show();
-          }
-      });
-    }
-  });
+function filter() {
+  
+  filter_college();
+  filter_name();
+  filter_category();
+  filter_radio();
+  filter_range();
 }
 
 function load_specific(search_value, search_category) {
