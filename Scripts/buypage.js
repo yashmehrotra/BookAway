@@ -52,16 +52,24 @@ function showthis(bookid) {
 function go_to_top() {
 
   var currentScroll = $(document).scrollTop();
+
   if (currentScroll < previous_scroll && currentScroll > 900) {
 
-    $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/arrow1.png' alt='Go to top' title='Go to top'></a>");
-    console.log('Appended !');
-    console.log(previous_scroll,currentScroll);
-  } else {
+    $('#go-to-top').show()
+   }
+  else if (!(currentScroll < previous_scroll && currentScroll > 900)) {
 
-    $('.go-to-top-btn').parent().remove();
+    $('#go-to-top').hide();
   }
   previous_scroll = currentScroll;
+}
+
+function smooth_scroll_to_top() {
+
+  $('html, body').animate({
+    
+      scrollTop: $('#buy-container').offset().top
+  }, 1800);
 }
 
 function instructions_cookie() {
