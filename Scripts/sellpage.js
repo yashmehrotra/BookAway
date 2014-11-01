@@ -207,7 +207,8 @@ function sell_validate_form(){
 			$('#help').css('top', parseInt(help_top) + 50 * before_pass + 'px');
 
 		} else {
-					$('#sell-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:1000px; left:405px;">');
+
+					$('#sell-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:950px; left:405px;">');
 	        $.ajax({
 	            url: "sqldata.php",
 	            type: 'POST',

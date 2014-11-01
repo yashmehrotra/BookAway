@@ -103,7 +103,7 @@ search_authors      = [];
 
 function book_data_display () {
 
-  $('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:150px; left:805px;">');
+  $('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:fixed; top:60%; left:60%;">');
   $.ajax({
 
     type: "POST",
@@ -561,7 +561,7 @@ function seller_data(book_id) {
     book_onclick_id = book_onclick_id.split("book-data-").join("");
     book_id = book_onclick_id;
 
-    $('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:150px; left:805px;">');
+    $('#buy-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:fixed; top:50%; left:60%;">');
 
     $.ajax({
 

@@ -67,8 +67,9 @@ function edit_request() {
 	var user_email = $('#email').val();
 	var user_password = $('#password').val();
 	console.log(user_email);
-	$('#del-main-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:800px; left:405px;">');
+	$('#del-main-container').append('<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:400px; left:445px; z-index:100;">');
 	$.ajax({
+
 		type: "POST",
 		url: "sqldata.php",
 		data: {
@@ -78,6 +79,7 @@ function edit_request() {
 			'source':'edit_user' 
 		},
 		success: function(result) {
+
 			$('#loading-gif').remove();
 			if(result) {
 				var response = JSON.parse(result);
@@ -103,11 +105,13 @@ function edit_request() {
 					$('#rent-price').attr('value',response['rent_time']);
 
 				} else {
+
 					console.log('wrong');
 					$('#del-error_incorrect').html('The email, password or Book ID you entered are incorrect!')
 					$('#del-error_incorrect').show();
 				}
 			} else {
+
 				console.log("Problem with Ajax Edit Request");
 			}
 		}

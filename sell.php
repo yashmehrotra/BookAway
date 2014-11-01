@@ -48,11 +48,11 @@
 						<br>
 						<input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
 						<br>
+						<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
 					</fieldset>
 
 					<fieldset style="margin-top:10px;">
 						<legend>Book Details</legend>
-						<input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
 						<input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
 						<select name="subject" id="subject" class="sell-input">
 							<?php
