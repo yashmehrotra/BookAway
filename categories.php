@@ -17,9 +17,9 @@
 	
 	$sell_fixed = "<option value=''>Select your category</option>";
 
-	$buy_fixed = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value="All" checked>All</label><br></div>';
+	$buy_fixed = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" id="checkbox-0" value="All" checked>All</label><br></div>';
 
-	$query = "SELECT * FROM tbl_categories ORDER BY category ASC ";
+	$query = "SELECT * FROM `tbl_categories` ORDER BY `category` ASC ";
 	$category_data = mysqli_query($database_connection,$query);
 
 	if (strstr($current_url,$sell_url) || strstr($current_url,$edit_url)) {
@@ -34,7 +34,7 @@
 		echo $buy_fixed;
 		while($row = mysqli_fetch_array($category_data)) {
 			$sql_result = $row['category'];
-			$buy_result = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value='.$sql_result.'>'.$sql_result.'</label><br></div>';
+			$buy_result = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" value="'.$sql_result.'"">'.$sql_result.'</label><br></div>';
 			echo $buy_result;
 		}
 	} else {

@@ -17,6 +17,7 @@ function curPageURL() {
 <head>
 	<title>Buy and Rent Books | Bookaway.in</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
@@ -53,18 +54,17 @@ function curPageURL() {
 		</article>
 	</blockquote>
 	<div class="main-containers" id="buy-container">
-		<aside class="left-panel" id="buy-left-panel">
-			<form class="pure-form pure-form-stacked" id="left-panel-search-form">
-				<div>
-					<div class="ui-widget"><input class="left-panel-input" id="left-panel-search-bar" placeholder="Search Here"></div>
-					<button class="ion-android-search search-filters-btn pointer-onhover" id="left-panel-search-btn"></button>
-				</div> 
-				<br>
-				<div class="search-filters" id="buy-search-filters">
+		<aside class="left-panel">
+			<form class="pure-form pure-form-stacked">
+				<div id="buy-search-filters">
 					<div id="search-filters-college-select">
-						<input type="text" class="left-panel-input" id="search-filters-college-search" placeholder="Select College">
-						<button class="ion-android-arrow-forward search-filters-btn pointer-onhover" id="search-filters-college-btn"></button>
+						<input type="text" id="search-filters-college-search" placeholder="Select College">
+						<button class="ion-android-arrow-forward pointer-onhover" id="search-filters-college-btn"></button>
 					</div>
+					<div class="ui-widget">
+						<input type="search" id="left-panel-search-bar" placeholder="Search Here">
+					</div>
+					<button class="ion-android-search pointer-onhover" id="left-panel-search-btn"></button>
 					<div class="sub-select" id="left-panel-sub-select">
 						<div class="left-panel-text-wrap" id="sub-text-wrapper">
 							Category:
@@ -75,7 +75,6 @@ function curPageURL() {
 							?>
 						</div>
 					</div>
-				<!--<div class="sub-select">-->
 					<div class="left-panel-text-wrap" id="book-for-text-wrapper">
 						Available For:
 					</div>
@@ -87,13 +86,12 @@ function curPageURL() {
 					<br>
 					<label><input type="radio" name="radio-name" class="radio-available-for" value="2">Rent</label>
 					<br>
-				<!--</div>-->
 					<div id="left-panel-price-range">
 						<div class="left-panel-text-wrap" id="price-range-text-wrapper">
 							Price Range:
 						</div>
 						<input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">
-						<button class="search-filters-btn pointer-onhover" id="price-range">Go</button>
+						<button class="pointer-onhover" id="price-range">Go</button>
 					</div>
 				</div>
 			</form>
