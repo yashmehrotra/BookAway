@@ -9,10 +9,14 @@
 //                          - Yash Mehrotra
 //
 // " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
+// " FROM DEDUCTION TO EVIDENCE " ---> Avijit'a Autobiography
+
+
+// Total number of books shown when the page loads, wihout scrolling down
+var RESULTS_SHOWN = 12;
 
 var total_results = 0;
-var RESULTS_SHOWN = 12;
-var previousScroll = 0;
+var previous_scroll = 0;
 
  $(function() {
 
@@ -48,16 +52,16 @@ function showthis(bookid) {
 function go_to_top() {
 
   var currentScroll = $(document).scrollTop();
-  if (currentScroll < previousScroll && currentScroll > 900) {
+  if (currentScroll < previous_scroll && currentScroll > 900) {
 
     $('#buy-container').append("<a href='#buy-container'><img class='go-to-top-btn' id='go-to-top' src='Styles/Images/arrow1.png' alt='Go to top' title='Go to top'></a>");
     console.log('Appended !');
-    console.log(previousScroll,currentScroll);
+    console.log(previous_scroll,currentScroll);
   } else {
 
     $('.go-to-top-btn').parent().remove();
   }
-  previousScroll = currentScroll;
+  previous_scroll = currentScroll;
 }
 
 function instructions_cookie() {
@@ -323,11 +327,10 @@ function auto_load_more() {
       var buy_height = $('#buy-container').height();
       var content_container_height = $('#buy-content-container').height();
       var change = 242*(counter_visible - clone_visible);
-      // if ( (change + buy_height) <= max_height ) {
-        $('#buy-container').height(buy_height+change+'px');
-        $('#buy-content-container').height(content_container_height+change+'px');
-      // }
-      $('div[class="books-data"]:gt(' + (clone_visible-1) + '):lt(' + (RESULTS_SHOWN+1) + ')').slideDown(600);
+      // To change the height of the main container div dynamically
+      $('#buy-container').height(content_container_height+change+'px');
+      // To show more book tiles on scroll down
+      $('div[class="books-data"]:gt(' + (clone_visible-1) + '):lt(' + (RESULTS_SHOWN+1) + ')').slideDown(300);
       console.log(buy_height,content_container_height);
     }
 
@@ -339,73 +342,22 @@ function books_data() {
 
   console.log('total_results'+total_results);
   var results_counter = 0;
-  // var max_height = total_results*230;
-
-  // $('#buy-container').css('max-height',max_height+'px');
-  // $('#buy-content-container').css('max-height',max_height+'px');
 
   $('div[class="books-data"]:gt(' + (RESULTS_SHOWN-1) + ')').hide();
   if( total_results < RESULTS_SHOWN ) {
+
     results_counter= total_results;
   } else {
+
     results_counter= RESULTS_SHOWN;
-  }
-  if ( results_counter > 3 ) {
-  var buy_height = $('#buy-container').height();
-  console.log("buy height",buy_height);
-  var content_container_height = $('#buy-content-container').height();
-  var h_change = 242*(results_counter - 3);
-  $('#buy-container').height(buy_height + h_change + 'px');
-  $('#buy-content-container').height( content_container_height + h_change + 'px');
   }
   auto_load_more();
 }
 
-function filter_college() {
-  // College Based Search
-  $('#search-filters-college-btn').on('click',function(e) {
+function filter() {
 
-    e.preventDefault();
-    $(document).scrollTop(150);
+  //Search First
 
-    $('#left-panel-search-bar').val('');
-    $('.sub-cbox-input').each(function(index){
-      if($(this).val() == "All") {
-        $(this).prop('checked',true);
-      } else {
-        $(this).prop('checked',false);
-      }
-    });
-    
-    $('.radio-available-for').each(function(index){
-      if($(this).val() == "4") {
-        $(this).prop('checked',true);
-      } else{
-        $(this).prop('checked',false);
-      }
-    });
-
-    $('#range-min').val('');
-    $('#range-max').val('');
-
-    var user_college_name = $('#search-filters-college-search').val();
-    var current_college_name = "";
-    $('#buy-container > #buy-content-container >.books-data').each(
-      function(index) {
-        
-        current_college_name = $(this).data('college');
-        $(this).show();
-        if( current_college_name != user_college_name ) {
-
-          $(this).attr('data-shown-by','not college')
-          $(this).hide();
-        }
-      }
-    );
-  });
-}
-
-function filter_name() {
   // Name Based Search
   $('#left-panel-search-btn').click(function(e) {
 
@@ -418,60 +370,32 @@ function filter_name() {
     console.log(search_category);
     load_specific(search_value,search_category);
   });
-}
 
-function filter_category() {
-    // Category Filter
-  $('.sub-cbox-input').on('click',function(e) {
+  // College Based Search
+  $('#search-filters-college-btn').on('click',function(e) {
 
+    e.preventDefault();
     $(document).scrollTop(150);
+    var user_college_name = $('#search-filters-college-search').val();
+    var current_college_name = "";
+    $('#buy-container > #buy-content-container >.books-data').each(
+      function(index) {
+        current_college_name = $(this).data('college');
 
-    var checkbox_value = $(this).val();
-    checkbox_array = [];
-    console.log(checkbox_value);
+        if( $(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search' ) {
 
-    if(checkbox_value == "All") {
-
-      $('.sub-cbox-input').each(function(index){
-        $(this).prop('checked',false);
-      });
-
-      $(this).prop('checked',true);
-
-      $('.books-data').each(function(index) {
           $(this).show();
-      });
-
-    } else {
-
-      $('.sub-cbox-input').each(function(index){
-        if($(this).val() == "All") {
-          $(this).prop('checked',false);
-        } else if ($(this).prop('checked')) {
-          if(checkbox_array.indexOf($(this).val(),checkbox_array) == -1) {
-            checkbox_array.push($(this).val());
-          }
         }
-      });
-      
-      console.log(checkbox_array);
-      $('.books-data').each(
 
-        function(index) {
+        if( current_college_name != user_college_name ) {
 
+          $(this).attr('data-shown-by','not college')
           $(this).hide();
-          var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
-          var current_book_category = Ultimate_data[index_book]['category'];
-          if(checkbox_array.indexOf(current_book_category) > -1) {
-
-            $(this).show();
-          }
-      });
-    }
+        }
+      }
+    );
   });
-}
 
-function filter_radio() {
   // Radio Based Search Available For
   $('.radio-available-for').on('click',function(e) {
 
@@ -493,9 +417,6 @@ function filter_radio() {
     );
 
   });
-}
-
-function filter_range() {
 
   // Buy Price Range Filter
   $('#price-range').on('click',function(e) {
@@ -522,16 +443,62 @@ function filter_range() {
       }
     );
   });
-}
 
+  // Category Filter
+  $('.sub-cbox-input').on('click',function(e) {
 
-function filter() {
-  
-  filter_college();
-  filter_name();
-  filter_category();
-  filter_radio();
-  filter_range();
+    $(document).scrollTop(150);
+
+    var checkbox_value = $(this).val();
+    checkbox_array = [];
+    console.log(checkbox_value);
+
+    if(checkbox_value == "All") {
+
+      $('.sub-cbox-input').each(function(index){
+
+        $(this).prop('checked',false);
+      });
+
+      $(this).prop('checked',true);
+
+      $('.books-data').each(
+
+        function(index) {
+
+          $(this).show();
+      });
+
+    } else {
+
+      $('.sub-cbox-input').each(function(index){
+
+        if($(this).val() == "All") {
+
+          $(this).prop('checked',false);
+        } else if ($(this).prop('checked')) {
+
+            if(checkbox_array.indexOf($(this).val(),checkbox_array) == -1) {
+
+              checkbox_array.push($(this).val());
+            }
+        }
+      });
+      console.log(checkbox_array);
+      $('.books-data').each(
+
+        function(index) {
+
+          $(this).hide();
+          var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
+          var current_book_category = Ultimate_data[index_book]['category'];
+          if(checkbox_array.indexOf(current_book_category) > -1) {
+
+            $(this).show();
+          }
+      });
+    }
+  });
 }
 
 function load_specific(search_value, search_category) {

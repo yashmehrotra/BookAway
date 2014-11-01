@@ -145,9 +145,9 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1270px; height:690px; margin:0 auto 100px; padding:0; top:10px; }
+#buy-container { width:1270px; min-height:950px; margin:0 auto 100px; padding:0; top:10px; overflow: hidden; }
 
-#buy-container aside { width:300px; /*height:900px;*/ float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 45px; text-align:center; }
+#buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 45px; text-align:center; }
 
 #buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
 
@@ -201,7 +201,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container aside form #buy-search-filters  #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
 
-#buy-container #buy-content-container { height:690px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
+#buy-container #buy-content-container { min-height:950px; width:922px;	position:absolute; top:50px; left:340px; text-align:left;center; padding-bottom:20px; }
 
 #buy-container #buy-content-container .books-data { height:200px; width:780px;835px;	margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3; }
 
