@@ -230,6 +230,14 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
 
+#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:33%; bottom: 5%; width: 90px; z-index:500; }
+
+#buy-container #go-to-top:hover { opacity: 0.8; }
+
+#buy-container #go-to-top span { margin-left: 5%; font-size: 16px; display: inline-block; color: white; }
+
+#buy-container #go-to-top p { font: 14px Ubuntu; text-align: center; display: inline-block; color: white; margin-top: 9%; }
+
 .seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
 
 .seller-data div { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
@@ -239,8 +247,6 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 .seller-data div span { font-size: 25px; }
 
 .seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; }
-
-#go-to-top { position: fixed; right:4%; bottom: 0; height: 100px; width: 100px; z-index:500; }
 
 
 /*********************  CONTACT.PHP  ***********************/

@@ -99,9 +99,10 @@ function curPageURL() {
 		<div id="buy-content-container">
 			<!-- Books content appended here -->
 		</div>
-		<a href='javascript:smooth_scroll_to_top();'>
-			<img id='go-to-top' src='Styles/Images/arrow1.png' alt='Go to top' title='Go to top' style="dislay:none;">
-		</a>
+		<div class="pointer-onhover" id='go-to-top' onclick="javascript:smooth_scroll_to_top();">
+			<span class="ion-arrow-up-a"></span>
+			<p>Go to Top</p>
+		</div>
 	</div>
 	<?php
 		require_once('footer.php');
