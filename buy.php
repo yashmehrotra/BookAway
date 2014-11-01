@@ -99,6 +99,10 @@ function curPageURL() {
 		<div id="buy-content-container">
 			<!-- Books content appended here -->
 		</div>
+		<div class="pointer-onhover" id='go-to-top' onclick="javascript:smooth_scroll_to_top();">
+			<span class="ion-arrow-up-a"></span>
+			<p>Go to Top</p>
+		</div>
 	</div>
 	<?php
 		require_once('footer.php');
