@@ -81,7 +81,7 @@ ul { list-style-type: none; }
 
 .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
-.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #047D8B; border: none; display: inline-block; margin: 10px 0 0 330px; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491;#047D8B; border: 1px solid transparent; border-radius: 5px; display: inline-block; margin: 10px 0 0 330px; }
 
 .header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
