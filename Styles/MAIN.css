@@ -43,7 +43,9 @@ a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.page-header { background-color:#1884E9; color:white; width:100%;1302px; height:165px;	margin:-70px auto 0; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
+.outer-page-wrap { margin:0 auto; width: 100%;1300px; display: block; }
+
+.page-header { background-color:#1884E9; color:white; width:100%; min-width: 1302px; height:165px;	margin:-70px auto 0; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -61,25 +63,27 @@ ul { list-style-type: none; }
 /********************  HEADER   ************************/
 
 
-#favicon { width: 54px; height: 54px; /*position:absolute; top: 8px; left:30px;*/ position: relative; top:-80px; left: 40px; }
+#favicon { width: 54px; height: 54px; /*margin: auto ;*/ position: relative; top:-80px; left: 2%; }
 
-.header-wrapper { width:99.92%;inherit; height:65px; position:relative;absolute; top:100px; }
+.header-wrapper { width:99.92%;inherit; height:65px; position:relative;absolute; top:120px; }
 
 .header-wrapper-fixed {	z-index:50;	position:fixed; top:0; left:0; }
 
-.header { width:100%;1300px; height:65px; background-color:#1884E9; font-family: Ubuntu; margin: auto; border:1px outset transparent; }
+.header { width:100%; min-width:1300px; height:65px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
-.header ul { list-style:none; width:800px; display: inline-block; /*margin: 0 auto;*/ padding-left: 30px; }
+.header .header-menu { width:1300px; margin: auto; }
 
-.header ul li { display:inline-block; }
+.header .header-menu ul { list-style:none; width:730px; display: inline-block; padding-left: 10px;   }
 
-.header ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:12px; color:white; display:inline-block; border-radius: 8px; }
+.header .header-menu ul li { display:inline-block; }
 
-.header ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
+.header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:12px; color:white; display:inline-block; border-radius: 8px; }
 
-button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #047D8B; border: none; display: inline-block; margin: 10px 0 0 220px; /*position: absolute;*/ /*right: ; top:13px;*/ }
+.header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
-button#fork-on-github:hover { opacity: 0.9; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #047D8B; border: none; display: inline-block; margin: 10px 0 0 330px; }
+
+.header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
 
 /********************  FOOTER   ************************/
@@ -230,7 +234,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
 
-#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:33%; bottom: 5%; width: 90px; z-index:500; }
+#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:1.5%;33%; bottom: 45%;330px; width: 90px; z-index:500; }
 
 #buy-container #go-to-top span { margin-left: 5%; font-size: 16px; display: inline-block; color: white; }
 
@@ -605,7 +609,3 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
 
 }
-
-.outer-page-wrap { margin:0 auto; width: 100%;1300px; display: block; }
-
-.header-menu { width:1000px; margin: auto; }
