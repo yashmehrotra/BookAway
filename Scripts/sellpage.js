@@ -9,11 +9,9 @@ $(function() {
     sell_validate_form();
     show_password();
     help_popup();
-
-    $('#sell-rent').on('change', function() {
-
-        hide_price();
-    });
+    $('#cover-url').on('change',image_append);
+    $('#sell-rent').on('change',hide_price);
+    
 });
 
 $.ajax({
@@ -311,5 +309,13 @@ function hide_price() {
             $('#error_rent_price').slideDown(300);
         }
         flag = true;
+    }
+}
+
+function image_append() {
+    var cover_url = $('#cover-url').val();
+    if( cover_url != '') {
+        $('#cover-image').html('<img src="' + cover_url + '"alt="cover-image" id="cover-image-img-src">');
+        console.log('abcd');
     }
 }

@@ -68,6 +68,7 @@
                             <br>
                             <textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="280" placeholder="Description(max 280 characters)"></textarea>
                             <br>
+                            <div id='cover-image'></div>
                             <input type="url" name="cover-url" class="sell-input" placeholder="Image URL of Book (Example-'http://..../book_cover.png')" id="cover-url"><div id="error_url"></div>
                             <br>
                             <input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
