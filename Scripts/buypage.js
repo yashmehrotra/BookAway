@@ -9,8 +9,12 @@
 //                          - Yash Mehrotra
 //
 // " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
-// " FROM DEDUCTION TO EVIDENCE " ---> Avijit'a Autobiography
-
+//
+// " FROM DEDUCTION TO EVIDENCE - HOW TO SUCK AT DECLARING VARIABLES (An autobiography based on Yash Mehrotra's Personal Lackey)" 
+//                            ^^^^ Avijit's Autobiography
+//
+//
+//     go to bookaway.in/funny
 
 // Global Variables
 // Total number of books shown when the page loads, wihout scrolling down
