@@ -43,7 +43,7 @@ a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.outer-page-wrap { margin:0 auto; width: 100%;1300px; display: block; }
+.outer-page-wrap { margin:0 auto; width: 100%; display: block; }
 
 .page-header { background-color:#1884E9; color:white; width:100%; min-width: 1302px; height:165px;	margin:-70px auto 0; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
 
@@ -63,9 +63,9 @@ ul { list-style-type: none; }
 /********************  HEADER   ************************/
 
 
-#favicon { width: 54px; height: 54px; /*margin: auto ;*/ position: relative; top:-80px; left: 2%; }
+#favicon { width: 54px; height: 54px; position: relative; top:-80px; left: 2%; }
 
-.header-wrapper { width:99.92%;inherit; height:65px; position:relative;absolute; top:120px; }
+.header-wrapper { width:99.92%; height:65px; position:relative; top:120px; }
 
 .header-wrapper-fixed {	z-index:50;	position:fixed; top:0; left:0; }
 
@@ -81,7 +81,7 @@ ul { list-style-type: none; }
 
 .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
-.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491;#047D8B; border: 1px solid transparent; border-radius: 5px; display: inline-block; margin: 10px 0 0 330px; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; display: inline-block; margin: 10px 0 0 330px; }
 
 .header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
@@ -123,7 +123,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 .developer-profile, .profile-onhover { height:300px; width:290px; border:1px ridge #d3d3d3; margin:55px 0px 0px 50px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
 
-.profile-image { height:160px; width:160px; border:solid transparent;	border-radius:100px; }
+.profile-image { height:160px; width:160px; border:solid transparent; border-radius:100px; }
 
 .developer-profile a img.profile-image:hover { cursor:default; }
 
@@ -234,7 +234,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
 
-#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:1.5%;33%; bottom: 45%;330px; width: 90px; z-index:500; }
+#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:1.5%; bottom: 45%; width: 90px; z-index:500; }
 
 #buy-container #go-to-top span { margin-left: 5%; font-size: 16px; display: inline-block; color: white; }
 
@@ -450,24 +450,6 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 }
 
 
-/*********************  RIBBONS CSS  ******************************/
-
-
-.ribbon{ overflow: hidden; position: absolute; top: 72px; width: 300px; padding: 1px 0; background: #000; color: #eee; -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 0 10px rgba(0,0,0,0.5); }
-.ribbon.left { left: -42px; -moz-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.ribbon.right{ right: -42px; -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.ribbon a, .ribbon a:visited, .ribbon a:active, .ribbon a:hover { display: block; padding: 1px 0; height: 24px; line-height: 24px; color: inherit; text-align: center; text-decoration: none; font: 500 18px sans-serif; border: 1px solid rgba(255,255,255,0.3); -moz-text-shadow: 0 0 10px rgba(0,0,0,0.31); -webkit-text-shadow: 0 0 10px rgba(0,0,0,0.31); text-shadow: 0 0 10px rgba(0,0,0,0.31); }
-.ribbon.black{ background: #000; }
-.ribbon.red { background: #c00; }
-.ribbon.blue { background: #09e; }
-.ribbon.green { background: #0a0; }
-.ribbon.orange { background: #d80; }
-.ribbon.purple { background: #c0c; }
-.ribbon.grey { background: #888; }
-.ribbon.white { background: #eee; color: black; }
-.ribbon.white a { border: 2px dotted rgba(100,100,100,0.2); }
-
-
 /********************** JQUERY MIN CSS **************************/
 
 
@@ -525,9 +507,6 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 
 /*  */
 .ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }
-
-
-
 
 
 /********************** MEDIA QUERIES **************************/
