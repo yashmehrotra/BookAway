@@ -81,6 +81,7 @@
                             <button class="pointer-onhover" id="price-range">Go</button>
                         </div>
                     </div>
+                    <button>Clear Filters | also add individual clear option for each filter</button>
                 </form>
             </aside>
             <div id="buy-content-container">

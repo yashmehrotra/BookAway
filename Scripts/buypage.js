@@ -56,36 +56,6 @@ function showthis(bookid) {
     $(str).toggle();
 }
 
-function go_to_top() {
-
-    var currentScroll = $(document).scrollTop();
-
-    if (currentScroll < previous_scroll && currentScroll > 900) {
-
-        $('#go-to-top').show()
-    } else if (!(currentScroll < previous_scroll && currentScroll > 900)) {
-
-        $('#go-to-top').hide();
-    }
-    previous_scroll = currentScroll;
-}
-
-function smooth_scroll_to_top() {
-
-    $('html, body').animate({
-
-        scrollTop: $('#buy-container').offset().top
-    }, 1800);
-}
-
-function go_to_top_onhover() {
-
-    $('#go-to-top').on('mouseenter', function() {
-
-        $(this).fadeTo("slow", 0.5);
-    });
-}
-
 function instructions_cookie() {
 
     var cookies = document.cookie;
@@ -122,6 +92,16 @@ var college_list = [];
 
 var search_books = [];
 var search_authors = [];
+
+// Implementation of the filter function
+
+var filter_dict = {
+    'college':'',
+    'name':'',
+    'category':[],
+    'for':'',
+    'range':[],
+};
 
 function book_data_display() {
 
@@ -343,65 +323,6 @@ function book_data_display() {
             });
         }
     });
-}
-
-function auto_load_more() {
-
-    $(window).scroll(function() {
-
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
-
-            var counter_visible = $('.books-data:visible').size();
-            var clone_visible = counter_visible;
-            var visible_flag = 0;
-            var all_results_visible = 0;
-            console.log(counter_visible, total_results);
-            if (counter_visible >= total_results) {
-
-                visible_flag = 1;
-                all_results_visible = 1;
-            }
-            if (total_results - counter_visible < RESULTS_SHOWN) {
-
-                counter_visible = total_results;
-                visible_flag = 1;
-            } else {
-
-                counter_visible += RESULTS_SHOWN;
-            }
-
-            if (!all_results_visible) {
-
-                var buy_height = $('#buy-container').height();
-                var content_container_height = $('#buy-content-container').height();
-                var change = 242 * (counter_visible - clone_visible);
-
-                // To change the height of the main container div dynamically
-                $('#buy-container').height(content_container_height + change + 'px');
-
-                // To show more book tiles on scroll down
-                $('div[class="books-data"]:gt(' + (clone_visible - 1) + '):lt(' + (RESULTS_SHOWN + 1) + ')').slideDown(300);
-                console.log(buy_height, content_container_height);
-            }
-
-        }
-    });
-}
-
-function books_data() {
-
-    console.log('total_results' + total_results);
-    var results_counter = 0;
-
-    $('div[class="books-data"]:gt(' + (RESULTS_SHOWN - 1) + ')').hide();
-    if (total_results < RESULTS_SHOWN) {
-
-        results_counter = total_results;
-    } else {
-
-        results_counter = RESULTS_SHOWN;
-    }
-    auto_load_more();
 }
 
 function filter() {
@@ -674,6 +595,90 @@ function split_into_different_words(param) {
     return return_array;
 }
 
+// Implementation of filter function
+
+function filter_everything() {
+
+    // show everything first
+    if (filter_dict['college']) {
+        // hide those which do not match college
+    }
+    if (filter_dict['name']) {
+        // hide those which do not match name
+    }
+    if (filter_dict['category']) {
+        // hide those which are not in the category list
+    }
+    if (filter_dict['for']) {
+        // hide those which do not match user's for
+    }
+    if (filter_dict['range']) {
+        // hide those who do not come under the range
+    }
+}
+
+//=============================================================//
+// Backend Guys BEWARE , FROM HERE ON CSS STARTS , NA NA NA !  //
+//=============================================================//
+
+//    ||    ||      //==\\      =======    ||    ||
+//    ||    ||     //    \\   =            ||    ||
+//     \\  //      ||    ||    =           ||    ||
+//      \\//       ||====||     =====      ||====||
+//       ||        ||    ||          ==    ||    ||
+//       ||        ||    ||         ==     ||    ||
+//       ||        ||    ||    =====       ||    ||
+
+// PS - The above part even tough is of frontend , it was majorly coded by a backend guy , and 
+//      as you can observe , all of that requires a lot of logic and analytical abilites
+
+
+
+// Below are the CSS RELATED Functions
+
+function auto_load_more() {
+
+    $(window).scroll(function() {
+
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+
+            var counter_visible = $('.books-data:visible').size();
+            var clone_visible = counter_visible;
+            var visible_flag = 0;
+            var all_results_visible = 0;
+            console.log(counter_visible, total_results);
+            if (counter_visible >= total_results) {
+
+                visible_flag = 1;
+                all_results_visible = 1;
+            }
+            if (total_results - counter_visible < RESULTS_SHOWN) {
+
+                counter_visible = total_results;
+                visible_flag = 1;
+            } else {
+
+                counter_visible += RESULTS_SHOWN;
+            }
+
+            if (!all_results_visible) {
+
+                var buy_height = $('#buy-container').height();
+                var content_container_height = $('#buy-content-container').height();
+                var change = 242 * (counter_visible - clone_visible);
+
+                // To change the height of the main container div dynamically
+                $('#buy-container').height(content_container_height + change + 'px');
+
+                // To show more book tiles on scroll down
+                $('div[class="books-data"]:gt(' + (clone_visible - 1) + '):lt(' + (RESULTS_SHOWN + 1) + ')').slideDown(300);
+                console.log(buy_height, content_container_height);
+            }
+
+        }
+    });
+}
+
 function left_panel_selected_inputs() {
 
     $('.sub-cbox-input').each(function() {
@@ -698,4 +703,50 @@ function left_panel_selected_inputs() {
         }
     });
 
+}
+
+function books_data() {
+
+    console.log('total_results' + total_results);
+    var results_counter = 0;
+
+    $('div[class="books-data"]:gt(' + (RESULTS_SHOWN - 1) + ')').hide();
+    if (total_results < RESULTS_SHOWN) {
+
+        results_counter = total_results;
+    } else {
+
+        results_counter = RESULTS_SHOWN;
+    }
+    auto_load_more();
+}
+
+function go_to_top() {
+
+    var currentScroll = $(document).scrollTop();
+
+    if (currentScroll < previous_scroll && currentScroll > 900) {
+
+        $('#go-to-top').show()
+    } else if (!(currentScroll < previous_scroll && currentScroll > 900)) {
+
+        $('#go-to-top').hide();
+    }
+    previous_scroll = currentScroll;
+}
+
+function smooth_scroll_to_top() {
+
+    $('html, body').animate({
+
+        scrollTop: $('#buy-container').offset().top
+    }, 1800);
+}
+
+function go_to_top_onhover() {
+
+    $('#go-to-top').on('mouseenter', function() {
+
+        $(this).fadeTo("slow", 0.5);
+    });
 }
