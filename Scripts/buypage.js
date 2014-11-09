@@ -108,8 +108,6 @@ var college_list = [];
 var search_books = [];
 var search_authors = [];
 
-// Implementation of the filter function
-
 
 function book_data_display() {
 
