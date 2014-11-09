@@ -37,6 +37,7 @@ var filter_dict = {
 $(function() {
 
     instructions_cookie();
+    load_college();
     book_data_display();
 
     $('#go-to-top').hide();
@@ -297,36 +298,6 @@ function book_data_display() {
                 }
             });
 
-            //For College List
-            $.ajax({
-
-                type: "POST",
-                url: "sqldata.php", //Make sure URL Doesnt cause problem in future //{ 'source': 'view'
-                data: {
-                    'source': 'college_list'
-                },
-                success: function(result_college) {
-
-                    if (result_college) {
-
-                        var ajax_college_list = JSON.parse(result_college);
-                        console.log(ajax_college_list);
-                        var counter_college = 0;
-                        while (ajax_college_list[counter_college]) {
-
-                            college_list.push(ajax_college_list[counter_college]);
-                            counter_college += 1;
-                        }
-                        console.log('look down');
-                        console.log(college_list);
-                    }
-                }
-            });
-
-            $('#search-filters-college-search').autocomplete({
-
-                source: college_list
-            });
         }
     });
 }
@@ -592,6 +563,27 @@ function seller_data(book_id) {
 
     });
 }
+
+function load_college() {
+    
+    //For College List
+    $.ajax({
+        type: "POST",
+        url: "sqldata.php",
+        data: {
+            'source': 'college_list'
+        },
+        success: function(result) {
+            if (result) {
+                var colleges = JSON.parse(result);
+                $('#search-filters-college-search').autocomplete({
+                    source: colleges
+                });      
+            }
+        }
+    });
+
+} 
 
 function convert_id_to_Ultimate_index(html_id) {
 
