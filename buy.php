@@ -77,7 +77,7 @@
                             <div class="left-panel-text-wrap" id="price-range-text-wrapper">
                                 Price Range:
                             </div>
-                            <input type="number" id="range-min" min="0"> to <input type="number" min="1" id="range-max">
+                            <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">
                             <button class="pointer-onhover" id="price-range">Go</button>
                         </div>
                     </div>

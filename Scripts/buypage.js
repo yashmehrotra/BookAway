@@ -23,6 +23,17 @@ var RESULTS_SHOWN = 12;
 var total_results = 0;
 var previous_scroll = 0;
 
+var filter_dict = {
+    'college':'',
+    'name':{
+        'value':'',
+        'category':''
+    },
+    'category':[],
+    'for':'',
+    'range':[],
+};
+
 $(function() {
 
     instructions_cookie();
@@ -44,6 +55,10 @@ $(function() {
 
     newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     console.log("Hello fellow developer , welcome to ", newURL, "\nTo peek behind the scenes go to Github");
+
+    // setInterval(function(){
+    //     console.log(filter_dict);
+    // },5000);
 
 });
 
@@ -95,13 +110,6 @@ var search_authors = [];
 
 // Implementation of the filter function
 
-var filter_dict = {
-    'college':'',
-    'name':'',
-    'category':[],
-    'for':'',
-    'range':[],
-};
 
 function book_data_display() {
 
@@ -337,9 +345,13 @@ function filter() {
         console.log('search');
         var search_value = $("#left-panel-search-bar").val();
         var search_category = $("#category-search").val();
+
+        filter_dict['name']['value'] = search_value;
+        filter_dict['name']['category'] = search_category;
+
         console.log(search_value);
         console.log(search_category);
-        load_specific(search_value, search_category);
+        // load_specific(search_value, search_category);
     });
 
     // College Based Search
@@ -348,6 +360,9 @@ function filter() {
         e.preventDefault();
         $(document).scrollTop(150);
         var user_college_name = $('#search-filters-college-search').val();
+
+        filter_dict['college'] = user_college_name;
+
         var current_college_name = "";
         $('#buy-container > #buy-content-container >.books-data').each(
             function(index) {
@@ -373,6 +388,9 @@ function filter() {
 
         $(document).scrollTop(150);
         var radio_value = $('.radio-available-for:checked').val();
+        
+        filter_dict['for'] = radio_value;
+
         console.log(radio_value);
         $('#buy-container > #buy-content-container >.books-data').each(
 
@@ -395,6 +413,9 @@ function filter() {
         $(document).scrollTop(150);
         var min_price = $('#range-min').val();
         var max_price = $('#range-max').val();
+
+        filter_dict['range'] = [min_price,max_price];
+
         $('#buy-container > #buy-content-container >.books-data').each(
             function(index) {
 
@@ -453,6 +474,9 @@ function filter() {
                 }
             });
             console.log(checkbox_array);
+
+            filter_dict['category'] = checkbox_array;
+            
             $('.books-data').each(
 
                 function(index) {
@@ -578,23 +602,6 @@ function convert_id_to_Ultimate_index(html_id) {
     return index_id_book;
 }
 
-function split_into_different_words(param) {
-
-    var return_array = [];
-    if (typeof(param) == "string") {
-
-        return_array = param.split(/&/).join().split(',');
-    } else {
-
-        for (var i = 0; i < param.length; i++) {
-
-            return_array.push(param[i].split(/&/).join().split(','));
-        }
-        return_array.map(Function.prototype.call, String.prototype.trim);
-    }
-    return return_array;
-}
-
 // Implementation of filter function
 
 function filter_everything() {
@@ -603,7 +610,7 @@ function filter_everything() {
     if (filter_dict['college']) {
         // hide those which do not match college
     }
-    if (filter_dict['name']) {
+    if (filter_dict['name']['value']) {
         // hide those which do not match name
     }
     if (filter_dict['category']) {
