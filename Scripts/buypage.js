@@ -29,8 +29,8 @@ var filter_dict = {
         'value':'',
         'category':''
     },
-    'category':[],
-    'for':'',
+    'category':'',
+    'for':'4',
     'range':[],
 };
 
@@ -318,8 +318,11 @@ function filter() {
         filter_dict['name']['value'] = search_value;
         filter_dict['name']['category'] = search_category;
 
-        console.log(search_value);
-        console.log(search_category);
+        filter_everything();
+
+        // console.log(search_value);
+        // console.log(search_category);
+
         // load_specific(search_value, search_category);
     });
 
@@ -331,25 +334,25 @@ function filter() {
         var user_college_name = $('#search-filters-college-search').val();
 
         filter_dict['college'] = user_college_name;
+        filter_everything();
+        // var current_college_name = "";
+        // $('#buy-container > #buy-content-container >.books-data').each(
+        //     function(index) {
 
-        var current_college_name = "";
-        $('#buy-container > #buy-content-container >.books-data').each(
-            function(index) {
+        //         current_college_name = $(this).data('college');
 
-                current_college_name = $(this).data('college');
+        //         if ($(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search') {
 
-                if ($(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search') {
+        //             $(this).show();
+        //         }
 
-                    $(this).show();
-                }
+        //         if (current_college_name != user_college_name) {
 
-                if (current_college_name != user_college_name) {
-
-                    $(this).attr('data-shown-by', 'not college')
-                    $(this).hide();
-                }
-            }
-        );
+        //             $(this).attr('data-shown-by', 'not college')
+        //             $(this).hide();
+        //         }
+        //     }
+        // );
     });
 
     // Radio Based Search Available For
@@ -359,19 +362,20 @@ function filter() {
         var radio_value = $('.radio-available-for:checked').val();
         
         filter_dict['for'] = radio_value;
+        filter_everything();
 
-        console.log(radio_value);
-        $('#buy-container > #buy-content-container >.books-data').each(
+        // console.log(radio_value);
+        // $('#buy-container > #buy-content-container >.books-data').each(
 
-            function(index) {
+        //     function(index) {
 
-                var available_for = $(this).data('book-for');
-                $(this).show();
-                if (available_for != radio_value && radio_value != '4') {
-                    $(this).hide();
-                }
-            }
-        );
+        //         var available_for = $(this).data('book-for');
+        //         $(this).show();
+        //         if (available_for != radio_value && radio_value != '4') {
+        //             $(this).hide();
+        //         }
+        //     }
+        // );
 
     });
 
@@ -384,22 +388,24 @@ function filter() {
         var max_price = $('#range-max').val();
 
         filter_dict['range'] = [min_price,max_price];
+        filter_everything();
 
-        $('#buy-container > #buy-content-container >.books-data').each(
-            function(index) {
 
-                $(this).show();
-                var temp_id = $(this).attr('id');
-                index_current = convert_id_to_Ultimate_index(temp_id);
-                console.log(Ultimate_data[index_current]['book_name'], Ultimate_data[index_current]['author_name']);
-                var sell_price_filter = $(this).data('sell-price');
-                console.log(sell_price_filter);
-                if (sell_price_filter < min_price || sell_price_filter > max_price) {
+        // $('#buy-container > #buy-content-container >.books-data').each(
+        //     function(index) {
 
-                    $(this).hide();
-                }
-            }
-        );
+        //         $(this).show();
+        //         var temp_id = $(this).attr('id');
+        //         index_current = convert_id_to_Ultimate_index(temp_id);
+        //         console.log(Ultimate_data[index_current]['book_name'], Ultimate_data[index_current]['author_name']);
+        //         var sell_price_filter = $(this).data('sell-price');
+        //         console.log(sell_price_filter);
+        //         if (sell_price_filter < min_price || sell_price_filter > max_price) {
+
+        //             $(this).hide();
+        //         }
+        //     }
+        // );
     });
 
     // Category Filter
@@ -445,19 +451,20 @@ function filter() {
             console.log(checkbox_array);
 
             filter_dict['category'] = checkbox_array;
+            filter_everything();
             
-            $('.books-data').each(
+            // $('.books-data').each(
 
-                function(index) {
+            //     function(index) {
 
-                    $(this).hide();
-                    var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
-                    var current_book_category = Ultimate_data[index_book]['category'];
-                    if (checkbox_array.indexOf(current_book_category) > -1) {
+            //         $(this).hide();
+            //         var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
+            //         var current_book_category = Ultimate_data[index_book]['category'];
+            //         if (checkbox_array.indexOf(current_book_category) > -1) {
 
-                        $(this).show();
-                    }
-                });
+            //             $(this).show();
+            //         }
+            //     });
         }
     });
 }
@@ -611,25 +618,56 @@ function filter_everything() {
             var filter_for          = Ultimate_data[index_id]['book_for'];
             var filter_price        = Ultimate_data[index_id]['sell_price'];
 
+            filter_price = parseInt(filter_price);   // It is better to push it into ultimate data as an integer
+
+
+            //Make it global ///
+            String.prototype.toProperCase = function() {
+
+                        return this.replace(
+                            /\w\S*/g, function(txt) {
+                                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                            }
+                        );
+            };
+
+            filter_book_name = filter_book_name.toProperCase();
+            filter_author_name = filter_author_name.toProperCase();
+
             if (filter_dict['college']) {
                 // hide those which do not match college
+                if (filter_college_name != filter_dict['college']) {
+                    $(this).hide();
+                }
             }
             if (filter_dict['name']['value']) {
                 // hide those which do not match name
+                if ( filter_dict['name']['category'] == "Books" ) {
+                    if ( filter_book_name != filter_dict['name']['value'] ) {
+                        $(this).hide();
+                    }
+                } else if ( filter_dict['name']['category'] == "Author" ) {
+                    if ( filter_author_name != filter_dict['name']['value'] ) {
+                        $(this).hide();
+                    }
+                } 
             }
             if (filter_dict['category']) {
                 // hide those which are not in the category list
+                if( checkbox_array.indexOf(filter_category) == -1 ) {
+                    $(this).hide();
+                }
             }
-            if (filter_dict['for']) {
+            if ( filter_dict['for'] != '4' ) {
                 // hide those which do not match user's for
-                if( filter_for != filter_dict['for'] && filter_dict['for'] != '4' ) {
+                if( filter_for != filter_dict['for']) {
                     $(this).hide();
                 }
             }
             if (filter_dict['range']) {
                 // hide those who do not come under the range
-                var min_range = filter_dict['range'][0];
-                var max_range = filter_dict['range'][1];
+                var min_range = parseInt(filter_dict['range'][0]);
+                var max_range = parseInt(filter_dict['range'][1]);
 
                 if( filter_price < min_range || filter_price > max_range ) {
                     $(this).hide();
@@ -637,30 +675,13 @@ function filter_everything() {
             }
         }
     );
-
-    // show everything first
-    if (filter_dict['college']) {
-        // hide those which do not match college
-    }
-    if (filter_dict['name']['value']) {
-        // hide those which do not match name
-    }
-    if (filter_dict['category']) {
-        // hide those which are not in the category list
-    }
-    if (filter_dict['for']) {
-        // hide those which do not match user's for
-    }
-    if (filter_dict['range']) {
-        // hide those who do not come under the range
-    }
 }
 
 //=============================================================//
 // Backend Guys BEWARE , FROM HERE ON CSS STARTS , NA NA NA !  //
 //=============================================================//
 
-//    ||    ||      //==\\     //=======   ||    ||
+//    ||    ||      //==\\     //======    ||    ||
 //    ||    ||     //    \\   =            ||    ||
 //     \\  //      ||    ||   =            ||    ||
 //      \\//       ||====||    \\====\\    ||====||
