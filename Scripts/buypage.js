@@ -596,6 +596,48 @@ function convert_id_to_Ultimate_index(html_id) {
 
 function filter_everything() {
 
+    $('.books-data').each(
+        function(index) {
+            
+            // show everything first
+            $(this).show();
+
+            var index_id = convert_id_to_Ultimate_index($(this).attr('id'));
+
+            var filter_college_name = Ultimate_data[index_id]['college_name'];
+            var filter_book_name    = Ultimate_data[index_id]['book_name'];
+            var filter_author_name  = Ultimate_data[index_id]['author_name'];
+            var filter_category     = Ultimate_data[index_id]['category'];
+            var filter_for          = Ultimate_data[index_id]['book_for'];
+            var filter_price        = Ultimate_data[index_id]['sell_price'];
+
+            if (filter_dict['college']) {
+                // hide those which do not match college
+            }
+            if (filter_dict['name']['value']) {
+                // hide those which do not match name
+            }
+            if (filter_dict['category']) {
+                // hide those which are not in the category list
+            }
+            if (filter_dict['for']) {
+                // hide those which do not match user's for
+                if( filter_for != filter_dict['for'] && filter_dict['for'] != '4' ) {
+                    $(this).hide();
+                }
+            }
+            if (filter_dict['range']) {
+                // hide those who do not come under the range
+                var min_range = filter_dict['range'][0];
+                var max_range = filter_dict['range'][1];
+
+                if( filter_price < min_range || filter_price > max_range ) {
+                    $(this).hide();
+                }
+            }
+        }
+    );
+
     // show everything first
     if (filter_dict['college']) {
         // hide those which do not match college
@@ -618,13 +660,13 @@ function filter_everything() {
 // Backend Guys BEWARE , FROM HERE ON CSS STARTS , NA NA NA !  //
 //=============================================================//
 
-//    ||    ||      //==\\      =======    ||    ||
+//    ||    ||      //==\\     //=======   ||    ||
 //    ||    ||     //    \\   =            ||    ||
-//     \\  //      ||    ||    =           ||    ||
-//      \\//       ||====||     =====      ||====||
-//       ||        ||    ||          ==    ||    ||
-//       ||        ||    ||         ==     ||    ||
-//       ||        ||    ||    =====       ||    ||
+//     \\  //      ||    ||   =            ||    ||
+//      \\//       ||====||    \\====\\    ||====||
+//       ||        ||    ||           =    ||    ||
+//       ||        ||    ||           =    ||    ||
+//       ||        ||    ||    ======//    ||    ||
 
 // PS - The above part even tough is of frontend , it was majorly coded by a backend guy , and 
 //      as you can observe , all of that requires a lot of logic and analytical abilites
