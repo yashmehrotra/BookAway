@@ -689,8 +689,8 @@ function filter_everything() {
 //       ||        ||    ||           =    ||    ||
 //       ||        ||    ||    ======//    ||    ||
 
-// PS - The above part even tough is of frontend , it was majorly coded by a backend guy , and 
-//      as you can observe , all of that requires a lot of logic and analytical abilites
+// PS - The above part, even though is of frontend, was majorly coded by a backend guy , and 
+//      as you can observe, all of that requires a lot of logic and analytical abilites
 
 
 
