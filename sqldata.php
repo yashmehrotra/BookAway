@@ -9,6 +9,11 @@
 	}
 
 	$source = $_POST['source'];
+
+	$allowed_domains = 'bookaway.in' // Add proper domain
+	$reference_url = $_SERVER['HTTP_REFERER'];
+
+	//Check whether reference url is bookaway.in or localhost then only allow
 	
 	if($source == 'add_book') {
 
