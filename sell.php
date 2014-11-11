@@ -1,3 +1,10 @@
+<?php
+    // Implementation of captcha
+    // select a random no., ask user to input the same no. , put that no. in a hidden div , check in sqldata.php to see if the user is a human or
+    // bot by matching the no.
+    // Also see in backend whether all fields are empty or not
+    $captcha_gen = rand(100000,999999);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,12 +93,15 @@
                                 <option value="month">per Month</option>
                                 <option value="sem">per Sem</option>
                             </select>
+                            <div id="captcha"><?php echo $captcha_gen;?>
+                            <input type="number" name="captcha_user" placeholder="something">
                             <div id="error_rent_price"></div>
                             <br><br>
                         </fieldset>
 
                         <div hidden>
                             <input type="text" id="source" name="source" value="add_book">
+                            <input type="number" id="captcha_gen" name="captcha_gen" value="<?php echo $captcha_gen;?>">
                         </div>
                     </div>
                     <button class="btn-success pure-btn" id="new-btn">Submit</button>
@@ -101,6 +111,7 @@
                 <div id="success-submit-wrap">
                     <br>
                     <p id="successful-text">Form Successfully Submitted.<br>
+                    Hey, <span id="seller_name_span"></span><br>
                     Your book id is <span id="book_id_span" style="color: red;"></span> .<br>
                     Your response will be processed and implemented within a few hours.</p>
                 </div>

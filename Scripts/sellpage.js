@@ -239,7 +239,11 @@ function sell_validate_form() {
                             'height': '450px',
                             'width': '800px'
                         });
+                        $('#seller_name_span').html(response.seller_name)
                         $('#book_id_span').html(response.book_id);
+                    } else if (response.status == "wrong_auth") {
+                        // Wrong Capthca , user is bot
+                        // Show an error message
                     }
                 }
             });
