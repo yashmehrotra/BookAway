@@ -101,7 +101,8 @@
 
                         <div hidden>
                             <input type="text" id="source" name="source" value="add_book">
-                            <input type="number" id="captcha_gen" name="captcha_gen" value="<?php echo $captcha_gen;?>">
+                            <!-- its better to take this directly into javascript rather than a hidden div -->
+                            <input type="number" name="captcha_gen" value="<?php echo $captcha_gen;?>">
                         </div>
                     </div>
                     <button class="btn-success pure-btn" id="new-btn">Submit</button>
