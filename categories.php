@@ -15,7 +15,7 @@
 	
 	$sql_result = "";
 	
-	$sell_fixed = "<option value=''>Select your category</option>";
+	$sell_fixed = "<option value=''>Select category</option>";
 
 	$buy_fixed = '<div class="sub-cbox"><label><input type="checkbox" class="sub-cbox-input" id="checkbox-0" value="All" checked>All</label><br></div>';
 

@@ -9,6 +9,7 @@ $(function() {
     auto_help_popup();
     show_password();
     help_popup();
+    google_image_search();
     sell_validate_form();
     $('#cover-url').on('change',image_append);
     $('#sell-rent').on('change',hide_price);
@@ -53,7 +54,6 @@ function sell_validate_form() {
     $('#sell-form').submit(function(event) {
 
         var sell_height = $('#sell-container').css('height');
-        var submit_bottom = $('#new-btn').css('bottom');
         var flag = false;
         var error_count = 0;
         var name_error = false;
@@ -68,9 +68,9 @@ function sell_validate_form() {
             $('#error_name').html("Please provide your name");
             $('#name').focus();
             $('#error_name').css("display", "inline-block");
-            flag = true;;
+            flag = true;
             error_count += 1;
-            name_error = true;;
+            name_error = true;
             before_pass = before_pass + 1;
         }
 
@@ -85,7 +85,7 @@ function sell_validate_form() {
             $('#error_email').css("display", "inline-block");
             flag = true;;
             error_count += 1;
-            email_error = true;;
+            email_error = true;
             before_pass = before_pass + 1;
         }
 
@@ -96,7 +96,7 @@ function sell_validate_form() {
             $('#phone').focus();
             flag = true;;
             error_count += 1;
-            phone_error = true;;
+            phone_error = true;
             before_pass = before_pass + 1;
         }
 
@@ -105,7 +105,7 @@ function sell_validate_form() {
             $('#error_pass').html("Password must contain at least 4 characters");
             $('#error_pass').css("display", "inline-block");
             $('#password').focus();
-            flag = true;;
+            flag = true;
             error_count += 1;
         }
 
@@ -114,7 +114,7 @@ function sell_validate_form() {
             $('#error_category').html("Please select the category of the book");
             $('#error_category').css("display", "inline-block");
             $('#subject').focus();
-            flag = true;;
+            flag = true;
             error_count += 1;
         }
 
@@ -123,7 +123,7 @@ function sell_validate_form() {
             $('#error_book_name').html("Please provide the name of the book");
             $('#error_book_name').css("display", "inline-block");
             $('#book').focus();
-            flag = true;;
+            flag = true;
             error_count += 1;
         }
 
@@ -132,7 +132,7 @@ function sell_validate_form() {
             $('#error_author').html("Please mention the author of the book");
             $('#error_author').css("display", "inline-block");
             $('#author').focus();
-            flag = true;;
+            flag = true;
             error_count += 1;
         }
 
@@ -145,7 +145,7 @@ function sell_validate_form() {
             $('#error_url').html("Please provide a valid link");
             $('#error_url').css("display", "inline-block");
             $('#cover-url').focus();
-            flag = true;;
+            flag = true;
             error_count += 1;
         }
 
@@ -158,7 +158,7 @@ function sell_validate_form() {
                 $('#error_sale_price').html("Please provide the sale price");
                 $('#error_sale_price').css("display", "inline-block");
                 $('#s-cost').focus();
-                flag = true;;
+                flag = true;
                 error_count += 1;
             }
         } else if (sell_or_rent == 2) {
@@ -168,7 +168,7 @@ function sell_validate_form() {
                 $('#error_rent_price').html("Please provide rent price");
                 $('#error_rent_price').css("display", "inline-block");
                 $('#r-cost').focus();
-                flag = true;;
+                flag = true;
                 error_count += 1;
             }
         } else if (sell_or_rent == 3) {
@@ -178,7 +178,7 @@ function sell_validate_form() {
                 $('#error_sale_price').html("Please provide the sale price");
                 $('#error_sale_price').css("display", "inline-block");
                 $('#s-cost').focus();
-                flag = true;;
+                flag = true;
                 error_count += 1;
             }
 
@@ -187,9 +187,18 @@ function sell_validate_form() {
                 $('#error_rent_price').html("Please provide the rent price");
                 $('#error_rent_price').css("display", "inline-block");
                 $('#r-cost').focus();
-                flag = true;;
+                flag = true;
                 error_count += 1;
             }
+        }
+        
+        if ($('#captcha-input').val() == "") {
+        
+            $('#error_captcha').html("Please input the captcha shown above");
+            $('#error_captcha').css("display", "inline-block");
+            $('#captcha-input').focus();
+            flag = true;
+            error_count += 1;
         }
 
         event.preventDefault();
@@ -197,22 +206,16 @@ function sell_validate_form() {
         if (flag) {
 
             var count_change = error_count - prev_error_count;
-            var sell_new_height = parseInt(sell_height) + 45 * count_change + 'px';
+            var sell_new_height = parseInt(sell_height) + 50 * count_change + 'px';
 
             $('#sell-container').css({
                 "height": sell_new_height
             });
-
-            var submit_new_bottom = parseInt(submit_bottom) - 45 * count_change + 'px';
-
-            $('#new-btn').css({
-                "bottom": submit_new_bottom
-            });
-
+            
             prev_error_count = error_count;
 
             $('#help-popup').css('top', parseInt(help_popup_top) + 48 * before_pass + 'px');
-            $('#show-password').css('top', parseInt(show_pass_top) + 50 * before_pass + 'px');
+            $('#show-password').css('top', parseInt(show_pass_top) + 52 * before_pass + 'px');
             $('#help').css('top', parseInt(help_top) + 50 * before_pass + 'px');
 
         } else {
@@ -244,8 +247,9 @@ function sell_validate_form() {
                         $('#book_id_span').html(response.book_id);
                     } else if (response.status == "wrong_auth") {
                         
-                        // Wrong Capthca , user is bot
-                        // Show an error message
+                        $('#error_captcha').html("Invalid input. Please re-enter the captcha.");
+                        $('#error_captcha').show();
+                        $('#captcha-input').focus();
                     }
                 }
             });
@@ -342,5 +346,23 @@ function auto_help_popup() {
     $('#password').on('blur',function (){
     
         $('#help-popup').hide();
+    });
+}
+
+function google_image_search() {
+
+// https://www.google.co.in/search?q=mathematics+by+hk+dass&espv=2&tbas=0&tbm=isch&source=lnt&tbs=isz:m&sa=X&ei=IzljVM-5CpCiugSUiICQAg&ved=0CBQQpwU&dpr=1&biw=1317&bih=657
+    $('#author').on('blur',function (){
+        
+        var GOOGLE_IMG_URL_BEFORE_INPUT = "https://www.google.co.in/search?espv=2&biw=1317&bih=657&tbm=isch&sa=1&q=";
+        var book_name = $('#book').val().split(" ").join("+");
+        var book_author = $('#author').val().split(" ").join("+");
+        var GOOGLE_IMG_URL_AFTER_INPUT = "&espv=2&tbas=0&tbm=isch&source=lnt&tbs=isz:m&sa=X&ei=IzljVM-5CpCiugSUiICQAg&ved=0CBQQpwU&dpr=1&biw=1317&bih=657";
+        
+        
+        if(!$('#image-search-link')) {
+            
+//           $('#book-desc').after('<br><a href="'GOOGLE_IMG_URL_BEFORE_INPUT + book_name + '+by+' + book_author + GOOGLE_IMG_URL_AFTER_INPUT '">Search google for book covers</a><br>'); 
+        }
     });
 }

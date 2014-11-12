@@ -93,9 +93,11 @@
                                 <option value="month">per Month</option>
                                 <option value="sem">per Sem</option>
                             </select>
-                            <div id="captcha"><?php echo $captcha_gen;?>
-                            <input type="number" name="captcha_user" placeholder="something">
                             <div id="error_rent_price"></div>
+                            <span id="captcha"><?php echo $captcha_gen; ?></span>
+                            <input type="number" min="99999" name="captcha_user" class="sell-input" id="captcha-input" placeholder="Enter captcha">
+                            <br>
+                            <div id="error_captcha"></div>
                             <br><br>
                         </fieldset>
 
