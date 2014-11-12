@@ -1,5 +1,6 @@
 <!--<script type="text/javascript" src="Scripts/top-panel.js"></script>-->
 <script src="Scripts/scroll.js" type="text/javascript"></script>
+<script src="Scripts/homepage.js"></script>
 <noscript><meta http-equiv="refresh" content="0; url=nojs"></noscript>
 <!-- <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='stylesheets/medium.css' /> -->
 <div class="header-wrapper">

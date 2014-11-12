@@ -799,7 +799,7 @@ function smooth_scroll_to_top() {
 
     $('html, body').animate({
 
-        scrollTop: $('#buy-container').offset().top
+        scrollTop: $('body').offset().top
     }, 1800);
 }
 

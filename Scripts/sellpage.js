@@ -329,7 +329,11 @@ function hide_price() {
 function image_append() {
     
     var cover_url = $('#cover-url').val();
-    if( cover_url != '') {
+    if( cover_url != '' &&
+            ((/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test(cover_url) &&
+            !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) ||
+            (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test(cover_url) &&
+            /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())))) {
         
         $('#cover-image').html('<img src="' + cover_url + '"alt="cover-image" id="cover-image-img-src">');
         console.log('abcd');
@@ -358,11 +362,14 @@ function google_image_search() {
         var book_name = $('#book').val().split(" ").join("+");
         var book_author = $('#author').val().split(" ").join("+");
         var GOOGLE_IMG_URL_AFTER_INPUT = "&espv=2&tbas=0&tbm=isch&source=lnt&tbs=isz:m&sa=X&ei=IzljVM-5CpCiugSUiICQAg&ved=0CBQQpwU&dpr=1&biw=1317&bih=657";
-        
-        
-        if(!$('#image-search-link')) {
+        var construced_url = GOOGLE_IMG_URL_BEFORE_INPUT + book_name + '+by+' + book_author + GOOGLE_IMG_URL_AFTER_INPUT;
+
+        if($('#image-search-link').length == 0 && book_name != "" && book_author != "") {
             
-//           $('#book-desc').after('<br><a href="'GOOGLE_IMG_URL_BEFORE_INPUT + book_name + '+by+' + book_author + GOOGLE_IMG_URL_AFTER_INPUT '">Search google for book covers</a><br>'); 
+          $('#book-desc').after('<a href="'+ construced_url +'" id="image-search-link" target="_blank">Search google images for book covers</a>'); 
+        } else if($('#image-search-link').length != 0) {
+
+            $('#image-search-link').prop('href',construced_url);
         }
     });
 }

@@ -56,7 +56,7 @@
         echo $response;
         exit();
 
-	} elseif ($_POST['captcha_gen'] != $_POST['captcha_user']) {
+	} elseif ($source == 'add_book' && $_POST['captcha_gen'] != $_POST['captcha_user']) {
 
 		$response = array();
 

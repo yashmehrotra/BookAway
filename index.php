@@ -10,6 +10,7 @@
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
+	<script src="Scripts/homepage.js"></script>
 	<script type="text/javascript" src="Scripts/hide_overflow_ribbon.js"></script>
 	<script type="text/javascript">
 
