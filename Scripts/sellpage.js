@@ -243,6 +243,7 @@ function sell_validate_form() {
                         $('#seller_name_span').html(response.seller_name)
                         $('#book_id_span').html(response.book_id);
                     } else if (response.status == "wrong_auth") {
+                        
                         // Wrong Capthca , user is bot
                         // Show an error message
                     }
@@ -289,6 +290,7 @@ function hide_price() {
         $('#s-cost').slideDown(300);
         $('#error_rent_price').slideUp(300);
         if ($('#error_sale_price').html() != "") {
+            
             $('#error_sale_price').slideDown(300);
         }
         flag = true;
@@ -299,6 +301,7 @@ function hide_price() {
         $('#rent-price').slideDown(300);
         $('#error_sale_price').slideUp(300);
         if ($('#error_rent_price').html() != "") {
+            
             $('#error_rent_price').slideDown(300);
         }
         flag = true;
@@ -308,9 +311,11 @@ function hide_price() {
         $('#r-cost').slideDown(300);
         $('#rent-price').slideDown(300);
         if ($('#error_sale_price').html() != "") {
+            
             $('#error_sale_price').slideDown(300);
         }
         if ($('#error_rent_price').html() != "") {
+            
             $('#error_rent_price').slideDown(300);
         }
         flag = true;
@@ -318,8 +323,10 @@ function hide_price() {
 }
 
 function image_append() {
+    
     var cover_url = $('#cover-url').val();
     if( cover_url != '') {
+        
         $('#cover-image').html('<img src="' + cover_url + '"alt="cover-image" id="cover-image-img-src">');
         console.log('abcd');
     }
