@@ -426,12 +426,7 @@ function filter() {
 
             $(this).prop('checked', true);
 
-            $('.books-data').each(
-
-                function(index) {
-
-                    $(this).show();
-                });
+            checkbox_array = ['All'];
 
         } else {
 
@@ -450,22 +445,9 @@ function filter() {
             });
             console.log(checkbox_array);
 
-            filter_dict['category'] = checkbox_array;
-            filter_everything();
-            
-            // $('.books-data').each(
-
-            //     function(index) {
-
-            //         $(this).hide();
-            //         var index_book = convert_id_to_Ultimate_index($(this).attr('id'));
-            //         var current_book_category = Ultimate_data[index_book]['category'];
-            //         if (checkbox_array.indexOf(current_book_category) > -1) {
-
-            //             $(this).show();
-            //         }
-            //     });
         }
+        filter_dict['category'] = checkbox_array;
+        filter_everything();
     });
 }
 
@@ -653,8 +635,10 @@ function filter_everything() {
                 } 
             }
             if (filter_dict['category']) {
+                console.log('checkbox_array');
                 // hide those which are not in the category list
-                if( checkbox_array.indexOf(filter_category) == -1 ) {
+                if( checkbox_array.indexOf(filter_category) == -1 && checkbox_array.indexOf("All") == -1 ) {
+                    console.log(checkbox_array);
                     $(this).hide();
                 }
             }
