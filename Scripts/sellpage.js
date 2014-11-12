@@ -5,10 +5,11 @@ var college_list = [];
 $(function() {
 
     $('#sell').attr('id', 'focus');
-
-    sell_validate_form();
+    
+    auto_help_popup();
     show_password();
     help_popup();
+    sell_validate_form();
     $('#cover-url').on('change',image_append);
     $('#sell-rent').on('change',hide_price);
     
@@ -322,4 +323,17 @@ function image_append() {
         $('#cover-image').html('<img src="' + cover_url + '"alt="cover-image" id="cover-image-img-src">');
         console.log('abcd');
     }
+}
+
+function auto_help_popup() {
+    
+    $('#password').on('focus',function (){
+        
+        $('#help-popup').show();
+    });
+    
+    $('#password').on('blur',function (){
+    
+        $('#help-popup').hide();
+    });
 }
