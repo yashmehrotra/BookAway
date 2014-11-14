@@ -565,9 +565,19 @@ function load_college() {
         success: function(result) {
             if (result) {
                 var colleges = JSON.parse(result);
+
+                var colleges_list = [];
+                var i=0;
+                while (colleges[i]) {
+                    console.log(colleges[i]);
+                    colleges_list.push(colleges[i]);
+                    i+=1;
+                }
+                console.log(colleges_list);
                 $('#search-filters-college-search').autocomplete({
-                    source: colleges
+                    source: colleges_list
                 });      
+                console.log('xyz;1233');
             }
         }
     });
