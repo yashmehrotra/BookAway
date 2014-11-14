@@ -290,10 +290,85 @@
 	} else {
 		
         $response = "hi".$source;
+        mysqli_close($database_connection);
         $response = json_encode($response);
         echo $response;
         exit();
 	}
+
+    // Functions here
+    // Do test them before deployment
+    
+
+    function add_book($name, $email, $phone, $password, $category, $book, $author, $sell_rent, $sell_price, $rent_price, $rent_time, $image_source, $college,$book_description, $date_added) {
+
+        $query = "INSERT INTO tbl_books (category,book,author,sell_rent,sell_price,rent_price,rent_time,college,date_added,image_source,`book_description`) VALUES ('$category','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$college','$date_added','$image_source','$book_description')";
+        mysqli_query($database_connection,$query);
+        $book_id = mysqli_insert_id($database_connection);
+        
+        $query = "INSERT INTO tbl_seller (name,email,phone,password,college,book_id) VALUES ('$name','$email','$phone','$password','$college','$book_id')";
+        mysqli_query($database_connection,$query);
+
+        mysqli_close($database_connection);
+
+        $response = array();
+        
+        $response['status']        = 'success';
+        $response['seller_name']   = $name;
+        $response['book_id']       = $book_id;
+        $response['reference_url'] = $reference_url;
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+    }
+
+    function college_list() {
+
+        $query = "SELECT * FROM tbl_colleges";
+        $college_list = mysqli_query($database_connection,$query);
+
+        $response = array();
+        $i=0;
+
+        while($row = mysqli_fetch_array($college_list)) {
+
+            $response[$i] = $row['college'];
+            $response['reference_url'] = $reference_url;
+
+            $i+=1;
+        }
+
+        mysqli_close($database_connection);
+        
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+    }
+
+    function seller_data($book_id) {
+
+        $query = "SELECT * FROM tbl_seller WHERE book_id = '$book_id'";
+
+        $response = array();
+
+        $search_data = mysqli_query($database_connection,$query);
+        $row = mysqli_fetch_array($search_data);
+
+        $response['seller_name']     = $row['name']; 
+        $response['seller_email']    = $row['email'];
+        $response['seller_phone']    = $row['phone'];
+        $response['seller_college']  = $row['college'];
+
+        mysqli_close($database_connection);
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+    }
 
 ?>
 
