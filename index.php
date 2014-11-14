@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bookaway.in | Buy | Sell | Rent | Books</title>
-	<meta name="Description" content="Bookaway.in - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
+	<title>BookAway.in | Buy | Sell | Rent | Books</title>
+	<meta name="Description" content="BookAway.in - Online portal for buying, selling and renting books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
 	<meta name="Keywords" content="book,books,jiit,used,buy,sell,rent,textbook,india,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
@@ -33,7 +33,7 @@
         <img id="back-img" src="Styles/Images/index-wallpaper.jpg">
         <div class="main-containers" id="index-container">
             <div id="content-slider">
-                <h2 style="color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0;">Bookaway.in</h2>
+                <h2 style="color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0;">BookAway.in</h2>
                 <p style="color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; ">Online Portal<br>to<br>BUY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RENT<br>books</p>
             </div>
         </div>
