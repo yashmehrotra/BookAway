@@ -6,7 +6,17 @@
 	//Check connection
 	if (mysqli_connect_errno()) {
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
+    }
+
+    // Note to prospective Recruiters - 
+    // All of this code was written a long time back, as an attempt to learn php.
+    // I know it is not as good as one would expect but it is not a true representation of my abilities.(Yes,I am more skilled than this)
+    // I am an awesome php and python programmer with a superb foundation and a thirst for learning.
+    // Do visit my github profile - www.github.com/yashmehrotra
+    //
+    // Thank You
+    //
+    // URGENT CONVERT EVERY BULLSHIT STUFF TO FUNCTIONS 
 
 	$source = $_POST['source'];
 
