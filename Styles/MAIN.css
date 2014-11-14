@@ -31,7 +31,7 @@ code, kbd, pre, samp { font-family: monospace, serif; _font-family: 'courier new
 /******************************** GLOBALS ****************************/
 
 
-body { background-color:white; border:0; margin:0 auto; padding:0; overflow-x:hidden; }
+body { background-color:white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Bitter-Regular; src:url('Fonts/Bitter-Regular.otf'); }
 
@@ -43,7 +43,9 @@ a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.page-header { background-color:#1884E9; color:white; width:100%; height:130px;	margin:0 auto; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
+.outer-page-wrap { margin:0 auto; width: 100%; display: block; }
+
+.page-header { background-color:#1884E9; color:white; width:100%; min-width: 1202px;1302px; height:165px;	margin:-70px auto 0; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -61,25 +63,27 @@ ul { list-style-type: none; }
 /********************  HEADER   ************************/
 
 
-#favicon { width: 54px; height: 54px;	position:absolute; top: 8px;	left:4%; }
+#favicon { width: 54px; height: 54px; position: relative; top:-80px; left: 2%; }
 
-.header-wrapper { width:99.92%; height:65px; position:absolute; top:100px; }
+.header-wrapper { width:99.92%; height:65px; position:relative; top:120px; }
 
-.header-wrapper-fixed {	z-index:50;	position:fixed; top:0; left:0; }
+.header-wrapper-fixed {	z-index:50;	position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; }
 
-.header { width:inherit; display:inline-block; background-color:#1884E9; font-family: Ubuntu; position:relative; top:0; left:0; border:1px outset transparent; }
+.header { width:100%; min-width: 1200px;1300px; height:65px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
-.header ul { list-style:none; width:65%; display: inline-block;	margin-left:9%; }
+.header .header-menu { width: inherit;1300px; margin: auto; }
 
-.header ul li { display:inline-block; }
+.header .header-menu ul { list-style:none; width:730px; display: inline-block; padding-left: 10px;   }
 
-.header ul li a { text-decoration:none; padding:5px 28px 5px; font-size:20px; margin-right:15px; color:white; display:inline-block; border-radius: 8px; }
+.header .header-menu ul li { display:inline-block; }
 
-.header ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
+.header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:12px; color:white; display:inline-block; border-radius: 8px; }
 
-button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 15%; height: 40px; background-color: #047D8B; border: none; position: absolute; right: 4%; top:13px; }
+.header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
-button#fork-on-github:hover { opacity: 0.9; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; display: inline-block; margin: 10px 0 0 330px; }
+
+.header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
 
 /********************  FOOTER   ************************/
@@ -103,11 +107,11 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 /********************  INDEX.PHP   ************************/
 
 
-a.index-header-links, a.index-header-links:link { text-decoration:none; text-transform:uppercase; padding:8px 28px; font-size:24px; margin-right:15px; color:white; display:inline-block; }
+a.index-header-links, a.index-header-links:link { text-decoration:none; padding:8px 28px; font-size:23px; margin-right:15px; color:white; display:inline-block; }
 
 a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -moz-transition:background-color .5s ease-in; -o-transition:background-color .5s ease-in; -ms-transition:background-color .5s ease-in; background-color:gray; }
 
-img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
+img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #index-container { height:460px; width:1100px; padding:0; margin:110px auto 50px auto; }
 
@@ -119,7 +123,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 .developer-profile, .profile-onhover { height:300px; width:290px; border:1px ridge #d3d3d3; margin:55px 0px 0px 50px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
 
-.profile-image { height:160px; width:160px; border:solid transparent;	border-radius:100px; }
+.profile-image { height:160px; width:160px; border:solid transparent; border-radius:100px; }
 
 .developer-profile a img.profile-image:hover { cursor:default; }
 
@@ -139,13 +143,13 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 .gi { background:url("Images/icon-logos.png") -24px 41px; }
 
-.ml { background:url("Images/gmail.jpg") -4px -4px;  }
+.ml { background:url("Images/gmail.jpg") -4px -4px; }
 
 
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1270px; min-height:1050px; margin:0 auto 100px; padding:0; top:10px; overflow: hidden; }
+#buy-container { width:1200px;1270px; min-height:1050px; margin:0 auto 100px; padding:0; top:10px; overflow: hidden; }
 
 #buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 45px; text-align:center; }
 
@@ -197,9 +201,9 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #buy-container aside form #buy-search-filters > label .radio-available-for { margin-top: 10px; }
 
-#buy-container aside form #buy-search-filters  #left-panel-price-range #price-range-text-wrapper { margin-top:25px; }
+#buy-container aside form #buy-search-filters #left-panel-price-range #price-range-text-wrapper { margin-top:25px; }
 
-#buy-container aside form #buy-search-filters  #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
+#buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
 
 #buy-container #buy-content-container { min-height:1050px; width:922px;	position:absolute; top:50px; left:340px; text-align:left; padding-bottom:20px; }
 
@@ -230,9 +234,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
 
-#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:33%; bottom: 5%; width: 90px; z-index:500; }
-
-#buy-container #go-to-top:hover { opacity: 0.8; }
+#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:1.5%; bottom: 45%; width: 90px; z-index:500; }
 
 #buy-container #go-to-top span { margin-left: 5%; font-size: 16px; display: inline-block; color: white; }
 
@@ -278,15 +280,15 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #del-main-container #del-main form#del-form #del-error_incorrect { margin:20px 0px 0px 130px; }
 
-#del-main-container #edit-form { height:885px; width:inherit; display:none; background-color:white;  /*margin-bottom:200px;*/ }
+#del-main-container #edit-form { height:885px; width:inherit; display:none; background-color:white; }
 
 #del-main-container #edit-form button#delete-btn { height:70px; width:280px; background-color:red; color:white; margin:10px auto 0px 330px; border:1px solid white; font:24px Ubuntu; border:1px solid transparent; border-radius:20px; }
 
 #del-main-container #edit-form button#delete-btn:hover {	cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear;	opacity:0.8; }
 
-#del-main-container #edit-form #edit-head { height:80px; width:inherit; position:absolute;	margin:10px auto; font-size:20px; text-align:center; }
+#del-main-container #edit-form #edit-head { height$('#password').after(); :80px; width:inherit; position:absolute;	margin:10px auto; font-size:20px; text-align:center; }
 
-#del-main-container #edit-form #edit-head #or { height:35px; width:45px; margin:auto;	margin-top:20px; padding: 0px 5px 24px 5px; border:1px solid black; border-radius:33px; background-color:black; /*padding-bottom:24px; padding-left:5px; padding-right:5px;*/ }
+#del-main-container #edit-form #edit-head #or { height:35px; width:45px; margin:auto;	margin-top:20px; padding: 0px 5px 24px 5px; border:1px solid black; border-radius:33px; background-color:black; }
 
 #del-main-container #edit-form #edit-head #or #or-text { color:white; font-size:20px; }
 
@@ -317,7 +319,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #feedback-container { margin-top: 90px; }
 
-#feedback-container iframe { height: 1090px; width: 700px; margin: 50px 0 50px 22%; }
+#feedback-container iframe { height: 1090px; width: 700px; margin: 100px auto 150px; display: block; }
 
 /********************  NOJS.PHP  ************************/
 
@@ -330,13 +332,13 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { height:1000px; width:850px; top:60px; margin:0 auto 250px; background-color:white; }
+#sell-container { height:1050px; width:850px; top:60px; margin:0 auto 250px; background-color:white; }
 
 #sell-instructions { height:170px; }
 
-#sell-form-wrap { width:500px; height:940px;	position:absolute; top:10px; left:182px; text-align:left; line-height:180%;	font-size:130%; }
+#sell-form-wrap { width:500px; height:940px;	position:relative;absolute; top:10px; left:182px; text-align:left; line-height:180%;	font-size:130%; }
 
-.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; }
+.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
 .compulsary-label { color:red; font-size:15px; margin:0 0 0 3px; padding:0; width:3px; display:inline-block; }
 
@@ -354,6 +356,8 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #book-desc { height:80px; resize:none; }
 
+#cover-image-img-src { position: absolute; top: 570px; left: 500px; height: 200px; width: 150px; }
+
 #s-cost, #r-cost { background:url('Images/ruppee.gif') no-repeat top right; padding-right:0; }
 
 #r-cost { width:310px; }
@@ -362,15 +366,17 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top:-140px; }
 
 #subject { width:310px; }
 
+#image-search-link { font-size: 15px; margin-left: 10px; text-decoration: none; color: red; }
+
 #rent-price { width:150px; }
 
 #book-for {	width:150px; border-style:outset; color:black; }
 
 #sell-rent { width:310px; }
 
-div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bottom:10px; color:red;	border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
+div[id^="error"] { height:30px;	width:470px; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
 
-#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:absolute;	bottom:-30px; left:140px; }
+#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
 
 #new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear;	-moz-transition:opacity .5s linear;	-o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
@@ -448,24 +454,6 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 }
 
 
-/*********************  RIBBONS CSS  ******************************/
-
-
-.ribbon{ overflow: hidden; position: absolute; top: 72px; width: 300px; padding: 1px 0; background: #000; color: #eee; -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 0 10px rgba(0,0,0,0.5); }
-.ribbon.left { left: -42px; -moz-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
-.ribbon.right{ right: -42px; -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
-.ribbon a, .ribbon a:visited, .ribbon a:active, .ribbon a:hover { display: block; padding: 1px 0; height: 24px; line-height: 24px; color: inherit; text-align: center; text-decoration: none; font: 500 18px sans-serif; border: 1px solid rgba(255,255,255,0.3); -moz-text-shadow: 0 0 10px rgba(0,0,0,0.31); -webkit-text-shadow: 0 0 10px rgba(0,0,0,0.31); text-shadow: 0 0 10px rgba(0,0,0,0.31); }
-.ribbon.black{ background: #000; }
-.ribbon.red { background: #c00; }
-.ribbon.blue { background: #09e; }
-.ribbon.green { background: #0a0; }
-.ribbon.orange { background: #d80; }
-.ribbon.purple { background: #c0c; }
-.ribbon.grey { background: #888; }
-.ribbon.white { background: #eee; color: black; }
-.ribbon.white a { border: 2px dotted rgba(100,100,100,0.2); }
-
-
 /********************** JQUERY MIN CSS **************************/
 
 
@@ -523,9 +511,6 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 
 /*  */
 .ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }
-
-
-
 
 
 /********************** MEDIA QUERIES **************************/
@@ -607,3 +592,10 @@ div[id^="error"] { height:30px;	width:470px; font:normal 16px Ubuntu; margin-bot
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
 
 }
+
+
+#captcha-input { width: 350px; margin: 10px 0 0 10px; }
+
+#captcha { margin: 10px 20px 0 10px; display: inline-block; width: 80px; height: 30px; } 
+
+#header-menu-home { max-width: 1200px; margin: 5px auto 0; }

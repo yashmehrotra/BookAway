@@ -6,11 +6,24 @@
 	//Check connection
 	if (mysqli_connect_errno()) {
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
+    }
+
+    // Note to prospective Recruiters - 
+    // All of this code was written a long time back, as an attempt to learn php.
+    // I know it is not as good as one would expect but it is not a true representation of my abilities.(Yes,I am more skilled than this)
+    // I am an awesome php and python programmer with a superb foundation and a thirst for learning.
+    // Do visit my github profile - www.github.com/yashmehrotra
+    //
+    // Thank You
+    //
+    // URGENT CONVERT EVERY BULLSHIT STUFF TO FUNCTIONS 
 
 	$source = $_POST['source'];
+
+	$allowed_domains = array('http://bookaway.in/sell', 'http://bookaway.in/sell.php', 'http://localhost/Books-for-bucks/sell.php', 'http://localhost/github/sell.php', 'http://localhost/github/sell');
+	$reference_url = $_SERVER['HTTP_REFERER']; 
 	
-	if($source == 'add_book') {
+	if ($source == 'add_book' && in_array($reference_url, $allowed_domains) && $_POST['captcha_gen'] == $_POST['captcha_user'] ) {
 
 		$name             = addslashes($_POST['name']);
 		$email            = $_POST['email'];
@@ -28,9 +41,6 @@
 		$book_description = addslashes($_POST['book-desc']);
 		$date_added       = date("Y-m-d H:i:s", time());
 
-		//
-		// Sanitize database input , use regex on client side
-		//
 		// Convert it all into functions
 		//
 		// Check Book Deletion
@@ -50,6 +60,20 @@
 		$response['status']        = 'success';
 		$response['seller_name']   = $name;
 		$response['book_id']       = $book_id;
+		$response['reference_url'] = $reference_url;
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+	} elseif ($source == 'add_book' && $_POST['captcha_gen'] != $_POST['captcha_user']) {
+
+		$response = array();
+
+		$response['status'] = 'wrong_auth';
+        $response = json_encode($response);
+        echo $response;
+        exit();
 
 	} elseif ($source == 'edit_user' ) {
 
@@ -91,6 +115,9 @@
 		}
 		
 		mysqli_close($database_connection);
+        $response = json_encode($response);
+        echo $response;
+        exit();
 
 	} elseif ($source == 'edit_book') {
 
@@ -117,6 +144,10 @@
 		$response = array();
 		$response['status'] = 'success';
 
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
 	} elseif ($source == 'delete') {
 
 		$delete_seller_id = $_POST['user_id'];
@@ -133,6 +164,10 @@
 		
 		$response = array();
 		$response['status'] = 'success';
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
 
 	} elseif ($source == 'view') {
 
@@ -163,85 +198,102 @@
 
 		mysqli_close($database_connection);
 
-	} elseif ($source == 'search') {
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+    } elseif ($source == 'search') {
 		
-		$category = $_POST['search_category'];
-		$search_value = addslashes($_POST['search_value']);
+        $category = $_POST['search_category'];
+        $search_value = addslashes($_POST['search_value']);
 
-		if ($category == "Books") {
+        if ($category == "Books") {
 
-			$query = "SELECT *  FROM `tbl_books` WHERE `book` LIKE '".$search_value."'";
-		} elseif ($category == "Author") {
-			
-			$query = "SELECT *  FROM `tbl_books` WHERE `author` LIKE '".$search_value."'";
-		}
+            $query = "SELECT *  FROM `tbl_books` WHERE `book` LIKE '".$search_value."'";
+        } elseif ($category == "Author") {
 
-		$response = array();
-		$i=0;
+            $query = "SELECT *  FROM `tbl_books` WHERE `author` LIKE '".$search_value."'";
+        }
 
-		$search_data = mysqli_query($database_connection,$query);
+        $response = array();
+        $i=0;
 
-		while($row = mysqli_fetch_array($search_data)) {
+        $search_data = mysqli_query($database_connection,$query);
 
-			$response[$i]['book_id']           = $row['id'];
-			$response[$i]['book_name']         = $row['book'];
-			$response[$i]['author_name']       = $row['author'];
-			$response[$i]['category']          = $row['category'];
-			$response[$i]['sell_rent']         = $row['sell_rent'];
-			$response[$i]['sell_price']        = $row['sell_price'];
-			$response[$i]['rent_price']        = $row['rent_price'];
-			$response[$i]['rent_time']         = $row['rent_time'];
-			$response[$i]['date_added']        = $row['date_added'];
-			$response[$i]['image_source']      = $row['image_source'];
-			$response[$i]['book_description']  = $row['book_description'];
+        while($row = mysqli_fetch_array($search_data)) {
 
-			$i=$i+1;
-		}
+            $response[$i]['book_id']           = $row['id'];
+            $response[$i]['book_name']         = $row['book'];
+            $response[$i]['author_name']       = $row['author'];
+            $response[$i]['category']          = $row['category'];
+            $response[$i]['sell_rent']         = $row['sell_rent'];
+            $response[$i]['sell_price']        = $row['sell_price'];
+            $response[$i]['rent_price']        = $row['rent_price'];
+            $response[$i]['rent_time']         = $row['rent_time'];
+            $response[$i]['date_added']        = $row['date_added'];
+            $response[$i]['image_source']      = $row['image_source'];
+            $response[$i]['book_description']  = $row['book_description'];
+
+            $i=$i+1;
+        }
+
+        mysqli_close($database_connection);
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+    } elseif ($source == 'seller_data') {
+
+        $book_id = $_POST['book_id'];
+
+        $query = "SELECT * FROM tbl_seller WHERE book_id = '$book_id'";
+
+        $response = array();
+
+        $search_data = mysqli_query($database_connection,$query);
+        $row = mysqli_fetch_array($search_data);
+
+        $response['seller_name']     = $row['name']; 
+        $response['seller_email']    = $row['email'];
+        $response['seller_phone']    = $row['phone'];
+        $response['seller_college']  = $row['college'];
+
+        mysqli_close($database_connection);
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
+
+    } elseif ($source == 'college_list') {
+
+        $query = "SELECT * FROM tbl_colleges";
+        $college_list = mysqli_query($database_connection,$query);
+
+        $response = array();
+        $i=0;
+
+        while($row = mysqli_fetch_array($college_list)) {
+
+            $response[$i] = $row['college'];
+            $response['reference_url'] = $reference_url;
+
+            $i=$i+1;
+        }
 
 		mysqli_close($database_connection);
-	
-	} elseif ($source == 'seller_data') {
-
-		$book_id = $_POST['book_id'];
-
-		$query = "SELECT * FROM tbl_seller WHERE book_id = '$book_id'";
-
-		$response = array();
-
-		$search_data = mysqli_query($database_connection,$query);
-		$row = mysqli_fetch_array($search_data);
-
-		$response['seller_name']     = $row['name']; 
-		$response['seller_email']    = $row['email'];
-		$response['seller_phone']    = $row['phone'];
-		$response['seller_college']  = $row['college'];
-
-		mysqli_close($database_connection);
-		
-	} elseif ($source == 'college_list') {
-
-		$query = "SELECT * FROM tbl_colleges";
-		$college_list = mysqli_query($database_connection,$query);
-
-		$response = array();
-		$i=0;
-
-		while($row = mysqli_fetch_array($college_list)) {
-
-			$response[$i] = $row['college'];
-
-			$i=$i+1;
-		}
-
-		mysqli_close($database_connection);
+        
+        $response = json_encode($response);
+        echo $response;
+        exit();
 
 	} else {
-		$response = "hi".$source;
+		
+        $response = "hi".$source;
+        $response = json_encode($response);
+        echo $response;
+        exit();
 	}
-
-	$response = json_encode($response);
-	echo $response;
-	exit();
 
 ?>
 

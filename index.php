@@ -18,7 +18,7 @@
 			$('#home').css({'border-bottom':'2px solid white', 'background-color':'gray'});
 			$('.header').css({'opacity':'0.7'});
 			$('footer').css({'background-color':'transparent', 'position':'fixed', 'bottom':'0px'});
-			$('#copyright').css('background-color','rgb(40,40,40)');
+			$('#copyright').css('background-color','#282828');
 			$('#header-list').css('marginLeft','210px');
 		});
 
@@ -26,18 +26,20 @@
 
 </head>
 <body>
-	<?php
-		require_once('header_index.php');
-	?>
-	<img id="back-img" src="Styles/Images/index-wallpaper.jpg">
-	<div class="main-containers" id="index-container">
-		<div id="content-slider">
-			<h2 style="color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0;">Bookaway.in</h2>
-			<p style="color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; ">Online Portal<br>to<br>BUY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RENT<br>books</p>
-		</div>
-	</div>
-	<?php
-		require_once('footer.php');
-	?>
+    <div class="outer-page-wrap">
+        <?php
+            require_once('header_index.php');
+        ?>
+        <img id="back-img" src="Styles/Images/index-wallpaper.jpg">
+        <div class="main-containers" id="index-container">
+            <div id="content-slider">
+                <h2 style="color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0;">Bookaway.in</h2>
+                <p style="color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; ">Online Portal<br>to<br>BUY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RENT<br>books</p>
+            </div>
+        </div>
+        <?php
+            require_once('footer.php');
+        ?>
+    </div>
 </body>
 </html>
