@@ -11,6 +11,7 @@ $(function() {
     help_popup();
     google_image_search();
     sell_validate_form();
+    sell_validate_instantly();
     $('#cover-url').on('change',image_append);
     $('#sell-rent').on('change',hide_price);
     
@@ -355,7 +356,6 @@ function auto_help_popup() {
 
 function google_image_search() {
 
-// https://www.google.co.in/search?q=mathematics+by+hk+dass&espv=2&tbas=0&tbm=isch&source=lnt&tbs=isz:m&sa=X&ei=IzljVM-5CpCiugSUiICQAg&ved=0CBQQpwU&dpr=1&biw=1317&bih=657
     $('#author').on('blur',function (){
         
         var GOOGLE_IMG_URL_BEFORE_INPUT = "https://www.google.co.in/search?espv=2&biw=1317&bih=657&tbm=isch&sa=1&q=";
@@ -366,10 +366,204 @@ function google_image_search() {
 
         if($('#image-search-link').length == 0 && book_name != "" && book_author != "") {
             
-          $('#book-desc').after('<a href="'+ construced_url +'" id="image-search-link" target="_blank">Search google images for book covers</a>'); 
+          $('#book-desc').after('<p id="img-url-info"><a href="'+ construced_url +'" id="image-search-link" target="_blank">Click here</a> to search google images for book covers<br>Right click on an image and select <strong>Copy Image URL</strong><br>Paste that copied URL into the field below!</p>'); 
         } else if($('#image-search-link').length != 0) {
 
             $('#image-search-link').prop('href',construced_url);
         }
     });
+}
+
+function sell_validate_instantly() {
+        
+        CORRECT_IMAGE = "<img src='Styles/Images/correct.png' alt='correct input' class='correct-incorrect-img'></img>"
+        INCORRECT_IMAGE = "<img src='Styles/Images/incorrect.png' alt='correct input' class='correct-incorrect-img'></img>"    
+        
+        $('#name').on('blur',function (){
+
+            $('#error_name').css("display", "inline-block");
+            
+            if ($('#name').val() == "" || $('#name').val().length < 2) {
+
+                $('#error_name').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_name').html(CORRECT_IMAGE);
+            }
+        });
+        
+        $('#email').on('blur',function (){
+            
+            $('#error_email').css("display", "inline-block");
+            
+            var emval = $('#email').val();
+            var emat = emval.indexOf("@");
+            var emdot = emval.lastIndexOf(".");
+
+            if (emval == "" || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2) {
+
+                $('#error_email').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_email').html(CORRECT_IMAGE);
+            }
+         });
+            
+        $('#phone').on('blur',function (){
+                
+            $('#error_phone').css("display", "inline-block");
+            
+            if ($('#phone').val() == "" || $('#phone').val().length != 10 || isNaN($('#phone').val()) || $('#phone').val().indexOf(" ") != -1) {
+
+                $('#error_phone').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_phone').html(CORRECT_IMAGE);
+            }
+        });
+    
+         $('#password').on('blur',function (){
+            
+            $('#error_pass').css("display", "inline-block"); 
+             
+            if ($('#password').val() == "" || $('#password').val().length < 4) {
+
+                $('#error_pass').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_pass').html(CORRECT_IMAGE);
+            }
+         });
+        
+         $('#subject').on('blur',function (){
+            
+            $('#error_category').css("display", "inline-block"); 
+             
+            if ($('#subject :selected').val() == "") {
+
+                $('#error_category').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_category').html(CORRECT_IMAGE);
+            }
+         });
+        
+         $('#book').on('blur',function (){
+            
+            $('#error_book_name').css("display", "inline-block"); 
+             
+            if ($('#book').val() == "") {
+
+                $('#error_book_name').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_book_name').html(CORRECT_IMAGE);
+            }
+         });
+            
+         $('#author').on('blur',function (){
+            
+            $('#error_author').css("display", "inline-block"); 
+             
+            if ($('#author').val() == "") {
+
+                $('#error_author').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_author').html(CORRECT_IMAGE);
+            }
+         });
+            
+//         $('#cover-url').on('blur',function (){
+//            
+//            $('#error_url').css("display", "inline-block"); 
+//             
+//            if ($('#cover-url').val() != "" &&
+//                    !((/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) &&
+//                    !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) ||
+//                    (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) &&
+//                    /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())))) {
+//
+//                $('#error_url').html(INCORRECT_IMAGE);
+//            } else {
+//
+//                $('#error_url').html(CORRECT_IMAGE);
+//            }
+//         });
+            
+         $('#sell-rent').on('blur',function (){
+            
+            var sell_or_rent = $('#sell-rent option:selected').val();
+
+            if (sell_or_rent == 1) {
+                
+                $('#s-cost').on('blur',function (){
+                    
+                    $('#error_sale_price').css("display", "inline-block"); 
+                    
+                    if ($('#s-cost').val() == "") {
+
+                        $('#error_sale_price').html(INCORRECT_IMAGE);
+                    } else {
+
+                        $('#error_sell_price').html(CORRECT_IMAGE);
+                    }
+                });
+            } else if (sell_or_rent == 2) {
+                
+                $('#s-cost').on('blur',function (){
+                    
+                    $('#error_rent_price').css("display", "inline-block"); 
+                    
+                    if ($('#r-cost').val() == "") {
+
+                        $('#error_rent_price').html(INCORRECT_IMAGE);
+                    } else {
+
+                        $('#error_rent_price').html(CORRECT_IMAGE);
+                    }
+                });
+            } else if (sell_or_rent == 3) {
+                
+                 $('#s-cost').on('blur',function (){
+                    
+                    $('#error_sale_price').css("display", "inline-block"); 
+                    
+                    if ($('#s-cost').val() == "") {
+
+                        $('#error_sale_price').html(INCORRECT_IMAGE);
+                    } else {
+
+                        $('#error_sale_price').html(CORRECT_IMAGE);
+                    }
+                 });
+                
+                 $('#r-cost').on('blur',function (){
+                    
+                    $('#error_rent_price').css("display", "inline-block"); 
+                    
+                    if ($('#r-cost').val() == "") {
+
+                        $('#error_rent_price').html(INCORRECT_IMAGE);
+                    }
+                    else {
+
+                        $('#error_rent_price').html(CORRECT_IMAGE);
+                    }
+                 });
+            }
+         });
+        
+         $('#captcha-input').on('blur',function (){
+            
+            $('#error_capthca').css("display", "inline-block");
+             
+            if ($('#captcha-input').val() == "") {
+
+                $('#error_captcha').html(INCORRECT_IMAGE);
+            } else {
+
+                $('#error_captcha').html(CORRECT_IMAGE);
+            }
+         });
 }

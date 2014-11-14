@@ -336,7 +336,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #sell-instructions { height:170px; }
 
-#sell-form-wrap { width:500px; height:940px;	position:relative;absolute; top:10px; left:182px; text-align:left; line-height:180%;	font-size:130%; }
+#sell-form-wrap { width:550px;500px; height:940px;	position:relative;absolute; top:10px; left:182px; text-align:left; line-height:180%;	font-size:130%; }
 
 .sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
@@ -366,15 +366,13 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #subject { width:310px; }
 
-#image-search-link { font-size: 15px; margin-left: 10px; text-decoration: none; color: red; }
-
 #rent-price { width:150px; }
 
 #book-for {	width:150px; border-style:outset; color:black; }
 
 #sell-rent { width:310px; }
 
-div[id^="error"] { height:30px;	width:470px; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
+div[id^="error"] { height:30px;	width:auto;470px; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
 
 #new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
 
@@ -599,3 +597,7 @@ div[id^="error"] { height:30px;	width:470px; font:normal 15px Ubuntu; margin-bot
 #captcha { margin: 10px 20px 0 10px; display: inline-block; width: 80px; height: 30px; } 
 
 #header-menu-home { max-width: 1200px; margin: 5px auto 0; }
+
+.correct-incorrect-img { height: 24px; width: 24px;  }
+
+#img-url-info { font-size: 14px; margin: -5px auto -25px; background-color: #f5f5f5; border: 1px solid transparent; border-radius: 15px; width: 320px; padding: 5px; text-align: center; }
