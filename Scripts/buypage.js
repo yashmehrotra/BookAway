@@ -57,29 +57,15 @@ $(function() {
     newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     console.log("Hello fellow developer , welcome to ", newURL, "\nTo peek behind the scenes go to Github");
 
-    // setInterval(function(){
-    //     console.log(filter_dict);
-    // },5000);
-
 });
-
-function showthis(bookid) {
-
-    var str = bookid;
-    str = str.split("books-data-").join("");
-    console.log(str);
-    str = "#seller-data-" + str;
-    $(str).toggle();
-}
 
 function instructions_cookie() {
 
     var cookies = document.cookie;
+    
     if (cookies.indexOf('bookawaybuycookie') != -1) {
-
         $('#buy-instructions').hide();
     } else {
-
         document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
     }
 }
@@ -108,6 +94,14 @@ var college_list = [];
 
 var search_books = [];
 var search_authors = [];
+
+String.prototype.toProperCase = function() { 
+    return this.replace(
+        /\w\S*/g, function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+};
 
 
 function book_data_display() {
@@ -164,15 +158,6 @@ function book_data_display() {
                         'image_source': json[counter].image_source,
                         'college_name': json[counter].college,
                     });
-
-                    String.prototype.toProperCase = function() {
-
-                        return this.replace(
-                            /\w\S*/g, function(txt) {
-                                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                            }
-                        );
-                    };
 
                     // Conversion to title case
                     book_name_title_case = json[counter].book_name.toProperCase();
@@ -258,48 +243,11 @@ function book_data_display() {
                 seller_data();
                 filter();
                 go_to_top();
+                search_bar_autocomple(search_data);
             }
-
-            // For Autocomplete
-            $.widget("custom.catcomplete", $.ui.autocomplete, {
-
-                _create: function() {
-
-                    this._super();
-                    this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
-                },
-                _renderMenu: function(ul, items) {
-
-                    var that = this,
-                        currentCategory = "";
-                    $.each(items, function(index, item) {
-
-                        var li;
-                        if (item.category != currentCategory) {
-
-                            ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
-                            currentCategory = item.category;
-                        }
-                        li = that._renderItemData(ul, item);
-                        if (item.category) {
-                            li.attr("aria-label", item.category + " : " + item.label);
-                        }
-                    });
-                }
-            });
-
-            $("#left-panel-search-bar").catcomplete({
-
-                delay: 0,
-                source: search_data,
-                select: function(event, ui) {
-                    $('#left-panel-search-bar').append("<div hidden id='category-search'></div>")
-                    $('#category-search').val(ui.item.category);
-                }
-            });
-
         }
     });
+
 }
 
 function filter() {
@@ -311,7 +259,7 @@ function filter() {
 
         e.preventDefault();
         $(document).scrollTop(150);
-        console.log('search');
+
         var search_value = $("#left-panel-search-bar").val();
         var search_category = $("#category-search").val();
 
@@ -320,10 +268,6 @@ function filter() {
 
         filter_everything();
 
-        // console.log(search_value);
-        // console.log(search_category);
-
-        // load_specific(search_value, search_category);
     });
 
     // College Based Search
@@ -335,24 +279,7 @@ function filter() {
 
         filter_dict['college'] = user_college_name;
         filter_everything();
-        // var current_college_name = "";
-        // $('#buy-container > #buy-content-container >.books-data').each(
-        //     function(index) {
 
-        //         current_college_name = $(this).data('college');
-
-        //         if ($(this).attr('display') == 'block' && $(this).data('shown-by') != 'not_search') {
-
-        //             $(this).show();
-        //         }
-
-        //         if (current_college_name != user_college_name) {
-
-        //             $(this).attr('data-shown-by', 'not college')
-        //             $(this).hide();
-        //         }
-        //     }
-        // );
     });
 
     // Radio Based Search Available For
@@ -363,19 +290,6 @@ function filter() {
         
         filter_dict['for'] = radio_value;
         filter_everything();
-
-        // console.log(radio_value);
-        // $('#buy-container > #buy-content-container >.books-data').each(
-
-        //     function(index) {
-
-        //         var available_for = $(this).data('book-for');
-        //         $(this).show();
-        //         if (available_for != radio_value && radio_value != '4') {
-        //             $(this).hide();
-        //         }
-        //     }
-        // );
 
     });
 
@@ -390,22 +304,6 @@ function filter() {
         filter_dict['range'] = [min_price,max_price];
         filter_everything();
 
-
-        // $('#buy-container > #buy-content-container >.books-data').each(
-        //     function(index) {
-
-        //         $(this).show();
-        //         var temp_id = $(this).attr('id');
-        //         index_current = convert_id_to_Ultimate_index(temp_id);
-        //         console.log(Ultimate_data[index_current]['book_name'], Ultimate_data[index_current]['author_name']);
-        //         var sell_price_filter = $(this).data('sell-price');
-        //         console.log(sell_price_filter);
-        //         if (sell_price_filter < min_price || sell_price_filter > max_price) {
-
-        //             $(this).hide();
-        //         }
-        //     }
-        // );
     });
 
     // Category Filter
@@ -451,53 +349,42 @@ function filter() {
     });
 }
 
-function load_specific(search_value, search_category) {
+function search_bar_autocomple(search_data) {
 
-    $.ajax({
+    $.widget("custom.catcomplete", $.ui.autocomplete, {
 
-        type: "POST",
-        url: "sqldata.php",
-        data: {
-            'source': 'search',
-            'search_category': search_category,
-            'search_value': search_value
+        _create: function() {
+
+            this._super();
+            this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
         },
-        success: function(result) {
+        _renderMenu: function(ul, items) {
 
-            if (result) {
+            var that = this,
+                currentCategory = "";
+            $.each(items, function(index, item) {
 
-                console.log(search_category);
-                console.log(search_value);
-                var search_result = JSON.parse(result);
-                console.log(search_result);
+                var li;
+                if (item.category != currentCategory) {
 
-                var search_list_book_id = [];
-                var counter = 0;
-                while (search_result[counter]) {
-
-                    search_list_book_id.push(search_result[counter].book_id);
-                    counter += 1;
+                    ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
+                    currentCategory = item.category;
                 }
+                li = that._renderItemData(ul, item);
+                if (item.category) {
+                    li.attr("aria-label", item.category + " : " + item.label);
+                }
+            });
+        }
+    });
 
-                $('#buy-container > #buy-content-container >.books-data').each(
+    $("#left-panel-search-bar").catcomplete({
 
-                    function(index) {
-
-                        $(this).show();
-                        $(this).attr('data-shown-by', 'search');
-                        var current_id = $(this).attr('id');
-                        current_id = current_id.split('book-data-').join('');
-                        if ($.inArray(current_id, search_list_book_id) == -1) {
-
-                            $(this).attr('data-shown-by', 'not_search');
-                            $(this).hide();
-                        }
-                    }
-                );
-
-            } else {
-                console.log("Thenga")
-            }
+        delay: 0,
+        source: search_data,
+        select: function(event, ui) {
+            $('#left-panel-search-bar').append("<div hidden id='category-search'></div>")
+            $('#category-search').val(ui.item.category);
         }
     });
 }
@@ -568,16 +455,15 @@ function load_college() {
 
                 var colleges_list = [];
                 var i=0;
+                
                 while (colleges[i]) {
-                    console.log(colleges[i]);
                     colleges_list.push(colleges[i]);
                     i+=1;
                 }
-                console.log(colleges_list);
+
                 $('#search-filters-college-search').autocomplete({
                     source: colleges_list
                 });      
-                console.log('xyz;1233');
             }
         }
     });
@@ -611,17 +497,6 @@ function filter_everything() {
             var filter_price        = Ultimate_data[index_id]['sell_price'];
 
             filter_price = parseInt(filter_price);   // It is better to push it into ultimate data as an integer
-
-
-            //Make it global ///
-            String.prototype.toProperCase = function() {
-
-                        return this.replace(
-                            /\w\S*/g, function(txt) {
-                                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                            }
-                        );
-            };
 
             filter_book_name = filter_book_name.toProperCase();
             filter_author_name = filter_author_name.toProperCase();
@@ -700,7 +575,9 @@ function auto_load_more() {
             var clone_visible = counter_visible;
             var visible_flag = 0;
             var all_results_visible = 0;
+            
             console.log(counter_visible, total_results);
+            
             if (counter_visible >= total_results) {
 
                 visible_flag = 1;
@@ -738,10 +615,8 @@ function left_panel_selected_inputs() {
     $('.sub-cbox-input').each(function() {
 
         if ($(this).is(':checked')) {
-
             $(this).parent().css('color', 'black');
         } else {
-
             $(this).parent().css('color', 'gray');
         }
     });
@@ -749,10 +624,8 @@ function left_panel_selected_inputs() {
     $('.radio-available-for').each(function() {
 
         if ($(this).is(':checked')) {
-
             $(this).parent().css('color', 'black');
         } else {
-
             $(this).parent().css('color', 'gray');
         }
     });
@@ -762,14 +635,14 @@ function left_panel_selected_inputs() {
 function books_data() {
 
     console.log('total_results' + total_results);
+
     var results_counter = 0;
 
     $('div[class="books-data"]:gt(' + (RESULTS_SHOWN - 1) + ')').hide();
-    if (total_results < RESULTS_SHOWN) {
 
+    if (total_results < RESULTS_SHOWN) {
         results_counter = total_results;
     } else {
-
         results_counter = RESULTS_SHOWN;
     }
     auto_load_more();
@@ -780,10 +653,8 @@ function go_to_top() {
     var currentScroll = $(document).scrollTop();
 
     if (currentScroll < previous_scroll && currentScroll > 900) {
-
-        $('#go-to-top').show()
+        $('#go-to-top').show();
     } else if (!(currentScroll < previous_scroll && currentScroll > 900)) {
-
         $('#go-to-top').hide();
     }
     previous_scroll = currentScroll;
@@ -792,7 +663,6 @@ function go_to_top() {
 function smooth_scroll_to_top() {
 
     $('html, body').animate({
-
         scrollTop: $('body').offset().top
     }, 1800);
 }
@@ -800,7 +670,6 @@ function smooth_scroll_to_top() {
 function go_to_top_onhover() {
 
     $('#go-to-top').on('mouseenter', function() {
-
         $(this).fadeTo("slow", 0.5);
     });
 }
