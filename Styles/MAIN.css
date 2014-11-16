@@ -45,7 +45,7 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .outer-page-wrap { margin:0 auto; width: 100%; display: block; }
 
-.page-header { background-color:#1884E9; color:white; width:100%; min-width: 1202px;1302px; height:165px;	margin:-70px auto 0; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
+.page-header { background-color:#1884E9; color:white; width:100%; min-width: 1202px; height:165px;	margin:-70px auto 0; text-align:center;	padding-top:5px; font:26px Bitter-Regular; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -69,9 +69,9 @@ ul { list-style-type: none; }
 
 .header-wrapper-fixed {	z-index:50;	position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; }
 
-.header { width:100%; min-width: 1200px;1300px; height:65px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
+.header { width:100%; min-width: 1200px; height:68px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
-.header .header-menu { width: inherit;1300px; margin: auto; }
+.header .header-menu { width: inherit; margin: auto; }
 
 .header .header-menu ul { list-style:none; width:730px; display: inline-block; padding-left: 10px;   }
 
@@ -149,7 +149,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1200px; height: 100%;auto !important; min-height:1050px;  margin:0 auto 100px; padding:0; top:10px; position: relative; overflow: visible; }
+#buy-container { width:1200px; height: 100%; min-height:1050px;  margin:0 auto 100px; padding:0; top:10px; position: relative; overflow: hidden; }
 
 #buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 45px; text-align:center; }
 
@@ -205,7 +205,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
 
-#buy-container #buy-content-container { width:922px; height:100%; position:absolute; top:80px; left:340px; text-align:left; margin-bottom:100px; position: relative; }
+#buy-container #buy-content-container { width:922px; height:100%; position:absolute; top:80px; left:340px; text-align:left; margin-bottom:100px; position: relative; padding-bottom: 50px; }
 
 #buy-container #buy-content-container .books-data { height:200px; width:780px;	margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3;}
 
@@ -250,7 +250,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 .seller-data div span { font-size: 25px; float: left; margin-top: 8px; }
 
-.seller-data div span#name-seller-icon { color: black; }
+.seller-data div span#name-seller-icon { color: #818b2f; }
 
 .seller-data div span#phone-seller-icon { color: #365AEA; font-size: 23px; }
 
@@ -287,7 +287,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 #del-main-container #del-main form#del-form input[type="submit"]:hover {	cursor:pointer;	-webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear;	opacity:0.8; }
 
 #del-main-container #del-main form#del-form div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none; }
-
+rgb(129, 139, 47)
 #del-main-container #del-main form#del-form #del-error_incorrect { margin:20px 0px 0px 130px; }
 
 #del-main-container #edit-form { height:885px; width:inherit; display:none; background-color:white; }
@@ -296,7 +296,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #del-main-container #edit-form button#delete-btn:hover {	cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear;	opacity:0.8; }
 
-#del-main-container #edit-form #edit-head { height$('#password').after(); :80px; width:inherit; position:absolute;	margin:10px auto; font-size:20px; text-align:center; }
+#del-main-container #edit-form #edit-head { height: 80px; width:inherit; position:absolute;	margin:10px auto; font-size:20px; text-align:center; }
 
 #del-main-container #edit-form #edit-head #or { height:35px; width:45px; margin:auto;	margin-top:20px; padding: 0px 5px 24px 5px; border:1px solid black; border-radius:33px; background-color:black; }
 
@@ -346,7 +346,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #sell-instructions { height:170px; }
 
-#sell-form-wrap { width:550px;500px; height:940px;	position:relative;absolute; top:10px; left:182px; text-align:left; line-height:180%;	font-size:130%; }
+#sell-form-wrap { width:550px; height:940px; position:relative; top:10px; left:182px; text-align:left; line-height:180%; font-size:130%; }
 
 .sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
@@ -382,7 +382,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #sell-rent { width:310px; }
 
-div[id^="error"] { height:30px;	width:auto;470px; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
+div[id^="error"] { height:30px;	width:auto; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
 
 #new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
 
