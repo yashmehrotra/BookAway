@@ -379,7 +379,7 @@ function sell_validate_instantly() {
         CORRECT_IMAGE = "<img src='Styles/Images/correct.png' alt='correct input' class='correct-incorrect-img'></img>"
         INCORRECT_IMAGE = "<img src='Styles/Images/incorrect.png' alt='correct input' class='correct-incorrect-img'></img>"    
         
-        $('#name').on('blur',function (){
+        $('#name').on('keyup',function (){
 
             $('#error_name').css("display", "inline-block");
             
@@ -392,7 +392,7 @@ function sell_validate_instantly() {
             }
         });
         
-        $('#email').on('blur',function (){
+        $('#email').on('keyup',function (){
             
             $('#error_email').css("display", "inline-block");
             
@@ -409,7 +409,7 @@ function sell_validate_instantly() {
             }
          });
             
-        $('#phone').on('blur',function (){
+        $('#phone').on('keyup',function (){
                 
             $('#error_phone').css("display", "inline-block");
             
@@ -422,7 +422,7 @@ function sell_validate_instantly() {
             }
         });
     
-         $('#password').on('blur',function (){
+         $('#password').on('keyup',function (){
             
             $('#error_pass').css("display", "inline-block"); 
              
@@ -435,7 +435,7 @@ function sell_validate_instantly() {
             }
          });
         
-         $('#subject').on('blur',function (){
+         $('#subject').on('keyup',function (){
             
             $('#error_category').css("display", "inline-block"); 
              
@@ -448,7 +448,7 @@ function sell_validate_instantly() {
             }
          });
         
-         $('#book').on('blur',function (){
+         $('#book').on('keyup',function (){
             
             $('#error_book_name').css("display", "inline-block"); 
              
@@ -461,7 +461,7 @@ function sell_validate_instantly() {
             }
          });
             
-         $('#author').on('blur',function (){
+         $('#author').on('keyup',function (){
             
             $('#error_author').css("display", "inline-block"); 
              
@@ -474,7 +474,7 @@ function sell_validate_instantly() {
             }
          });
             
-//         $('#cover-url').on('blur',function (){
+//         $('#cover-url').on('keyup',function (){
 //            
 //            $('#error_url').css("display", "inline-block"); 
 //             
@@ -491,13 +491,13 @@ function sell_validate_instantly() {
 //            }
 //         });
             
-         $('#sell-rent').on('blur',function (){
+         $('#sell-rent').on('keyup',function (){
             
             var sell_or_rent = $('#sell-rent option:selected').val();
 
             if (sell_or_rent == 1) {
                 
-                $('#s-cost').on('blur',function (){
+                $('#s-cost').on('keyup',function (){
                     
                     $('#error_sale_price').css("display", "inline-block"); 
                     
@@ -511,7 +511,7 @@ function sell_validate_instantly() {
                 });
             } else if (sell_or_rent == 2) {
                 
-                $('#s-cost').on('blur',function (){
+                $('#s-cost').on('keyup',function (){
                     
                     $('#error_rent_price').css("display", "inline-block"); 
                     
@@ -525,7 +525,7 @@ function sell_validate_instantly() {
                 });
             } else if (sell_or_rent == 3) {
                 
-                 $('#s-cost').on('blur',function (){
+                 $('#s-cost').on('keyup',function (){
                     
                     $('#error_sale_price').css("display", "inline-block"); 
                     
@@ -538,7 +538,7 @@ function sell_validate_instantly() {
                     }
                  });
                 
-                 $('#r-cost').on('blur',function (){
+                 $('#r-cost').on('keyup',function (){
                     
                     $('#error_rent_price').css("display", "inline-block"); 
                     
@@ -551,19 +551,6 @@ function sell_validate_instantly() {
                         $('#error_rent_price').html(CORRECT_IMAGE);
                     }
                  });
-            }
-         });
-        
-         $('#captcha-input').on('blur',function (){
-            
-            $('#error_capthca').css("display", "inline-block");
-             
-            if ($('#captcha-input').val() == "") {
-
-                $('#error_captcha').html(INCORRECT_IMAGE);
-            } else {
-
-                $('#error_captcha').html(CORRECT_IMAGE);
             }
          });
 }

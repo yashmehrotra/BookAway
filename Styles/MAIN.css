@@ -39,7 +39,7 @@ body { background-color:white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Ubuntu; src:url('Fonts/Ubuntu/Ubuntu-R.ttf'); }
 
-a#focus:link { background-color:#009fE7; border-bottom:2px solid white; }
+a#focus:link { background-color:#0aa4ea; /*border-bottom:2px solid white;*/ }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
@@ -592,7 +592,7 @@ div[id^="error"] { height:30px;	width:auto;470px; font:normal 15px Ubuntu; margi
 }
 
 
-#captcha-input { width: 350px; margin: 10px 0 0 10px; }
+#captcha-input { width: 350px; margin: 10px 0 0 10px; display: inline-block; }
 
 #captcha { margin: 10px 20px 0 10px; display: inline-block; width: 80px; height: 30px; } 
 
