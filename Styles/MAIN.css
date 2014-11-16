@@ -149,7 +149,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1200px;1270px; min-height:1050px; margin:0 auto 100px; padding:0; top:10px; overflow: hidden; }
+#buy-container { width:1200px; height: 100%;auto !important; min-height:1050px;  margin:0 auto 100px; padding:0; top:10px; position: relative; overflow: visible; }
 
 #buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 45px; text-align:center; }
 
@@ -205,9 +205,9 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
 
-#buy-container #buy-content-container { min-height:1050px; width:922px;	position:absolute; top:50px; left:340px; text-align:left; padding-bottom:20px; }
+#buy-container #buy-content-container { width:922px; height:100%; position:absolute; top:80px; left:340px; text-align:left; margin-bottom:100px; position: relative; }
 
-#buy-container #buy-content-container .books-data { height:200px; width:780px;	margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3; }
+#buy-container #buy-content-container .books-data { height:200px; width:780px;	margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3;}
 
 #buy-container #buy-content-container .books-data:hover {	cursor:pointer;	border-color:orange; }
 
@@ -242,13 +242,23 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 .seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
 
-.seller-data div { position:relative; height:50px; width:450px; top:10px; left:70px; padding:5px 0px 0px 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
+.seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; margin-top: 10px; }
+
+.seller-data div { position:relative; height:50px; width:450px; top:10px; left:70px; padding:6px 0 0 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
 
 .seller-data div:hover { background-color: #d3d3d3;}
 
-.seller-data div span { font-size: 25px; }
+.seller-data div span { font-size: 25px; float: left; margin-top: 8px; }
 
-.seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; }
+.seller-data div span#name-seller-icon { color: black; }
+
+.seller-data div span#phone-seller-icon { color: #365AEA; font-size: 23px; }
+
+.seller-data div span#email-seller-icon { color: #32A8A3; font-size: 27px; }
+
+.seller-data div span#college-seller-icon { color: #EA4B36; }
+
+.seller-data div p { margin: 10px 0 0 5px; }
 
 
 /*********************  CONTACT.PHP  ***********************/

@@ -10,18 +10,15 @@
 //
 // " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
 //
-// " FROM DEDUCTION TO EVIDENCE - HOW TO SUCK AT DECLARING VARIABLES (An autobiography based on Yash Mehrotra's Personal Lackey)" 
-//                            ^^^^ Avijit's Autobiography
-//
-//
 //     go to bookaway.in/funny
 
 // Global Variables
 // Total number of books shown when the page loads, wihout scrolling down
-var RESULTS_SHOWN = 12;
+var results_to_show_once = 12;
 
 var total_results = 0;
 var previous_scroll = 0;
+var list_to_show = [];
 
 var filter_dict = {
     'college':'',
@@ -200,7 +197,7 @@ function book_data_display() {
 
                     json[counter_clone].image_source = NO_BOOK_IMAGE;
                 }
-
+                
                 var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-" + json[counter_clone].book_id + "'" +
                      " data-sell-price='" + json[counter_clone].sell_price + "'" + " data-shown-by='default'" +
                      "data-college='" + json[counter_clone].college + "'" + " data-book-for='" + json[counter_clone].sell_rent + "' >" +
@@ -212,7 +209,6 @@ function book_data_display() {
 
                 if (json[counter_clone].rent_price == "") {
 
-                    console.log("No rent price");
                     json[counter_clone].rent_price = "-";
                     json[counter_clone].rent_time = "";
 
@@ -235,19 +231,27 @@ function book_data_display() {
                         json[counter_clone].rent_price + " / " + json[counter_clone].rent_time + "</div></div>");
                 }
                 counter_clone += 1;
+            
             }
+            
+            // Compiling the list of books to be shown    
+            list_to_show = $('.books-data').map(function() {
+                
+                return $(this).attr('id');
+            });
 
             if (Ultimate_data.length === counter) {
 
-                books_data();
+                auto_load_more();
                 seller_data();
                 filter();
                 go_to_top();
                 search_bar_autocomple(search_data);
             }
+
         }
     });
-
+    
 }
 
 function filter() {
@@ -313,7 +317,6 @@ function filter() {
 
         var checkbox_value = $(this).val();
         checkbox_array = [];
-        console.log(checkbox_value);
 
         if (checkbox_value == "All") {
 
@@ -341,8 +344,6 @@ function filter() {
                     }
                 }
             });
-            console.log(checkbox_array);
-
         }
         filter_dict['category'] = checkbox_array;
         filter_everything();
@@ -393,12 +394,9 @@ function seller_data(book_id) {
 
     $('.books-data').on('click', function() {
 
-        console.log("Hello");
-
         var book_onclick_id = $(this).attr('id');
         var id_clone = '#' + book_onclick_id;
 
-        console.log(id_clone);
         book_onclick_id = book_onclick_id.split("book-data-").join("");
         book_id = book_onclick_id;
 
@@ -424,11 +422,11 @@ function seller_data(book_id) {
 
                     sell_data_id = "seller-data-" + book_onclick_id;
                     $('' + id_clone + '').after('<div class="seller-data" id=' + sell_data_id +
-                         ' style="display:none;"><p id="seller-details-head"> Seller Contact Details: </p><div class="name-seller-wrap"><span class="ion-person" id="name-seller-icon"></span>&nbsp;' +
-                         ajax_seller_data.seller_name + '</div><div class="phone-seller-wrap"><span class="ion-android-call" id="phone-seller-icon"></span>&nbsp;+91-&nbsp;' +
-                         ajax_seller_data.seller_phone + '</div><div class="email-seller-wrap"><span class="ion-email" id="email-seller-icon"></span>&nbsp;' +
-                         ajax_seller_data.seller_email + '</div><div class="college-seller-wrap"><span class="ion-android-location" id="college-seller-icon"></span>&nbsp;' +
-                         ajax_seller_data.seller_college + '</div></div>');
+                         ' style="display:none;"><p id="seller-details-head"> Seller Contact Details: </p><div class="name-seller-wrap"><span class="ion-person" id="name-seller-icon"></span><p>&nbsp;' +
+                         ajax_seller_data.seller_name + '</p></div><div class="phone-seller-wrap"><span class="ion-android-call" id="phone-seller-icon"></span><p>&nbsp;+91-&nbsp;' +
+                         ajax_seller_data.seller_phone + '</p></div><div class="email-seller-wrap"><span class="ion-email" id="email-seller-icon"></span><p>&nbsp;' +
+                         ajax_seller_data.seller_email + '</p></div><div class="college-seller-wrap"><span class="ion-android-location" id="college-seller-icon"></span><p>&nbsp;' +
+                         ajax_seller_data.seller_college + '</p></div></div>');
                     $('#' + sell_data_id + '').bPopup();
                 } else {
 
@@ -520,10 +518,8 @@ function filter_everything() {
                 } 
             }
             if (filter_dict['category']) {
-                console.log('checkbox_array');
                 // hide those which are not in the category list
                 if( checkbox_array.indexOf(filter_category) == -1 && checkbox_array.indexOf("All") == -1 ) {
-                    console.log(checkbox_array);
                     $(this).hide();
                 }
             }
@@ -544,6 +540,15 @@ function filter_everything() {
             }
         }
     );
+    
+    list_to_show.length = 0;
+    
+    list_to_show = $('.books-data:visible').map(function() {
+                
+        return $(this).attr('id');
+    });
+    
+    auto_load_more();
 }
 
 //=============================================================//
@@ -558,56 +563,111 @@ function filter_everything() {
 //       ||        ||    ||           =    ||    ||
 //       ||        ||    ||    ======//    ||    ||
 
-// PS - The above part, even though is of frontend, was majorly coded by a backend guy , and 
-//      as you can observe, all of that requires a lot of logic and analytical abilites
 
 
+// CSS RELATED Functions
 
-// Below are the CSS RELATED Functions
+//function auto_load_more() {
+//
+//    $(window).scroll(function() {
+//        
+//        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+//
+//            var counter_visible = $('.books-data:visible').size();
+//            var to_show_counter = ids_to_show.length;
+//            var clone_visible = counter_visible;
+//            var visible_flag = 0;
+//            var all_results_visible = 0;
+//
+//            if (counter_visible == to_show_counter) {
+//
+//                visible_flag = 1;
+//                all_results_visible = 1;
+//                console.log("All books have been shown");
+//            } else if (to_show_counter - counter_visible < results_to_show_once) {
+//
+//                counter_visible += to_show_counter;
+//                visible_flag = 1;
+//                console.log(to_show_counter-clone_visible,"books left to be shown");
+//            } else {
+//                
+//                counter_visible += results_to_show_once;
+//                console.log("Else");
+//            }
+//            
+//            if (!all_results_visible) {
+//                
+//                var buy_height = $('#buy-container').height();
+//                var content_container_height = $('#buy-content-container').height();
+//                var change = 244 * (counter_visible - clone_visible);
+//                
+//                console.log("Changing the height by: ",change,"px");
+//
+//                // To change the height of the main container div dynamically
+//                $('#buy-container').height(content_container_height + change + 'px');
+//
+//                // To show more book tiles on scroll down
+//                var ids_currently_showing = ids_to_show.splice(0,12);
+//                
+//                $('.books-data').map(function() {
+//                    
+//                    if($.inArray(parseInt($(this).attr('id').split("-")[2]),ids_currently_showing) != -1) {
+//                        
+//                       $(this).show();
+//                    }
+//                });                         
+//            }
+//        }
+//    });
+//}
 
 function auto_load_more() {
-
+    
+    $('.books-data').hide();
+    var list_to_show_len = list_to_show.length;
+    var lower_lim = 0;
+    
+    if(results_to_show_once > list_to_show_len) {
+        
+        var upper_lim = list_to_show_len;
+    } else {
+        
+        upper_lim = results_to_show_once;
+    }
+    
+    var count = 0;        
+    $('.books-data').map(function() {
+        
+        if($.inArray($(this).attr('id'),list_to_show) != -1 && count <= upper_lim) {
+        
+            $(this).show("fast","swing");
+            count += 1;
+        }
+    });          
+    
     $(window).scroll(function() {
-
+        
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
-
-            var counter_visible = $('.books-data:visible').size();
-            var clone_visible = counter_visible;
-            var visible_flag = 0;
-            var all_results_visible = 0;
             
-            console.log(counter_visible, total_results);
+            console.log("Scrolling auto_load_more");
+            if (list_to_show_len - upper_lim < results_to_show_once ) {
+                
+                upper_lim = results_to_show_once;
+            } else upper_lim += results_to_show_once;
             
-            if (counter_visible >= total_results) {
+            var count = 0;        
+            $('.books-data').map(function() {
+        
+                console.log("Checking for each book!");
+                if($.inArray($(this).attr('id'),list_to_show) != -1 && count <= upper_lim) {
 
-                visible_flag = 1;
-                all_results_visible = 1;
-            }
-            if (total_results - counter_visible < RESULTS_SHOWN) {
-
-                counter_visible = total_results;
-                visible_flag = 1;
-            } else {
-
-                counter_visible += RESULTS_SHOWN;
-            }
-
-            if (!all_results_visible) {
-
-                var buy_height = $('#buy-container').height();
-                var content_container_height = $('#buy-content-container').height();
-                var change = 242 * (counter_visible - clone_visible);
-
-                // To change the height of the main container div dynamically
-                $('#buy-container').height(content_container_height + change + 'px');
-
-                // To show more book tiles on scroll down
-                $('div[class="books-data"]:gt(' + (clone_visible - 1) + '):lt(' + (RESULTS_SHOWN + 1) + ')').slideDown(300);
-                console.log(buy_height, content_container_height);
-            }
-
+                    $(this).show("fast","swing");
+                    count += 1;
+                }
+            });   
         }
     });
+
 }
 
 function left_panel_selected_inputs() {
@@ -630,22 +690,6 @@ function left_panel_selected_inputs() {
         }
     });
 
-}
-
-function books_data() {
-
-    console.log('total_results' + total_results);
-
-    var results_counter = 0;
-
-    $('div[class="books-data"]:gt(' + (RESULTS_SHOWN - 1) + ')').hide();
-
-    if (total_results < RESULTS_SHOWN) {
-        results_counter = total_results;
-    } else {
-        results_counter = RESULTS_SHOWN;
-    }
-    auto_load_more();
 }
 
 function go_to_top() {
