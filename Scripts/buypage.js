@@ -2,19 +2,16 @@
 
 //CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
 
-// Important Filter Logic , when any filter is clicked all the filters should be checked in an order of precedence which is pretty
-// messed up right now. Use data attributes like shown by and hidden by and then use Ultimate Data.
-
 // " A GENIUS NEEDS AN AUDIENCE. "
 //                          - Yash Mehrotra
 //
 // " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
 //
-//     go to bookaway.in/funny
+//     Visit bookaway.in/funny
 
 // Global Variables
 // Total number of books shown when the page loads, wihout scrolling down
-var results_to_show_once = 12;
+var results_to_show_once = 8;
 
 var total_results = 0;
 var previous_scroll = 0;
@@ -61,8 +58,10 @@ function instructions_cookie() {
     var cookies = document.cookie;
     
     if (cookies.indexOf('bookawaybuycookie') != -1) {
+        
         $('#buy-instructions').hide();
     } else {
+        
         document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
     }
 }
@@ -93,8 +92,10 @@ var search_books = [];
 var search_authors = [];
 
 String.prototype.toProperCase = function() { 
+    
     return this.replace(
         /\w\S*/g, function(txt) {
+            
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         }
     );
@@ -111,6 +112,7 @@ function book_data_display() {
         type: "POST",
         url: "sqldata.php",
         data: {
+            
             'source': 'view'
         },
         success: function(result) {
@@ -566,60 +568,6 @@ function filter_everything() {
 
 
 // CSS RELATED Functions
-
-//function auto_load_more() {
-//
-//    $(window).scroll(function() {
-//        
-//        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-//
-//            var counter_visible = $('.books-data:visible').size();
-//            var to_show_counter = ids_to_show.length;
-//            var clone_visible = counter_visible;
-//            var visible_flag = 0;
-//            var all_results_visible = 0;
-//
-//            if (counter_visible == to_show_counter) {
-//
-//                visible_flag = 1;
-//                all_results_visible = 1;
-//                console.log("All books have been shown");
-//            } else if (to_show_counter - counter_visible < results_to_show_once) {
-//
-//                counter_visible += to_show_counter;
-//                visible_flag = 1;
-//                console.log(to_show_counter-clone_visible,"books left to be shown");
-//            } else {
-//                
-//                counter_visible += results_to_show_once;
-//                console.log("Else");
-//            }
-//            
-//            if (!all_results_visible) {
-//                
-//                var buy_height = $('#buy-container').height();
-//                var content_container_height = $('#buy-content-container').height();
-//                var change = 244 * (counter_visible - clone_visible);
-//                
-//                console.log("Changing the height by: ",change,"px");
-//
-//                // To change the height of the main container div dynamically
-//                $('#buy-container').height(content_container_height + change + 'px');
-//
-//                // To show more book tiles on scroll down
-//                var ids_currently_showing = ids_to_show.splice(0,12);
-//                
-//                $('.books-data').map(function() {
-//                    
-//                    if($.inArray(parseInt($(this).attr('id').split("-")[2]),ids_currently_showing) != -1) {
-//                        
-//                       $(this).show();
-//                    }
-//                });                         
-//            }
-//        }
-//    });
-//}
 
 function auto_load_more() {
     
