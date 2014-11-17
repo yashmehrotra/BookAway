@@ -71,7 +71,7 @@ ul { list-style-type: none; }
 
 .header { width:100%; min-width: 1200px; height:68px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
-.header .header-menu { width: inherit; margin: auto; }
+.header .header-menu { width: 1200px; margin: auto; }
 
 .header .header-menu ul { list-style:none; width:730px; display: inline-block; padding-left: 10px;   }
 
@@ -81,7 +81,7 @@ ul { list-style-type: none; }
 
 .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
-.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; display: inline-block; margin: 10px 0 0 330px; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; /*display: inline-block; margin: 10px 0 0 330px;*/ float: right; margin: 15px 15px 0 0; }
 
 .header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
@@ -329,7 +329,7 @@ rgb(129, 139, 47)
 
 #feedback-container { margin-top: 90px; }
 
-#feedback-container iframe { height: 1090px; width: 700px; margin: 100px auto 150px; display: block; }
+#feedback-container iframe { height: 1100px; width: 700px; margin: 100px auto 150px; display: block; z-index:100; }
 
 /********************  NOJS.PHP  ************************/
 
@@ -342,11 +342,11 @@ rgb(129, 139, 47)
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { height:1050px; width:850px; top:60px; margin:0 auto 250px; background-color:white; }
+#sell-container { height:1150px; width:850px; top:60px; margin:30px auto 250px; background-color:white; }
 
 #sell-instructions { height:170px; }
 
-#sell-form-wrap { width:550px; height:940px; position:relative; top:10px; left:182px; text-align:left; line-height:180%; font-size:130%; }
+#sell-form-wrap { width:550px; height:940px; position:relative; left:182px; text-align:left; line-height:180%; font-size:130%;  }
 
 .sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px;	padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
@@ -610,4 +610,8 @@ div[id^="error"] { height:30px;	width:auto; font:normal 15px Ubuntu; margin-bott
 
 .correct-incorrect-img { height: 24px; width: 24px;  }
 
-#img-url-info { font-size: 14px; margin: -5px auto -25px; background-color: #f5f5f5; border: 1px solid transparent; border-radius: 15px; width: 320px; padding: 5px; text-align: center; }
+p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 1px black; border:1px solid transparent; border-radius: 10px; width: 350px; padding: 5px; text-align: left; background-color: black; color: white; font-family: Ubuntu; padding: 5px; }
+
+p#img-url-info a#img-search-link { color: blue; }
+
+#before-form-msg { display: block; background-color:#595857; color:white; font: 16px Ubuntu; padding: 10px 5px; text-align: center; line-height: 250%; border-radius: 10px; width:860px; margin: 70px auto 0; }

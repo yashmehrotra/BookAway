@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Buy and Rent Books | Bookaway.in</title>
+	<title>Buy and Rent Books | BookAway.in</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
@@ -30,16 +30,6 @@
         <div class="page-header">
                 <h2>Buy Books</h2>
         </div>
-        <blockquote>
-            <article class="instructions" id="buy-instructions">
-                <h2>Instructions:</h2>
-                <ol class="instructions-list">
-                    <li class="instructions-list-item">Search for the book you want to get.</li>
-                    <li class="instructions-list-item">Click on a displayed result to view the seller contact details.</li>
-                    <li class="instructions-list-item">Contact the seller.</li>
-                </ol>
-            </article>
-        </blockquote>
         <div class="main-containers" id="buy-container">
             <aside class="left-panel">
                 <form class="pure-form pure-form-stacked">

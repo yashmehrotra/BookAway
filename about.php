@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>About Us | Bookaway.in</title>
+		<title>About Us | BookAway.in</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 		<script src="Scripts/jquery-2.1.1.min.js"></script>

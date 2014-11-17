@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Enable Javascript | Bookaway.in</title>
+	<title>Enable Javascript | BookAway.in</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 </head>

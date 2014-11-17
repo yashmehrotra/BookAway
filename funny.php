@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        Funny | Bookaway.in
+        Funny | BookAway.in
     </title>
     <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
     <script src="Scripts/jquery-2.1.1.min.js"></script>
@@ -33,6 +33,8 @@
                                   - and many more deductions<br>
             <br>
             Arnab Goswami : Avijit, is it true that you can't declare variables, THE NATION WANTS TO KNOW !<br>
+            
+            Reply : "Never ever, ever say such a ridiculous thing to an hones developer!"
 
         </div>
         <div id="seller-details">

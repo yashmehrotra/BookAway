@@ -595,13 +595,9 @@ function auto_load_more() {
     
     $(window).scroll(function() {
         
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 400) {
             
-            console.log("Scrolling auto_load_more");
-            if (list_to_show_len - upper_lim < results_to_show_once ) {
-                
-                upper_lim = results_to_show_once;
-            } else upper_lim += results_to_show_once;
+            upper_lim += results_to_show_once;
             
             var count = 0;        
             $('.books-data').map(function() {
@@ -657,11 +653,4 @@ function smooth_scroll_to_top() {
     $('html, body').animate({
         scrollTop: $('body').offset().top
     }, 1800);
-}
-
-function go_to_top_onhover() {
-
-    $('#go-to-top').on('mouseenter', function() {
-        $(this).fadeTo("slow", 0.5);
-    });
 }

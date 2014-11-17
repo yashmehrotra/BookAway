@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sell Books | Bookaway.in</title>
+	<title>Sell Books | BookAway.in</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
@@ -30,17 +30,9 @@
         <div class="page-header" id="sell-main-head">
             <h2 id="sell-books-text">Sell Books</h2>
         </div>
-        <article class="instructions" id="sell-instructions">
-                <h2>Instructions:</h2>
-                <ol class="instructions-list">
-                    <li class="instructions-list-item">The form given below is divided into 2 steps:<br>
-                        a) Personal info - name, email, phone no, password, college name (cannot be edited later).<br>
-                        b) Book info - book name, author, sell/rent price (can be edited later through edit option)
-                    </li>
-                    <li class="instructions-list-item">On successfull submission, a book id will be displayed which will be useful for you to later edit the details about the book you added.</li>
-                    <li class="instructions-list-item"><u>Note:</U> Fields marked with * are compulsary.</li>
-                </ol>
-        </article>
+        <p id="before-form-msg">
+            To add your book for sale/rent, simply fill the given form<br>NO registration required, free of cost
+        </p>
         <div class="main-containers container-style" id="sell-container">
             <div id="sell-form-wrap">
                 <form class="pure-form pure-form-stacked" id="sell-form" novalidate>
@@ -76,7 +68,7 @@
                             <textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="280" placeholder="Description(max 280 characters)"></textarea>
                             <br>
                             <div id='cover-image'></div>
-                            <input type="url" name="cover-url" class="sell-input" placeholder="Book Cover Image (Right click on image > 'Copy image URL')" id="cover-url"><div id="error_url"></div>
+                            <input type="url" name="cover-url" class="sell-input" placeholder="Paste Image URL" id="cover-url"><div id="error_url"></div>
                             <br>
                             <input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
                             <select name="sellrent" id="sell-rent" class="sell-input">
@@ -94,6 +86,7 @@
                                 <option value="sem">per Sem</option>
                             </select>
                             <div id="error_rent_price"></div>
+                            <br>
                             <span id="captcha"><?php echo $captcha_gen; ?></span>
                             <input type="number" min="99999" name="captcha_user" class="sell-input" id="captcha-input" placeholder="Enter captcha">
                             <br>

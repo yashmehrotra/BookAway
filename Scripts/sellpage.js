@@ -364,9 +364,9 @@ function google_image_search() {
         var GOOGLE_IMG_URL_AFTER_INPUT = "&espv=2&tbas=0&tbm=isch&source=lnt&tbs=isz:m&sa=X&ei=IzljVM-5CpCiugSUiICQAg&ved=0CBQQpwU&dpr=1&biw=1317&bih=657";
         var construced_url = GOOGLE_IMG_URL_BEFORE_INPUT + book_name + '+by+' + book_author + GOOGLE_IMG_URL_AFTER_INPUT;
 
-        if($('#image-search-link').length == 0 && book_name != "" && book_author != "") {
+        if($('#img-search-link').length == 0 && book_name != "" && book_author != "") {
             
-          $('#book-desc').after('<p id="img-url-info"><a href="'+ construced_url +'" id="image-search-link" target="_blank">Click here</a> to search google images for book covers<br>Right click on an image and select <strong>Copy Image URL</strong><br>Paste that copied URL into the field below!</p>'); 
+          $('#book-desc').after('<p id="img-url-info">1. <a href="'+ construced_url +'" id="img-search-link" target="_blank">Click here</a> to search google images for book covers<br>2. Right click on an image and select <strong><u>Copy Image URL</u></strong><br>3. Paste that copied URL into the field below!</p>'); 
         } else if($('#image-search-link').length != 0) {
 
             $('#image-search-link').prop('href',construced_url);
@@ -379,7 +379,7 @@ function sell_validate_instantly() {
         CORRECT_IMAGE = "<img src='Styles/Images/correct.png' alt='correct input' class='correct-incorrect-img'></img>"
         INCORRECT_IMAGE = "<img src='Styles/Images/incorrect.png' alt='correct input' class='correct-incorrect-img'></img>"    
         
-        $('#name').on('keyup',function (){
+        $('#name').on('keyup change paste',function (){
 
             $('#error_name').css("display", "inline-block");
             
@@ -392,7 +392,7 @@ function sell_validate_instantly() {
             }
         });
         
-        $('#email').on('keyup',function (){
+        $('#email').on('keyup change paste',function (){
             
             $('#error_email').css("display", "inline-block");
             
@@ -409,7 +409,7 @@ function sell_validate_instantly() {
             }
          });
             
-        $('#phone').on('keyup',function (){
+        $('#phone').on('keyup change paste',function (){
                 
             $('#error_phone').css("display", "inline-block");
             
@@ -422,7 +422,7 @@ function sell_validate_instantly() {
             }
         });
     
-         $('#password').on('keyup',function (){
+         $('#password').on('keyup change paste',function (){
             
             $('#error_pass').css("display", "inline-block"); 
              
@@ -435,7 +435,7 @@ function sell_validate_instantly() {
             }
          });
         
-         $('#subject').on('keyup',function (){
+         $('#subject').on('keyup change paste',function (){
             
             $('#error_category').css("display", "inline-block"); 
              
@@ -448,7 +448,7 @@ function sell_validate_instantly() {
             }
          });
         
-         $('#book').on('keyup',function (){
+         $('#book').on('keyup change paste',function (){
             
             $('#error_book_name').css("display", "inline-block"); 
              
@@ -461,7 +461,7 @@ function sell_validate_instantly() {
             }
          });
             
-         $('#author').on('keyup',function (){
+         $('#author').on('keyup change paste',function (){
             
             $('#error_author').css("display", "inline-block"); 
              
@@ -474,7 +474,7 @@ function sell_validate_instantly() {
             }
          });
             
-//         $('#cover-url').on('keyup',function (){
+//         $('#cover-url').on('keyup change paste',function (){
 //            
 //            $('#error_url').css("display", "inline-block"); 
 //             
@@ -491,13 +491,13 @@ function sell_validate_instantly() {
 //            }
 //         });
             
-         $('#sell-rent').on('keyup',function (){
+         $('#sell-rent').on('keyup change paste',function (){
             
             var sell_or_rent = $('#sell-rent option:selected').val();
 
             if (sell_or_rent == 1) {
                 
-                $('#s-cost').on('keyup',function (){
+                $('#s-cost').on('keyup change paste',function (){
                     
                     $('#error_sale_price').css("display", "inline-block"); 
                     
@@ -511,7 +511,7 @@ function sell_validate_instantly() {
                 });
             } else if (sell_or_rent == 2) {
                 
-                $('#s-cost').on('keyup',function (){
+                $('#s-cost').on('keyup change paste',function (){
                     
                     $('#error_rent_price').css("display", "inline-block"); 
                     
@@ -525,7 +525,7 @@ function sell_validate_instantly() {
                 });
             } else if (sell_or_rent == 3) {
                 
-                 $('#s-cost').on('keyup',function (){
+                 $('#s-cost').on('keyup change paste',function (){
                     
                     $('#error_sale_price').css("display", "inline-block"); 
                     
@@ -538,7 +538,7 @@ function sell_validate_instantly() {
                     }
                  });
                 
-                 $('#r-cost').on('keyup',function (){
+                 $('#r-cost').on('keyup change paste',function (){
                     
                     $('#error_rent_price').css("display", "inline-block"); 
                     

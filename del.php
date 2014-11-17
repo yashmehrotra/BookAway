@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Edit Details | Bookaway.in</title>
+	<title>Edit Details | BookAway.in</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>

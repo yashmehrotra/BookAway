@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Contact Us | Bookaway.in</title>
+	<title>Contact Us | BookAway.in</title>
 	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
