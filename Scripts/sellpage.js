@@ -237,10 +237,12 @@ function sell_validate_form() {
                     if (response.status == "success") {
 
                         console.log("Book addition successful");
+                        $('#before-form-msg').hide();
                         $('#sell-form-wrap').hide();
                         $('#step-1').hide();
                         $('#entry').show();
                         $('#sell-container').css({
+                            
                             'height': '450px',
                             'width': '800px'
                         });
@@ -281,7 +283,7 @@ function help_popup() {
 
     $('#help').on('mouseenter mouseleave', function() {
 
-        $('#help-popup').fadeToggle('500');
+        $('#help-popup').fadeToggle('50');
     });
 }
 

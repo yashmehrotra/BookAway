@@ -13,13 +13,13 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *height: 13px; *width: 13px; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; height: 13px; width: 13px; }
 
 button[disabled], input[disabled] { cursor: default; }
 
 button, input { line-height: normal; }
 
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; vertical-align: middle; }
 
 img { border: 0; -ms-interpolation-mode: bicubic; }
 
@@ -173,7 +173,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select { margin-top:40px; }
 
-#buy-container aside form #buy-search-filters .left-panel-text-wrap { height:20px; width:inherit; margin-top:0;	font-size:19px;	font-weight:bold; color: #0bd3c4; font-family:cursive; font-weight: 500; }
+#buy-container aside form #buy-search-filters .left-panel-text-wrap { height:30px; width:inherit; margin-top:0;	font-size:18px;	font-weight:550; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
 
@@ -203,7 +203,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
 
-#buy-container #buy-content-container { width:922px; height:100%; position:absolute; top:50px; left:340px; text-align:left; margin-bottom:100px; position: relative; padding-bottom: 50px; }
+#buy-container #buy-content-container { width:922px; height:100%; position:absolute; top:80px; left:340px; text-align:left; margin-bottom:100px; position: relative; padding-bottom: 50px; }
 
 #buy-container #buy-content-container .books-data { height:200px; width:780px;	margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3;}
 
@@ -213,13 +213,13 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 #buy-container #buy-content-container div { position:relative; }
 
-#buy-container #buy-content-container .image-buy-wrapper { height:165px; width:105px; top:17px; left:15px; }
+#buy-container #buy-content-container .image-buy-wrapper { height:160px; width:120px; top:15px; left:10px; }
 
 #buy-container #buy-content-container .books-data-images { height:inherit; width:inherit; }
 
-#buy-container #buy-content-container .name-buy-wrapper { height:28px; width:400px; left:115px; top:-135px; font-size:19px; padding-left:25px; overflow:hidden; }
+#buy-container #buy-content-container .name-buy-wrapper { height:28px; width:400px; left:115px; top:-125px; font-size:19px; padding-left:25px; overflow:hidden; }
 
-#buy-container #buy-content-container .author-buy-wrapper { height:30px; width:400px; left:115px; top:-125px; font-size:17px;	color:gray; padding-left:25px; }
+#buy-container #buy-content-container .author-buy-wrapper { height:30px; width:400px; left:115px; top:-120px; font-size:17px;	color:gray; padding-left:25px; }
 
 #buy-container #buy-content-container .category-buy-wrapper { height:35px; width:400px; left:115px;	top:-115px; font-size:17px; color: gray; padding-left:25px; }
 
@@ -240,7 +240,7 @@ img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
 
 .seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
 
-.seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; margin-top: 20px; }
+.seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; margin-top: 10px; }
 
 .seller-data div { position:relative; height:50px; width:450px; top:10px; left:70px; padding:6px 0 0 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
 
@@ -340,7 +340,7 @@ rgb(129, 139, 47)
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { height:1150px; width:850px; top:40px; margin:30px auto 250px; background-color:white; }
+#sell-container { height:1150px; width:850px; top:60px; margin:30px auto 250px; background-color:white; }
 
 #sell-instructions { height:170px; }
 
@@ -388,11 +388,11 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 
 #entry { height:600px; width:820px; display:none; }
 
-#successful-text { font:22px Bitter-Regular; line-height:150%; text-align:center; padding:0 10px; position:relative; left:160px; top:-20px; }
+#successful-text { font:22px Bitter-Regular; line-height:150%; text-align:center; padding:0 10px; position:relative; left:40px; }
 
 #success-submit-wrap { position:absolute; top:80px; }
 
-.links-list { height:60px; width:inherit; position:absolute; top:320px; }
+.links-list { height:60px; width:inherit; position:absolute; top:300px; }
 
 .links-box { height:50px; width:270px; float:left; margin-left:110px; }
 
@@ -612,4 +612,4 @@ p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 
 
 p#img-url-info a#img-search-link { color: blue; }
 
-#before-form-msg { display: block; background-color:#0bd3c4; color:white; font: 18px Ubuntu; padding: 10px 5px; text-align: center; line-height: 250%; border-radius: 10px; width:850px; margin: 70px auto 0; }
+#before-form-msg { display: block; background-color:#595857; color:white; font: 16px Ubuntu; padding: 10px 5px; text-align: center; line-height: 250%; border-radius: 10px; width:860px; margin: 70px auto 0; }

@@ -43,18 +43,18 @@
                         </div>
                         <button class="ion-android-search pointer-onhover" id="left-panel-search-btn"></button>
                         <div class="sub-select" id="left-panel-sub-select">
-                            <div class="left-panel-text-wrap" id="sub-text-wrapper">
+                            <p class="left-panel-text-wrap" id="sub-text-wrapper">
                                 Category:
-                            </div>
+                            </p>
                             <div id="sub-scroll-bar">
                                 <?php 
                                     require_once("categories.php"); 
                                 ?>
                             </div>
                         </div>
-                        <div class="left-panel-text-wrap" id="book-for-text-wrapper">
+                        <p class="left-panel-text-wrap" id="book-for-text-wrapper">
                             Available For:
-                        </div>
+                        </p>
                         <label><input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All</label>
                         <br>
                         <label><input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent</label>
@@ -64,9 +64,9 @@
                         <label><input type="radio" name="radio-name" class="radio-available-for" value="2">Rent</label>
                         <br>
                         <div id="left-panel-price-range">
-                            <div class="left-panel-text-wrap" id="price-range-text-wrapper">
+                            <p class="left-panel-text-wrap" id="price-range-text-wrapper">
                                 Price Range:
-                            </div>
+                            </p>
                             <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">
                             <button class="pointer-onhover" id="price-range">Go</button>
                         </div>
