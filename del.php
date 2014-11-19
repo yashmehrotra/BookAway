@@ -24,11 +24,11 @@
         </div>
         <div class="main-containers container-style" id="del-main-container">
             <div id="del-main">
-                <div id="del-desc">
+                <p id="del-desc">
                     To edit the details of your book or to remove the book you added,
                     <br><br>
                     Enter the following details:
-                </div>
+                </p>
                 <form id="del-form" class="pure-form pure-form-stacked" novalidate>
                     <div class="sub"><input type="text" id="email" placeholder="Email Address" required></div><div id="del-error_email"></div>
                     <div class="sub"><input type="text" id="bookid" placeholder="Book ID" required></div><div id="del-error_bookid"></div>
