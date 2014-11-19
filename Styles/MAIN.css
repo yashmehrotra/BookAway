@@ -87,6 +87,9 @@ ul { list-style-type: none; }
 
 .header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
+.header #header-list { display:block; margin: 10px auto auto; width: 800px; }
+
+.header #header-list li { display: inline-block; }
 
 /********************  FOOTER   ************************/
 
@@ -108,14 +111,17 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 /********************  INDEX.PHP   ************************/
 
+#index-body { background-image: url(Images/index-wallpaper.jpg); background-repeat: no-repeat; background-size: cover; }
 
 a.index-header-links, a.index-header-links:link { text-decoration:none; padding:8px 28px; font-size:23px; margin-right:15px; color:white; display:inline-block; }
 
 a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -moz-transition:background-color .5s ease-in; -o-transition:background-color .5s ease-in; -ms-transition:background-color .5s ease-in; background-color:gray; }
 
-img#back-img { min-height: 100%; min-width: 100%; position:fixed; top: 0; }
+#index-container { max-height:40px; width:1100px; padding:0; margin:110px auto 50px auto; }
 
-#index-container { height:460px; width:1100px; padding:0; margin:110px auto 50px auto; }
+#index-container #content-slider h2 { color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0; }
+
+#index-container #content-slider p { color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; }
 
 
 /********************  ABOUT.PHP   ************************/
@@ -604,8 +610,6 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 
 #captcha { margin: 10px 20px 0 10px; display: inline-block; width: 80px; height: 30px; } 
 
-#header-menu-home { max-width: 1200px; margin: 5px auto 0; }
-
 .correct-incorrect-img { height: 24px; width: 24px;  }
 
 p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 1px black; border:1px solid transparent; border-radius: 10px; width: 350px; padding: 5px; text-align: left; background-color: black; color: white; font-family: Ubuntu; padding: 5px; }
@@ -613,3 +617,6 @@ p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 
 p#img-url-info a#img-search-link { color: blue; }
 
 #before-form-msg { display: block; background-color:#0bd3c4; color:white; font: 18px Ubuntu; padding: 10px 5px; text-align: center; line-height: 250%; border-radius: 10px; width:850px; margin: 70px auto 0; }
+#header-menu-home {
+    
+}
