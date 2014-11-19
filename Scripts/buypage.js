@@ -325,17 +325,27 @@ function filter() {
         }
 
         if ( $('#checkbox-all').prop('checked') && checkbox_value == "All" ) {
-            checkbox_array = ["All"];
-
             $('.sub-cbox-input').each(function(index) {
                 if( $(this).val() != "All") {
-                    //uncheck everything
                     $(this).prop('checked',false);
                 }
             });
         } else {
             $('#checkbox-all').prop('checked',false);
         }
+
+        $('.sub-cbox-input').each(function(index) {
+            if( $(this).prop('checked') ) {
+                checkbox_array.push($(this).val());
+            }
+        });
+
+        if (checkbox_array.length == 0) {
+            $('#checkbox-all').prop('checked',true);
+            checkbox_array = ['All'];
+        }
+
+        console.log("Yash is awesome because",checkbox_array)
 
         // if (checkbox_value == "All") {
 
@@ -576,10 +586,10 @@ function filter_everything() {
 //    ||    ||      //==\\     //======    ||    ||
 //    ||    ||     //    \\   =            ||    ||
 //     \\  //      ||    ||   =            ||    ||
-//      \\//       ||====||    \\====\\    ||====||
-//       ||        ||    ||           =    ||    ||
-//       ||        ||    ||           =    ||    ||
-//       ||        ||    ||    ======//    ||    ||
+//      \\//       ||====||    \\====\\    ||====||          ||
+//       ||        ||    ||           =    ||    ||          ||
+//       ||        ||    ||           =    ||    ||          ||
+//       ||        ||    ||    ======//    ||    ||          ||
 
 
 
