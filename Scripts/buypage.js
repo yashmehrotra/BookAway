@@ -320,33 +320,49 @@ function filter() {
         var checkbox_value = $(this).val();
         checkbox_array = [];
 
-        if (checkbox_value == "All") {
+        if ( $('#checkbox-all').prop('checked',false) && checkbox_value == "All" ) {
+            $('#checkbox-all').prop('checked',true);
+        }
+
+        if ( $('#checkbox-all').prop('checked') && checkbox_value == "All" ) {
+            checkbox_array = ["All"];
 
             $('.sub-cbox-input').each(function(index) {
-
-                $(this).prop('checked', false);
-            });
-
-            $(this).prop('checked', true);
-
-            checkbox_array = ['All'];
-
-        } else {
-
-            $('.sub-cbox-input').each(function(index) {
-
-                if ($(this).val() == "All") {
-
-                    $(this).prop('checked', false);
-                } else if ($(this).prop('checked')) {
-
-                    if (checkbox_array.indexOf($(this).val(), checkbox_array) == -1) {
-
-                        checkbox_array.push($(this).val());
-                    }
+                if( $(this).val() != "All") {
+                    //uncheck everything
+                    $(this).prop('checked',false);
                 }
             });
+        } else {
+            $('#checkbox-all').prop('checked',false);
         }
+
+        // if (checkbox_value == "All") {
+
+        //     $('.sub-cbox-input').each(function(index) {
+        //         $(this).prop('checked', false);
+        //     });
+
+        //     $(this).prop('checked', true);
+
+        //     checkbox_array = ['All'];
+
+        // } else {
+
+        //     $('.sub-cbox-input').each(function(index) {
+
+        //         if ($(this).val() == "All") {
+        //             $(this).prop('checked', false);
+        //         } else if ($(this).prop('checked')) {
+        //             if (checkbox_array.indexOf($(this).val(), checkbox_array) == -1) {
+        //                 checkbox_array.push($(this).val());
+        //             }
+        //         }
+        //     });
+        // }
+
+        //
+        
         filter_dict['category'] = checkbox_array;
         filter_everything();
     });
