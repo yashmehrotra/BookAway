@@ -30,11 +30,10 @@
                     Enter the following details:
                 </p>
                 <form id="del-form" class="pure-form pure-form-stacked" novalidate>
-                    <div class="sub"><input type="text" id="email" placeholder="Email Address" required></div><div id="del-error_email"></div>
                     <div class="sub"><input type="text" id="bookid" placeholder="Book ID" required></div><div id="del-error_bookid"></div>
                     <div class="sub"><input type="password" id="password" placeholder="Password" required></div><div id="del-error_pass"></div>
                     <div id="del-error_incorrect"></div>
-                    <div><input type="submit" value="Submit" id="submit"></div>
+                    <input type="submit" value="Submit" id="submit">
                 </form>
             </div>
             <div id="edit-form">

@@ -282,21 +282,21 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #del-main-container #del-main form#del-form { width:700px; margin:auto; }
 
-#del-main-container #del-main form#del-form .sub { width:270px; height:50px; margin:0 0px 15px 180px; line-height:130%; display:inline-block; }
+#del-main-container #del-main form#del-form .sub { width:270px; height:50px; margin:0 0 15px 200px; line-height:130%; display:inline-block; }
 
 #del-main-container #del-main form#del-form input:not([type="submit"]) { width:inherit; height:inherit; font-size:14px; }
 
-#del-main-container #del-main form#del-form input[type="submit"] { width:150px; height:60px; font:22px Ubuntu; margin:55px 250px 0px; background:#403C94; color:white; border:1px transparent; border-radius:10px; }
+#del-main-container #del-main form#del-form input[type="submit"] { width:150px; height:60px; font:22px Ubuntu; margin:55px 0 0 280px; background:#403C94; color:white; border:1px transparent; border-radius:10px; }
 
 #del-main-container #del-main form#del-form input[type="submit"]:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
 #del-main-container #del-main form#del-form div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none; }
-rgb(129, 139, 47)
+
 #del-main-container #del-main form#del-form #del-error_incorrect { margin:20px 0px 0px 130px; }
 
 #del-main-container #edit-form { height:885px; width:inherit; display:none; background-color:white; }
 
-#del-main-container #edit-form button#delete-btn { height:70px; width:280px; background-color:red; color:white; margin:10px auto 0px 330px; border:1px solid white; font:24px Ubuntu; border:1px solid transparent; border-radius:20px; }
+#del-main-container #edit-form button#delete-btn { height:70px; width:280px; background-color:red; color:white; margin:10px auto 0; border:1px solid white; font:24px Ubuntu; border:1px solid transparent; border-radius:20px; display: block; }
 
 #del-main-container #edit-form button#delete-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
@@ -308,9 +308,9 @@ rgb(129, 139, 47)
 
 #del-main-container #edit-form #edit-head #edit-desc { margin-bottom:15px; }
 
-#del-main-container #edit-form form#eform { height:640px; font-size:21px; margin:150px 0px 0px 230px; }
+#del-main-container #edit-form form#eform { height:640px; font-size:21px; width: 490px; margin:150px auto 0; }
 
-#del-main-container #edit-form form#eform button#del-new-btn { width:19%; height:8%; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:24px Ubuntu; margin-right:auto; position:absolute; bottom:-5px; left:390px; }
+#del-main-container #edit-form form#eform button#del-new-btn { width:140px; height:70px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:24px Ubuntu; margin: auto; display: block; }
 
 #del-main-container #edit-form form#eform button#del-new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
@@ -360,11 +360,11 @@ rgb(129, 139, 47)
 
 #phone { width:410px; }
 
-#show-password { font-size:32px; position:absolute; left:440px; top:215px; cursor:pointer; }
+#show-password { font-size:32px; position:absolute; left:710px; top:215px; cursor:pointer; }
 
-#help { height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:-35px; top:215px; }
+#help { height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:240px; top:215px; }
 
-#help-popup { height:44px; width:380px; box-shadow:1px 1px 1px black; border:1px solid transparent; position:absolute; left:-177px; top:150px; font:15px Ubuntu; padding:5px; background-color: black; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
+#help-popup { height:44px; width:380px; box-shadow:1px 1px 1px black; border:1px solid transparent; position:absolute; left:100px; top:150px; font:15px Ubuntu; padding:5px; background-color: black; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
 
 #help-popup:after { content: ""; position: absolute; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: black transparent transparent transparent; top: 55px; left: 144px; }
 

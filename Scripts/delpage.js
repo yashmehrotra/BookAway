@@ -22,17 +22,9 @@ function del_validate_form() {
         $("div[id^='del-error']").hide();
 
         var check = false;
-        var emval = $('#email').val();
         var bookval = $('#bookid').val();
         var passval = $('#password').val();
 
-        if( emval == "" || emval.indexOf("@") == -1 || emval.indexOf(".") == -1 ) {
-
-            $('#del-error_email').html('Invalid email address!');
-            $('#email').focus();
-            $('#del-error_email').css("display","inline-block");
-            check = true;
-        }
         if( bookval == "" ) {
 
             $('#del-error_bookid').html('Fill in this field!');
@@ -68,9 +60,7 @@ function del_validate_form() {
 function edit_request() {
 
     var user_id = $('#bookid').val();
-    var user_email = $('#email').val();
     var user_password = $('#password').val();
-    console.log(user_email);
     $('#del-main-container').append(
         '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:400px; left:445px; z-index:100;">'
     );
@@ -80,7 +70,6 @@ function edit_request() {
         url: "sqldata.php",
         data: {
             'user_id':user_id, 
-            'user_email':user_email, 
             'user_password':user_password , 
             'source':'edit_user' 
         },
