@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Contact Us | BookAway.in</title>
-	<link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+    <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
+	<link rel="stylesheet" type="text/css" href="Styles/ionicons1.css">
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
@@ -17,8 +18,12 @@
             <h2>Contact Us</h2>
         </div>
         <div class="main-containers" id="contact-us-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14007.871887072028!2d77.37208199999995!3d28.630722000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce55137adc68d%3A0x56c8749d5e325177!2sAryabhatta+Bhawan-I!5e0!3m2!1sen!2sin!4v1413111998580" width="600" height="450" frameborder="0" style="border:0"></iframe>
-            <img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:40px; left:48%; z-index:-1;">
+             <h2 id="head-text">GET IN TOUCH.</h2>
+             <span class="ion-android-location contact-icons"></span>
+             <p id="address-text" class="contact-info">Jaypee Institute Of Information Technology,<br>A-10, Sector-62,<br>Noida, UP</p>
+             <br>
+             <span class="ion-email contact-icons"></span>
+             <P id="email-text" class="contact-info">bookawayonline@gmail.com</p>
         </div>
         <?php
             require_once('footer.php');

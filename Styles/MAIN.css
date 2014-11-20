@@ -268,8 +268,11 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /*********************  CONTACT.PHP  ***********************/
 
 
-#contact-us-container { height:500px; width:1000px; margin:120px auto 130px; text-align:center; }
-
+#contact-us-container { height:500px; width:1000px; margin:70px auto 130px; text-align:center; }
+#head-text { font-family: Ubuntu; font-size: 30px; color: #1884E9;}
+.contact-info { text-align: left; font-size: 20px; font-family: Ubuntu; display: inline-block; text-align: left; width: 950px; margin: 20px auto 0; }
+.contact-icons { float: left; display: inline-block; font-size: 33px; }
+.ion-address-loaction
 
 /********************  DEL.PHP  ************************/
 
