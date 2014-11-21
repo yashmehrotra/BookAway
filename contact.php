@@ -18,12 +18,16 @@
             <h2>Contact Us</h2>
         </div>
         <div class="main-containers" id="contact-us-container">
-             <h2 id="head-text">GET IN TOUCH.</h2>
-             <span class="ion-android-location contact-icons"></span>
-             <p id="address-text" class="contact-info">Jaypee Institute Of Information Technology,<br>A-10, Sector-62,<br>Noida, UP</p>
-             <br>
-             <span class="ion-email contact-icons"></span>
-             <P id="email-text" class="contact-info">bookawayonline@gmail.com</p>
+            <h2 id="head-text">GET IN TOUCH.</h2>
+            <span class="ion-android-location contact-icons"></span>
+            <p id="address-text" class="contact-info">Jaypee Institute Of Information Technology,<br>A-10, Sector-62,<br>Noida, UP</p>
+            <br>
+            <span class="ion-email contact-icons"></span>
+            <p id="email-text" class="contact-info">bookawayonline@gmail.com</p>
+            <br><br>
+            <span class="ion-android-call contact-icons"></span>
+            <p id="mobile-number" class="contact-info">+91-9971958437, +91-9818936295</p>
+            <iframe id="map-canvas" src="https://www.google.com/maps/embed?pb=!1m22!1m12!1m3!1d1750.9958544472706!2d77.37144225832236!3d28.630010590408546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m7!1i0!3e0!4m0!4m3!3m2!1d28.630255599999998!2d77.3709573!5e0!3m2!1sen!2sin!4v1416563180503" width="500" height="450" frameborder="0" style="border:0"></iframe>
         </div>
         <?php
             require_once('footer.php');
