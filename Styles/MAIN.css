@@ -69,7 +69,7 @@ ul { list-style-type: none; }
 
 .header-wrapper { width:99.92%; height:65px; position:relative; top:120px; }
 
-.header-wrapper-fixed {	z-index:50;	position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; }
+.header-wrapper-fixed {	z-index:50; position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; }
 
 .header { width:100%; min-width: 1100px; height:68px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
@@ -96,13 +96,13 @@ ul { list-style-type: none; }
 
 footer { width:100%; min-width: 1200px; height:100px; margin-bottom:0; position:relative; text-align:center; background-color:#1884E9; color:white; font-size:14px; }
 
-footer div { height:20px; width:inherit; padding-top:1px;	margin:20px auto auto; }
+footer div { height:20px; width:inherit; padding-top:1px; margin:20px auto auto; }
 
 footer div ul { list-style:none; }
 
 footer div ul li { display:inline-block; }
 
-footer div ul li a {	text-decoration:none; padding:0 50px;	margin:0 20px; font:20px Proxima-Nova; color:white; }
+footer div ul li a { text-decoration:none; padding:0 50px; margin:0 20px; font:20px Proxima-Nova; color:white; }
 
 footer div ul li a:hover { text-decoration:underline; }
 
@@ -111,7 +111,7 @@ footer #copyright { margin-top:25px; height:30px; width:inherit; background-colo
 
 /********************  INDEX.PHP   ************************/
 
-#index-body { background-image: url(Images/index-wallpaper.jpg); background-repeat: no-repeat; background-size: cover; }
+#index-body { background-image: url(Images/2.jpg); background-repeat: no-repeat; background-size: cover; }
 
 a.index-header-links, a.index-header-links:link { text-decoration:none; padding:8px 28px; font-size:23px; margin-right:15px; color:white; display:inline-block; }
 
@@ -127,21 +127,19 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************  ABOUT.PHP   ************************/
 
 
-#about-us-container { height:320px;	width:1200px; margin:40px auto 250px; text-align:justify; background-color:white; }
+#about-us-container { height:420px; width:1200px; margin:40px auto 250px; text-align:justify; background-color:white; }
 
-.developer-profile, .profile-onhover { height:300px; width:290px; border:1px ridge #d3d3d3; margin:55px 0px 0px 50px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; }
+#about-us-container .about-labels { font-family: Ubuntu; font-size: 30px; color: #1884e9; text-align:left; margin:80px 0 0 90px; display:block; width:990px; border-bottom: 1px solid #1884e9; padding-bottom:10px; }
 
-.profile-image { height:160px; width:160px; border:solid transparent; border-radius:100px; }
+.developer-profile { width:230px; margin:35px 0 0 90px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; background-color:whitesmoke; }
 
-.developer-profile a img.profile-image:hover { cursor:default; }
+.developer-profile p.about-me { display:block; margin-top:100px; font-family:Josefin-Slab; line-height:150%; }
 
-.profile-onhover { -webkit-transition:background-color .4s linear, color .4s linear; -moz-transition:background-color .4s linear, color .4s linear; -o-transition:background-color .4s linear, color .4s linear; -ms-transition:background-color .4s linear, color .4s linear; }
-
-.profile-onhover:hover { border-color:transparent; background-color:#DCDCDC; }
+.profile-image { height:160px; width:160px; border:solid transparent; border-radius:90px; }
 
 .developer-profile p { font: italic 19px serif; }
 
-.developer-profile div { height:43px; width:45px; float:left; margin:10px 5px 0 7px; }
+.developer-profile div { height:43px; width:43px; float:left; margin:10px 0 0 13px; }
 
 .fb { background:url("Images/icon-logos.png") 0 0; }
 
@@ -150,8 +148,6 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 .li { background:url("Images/icon-logos.png") -103px 0; }
 
 .gi { background:url("Images/icon-logos.png") -24px 41px; }
-
-.ml { background:url("Images/gmail.jpg") -4px -4px; }
 
 
 /********************    BUY.PHP    ************************/
@@ -234,7 +230,6 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 #buy-container #buy-content-container .sell-buy-wrapper,
 #buy-container #buy-content-container .rent-buy-wrapper { height:40px; font-size:19px; top:-275px; left:550px; width:230px; overflow:hidden; }
 
-
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
 
@@ -269,13 +264,21 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 
 #contact-us-container { height:500px; width:1000px; margin:70px auto 130px; text-align:center; }
-#head-text { font-family: Ubuntu; font-size: 30px; color: #1884E9;}
+
+#head-text { font-family: Ubuntu; font-size: 30px; color: #1884e9; text-transform:uppercase; }
+
 .contact-info { text-align: left; font-size: 20px; font-family: Ubuntu; display: inline-block; width: 930px; margin: 20px auto 0; }
+
 .contact-icons { float: left; display: inline-block; font-size: 33px; }
-.ion-android-location { color: red; margin-top: 22px;  }
+
+.ion-android-location { color: red; margin-top: 22px; }
+
 .ion-email { color: orange; margin-top: 16px; }
+
 .ion-android-call { color: blue; margin-top: 15px; }
-#map-canvas { float: right; border: 2px ;margin-top: -174px;}
+
+#map-canvas { float: right; border: 2px; margin-top: -174px; }
+
 
 /********************  DEL.PHP  ************************/
 

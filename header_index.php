@@ -7,8 +7,8 @@
             <li class="header-list-module"><a href="index" class="index-header-links" id="home">Home</a></li>
             <li class="header-list-module"><a href="buy" class="index-header-links" id="buy">Buy</a></li>
             <li class="header-list-module"><a href="sell" class="index-header-links" id="sell">Sell</a></li>
-            <li class="header-list-module"><a href="faqs" class="index-header-links" id="faqs">FAQs</a></li>
             <li class="header-list-module"><a href="del" class="index-header-links" id="del">Edit</a></li>
+            <li class="header-list-module"><a href="faqs" class="index-header-links" id="faqs">FAQs</a></li>
             <li class="header-list-module"><a href="feedback" class="index-header-links" id="feedback">Feedback</a></li>
         </ul>
 	</section>

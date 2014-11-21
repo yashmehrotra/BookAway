@@ -18,7 +18,7 @@
             <h2>Contact Us</h2>
         </div>
         <div class="main-containers" id="contact-us-container">
-            <h2 id="head-text">GET IN TOUCH.</h2>
+            <h2 id="head-text">get in touch.</h2>
             <span class="ion-android-location contact-icons"></span>
             <p id="address-text" class="contact-info">Jaypee Institute Of Information Technology,<br>A-10, Sector-62,<br>Noida, UP</p>
             <br>
