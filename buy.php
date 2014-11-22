@@ -32,6 +32,8 @@
         </div>
         <div class="main-containers" id="buy-container">
             <aside class="left-panel">
+                <button id='btn-sort-price-desc'>Desc</button>
+                <button id='btn-sort-price-asc'>Asc</button>
                 <form class="pure-form pure-form-stacked">
                     <div id="buy-search-filters">
                         <div id="search-filters-college-select">

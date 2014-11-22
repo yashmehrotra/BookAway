@@ -248,6 +248,7 @@ function book_data_display() {
                 filter();
                 go_to_top();
                 search_bar_autocomple(search_data);
+                sort_price_wise();
             }
 
         }
@@ -544,7 +545,7 @@ function filter_everything() {
         }
     );
     
-    list_to_show.length = 0;
+    list_to_show = [];
     
     list_to_show = $('.books-data:visible').map(function() {
                 
@@ -554,17 +555,75 @@ function filter_everything() {
     auto_load_more();
 }
 
+function sort_price_wise() {
+    var order_try = [];
+    
+    $('#btn-sort-price-desc').on('click',function() {
+        order_try = [];
+        order_try = list_to_show.map(function() {
+                        return convert_id_to_Ultimate_index(this);
+                });
+
+        var temp;
+        for(var i=0;i<order_try.length;i++) {
+            for(var j=0;j<i;j++) {
+                if(Ultimate_data[order_try[i]]['sell_price'] > Ultimate_data[order_try[j]]['sell_price']) {
+                    temp = order_try[i];
+                    order_try[i] = order_try[j];
+                    order_try[j] = temp;
+                }
+            }
+        }
+
+        list_to_show.length = 0;
+        list_to_show = order_try.map(function() {
+            return 'book-data-'+this;
+        })
+        console.log(list_to_show);
+
+        //auto_load_more();
+    });
+
+    $('#btn-sort-price-asc').on('click',function() {
+
+        var order_try = [];
+        order_try = list_to_show.map(function() {
+                        return convert_id_to_Ultimate_index(this);
+                });
+
+        var temp;
+        for(var i=0;i<order_try.length;i++) {
+            for(var j=0;j<i;j++) {
+                if(Ultimate_data[order_try[i]]['sell_price'] < Ultimate_data[order_try[j]]['sell_price']) {
+                    temp = order_try[i];
+                    order_try[i] = order_try[j];
+                    order_try[j] = temp;
+                }
+            }
+        }
+
+        list_to_show = [];
+        list_to_show = order_try.map(function() {
+            return 'book-data-'+this;
+        })
+        console.log(list_to_show);
+
+        auto_load_more();
+    });
+}
+
+
 //=============================================================//
 // Backend Guys BEWARE , FROM HERE ON CSS STARTS , NA NA NA !  //
 //=============================================================//
 
-//    ||    ||      //==\\     //======    ||    ||          |\    /|  ||======  ||    ||
-//    ||    ||     //    \\   =            ||    ||          |\\  //|  ||        ||    ||
-//     \\  //      ||    ||   =            ||    ||          ||\\//||  ||        ||    ||
-//      \\//       ||====||    \\====\\    ||====||          || \/ ||  ||===     ||====||
-//       ||        ||    ||           =    ||    ||          ||    ||  ||        ||    ||
-//       ||        ||    ||           =    ||    ||          ||    ||  ||        ||    ||
-//       ||        ||    ||    ======//    ||    ||          ||    ||  ||======  ||    ||
+//    ||    ||      //==\\     //======    ||    ||          |\    /|  ||======  ||    ||   ||===\\
+//    ||    ||     //    \\   =            ||    ||          |\\  //|  ||        ||    ||   ||    \\
+//     \\  //      ||    ||   =            ||    ||          ||\\//||  ||        ||    ||   ||    //
+//      \\//       ||====||    \\====\\    ||====||          || \/ ||  ||===     ||====||   ||===//
+//       ||        ||    ||           =    ||    ||          ||    ||  ||        ||    ||   ||   \\
+//       ||        ||    ||           =    ||    ||          ||    ||  ||        ||    ||   ||    \\
+//       ||        ||    ||    ======//    ||    ||          ||    ||  ||======  ||    ||   ||     \\
 
 
 
