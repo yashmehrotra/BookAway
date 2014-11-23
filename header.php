@@ -13,8 +13,8 @@
                 <li><a href="index" id="home">Home</a></li>
                 <li><a href="buy" id="buy">Buy</a></li>
                 <li><a href="sell" id="sell">Sell</a></li>
-                <li><a href="faqs" id="faqs">FAQs</a></li>
                 <li><a href="del" id="del">Edit</a></li>
+                <li><a href="faqs" id="faqs">FAQs</a></li>
                 <li><a href="feedback" id="feedback">Feedback</a></li>
             </ul>
             <a href="https://github.com/yashmehrotra/Bookaway" target="_blank">

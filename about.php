@@ -19,7 +19,8 @@
             </div>
 
             <div class="main-containers" id="about-us-container">
-                <div class="developer-profile pointer-onhover" id="profile1">
+	        <h2 class="about-labels">Our Team</h2>
+                <div class="developer-profile" id="profile1">
                     <a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="profile-image" id="profile-image1" alt="img1"></a>
                     <p>Avijit Gupta
                         <br><br>
@@ -29,8 +30,8 @@
                     <div onclick="location.href='http://www.twitter.com/526avijit';" class="pointer-onhover tw"></div>
                     <div onclick="location.href='https://www.linkedin.com/pub/avijit-gupta/9a/22/6';" class="pointer-onhover li"></div>
                     <div onclick="location.href='https://github.com/526avijitgupta';" class="pointer-onhover gi"></div>
-                    <div onclick="location.href='';" class="pointer-onhover ml"></div>
-                </div>
+                <p class="about-me">Write some random description about me!</p>
+		</div>
 
                 <div class="developer-profile" id="profile2">
                     <a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="profile-image" id="profile-image2" alt="img2"></a>
@@ -42,7 +43,7 @@
                     <div onclick="location.href='http://www.twitter.com/yashm95';" class="pointer-onhover tw"></div>
                     <div onclick="location.href='in.linkedin.com/in/yashmehrotra';" class="pointer-onhover li"></div>
                     <div onclick="location.href='https://github.com/yashmehrotra/';" class="pointer-onhover gi"></div>
-                    <div onclick="location.href='';" class="pointer-onhover ml"></div>
+		<p class="about-me">Write some random description about me!</p>
                 </div>
 
                 <div class="developer-profile" id="profile3">
@@ -55,7 +56,7 @@
                     <div onclick="location.href='http://www.twitter.com/SidMail15';" class="pointer-onhover tw"></div>
                     <div onclick="location.href='http://in.linkedin.com/pub/sidhant-sharma/91/960/230';" class="pointer-onhover li"></div>
                     <div onclick="location.href='https://github.com/sid15sharma';" class="pointer-onhover gi"></div>
-                    <div onclick="location.href='';" class="pointer-onhover ml"></div>
+		<p class="about-me">Write some random description about me!</p>
                 </div>
             </div>
             <?php
