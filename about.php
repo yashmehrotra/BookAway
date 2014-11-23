@@ -14,9 +14,11 @@
             <?php
             require_once('header.php');
             ?>
+<!--
             <div class="page-header">
                 <h2>About Us</h2>
             </div>
+-->
 
             <div class="main-containers" id="about-us-container">
 	        <h2 class="about-labels">Our Team</h2>

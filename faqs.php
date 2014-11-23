@@ -17,13 +17,15 @@
     <?php
     require_once('header.php');
     ?>
+<!--
     <div class="page-header">
         <h2>FAQs</h2>
     </div>
+-->
     <div class="outer-page-wrap">
+        <h2 class="head-text">faqs</h2>
         <div class="main-containers container-style" id="faqs-container">
-            <h1 id="faqs-head">Frequently Asked Questions</h1>
-            <section style="margin-top:30px;">
+            <section>
                 <a href="#faqs-head">How to buy books?</a>
                 <br>
                 <a href="#ques-1">How to sell books?</a>

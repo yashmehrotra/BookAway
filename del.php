@@ -19,9 +19,7 @@
         <?php
             require_once('header.php');
         ?>
-        <div class="page-header">
-            <h2>Edit</h2>
-        </div>
+        <h2 class="head-text">edit details</h2>
         <div class="main-containers container-style" id="del-main-container">
             <div id="del-main">
                 <p id="del-desc">

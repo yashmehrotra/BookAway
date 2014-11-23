@@ -39,15 +39,13 @@ body { background-color:white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Ubuntu; src:url('Fonts/Ubuntu/Ubuntu-R.ttf'); }
 
-a#focus:link { background-color:#0aa4ea; /*border-bottom:2px solid white;*/ }
+a#focus:link { background-color:#1884e9 }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .outer-page-wrap { margin:0 auto; width: 100%; display: block; }
 
-.page-header { background-color:#1884E9; color:white; width:100%; min-width: 1102px; height:165px;	margin:-70px auto 0; padding-top:5px; text-align: center; font:26px Bitter-Regular; }
-
-.page-header > h2 { text-align: center; margin: inherit auto; }
+.head-text { font-family: Ubuntu; font-size: 33px; color: #1884e9; text-transform:uppercase; text-align: center; display: block; height: 40px; margin-top:100px; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -67,15 +65,14 @@ ul { list-style-type: none; }
 
 #favicon { width: 54px; height: 54px; position: relative; top:-80px; left: 2%; }
 
-.header-wrapper { width:99.92%; height:65px; position:relative; top:120px; }
+.header-wrapper-fixed {	z-index:50; position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; width:99.92%; height:65px; }
 
-.header-wrapper-fixed {	z-index:50; position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; }
+.header { width:100%; min-width: 1100px; height:69px; background-color:#000000; opacity: 0.85; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
-.header { width:100%; min-width: 1100px; height:68px; background-color:#1884E9; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
+/*.header .header-menu { width: 1250px; margin: auto; }*/
+.header-menu { width: 1250px; margin: auto; }
 
-.header .header-menu { width: 1200px; margin: auto; }
-
-.header .header-menu ul { list-style:none; width:750px; float:left; padding-left: 10px;   }
+.header .header-menu ul { list-style:none; width:583px; float:left; margin-left:-30px;   }
 
 .header .header-menu ul li { display:inline-block; }
 
@@ -87,26 +84,28 @@ ul { list-style-type: none; }
 
 .header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
-.header #header-list { display:block; margin: 10px auto auto; width: 800px; }
+.header #header-list { display:block; margin: 10px auto auto; width: 550px; }
 
 .header #header-list li { display: inline-block; }
 
 /********************  FOOTER   ************************/
 
 
-footer { width:100%; min-width: 1200px; height:100px; margin-bottom:0; position:relative; text-align:center; background-color:#1884E9; color:white; font-size:14px; }
+footer { /*margin-bottom:0; position:relative;*/ text-align:center; background- color:white; font-size:14px; width:100%; min-width: 1250px; height:100px; }
 
-footer div { height:20px; width:inherit; padding-top:1px; margin:20px auto auto; }
+footer .footer-row { height:50px; min-width:100%;  background-color:gray; }
 
-footer div ul { list-style:none; }
+footer .footer-row .footer-left { float:left; height:inherit; }
 
-footer div ul li { display:inline-block; }
+footer .footer-row .footer-left ul { list-style:none; }
 
-footer div ul li a { text-decoration:none; padding:0 50px; margin:0 20px; font:20px Proxima-Nova; color:white; }
+footer .footer-row .footer-left ul li { display:inline-block; }
 
-footer div ul li a:hover { text-decoration:underline; }
+footer .footer-row .footer-left ul li a { text-decoration:none; padding:0 5px; margin:0 20px; font:20px Proxima-Nova; color:white; }
 
-footer #copyright { margin-top:25px; height:30px; width:inherit; background-color:white; color:#0078E7; padding-top:10px; box-shadow:4px 0px 4px black; }
+footer .footer-row .footer-left ul li a:hover { background-color: black; }
+
+footer #copyright { width:inherit; background-color:white; color:#0078E7; padding-top:18px; box-shadow:4px 0px 4px black; }
 
 
 /********************  INDEX.PHP   ************************/
@@ -127,7 +126,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************  ABOUT.PHP   ************************/
 
 
-#about-us-container { height:420px; width:1200px; margin:40px auto 250px; text-align:justify; background-color:white; }
+#about-us-container { height:420px; width:1200px; margin:100px auto 250px; text-align:justify; background-color:white; }
 
 #about-us-container .about-labels { font-family: Ubuntu; font-size: 30px; color: #1884e9; text-align:left; margin:80px 0 0 90px; display:block; width:990px; border-bottom: 1px solid #1884e9; padding-bottom:10px; }
 
@@ -153,9 +152,9 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1200px; height: 100%; min-height:1050px;  margin:0 auto 100px; padding:0; top:10px; position: relative; overflow: hidden; }
+#buy-container { width:1200px; height: 100%; min-height:1050px;  margin:60px auto 100px; padding:0; top:10px; position: relative; overflow: hidden; }
 
-#buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; position:absolute; top:80px; margin-left: 15px; text-align:center; }
+#buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; text-align:center; }
 
 #buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
 
@@ -263,9 +262,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /*********************  CONTACT.PHP  ***********************/
 
 
-#contact-us-container { height:500px; width:1000px; margin:70px auto 130px; text-align:center; }
-
-#head-text { font-family: Ubuntu; font-size: 30px; color: #1884e9; text-transform:uppercase; }
+#contact-us-container { height:500px; width:1000px; margin:60px auto 130px; text-align:center; }
 
 .contact-info { text-align: left; font-size: 20px; font-family: Ubuntu; display: inline-block; width: 930px; margin: 20px auto 0; }
 
@@ -283,7 +280,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************  DEL.PHP  ************************/
 
 
-#del-main-container { width:1100px; margin:100px auto 250px; top:20px; padding: 40px 0; }
+#del-main-container { width:1100px; margin:60px auto 250px; top:20px; padding: 40px 0; }
 
 #del-main-container #del-main { width:inherit; font-size:20px; text-align:left; }
 
@@ -331,8 +328,6 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #faqs-container { width:1100px; margin:50px auto 250px; background-color:white; top:20px; padding:10px 20px; line-height:180%; }
 
-#faqs-container h1#faqs-head { color:black; font:500 26px Bitter-Regular; text-align:center; }
-
 #faqs-container h2.ques { font:lighter 22px Ubuntu; text-align:left; }
 
 #faqs-container .ans { font-size:20px; margin-bottom:40px; }
@@ -340,7 +335,6 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 /********************  FEEDBACK.PHP  ************************/
 
-#feedback-container { margin-top: 90px; }
 
 #feedback-container iframe { height: 1100px; width: 700px; margin: 100px auto 150px; display: block; z-index:100; }
 
@@ -626,6 +620,4 @@ p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 
 p#img-url-info a#img-search-link { color: blue; }
 
 #before-form-msg { display: block; background-color:#0bd3c4; color:white; font: 18px Ubuntu; padding: 10px 5px; text-align: center; line-height: 250%; border-radius: 10px; width:850px; margin: 70px auto 0; }
-#header-menu-home {
-    
-}
+

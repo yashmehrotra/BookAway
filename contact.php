@@ -14,11 +14,8 @@
         <?php
             require_once('header.php');
         ?>
-        <div class="page-header">
-            <h2>Contact Us</h2>
-        </div>
+        <h2 class="head-text">get in touch.</h2>
         <div class="main-containers" id="contact-us-container">
-            <h2 id="head-text">get in touch.</h2>
             <span class="ion-android-location contact-icons"></span>
             <p id="address-text" class="contact-info">Jaypee Institute Of Information Technology,<br>A-10, Sector-62,<br>Noida, UP</p>
             <br>

@@ -14,11 +14,13 @@
     <?php
         require_once('header.php');
     ?>
+<!--
     <div class="page-header">
     <h2>
         This page is intended to be Funny
     </h2>
     </div>
+-->
     <!--Mention id of the container-->
     <div class="main-containers" id="-container">   
         <div id="book-details">

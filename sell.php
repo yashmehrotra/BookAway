@@ -27,9 +27,12 @@
         <?php
             require_once('header.php');
         ?>
+<!--
         <div class="page-header" id="sell-main-head">
             <h2 id="sell-books-text">Sell Books</h2>
         </div>
+-->
+        <h2 class="head-text">sell books</h2>
         <p id="before-form-msg">
             To add your book for sale/rent, simply fill the given form<br>NO registration required, free of cost
         </p>

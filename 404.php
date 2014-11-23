@@ -7,11 +7,13 @@ yash        <!--Title Here-->
     </title>
 </head>
 <body>
+<!--
     <div class="page-header">
     <h2>
         404, Looks like you took a wrong turn
     </h2>
     </div>
+-->
     <!--Mention id of the container-->
     <div class="main-containers" id="-container">   
         <div id="book-details">

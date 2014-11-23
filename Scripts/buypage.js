@@ -47,10 +47,10 @@ $(function() {
 
         go_to_top();
     });
-
-    function() {
-        input
-    }
+    
+    // function() {		
+    //     input
+    // }
 
     newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     console.log("Hello fellow developer , welcome to ", newURL, "\nTo peek behind the scenes go to our Github Page");
@@ -118,7 +118,7 @@ function book_data_display() {
         data: {
             
             'source': 'view',
-            'college_id': college_id
+            // 'college_id': college_id
         },
         success: function(result) {
 
