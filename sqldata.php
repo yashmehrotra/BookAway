@@ -172,9 +172,12 @@
 	} elseif ($source == 'view') {
 
         $college_id = $_POST['college_id'];
+        $show       = $_POST['show'];
+        $show_by    = $_POST['show_by'];
 		
-        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.id = '$college_id'";
-		$book_data = mysqli_query($database_connection,$query);
+        // Change to college id -- Also take input for shown_by as - price asc,desc, time asc,desc 
+        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.college = '$college_id' ORDER BY `tbl_books`.sell_price DESC";
+        $book_data = mysqli_query($database_connection,$query);
 
 		$response = array();
 		$i=0;
