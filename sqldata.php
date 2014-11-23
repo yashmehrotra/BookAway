@@ -171,7 +171,9 @@
 
 	} elseif ($source == 'view') {
 
-		$query = "SELECT * FROM tbl_books";
+        $college_id = $_POST['college_id'];
+		
+        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.id = '$college_id'";
 		$book_data = mysqli_query($database_connection,$query);
 
 		$response = array();
@@ -192,7 +194,7 @@
 			$response[$i]['date_added']       = $row['date_added'];
 			$response[$i]['book_description'] = $row['book_description'];
 
-			$i=$i+1;
+			$i+=1;
 
 		}
 
