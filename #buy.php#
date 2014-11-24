@@ -14,8 +14,6 @@
 	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
-	<script src="Scripts/jquery-ui.min.js"></script>
-    <script src="Scripts/jquery.select-to-autocomplete.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
 	<script>
@@ -29,23 +27,15 @@
         <?php
         require_once('header.php');
         ?>
-<!--
         <div class="page-header">
                 <h2>Buy Books</h2>
         </div>
--->
-        <h2 class="head-text">buy books</h2>
         <div class="main-containers" id="buy-container">
             <aside class="left-panel">
-                <button id='btn-sort-price-desc'>Desc</button>
-                <button id='btn-sort-price-asc'>Asc</button>
                 <form class="pure-form pure-form-stacked">
                     <div id="buy-search-filters">
                         <div id="search-filters-college-select">
-<!--                            <input type="text" id="search-filters-college-search" placeholder="Select College">-->
-							<?php
-								require_once('colleges.php');		
-							?>
+                             <input type="text" id="search-filters-college-search" placeholder="Select College">
                             <button class="ion-android-arrow-forward pointer-onhover" id="search-filters-college-btn"></button>
                         </div>
                         <div class="ui-widget">

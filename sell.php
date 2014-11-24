@@ -18,6 +18,8 @@
 	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/jquery.select-to-autocomplete.js"></script>
 	<script type="text/javascript" src="Scripts/sellpage.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
@@ -51,7 +53,10 @@
                             <br>
                             <input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
                             <br>
-                            <input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>
+<!--                            <input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>-->
+							<?php
+	require_once('colleges.php');
+							?>
                         </fieldset>
 
                         <fieldset style="margin-top:10px;">

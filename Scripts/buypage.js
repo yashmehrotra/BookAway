@@ -496,13 +496,13 @@ function load_college() {
                     i+=1;
                 }
 
-                $('#search-filters-college-search').autocomplete({
-                    source: colleges_list
-                });      
+//                $('#search-filters-college-search').autocomplete({
+//                    source: colleges_list
+//                });      
             }
         }
     });
-
+  	$('#search-filters-college-search').selectToAutocomplete();
 } 
 
 function convert_id_to_Ultimate_index(html_id) {

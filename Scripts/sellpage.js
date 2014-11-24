@@ -38,10 +38,12 @@ $.ajax({
             }
             console.log('look down');
             console.log(college_list);
-            $('#sell-clg').autocomplete({
-
-                source: college_list
-            });
+//            $('#sell-clg').autocomplete({
+//
+//                source: college_list
+//            });
+			// <input type="text" name="clg" id="sell-clg" class="sell-input" autocomplete="on" placeholder="Select College/Institute"><br>-->
+			$('#search-filters-college-search').selectToAutocomplete();
         }
     }
 });

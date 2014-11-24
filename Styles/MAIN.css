@@ -91,9 +91,13 @@ ul { list-style-type: none; }
 /********************  FOOTER   ************************/
 
 
-footer { /*margin-bottom:0; position:relative;*/ text-align:center; background- color:white; font-size:14px; width:100%; min-width: 1250px; height:100px; }
+/*footer { text-align:center; background- color:white; font-size:14px; width:100%; min-width: 1250px; height:100px; background-color:gray; }*/
 
-footer .footer-row { height:50px; min-width:100%;  background-color:gray; }
+/*footer .footer-row { height:50px; min-width:100%; }*/
+
+footer { width:100%; min-width:1250px; }
+
+footer .footer-row { text-align:center; font-size:14px; width:100%; height:50px; background-color:gray; }
 
 footer .footer-row .footer-left { float:left; height:inherit; }
 
@@ -105,7 +109,9 @@ footer .footer-row .footer-left ul li a { text-decoration:none; padding:0 5px; m
 
 footer .footer-row .footer-left ul li a:hover { background-color: black; }
 
-footer #copyright { width:inherit; background-color:white; color:#0078E7; padding-top:18px; box-shadow:4px 0px 4px black; }
+footer #copyright { width:100%; background-color:white; color:#0078E7; padding-top:18px; box-shadow:4px 0px 4px black; height:35px; }
+
+footer #copyright a { text-decoration:none; color:#0078E7; }
 
 
 /********************  INDEX.PHP   ************************/
