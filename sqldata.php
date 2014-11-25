@@ -176,8 +176,7 @@
         $show         = $_POST['show'];
         $show_by      = $_POST['show_by'];
 		
-        // Change to college id -- Also take input for shown_by as - price asc,desc, time asc,desc 
-        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.id = '$college_id' ORDER BY `tbl_books`.sell_price DESC";
+        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.id = '$college_id' ORDER BY `tbl_books`.".$show." ".$show_by;
         $book_data = mysqli_query($database_connection,$query);
 
 		$response = array();
@@ -208,47 +207,6 @@
         echo $response;
         exit();
 
-    } elseif ($source == 'search') {
-		
-        $category = $_POST['search_category'];
-        $search_value = addslashes($_POST['search_value']);
-
-        if ($category == "Books") {
-
-            $query = "SELECT *  FROM `tbl_books` WHERE `book` LIKE '".$search_value."'";
-        } elseif ($category == "Author") {
-
-            $query = "SELECT *  FROM `tbl_books` WHERE `author` LIKE '".$search_value."'";
-        }
-
-        $response = array();
-        $i=0;
-
-        $search_data = mysqli_query($database_connection,$query);
-
-        while($row = mysqli_fetch_array($search_data)) {
-
-            $response[$i]['book_id']           = $row['id'];
-            $response[$i]['book_name']         = $row['book'];
-            $response[$i]['author_name']       = $row['author'];
-            $response[$i]['category']          = $row['category'];
-            $response[$i]['sell_rent']         = $row['sell_rent'];
-            $response[$i]['sell_price']        = $row['sell_price'];
-            $response[$i]['rent_price']        = $row['rent_price'];
-            $response[$i]['rent_time']         = $row['rent_time'];
-            $response[$i]['date_added']        = $row['date_added'];
-            $response[$i]['image_source']      = $row['image_source'];
-            $response[$i]['book_description']  = $row['book_description'];
-
-            $i=$i+1;
-        }
-
-        mysqli_close($database_connection);
-
-        $response = json_encode($response);
-        echo $response;
-        exit();
-
     } elseif ($source == 'seller_data') {
 
         $book_id = $_POST['book_id'];
@@ -271,29 +229,7 @@
         echo $response;
         exit();
 
-    } elseif ($source == 'college_list') {
-
-        $query = "SELECT * FROM tbl_colleges";
-        $college_list = mysqli_query($database_connection,$query);
-
-        $response = array();
-        $i=0;
-
-        while($row = mysqli_fetch_array($college_list)) {
-
-            $response[$i] = $row['college'];
-            $response['reference_url'] = $reference_url;
-
-            $i=$i+1;
-        }
-
-		mysqli_close($database_connection);
-        
-        $response = json_encode($response);
-        echo $response;
-        exit();
-
-	} else {
+    } else {
 		
         $response = "hi".$source;
         mysqli_close($database_connection);
@@ -324,30 +260,6 @@
         $response['book_id']       = $book_id;
         $response['reference_url'] = $reference_url;
 
-        $response = json_encode($response);
-        echo $response;
-        exit();
-
-    }
-
-    function college_list() {
-
-        $query = "SELECT * FROM tbl_colleges";
-        $college_list = mysqli_query($database_connection,$query);
-
-        $response = array();
-        $i=0;
-
-        while($row = mysqli_fetch_array($college_list)) {
-
-            $response[$i] = $row['college'];
-            $response['reference_url'] = $reference_url;
-
-            $i+=1;
-        }
-
-        mysqli_close($database_connection);
-        
         $response = json_encode($response);
         echo $response;
         exit();

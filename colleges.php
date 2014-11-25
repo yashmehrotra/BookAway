@@ -7,22 +7,23 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 	
-	$SELECT_FIXED_BEGIN = '<select name="clg" class="sell-input" id="search-filters-college-search"  autofocus="autofocus" autocorrect="off" autocomplete="off" placeholder="Select College"><option value="">Select College</option>';
-	$SELECT_FIXED_END = '</select>';
+	$SELECT_BEGIN = '<select name="clg" class="sell-input" id="search-filters-college-search"  autofocus="autofocus" autocorrect="off" autocomplete="off" placeholder="Select College"><option value="">Select College</option>';
+	$SELECT_END   = '</select>';
 
 	$query = "SELECT * FROM `tbl_colleges`";
 	$colleges_data = mysqli_query($database_connection,$query);
 
-		echo $SELECT_FIXED_BEGIN;
+		echo $SELECT_BEGIN;
 		while($row = mysqli_fetch_array($colleges_data)) {
-			$sql_result_id = $row['id'];
-			$sql_result_college = $row['college'];
-			$sql_result_data_alternative_spellings = $row['data-alternative-spellings'];
-			$sql_result_data_relevancy_booster = $row['data-relevancy-booster'];
-			$options_result = "<option value='".$sql_result_college."' data-college-id='".$sql_result_id."'data-alternative-spellings='".$sql_result_data_alternative_spellings."' data-relevancy-booster='".$sql_result_data_relevancy_booster."'>".$sql_result_college."</option>";
+			$college_id            = $row['id'];
+			$college_name          = $row['college'];
+			$college_alt_spellings = $row['alt_spellings'];
+			$college_rel_booster   = $row['rel_booster'];
+			
+			$options_result = "<option value='".$college_name."' data-college-id='".$college_id."'data-alternative-spellings='".$college_alt_spellings."' data-relevancy-booster='".$college_rel_booster."'>".$college_name."</option>";
 			echo $options_result;
 	}
-	echo $SELECT_FIXED_END;
+	echo $SELECT_END;
 
 	mysqli_close($database_connection);
 ?>

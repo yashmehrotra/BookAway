@@ -107,15 +107,14 @@ String.prototype.toProperCase = function() {
 
 function get_clg_name() {
     $('#bpopup-close').on('click',function(){
-        console.log("Hello");
+
         var id = $('select.sell-input:last :selected').data('college-id');
         $('#college-input-onload').bPopup().close();
-        console.log(id);
-        book_data_display(id,'tide');
+        book_data_display(id,'sell_price','DESC');
     });
 }
 
-function book_data_display(clg_id, show_by) {
+function book_data_display(clg_id, show, show_by) {
  
     Ultimate_data = [];
     
@@ -145,8 +144,8 @@ function book_data_display(clg_id, show_by) {
             
             'source': 'view',
             'college_id': clg_id,
-            'show':'time', // date , price
-            'show_by':'tide' // asc desc
+            'show':show,           // sell_price or id
+            'show_by':show_by      // ASC or DESC
         },
         success: function(result) {
 
@@ -221,13 +220,12 @@ function book_data_display(clg_id, show_by) {
                 }
 
                 append();
+            
             } else {
-
                 console.log("Problem with Ajax Request")
             }
         }
     });
-    
 }
 
 function append() {
@@ -243,7 +241,6 @@ function append() {
     while (counter_clone != Ultimate_data.length) {
 
         if (Ultimate_data[counter_clone].image_source == "") {
-
             image_source_temp = NO_BOOK_IMAGE;
         } else {
             image_source_temp = Ultimate_data[counter_clone].image_source;
@@ -488,36 +485,6 @@ function seller_data(book_id) {
 
     });
 }
-
-// function load_college() {
-    
-//     //For College List
-//     $.ajax({
-//         type: "POST",
-//         url: "sqldata.php",
-//         data: {
-//             'source': 'college_list'
-//         },
-//         success: function(result) {
-//             if (result) {
-//                 var colleges = JSON.parse(result);
-
-//                 var colleges_list = [];
-//                 var i=0;
-                
-//                 while (colleges[i]) {
-//                     colleges_list.push(colleges[i]);
-//                     i+=1;
-//                 }
-
-// //                $('#search-filters-college-search').autocomplete({
-// //                    source: colleges_list
-// //                });      
-//             }
-//         }
-//     });
-  	
-// } 
 
 function convert_id_to_Ultimate_index(html_id) {
 
