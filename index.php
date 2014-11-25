@@ -29,10 +29,10 @@
             require_once('header.php');
         ?>
         <div class="main-containers" id="index-container">
-            <!-- <div id="content-slider"> -->
-            <!--     <h2>BookAway.in</h2> -->
-            <!--     <p>Online Portal<br>to<br>BUY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RENT<br>books</p> -->
-            <!-- </div> -->
+             <div id="content-slider"> 
+                 <h2>BookAway.in</h2> 
+                 <p>Online Portal<br>to<br>BUY, SELL or RENT<br> used books</p> 
+             </div> 
         </div>
         <?php
             require_once('footer.php');

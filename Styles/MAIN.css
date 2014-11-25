@@ -67,16 +67,16 @@ ul { list-style-type: none; }
 
 .header-wrapper-fixed {	z-index:50; position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; width:99.92%; height:65px; }
 
-.header { width:100%; min-width: 1100px; height:69px; background-color:#000000; opacity: 0.85; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
+.header { width:100%; min-width: 1250px; height:69px; background-color:#000000; opacity: 0.85; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
 
 /*.header .header-menu { width: 1250px; margin: auto; }*/
 .header-menu { width: 1250px; margin: auto; }
 
-.header .header-menu ul { list-style:none; width:583px; float:left; margin-left:-30px;   }
+.header .header-menu ul { list-style:none; width:555px; float:left; }
 
 .header .header-menu ul li { display:inline-block; }
 
-.header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:12px; color:white; display:inline-block; border-radius: 8px; }
+.header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:14px; color:white; display:inline-block; border-radius: 8px; }
 
 .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
 
@@ -116,7 +116,8 @@ footer #copyright a { text-decoration:none; color:#0078E7; }
 
 /********************  INDEX.PHP   ************************/
 
-#index-body { background-image: url(Images/2.jpg); background-repeat: no-repeat; background-size: cover; }
+/*#index-body { background-image: url(Images/2.jpg); background-repeat: no-repeat; /*background-size: cover;*/ }*/
+#index-body { background: url(Images/2.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 
 a.index-header-links, a.index-header-links:link { text-decoration:none; padding:8px 28px; font-size:23px; margin-right:15px; color:white; display:inline-block; }
 

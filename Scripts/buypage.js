@@ -32,8 +32,7 @@ $(function() {
 
     instructions_cookie();
     load_college();
-    var clg_delete = prompt('colllege');
-    book_data_display(clg_delete,'tide');
+    filter();
 
     $('#go-to-top').hide();
 
@@ -318,6 +317,8 @@ function filter() {
         var user_college_name = $('#search-filters-college-search').val();
 
         filter_dict['college'] = user_college_name;
+        book_data_display(user_college_name,'tide');
+        console.log('hello');
         filter_everything();
 
     });

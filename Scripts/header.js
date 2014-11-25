@@ -10,9 +10,11 @@ function window_resize() {
 
 			$('#fork-on-github').hide();
 			$('.header-wrapper-fixed').css('position','relative');
+			$('footer').css('position','absolute');
 		} else {
 
 			$('#fork-on-github').show();
 			$('.header-wrapper-fixed').css('position','fixed');
 		}
+		$('#index-body').css('background-image');
 }
