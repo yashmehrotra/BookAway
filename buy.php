@@ -27,24 +27,25 @@
 <body>
     <div class="outer-page-wrap">
         <?php
-        require_once('header.php');
+            require_once('header.php');
         ?>
-<!--
-        <div class="page-header">
-                <h2>Buy Books</h2>
-        </div>
--->
         <h2 class="head-text">buy books</h2>
         <div class="main-containers" id="buy-container">
+            <div id="college-input-onload">
+                <p>Please enter the name of your college to continue:</p>
+                <?php
+                    require('colleges.php');
+                ?>
+                <button class="pointer-onhover" id="bpopup-close">Go</button>
+            </div>
             <aside class="left-panel">
                 <button id='btn-sort-price-desc'>Desc</button>
                 <button id='btn-sort-price-asc'>Asc</button>
                 <form class="pure-form pure-form-stacked">
                     <div id="buy-search-filters">
                         <div id="search-filters-college-select">
-<!--                            <input type="text" id="search-filters-college-search" placeholder="Select College">-->
 							<?php
-								require_once('colleges.php');		
+								include('colleges.php');		
 							?>
                             <button class="ion-android-arrow-forward pointer-onhover" id="search-filters-college-btn"></button>
                         </div>

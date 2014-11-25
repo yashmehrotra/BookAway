@@ -30,11 +30,16 @@ var filter_dict = {
 
 $(function() {
 
-    instructions_cookie();
-    load_college();
+    // instructions_cookie();
     filter();
 
     $('#go-to-top').hide();
+    $('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
+    $('#search-filters-college-search').selectToAutocomplete();
+    $('#college-input-onload').bPopup();
+    get_clg_name();
+
+    $('#search-filters-college-search').selectToAutocomplete();
 
     $('.sub-cbox input:checked').parent().css('color', 'black');
     $('.radio-available-for:checked').parent().css('color', 'black');
@@ -42,7 +47,6 @@ $(function() {
 
         left_panel_selected_inputs();
     });
-
     $(document).on('scroll', function() {
 
         go_to_top();
@@ -53,18 +57,18 @@ $(function() {
 
 });
 
-function instructions_cookie() {
+// function instructions_cookie() {
 
-    var cookies = document.cookie;
+//     var cookies = document.cookie;
     
-    if (cookies.indexOf('bookawaybuycookie') != -1) {
+//     if (cookies.indexOf('bookawaybuycookie') != -1) {
         
-        $('#buy-instructions').hide();
-    } else {
+//         $('#buy-instructions').hide();
+//     } else {
         
-        document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
-    }
-}
+//         document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
+//     }
+// }
 
 var checkbox_array = [];
 var Ultimate_data = [];
@@ -101,8 +105,17 @@ String.prototype.toProperCase = function() {
     );
 };
 
+function get_clg_name() {
+    $('#bpopup-close').on('click',function(){
+        console.log("Hello");
+        var id = $('select.sell-input:last :selected').data('college-id');
+        $('#college-input-onload').bPopup().close();
+        console.log(id);
+        book_data_display(id,'tide');
+    });
+}
 
-function book_data_display(clg_delete, show_by) {
+function book_data_display(clg_id, show_by) {
  
     Ultimate_data = [];
     
@@ -131,7 +144,7 @@ function book_data_display(clg_delete, show_by) {
         data: {
             
             'source': 'view',
-            'college_id': clg_delete,
+            'college_id': clg_id,
             'show':'time', // date , price
             'show_by':'tide' // asc desc
         },
@@ -296,7 +309,7 @@ function filter() {
     $('#left-panel-search-btn').click(function(e) {
 
         e.preventDefault();
-        $(document).scrollTop(150);
+        $(document).scrollTop(100);
 
         var search_value = $("#left-panel-search-bar").val();
         var search_category = $("#category-search").val();
@@ -312,7 +325,7 @@ function filter() {
     $('#search-filters-college-btn').on('click', function(e) {
 
         e.preventDefault();
-        $(document).scrollTop(150);
+        $(document).scrollTop(100);
         
         var user_college_name = $('#search-filters-college-search').val();
 
@@ -326,7 +339,7 @@ function filter() {
     // Radio Based Search Available For
     $('.radio-available-for').on('click', function(e) {
 
-        $(document).scrollTop(150);
+        $(document).scrollTop(100);
         
         var radio_value = $('.radio-available-for:checked').val();
         
@@ -339,7 +352,7 @@ function filter() {
     $('#price-range').on('click', function(e) {
 
         e.preventDefault();
-        $(document).scrollTop(150);
+        $(document).scrollTop(100);
         var min_price = $('#range-min').val();
         var max_price = $('#range-max').val();
 
@@ -351,7 +364,7 @@ function filter() {
     // Category Filter
     $('.sub-cbox-input').on('click', function(e) {
 
-        $(document).scrollTop(150);
+        $(document).scrollTop(100);
 
         var checkbox_value = $(this).val();
         checkbox_array = [];
@@ -476,35 +489,35 @@ function seller_data(book_id) {
     });
 }
 
-function load_college() {
+// function load_college() {
     
-    //For College List
-    $.ajax({
-        type: "POST",
-        url: "sqldata.php",
-        data: {
-            'source': 'college_list'
-        },
-        success: function(result) {
-            if (result) {
-                var colleges = JSON.parse(result);
+//     //For College List
+//     $.ajax({
+//         type: "POST",
+//         url: "sqldata.php",
+//         data: {
+//             'source': 'college_list'
+//         },
+//         success: function(result) {
+//             if (result) {
+//                 var colleges = JSON.parse(result);
 
-                var colleges_list = [];
-                var i=0;
+//                 var colleges_list = [];
+//                 var i=0;
                 
-                while (colleges[i]) {
-                    colleges_list.push(colleges[i]);
-                    i+=1;
-                }
+//                 while (colleges[i]) {
+//                     colleges_list.push(colleges[i]);
+//                     i+=1;
+//                 }
 
-//                $('#search-filters-college-search').autocomplete({
-//                    source: colleges_list
-//                });      
-            }
-        }
-    });
-  	$('#search-filters-college-search').selectToAutocomplete();
-} 
+// //                $('#search-filters-college-search').autocomplete({
+// //                    source: colleges_list
+// //                });      
+//             }
+//         }
+//     });
+  	
+// } 
 
 function convert_id_to_Ultimate_index(html_id) {
 
