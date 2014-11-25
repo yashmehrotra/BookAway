@@ -10,6 +10,8 @@
 	<script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
 	<script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/jquery.select-to-autocomplete.js"></script>
 	<script type="text/javascript" src="Scripts/delpage.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
@@ -48,6 +50,9 @@
                         <br>
                         <input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number" required>  <div id="error_phone"></div>
                         <br>
+                        <?php
+                            require_once('colleges.php');
+                        ?>
                         <input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
                         <select name="subject" id="subject" class="sell-input" required>
                             <?php

@@ -98,6 +98,7 @@
 			$response['seller_name']      = $sql_user_data['name'];
 			$response['seller_email']     = $sql_user_data['email'];
 			$response['seller_phone']     = $sql_user_data['phone'];
+            $response['seller_college']   = $row['college'];
 			$response['category']         = $row['category'];
 			$response['book_name']        = $row['book'];
 			$response['author']           = $row['author'];

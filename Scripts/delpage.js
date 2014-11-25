@@ -13,6 +13,7 @@ $(function() {
     });
     sell_validate_form();
     confirm_delete();
+    $('#search-filters-college-search').selectToAutocomplete();
 });
 
 function del_validate_form() {
@@ -89,6 +90,7 @@ function edit_request() {
                     $('#name').val(response['seller_name']);
                     $('#email-form').val(response['seller_email']);
                     $('#phone').val(response['seller_phone']);
+                    $('#search-filters-college-search').val(response['seller_college']);
                     $('#subject').val(response['category']);
                     $('#book').val(response['book_name']);
                     $('#author').val(response['author']);
