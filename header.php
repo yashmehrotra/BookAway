@@ -12,7 +12,7 @@
                 <li><a href="del" id="del">Edit</a></li>
                 <li><a href="faqs" id="faqs">FAQs</a></li>
             </ul>
-            <a href="index"><img src="Styles/Images/fav/fav-new.png"></img></a>
+            <!-- <a href="index"><img src="Styles/Images/fav/fav-new.png"></img></a> -->
             <a href="https://github.com/yashmehrotra/Bookaway" target="_blank">
                 <button id="fork-on-github" class="pointer-onhover">
                     Fork us on Github

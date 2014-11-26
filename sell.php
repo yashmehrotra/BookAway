@@ -37,6 +37,7 @@
         <h2 class="head-text">sell books</h2>
         <p id="before-form-msg">
             To add your book for sale/rent, simply fill the given form<br>NO registration required, free of cost
+            <img src="Styles/Images/tip_bulb.png">
         </p>
         <div class="main-containers container-style" id="sell-container">
             <div id="sell-form-wrap">

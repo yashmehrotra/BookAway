@@ -39,13 +39,13 @@ body { background-color:white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Ubuntu; src:url('Fonts/Ubuntu/Ubuntu-R.ttf'); }
 
-a#focus:link { background-color:#1884e9 }
+a#focus:link { background-color:#1dc491; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .outer-page-wrap { margin:0 auto; width: 100%; display: block; }
 
-.head-text { font-family: Ubuntu; font-size: 33px; color: #1884e9; text-transform:uppercase; text-align: center; display: block; height: 40px; margin-top:100px; }
+.head-text { font-family: Ubuntu; font-size: 33px; color: #1dc491; text-transform:uppercase; text-align: center; display: block; height: 40px; margin-top:100px; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -78,9 +78,9 @@ ul { list-style-type: none; }
 
 .header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:14px; color:white; display:inline-block; border-radius: 8px; }
 
-.header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#009fE7; }
+.header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#1dc491; }
 
-.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; /*display: inline-block; margin: 10px 0 0 330px;*/ float: right; margin: 15px 15px 0 0; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; float: right; margin: 15px 15px 0 0; }
 
 .header .header-menu button#fork-on-github:hover { opacity: 0.9; }
 
@@ -99,9 +99,9 @@ footer { width:100%; min-width:1250px; }
 
 footer .footer-row { text-align:center; font-size:14px; width:100%; height:50px; background-color:gray; }
 
-footer .footer-row .footer-left { float:left; height:inherit; }
+footer .footer-row .footer-left { height:inherit; }
 
-footer .footer-row .footer-left ul { list-style:none; }
+footer .footer-row .footer-left ul { list-style:none; position: relative; top: 13px; }
 
 footer .footer-row .footer-left ul li { display:inline-block; }
 
@@ -109,9 +109,9 @@ footer .footer-row .footer-left ul li a { text-decoration:none; padding:0 5px; m
 
 footer .footer-row .footer-left ul li a:hover { background-color: black; }
 
-footer #copyright { width:100%; background-color:white; color:#0078E7; padding-top:18px; box-shadow:4px 0px 4px black; height:35px; }
+footer #copyright { width:100%; background-color:white; color:#1dc491; padding-top:18px; box-shadow:4px 0px 4px black; height:35px; }
 
-footer #copyright a { text-decoration:none; color:#0078E7; }
+footer #copyright a { text-decoration:none; color:#1dc491; }
 
 
 /********************  INDEX.PHP   ************************/
@@ -173,9 +173,9 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters input { top:0; left:-3px; font-size: 17px; height: inherit; font-family: Verdana,Arial,sans-serif; }
 
-#buy-container aside form #buy-search-filters button { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative; top:12px; float:right; }
+#buy-container aside form #buy-search-filters button.filter-btn { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative; top:12px; float:right; }
 
-#buy-container aside form #buy-search-filters button:hover { background-color:black; color:white; }
+#buy-container aside form #buy-search-filters button.filter-btn:hover { background-color:black; color:white; }
 
 #buy-container aside form #buy-search-filters #search-filters-college-select { margin-bottom: 40px; }
 
@@ -209,7 +209,9 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters #left-panel-price-range #price-range-text-wrapper { margin-top:25px; }
 
-#buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:90px; margin-right:3px; }
+#buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:88px; margin-right:3px; }
+
+#buy-container aside form #buy-search-filters #left-panel-price-range button#price-range { top: -40px; }
 
 #buy-container #buy-content-container { width:922px; height:100%; position:absolute; top:-30px; left:320px; text-align:left; margin-bottom:100px; /*position: relative;*/ padding-bottom: 50px; }
 
@@ -299,7 +301,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #del-main-container #del-main form#del-form input:not([type="submit"]) { width:inherit; height:inherit; font-size:14px; }
 
-#del-main-container #del-main form#del-form input[type="submit"] { width:150px; height:60px; font:22px Ubuntu; margin:55px 0 0 280px; background:#403C94; color:white; border:1px transparent; border-radius:10px; }
+#del-main-container #del-main form#del-form input[type="submit"] { width:150px; height:60px; font:22px Ubuntu; margin:55px 0 0 280px; background:#1dc491; color:white; border:1px transparent; border-radius:10px; }
 
 #del-main-container #del-main form#del-form input[type="submit"]:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
@@ -398,7 +400,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
 
-#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#403C94; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
+#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#1dc491; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
 
 #new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
@@ -626,14 +628,18 @@ p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 
 
 p#img-url-info a#img-search-link { color: blue; }
 
-#before-form-msg { display: block; background-color:#0bd3c4; color:white; font: 18px Ubuntu; padding: 10px 5px; text-align: center; line-height: 250%; border-radius: 10px; width:850px; margin: 70px auto 0; }
+#before-form-msg { display: block; background-color:#efefef; color:black; font: 18px Ubuntu; padding: 10px 5px 10px 30px; text-align: left; line-height: 250%; border-radius: 10px; width:650px; margin: 70px auto 0; }
+
+#before-form-msg img { float: right; height:90px; width: 80px; position: relative; top:-45px; left:-20px; }
 
 #college-input-onload { width:600px; height:170px; text-align: center; background-color: white; border: 1px solid transparent; border-radius: 30px; }
 
 #college-input-onload p { font-family: Ubuntu; font-size:18px; margin-bottom:40px; }
 
-#college-input-onload button#bpopup-close { width: 50px; height: 30px; background-color: #1884e9; color: white; border:0; }
+#college-input-onload button#bpopup-close { width: 50px; height: 30px; background-color: #1dc491; color: white; border:0; }
 
 #index-continue { text-decoration: none; color: white; padding:10px 20px; border: 1px solid white; border-radius:10px; font-size: 24px; margin:10px auto 0; width:100px; font-family: Ubuntu; display: block; }
 
 #index-continue:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:rgba(255, 255, 255, 0.27); }
+
+.clear-filters-btn { float:right; position: relative; top:-35px; }

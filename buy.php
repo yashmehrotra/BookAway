@@ -47,16 +47,19 @@
 							<?php
 								include('colleges.php');		
 							?>
-                            <button class="ion-android-arrow-forward pointer-onhover" id="search-filters-college-btn"></button>
+                            <button class="ion-android-arrow-forward pointer-onhover filter-btn" id="search-filters-college-btn"></button>
                         </div>
                         <div class="ui-widget">
                             <input type="search" id="left-panel-search-bar" placeholder="Search Here">
                         </div>
-                        <button class="ion-android-search pointer-onhover" id="left-panel-search-btn"></button>
+                        <button class="ion-android-search pointer-onhover filter-btn" id="left-panel-search-btn"></button>
                         <div class="sub-select" id="left-panel-sub-select">
                             <p class="left-panel-text-wrap" id="sub-text-wrapper">
                                 Category:
                             </p>
+                            <a href="#" class="clear-filters-btn">
+                                Clear
+                            </a>
                             <div id="sub-scroll-bar">
                                 <?php 
                                     require_once("categories.php"); 
@@ -66,6 +69,9 @@
                         <p class="left-panel-text-wrap" id="book-for-text-wrapper">
                             Available For:
                         </p>
+                        <a href="#" class="clear-filters-btn">
+                                Clear
+                        </a>
                         <label><input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All</label>
                         <br>
                         <label><input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent</label>
@@ -78,8 +84,11 @@
                             <p class="left-panel-text-wrap" id="price-range-text-wrapper">
                                 Price Range:
                             </p>
+                            <a href="#" class="clear-filters-btn">
+                                Clear
+                            </a>
                             <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">
-                            <button class="pointer-onhover" id="price-range">Go</button>
+                            <button class="pointer-onhover  filter-btn" id="price-range">Go</button>
                         </div>
                     </div>
                     <button>Clear Filters | also add individual clear option for each filter</button>
