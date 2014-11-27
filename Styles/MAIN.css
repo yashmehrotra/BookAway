@@ -618,9 +618,9 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 }
 
 
-#captcha-input { width: 350px; margin: 10px 0 0 10px; display: inline-block; }
+#captcha-input { width: 180px; margin: 10px 0 0 10px; display: inline-block; }
 
-#captcha { margin: 10px 20px 0 10px; display: inline-block; width: 80px; height: 30px; } 
+#captcha { margin: 10px 20px 0 80px; display: inline-block; width: 80px; height: 30px; } 
 
 .correct-incorrect-img { height: 24px; width: 24px;  }
 
