@@ -49,9 +49,9 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
-.instructions { height:150px; width:900px; border-left:7px solid #F0F0F0; margin:50px auto 0px; padding-left:40px; font-family: Ubuntu; background-color:#FAFAFA; }
+.instructions { height:150px; width:900px; border-left:7px solid #F0F0F0; margin:50px auto 0; padding-left:40px; font-family: Ubuntu; background-color:#FAFAFA; }
 
-.instructions-list-item { font-size:16px; margin:10px 0px; }
+.instructions-list-item { font-size:16px; margin:10px 0; }
 
 .main-containers { position:relative; }
 
@@ -109,7 +109,7 @@ footer .footer-row .footer-left ul li a { text-decoration:none; padding:0 5px; m
 
 footer .footer-row .footer-left ul li a:hover { background-color: black; }
 
-footer #copyright { width:100%; background-color:white; color:#1dc491; padding-top:18px; box-shadow:4px 0px 4px black; height:35px; }
+footer #copyright { width:100%; background-color:white; color:#1dc491; padding-top:18px; box-shadow:4px 0 4px black; height:35px; }
 
 footer #copyright a { text-decoration:none; color:#1dc491; }
 
@@ -183,7 +183,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters .left-panel-text-wrap { height:20px; width:inherit; margin-top:0;	font-size:19px;	font-weight:bold; color: #0bd3c4; font-family:cursive; font-weight: 500; }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0px 40px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0 40px; }
 
 #buy-container ::-webkit-scrollbar { width:15px; }
 
@@ -239,7 +239,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 #buy-container #buy-content-container .rent-buy-wrapper { height:40px; font-size:19px; top:-275px; left:550px; width:230px; overflow:hidden; }
 
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
-#buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0px 2px; }
+#buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0 2px; }
 
 #buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:1.5%; bottom: 45%; width: 90px; z-index:500; }
 
@@ -247,7 +247,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container #go-to-top p { font: 14px Ubuntu; text-align: center; display: inline-block; color: white; margin-top: 9%; }
 
-.seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0px 0px 20px white;}
+.seller-data { width:600px; height:350px; border:1px solid transparent; border-radius:15px; background-color: white; box-shadow: 0 0 20px white;}
 
 .seller-data #seller-details-head { text-align: center; font: 20px Ubuntu; margin-top: 20px; }
 
@@ -307,7 +307,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #del-main-container #del-main form#del-form div[id^="del-error"] { color:red; font-size:16px; margin-left:15px; display:none; }
 
-#del-main-container #del-main form#del-form #del-error_incorrect { margin:20px 0px 0px 130px; }
+#del-main-container #del-main form#del-form #del-error_incorrect { margin:20px 0 0 130px; }
 
 #del-main-container #edit-form { height:885px; width:inherit; display:none; background-color:white; }
 
@@ -317,7 +317,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #del-main-container #edit-form #edit-head { height: 80px; width:inherit; position:absolute; margin:10px auto; font-size:20px; text-align:center; }
 
-#del-main-container #edit-form #edit-head #or { height:35px; width:45px; margin:auto; margin-top:20px; padding: 0px 5px 24px 5px; border:1px solid black; border-radius:33px; background-color:black; }
+#del-main-container #edit-form #edit-head #or { height:35px; width:45px; margin:auto; margin-top:20px; padding: 0 5px 24px 5px; border:1px solid black; border-radius:33px; background-color:black; }
 
 #del-main-container #edit-form #edit-head #or #or-text { color:white; font-size:20px; }
 
@@ -364,7 +364,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #sell-form-wrap { width:550px; height:940px; /*position:relative; left:182px;*/ margin: auto; text-align:left; line-height:180%; font-size:130%;  }
 
-.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0px 15px 20px; padding-top:0.2em; box-sizing:border-box; display: inline-block; }
+.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0 15px 20px; padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
 .compulsary-label { color:red; font-size:15px; margin:0 0 0 3px; padding:0; width:3px; display:inline-block; }
 
@@ -398,7 +398,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #sell-rent { width:310px; }
 
-div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0px 10px; padding-left:5px; display:none; }
+div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0 10px; padding-left:5px; display:none; }
 
 #new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#1dc491; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
 
