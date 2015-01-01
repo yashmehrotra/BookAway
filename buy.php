@@ -44,9 +44,9 @@
                 <form class="pure-form pure-form-stacked">
                     <div id="buy-search-filters">
                         <div id="search-filters-college-select">
-							<?php
-								include('colleges.php');		
-							?>
+			    <?php
+			        include('colleges.php');		
+			    ?>
                             <button class="ion-android-arrow-forward pointer-onhover filter-btn" id="search-filters-college-btn"></button>
                         </div>
                         <div class="ui-widget">

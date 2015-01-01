@@ -20,7 +20,7 @@
 
 	$source = $_POST['source'];
 
-	$allowed_domains = array('http://bookaway.in/sell', 'http://bookaway.in/sell.php', 'http://localhost/Books-for-bucks/sell.php', 'http://localhost/github/sell.php', 'http://localhost/github/sell');
+	$allowed_domains = array('http://bookaway.in/sell', 'http://bookaway.in/sell.php', 'http://localhost/Books-for-bucks/sell.php', 'http://localhost/BookAway/sell.php', 'http://localhost/BookAway/sell');
 	$reference_url = $_SERVER['HTTP_REFERER']; 
 	
 	if ($source == 'add_book' && in_array($reference_url, $allowed_domains) && $_POST['captcha_gen'] == $_POST['captcha_user'] ) {
@@ -289,6 +289,3 @@
     }
 
 ?>
-
-
-
