@@ -176,58 +176,13 @@
         $show         = $_POST['show'];
         $show_by      = $_POST['show_by'];
 		
-        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.id = '$college_id' ORDER BY `tbl_books`.".$show." ".$show_by;
-        $book_data = mysqli_query($database_connection,$query);
-
-		$response = array();
-		$i=0;
-
-		while($row = mysqli_fetch_array($book_data)) {
-
-			$response[$i]['book_id']          = $row['id'];
-			$response[$i]['book_name']        = $row['book'];
-			$response[$i]['author_name']      = $row['author'];
-			$response[$i]['category']         = $row['category'];
-			$response[$i]['sell_rent']        = $row['sell_rent'];
-			$response[$i]['sell_price']       = $row['sell_price'];
-			$response[$i]['rent_price']       = $row['rent_price'];
-			$response[$i]['rent_time']        = $row['rent_time'];
-			$response[$i]['college']          = $row['college'];
-			$response[$i]['image_source']     = $row['image_source'];
-			$response[$i]['date_added']       = $row['date_added'];
-			$response[$i]['book_description'] = $row['book_description'];
-
-			$i+=1;
-
-		}
-
-		mysqli_close($database_connection);
-
-        $response = json_encode($response);
-        echo $response;
-        exit();
+        view($college_id, $show, $show_by);
 
     } elseif ($source == 'seller_data') {
 
         $book_id = $_POST['book_id'];
 
-        $query = "SELECT * FROM tbl_seller WHERE book_id = '$book_id'";
-
-        $response = array();
-
-        $search_data = mysqli_query($database_connection,$query);
-        $row = mysqli_fetch_array($search_data);
-
-        $response['seller_name']     = $row['name']; 
-        $response['seller_email']    = $row['email'];
-        $response['seller_phone']    = $row['phone'];
-        $response['seller_college']  = $row['college'];
-
-        mysqli_close($database_connection);
-
-        $response = json_encode($response);
-        echo $response;
-        exit();
+        seller_data($book_id);
 
     } else {
 		
@@ -243,6 +198,8 @@
     
 
     function add_book($name, $email, $phone, $password, $category, $book, $author, $sell_rent, $sell_price, $rent_price, $rent_time, $image_source, $college,$book_description, $date_added) {
+
+        global $database_connection;
 
         $query = "INSERT INTO tbl_books (category,book,author,sell_rent,sell_price,rent_price,rent_time,college,date_added,image_source,`book_description`) VALUES ('$category','$book','$author','$sell_rent','$sell_price','$rent_price','$rent_time','$college','$date_added','$image_source','$book_description')";
         mysqli_query($database_connection,$query);
@@ -266,7 +223,45 @@
 
     }
 
+    function view($college_id, $show, $show_by) {
+
+        global $database_connection;
+
+        $query = "SELECT * FROM tbl_colleges,tbl_books WHERE `tbl_colleges`.college = `tbl_books`.college AND `tbl_colleges`.college_id = '$college_id' ORDER BY `tbl_books`.".$show." ".$show_by;
+        $book_data = mysqli_query($database_connection,$query);
+
+        $response = array();
+        $i=0;
+
+        while($row = mysqli_fetch_array($book_data)) {
+
+            $response[$i]['book_id']          = $row['id'];
+            $response[$i]['book_name']        = $row['book'];
+            $response[$i]['author_name']      = $row['author'];
+            $response[$i]['category']         = $row['category'];
+            $response[$i]['sell_rent']        = $row['sell_rent'];
+            $response[$i]['sell_price']       = $row['sell_price'];
+            $response[$i]['rent_price']       = $row['rent_price'];
+            $response[$i]['rent_time']        = $row['rent_time'];
+            $response[$i]['college']          = $row['college'];
+            $response[$i]['image_source']     = $row['image_source'];
+            $response[$i]['date_added']       = $row['date_added'];
+            $response[$i]['book_description'] = $row['book_description'];
+
+            $i+=1;
+
+        }
+
+        mysqli_close($database_connection);
+
+        $response = json_encode($response);
+        echo $response;
+        exit();
+    }
+
     function seller_data($book_id) {
+
+        global $database_connection;
 
         $query = "SELECT * FROM tbl_seller WHERE book_id = '$book_id'";
 
