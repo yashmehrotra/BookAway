@@ -110,7 +110,7 @@ function get_clg_name() {
 
         var id = $('select.sell-input:last :selected').data('college-id');
         $('#college-input-onload').bPopup().close();
-        book_data_display(id,'sell_price','DESC');
+        book_data_display(id,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
     });
 }
 
