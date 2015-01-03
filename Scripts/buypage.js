@@ -203,8 +203,8 @@ function book_data_display(clg_id, show, show_by) {
                         });
                     }
 
-                    total_results = total_results + 1;
-                    counter = counter + 1;
+                    total_results += 1;
+                    counter += 1;
                 }
 
                 append();
