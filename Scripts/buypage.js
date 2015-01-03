@@ -2,6 +2,16 @@
 
 // Global Variables
 // Total number of books shown when the page loads, wihout scrolling down
+
+//CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
+
+// " A GENIUS NEEDS AN AUDIENCE. "
+//                          - Yash Mehrotra
+//
+// " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
+//
+//     Visit bookaway.in/funny
+
 var results_to_show_once = 8;
 
 var total_results = 0;
