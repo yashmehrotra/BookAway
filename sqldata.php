@@ -176,13 +176,17 @@
         $show         = $_POST['show'];
         $show_by      = $_POST['show_by'];
 		
-        view($college_id, $show, $show_by);
+        $response = view($college_id, $show, $show_by);
+        echo $response;
+        exit();
 
     } elseif ($source == 'seller_data') {
 
         $book_id = $_POST['book_id'];
 
-        seller_data($book_id);
+        $response = seller_data($book_id);
+        echo $response;
+        exit();
 
     } else {
 		
@@ -218,8 +222,7 @@
         $response['reference_url'] = $reference_url;
 
         $response = json_encode($response);
-        echo $response;
-        exit();
+        return $response;
 
     }
 
@@ -255,8 +258,8 @@
         mysqli_close($database_connection);
 
         $response = json_encode($response);
-        echo $response;
-        exit();
+        return $response;
+
     }
 
     function seller_data($book_id) {
@@ -278,8 +281,7 @@
         mysqli_close($database_connection);
 
         $response = json_encode($response);
-        echo $response;
-        exit();
+        return $response;
 
     }
 
