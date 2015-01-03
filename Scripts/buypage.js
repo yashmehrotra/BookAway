@@ -1,14 +1,5 @@
 //It sends a post request to a sqldata.php file which fetches all the data about books from database
 
-//CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
-
-// " A GENIUS NEEDS AN AUDIENCE. "
-//                          - Yash Mehrotra
-//
-// " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
-//
-//     Visit bookaway.in/funny
-
 // Global Variables
 // Total number of books shown when the page loads, wihout scrolling down
 var results_to_show_once = 8;
@@ -25,7 +16,7 @@ var filter_dict = {
     },
     'category':'',
     'for':'4',
-    'range':[],
+    'range': []
 };
 
 $(function() {
@@ -56,19 +47,6 @@ $(function() {
     console.log("Hello fellow developer , welcome to ", newURL, "\nTo peek behind the scenes go to our Github Page");
 
 });
-
-// function instructions_cookie() {
-
-//     var cookies = document.cookie;
-    
-//     if (cookies.indexOf('bookawaybuycookie') != -1) {
-        
-//         $('#buy-instructions').hide();
-//     } else {
-        
-//         document.cookie = 'bookawaybuycookie=yes,expires=;path=/';
-//     }
-// }
 
 var checkbox_array = [];
 var Ultimate_data = [];
@@ -203,7 +181,7 @@ function book_data_display(clg_id, show, show_by) {
                         search_data.push({
                             label: book_name_title_case,
                             category: "Books"
-                        })
+                        });
                     }
 
                     if ($.inArray(author_name_title_case, search_authors) == -1) {
@@ -212,7 +190,7 @@ function book_data_display(clg_id, show, show_by) {
                         search_data.push({
                             label: author_name_title_case,
                             category: "Author"
-                        })
+                        });
                     }
 
                     total_results = total_results + 1;
@@ -222,7 +200,7 @@ function book_data_display(clg_id, show, show_by) {
                 append();
             
             } else {
-                console.log("Problem with Ajax Request")
+                console.log("Problem with Ajax Request");
             }
         }
     });
@@ -391,7 +369,7 @@ function filter() {
             checkbox_array = ['All'];
         }
 
-        console.log("Yash is awesome because",checkbox_array)
+        console.log("Yash is awesome because",checkbox_array);
 
         filter_dict['category'] = checkbox_array;
         filter_everything();
@@ -432,7 +410,7 @@ function search_bar_autocomple(search_data) {
         delay: 0,
         source: search_data,
         select: function(event, ui) {
-            $('#left-panel-search-bar').append("<div hidden id='category-search'></div>")
+            $('#left-panel-search-bar').append("<div hidden id='category-search'></div>");
             $('#category-search').val(ui.item.category);
         }
     });
@@ -489,7 +467,7 @@ function seller_data(book_id) {
 function convert_id_to_Ultimate_index(html_id) {
 
     var converted_book_id = html_id.split('book-data-').join('');
-    var index_id_book = $.inArray(converted_book_id, bookid_array)
+    var index_id_book = $.inArray(converted_book_id, bookid_array);
     return index_id_book;
 }
 
@@ -592,7 +570,7 @@ function sort_price_wise() {
         list_to_show.length = 0;
         list_to_show = order_try.map(function() {
             return 'book-data-'+this;
-        })
+        });
         console.log(list_to_show);
 
         //auto_load_more();
@@ -619,7 +597,7 @@ function sort_price_wise() {
         list_to_show = [];
         list_to_show = order_try.map(function() {
             return 'book-data-'+this;
-        })
+        });
         console.log(list_to_show);
 
         auto_load_more();

@@ -14,14 +14,9 @@
             <?php
             require_once('header.php');
             ?>
-<!--
-            <div class="page-header">
-                <h2>About Us</h2>
-            </div>
--->
 
             <div class="main-containers" id="about-us-container">
-	        <h2 class="about-labels">Our Team</h2>
+	        <h2 class="head-text">Our Team</h2>
                 <div class="developer-profile" id="profile1">
                     <a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="profile-image" id="profile-image1" alt="img1"></a>
                     <p>Avijit Gupta

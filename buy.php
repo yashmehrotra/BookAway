@@ -44,9 +44,9 @@
                 <form class="pure-form pure-form-stacked">
                     <div id="buy-search-filters">
                         <div id="search-filters-college-select">
-			    <?php
-			        include('colleges.php');		
-			    ?>
+                            <?php
+                                include('colleges.php');		
+			                ?>
                             <button class="ion-android-arrow-forward pointer-onhover filter-btn" id="search-filters-college-btn"></button>
                         </div>
                         <div class="ui-widget">
@@ -57,7 +57,7 @@
                             <p class="left-panel-text-wrap" id="sub-text-wrapper">
                                 Category:
                             </p>
-                            <a href="#" class="clear-filters-btn">
+                            <a href="#" class="clear-filters-btn" id="category-clear">
                                 Clear
                             </a>
                             <div id="sub-scroll-bar">
@@ -69,7 +69,7 @@
                         <p class="left-panel-text-wrap" id="book-for-text-wrapper">
                             Available For:
                         </p>
-                        <a href="#" class="clear-filters-btn">
+                        <a href="#" class="clear-filters-btn" id="available-for-clear">
                                 Clear
                         </a>
                         <label><input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All</label>
@@ -84,7 +84,7 @@
                             <p class="left-panel-text-wrap" id="price-range-text-wrapper">
                                 Price Range:
                             </p>
-                            <a href="#" class="clear-filters-btn">
+                            <a href="#" class="clear-filters-btn" id="price-range-clear">
                                 Clear
                             </a>
                             <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">

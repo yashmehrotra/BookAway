@@ -8,6 +8,7 @@
 	<script src="Scripts/jquery-2.1.1.min.js"></script>
 	<script src="Scripts/google_analytics.js"></script>
 	<script src="Scripts/top-panel.js"></script>
+	<script src="Scripts/contactpage.js"></script>
 </head>
 <body>
     <div class="outer-page-wrap">
