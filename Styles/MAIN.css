@@ -207,15 +207,15 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters #left-panel-price-range button#price-range { top: -40px; }
 
-#buy-container #buy-content-container { width:922px; height:100%; top:-30px; left:320px; text-align:left; margin-bottom:100px; position: relative; padding-bottom: 50px; }
-
-#buy-container #buy-content-container div { position:relative; }
+#buy-container #buy-content-container { width:922px; height:100%; top:-30px; left:320px; text-align:left; margin-bottom:100px; position: relative; /* position:absolute; */ padding-bottom: 50px; }
 
 #buy-container #buy-content-container .books-data { height:200px; width:780px; margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3;}
 
 #buy-container #buy-content-container .books-data:hover { cursor:pointer; border-color:orange; }
 
 #buy-container #buy-content-container .books-data:visited { cursor:pointer; background-color:#ffff66; }
+
+#buy-container #buy-content-container div { position:relative; }
 
 #buy-container #buy-content-container .image-buy-wrapper { height:165px; width:105px; top:17px; left:15px; }
 
@@ -376,7 +376,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #book-desc { height:80px; resize:none; }
 
-#cover-image-img-src { position: absolute; top: 570px; left: 500px; height: 200px; width: 150px; }
+#cover-image-img-src { position: absolute; top: 570px; left: 750px; height: 200px; width: 150px; }
 
 #s-cost, #r-cost { background:url('Images/ruppee.gif') no-repeat top right; padding-right:0; }
 
