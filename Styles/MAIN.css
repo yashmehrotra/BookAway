@@ -45,7 +45,7 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .outer-page-wrap { margin:0 auto; width: 100%; display: block; }
 
-.head-text { font-family: Ubuntu; font-size: 33px; color: #1dc491; text-transform:uppercase; text-align: center; display: block; height: 40px; margin-top:100px; }
+.head-text { font-family: Ubuntu; font-size: 33px; color: #1dc491; text-transform:uppercase; text-align: center; display: block; height: 40px; margin-top:100px; clear:both; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -127,11 +127,11 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************  ABOUT.PHP   ************************/
 
 
-#about-us-container { height:420px; width:1200px; margin:100px auto 250px; text-align:justify; background-color:white; }
+#about-us-container { width:1200px; margin:100px auto 150px; text-align:justify; background-color:white; }
 
 #about-us-container .about-labels { font-family: Ubuntu; font-size: 30px; color: #1884e9; text-align:left; margin:80px 0 0 90px; display:block; width:990px; border-bottom: 1px solid #1884e9; padding-bottom:10px; }
 
-.developer-profile { width:230px; margin:35px 0 0 90px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; background-color:whitesmoke; }
+.developer-profile { width:300px; margin:30px 0 50px 175px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; background-color:whitesmoke; }
 
 .developer-profile p.about-me { display:block; margin-top:100px; font-family:Josefin-Slab; line-height:150%; }
 
@@ -139,7 +139,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 .developer-profile p { font: italic 19px serif; }
 
-.developer-profile div { height:43px; width:43px; float:left; margin:10px 0 0 13px; }
+.developer-profile div { height:43px; width:43px; float:left; margin:10px 0 0 26px; }
 
 .fb { background:url("Images/icon-logos.png") 0 0; }
 
@@ -148,6 +148,8 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 .li { background:url("Images/icon-logos.png") -103px 0; }
 
 .gi { background:url("Images/icon-logos.png") -24px 41px; }
+
+#about-us-container .bookaway-desc-wrap { background-color: #EFEFEF; width: 900px; padding: 10px; margin: 70px auto; line-height:2.5; font-size: 20px; }
 
 
 /********************    BUY.PHP    ************************/
