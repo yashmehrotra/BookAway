@@ -7,7 +7,7 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 	
-	$SELECT_BEGIN = '<select name="clg" class="sell-input" id="search-filters-college-search"  autofocus="autofocus" autocorrect="off" autocomplete="off" placeholder="Select College"><option value="">Select College</option>';
+	$SELECT_BEGIN = '<select name="clg" class="sell-input" id="search-filters-college-search"  autofocus="autofocus" autocorrect="on" autocomplete="on" placeholder="Select College"><option value="">Select College</option>';
 	$SELECT_END   = '</select>';
 
 	$query = "SELECT * FROM `tbl_colleges`";

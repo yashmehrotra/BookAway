@@ -311,12 +311,12 @@ function image_append() {
             /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())))) {
         
         $('#cover-image').html('<img src="' + cover_url + '"alt="cover-image" id="cover-image-img-src">');
-        console.log('abcd');
+    } else {
+	$('#cover-image-img-src').remove();
     }
 }
 
 function auto_help_popup() {
-    
     $('#password').on('focus',function (){
         $('#help-popup').show();
     });
@@ -347,150 +347,176 @@ function sell_validate_instantly(event) {
     INCORRECT_IMAGE = "<img src='Styles/Images/incorrect.png' alt='correct input' class='correct-incorrect-img'></img>";
     var flag = false;
 
-    $('#name').on('keyup change paste',function (){
-        $('#error_name').css("display", "inline-block");
-        
-        if (invalid_name()) {
-            $('#error_name').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_name').html(CORRECT_IMAGE);
-	    flag = false;
-        }
+    $('#name').on('keyup change paste',function (event){
+	// console.log(event.keyCode);
+        if (event.keyCode != 9 && !event.shiftKey) {
+            $('#error_name').css("display", "inline-block");
+
+            if (invalid_name()) {
+		$('#error_name').html(INCORRECT_IMAGE);
+		flag = true;
+	    } else {
+		$('#error_name').html(CORRECT_IMAGE);
+		flag = false;
+	    }
+	}
     });
         
-    $('#email').on('keyup change paste',function (){
-        $('#error_email').css("display", "inline-block");
-         if (invalid_email()) {
-            $('#error_email').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_email').html(CORRECT_IMAGE);
-	    flag = false;
-        }
+    $('#email').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {
+            $('#error_email').css("display", "inline-block");
+            
+	    if (invalid_email()) {
+		$('#error_email').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_email').html(CORRECT_IMAGE);
+		flag = false;
+            }
+	}
      });
         
-    $('#phone').on('keyup change paste',function (){
-        $('#error_phone').css("display", "inline-block");
+    $('#phone').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {
+            $('#error_phone').css("display", "inline-block");
         
-        if (invalid_phone()) {
-            $('#error_phone').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_phone').html(CORRECT_IMAGE);
-	    flag = false;
+            if (invalid_phone()) {
+		$('#error_phone').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_phone').html(CORRECT_IMAGE);
+		flag = false;
+            }
         }
     });
 
-     $('#password').on('keyup change paste',function (){
-        $('#error_pass').css("display", "inline-block"); 
+     $('#password').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {
+            $('#error_pass').css("display", "inline-block"); 
          
-        if (invalid_password()) {
-            $('#error_pass').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_pass').html(CORRECT_IMAGE);
-	    flag = false;
+            if (invalid_password()) {
+		$('#error_pass').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_pass').html(CORRECT_IMAGE);
+		flag = false;
+            }
         }
      });
     
-     $('#subject').on('keyup change paste',function (){
-        $('#error_category').css("display", "inline-block"); 
-         
-        if (invalid_category()) {
-            $('#error_category').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_category').html(CORRECT_IMAGE);
-	    flag = false;
+     $('#subject').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {         
+            $('#error_category').css("display", "inline-block"); 
+
+            if (invalid_category()) {
+		$('#error_category').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_category').html(CORRECT_IMAGE);
+		flag = false;
+            }
         }
      });
     
-     $('#book').on('keyup change paste',function (){
-        $('#error_book_name').css("display", "inline-block"); 
+     $('#book').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {         
+            $('#error_book_name').css("display", "inline-block"); 
          
-        if (invalid_book_title()) {
-            $('#error_book_name').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_book_name').html(CORRECT_IMAGE);
-	    flag = false;
+            if (invalid_book_title()) {
+		$('#error_book_name').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_book_name').html(CORRECT_IMAGE);
+		flag = false;
+            }
         }
      });
         
-     $('#author').on('keyup change paste',function (){
-        $('#error_author').css("display", "inline-block"); 
+     $('#author').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {         
+            $('#error_author').css("display", "inline-block"); 
          
-        if (invalid_author()) {
-            $('#error_author').html(INCORRECT_IMAGE);
-	    flag = true;
-        } else {
-            $('#error_author').html(CORRECT_IMAGE);
-	    flag = false;
+            if (invalid_author()) {
+		$('#error_author').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_author').html(CORRECT_IMAGE);
+		flag = false;
+            }
         }
      });
         
-    $('#cover-url').on('keyup change paste',function (){
-       $('#error_url').css("display", "inline-block"); 
+    $('#cover-url').on('keyup change paste',function (event){
+       if (event.keyCode != 9 && !event.shiftKey) {         
+	   $('#error_url').css("display", "inline-block"); 
         
-       if (invalid_img_url()) {
-           $('#error_url').html(INCORRECT_IMAGE);
-	    // flag = true;
-       } else {
-           $('#error_url').html(CORRECT_IMAGE);
-	    flag = false;
+	   if (invalid_img_url()) {
+               $('#error_url').html(INCORRECT_IMAGE);
+	       flag = true;
+	   } else {
+               $('#error_url').html(CORRECT_IMAGE);
+	       flag = false;
+	   }
        }
     });
         
-    $('#sell-rent').on('keyup change paste',function (){
+    $('#sell-rent').on('keyup change paste',function (event){
 	var sell_or_rent = $('#sell-rent option:selected').val();
 
         if (sell_or_rent == 1) {
-           $('#s-cost').on('keyup change paste',function (){
-               $('#error_sale_price').css("display", "inline-block"); 
+           $('#s-cost').on('keyup change paste',function (event){
+	       if (event.keyCode != 9 && !event.shiftKey) {         
+		   $('#error_sale_price').css("display", "inline-block"); 
 
-               if (invalid_s_cost()) {
-                   $('#error_sale_price').html(INCORRECT_IMAGE);
-		   flag = true;
-               } else {
-                   $('#error_sell_price').html(CORRECT_IMAGE);
-		   flag = false;
+		   if (invalid_s_cost()) {
+                       $('#error_sale_price').html(INCORRECT_IMAGE);
+		       flag = true;
+		   } else {
+                       $('#error_sell_price').html(CORRECT_IMAGE);
+		       flag = false;
+		   }
                }
            });
         } else if (sell_or_rent == 2) {
-            $('#s-cost').on('keyup change paste',function (){
-                $('#error_rent_price').css("display", "inline-block"); 
+            $('#s-cost').on('keyup change paste',function (event){
+	       if (event.keyCode != 9 && !event.shiftKey) {
+                   $('#error_rent_price').css("display", "inline-block"); 
 
-                 if (invalid_r_cost()) {
-                    $('#error_rent_price').html(INCORRECT_IMAGE);
-		     flag = true;
-                } else {
-                    $('#error_rent_price').html(CORRECT_IMAGE);
-		    flag = false;
+                   if (invalid_r_cost()) {
+                       $('#error_rent_price').html(INCORRECT_IMAGE);
+		       flag = true;
+                   } else {
+                       $('#error_rent_price').html(CORRECT_IMAGE);
+		       flag = false;
+                   }
                 }
             });
         } else if (sell_or_rent == 3) {
-             $('#s-cost').on('keyup change paste',function (){
-                $('#error_sale_price').css("display", "inline-block"); 
+             $('#s-cost').on('keyup change paste',function (event){
+	       if (event.keyCode != 9 && !event.shiftKey) {         
+                   $('#error_sale_price').css("display", "inline-block"); 
                 
-                if (invalid_s_cost()) {
-                    $('#error_sale_price').html(INCORRECT_IMAGE);
-		    flag = true;
-                } else {
-                    $('#error_sale_price').html(CORRECT_IMAGE);
-		    flag = false;
+                   if (invalid_s_cost()) {
+                       $('#error_sale_price').html(INCORRECT_IMAGE);
+		       flag = true;
+                   } else {
+                       $('#error_sale_price').html(CORRECT_IMAGE);
+		       flag = false;
+                   }
                 }
              });
             
-             $('#r-cost').on('keyup change paste',function (){
-                $('#error_rent_price').css("display", "inline-block"); 
+             $('#r-cost').on('keyup change paste',function (event){
+		if (event.keyCode != 9 && !event.shiftKey) {         
+                    $('#error_rent_price').css("display", "inline-block"); 
             
-                if (invalid_r_cost()) {
-                    $('#error_rent_price').html(INCORRECT_IMAGE);
-		    flag = true;
-                } else {
-                    $('#error_rent_price').html(CORRECT_IMAGE);
-		    flag = false;
+                    if (invalid_r_cost()) {
+			$('#error_rent_price').html(INCORRECT_IMAGE);
+			flag = true;
+                    } else {
+			$('#error_rent_price').html(CORRECT_IMAGE);
+			flag = false;
+                    }
                 }
              });
         }
@@ -500,7 +526,10 @@ function sell_validate_instantly(event) {
         event.preventDefault();
 	
 	if ( flag ) {
-	    // display some kind of an error message
+	    $('#new-btn').attr({
+		'disabled':'true',
+		'title':'You cannot continue before filling all required fields correctly!'
+		});
 	} else {
 	    ajax_form_data_after_validations();
 	}

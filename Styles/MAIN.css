@@ -620,7 +620,7 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 
 .correct-incorrect-img { height: 24px; width: 24px;  }
 
-p#img-url-info { font-size: 14px; margin: -5px 0 -25px 70px; box-shadow:1px 1px 1px black; border:1px solid transparent; border-radius: 10px; width: 350px; padding: 5px; text-align: left; background-color: black; color: white; font-family: Ubuntu; padding: 5px; }
+p#img-url-info { font-size: 14px; margin: -5px 0 -25px 5px; box-shadow:1px 1px 1px black; border:1px solid transparent; border-radius: 10px; width: 460px; padding: 5px; text-align: left; background-color: #42CDA2; color: white; font-family: Ubuntu; padding: 10px; }
 
 p#img-url-info a#img-search-link { color: blue; }
 
