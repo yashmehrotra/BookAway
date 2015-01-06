@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Contact Us | BookAway.in</title>
     <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-    <link rel="stylesheet" type="text/css" href="Styles/ionicons1.css">
+    <link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
     <script src="Scripts/jquery-2.1.1.min.js"></script>
     <script src="Scripts/google_analytics.js"></script>
     <script src="Scripts/top-panel.js"></script>

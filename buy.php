@@ -67,7 +67,7 @@
               <a href="#" class="clear-filters-btn" id="available-for-clear">
                 Clear
               </a>
-              <label><input type="radio" name="radio-name" class="radio-available-for" value="4" checked>All</label>
+              <label><input type="radio" name="radio-name" class="radio-available-for" value="4" id="radio-for-all" checked>All</label>
               <br>
               <label><input type="radio" name="radio-name" class="radio-available-for" value="3">Both Buy and Rent</label>
               <br>

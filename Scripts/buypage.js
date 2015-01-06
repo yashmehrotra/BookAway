@@ -40,17 +40,14 @@ $(function() {
     $('#search-filters-college-search').selectToAutocomplete();
 
     filter();
+    clear_filters();
 
     $('.sub-cbox input:checked').parent().css('color', 'black');
     $('.radio-available-for:checked').parent().css('color', 'black');
 
-    $('.sub-cbox,.radio-available-for').on('click', function() {
-        left_panel_selected_inputs();
-    });
+    $('.sub-cbox,.radio-available-for').on('click', left_panel_selected_inputs);
 
-    $(document).on('scroll', function() {
-        go_to_top();
-    });
+    $(document).on('scroll', go_to_top);
     
     newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
     console.log("Hello fellow developer , welcome to ", newURL, "\nTo peek behind the scenes go to our Github Page");
@@ -122,7 +119,6 @@ function book_data_display(clg_id, show, show_by) {
         type: "POST",
         url: "sqldata.php",
         data: {
-            
             'source': 'view',
             'college_id': clg_id,
             'show':show,           // sell_price or id
@@ -209,7 +205,7 @@ function append() {
     var sell_price_temp;
 
     while (counter_clone != Ultimate_data.length) {
-        if (Ultimate_data[counter_clone].image_source == "") {
+        if (Ultimate_data[counter_clone].image_source) {
             image_source_temp = NO_BOOK_IMAGE;
         } else {
             image_source_temp = Ultimate_data[counter_clone].image_source;
@@ -224,25 +220,14 @@ function append() {
 		"</i></div><div class='category-buy-wrapper'>Category : " + Ultimate_data[counter_clone].category +
 		"</div><div class='desc-buy-wrapper'>" + Ultimate_data[counter_clone].book_description;
 
-        if (Ultimate_data[counter_clone].rent_price == "") {
-            rent_price_temp = "-";
-            rent_time_temp = "";
+        if (!Ultimate_data[counter_clone].rent_price) {
+            $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].sell_price + "</div></div>");
 
-            $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS +
-						"</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
-						Ultimate_data[counter_clone].sell_price + "</div></div>");
-
-        } else if (Ultimate_data[counter_clone].sell_price == "") {
-            sell_price_temp = "-";
-            $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS +
-						"</div><div class='rent-buy-wrapper'>  Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
-						Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
+        } else if (!Ultimate_data[counter_clone].sell_price) {
+            $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS + "</div><div class='rent-buy-wrapper'>  Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
 
         } else {
-            $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS +
-						"</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
-						Ultimate_data[counter_clone].sell_price + "</div><div class='rent-buy-wrapper'> Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
-						Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
+            $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].sell_price + "</div><div class='rent-buy-wrapper'> Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
         }
         counter_clone += 1;
     }
@@ -542,7 +527,6 @@ function sort_price_wise() {
         });
 
         var temp;
-
         for(var i=0;i<order_try.length;i++) {
             for(var j=0;j<i;j++) {
                 if(Ultimate_data[order_try[i]]['sell_price'] < Ultimate_data[order_try[j]]['sell_price']) {
@@ -560,6 +544,12 @@ function sort_price_wise() {
         });
         auto_load_more();
     });
+}
+
+function clear_filters() {
+    $('#category-clear').on('click', clear_category);
+    $('#available-for-clear').on('click', clear_available_for);
+    $('#price-range-clear').on('click', clear_price_range);
 }
 
 
@@ -649,4 +639,29 @@ function smooth_scroll_to_top() {
     $('html, body').animate({
         scrollTop: $('body').offset().top
     }, 1800);
+}
+
+function clear_category() {
+    filter_dict['category'] = "";
+    $('.sub-cbox-input').prop('checked', false);
+    $('#checkbox-all').prop('checked', true);
+    left_panel_selected_inputs();
+    
+    filter_everything();
+}
+
+function clear_available_for() {
+    filter_dict['for'] = '4';
+    $('#radio-for-all').prop('checked', true);
+    left_panel_selected_inputs();
+
+    filter_everything();
+}
+
+function clear_price_range() {
+    filter_dict['range'] = [];
+    // for resetting the value of $('#range-min') and $('#range-max') to null
+    $('input[id^="range-m"]').val("");
+
+    filter_everything();
 }

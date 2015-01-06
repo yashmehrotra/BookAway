@@ -158,7 +158,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container { width:1200px; height: 100%; min-height:1050px;  margin:60px auto 100px; padding:0; top:10px; position: relative; overflow: hidden; }
 
-#buy-container aside { width:300px; float:left; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; text-align:center; }
+#buy-container aside { width:300px; float:left; margin-left:20px; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; text-align:center; }
 
 #buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
 
@@ -180,7 +180,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters .left-panel-text-wrap { height:20px; width:inherit; margin-top:0; font-size:19px; font-weight:bold; color: #0bd3c4; font-family:cursive; font-weight: 500; }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:10px 0 40px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:0 0 40px; }
 
 #buy-container ::-webkit-scrollbar { width:15px; }
 
