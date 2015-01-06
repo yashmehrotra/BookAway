@@ -210,7 +210,7 @@ function sell_validate_form() {
 
 function ajax_form_data_after_validations() {
     $('#sell-container').append(
-        '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:950px; left:405px;">'
+        '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:absolute; top:950px; left:405px;" alt="Loading-image">'
     );
 
     $.ajax({
@@ -526,8 +526,8 @@ function sell_validate_instantly(event) {
 	
 	if ( flag ) {
 	    $('#new-btn').attr({
-		'disabled':'true',
-		'title':'You cannot continue before filling all required fields correctly!'
+		'disabled': 'true',
+		'title': 'You cannot continue before filling all required fields correctly!'
 		});
 	} else {
 	    ajax_form_data_after_validations();
@@ -538,7 +538,7 @@ function sell_validate_instantly(event) {
 
 // Functions for validations of various input fields
 function invalid_name() {
-    if($('#name').val() == "") {
+    if($('#name').val()) {
 	return true;
     } else {
 	return false;
@@ -550,7 +550,7 @@ function invalid_email() {
     var emat = emval.indexOf("@");
     var emdot = emval.lastIndexOf(".");
 
-    if (emval == "" || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2) {
+    if (emval || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2) {
 	return true;
     } else {
 	return false;
@@ -559,7 +559,7 @@ function invalid_email() {
 }
 
 function invalid_phone() {
-    if ($('#phone').val() == "" || $('#phone').val().length != 10 || isNaN($('#phone').val()) || $('#phone').val().indexOf(" ") != -1) {
+    if ($('#phone').val() || $('#phone').val().length != 10 || isNaN($('#phone').val()) || $('#phone').val().indexOf(" ") != -1) {
 	return true;
     } else {
 	return false;
@@ -567,7 +567,7 @@ function invalid_phone() {
 }
 
 function invalid_password() {
-    if ($('#password').val() == "" || $('#password').val().length < 4) {
+    if ($('#password').val() || $('#password').val().length < 4) {
 	return true;
     } else {
 	return false;
@@ -587,7 +587,7 @@ function invalid_img_url() {
 }
 
 function invalid_category() {
-    if ($('#subject :selected').val() == "") {
+    if ($('#subject :selected').val()) {
 	return true;
     } else {
 	return false;
@@ -595,7 +595,7 @@ function invalid_category() {
 }
 
 function invalid_book_title() {    
-    if ($('#book').val() == "") {
+    if ($('#book').val()) {
 	return true;
     } else {
 	return false;
@@ -603,7 +603,7 @@ function invalid_book_title() {
 } 
 
 function invalid_author() {    
-    if ($('#author').val() == "") {
+    if ($('#author').val()) {
 	return true;
     } else {
 	return false;
@@ -611,7 +611,7 @@ function invalid_author() {
 }
 
 function invalid_s_cost() {
-    if ($('#s-cost').val() == "") {
+    if ($('#s-cost').val()) {
 	return true;
     } else {
 	return false;
@@ -620,7 +620,7 @@ function invalid_s_cost() {
 
 function invalid_r_cost() {
     alert("I should never be called!");
-    if ($('#r-cost').val() == "") {
+    if ($('#r-cost').val()) {
 	return true;
     } else {
 	return false;

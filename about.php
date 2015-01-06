@@ -22,10 +22,10 @@
 			<br><br>
 			Frontend Developer
 		    </p>
-		    <div onclick="location.href='https://www.facebook.com/526avijitgupta';" class="pointer-onhover fb"></div>
-		    <div onclick="location.href='http://www.twitter.com/526avijit';" class="pointer-onhover tw"></div>
-		    <div onclick="location.href='https://www.linkedin.com/pub/avijit-gupta/9a/22/6';" class="pointer-onhover li"></div>
-		    <div onclick="location.href='https://github.com/526avijitgupta';" class="pointer-onhover gi"></div>
+		    <div onclick="location.href='www.facebook.com/526avijitgupta';" class="pointer-onhover fb"></div>
+		    <div onclick="location.href='www.twitter.com/526avijit';" class="pointer-onhover tw"></div>
+		    <div onclick="location.href='www.linkedin.com/pub/avijit-gupta/9a/22/6';" class="pointer-onhover li"></div>
+		    <div onclick="location.href='github.com/526avijitgupta';" class="pointer-onhover gi"></div>
 		</div>
 		<div class="developer-profile" id="profile2">
 		    <a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="profile-image" id="profile-image2" alt="img2"></a>
@@ -33,10 +33,10 @@
 			<br><br>
 			Backend Developer
 		    </p>
-		    <div onclick="location.href='https://www.facebook.com/yashm95';" class="pointer-onhover fb"></div>
-		    <div onclick="location.href='http://www.twitter.com/yashm95';" class="pointer-onhover tw"></div>
+		    <div onclick="location.href='www.facebook.com/yashm95';" class="pointer-onhover fb"></div>
+		    <div onclick="location.href='www.twitter.com/yashm95';" class="pointer-onhover tw"></div>
 		    <div onclick="location.href='in.linkedin.com/in/yashmehrotra';" class="pointer-onhover li"></div>
-		    <div onclick="location.href='https://github.com/yashmehrotra/';" class="pointer-onhover gi"></div>
+		    <div onclick="location.href='github.com/yashmehrotra/';" class="pointer-onhover gi"></div>
 		</div>
 		<h2 class="head-text">About BookAway</h2>
 		<div class="bookaway-desc-wrap">

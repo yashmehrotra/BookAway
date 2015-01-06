@@ -114,7 +114,7 @@ function book_data_display(clg_id, show, show_by) {
     category_array = [];
 
     $('#buy-container').append(
-        '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:fixed; top:60%; left:60%;">'
+        '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:fixed; top:60%; left:60%;" alt="Loading-image">'
     );
     $.ajax({
         type: "POST",
@@ -217,7 +217,7 @@ function append() {
              " data-sell-price='" + Ultimate_data[counter_clone].sell_price + "'" + " data-shown-by='default'" +
              "data-college='" + Ultimate_data[counter_clone].college_name + "'" + " data-book-for='" + Ultimate_data[counter_clone].book_for + "' >" +
              "<div class='image-buy-wrapper'><img class='books-data-images' src='" + image_source_temp +
-             "'></div><div class='name-buy-wrapper'>" + Ultimate_data[counter_clone].book_name +
+             " alt='book-cover-img''></div><div class='name-buy-wrapper'>" + Ultimate_data[counter_clone].book_name +
              "</div><div class='author-buy-wrapper'><i> by " + Ultimate_data[counter_clone].author_name +
              "</i></div><div class='category-buy-wrapper'>Category : " + Ultimate_data[counter_clone].category +
              "</div><div class='desc-buy-wrapper'>" + Ultimate_data[counter_clone].book_description;
@@ -227,19 +227,19 @@ function append() {
             rent_time_temp = "";
 
             $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS +
-                "</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +
+                "</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
                 Ultimate_data[counter_clone].sell_price + "</div></div>");
 
         } else if (Ultimate_data[counter_clone].sell_price == "") {
             sell_price_temp = "-";
             $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS +
-                "</div><div class='rent-buy-wrapper'>  Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +
+                "</div><div class='rent-buy-wrapper'>  Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
                 Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
 
         } else {
             $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS +
-                "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +
-                Ultimate_data[counter_clone].sell_price + "</div><div class='rent-buy-wrapper'> Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif'>" +
+                "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
+                Ultimate_data[counter_clone].sell_price + "</div><div class='rent-buy-wrapper'> Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" +
                 Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
         }
         counter_clone += 1;

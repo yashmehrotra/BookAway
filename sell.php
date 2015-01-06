@@ -32,7 +32,7 @@
         <h2 class="head-text">sell books</h2>
         <p id="before-form-msg">
             To add your book for sale/rent, simply fill the given form<br>NO registration required
-            <img src="Styles/Images/tip_bulb.png">
+            <img src="Styles/Images/tip_bulb.png" alt="Bulb-tip">
         </p>
         <div class="main-containers container-style" id="sell-container">
             <div id="sell-form-wrap">
@@ -47,7 +47,7 @@
                             <br>
                             <input placeholder="+91" disabled class="sell-input" id="before-phone"> <input type="tel" name="phone" id="phone" class="sell-input" autocomplete="on" placeholder="Mobile Number"><p class="compulsary-label">*</p>  <div id="error_phone"></div>
                             <br>
-                            <input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
+                            <input type="password" name="password" class="sell-input" placeholder="Password(at least 4 characters)" id="password"><p class="compulsary-label">*</p> <span class="ion-eye" title="Show Password" id="show-password"></span><img src="Styles/Images/help.jpg" id="help" alt="Help-img"> <span id="help-popup">Password can be used to later edit the submitted details or to delete the book when it is sold!</span> <div id="error_pass"></div>
                             <br>
 							<?php
 	                           require_once('colleges.php');
