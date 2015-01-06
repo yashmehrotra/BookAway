@@ -338,6 +338,8 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #faqs-container .ans { font-size:20px; margin-bottom:40px; }
 
+#faqs-container .ans div { font-style:italic; }
+
 
 /********************  FEEDBACK.PHP  ************************/
 

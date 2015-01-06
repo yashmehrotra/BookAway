@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>
-yash        <!--Title Here-->
     </title>
 </head>
 <body>
