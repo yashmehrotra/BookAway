@@ -8,7 +8,7 @@ $(function() {
 
     // Only one out of the below two should be uncommented at a time, both are functions to validate user inputs in sell form
     // sell_validate_form(); // To validate the form once the submit button has been clicked
-    sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form
+    sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form data
     
     auto_help_popup();
     college_select_autocomplete();
@@ -33,12 +33,13 @@ function college_select_autocomplete() {
 		var ajax_college_list = JSON.parse(result_college);
 		console.log(ajax_college_list);
 		var counter_college = 0;
-		while (ajax_college_list[counter_college]) {
 
+		while (ajax_college_list[counter_college]) {
 		    college_list.push(ajax_college_list[counter_college]);
 		    counter_college += 1;
-	    }
-	    $('#search-filters-college-search').selectToAutocomplete();
+		}
+
+		$('#search-filters-college-search').selectToAutocomplete();
 	    }
 	}
     });
@@ -54,6 +55,8 @@ function sell_validate_form() {
         var sell_height = $('#sell-container').css('height');
         var flag = false;
         var error_count = 0;
+
+	// should be removed once implementation of help, show password is clear through :before, :after
         var name_error = false;
         var email_error = false;
         var phone_error = false;
@@ -193,7 +196,8 @@ function sell_validate_form() {
             });
             
             prev_error_count = error_count;
-
+	    
+    	    // should be removed once implementation of "help", "show password" is clear through :before, :after
             $('#help-popup').css('top', parseInt(help_popup_top) + 48 * before_pass + 'px');
             $('#show-password').css('top', parseInt(show_pass_top) + 52 * before_pass + 'px');
             $('#help').css('top', parseInt(help_top) + 50 * before_pass + 'px');
@@ -219,7 +223,6 @@ function ajax_form_data_after_validations() {
             var response = JSON.parse(result_addbook);
             console.log(response.status);
             if (response.status == "success") {
-                 console.log("Book addition successful");
                 $('#before-form-msg').hide();
                 $('#sell-form-wrap').hide();
                 $('#step-1').hide();
@@ -275,7 +278,6 @@ function hide_price() {
             
             $('#error_sale_price').slideDown(300);
         }
-        flag = true;
     } else if (sell_or_rent == 2) {
         $('#s-cost').slideUp(300);
         $('#r-cost').slideDown(300);
@@ -285,7 +287,6 @@ function hide_price() {
             
             $('#error_rent_price').slideDown(300);
         }
-        flag = true;
     } else if (sell_or_rent == 3) {
         $('#s-cost').slideDown(300);
         $('#r-cost').slideDown(300);
@@ -297,7 +298,6 @@ function hide_price() {
             
             $('#error_rent_price').slideDown(300);
         }
-        flag = true;
     }
 }
 
@@ -348,7 +348,6 @@ function sell_validate_instantly(event) {
     var flag = false;
 
     $('#name').on('keyup change paste',function (event){
-	// console.log(event.keyCode);
         if (event.keyCode != 9 && !event.shiftKey) {
             $('#error_name').css("display", "inline-block");
 
@@ -538,7 +537,6 @@ function sell_validate_instantly(event) {
 
 
 // Functions for validations of various input fields
-
 function invalid_name() {
     if($('#name').val() == "") {
 	return true;

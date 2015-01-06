@@ -6,7 +6,7 @@
 */
 @font-face { font-family: "Ionicons"; src: url("Fonts/Ionicons/ionicons.eot?v=1.5.2"); src: url("Fonts/Ionicons/ionicons.eot?v=1.5.2#iefix") format("embedded-opentype"), url("Fonts/Ionicons/ionicons.ttf?v=1.5.2") format("truetype"), url("Fonts/Ionicons/ionicons.woff?v=1.5.2") format("woff"), url("Fonts/Ionicons/ionicons.svg?v=1.5.2#Ionicons") format("svg"); font-weight: normal; font-style: normal; }
 
-.ion-android-arrow-forward:before, .ion-android-call:before, .ion-android-location:before, .ion-android-search:before, .ion-arrow-up-a:before, .ion-email:before, .ion-eye:before, .ion-help:before, .ion-help-buoy:before, .ion-help-circled:before, .ion-person:before { display: inline-block; font-family: "Ionicons"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.ion-android-arrow-forward:before, .ion-android-call:before, .ion-android-location:before, .ion-android-search:before, .ion-arrow-up-a:before, .ion-email:before, .ion-eye:before, .ion-fork-repo:before, .ion-help:before, .ion-help-buoy:before, .ion-help-circled:before, .ion-person:before { display: inline-block; font-family: "Ionicons"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .ion-android-arrow-forward:before { content: "\f30f"; }
 
@@ -21,6 +21,8 @@
 .ion-email:before { content: "\f132"; }
 
 .ion-eye:before { content: "\f133"; }
+
+.ion-fork-repo:before { content: "\f2c0"; }
 
 .ion-help:before { content: "\f143"; }
 

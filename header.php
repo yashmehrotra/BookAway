@@ -1,6 +1,6 @@
 <script src="Scripts/header.js"></script>
 <noscript><meta http-equiv="refresh" content="0; url=nojs"></noscript>
-<!-- <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='stylesheets/medium.css' /> -->
+<link rel='stylesheet/css' href='Styles/ionicons.css' />
 <div class="header-wrapper-fixed">
 <img src="Styles/Images/fav/fav-new.png" class="pointer-onhover" id="favicon" alt="favicon" title="Home">
 

@@ -87,6 +87,7 @@ ul { list-style-type: none; }
 
 .header #header-list li { display: inline-block; }
 
+
 /********************  FOOTER   ************************/
 
 
@@ -111,7 +112,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 /********************  INDEX.PHP   ************************/
 
-#index-body { background: url(Images/2.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+#index-body { background: url('Images/2.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 
 a.index-header-links, a.index-header-links:link { text-decoration:none; padding:8px 28px; font-size:23px; margin-right:15px; color:white; display:inline-block; }
 
@@ -354,11 +355,11 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { height:1150px; width:1100px; top:40px; margin:30px auto 250px; background-color:white; }
+#sell-container { height:1150px; width:800px; top:40px; margin:30px auto 250px; background-color:white; }
 
 #sell-instructions { height:170px; }
 
-#sell-form-wrap { width:550px; height:940px; /*position:relative; left:182px;*/ margin: auto; text-align:left; line-height:180%; font-size:130%;  }
+#sell-form-wrap { width:550px; height:940px; margin: auto; text-align:left; line-height:180%; font-size:130%;  }
 
 .sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border:inset 1px solid #ccc; border-radius:8px; margin:0 0 15px 20px; padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
@@ -368,11 +369,11 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #phone { width:410px; }
 
-#show-password { font-size:32px; position:absolute; left:710px; top:215px; cursor:pointer; }
+#show-password { font-size:32px; position:absolute; left:560px; top:215px; cursor:pointer; }
 
-#help { height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:240px; top:215px; }
+#help { height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:90px; top:215px; }
 
-#help-popup { height:44px; width:380px; box-shadow:1px 1px 1px black; border:1px solid transparent; position:absolute; left:100px; top:150px; font:15px Ubuntu; padding:5px; background-color: black; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
+#help-popup { height:44px; width:380px; box-shadow:1px 1px 1px black; border:1px solid transparent; position:absolute; left:-50px; top:150px; font:15px Ubuntu; padding:5px; background-color: black; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
 
 #help-popup:after { content: ""; position: absolute; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: black transparent transparent transparent; top: 55px; left: 144px; }
 
