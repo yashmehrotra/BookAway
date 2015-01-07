@@ -168,7 +168,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters { width:280px; text-align:left; padding-left:10px; margin-bottom: 30px; }
 
-#buy-container aside form #buy-search-filters input { top:0; left:-3px; font-size: 17px; height: inherit; font-family: Verdana,Arial,sans-serif; }
+#buy-container aside form #buy-search-filters input[type="text"] { top:0; font-size: 17px; height: inherit; font-family: Verdana,Arial,sans-serif; }
 
 #buy-container aside form #buy-search-filters button.filter-btn { height:30px; width:50px; background-color:#CCCCCC; font:16px Ubuntu; border:5px outset transparent; position:relative; top:12px; float:right; }       
 
@@ -176,11 +176,21 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters #search-filters-college-select { margin-bottom: 40px; }
 
-#buy-container aside form #buy-search-filters #left-panel-sub-select { margin-top:40px; }
+#buy-container aside form #buy-search-filters #search-filters-college-select a#college-clear { margin: 40px 0 0; }
 
-#buy-container aside form #buy-search-filters .left-panel-text-wrap { height:20px; width:inherit; margin-top:0; font-size:19px; font-weight:bold; color: #0bd3c4; font-family:cursive; font-weight: 500; }
+#buy-container aside form #buy-search-filters button#left-panel-search-btn { margin-top: -55px; }
+
+#buy-container aside form #buy-search-filters a#search-query-clear { margin-top: 40px; }
+
+#buy-container aside form #buy-search-filters .left-panel-text-wrap { height:20px; width:inherit; margin-top:0; font-size:20px; font-weight:bold; color: #0bd3c4; font-family:cursive; font-weight: 500; }
+
+#buy-container aside form #buy-search-filters #left-panel-sub-select { margin-top: 70px; }
+
+#buy-container aside form #buy-search-filters #left-panel-sub-select p#sub-text-wrapper { margin-bottom: 0; }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar { height:350px; width:290px; overflow-y:scroll; overflow-x:hidden; margin:0 0 40px; }
+
+#buy-container aside form #buy-search-filters #left-panel-sub-select a#category-clear { margin-top: 20px; }
 
 #buy-container ::-webkit-scrollbar { width:15px; }
 
@@ -209,6 +219,8 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 #buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:88px; margin-right:3px; }
 
 #buy-container aside form #buy-search-filters #left-panel-price-range button#price-range { top: -40px; }
+
+#buy-container aside form #buy-search-filters a#all-filters-clear { margin: 80px -50px auto auto; }
 
 #buy-container #buy-content-container { width:922px; height:100%; top:-30px; left:320px; text-align:left; margin-bottom:100px; position: relative; /* position:absolute; */ padding-bottom: 50px; }
 
@@ -561,3 +573,5 @@ p#img-url-info a#img-search-link { color: blue; }
 #index-continue:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:rgba(255, 255, 255, 0.27); }
 
 .clear-filters-btn { float:right; position: relative; top:-35px; }
+
+.clear-filters-btn-left { float:left; position: relative; top:-40px; left: 5px; }

@@ -1,13 +1,18 @@
-//It sends a post request to a sqldata.php file which fetches all the data about books from database
-
-//CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
+// CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
 
 // " A GENIUS NEEDS AN AUDIENCE. "
 //                          - Yash Mehrotra
-//
+
 // " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
-//
+
 //     Visit bookaway.in/funny
+
+
+// =======================================================================
+
+// It sends a post request to a sqldata.php file which fetches all the data about books from database
+
+// Global variables
 
 // Count of the books to be shown at once when buypage is loaded
 var RESULTS_TO_SHOW_ONCE = 8;
@@ -28,7 +33,6 @@ var filter_dict = {
 };
 
 $(function() {
-    
     $('#buy').attr('id','focus');
 
     $('#go-to-top').hide();
@@ -40,7 +44,6 @@ $(function() {
     $('#search-filters-college-search').selectToAutocomplete();
 
     filter();
-    clear_filters();
 
     $('.sub-cbox input:checked').parent().css('color', 'black');
     $('.radio-available-for:checked').parent().css('color', 'black');
@@ -168,7 +171,8 @@ function book_data_display(clg_id, show, show_by) {
                     book_name_title_case = json[counter].book_name.toProperCase();
                     author_name_title_case = json[counter].author_name.toProperCase();
 
-                    // To add different inputs
+                    // To add different inputs to the array for autocomplete
+
                     if ($.inArray(book_name_title_case, search_books) == -1) {
                         search_books.push(book_name_title_case);
                         search_data.push({
@@ -257,7 +261,7 @@ function filter() {
         $(document).scrollTop(100);
 
         var search_value = $("#left-panel-search-bar").val();
-        var search_category = $("#category-search").val();
+        var search_category = $("#category-search").val();     // "Books" or "Author"
 
         filter_dict['name']['value'] = search_value;
         filter_dict['name']['category'] = search_category;
@@ -448,6 +452,7 @@ function filter_everything() {
                     $(this).hide();
                 }
             }
+
             if (filter_dict['name']['value']) {
                 // hide those which do not match name
                 if ( filter_dict['name']['category'] == "Books" ) {
@@ -460,18 +465,21 @@ function filter_everything() {
                     }
                 } 
             }
+
             if (filter_dict['category']) {
                 // hide those which are not in the category list
                 if( checkbox_array.indexOf(filter_category) == -1 && checkbox_array.indexOf("All") == -1 ) {
                     $(this).hide();
                 }
             }
+
             if ( filter_dict['for'] != '4' ) {
                 // hide those which do not match user's for
                 if( filter_for != filter_dict['for']) {
                     $(this).hide();
                 }
             }
+
             if (filter_dict['range']) {
                 // hide those who do not come under the range
                 var min_range = parseInt(filter_dict['range'][0]);
@@ -544,12 +552,6 @@ function sort_price_wise() {
         });
         auto_load_more();
     });
-}
-
-function clear_filters() {
-    $('#category-clear').on('click', clear_category);
-    $('#available-for-clear').on('click', clear_available_for);
-    $('#price-range-clear').on('click', clear_price_range);
 }
 
 
@@ -635,33 +637,84 @@ function go_to_top() {
     previous_scroll = currentScroll;
 }
 
+// Function to clear the dict(before running through filter_everything()) + resetting value of inputs visible to the user
+function clear_dict(index) {
+    if (index) {
+	if (index == 1) {
+	    filter_dict[' college'] = "";
+
+	    $('#search-filters-college-search input').val("");
+	} else if (index == 2) {
+	    filter_dict['name']['value'] = "";
+	    filter_dict['name']['category'] = "";
+	    
+	    $('#left-panel-search-bar').val("");
+	} else if (index == 3) {
+	    filter_dict['category'] = "";
+
+	    $('.sub-cbox-input').prop('checked', false);
+	    $('#checkbox-all').prop('checked', true);
+
+	    left_panel_selected_inputs();
+	} else if (index == 4) {
+	    filter_dict['for'] = '4';
+
+	    $('#radio-for-all').prop('checked', true);
+
+	    left_panel_selected_inputs();
+	} else if (index == 5) {
+	    filter_dict['range'] = [];
+
+	    // for resetting the value of $('#range-min') and $('#range-max') to null
+	    $('input[id^="range-m"]').val("");
+	}
+    } else {
+	alert("Wrong input!"); // Well, this is embaressing!
+    }
+}
+
 function smooth_scroll_to_top() {
     $('html, body').animate({
         scrollTop: $('body').offset().top
     }, 1800);
 }
 
+function clear_college() {
+    clear_dict(1);
+
+    filter_everything();
+}
+
+function clear_search_query() {
+    clear_dict(2);
+
+    filter_everything();
+}
+
 function clear_category() {
-    filter_dict['category'] = "";
-    $('.sub-cbox-input').prop('checked', false);
-    $('#checkbox-all').prop('checked', true);
-    left_panel_selected_inputs();
-    
+    clear_dict(3);
+
     filter_everything();
 }
 
 function clear_available_for() {
-    filter_dict['for'] = '4';
-    $('#radio-for-all').prop('checked', true);
-    left_panel_selected_inputs();
+    clear_dict(4);
 
     filter_everything();
 }
 
 function clear_price_range() {
-    filter_dict['range'] = [];
-    // for resetting the value of $('#range-min') and $('#range-max') to null
-    $('input[id^="range-m"]').val("");
+    clear_dict(5);
+
+    filter_everything();
+}
+
+function clear_all() {
+    clear_dict(1);
+    clear_dict(2);
+    clear_dict(3);
+    clear_dict(4);
+    clear_dict(5);
 
     filter_everything();
 }

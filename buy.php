@@ -43,16 +43,22 @@
                 include('colleges.php');		
 		?>
                 <button class="ion-android-arrow-forward pointer-onhover filter-btn" id="search-filters-college-btn"></button>
+		<a href="#" class="clear-filters-btn" id="college-clear" onclick="javascript:clear_college();">
+		  Clear
+		</a>
               </div>
               <div class="ui-widget">
                 <input type="search" id="left-panel-search-bar" placeholder="Search Here">
               </div>
               <button class="ion-android-search pointer-onhover filter-btn" id="left-panel-search-btn"></button>
+	      <a href="#" class="clear-filters-btn" id="search-query-clear" onclick="javascript:clear_search_query();">
+		Clear
+	      </a>
               <div class="sub-select" id="left-panel-sub-select">
                 <p class="left-panel-text-wrap" id="sub-text-wrapper">
                   Category:
                 </p>
-                <a href="#" class="clear-filters-btn" id="category-clear">
+                <a href="#" class="clear-filters-btn" id="category-clear" onclick="javascript:clear_category();">
                   Clear
                 </a>
                 <div id="sub-scroll-bar">
@@ -64,7 +70,7 @@
               <p class="left-panel-text-wrap" id="book-for-text-wrapper">
                 Available For:
               </p>
-              <a href="#" class="clear-filters-btn" id="available-for-clear">
+              <a href="#" class="clear-filters-btn" id="available-for-clear" onclick="javascript:clear_available_for();">
                 Clear
               </a>
               <label><input type="radio" name="radio-name" class="radio-available-for" value="4" id="radio-for-all" checked>All</label>
@@ -79,14 +85,16 @@
                 <p class="left-panel-text-wrap" id="price-range-text-wrapper">
                   Price Range:
                 </p>
-                <a href="#" class="clear-filters-btn" id="price-range-clear">
+                <a href="#" class="clear-filters-btn" id="price-range-clear" onclick="javascript:clear_price_range();">
                   Clear
                 </a>
                 <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">
                 <button class="pointer-onhover  filter-btn" id="price-range">Go</button>
               </div>
+	      <a href="#" class="clear-filters-btn" id="all-filters-clear" onclick="javascript:clear_all();">
+		Clear all filters
+              </a>
             </div>
-            <button>Clear Filters | also add individual clear option for each filter</button>
           </form>
         </aside>
         <div id="buy-content-container">
