@@ -63,7 +63,7 @@ ul { list-style-type: none; }
 /********************  HEADER   ************************/
 
 
-#favicon { width: 54px; height: 54px; position: relative; top:-80px; left: 2%; }
+#favicon { width: 54px; height: 54px; position: relative; top:6px; left: 700px; z-index: 2; }
 
 .header-wrapper-fixed { z-index:50; position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; width:99.92%; height:65px; }
 
@@ -156,9 +156,13 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1200px; height: 100%; min-height:1050px;  margin:60px auto 100px; padding:0; top:10px; position: relative; overflow: hidden; }
+#buy-container { width:1200px; height: 100%; min-height:1150px;  margin:60px auto 100px; padding:0; top:10px; position: relative; overflow: visible; }
 
 #buy-container aside { width:300px; float:left; margin-left:20px; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; text-align:center; }
+
+#buy-container aside label#sort-by-label { font: 16px Ubuntu; display:block; margin-top: 20px; }
+
+#buy-container aside select#sort-by { margin: 10px auto 20px; width: 180px; height: 30px; }
 
 #buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
 
@@ -192,15 +196,15 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select a#category-clear { margin-top: 20px; }
 
-#buy-container ::-webkit-scrollbar { width:15px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select ::-webkit-scrollbar { width:15px; }
 
-#buy-container ::-webkit-scrollbar-track { background-color:white; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select ::-webkit-scrollbar-track { background-color:white; }
 
-#buy-container ::-webkit-scrollbar-thumb { background-color:#C7C3C3; border:1px solid transparent; border-radius:10px; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select ::-webkit-scrollbar-thumb { background-color:#C7C3C3; border:1px solid transparent; border-radius:10px; }
 
-#buy-container ::-webkit-scrollbar-button { border:1px solid transparent; border-radius:10px; background-color:gray; }
+#buy-container aside form #buy-search-filters #left-panel-sub-select ::-webkit-scrollbar-button { border:1px solid transparent; border-radius:10px; background-color:gray; }
 
-#buy-container ::-webkit-scrollbar-corner { }
+#buy-container aside form #buy-search-filters #left-panel-sub-select ::-webkit-scrollbar-corner { }
 
 #buy-container aside form #buy-search-filters #left-panel-sub-select #sub-scroll-bar .sub-cbox { font-size:16px; margin-top: 10px; }
 
@@ -222,9 +226,9 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters a#all-filters-clear { margin: 80px -50px auto auto; }
 
-#buy-container #buy-content-container { width:922px; height:100%; top:-30px; left:320px; text-align:left; margin-bottom:100px; position: relative; /* position:absolute; */ padding-bottom: 50px; }
+#buy-container #buy-content-container { width:922px; height:100%; top:0; left:320px; text-align:left; margin-bottom:100px; position:relative; padding-bottom: 50px; }
 
-#buy-container #buy-content-container .books-data { height:200px; width:780px; margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3;}
+#buy-container #buy-content-container .books-data { height:200px; width:780px; margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3; }
 
 #buy-container #buy-content-container .books-data:hover { cursor:pointer; border-color:orange; }
 

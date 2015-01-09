@@ -133,7 +133,9 @@ function book_data_display(clg_id, show, show_by) {
             if (result) {
                 var counter = 0;
                 var json = JSON.parse(result);
+
                 console.log(json);
+
                 while (json[counter]) {
                     booklist_array.push(json[counter].book_name);
                     authorlist_array.push(json[counter].author_name);
@@ -164,7 +166,7 @@ function book_data_display(clg_id, show, show_by) {
                         'rent_time': json[counter].rent_time,
                         'book_description': json[counter].book_description,
                         'image_source': json[counter].image_source,
-                        'college_name': json[counter].college             // trailing comma is not supported in some browsers
+                        'college_name': json[counter].college             // refrain from a trailing comma, it is not supported in some browsers
                     });
 
                     // Conversion to title case
@@ -209,27 +211,25 @@ function append() {
     var sell_price_temp;
 
     while (counter_clone != Ultimate_data.length) {
-        if (Ultimate_data[counter_clone].image_source) {
+        if (!Ultimate_data[counter_clone].image_source) {
             image_source_temp = NO_BOOK_IMAGE;
         } else {
             image_source_temp = Ultimate_data[counter_clone].image_source;
         }
-        
+
         var BASE_HTML_BOOK_DETAILS = "<div class='books-data' id='book-data-" + Ultimate_data[counter_clone].book_id + "'" +
 		" data-sell-price='" + Ultimate_data[counter_clone].sell_price + "'" + " data-shown-by='default'" +
 		"data-college='" + Ultimate_data[counter_clone].college_name + "'" + " data-book-for='" + Ultimate_data[counter_clone].book_for + "' >" +
 		"<div class='image-buy-wrapper'><img class='books-data-images' src='" + image_source_temp +
-		" alt='book-cover-img''></div><div class='name-buy-wrapper'>" + Ultimate_data[counter_clone].book_name +
+		"'></div><div class='name-buy-wrapper'>" + Ultimate_data[counter_clone].book_name +
 		"</div><div class='author-buy-wrapper'><i> by " + Ultimate_data[counter_clone].author_name +
 		"</i></div><div class='category-buy-wrapper'>Category : " + Ultimate_data[counter_clone].category +
 		"</div><div class='desc-buy-wrapper'>" + Ultimate_data[counter_clone].book_description;
 
         if (!Ultimate_data[counter_clone].rent_price) {
             $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'> Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].sell_price + "</div></div>");
-
         } else if (!Ultimate_data[counter_clone].sell_price) {
             $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS + "</div><div class='rent-buy-wrapper'>  Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
-
         } else {
             $('#buy-content-container').prepend(BASE_HTML_BOOK_DETAILS + "</div><div class='sell-buy-wrapper'>  Buy price &nbsp;: <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].sell_price + "</div><div class='rent-buy-wrapper'> Rent price : <img class='ruppee-img' src='Styles/Images/ruppee.gif' alt='ruppee-gif'>" + Ultimate_data[counter_clone].rent_price + " / " + Ultimate_data[counter_clone].rent_time + "</div></div>");
         }
@@ -637,7 +637,7 @@ function go_to_top() {
     previous_scroll = currentScroll;
 }
 
-// Function to clear the dict(before running through filter_everything()) + resetting value of inputs visible to the user
+// Function to clear the dict(before running through filter_everything()) + resetting value on the Frontend
 function clear_dict(index) {
     if (index) {
 	if (index == 1) {
@@ -710,11 +710,9 @@ function clear_price_range() {
 }
 
 function clear_all() {
-    clear_dict(1);
-    clear_dict(2);
-    clear_dict(3);
-    clear_dict(4);
-    clear_dict(5);
+    for (var i = 0; i < 5; i++) {
+	clear_dict(i);
+    }
 
     filter_everything();
 }

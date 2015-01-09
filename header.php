@@ -2,8 +2,9 @@
 <noscript><meta http-equiv="refresh" content="0; url=nojs"></noscript>
 <link rel='stylesheet/css' href='Styles/ionicons.css' />
 <div class="header-wrapper-fixed">
-  <img src="Styles/Images/fav/fav-new.png" class="pointer-onhover" id="favicon" alt="favicon" title="Home">
-
+  <a href="index">
+    <img src="Styles/Images/favicon1.png" class="pointer-onhover" id="favicon" alt="favicon" title="Home">
+  </a>
   <section class="header">
     <div class="header-menu">
       <ul>

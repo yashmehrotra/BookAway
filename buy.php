@@ -14,10 +14,9 @@
     <script type="text/javascript" src="Scripts/jquery.ui.position.js"></script>
     <script type="text/javascript" src="Scripts/jquery.ui.menu.js"></script>
     <script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
-    <script src="Scripts/jquery-ui.min.js"></script>
-    <script src="Scripts/jquery.select-to-autocomplete.js"></script>
-    <script src="Scripts/google_analytics.js"></script>
-    <script src="Scripts/top-panel.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.select-to-autocomplete.js"></script>
+    <script type="text/javascript" src="Scripts/top-panel.js"></script>
   </head>
   <body>
     <div class="outer-page-wrap">
@@ -34,8 +33,13 @@
           <button class="pointer-onhover" id="bpopup-close">Go</button>
         </div>
         <aside class="left-panel">
-          <button id='btn-sort-price-desc'>Desc</button>
-          <button id='btn-sort-price-asc'>Asc</button>
+	  <label for="sort-by" id="sort-by-label">Sort By:</label>
+	  <select name="sort-by" id="sort-by">
+	    <option value="date-latest" selected>Date : Latest First</option>
+	    <option value="date-oldest">Date : Oldest First</option>
+	    <option value="price-high-low">Price : High to Low</option>
+	    <option value="price-low-high">Price : Low to High</option>
+	  </select>
           <form class="pure-form pure-form-stacked">
             <div id="buy-search-filters">
               <div id="search-filters-college-select">
@@ -51,14 +55,14 @@
                 <input type="search" id="left-panel-search-bar" placeholder="Search Here">
               </div>
               <button class="ion-android-search pointer-onhover filter-btn" id="left-panel-search-btn"></button>
-	      <a href="#" class="clear-filters-btn" id="search-query-clear" onclick="javascript:clear_search_query();">
+	      <a class="clear-filters-btn" id="search-query-clear" onclick="javascript:clear_search_query();">
 		Clear
 	      </a>
               <div class="sub-select" id="left-panel-sub-select">
                 <p class="left-panel-text-wrap" id="sub-text-wrapper">
                   Category:
                 </p>
-                <a href="#" class="clear-filters-btn" id="category-clear" onclick="javascript:clear_category();">
+                <a class="clear-filters-btn" id="category-clear" onclick="javascript:clear_category();">
                   Clear
                 </a>
                 <div id="sub-scroll-bar">
@@ -70,7 +74,7 @@
               <p class="left-panel-text-wrap" id="book-for-text-wrapper">
                 Available For:
               </p>
-              <a href="#" class="clear-filters-btn" id="available-for-clear" onclick="javascript:clear_available_for();">
+              <a class="clear-filters-btn" id="available-for-clear" onclick="javascript:clear_available_for();">
                 Clear
               </a>
               <label><input type="radio" name="radio-name" class="radio-available-for" value="4" id="radio-for-all" checked>All</label>
@@ -85,21 +89,19 @@
                 <p class="left-panel-text-wrap" id="price-range-text-wrapper">
                   Price Range:
                 </p>
-                <a href="#" class="clear-filters-btn" id="price-range-clear" onclick="javascript:clear_price_range();">
+                <a class="clear-filters-btn" id="price-range-clear" onclick="javascript:clear_price_range();">
                   Clear
                 </a>
                 <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">
                 <button class="pointer-onhover  filter-btn" id="price-range">Go</button>
               </div>
-	      <a href="#" class="clear-filters-btn" id="all-filters-clear" onclick="javascript:clear_all();">
+	      <a class="clear-filters-btn" id="all-filters-clear" onclick="javascript:clear_all();">
 		Clear all filters
               </a>
             </div>
           </form>
         </aside>
-        <div id="buy-content-container">
-          <!-- Books content appended here -->
-        </div>
+        <div id="buy-content-container"></div>
         <div class="pointer-onhover" id='go-to-top' onclick="javascript:smooth_scroll_to_top();">
           <span class="ion-arrow-up-a"></span>
           <p>Go to Top</p>
@@ -110,4 +112,5 @@
       ?>
     </div>
   </body>
+  <script type="text/javascript" src="Scripts/google_analytics.js"></script>
 </html>
