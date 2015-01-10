@@ -5,10 +5,11 @@ var college_list = [];
 $(function() {
 
     $('#sell').attr('id', 'focus');
+    get_seller_data_from_cookies();
 
     // Only one out of the below two should be uncommented at a time, both are functions to validate user inputs in sell form
-    // sell_validate_form(); // To validate the form once the submit button has been clicked
-    sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form data
+    sell_validate_form(); // To validate the form once the submit button has been clicked
+    //sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form data
     
     auto_help_popup();
     college_select_autocomplete();
@@ -203,6 +204,7 @@ function sell_validate_form() {
             $('#help').css('top', parseInt(help_top) + 50 * before_pass + 'px');
 
         } else {
+            save_seller_data_to_cookies();
             ajax_form_data_after_validations();
         }
     });
@@ -530,11 +532,54 @@ function sell_validate_instantly(event) {
 		'title': 'You cannot continue before filling all required fields correctly!'
 		});
 	} else {
+        save_seller_data_to_cookies();
 	    ajax_form_data_after_validations();
 	}
     });
 }
 
+function save_seller_data_to_cookies() {
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var phone = $('#phone').val();
+    var password = $('#password').val();
+    console.log("Saving to cookie");
+    console.log(name,email,phone,password);
+
+    setCookie('bookaway_name',name,30);
+    setCookie('bookaway_email',email,30);
+    setCookie('bookaway_phone',phone,30);
+    setCookie('bookaway_password',password,30);
+}
+
+function get_seller_data_from_cookies() {
+    console.log('boo');
+    if(getCookie('bookaway_name')) {
+        console.log('Hoo');
+        $('#name').val(getCookie('bookaway_name'));
+        $('#email').val(getCookie('bookaway_email'));
+        $('#phone').val(getCookie('bookaway_phone'));
+        $('#password').val(getCookie('bookaway_password'));
+    }
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
 
 // Functions for validations of various input fields
 function invalid_name() {
