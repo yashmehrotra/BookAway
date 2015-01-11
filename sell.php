@@ -39,7 +39,7 @@ $captcha_gen = rand(100000,999999);
           <form class="pure-form pure-form-stacked" id="sell-form" novalidate>
             <div class="pure-g">
 
-              <fieldset>
+              <fieldset id="personal-info">
                 <legend>Personal Information</legend>
                 <input type="text" name="name" id="name" class="sell-input" placeholder="Full Name" autocomplete="on"><p class="compulsary-label">*</p>  <div id="error_name"></div>
                 <br>
@@ -54,7 +54,7 @@ $captcha_gen = rand(100000,999999);
 		?>
               </fieldset>
 
-              <fieldset style="margin-top:10px;">
+              <fieldset id="book-details">
                 <legend>Book Details</legend>
                 <input id="select-subject" class="sell-input" placeholder="Select Category" disabled>
                 <select name="subject" id="subject" class="sell-input">
@@ -70,7 +70,9 @@ $captcha_gen = rand(100000,999999);
                 <br>
                 <textarea name="book-desc" id="book-desc" class="sell-input" autocomplete="on" maxlength="280" placeholder="Description(max 280 characters)"></textarea>
                 <br>
-                <div id='cover-image'></div>
+                <div id='cover-image'>
+		  <!-- The Image is appended here -->
+		</div>
                 <input type="url" name="cover-url" class="sell-input" placeholder="Paste Image URL" id="cover-url"><div id="error_url"></div>
                 <br>
                 <input type="text" name="book-for" id="book-for" class="sell-input" placeholder="The Book is For" disabled>
@@ -106,6 +108,7 @@ $captcha_gen = rand(100000,999999);
             <button class="btn-success pure-btn" id="new-btn">Submit</button>
           </form>
         </div>
+
         <div id="entry">
           <div id="success-submit-wrap">
             <br>
@@ -115,12 +118,15 @@ $captcha_gen = rand(100000,999999);
               Please note this book id for future reference.</p>
           </div>
           <div class="links-list">
+
             <div class="links-box">
-              <a href="index" class="links">Return to homepage</a>
+              <a href="index">Return to homepage</a>
             </div>
+	    
             <div class="links-box">
-              <a href="sell" class="links">Sell another Book</a>
+              <a href="sell">Sell another Book</a>
             </div>
+	    
           </div>
         </div>
       </div>

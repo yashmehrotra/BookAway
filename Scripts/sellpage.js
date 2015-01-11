@@ -9,7 +9,7 @@ $(function() {
 
     // Only one out of the below two should be uncommented at a time, both are functions to validate user inputs in sell form
     sell_validate_form(); // To validate the form once the submit button has been clicked
-    //sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form data
+    // sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form data
     
     auto_help_popup();
     college_select_autocomplete();
@@ -19,6 +19,8 @@ $(function() {
 
     $('#cover-url').on('change',image_append);
     $('#sell-rent').on('change',hide_price);
+
+    $.getScript("Scripts/fellow_developer.js");
 
 });
 
@@ -32,7 +34,6 @@ function college_select_autocomplete() {
 	success: function(result_college) {
 	    if (result_college) {
 		var ajax_college_list = JSON.parse(result_college);
-		console.log(ajax_college_list);
 		var counter_college = 0;
 
 		while (ajax_college_list[counter_college]) {
@@ -57,7 +58,7 @@ function sell_validate_form() {
         var flag = false;
         var error_count = 0;
 
-	// should be removed once implementation of help, show password is clear through :before, :after
+	// Should be removed once implementation of help, show password is clear through :before, :after (which requires encapsulating the input fields inside a <div>)
         var name_error = false;
         var email_error = false;
         var phone_error = false;
@@ -264,7 +265,7 @@ function show_password() {
 
 function help_popup() {
     $('#help').on('mouseenter mouseleave', function() {
-        $('#help-popup').fadeToggle('50');
+        $('#help-popup').fadeToggle('200');
     });
 }
 
@@ -526,7 +527,7 @@ function sell_validate_instantly(event) {
     $('#sell-form').submit(function(event) {
         event.preventDefault();
 	
-	if ( flag ) {
+	if (flag) {
 	    $('#new-btn').attr({
 		'disabled': 'true',
 		'title': 'You cannot continue before filling all required fields correctly!'
@@ -553,9 +554,7 @@ function save_seller_data_to_cookies() {
 }
 
 function get_seller_data_from_cookies() {
-    console.log('boo');
     if(getCookie('bookaway_name')) {
-        console.log('Hoo');
         $('#name').val(getCookie('bookaway_name'));
         $('#email').val(getCookie('bookaway_email'));
         $('#phone').val(getCookie('bookaway_phone'));

@@ -1,3 +1,11 @@
+/*
+  EVEN THOUGH USING FULL CSS PATHS IS NOT ENCOURAGED IN TERMS OF PERFORMANCE AND SPEED, BUT THEIR USAGE HERE IS DELIBERATE DUE TO THE FOLLOWING REASONS:
+   1. EASY DEBUGGING
+   2. BEAUTIFYING THE CODE
+
+  * THERE ARE OTHER WAYS TO IMPROVE WEBSITE PERFORMANCE TOO *
+*/
+
 
 /* FIXES FOR SOME CROSS BROWSER COMPATIBILITY ISSUES */
 
@@ -13,13 +21,13 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; height: 13px; width: 13px; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *height: 13px; *width: 13px; }
 
 button[disabled], input[disabled] { cursor: default; }
 
 button, input { line-height: normal; }
 
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; vertical-align: middle; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
 
 img { border: 0; -ms-interpolation-mode: bicubic; }
 
@@ -61,8 +69,8 @@ ul { list-style-type: none; }
 
 /********************  HEADER ************************/
 
-
-.header-wrapper-fixed { z-index:50; position:fixed; -webkit-backface-visibility: hidden; width: 100%; background-color:#000000; opacity: 0.85; z-index: 1; }
+/*SET MIN WIDTH*/
+.header-wrapper-fixed { z-index:50; position:fixed; -webkit-backface-visibility: hidden; width: 100%; min-width: 1300px; background-color: #000000; opacity: 0.85; z-index: 1; }
 
 /*SET WIDTH*/
 .header-wrapper-fixed .header { width: 1300px; height:70px; font-family: Ubuntu; margin: auto; border:1px outset transparent; z-index: 10; }
@@ -84,8 +92,8 @@ ul { list-style-type: none; }
 
 /********************  FOOTER   ************************/
 
-
-footer { width:100%; }
+/*SET MIN WIDTH*/
+footer { width: 100%; min-width: 1300px; }
 
 footer .footer-row { text-align:center; font-size:14px; width:100%; height:50px; background-color:gray; }
 
@@ -135,15 +143,15 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #about-us-container .developer-profile div { height:43px; width:43px; float:left; margin:10px 0 0 26px; }
 
-#about-us-container .developer-profile .fb { background:url("Images/icon-logos.png") 0 0; }
+#about-us-container .developer-profile .fb { background: url("Images/icon-logos.png") 0 0; }
 
-#about-us-container .developer-profile .tw { background:url("Images/icon-logos.png") -155px 0; }
+#about-us-container .developer-profile .tw { background: url("Images/icon-logos.png") -155px 0; }
 
-#about-us-container .developer-profile .li { background:url("Images/icon-logos.png") -103px 0; }
+#about-us-container .developer-profile .li { background: url("Images/icon-logos.png") -103px 0; }
 
-#about-us-container .developer-profile .gi { background:url("Images/icon-logos.png") -24px 41px; }
+#about-us-container .developer-profile .gi { background: url("Images/icon-logos.png") -24px 41px; }
 
-#about-us-container .bookaway-desc-wrap { width: 900px; margin: 0 auto; padding: 10px 20px; line-height: 180%; font: 20px Bitter-Regular; text-align:left; }
+#about-us-container .bookaway-desc-wrap { width: 900px; margin: 0 auto; padding: 10px 20px; line-height: 180%; font: 20px Bitter-Regular; text-align: left; }
 
 
 /********************    BUY.PHP    ************************/
@@ -299,9 +307,9 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /********************  DEL.PHP  ************************/
 
 
-#del-main-container { width:1100px; margin: 0 auto 250px; padding: 40px 0; }
+#del-main-container { width: 1100px; margin: 0 auto 250px; padding: 40px 0; }
 
-#del-main-container #del-main { width:inherit; font-size:20px; text-align:left; }
+#del-main-container #del-main { width: inherit; font-size: 20px; text-align: left; }
 
 #del-main-container #del-main #del-desc { width:inherit; margin:0 auto 50px; font:21px; text-align:center; }
 
@@ -354,10 +362,11 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 #faqs-container .ans div { font-style:italic; }
 
 
-/********************  FEEDBACK.PHP  ************************/
+/********************  FEEDBACK.PHP  *********************/
 
 
 #feedback-container iframe { height: 1100px; width: 700px; margin: 0 auto 150px; display: block; z-index:100; }
+
 
 /********************  NOJS.PHP  ************************/
 
@@ -370,67 +379,72 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { /* height:1150px; */  width:800px;  top:40px; margin:30px auto 250px; background-color:white; }
+#sell-container {  width:800px; margin:50px auto 250px; background-color:white; padding-bottom: 50px; } 
 
-#sell-instructions { height:170px; }
+#sell-container #sell-form-wrap { width:550px; /* height:940px; */ margin: auto; text-align:left; line-height:180%; font-size:130%;  }
 
-#sell-form-wrap { width:550px; height:940px; margin: auto; text-align:left; line-height:180%; font-size:130%;  }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset .sell-input { height:37px; width:470px; font: 81% Proxima-Nova; line-height: 100%; /* margin: 10px 0 0 10px; */ margin-top: 7px; padding-top: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: inline-block; }
 
-.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border: 1px inset #cccccc; border-radius:8px; margin:0 0 15px 20px; padding-top:0.2em; box-sizing:border-box; display: inline-block; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset p.compulsary-label { color:red; font-size:15px; margin:0 0 0 3px; padding:0; width:3px; display:inline-block; }
 
-.compulsary-label { color:red; font-size:15px; margin:0 0 0 3px; padding:0; width:3px; display:inline-block; }
+/* SHOULD BE UNCOMMENTED ONLY WHEN INSTANT VALIDATION IS COMMENTED IN SELLPAGE.JS => THE FORM IS VALIDATED ONLY WHEN THE SUBMIT BUTTON IS CLICKED */
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset div[id^="error"] { height: 30px; width: auto; font: normal 15px Ubuntu; margin-bottom: 10px; color: red; border-radius: 0 10px 0 10px; padding-left: 5px; display: none; }
 
-#before-phone { width:50px; border-style:outset; color:black; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#before-phone { width:50px; border-style:outset; color:black; }
 
-#phone { width:410px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#phone { width:410px; }
 
-#show-password { font-size:32px; position:absolute; left:560px; top:215px; cursor:pointer; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset span#show-password { font-size:32px; position: relative; left: -45px; top: 8px; cursor:pointer; }
 
-#help { height:30px; width:28px; margin-top:5px; display:inline-block; position:absolute; left:90px; top:215px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset img#help { height:30px; width:28px; display: inline-block; position: relative; left: -550px; top: 15px; }
 
-#help-popup { height:44px; width:380px; box-shadow:1px 1px 1px black; border:1px solid transparent; position:absolute; left:-50px; top:150px; font:15px Ubuntu; padding:5px; background-color: black; line-height:150%; display:none; text-align: center; color: white; border-radius: 10px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset span#help-popup { height: 50px; width: 380px; box-shadow: 1px 1px 1px black; border: 1px solid transparent; position: absolute; left: 190px; top: 520px; font: 15px Ubuntu; padding: 5px; background-color: black; line-height: 150%; display: none; text-align: center; color: white; border-radius: 10px; }
 
-#help-popup:after { content: ""; position: absolute; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: black transparent transparent transparent; top: 55px; left: 144px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset span#help-popup:after { content: ""; position: relative; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: black transparent transparent transparent; top: 40px; left: -160px; }
 
-#book-desc { height:80px; resize:none; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset#book-details { margin-top: 10px; } 
 
-#cover-image-img-src { position: absolute; top: 570px; left: 750px; height: 200px; width: 150px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#select-subject { width:150px; border-style:outset; color:black; }
 
-#s-cost, #r-cost { background:url('Images/ruppee.gif') no-repeat top right; padding-right:0; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset select#subject { width:310px; }
 
-#r-cost { width:310px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset textarea#book-desc { height: 80px; resize: none; }
 
-#select-subject { width:150px; border-style:outset; color:black; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset #cover-image img#cover-image-img-src { position: absolute; top: 570px; left: 750px; height: 200px; width: 150px; }
 
-#subject { width:310px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#book-for { width:150px; border-style:outset; color:black; }
 
-#rent-price { width:150px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset select#sell-rent { width:310px; }
 
-#book-for { width:150px; border-style:outset; color:black; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#s-cost,
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#r-cost { background:url('Images/ruppee.gif') no-repeat top right; padding-right:0; }
 
-#sell-rent { width:310px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset #r-cost { width:310px; }
 
-div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bottom:10px; color:red; border-radius:0 10px 0 10px; padding-left:5px; display:none; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset select#rent-price { width:150px; }
 
-#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#1dc491; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#captcha-input { width: 180px; margin: 10px 0 0 10px; display: inline-block; }
 
-#new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
+#sell-container #sell-form-wrap form#sell-form button#new-btn { width: 200px; height: 72px; color:white; border:1px transparent; border-radius:15px; background:#1dc491; font:105% Ubuntu; margin-right:auto; position:relative; margin-left: 140px; }
 
-#entry { height:600px; width:820px; display:none; }
+#sell-container #sell-form-wrap form#sell-form button#new-btn:hover { cursor:pointer; -webkit-transition:opacity .5s linear; -moz-transition:opacity .5s linear; -o-transition:opacity .5s linear; -ms-transition:opacity .5s linear; opacity:0.8; }
 
-#successful-text { font:22px Bitter-Regular; line-height:150%; text-align:center; padding:0 10px; position:relative; left:160px; top:-20px; }
+#sell-container #entry { height:600px; width:820px; display:none; }
 
-#success-submit-wrap { position:absolute; top:80px; }
+#sell-container #entry #success-submit-wrap { margin-top: 100px; }
 
-.links-list { height:60px; width:inherit; position:absolute; top:320px; }
+#sell-container #entry #success-submit-wrap p#successful-text { font:22px Bitter-Regular; line-height:150%; text-align:center; padding:0 10px; position:relative; left:160px; top:-20px; }
 
-.links-box { height:50px; width:270px; float:left; margin-left:110px; }
+#sell-container #entry .links-list { height:60px; width:inherit; position:absolute; top:320px; }
 
-.links { font:20px monospace; text-decoration:none; padding:10px; border:2px inset transparent; border-radius:10px; background-color:#75A3FF; color:white; }
+#sell-container #entry .links-list .links-box { height:50px; width:270px; float:left; margin-left:110px; }
 
-.links:hover { background-color:#5E82CC; color:white; border-style:outset; }
+#sell-container #entry .links-list .links-box a { font:20px monospace; text-decoration:none; padding:10px; border:2px inset transparent; border-radius:10px; background-color:#75A3FF; color:white; }
 
-/* MUST BE UNCOMMENTED IF PLACEHOLDERS ARE TO BE STYLED */
+#sell-container #entry .links-list .links-box a:hover { background-color:#5E82CC; color:white; border-style:outset; }
+
+/* THE FOLLOWING BLOCK OF CODE MUST BE UNCOMMENTED ONLY IF PLACEHOLDERS ARE TO BE STYLED */
+
 /*
 ::-webkit-input-placeholder { color: ;silver;blue;red; }
 
@@ -447,39 +461,43 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 
 .pure-form-stacked input[type=text],.pure-form-stacked input[type=password],.pure-form-stacked input[type=email],.pure-form-stacked input[type=url],.pure-form-stacked input[type=date],.pure-form-stacked input[type=month],.pure-form-stacked input[type=time],.pure-form-stacked input[type=datetime],.pure-form-stacked input[type=datetime-local],.pure-form-stacked input[type=week],.pure-form-stacked input[type=number],.pure-form-stacked input[type=search],.pure-form-stacked input[type=tel],.pure-form-stacked input[type=color],.pure-form-stacked select,.pure-form-stacked textarea { display:block; margin:0.35em 0px 0px 0.3em; }
 .pure-form-stacked input:not([type]) { display:block; margin:0.25em 0; }
-.pure-form input[type=text],.pure-form input[type=password],.pure-form input[type=email],.pure-form input[type=url],.pure-form input[type=date],.pure-form input[type=month],.pure-form input[type=time],.pure-form input[type=datetime],.pure-form input[type=datetime-local],.pure-form input[type=week],.pure-form input[type=number],.pure-form input[type=search],.pure-form input[type=tel],.pure-form input[type=color],.pure-form select,.pure-form textarea { padding:.5em .6em; display:inline-block; border:1px solid #ccc; box-shadow:inset 0 1px 3px #ddd; border-radius:4px; margin-bottom:6px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
-.pure-form input:not([type]) { padding:.5em .6em; display:inline-block; border:1px solid #ccc; box-shadow:inset 0 1px 3px #ddd; border-radius:4px; margin-bottom:6px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+.pure-form input[type=text],.pure-form input[type=password],.pure-form input[type=email],.pure-form input[type=url],.pure-form input[type=date],.pure-form input[type=month],.pure-form input[type=time],.pure-form input[type=datetime],.pure-form input[type=datetime-local],.pure-form input[type=week],.pure-form input[type=number],.pure-form input[type=search],.pure-form input[type=tel],.pure-form input[type=color],.pure-form select,.pure-form textarea { padding:.5em .6em; display:inline-block;	border:1px solid #ccc; box-shadow:inset 0 1px 3px #ddd;	border-radius:4px; margin-bottom:6px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+.pure-form input:not([type]) { padding:.5em .6em; display:inline-block;	border:1px solid #ccc; box-shadow:inset 0 1px 3px #ddd;	border-radius:4px; margin-bottom:6px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
 .pure-form input[type=color] { padding:.2em .5em; }
-.pure-form input[type=text]:focus, .pure-form input[type=password]:focus, .pure-form input[type=email]:focus, .pure-form input[type=url]:focus, .pure-form input[type=date]:focus, .pure-form input[type=month]:focus, .pure-form input[type=time]:focus, .pure-form input[type=datetime]:focus, .pure-form input[type=datetime-local]:focus, .pure-form input[type=week]:focus, .pure-form input[type=number]:focus, .pure-form input[type=search]:focus, .pure-form input[type=tel]:focus, .pure-form input[type=color]:focus, .pure-form select:focus, .pure-form textarea:focus { outline:0; outline:thin dotted; border-color:#129FEA; }
-.pure-form input:not([type]):focus { outline:0; outline:thin dotted; border-color:#129FEA; }
+.pure-form input[type=text]:focus, .pure-form input[type=password]:focus, .pure-form input[type=email]:focus, .pure-form input[type=url]:focus, .pure-form input[type=date]:focus, .pure-form input[type=month]:focus, .pure-form input[type=time]:focus, .pure-form input[type=datetime]:focus, .pure-form input[type=datetime-local]:focus, .pure-form input[type=week]:focus, .pure-form input[type=number]:focus, .pure-form input[type=search]:focus, .pure-form input[type=tel]:focus, .pure-form input[type=color]:focus, .pure-form select:focus, .pure-form textarea:focus { outline:0; outline:thin dotted \9; border-color:#129FEA; }
+.pure-form input:not([type]):focus { outline:0;	outline:thin dotted \9;	border-color:#129FEA; }
 .pure-form input[type=file]:focus, .pure-form input[type=radio]:focus, .pure-form input[type=checkbox]:focus { outline:thin dotted #333; outline:1px auto #129FEA; }
 .pure-form .pure-checkbox, .pure-form .pure-radio { margin:.5em 0; display:block; }
 .pure-form input[type=text][disabled], .pure-form input[type=password][disabled], .pure-form input[type=email][disabled], .pure-form input[type=url][disabled], .pure-form input[type=date][disabled], .pure-form input[type=month][disabled], .pure-form input[type=time][disabled], .pure-form input[type=datetime][disabled], .pure-form input[type=datetime-local][disabled], .pure-form input[type=week][disabled], .pure-form input[type=number][disabled], .pure-form input[type=search][disabled], .pure-form input[type=tel][disabled], .pure-form input[type=color][disabled], .pure-form select[disabled], .pure-form textarea[disabled] { cursor:not-allowed; background-color:#eaeded; color:#cad2d3; }
 .pure-form input:not([type])[disabled] { cursor:not-allowed; background-color:#eaeded; color:#cad2d3; margin-left:0.3em; }
 .pure-form input[readonly], .pure-form select[readonly], .pure-form textarea[readonly] { background:#eee; color:#777; border-color:#ccc; }
+.pure-form input:focus:invalid, .pure-form textarea:focus:invalid, .pure-form select:focus:invalid { color:#b94a48; border-color:#ee5f5b; }
+.pure-form input:focus:invalid:focus, .pure-form textarea:focus:invalid:focus, .pure-form select:focus:invalid:focus { border-color:#e9322d; }
+.pure-form input[type=file]:focus:invalid:focus, .pure-form input[type=radio]:focus:invalid:focus, .pure-form input[type=checkbox]:focus:invalid:focus { outline-color:#e9322d; }
 .pure-form select { border:1px solid #ccc; background-color:#fff; }
 .pure-form select[multiple]{ height:70px; }
 .pure-form label{ margin:.5em 0 .2em; }
-.pure-form fieldset { margin:0; padding:.35em 0 .75em; border:0; }
-.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color:#0bd3c4; border-bottom:1px solid #0bd3c4; font-family: Ubuntu; font-weight: 500; }
+.pure-form fieldset { margin:0;	padding:.35em 0 .75em; border:0; }
+.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color: #1DC491; border-bottom:1px solid #1DC491; font-family: Ubuntu; font-weight: 590; }
 .pure-form input.pure-input-rounded, .pure-form .pure-input-rounded { border-radius:2em; padding:.5em 1em; }
 .pure-form .pure-group fieldset { margin-bottom:10px; }
 .pure-form .pure-group input { display:block;padding:10px; margin:0; border-radius:0; position:relative; top:-1px; }
 .pure-form .pure-group input:focus { z-index:2; }
-.pure-form .pure-group input:first-child { top:1px; border-radius:4px 4px 0 0; }
-.pure-form .pure-group input:last-child { top:-2px; border-radius:0 0 4px 4px; }
-.pure-form .pure-group button { margin:.35em 0; }
+.pure-form .pure-group input:first-child { top:1px;	border-radius:4px 4px 0 0; }
+.pure-form .pure-group input:last-child { top:-2px;	border-radius:0 0 4px 4px; }
+.pure-form .pure-group button {	margin:.35em 0; }
 .pure-form .pure-input-1 { width:100%; }
 .pure-form .pure-input-2-3 { width:66%; }
 .pure-form .pure-input-1-2 { width:50%; }
 .pure-form .pure-input-1-3 { width:33%; }
 .pure-form .pure-input-1-4 { width:25%; }
 .pure-form .pure-help-inline, .pure-form-message-inline { display:inline-block; padding-left:.3em; color:#666; vertical-align:middle; font-size:.875em; }
-.pure-form-message { display:block; color:#666; font-size:.875em; }
+.pure-form-message { display:block;	color:#666;	font-size:.875em; }
 @media only screen and (max-width :480px) {
- .pure-form btn[type=submit] { margin:.7em 0 0; }
- .pure-form input:not([type]), .pure-form input[type=text], .pure-form input[type=password], .pure-form input[type=email], .pure-form input[type=url], .pure-form input[type=date], .pure-form input[type=month], .pure-form input[type=time], .pure-form input[type=datetime], .pure-form input[type=datetime-local], .pure-form input[type=week], .pure-form input[type=number], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=color], .pure-form label { margin-bottom:.3em; display:block; }
+	.pure-form btn[type=submit]	{ margin:.7em 0 0; }
+	.pure-form input:not([type]), .pure-form input[type=text], .pure-form input[type=password], .pure-form input[type=email], .pure-form input[type=url], .pure-form input[type=date], .pure-form input[type=month], .pure-form input[type=time], .pure-form input[type=datetime], .pure-form input[type=datetime-local], .pure-form input[type=week], .pure-form input[type=number], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=color], .pure-form label { margin-bottom:.3em; display:block; }
 }
+
 
 
 /********************** JQUERY MIN CSS **************************/
@@ -540,10 +558,6 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 /*  */
 .ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }
 
-
-
-
-#captcha-input { width: 180px; margin: 10px 0 0 10px; display: inline-block; }
 
 #captcha { margin: 10px 20px 0 80px; display: inline-block; width: 80px; height: 30px; } 
 
