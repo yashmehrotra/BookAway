@@ -19,11 +19,12 @@
     <script type="text/javascript" src="Scripts/top-panel.js"></script>
   </head>
   <body>
+    <?php
+    require_once('header.php');
+    ?>
     <div class="outer-page-wrap">
-      <?php
-      require_once('header.php');
-      ?>
       <h2 class="head-text">buy books</h2>
+      
       <div class="main-containers" id="buy-container">
         <div id="college-input-onload">
           <p>Please enter the name of your college to continue:</p>
@@ -32,6 +33,7 @@
           ?>
           <button class="pointer-onhover" id="bpopup-close">Go</button>
         </div>
+	
         <aside class="left-panel">
 	  <label for="sort-by" id="sort-by-label">Sort By:</label>
 	  <select name="sort-by" id="sort-by">
@@ -42,7 +44,8 @@
 	  </select>
           <form class="pure-form pure-form-stacked">
             <div id="buy-search-filters">
-              <div id="search-filters-college-select">
+
+	      <div id="search-filters-college-select">
                 <?php
                 include('colleges.php');		
 		?>
@@ -51,6 +54,7 @@
 		  Clear
 		</a>
               </div>
+	      
               <div class="ui-widget">
                 <input type="search" id="left-panel-search-bar" placeholder="Search Here">
               </div>
@@ -58,6 +62,7 @@
 	      <a class="clear-filters-btn" id="search-query-clear" onclick="javascript:clear_search_query();">
 		Clear
 	      </a>
+	      
               <div class="sub-select" id="left-panel-sub-select">
                 <p class="left-panel-text-wrap" id="sub-text-wrapper">
                   Category:
@@ -71,6 +76,7 @@
                   ?>
                 </div>
               </div>
+	      
               <p class="left-panel-text-wrap" id="book-for-text-wrapper">
                 Available For:
               </p>
@@ -85,6 +91,7 @@
               <br>
               <label><input type="radio" name="radio-name" class="radio-available-for" value="2">Rent</label>
               <br>
+	      
               <div id="left-panel-price-range">
                 <p class="left-panel-text-wrap" id="price-range-text-wrapper">
                   Price Range:
@@ -95,22 +102,29 @@
                 <input type="number" id="range-min" min="0" placeholder="Min"> to <input type="number" min="1" id="range-max" placeholder="Max">
                 <button class="pointer-onhover  filter-btn" id="price-range">Go</button>
               </div>
+	      
 	      <a class="clear-filters-btn" id="all-filters-clear" onclick="javascript:clear_all();">
 		Clear all filters
               </a>
+	      
             </div>
           </form>
         </aside>
-        <div id="buy-content-container"></div>
+	
+        <div id="buy-content-container">
+	  <!-- Content Appended Here -->
+	</div>
+	
         <div class="pointer-onhover" id='go-to-top' onclick="javascript:smooth_scroll_to_top();">
           <span class="ion-arrow-up-a"></span>
           <p>Go to Top</p>
         </div>
+	
       </div>
-      <?php
-      require_once('footer.php');
-      ?>
     </div>
   </body>
+  <?php
+  require_once('footer.php');
+  ?>
   <script type="text/javascript" src="Scripts/google_analytics.js"></script>
 </html>

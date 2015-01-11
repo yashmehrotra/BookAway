@@ -10,14 +10,14 @@
     <script src="Scripts/top-panel.js"></script>
   </head>
   <body>
+    <?php
+    require_once('header.php');
+    ?>
     <div class="outer-page-wrap">
-      <?php
-      require_once('header.php');
-      ?>
       <div class="main-containers" id="about-us-container">
 	<h2 class="head-text">Our Team</h2>
 	<div class="developer-profile" id="profile1">
-	  <a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="profile-image" id="profile-image1" alt="img1"></a>
+	  <a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="profile-image" alt="img1"></a>
 	  <p>Avijit Gupta
 	    <br><br>
 	    Frontend Developer
@@ -28,7 +28,7 @@
 	  <div onclick="location.href='github.com/526avijitgupta';" class="pointer-onhover gi"></div>
 	</div>
 	<div class="developer-profile" id="profile2">
-	  <a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="profile-image" id="profile-image2" alt="img2"></a>
+	  <a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="profile-image" alt="img2"></a>
 	  <p>Yash Mehrotra
 	    <br><br>
 	    Backend Developer
@@ -39,7 +39,7 @@
 	  <div onclick="location.href='github.com/yashmehrotra/';" class="pointer-onhover gi"></div>
 	</div>
 	<h2 class="head-text">About BookAway</h2>
-	<div class="bookaway-desc-wrap">
+	<div class="bookaway-desc-wrap container-style">
 	  <p class="bookaway-desc">
 	    Tired of searching book stores for cheap, used books or books that pile up every semester? The regular trips to library to save the big sum?<br>Here is a solution.<br>
 	    BookAway provides you with a platform where you can buy books from a large list of sellers or you can sell your book and become the seller. Not only you can buy or sell books but it also allows you to give/take a book on rent on a weekly or a monthly basis.<br><br>
@@ -52,9 +52,9 @@
 	  </p>
 	</div>
       </div>
-      <?php
-      require_once('footer.php');
-      ?>
     </div>
+    <?php
+    require_once('footer.php');
+    ?>
   </body>
 </html>

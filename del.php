@@ -17,10 +17,10 @@
     <script src="Scripts/top-panel.js"></script>
   </head>
   <body>
+    <?php
+    require_once('header.php');
+    ?>
     <div class="outer-page-wrap">
-      <?php
-      require_once('header.php');
-      ?>
       <h2 class="head-text">edit details</h2>
       <div class="main-containers container-style" id="del-main-container">
         <div id="del-main">
@@ -96,9 +96,9 @@
         </div>
         <div id="edit-success">Congratulations!!<br>You have successfully edited your response.</div>
       </div>
-      <?php
-      require_once('footer.php');
-      ?>
     </div>
+    <?php
+    require_once('footer.php');
+    ?>
   </body>
 </html>

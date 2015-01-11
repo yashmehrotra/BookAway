@@ -25,10 +25,10 @@ $captcha_gen = rand(100000,999999);
     <script src="Scripts/top-panel.js"></script>
   </head>
   <body>
+    <?php
+    require_once('header.php');
+    ?>
     <div class="outer-page-wrap">
-      <?php
-      require_once('header.php');
-      ?>
       <h2 class="head-text">sell books</h2>
       <p id="before-form-msg">
         To add your book for sale/rent, simply fill the given form<br>NO registration required
@@ -124,9 +124,9 @@ $captcha_gen = rand(100000,999999);
           </div>
         </div>
       </div>
-      <?php
-      require_once('footer.php');
-      ?>
     </div>
+    <?php
+    require_once('footer.php');
+    ?>
   </body>
 </html>

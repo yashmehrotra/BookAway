@@ -31,7 +31,7 @@ code, kbd, pre, samp { font-family: monospace, serif; _font-family: 'courier new
 /******************************** GLOBALS ****************************/
 
 
-body { background-color:white; border:0; margin:0 auto; padding:0; }
+body { background-color: white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Bitter-Regular; src:url('Fonts/Bitter-Regular.otf'); }
 
@@ -39,13 +39,14 @@ body { background-color:white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Ubuntu; src:url('Fonts/Ubuntu/Ubuntu-R.ttf'); }
 
-a#focus:link { background-color:#1dc491; }
+a#focus:link { background-color: #1DC491; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
-.outer-page-wrap { margin:0 auto; width: 100%; display: block; }
+/*SET WIDTH*/
+.outer-page-wrap { margin:0 auto; width: 1330px; display: block; height:100%; background-color: white; }
 
-.head-text { font-family: Ubuntu; font-size: 33px; color: #1dc491; text-transform:uppercase; text-align: center; display: block; height: 40px; margin-top:100px; clear:both; }
+.head-text { font-family: Ubuntu; font-size: 33px; color: #1dc491; text-transform:uppercase; text-align: center; display: block; height: 40px; /* margin-top:100px; */ margin: 0 auto; padding-top: 120px; padding-bottom: 50px; clear:both; }
 
 .pointer-onhover:hover { cursor:pointer; }
 
@@ -53,45 +54,38 @@ h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
 .instructions-list-item { font-size:16px; margin:10px 0; }
 
-.main-containers { position:relative; }
-
-.container-style { border:2px solid #d3d3d3; border-bottom:none; border-top:none; }
+.container-style { border: 2px solid #d3d3d3; border-bottom:none; border-top:none; } 
 
 ul { list-style-type: none; }
 
 
-/********************  HEADER   ************************/
+/********************  HEADER ************************/
 
 
-#favicon { width: 54px; height: 54px; position: relative; top:6px; left: 700px; z-index: 2; }
+.header-wrapper-fixed { z-index:50; position:fixed; -webkit-backface-visibility: hidden; width: 100%; background-color:#000000; opacity: 0.85; z-index: 1; }
 
-.header-wrapper-fixed { z-index:50; position:fixed; -webkit-backface-visibility: hidden; top:0; left:0; width:99.92%; height:65px; }
+/*SET WIDTH*/
+.header-wrapper-fixed .header { width: 1300px; height:70px; font-family: Ubuntu; margin: auto; border:1px outset transparent; z-index: 10; }
 
-.header { width:100%; min-width: 1250px; height:69px; background-color:#000000; opacity: 0.85; font-family: Ubuntu; margin: -60px auto 0; border:1px outset transparent; }
+.header-wrapper-fixed .header .header-menu ul { list-style:none; width:480px; float:left; }
 
-.header-menu { width: 1250px; margin: auto; }
+.header-wrapper-fixed .header .header-menu ul li { display:inline-block; }
 
-.header .header-menu ul { list-style:none; width:555px; float:left; }
+.header-wrapper-fixed .header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:21px; margin-right:14px; color:white; display:inline-block; border-radius: 8px; }
 
-.header .header-menu ul li { display:inline-block; }
+.header-wrapper-fixed .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#1dc491; }
 
-.header .header-menu ul li a { text-decoration:none; padding:5px 28px; font-size:20px; margin-right:14px; color:white; display:inline-block; border-radius: 8px; }
-
-.header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#1dc491; }
+.header-wrapper-fixed .header #favicon { width: 54px; height: 54px; position: relative; top:6px; left: 100px; z-index: 2; }
 
 .header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; float: right; margin: 15px 15px 0 0; }
 
-.header .header-menu button#fork-on-github:hover { opacity: 0.9; }
-
-.header #header-list { display:block; margin: 10px auto auto; width: 550px; }
-
-.header #header-list li { display: inline-block; }
+.header-wrapper-fixed button#fork-on-github:hover { opacity: 0.9; }
 
 
 /********************  FOOTER   ************************/
 
 
-footer { width:100%; min-width:1250px; }
+footer { width:100%; }
 
 footer .footer-row { text-align:center; font-size:14px; width:100%; height:50px; background-color:gray; }
 
@@ -105,58 +99,57 @@ footer .footer-row .footer-left ul li a { text-decoration:none; padding:0 5px; m
 
 footer .footer-row .footer-left ul li a:hover { background-color: black; }
 
-footer #copyright { width:100%; background-color:white; color:#1dc491; padding-top:18px; box-shadow:4px 0 4px black; height:35px; }
+footer #copyright { width:100%; background-color: #282828; color:#1dc491; padding-top:18px; height:35px; }
 
 footer #copyright a { text-decoration:none; color:#1dc491; }
 
 
 /********************  INDEX.PHP   ************************/
 
-#index-body { background: url('Images/2.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 
-a.index-header-links, a.index-header-links:link { text-decoration:none; padding:8px 28px; font-size:23px; margin-right:15px; color:white; display:inline-block; }
+#index-body { background: url('Images/new-1.jpeg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 
-a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -moz-transition:background-color .5s ease-in; -o-transition:background-color .5s ease-in; -ms-transition:background-color .5s ease-in; background-color:gray; }
+#index-container { position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding-top: 9%; background-color: #2A2929; opacity: 0.8; }
 
-#index-container { max-height:640px; width:1100px; padding:0; margin:110px auto 50px auto; }
+#index-container #content-slider h2 { color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0; text-align: center; }
 
-#index-container #content-slider h2 { color:white; font-size:80px; font-family:Ubuntu; line-height:130%; margin:0; text-align: left; }
+#index-container #content-slider p { color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align: center; margin:25px; }
 
-#index-container #content-slider p { color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align:center; margin:25px; text-align: left; }
+#index-container #content-slider #index-continue { text-decoration: none; color: white; padding: 20px 20px; border: 1px solid white; border-radius: 5px; margin: 4% auto 0; width: 150px; font: 26px Ubuntu; display: block; text-align: center; }
+
+#index-container #content-slider #index-continue:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:rgba(255, 255, 255, 0.27); }
 
 
 /********************  ABOUT.PHP   ************************/
 
 
-#about-us-container { width:1200px; margin:100px auto 150px; text-align:justify; background-color:white; }
+#about-us-container { width:1200px; margin: 0 auto 100px; text-align: justify; background-color: white; }
 
-#about-us-container .about-labels { font-family: Ubuntu; font-size: 30px; color: #1884e9; text-align:left; margin:80px 0 0 90px; display:block; width:990px; border-bottom: 1px solid #1884e9; padding-bottom:10px; }
+#about-us-container .developer-profile { width:300px; margin:30px 0 50px 175px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; background-color:whitesmoke; }
 
-.developer-profile { width:300px; margin:30px 0 50px 175px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; background-color:whitesmoke; }
+#about-us-container .developer-profile p.about-me { display:block; margin-top:100px; font-family:Josefin-Slab; line-height:150%; }
 
-.developer-profile p.about-me { display:block; margin-top:100px; font-family:Josefin-Slab; line-height:150%; }
+#about-us-container .developer-profile .profile-image { height:160px; width:160px; border:solid transparent; border-radius:90px; }
 
-.profile-image { height:160px; width:160px; border:solid transparent; border-radius:90px; }
+#about-us-container .developer-profile p { font: italic 19px serif; }
 
-.developer-profile p { font: italic 19px serif; }
+#about-us-container .developer-profile div { height:43px; width:43px; float:left; margin:10px 0 0 26px; }
 
-.developer-profile div { height:43px; width:43px; float:left; margin:10px 0 0 26px; }
+#about-us-container .developer-profile .fb { background:url("Images/icon-logos.png") 0 0; }
 
-.fb { background:url("Images/icon-logos.png") 0 0; }
+#about-us-container .developer-profile .tw { background:url("Images/icon-logos.png") -155px 0; }
 
-.tw { background:url("Images/icon-logos.png") -155px 0; }
+#about-us-container .developer-profile .li { background:url("Images/icon-logos.png") -103px 0; }
 
-.li { background:url("Images/icon-logos.png") -103px 0; }
+#about-us-container .developer-profile .gi { background:url("Images/icon-logos.png") -24px 41px; }
 
-.gi { background:url("Images/icon-logos.png") -24px 41px; }
-
-#about-us-container .bookaway-desc-wrap { background-color: #EFEFEF; width: 900px; padding: 10px; margin: 70px auto; line-height:2.5; font-size: 20px; }
+#about-us-container .bookaway-desc-wrap { width: 900px; margin: 0 auto; padding: 10px 20px; line-height: 180%; font: 20px Bitter-Regular; text-align:left; }
 
 
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1200px; height: 100%; min-height:1150px;  margin:60px auto 100px; padding:0; top:10px; position: relative; overflow: visible; }
+#buy-container { width:1200px; height: 100%; min-height:1150px;  margin: 0 auto 100px; padding:0; top:10px; position: relative; overflow: visible; }
 
 #buy-container aside { width:300px; float:left; margin-left:20px; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; text-align:center; }
 
@@ -171,6 +164,10 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 #buy-container aside form input[type="checkbox"], input[type="radio"] { margin-right: 5px; }
 
 #buy-container aside form #buy-search-filters { width:280px; text-align:left; padding-left:10px; margin-bottom: 30px; }
+
+#buy-container aside form #buy-search-filters a.clear-filters-btn { float:right; position: relative; top:-35px; }
+
+#buy-container aside form #buy-search-filters a.clear-filters-btn-left { float:left; position: relative; top:-40px; left: 5px; }
 
 #buy-container aside form #buy-search-filters input[type="text"] { top:0; font-size: 17px; height: inherit; font-family: Verdana,Arial,sans-serif; }
 
@@ -218,15 +215,15 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 #buy-container aside form #buy-search-filters > label .radio-available-for { margin-top: 10px; }
 
-#buy-container aside form #buy-search-filters #left-panel-price-range #price-range-text-wrapper { margin-top:25px; }
+#buy-container aside form #buy-search-filters #left-panel-price-range #price-range-text-wrapper { margin-top: 25px; }
 
-#buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width:88px; margin-right:3px; }
+#buy-container aside form #buy-search-filters #left-panel-price-range input:in-range { width: 88px; margin-right: 3px; }
 
 #buy-container aside form #buy-search-filters #left-panel-price-range button#price-range { top: -40px; }
 
 #buy-container aside form #buy-search-filters a#all-filters-clear { margin: 80px -50px auto auto; }
 
-#buy-container #buy-content-container { width:922px; height:100%; top:0; left:320px; text-align:left; margin-bottom:100px; position:relative; padding-bottom: 50px; }
+#buy-container #buy-content-container { width: 922px; height: 100%; top: 0; left: 320px; text-align: left; margin-bottom: 100px; position: relative; padding-bottom: 50px; }
 
 #buy-container #buy-content-container .books-data { height:200px; width:780px; margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3; }
 
@@ -266,11 +263,11 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 
 .seller-data div { position:relative; height:50px; width:450px; top:10px; left:70px; padding:6px 0 0 10px; border:1px solid white; background-color:#E6E6E6; font-size:20px; }
 
-.seller-data div:hover { background-color: #d3d3d3;}
+.seller-data div:hover { background-color: #D3D3D3;}
 
 .seller-data div span { font-size: 25px; float: left; margin-top: 8px; }
 
-.seller-data div span#name-seller-icon { color: #818b2f; }
+.seller-data div span#name-seller-icon { color: #818B2F; }
 
 .seller-data div span#phone-seller-icon { color: #365AEA; font-size: 23px; }
 
@@ -284,25 +281,25 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /*********************  CONTACT.PHP  ***********************/
 
 
-#contact-us-container { height:500px; width:1000px; margin:60px auto 130px; text-align:center; }
+#contact-us-container { height:500px; width:1000px; margin: 0 auto 130px; text-align:center; }
 
-.contact-info { text-align: left; font-size: 20px; font-family: Ubuntu; display: inline-block; width: 930px; margin: 20px auto 0; }
+#contact-us-container p.contact-info { text-align: left; font-size: 20px; font-family: Ubuntu; display: inline-block; width: 930px; margin: 20px auto 0; }
 
-.contact-icons { float: left; display: inline-block; font-size: 33px; }
+#contact-us-container span.contact-icons { float: left; display: inline-block; font-size: 33px; }
 
-.ion-android-location { color: red; margin-top: 22px; }
+#contact-us-container span.ion-android-location { color: red; margin-top: 22px; }
 
-.ion-email { color: orange; margin-top: 16px; }
+#contact-us-container span.ion-email { color: orange; margin-top: 16px; }
 
-.ion-android-call { color: blue; margin-top: 15px; }
+#contact-us-container span.ion-android-call { color: blue; margin-top: 15px; }
 
-#map-canvas { float: right; border: 2px; margin-top: -174px; }
+#contact-us-container #map-canvas { float: right; border: 2px; margin-top: -174px; }
 
 
 /********************  DEL.PHP  ************************/
 
 
-#del-main-container { width:1100px; margin:60px auto 250px; top:20px; padding: 40px 0; }
+#del-main-container { width:1100px; margin: 0 auto 250px; padding: 40px 0; }
 
 #del-main-container #del-main { width:inherit; font-size:20px; text-align:left; }
 
@@ -348,9 +345,9 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /*********************  FAQs.php  *************************/
 
 
-#faqs-container { width:1100px; margin:50px auto 250px; background-color:white; top:20px; padding:10px 20px; line-height:180%; }
+#faqs-container { width:900px; margin: 0 auto 150px; background-color:white; padding:10px 20px; line-height: 180%; }
 
-#faqs-container h2.ques { font:lighter 22px Ubuntu; text-align:left; }
+#faqs-container h2.ques { font: 22px Ubuntu; text-align:left; }
 
 #faqs-container .ans { font-size:20px; margin-bottom:40px; }
 
@@ -360,7 +357,7 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /********************  FEEDBACK.PHP  ************************/
 
 
-#feedback-container iframe { height: 1100px; width: 700px; margin: 100px auto 150px; display: block; z-index:100; }
+#feedback-container iframe { height: 1100px; width: 700px; margin: 0 auto 150px; display: block; z-index:100; }
 
 /********************  NOJS.PHP  ************************/
 
@@ -373,13 +370,13 @@ a.index-header-links:hover { -webkit-transition:background-color .5s ease-in; -m
 /*******************  SELL.PHP   *************************/
 
 
-#sell-container { height:1150px; width:800px; top:40px; margin:30px auto 250px; background-color:white; }
+#sell-container { /* height:1150px; */  width:800px;  top:40px; margin:30px auto 250px; background-color:white; }
 
 #sell-instructions { height:170px; }
 
 #sell-form-wrap { width:550px; height:940px; margin: auto; text-align:left; line-height:180%; font-size:130%;  }
 
-.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border: 1px inset #ccc; border-radius:8px; margin:0 0 15px 20px; padding-top:0.2em; box-sizing:border-box; display: inline-block; }
+.sell-input { height:37px; width:470px; font:81% Proxima-Nova; line-height:100%; box-shadow:0 1px 3px 1px #ddd; border: 1px inset #cccccc; border-radius:8px; margin:0 0 15px 20px; padding-top:0.2em; box-sizing:border-box; display: inline-block; }
 
 .compulsary-label { color:red; font-size:15px; margin:0 0 0 3px; padding:0; width:3px; display:inline-block; }
 
@@ -433,22 +430,17 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 
 .links:hover { background-color:#5E82CC; color:white; border-style:outset; }
 
+/* MUST BE UNCOMMENTED IF PLACEHOLDERS ARE TO BE STYLED */
 /*
-::-webkit-input-placeholder {
-   color: ;silver;blue;red;
-}
+::-webkit-input-placeholder { color: ;silver;blue;red; }
 
-:-moz-placeholder {
-   color: red;
-}
+:-moz-placeholder { color: red; }
 
-::-moz-placeholder {
-   color: red;
-}
+::-moz-placeholder { color: red; }
 
-:-ms-input-placeholder {
-   color: red;
-}*/
+:-ms-input-placeholder { color: red; }
+*/
+
 
 /**********************  PURE-MIN CSS  **********************/
 
@@ -549,7 +541,6 @@ div[id^="error"] { height:30px; width:auto; font:normal 15px Ubuntu; margin-bott
 .ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }
 
 
-/********************** TODO: MEDIA QUERIES **************************/
 
 
 #captcha-input { width: 180px; margin: 10px 0 0 10px; display: inline-block; }
@@ -562,7 +553,7 @@ p#img-url-info { font-size: 14px; margin: -5px 0 -25px 5px; box-shadow:1px 1px 1
 
 p#img-url-info a#img-search-link { color: blue; }
 
-#before-form-msg { display: block; background-color:#efefef; color:black; font: 18px Ubuntu; padding: 10px 5px 10px 30px; text-align: left; line-height: 250%; border-radius: 10px; width:650px; margin: 70px auto 0; }
+#before-form-msg { display: block; background-color:#efefef; color:black; font: 18px Ubuntu; padding: 10px 5px 10px 30px; text-align: left; line-height: 250%; border-radius: 10px; width:650px; margin: 0 auto; }
 
 #before-form-msg img { float: right; height:90px; width: 80px; position: relative; top:-45px; left:-20px; }
 
@@ -572,10 +563,3 @@ p#img-url-info a#img-search-link { color: blue; }
 
 #college-input-onload button#bpopup-close { width: 50px; height: 30px; background-color: #1dc491; color: white; border:0; }
 
-#index-continue { text-decoration: none; color: white; padding:10px 20px; border: 1px solid white; border-radius:10px; font-size: 24px; margin:10px auto 0; width:100px; font-family: Ubuntu; display: block; }
-
-#index-continue:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:rgba(255, 255, 255, 0.27); }
-
-.clear-filters-btn { float:right; position: relative; top:-35px; }
-
-.clear-filters-btn-left { float:left; position: relative; top:-40px; left: 5px; }

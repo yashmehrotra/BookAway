@@ -48,9 +48,9 @@
         <h2 class="ques" id="ques-7">I had added my book for rent first. Is it possible now to keep it for both sale and rent?</h2>
         <div class="ans">Yes it can be done. Click on the edit tab, enter the details as required and click on edit button. Then you will have the option to change it.</div>
       </div>
-      <?php
-      require_once('footer.php');
-      ?>
     </div>
+    <?php
+    require_once('footer.php');
+    ?>
   </body>
 </html>

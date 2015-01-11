@@ -38,8 +38,8 @@ $(function() {
     $('#go-to-top').hide();
     $('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
     $('#search-filters-college-search').selectToAutocomplete();
-    $('#college-input-onload').bPopup();
     get_clg_name();
+    $('#college-input-onload').bPopup();
 
     $('#search-filters-college-search').selectToAutocomplete();
 
@@ -90,6 +90,7 @@ String.prototype.toProperCase = function() {
 };
 
 function get_clg_name() {
+    // $('li[id^="ui-id-"]').on('click',function() {
     $('#bpopup-close').on('click',function() {
         var id = $('select.sell-input:last :selected').data('college-id');
         $('#college-input-onload').bPopup().close();

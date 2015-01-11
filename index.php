@@ -14,27 +14,24 @@
 
     <script type="text/javascript">
      $(function() {
-	 $('.header').css({'opacity':'0.7'});
-	 $('footer').css({'position':'fixed', 'bottom':'0'});
-	 $('#copyright').css('background-color','#282828');
+	 
      });
     </script>
+    
   </head>
   <body id="index-body">
-    <div class="outer-page-wrap">
-      <?php
-      require_once('header.php');
-      ?>
-      <div class="main-containers" id="index-container">
-        <div id="content-slider"> 
-          <h2>BookAway.in</h2> 
-          <p>Online Portal to BUY, SELL or RENT<br> used books</p>
-          <a href="buy" id="index-continue">Continue</a> 
-        </div> 
-      </div>
-      <?php
-      require_once('footer.php');
-      ?>
+    <?php
+    require_once('header.php');
+    ?>
+    <div class="main-containers" id="index-container">
+      <div id="content-slider"> 
+        <h2>BookAway.in</h2> 
+        <p>Online Portal to BUY, SELL or RENT<br> used books</p>
+        <a href="buy" id="index-continue">Continue</a> 
+      </div> 
     </div>
+    <?php
+    /* require_once('footer.php'); */
+    ?>
   </body>
 </html>
