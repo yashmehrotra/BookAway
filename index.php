@@ -5,28 +5,16 @@
     <title>BookAway.in | Buy | Sell | Rent | Books</title>
     <meta name="Description" content="BookAway.in - Online portal for buying, selling and renting used books. With a user-friendly interface, books can be bought, sold and rented under various categories such as IT, computers, electronics, mathematics, novels, physics, and more.">
     <meta name="Keywords" content="book,books,jiit,used,buy,sell,rent,textbook,india,IT,computers,electronics,mathematics,literature,novels,physics,music,medical">
-    <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-    <link rel="stylesheet" type="text/css" href="Styles/jquery.bxslider.css">
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
     <script src="Scripts/jquery-2.1.1.min.js"></script>
-    <script src="Scripts/jquery.bxslider.min.js"></script>
     <script src="Scripts/header.js"></script>
-    <script>
-     $(function () {
-	 $('.bxslider').bxSlider();
-     });
-    </script>
   </head>
   <body id="index-body">
     <?php
     require_once('header.php');
     ?>
     <div class="main-containers" id="index-container">
-      <ul class="bxslider">
-	<li><img src="Styles/Images/1.jpg"></li>
-	<li><img src="Styles/Images/new-1.jpeg"></li>
-	<li><img src="Styles/Images/2.jpg"></li>
-      </ul>
       <div id="content-slider"> 
         <h2>BookAway.in</h2> 
         <p>Online Portal to BUY, SELL or RENT<br> used books</p>
