@@ -53,8 +53,6 @@ $(function() {
 
     $(document).on('scroll', go_to_top);
 
-    $.getScript("Scripts/fellow_developer.js");
-
 });
 
 var checkbox_array = [];

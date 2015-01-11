@@ -13,8 +13,7 @@
     <script src="Scripts/jquery-ui.min.js"></script>
     <script src="Scripts/jquery.select-to-autocomplete.js"></script>
     <script type="text/javascript" src="Scripts/delpage.js"></script>
-    <script src="Scripts/google_analytics.js"></script>
-    <script src="Scripts/top-panel.js"></script>
+    <script src="Scripts/header.js"></script>
   </head>
   <body>
     <?php
@@ -100,5 +99,6 @@
     <?php
     require_once('footer.php');
     ?>
+    <script src="Scripts/google_analytics.js"></script>
   </body>
 </html>

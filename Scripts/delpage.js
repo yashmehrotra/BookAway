@@ -15,8 +15,6 @@ $(function() {
     confirm_delete();
     $('#search-filters-college-search').selectToAutocomplete();
     
-    $.getScript("Scripts/fellow_developer.js");
-
 });
 
 function del_validate_form() {

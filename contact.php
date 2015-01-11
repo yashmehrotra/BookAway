@@ -6,8 +6,7 @@
     <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
     <link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
     <script src="Scripts/jquery-2.1.1.min.js"></script>
-    <script src="Scripts/google_analytics.js"></script>
-    <script src="Scripts/top-panel.js"></script>
+    <script src="Scripts/header.js"></script>
   </head>
   <body>
     <?php
@@ -31,5 +30,6 @@
     <?php
     require_once('footer.php');
     ?>
+    <script src="Scripts/google_analytics.js"></script>
   </body>
 </html>

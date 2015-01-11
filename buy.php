@@ -16,7 +16,7 @@
     <script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
     <script type="text/javascript" src="Scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.select-to-autocomplete.js"></script>
-    <script type="text/javascript" src="Scripts/top-panel.js"></script>
+    <script type="text/javascript" src="Scripts/header.js"></script>
   </head>
   <body>
     <?php
@@ -122,9 +122,9 @@
 	
       </div>
     </div>
+    <?php
+    require_once('footer.php');
+    ?>
+    <script type="text/javascript" src="Scripts/google_analytics.js"></script>
   </body>
-  <?php
-  require_once('footer.php');
-  ?>
-  <script type="text/javascript" src="Scripts/google_analytics.js"></script>
 </html>

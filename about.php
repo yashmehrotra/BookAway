@@ -4,10 +4,8 @@
     <title>About Us | BookAway.in</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-    <script src="Scripts/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="Scripts/aboutpage.js"></script>
-    <script src="Scripts/google_analytics.js"></script>
-    <script src="Scripts/top-panel.js"></script>
+    <!-- <script src="Scripts/jquery-2.1.1.min.js"></script> -->
+    <script src="Scripts/header.js"></script>
   </head>
   <body>
     <?php
@@ -56,5 +54,6 @@
     <?php
     require_once('footer.php');
     ?>
+    <script src="Scripts/google_analytics.js"></script>
   </body>
 </html>

@@ -5,6 +5,7 @@ var college_list = [];
 $(function() {
 
     $('#sell').attr('id', 'focus');
+
     get_seller_data_from_cookies();
 
     // Only one out of the below two should be uncommented at a time, both are functions to validate user inputs in sell form
@@ -19,8 +20,6 @@ $(function() {
 
     $('#cover-url').on('change',image_append);
     $('#sell-rent').on('change',hide_price);
-
-    $.getScript("Scripts/fellow_developer.js");
 
 });
 
