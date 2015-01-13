@@ -5,6 +5,9 @@ var college_list = [];
 $(function() {
 
     $('#sell').attr('id', 'focus');
+    
+    // Including the cookie get and set functions globally for use
+    $.getScript('Scripts/cookieSetGet.js');
 
     get_seller_data_from_cookies();
 
@@ -543,13 +546,14 @@ function save_seller_data_to_cookies() {
     var email = $('#email').val();
     var phone = $('#phone').val();
     var password = $('#password').val();
+
     console.log("Saving to cookie");
     console.log(name,email,phone,password);
 
-    setCookie('bookaway_name',name,30);
-    setCookie('bookaway_email',email,30);
-    setCookie('bookaway_phone',phone,30);
-    setCookie('bookaway_password',password,30);
+    setCookie('bookaway_name',name);
+    setCookie('bookaway_email',email);
+    setCookie('bookaway_phone',phone);
+    setCookie('bookaway_password',password);
 }
 
 function get_seller_data_from_cookies() {
@@ -559,24 +563,6 @@ function get_seller_data_from_cookies() {
         $('#phone').val(getCookie('bookaway_phone'));
         $('#password').val(getCookie('bookaway_password'));
     }
-}
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    }
-    return "";
 }
 
 // Functions for validations of various input fields

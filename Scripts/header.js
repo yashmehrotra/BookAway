@@ -5,7 +5,7 @@ var index = 0;
 $(function () {
     
     window_resize();
-    setInterval(set_background, 8000);
+    setInterval(set_background, 5000);
 
     $(window).resize(window_resize);
     

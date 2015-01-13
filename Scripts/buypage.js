@@ -1,21 +1,20 @@
-// CHANGE THE JAVASCRIPT TO JQUERY   ---OH WAIT , YASH DID IT CAUSE HE IS AWESOME
+// =======================================================================
 
-// " A GENIUS NEEDS AN AUDIENCE. "
-//                          - Yash Mehrotra
-
-// " FROM EVIDENCE TO DEDUCTION - THE STORY OF MY LIFE" --> Yash's Autobiography
-
-//     Visit bookaway.in/funny
-
+/************************* Visit bookaway.in/funny *********************/
 
 // =======================================================================
 
+
 // It sends a post request to a sqldata.php file which fetches all the data about books from database
+
 
 // Global variables
 
 // Count of the books to be shown at once when buypage is loaded
 var RESULTS_TO_SHOW_ONCE = 8;
+
+// To save the value of college id entered on startup, globally for using as a cookie
+// var clg_id_global;
 
 var total_results = 0;
 var previous_scroll = 0;
@@ -32,17 +31,30 @@ var filter_dict = {
     'range': []
 };
 
+
 $(function() {
 
     $('#buy').attr('id','focus');
+    
+    // Including the cookie get and set functions globally for use
+    // $.getScript('Scripts/cookieSetGet.js');
 
     $('#go-to-top').hide();
-    $('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
-    $('#search-filters-college-search').selectToAutocomplete();
-    get_clg_name();
-    $('#college-input-onload').bPopup();
+    // get_clg_name();
+    var clg_data_from_cookie = get_clg_data_from_cookies();
+    if(!clg_data_from_cookie) {
+	$('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
+	$('#search-filters-college-search').selectToAutocomplete();
+	get_clg_name();
+	$('#college-input-onload').bPopup();
+    } else {
+	$('#college-input-onload').remove();
+        book_data_display(clg_data_from_cookie,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
+    }
 
     $('#search-filters-college-search').selectToAutocomplete();
+    
+    input_college_text(clg_data_from_cookie);
 
     filter();
 
@@ -51,9 +63,12 @@ $(function() {
 
     $('.sub-cbox,.radio-available-for').on('click', left_panel_selected_inputs);
 
+    // $('.ui-autocomplete-input:first').val($('#search-filters-college-search option:eq(' + clg_data_from_cookie  + ')').text());
+
     $(document).on('scroll', go_to_top);
 
 });
+
 
 var checkbox_array = [];
 var Ultimate_data = [];
@@ -89,11 +104,11 @@ String.prototype.toProperCase = function() {
 };
 
 function get_clg_name() {
-    // $('li[id^="ui-id-"]').on('click',function() {
     $('#bpopup-close').on('click',function() {
-        var id = $('select.sell-input:last :selected').data('college-id');
+        var clg_id = $('select.sell-input:last :selected').data('college-id');
+	save_clg_data_to_cookies(clg_id);
         $('#college-input-onload').bPopup().close();
-        book_data_display(id,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
+        book_data_display(clg_id,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
     });
 }
 
@@ -570,6 +585,50 @@ function sort_price_wise() {
 
 
 // CSS RELATED Functions
+
+var EXPIRY_DAYS;
+
+function setCookie(cname, cvalue, EXPIRY_DAYS) {
+    EXPIRY_DAYS = typeof EXPIRY_DAYS !== 'undefined' ? EXPIRY_DAYS : 30;
+    var d = new Date();
+    d.setTime(d.getTime() + (EXPIRY_DAYS*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+
+function get_clg_data_from_cookies() {
+    var temp = getCookie('bookaway_clg_id');
+    if(temp) {
+	return temp;
+    }
+    return false;
+}
+
+function save_clg_data_to_cookies(clg_id) {
+    if (!getCookie('bookaway_clg_id')) {
+	setCookie('bookaway_clg_id',clg_id);
+    }
+}
+
+
+function input_college_text(clg_data_from_cookie) {
+    if (!clg_data_from_cookie) {
+	clg_data_from_cookie = get_clg_data_from_cookies();
+    }
+    $('.ui-autocomplete-input:first').val($('#search-filters-college-search option:eq(' + clg_data_from_cookie  + ')').text());
+}
 
 function auto_load_more() {
     $('.books-data').hide();

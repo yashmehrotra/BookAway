@@ -26,13 +26,13 @@
       <h2 class="head-text">buy books</h2>
       
       <div class="main-containers" id="buy-container">
-        <div id="college-input-onload">
-          <p>Please enter the name of your college to continue:</p>
-          <?php
-          require('colleges.php');
-          ?>
-          <button class="pointer-onhover" id="bpopup-close">Go</button>
-        </div>
+          <div id="college-input-onload">
+            <p>Please enter the name of your college to continue:</p>
+              <?php
+              require('colleges.php');
+              ?>
+              <button class="pointer-onhover" id="bpopup-close">Go</button>
+          </div>
 	
         <aside class="left-panel">
 	  <label for="sort-by" id="sort-by-label">Sort By:</label>
