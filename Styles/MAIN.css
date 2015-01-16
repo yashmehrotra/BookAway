@@ -115,7 +115,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /********************  INDEX.PHP   ************************/
 
 
-#index-body { background: url('Images/new-1.jpeg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -webkit-transition: background 1.5s ease-out;
+#index-body { background: url('Images/1.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -webkit-transition: background 1.5s ease-out;
 -moz-transition: background 1.5s ease-out; -o-transition: background 1.5s ease-out;
 -ms-transition: background 1.5s ease-out; transition: background 1.5s ease-out; }
 
@@ -164,7 +164,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /********************    BUY.PHP    ************************/
 
 
-#buy-container { width:1200px; height: 100%; min-height:1150px;  margin: 0 auto 100px; padding:0; top:10px; position: relative; overflow: visible; }
+#buy-container { width:1200px; height: 100%; min-height:1150px;  margin: 0 auto 100px; padding:0; top:10px; position: relative; /* overflow: auto; */ }
 
 #buy-container aside { width:300px; float:left; margin-left:20px; border:1px solid #d3d3d3; border-left:none; border-right:none; background-color:white; text-align:center; }
 
@@ -180,9 +180,11 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container aside form #buy-search-filters { width:280px; text-align:left; padding-left:10px; margin-bottom: 30px; }
 
-#buy-container aside form #buy-search-filters a.clear-filters-btn { float:right; position: relative; top:-35px; }
+#buy-container aside form #buy-search-filters a.clear-filters-btn { float:right; position: relative; top:-35px; text-decoration:underline; color: blue; }
 
-#buy-container aside form #buy-search-filters a.clear-filters-btn-left { float:left; position: relative; top:-40px; left: 5px; }
+#buy-container aside form #buy-search-filters a.clear-filters-btn:hover { cursor: pointer; }
+
+/* #buy-container aside form #buy-search-filters a.clear-filters-btn-left { float:left; position: relative; top:-40px; left: 5px; } */
 
 #buy-container aside form #buy-search-filters input[type="text"] { top:0; font-size: 17px; height: inherit; font-family: Verdana,Arial,sans-serif; }
 
@@ -238,15 +240,15 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container aside form #buy-search-filters a#all-filters-clear { margin: 80px -50px auto auto; }
 
-#buy-container #buy-content-container { width: 922px; height: 100%; top: 0; left: 320px; text-align: left; margin-bottom: 100px; position: relative; padding-bottom: 50px; }
+#buy-container #buy-content-container { width: 922px; height: 100%; top: -30px; left: 320px; text-align: left; margin-bottom: 100px; position: absolute; padding-bottom: 50px; }
 
-#buy-container #buy-content-container .books-data { height:200px; width:780px; margin:30px 0 30px 50px; font-family:Ubuntu; border:1px solid #d3d3d3; }
+#buy-container #buy-content-container .books-data { height:200px; width:780px; margin:30px 0 30px 100px; font-family:Ubuntu; border:1px solid #D3D3D3; }
 
 #buy-container #buy-content-container .books-data:hover { cursor:pointer; border-color:orange; }
 
-#buy-container #buy-content-container .books-data:visited { cursor:pointer; background-color:#ffff66; }
+#buy-container #buy-content-container .books-data:visited { cursor:pointer; background-color:#FFFF66; }
 
-#buy-container #buy-content-container div { position:relative; }
+#buy-container #buy-content-container div { position:relative; /* border: solid; */ }
 
 #buy-container #buy-content-container .image-buy-wrapper { height:165px; width:105px; top:17px; left:15px; }
 

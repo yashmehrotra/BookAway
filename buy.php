@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
     <link rel="stylesheet" type="text/css" href="Styles/ionicons.css">
     <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/cookieSetGet.js"></script>
     <script type="text/javascript" src="Scripts/buypage.js"></script>
     <script type="text/javascript" src="Scripts/bpopup-min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.ui.core.js"></script>

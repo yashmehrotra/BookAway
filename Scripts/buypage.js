@@ -40,8 +40,9 @@ $(function() {
     // $.getScript('Scripts/cookieSetGet.js');
 
     $('#go-to-top').hide();
-    // get_clg_name();
+
     var clg_data_from_cookie = get_clg_data_from_cookies();
+
     if(!clg_data_from_cookie) {
 	$('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
 	$('#search-filters-college-search').selectToAutocomplete();
@@ -258,6 +259,7 @@ function append() {
     
     // call to functions when all book data has been loaded
     if (Ultimate_data.length === counter_clone) {
+	set_height_container(); // This should be removed once Implementation is clear through css
         auto_load_more();
         seller_data();
         filter();
@@ -586,28 +588,6 @@ function sort_price_wise() {
 
 // CSS RELATED Functions
 
-var EXPIRY_DAYS;
-
-function setCookie(cname, cvalue, EXPIRY_DAYS) {
-    EXPIRY_DAYS = typeof EXPIRY_DAYS !== 'undefined' ? EXPIRY_DAYS : 30;
-    var d = new Date();
-    d.setTime(d.getTime() + (EXPIRY_DAYS*24*60*60*1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    }
-    return "";
-}
-
-
 function get_clg_data_from_cookies() {
     var temp = getCookie('bookaway_clg_id');
     if(temp) {
@@ -624,9 +604,7 @@ function save_clg_data_to_cookies(clg_id) {
 
 
 function input_college_text(clg_data_from_cookie) {
-    if (!clg_data_from_cookie) {
-	clg_data_from_cookie = get_clg_data_from_cookies();
-    }
+    clg_data_from_cookie = get_clg_data_from_cookies();
     $('.ui-autocomplete-input:first').val($('#search-filters-college-search option:eq(' + clg_data_from_cookie  + ')').text());
 }
 
@@ -665,6 +643,15 @@ function auto_load_more() {
             });   
         }
     });
+}
+
+// Temporary function - should be removed as soon as buy-container bug is fixed.
+function set_height_container() {
+    var count_books = $('.books-data:visible').size();
+    var height = count_books * 230;
+    // alert(height);
+    $('#buy-container').css('height', height);
+    $('#buy-content-container').css('height', height);
 }
 
 function left_panel_selected_inputs() {
@@ -769,7 +756,7 @@ function clear_price_range() {
 }
 
 function clear_all() {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 1; i < 5; i++) {
 	clear_dict(i);
     }
 

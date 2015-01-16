@@ -20,6 +20,7 @@ $captcha_gen = rand(100000,999999);
     <script type="text/javascript" src="Scripts/jquery.ui.autocomplete.js"></script>
     <script src="Scripts/jquery-ui.min.js"></script>
     <script src="Scripts/jquery.select-to-autocomplete.js"></script>
+    <script src="Scripts/cookieSetGet.js"></script>
     <script type="text/javascript" src="Scripts/sellpage.js"></script>
     <script src="Scripts/header.js"></script>
   </head>
