@@ -10,8 +10,8 @@
 
 // Global variables
 
-// Count of the books to be shown at once when buypage is loaded
-var RESULTS_TO_SHOW_ONCE = 8;
+// Max count of the books to be shown at once when buypage is loaded
+var RESULTS_TO_SHOW_ONCE = 10;
 
 // To save the value of college id entered on startup, globally for using as a cookie
 // var clg_id_global;
@@ -36,9 +36,6 @@ $(function() {
 
     $('#buy').attr('id','focus');
     
-    // Including the cookie get and set functions globally for use
-    // $.getScript('Scripts/cookieSetGet.js');
-
     $('#go-to-top').hide();
 
     var clg_data_from_cookie = get_clg_data_from_cookies();
@@ -58,6 +55,7 @@ $(function() {
     input_college_text(clg_data_from_cookie);
 
     filter();
+    sort_by();
 
     $('.sub-cbox input:checked').parent().css('color', 'black');
     $('.radio-available-for:checked').parent().css('color', 'black');
@@ -149,8 +147,6 @@ function book_data_display(clg_id, show, show_by) {
             if (result) {
                 var counter = 0;
                 var json = JSON.parse(result);
-
-                console.log(json);
 
                 while (json[counter]) {
                     booklist_array.push(json[counter].book_name);
@@ -259,13 +255,11 @@ function append() {
     
     // call to functions when all book data has been loaded
     if (Ultimate_data.length === counter_clone) {
-	set_height_container(); // This should be removed once Implementation is clear through css
         auto_load_more();
         seller_data();
         filter();
         go_to_top();
         search_bar_autocomple(search_data);
-        sort_price_wise();
     }
 }
 
@@ -517,60 +511,6 @@ function filter_everything() {
     auto_load_more();
 }
 
-function sort_price_wise() {
-    var order_try = [];
-    
-    $('#btn-sort-price-desc').on('click',function() {
-        order_try = [];
-        order_try = list_to_show.map(function() {
-            return convert_id_to_Ultimate_index(this);
-        });
-	
-	var temp;
-
-        for(var i=0;i<order_try.length;i++) {
-            for(var j=0;j<i;j++) {
-                if(Ultimate_data[order_try[i]]['sell_price'] > Ultimate_data[order_try[j]]['sell_price']) {
-                    temp = order_try[i];
-                    order_try[i] = order_try[j];
-                    order_try[j] = temp;
-                }
-            }
-        }
-
-        list_to_show.length = 0;
-        list_to_show = order_try.map(function() {
-            return 'book-data-'+this;
-        });
-    });
-
-    $('#btn-sort-price-asc').on('click',function() {
-        var order_try = [];
-
-        order_try = list_to_show.map(function() {
-            return convert_id_to_Ultimate_index(this);
-        });
-
-        var temp;
-        for(var i=0;i<order_try.length;i++) {
-            for(var j=0;j<i;j++) {
-                if(Ultimate_data[order_try[i]]['sell_price'] < Ultimate_data[order_try[j]]['sell_price']) {
-                    temp = order_try[i];
-                    order_try[i] = order_try[j];
-                    order_try[j] = temp;
-                }
-            }
-        }
-
-        list_to_show = [];
-
-        list_to_show = order_try.map(function() {
-            return 'book-data-'+this;
-        });
-        auto_load_more();
-    });
-}
-
 
 //=============================================================//
 // Backend Guys BEWARE , FROM HERE ON CSS STARTS , NA NA NA !  //
@@ -717,6 +657,15 @@ function clear_dict(index) {
     } else {
 	alert("Wrong input!"); // Well, this is embaressing!
     }
+}
+
+function sort_by() {
+    $('#sort-by').on('change', function() {
+        var clg_id = $('select.sell-input:last :selected').data('college-id');
+
+	temp_list = $('#sort-by :selected').val().split("-");
+        book_data_display(clg_id,temp_list[0],temp_list[1]);
+    });
 }
 
 function smooth_scroll_to_top() {
