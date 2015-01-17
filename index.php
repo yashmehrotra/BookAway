@@ -18,7 +18,7 @@
     <div class="main-containers" id="index-container">
       <div id="content-slider"> 
         <h2>BookAway.in</h2> 
-        <p>Online Portal to BUY, SELL or RENT<br> used books</p>
+        <p>Online Portal to BUY, SELL or RENT <br>used books</p>
         <a href="buy" id="index-continue">Continue</a> 
       </div>
     </div>

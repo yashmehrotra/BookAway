@@ -83,7 +83,7 @@ ul { list-style-type: none; }
 
 .header-wrapper-fixed .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#1dc491; }
 
-.header-wrapper-fixed .header #favicon { width: 54px; height: 54px; position: relative; top:6px; left: 100px; z-index: 2; }
+.header-wrapper-fixed .header #favicon { width: 50px; height: 45px; position: relative; top: 10px; left: 100px; z-index: 2; }
 
 .header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1dc491; border: 1px solid transparent; border-radius: 5px; float: right; margin: 15px 15px 0 0; }
 
@@ -122,13 +122,13 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /* SET MIN WIDTH AND MIN HEIGHT */
 #index-container { position: absolute; background-color: #2A2929; opacity: 0.8; min-width: 1300px; width: 100%; min-height: 550px; height: 100%; }
 
-#index-container #content-slider { margin: 110px auto 0; width: 600px; /* border: solid; */ }
+#index-container #content-slider { margin: 10% auto 0; width: 800px; /* border: solid; */ }
 
 #index-container #content-slider h2 { color: white; font-size: 80px; font-family: Ubuntu; line-height: 130%; margin: 0; text-align: center; }
 
-#index-container #content-slider p { color:white; font-size:40px; font-family:Ubuntu; line-height:150%; text-align: center; margin: 35px; }
+#index-container #content-slider p { color:white; font-size: 40px; font-family:Ubuntu; line-height:150%; text-align: center; margin: 35px; }
 
-#index-container #content-slider #index-continue { text-decoration: none; color: white; padding: 20px 20px; border: 1px solid white; border-radius: 5px; margin: 4% auto 0; width: 150px; font: 26px Ubuntu; display: block; text-align: center; }
+#index-container #content-slider #index-continue { text-decoration: none; color: white; padding: 20px 20px; border: 1px solid white; border-radius: 5px; margin: 7% auto 0; width: 150px; font: 26px Ubuntu; display: block; text-align: center; }
 
 #index-container #content-slider #index-continue:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color: rgba(255, 255, 255, 0.27); }
 
