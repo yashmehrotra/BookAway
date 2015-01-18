@@ -52,9 +52,9 @@
                 include('colleges.php');		
 		?>
                 <button class="ion-android-arrow-forward pointer-onhover filter-btn" id="search-filters-college-btn"></button>
-		<a href="#" class="clear-filters-btn" id="college-clear" onclick="javascript:clear_college();">
-		  Change
-		</a>
+		<!-- <a href="#" class="clear-filters-btn" id="college-clear" onclick="javascript:clear_college();">
+		   Change
+		   </a> -->
               </div>
 	      
               <div class="ui-widget">

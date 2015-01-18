@@ -465,12 +465,12 @@ function filter_everything() {
             filter_book_name = filter_book_name.toProperCase();
             filter_author_name = filter_author_name.toProperCase();
 
-            // if (filter_dict['college']) {
-                // hide those which do not match college
-                if (filter_college_name != filter_dict['college']) {
+            if (filter_dict['college']) {
+		// hide those which do not match college
+		if (filter_college_name != filter_dict['college']) {
                     $(this).hide();
-                }
-            // }
+		}
+	    }
 
             if (filter_dict['name']['value']) {
                 // hide those which do not match name
@@ -484,17 +484,17 @@ function filter_everything() {
                     }
                 } 
             }
-
+	    
             if (filter_dict['category']) {
                 // hide those which are not in the category list
-                if( checkbox_array.indexOf(filter_category) == -1 && checkbox_array.indexOf("All") == -1 ) {
+                if (checkbox_array.indexOf(filter_category) == -1 && checkbox_array.indexOf("All") == -1) {
                     $(this).hide();
                 }
             }
 
-            if ( filter_dict['for'] != '4' ) {
+            if (filter_dict['for'] != '4') {
                 // hide those which do not match user's for
-                if( filter_for != filter_dict['for']) {
+                if (filter_for != filter_dict['for']) {
                     $(this).hide();
                 }
             }
@@ -653,6 +653,7 @@ function clear_dict(index) {
 	    filter_dict['college'] = "";
 
 	    $('.ui-autocomplete-input').val("");
+	    $('ul[id^="ui-id"]').show();
 	} else if (index == 2) {
 	    filter_dict['name']['value'] = "";
 	    filter_dict['name']['category'] = "";
