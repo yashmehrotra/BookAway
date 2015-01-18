@@ -2,7 +2,7 @@
 var EXPIRY_DAYS;
 
 function setCookie(cname, cvalue, EXPIRY_DAYS) {
-    EXPIRY_DAYS = typeof EXPIRY_DAYS !== 'undefined' ? EXPIRY_DAYS : 30;
+    EXPIRY_DAYS = typeof EXPIRY_DAYS !== 'undefined' ? EXPIRY_DAYS : 100;
     var d = new Date();
     d.setTime(d.getTime() + (EXPIRY_DAYS*24*60*60*1000));
     var expires = "expires=" + d.toUTCString();

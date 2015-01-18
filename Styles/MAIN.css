@@ -47,7 +47,7 @@ body { background-color: white; border:0; margin:0 auto; padding:0; }
 
 @font-face { font-family:Ubuntu; src:url('Fonts/Ubuntu/Ubuntu-R.ttf'); }
 
-a#focus:link { background-color: #1DC491; }
+a#focus:link { background-color: #1DC480; }
 
 h1, h2, h3 { font-family:Bitter-Regular; text-align:center; }
 
@@ -85,7 +85,7 @@ ul { list-style-type: none; }
 
 .header-wrapper-fixed .header #favicon { width: 50px; height: 45px; position: relative; top: 10px; left: 100px; z-index: 2; }
 
-.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1DC491; border: 1px solid transparent; border-radius: 5px; float: right; margin: 15px 15px 0 0; }
+.header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1DC480; border: 1px solid transparent; border-radius: 5px; float: right; margin: 15px 15px 0 0; }
 
 .header-wrapper-fixed button#fork-on-github:hover { opacity: 0.9; }
 
@@ -170,17 +170,19 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container aside label#sort-by-label { font: 16px Ubuntu; display:block; margin-top: 20px; }
 
-#buy-container aside select#sort-by { margin: 10px auto 20px; width: 180px; height: 30px; }
+#buy-container aside select#sort-by { margin: 10px auto 20px; width: 180px; height: 30px; border: 1px solid transparent; border-radius: 20px; padding: 10px; height: 40px; outline: 0; }
 
-#buy-container aside form { font-family:Ubuntu; margin:8% auto 0; }
+#buy-container aside form { font-family: Ubuntu; margin: 8% auto 0; }
 
-#buy-container aside form input[type="text"], input[type="search"] { width:220px; position:relative; }
+#buy-container aside form input[type="text"], input[type="search"] { width: 220px; position: relative; }
 
 #buy-container aside form input[type="checkbox"], input[type="radio"] { margin-right: 5px; }
 
 #buy-container aside form #buy-search-filters { width:280px; text-align:left; padding-left:10px; margin-bottom: 30px; }
 
-#buy-container aside form #buy-search-filters a.clear-filters-btn { float:right; position: relative; top:-35px; text-decoration:underline; color: blue; }
+#buy-container aside form #buy-search-filters a.clear-filters-btn { float: right; position: relative; top: -35px; color: white; display: block; background-color: #1DC480; padding: 3px; border: 1px solid transparent; border-radius: 10px; font-size: 90%; text-decoration: none; opacity: 0.8; }
+
+#buy-container aside form #buy-search-filters a.clear-filters-btn:hover { opacity: 1; }
 
 #buy-container aside form #buy-search-filters a.clear-filters-btn:hover { cursor: pointer; }
 
@@ -194,11 +196,11 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container aside form #buy-search-filters #search-filters-college-select { margin-bottom: 40px; }
 
-#buy-container aside form #buy-search-filters #search-filters-college-select a#college-clear { margin: 40px 0 0; }
+#buy-container aside form #buy-search-filters #search-filters-college-select a#college-clear { margin: -2px 285px 0 0; }
 
-#buy-container aside form #buy-search-filters button#left-panel-search-btn { margin-top: -55px; }
+#buy-container aside form #buy-search-filters button#left-panel-search-btn { margin-top: -1px; }
 
-#buy-container aside form #buy-search-filters a#search-query-clear { margin-top: 40px; }
+#buy-container aside form #buy-search-filters a#search-query-clear { margin-top: -3px; margin-right: 284px; }
 
 #buy-container aside form #buy-search-filters .left-panel-text-wrap { height:20px; width:inherit; margin-top:0; font-size:20px; font-weight:bold; color: #0bd3c4; font-family:cursive; font-weight: 500; }
 
@@ -238,7 +240,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container aside form #buy-search-filters #left-panel-price-range button#price-range { top: -40px; }
 
-#buy-container aside form #buy-search-filters a#all-filters-clear { margin: 80px -50px auto auto; }
+#buy-container aside form #buy-search-filters a#all-filters-clear { margin: 80px 30px 10px auto; }
 
 #buy-container #buy-content-container { width: 922px; height: 100%; left: 320px; text-align: left; margin-bottom: 100px; position: relative; padding-bottom: 50px; }
 
@@ -300,7 +302,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #college-input-onload p { font-size: 20px; margin-bottom: 20px; }
 
-#college-input-onload button#bpopup-close { width: 60px; height: 40px; background-color: #1DC491; color: white; border: 0; display: inline-block; margin: 15px 0 0 10px; }
+#college-input-onload button#bpopup-close { width: 60px; height: 40px; background-color: #1DC480; color: white; border: 0; display: inline-block; margin: 15px 0 0 10px; }
 
 
 /*********************  CONTACT.PHP  ***********************/
@@ -454,7 +456,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #sell-container #entry .links-box { height: 50px; width: 270px; margin: 80px auto 0; }
 
-#sell-container #entry .links-box a { font: 20px monospace; text-decoration: none; padding: 10px; border: 2px inset transparent; border-radius: 10px; background-color: #1DC491; color: white; }
+#sell-container #entry .links-box a { font: 20px monospace; text-decoration: none; padding: 10px; border: 2px inset transparent; border-radius: 10px; background-color: #1DC480; color: white; }
 
 #sell-container #entry .links-box a:hover { opacity: 0.9; }
 
@@ -493,7 +495,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 .pure-form select[multiple]{ height:70px; }
 .pure-form label{ margin:.5em 0 .2em; }
 .pure-form fieldset { margin:0;	padding:.35em 0 .75em; border:0; }
-.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color: #1DC491; border-bottom:1px solid #1DC491; font-family: Ubuntu; font-weight: 590; }
+.pure-form legend{ display:block; width:95%; padding:.3em .3em; margin-bottom:.3em; color: #1DC480; border-bottom:1px solid #1DC480; font-family: Ubuntu; font-weight: 590; }
 .pure-form input.pure-input-rounded, .pure-form .pure-input-rounded { border-radius:2em; padding:.5em 1em; }
 .pure-form .pure-group fieldset { margin-bottom:10px; }
 .pure-form .pure-group input { display:block;padding:10px; margin:0; border-radius:0; position:relative; top:-1px; }

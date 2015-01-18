@@ -171,7 +171,7 @@ function book_data_display(clg_id, show, show_by) {
                         'image_source': json[counter].image_source,
                         'college_name': json[counter].college             // refrain from a trailing comma, it is not supported in some browsers
                     });
-
+		 
                     // Conversion to title case
                     book_name_title_case = json[counter].book_name.toProperCase();
                     author_name_title_case = json[counter].author_name.toProperCase();
@@ -276,11 +276,10 @@ function filter() {
     $('#search-filters-college-btn').on('click', function(e) {
         e.preventDefault();
         $(document).scrollTop(100);
-        
-        var user_college_name = $('#search-filters-college-search').val();
 
+        var user_college_name = $('.ui-autocomplete-input').val();
         filter_dict['college'] = user_college_name;
-        book_data_display(user_college_name,'tide');
+
         filter_everything();
     });
 
@@ -449,7 +448,10 @@ function filter_everything() {
             // show everything first
             $(this).show();
 
+	    
             var index_id = convert_id_to_Ultimate_index($(this).attr('id'));
+	    
+	    console.log(Ultimate_data[index_id]);
 
             var filter_college_name = Ultimate_data[index_id]['college_name'];
             var filter_book_name    = Ultimate_data[index_id]['book_name'];
@@ -457,18 +459,18 @@ function filter_everything() {
             var filter_category     = Ultimate_data[index_id]['category'];
             var filter_for          = Ultimate_data[index_id]['book_for'];
             var filter_price        = Ultimate_data[index_id]['sell_price'];
-
+	    
             filter_price = parseInt(filter_price);   // It is better to push it into ultimate data as an integer
 
             filter_book_name = filter_book_name.toProperCase();
             filter_author_name = filter_author_name.toProperCase();
 
-            if (filter_dict['college']) {
+            // if (filter_dict['college']) {
                 // hide those which do not match college
                 if (filter_college_name != filter_dict['college']) {
                     $(this).hide();
                 }
-            }
+            // }
 
             if (filter_dict['name']['value']) {
                 // hide those which do not match name
@@ -523,6 +525,7 @@ function input_keydowns() {
 	if (event.which == 13) {
 	    event.preventDefault();
 	    $('#bpopup-close').trigger('click');
+	    $('#search-filters-college-btn').trigger('click');
 	}
     });
 
@@ -647,7 +650,9 @@ function go_to_top() {
 function clear_dict(index) {
     if (index) {
 	if (index == 1) {
-	    popup_for_clg();
+	    filter_dict['college'] = "";
+
+	    $('.ui-autocomplete-input').val("");
 	} else if (index == 2) {
 	    filter_dict['name']['value'] = "";
 	    filter_dict['name']['category'] = "";

@@ -53,7 +53,7 @@
 		?>
                 <button class="ion-android-arrow-forward pointer-onhover filter-btn" id="search-filters-college-btn"></button>
 		<a href="#" class="clear-filters-btn" id="college-clear" onclick="javascript:clear_college();">
-		  Clear
+		  Change
 		</a>
               </div>
 	      
