@@ -1,4 +1,4 @@
-BACKGROUND_IMGS_LIST = ["Styles/Images/new-1.jpeg", "Styles/Images/2.jpg", "Styles/Images/1.jpg"];
+BACKGROUND_IMGS_LIST = ["Styles/Images/1.jpg", "Styles/Images/2.jpg", "Styles/Images/3.jpg", "Styles/Images/4.jpeg"];
 
 var index = 2;
 
