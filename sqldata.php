@@ -36,6 +36,9 @@ if ($source == 'add_book' && in_array($reference_url, $allowed_domains) && $_POS
     $sell_price       = $_POST['sellprice'];
     $rent_price       = $_POST['rentprice'];
     $rent_time        = $_POST['rentpricetime'];
+    if (!$rent_price) {
+        $rent_time = '';
+    }
     $image_source     = $_POST['cover-url'];
     $college          = addslashes($_POST['clg']);
     $book_description = addslashes($_POST['book-desc']);
