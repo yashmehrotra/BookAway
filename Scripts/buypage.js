@@ -31,6 +31,8 @@ var filter_dict = {
     'range': []
 };
 
+var clg_id_global;
+
 
 $(function() {
 
@@ -41,14 +43,16 @@ $(function() {
     var clg_data_from_cookie = get_clg_data_from_cookies();
 
     if(!clg_data_from_cookie) {
-	$('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
-	$('#search-filters-college-search').selectToAutocomplete();
-	get_clg_name();
-	$('#college-input-onload').bPopup();
+    	$('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
+    	$('#search-filters-college-search').selectToAutocomplete();
+        get_clg_name(); 
+	   $('#college-input-onload').bPopup();
     } else {
-	$('#college-input-onload').remove();
+        clg_id_global = clg_data_from_cookie;
+	   $('#college-input-onload').remove();
         book_data_display(clg_data_from_cookie,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
     }
+
 
     $('#search-filters-college-search').selectToAutocomplete();
     
@@ -105,7 +109,8 @@ String.prototype.toProperCase = function() {
 function get_clg_name() {
     $('#bpopup-close').on('click',function() {
         var clg_id = $('select.sell-input:last :selected').data('college-id');
-	save_clg_data_to_cookies(clg_id);
+        save_clg_data_to_cookies(clg_id);
+        clg_id_global = clg_id;
         $('#college-input-onload').bPopup().close();
         book_data_display(clg_id,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
     });
@@ -128,6 +133,8 @@ function book_data_display(clg_id, show, show_by) {
     image_source_array = [];
     college_name_array = [];
     category_array = [];
+
+    console.log('the id is ',clg_id);
 
     $('#buy-container').append(
         '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:fixed; top:60%; left:60%;" alt="Loading-image">'
@@ -531,7 +538,7 @@ function filter_everything() {
 function get_clg_data_from_cookies() {
     var temp = getCookie('bookaway_clg_id');
     if(temp) {
-	return temp;
+	   return temp;
     }
     return false;
 }
@@ -661,10 +668,12 @@ function clear_dict(index) {
 
 function sort_by() {
     $('#sort-by').on('change', function() {
-        var clg_id = $('select.sell-input:last :selected').data('college-id');
+        var clg_id = clg_id_global;
+        clg_id = parseInt(clg_id);
 
-	temp_list = $('#sort-by :selected').val().split("-");
-        book_data_display(clg_id,temp_list[0],temp_list[1]);
+        temp_list = $('#sort-by :selected').val().split("-");
+        console.log(temp_list,clg_id);
+        book_data_display(clg_id, temp_list[0], temp_list[1]);
     });
 }
 
