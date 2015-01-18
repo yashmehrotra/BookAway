@@ -40,8 +40,8 @@
 	  <select name="sort-by" id="sort-by">
 	    <option value="id-ASC" selected>Date : Latest First</option>
 	    <option value="id-DESC">Date : Oldest First</option>
-	    <option value="sell_price-DESC">Price : High to Low</option>
-	    <option value="sell_price-ASC">Price : Low to High</option>
+	    <option value="sell_price-ASC">Price : High to Low</option>
+	    <option value="sell_price-DESC">Price : Low to High</option>
 	  </select>
           <form class="pure-form pure-form-stacked">
             <div id="buy-search-filters">

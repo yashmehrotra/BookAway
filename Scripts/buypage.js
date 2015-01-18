@@ -212,6 +212,7 @@ function book_data_display(clg_id, show, show_by) {
                     total_results += 1;
                     counter += 1;
                 }
+		$('.books-data').remove();
                 append();
             } else {
                 console.log("Problem with Ajax Request");
