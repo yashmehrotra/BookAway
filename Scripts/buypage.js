@@ -1,10 +1,3 @@
-// =======================================================================
-
-/************************* Visit bookaway.in/funny *********************/
-
-// =======================================================================
-
-
 // It sends a post request to a sqldata.php file which fetches all the data about books from database
 
 
@@ -13,8 +6,8 @@
 // Max count of the books to be shown at once when buypage is loaded
 var RESULTS_TO_SHOW_ONCE = 10;
 
-// To save the value of college id entered on startup, globally for using as a cookie
-// var clg_id_global;
+// To save the value of college id entered on startup, globally
+var clg_id_global;
 
 var total_results = 0;
 var previous_scroll = 0;
@@ -31,8 +24,6 @@ var filter_dict = {
     'range': []
 };
 
-var clg_id_global;
-
 
 $(function() {
 
@@ -43,16 +34,12 @@ $(function() {
     var clg_data_from_cookie = get_clg_data_from_cookies();
 
     if(!clg_data_from_cookie) {
-    	$('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
-    	$('#search-filters-college-search').selectToAutocomplete();
-        get_clg_name(); 
-	   $('#college-input-onload').bPopup();
+	popup_for_clg();
     } else {
         clg_id_global = clg_data_from_cookie;
-	   $('#college-input-onload').remove();
-        book_data_display(clg_data_from_cookie,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
+	$('#college-input-onload').remove();
+        book_data_display(clg_data_from_cookie,'sell_price','DESC');
     }
-
 
     $('#search-filters-college-search').selectToAutocomplete();
     
@@ -65,8 +52,6 @@ $(function() {
     $('.radio-available-for:checked').parent().css('color', 'black');
 
     $('.sub-cbox,.radio-available-for').on('click', left_panel_selected_inputs);
-
-    // $('.ui-autocomplete-input:first').val($('#search-filters-college-search option:eq(' + clg_data_from_cookie  + ')').text());
 
     $(document).on('scroll', go_to_top);
 
@@ -112,7 +97,7 @@ function get_clg_name() {
         save_clg_data_to_cookies(clg_id);
         clg_id_global = clg_id;
         $('#college-input-onload').bPopup().close();
-        book_data_display(clg_id,'sell_price','DESC');  // id or sell_price as 2nd arg , 3rd arg ASC.DESC
+        book_data_display(clg_id,'sell_price','DESC');
     });
 }
 
@@ -133,8 +118,6 @@ function book_data_display(clg_id, show, show_by) {
     image_source_array = [];
     college_name_array = [];
     category_array = [];
-
-    console.log('the id is ',clg_id);
 
     $('#buy-container').append(
         '<img src="Styles/Images/loader1.gif" id="loading-gif" style="position:fixed; top:60%; left:60%;" alt="Loading-image">'
@@ -437,6 +420,18 @@ function seller_data(book_id) {
     });
 }
 
+function popup_for_clg() {
+    $('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
+    $('#search-filters-college-search').selectToAutocomplete();
+
+    $('#college-input-onload').bPopup();
+    $('.ui-autocomplete-input').height(30);
+
+    get_clg_name();
+
+    $('#search-filters-college-search').val();
+}
+
 function convert_id_to_Ultimate_index(html_id) {
     var converted_book_id = html_id.split('book-data-').join('');
     var index_id_book = $.inArray(converted_book_id, bookid_array);
@@ -539,7 +534,7 @@ function filter_everything() {
 function get_clg_data_from_cookies() {
     var temp = getCookie('bookaway_clg_id');
     if(temp) {
-	   return temp;
+	return temp;
     }
     return false;
 }
@@ -583,7 +578,6 @@ function auto_load_more() {
             var count = 0;        
             
             $('.books-data').map(function() {
-                console.log("Checking for each book!");
                 if($.inArray($(this).attr('id'),list_to_show) != -1 && count <= upper_lim) {
                     $(this).show("fast","swing");
                     count += 1;
@@ -635,9 +629,7 @@ function go_to_top() {
 function clear_dict(index) {
     if (index) {
 	if (index == 1) {
-	    filter_dict[' college'] = "";
-
-	    $('#search-filters-college-search input').val("");
+	    popup_for_clg();
 	} else if (index == 2) {
 	    filter_dict['name']['value'] = "";
 	    filter_dict['name']['category'] = "";

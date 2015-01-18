@@ -13,13 +13,14 @@
   </head>
   <body id="index-body">
     <?php
-    require_once('header.php');
+    /* require_once('header.php'); */
     ?>
     <div class="main-containers" id="index-container">
       <div id="content-slider"> 
         <h2>BookAway.in</h2> 
         <p>Online Portal to BUY, SELL or RENT <br>used books</p>
-        <a href="buy" id="index-continue">Continue</a> 
+        <a href="buy" class="index-continue" id="continue-buy">Buy Books</a> 
+        <a href="sell" class="index-continue" id="continue-sell">Sell Books</a> 
       </div>
     </div>
     <script src="Scripts/google_analytics.js"></script>

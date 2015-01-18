@@ -6,14 +6,11 @@ $(function() {
 
     $('#sell').attr('id', 'focus');
     
-    // Including the cookie get and set functions globally for use
-    $.getScript('Scripts/cookieSetGet.js');
-
-    get_seller_data_from_cookies();
-
     // Only one out of the below two should be uncommented at a time, both are functions to validate user inputs in sell form
     sell_validate_form(); // To validate the form once the submit button has been clicked
     // sell_validate_instantly(); // To validate the form instantly, as the user is filling out the form data
+
+    get_seller_data_from_cookies();
     
     auto_help_popup();
     college_select_autocomplete();
@@ -49,18 +46,18 @@ function college_select_autocomplete() {
     });
 }
 
-// Before using this function, convert necessary validations to be returned through Functions (already defined at the end of this file!)
+// It would be better if the error messages are compiled into a list rather than hard-coding them everywhere
 function sell_validate_form() {
     var help_popup_top = $('#help-popup').css('top');
     var show_pass_top = $('#show-password').css('top');
     var help_top = $('#help').css('top');
 
     $('#sell-form').submit(function(event) {
-        var sell_height = $('#sell-container').css('height');
+        var sell_height = $('#sell-container').height();
         var flag = false;
         var error_count = 0;
 
-	// Should be removed once implementation of help, show password is clear through :before, :after (which requires encapsulating the input fields inside a <div>)
+	// Should be removed once positioning of help popup is fixed
         var name_error = false;
         var email_error = false;
         var phone_error = false;
@@ -68,7 +65,7 @@ function sell_validate_form() {
 
         $('.pure-g').find('div').hide();
 
-        if ($('#name').val() == "" || $('#name').val().length < 2) {
+        if (invalid_name()) {
             $('#error_name').html("Please provide your name");
             $('#name').focus();
             $('#error_name').css("display", "inline-block");
@@ -82,7 +79,7 @@ function sell_validate_form() {
         var emat = emval.indexOf("@");
         var emdot = emval.lastIndexOf(".");
 
-        if (emval == "" || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2) {
+        if (invalid_email()) {
             $('#error_email').html("Please provide a valid email address");
             $('#email').focus();
             $('#error_email').css("display", "inline-block");
@@ -92,7 +89,7 @@ function sell_validate_form() {
             before_pass = before_pass + 1;
         }
 
-        if ($('#phone').val() == "" || $('#phone').val().length != 10 || isNaN($('#phone').val()) || $('#phone').val().indexOf(" ") != -1) {
+        if (invalid_phone()) {
             $('#error_phone').html("Phone number must contain 10 digits");
             $('#error_phone').css("display", "inline-block");
             $('#phone').focus();
@@ -102,7 +99,7 @@ function sell_validate_form() {
             before_pass = before_pass + 1;
         }
 
-        if ($('#password').val() == "" || $('#password').val().length < 4) {
+        if (invalid_password()) {
             $('#error_pass').html("Password must contain at least 4 characters");
             $('#error_pass').css("display", "inline-block");
             $('#password').focus();
@@ -110,7 +107,15 @@ function sell_validate_form() {
             error_count += 1;
         }
 
-        if ($('#subject :selected').val() == "") {
+        if (invalid_college()) {
+            $('#error_college').html("Please select a college from the list");
+            $('#error_college').css("display", "inline-block");
+            $('#search-filters-college-search').focus();
+            flag = true;
+            error_count += 1;
+        }
+
+        if (invalid_category()) {
             $('#error_category').html("Please select the category of the book");
             $('#error_category').css("display", "inline-block");
             $('#subject').focus();
@@ -118,7 +123,7 @@ function sell_validate_form() {
             error_count += 1;
         }
 
-        if ($('#book').val() == "") {
+        if (invalid_book_title()) {
             $('#error_book_name').html("Please provide the name of the book");
             $('#error_book_name').css("display", "inline-block");
             $('#book').focus();
@@ -126,7 +131,7 @@ function sell_validate_form() {
             error_count += 1;
         }
 
-        if ($('#author').val() == "") {
+        if (invalid_author()) {
             $('#error_author').html("Please mention the author of the book");
             $('#error_author').css("display", "inline-block");
             $('#author').focus();
@@ -134,11 +139,7 @@ function sell_validate_form() {
             error_count += 1;
         }
 
-        if ($('#cover-url').val() != "" &&
-                !((/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) &&
-                !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) ||
-                (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) &&
-                /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())))) {
+        if (invalid_img_url()) {
             $('#error_url').html("Please provide a valid link");
             $('#error_url').css("display", "inline-block");
             $('#cover-url').focus();
@@ -149,7 +150,7 @@ function sell_validate_form() {
         var sell_or_rent = $('#sell-rent option:selected').val();
 
         if (sell_or_rent == 1) {
-            if ($('#s-cost').val() == "") {
+            if (invalid_s_cost()) {
                 $('#error_sale_price').html("Please provide the sale price");
                 $('#error_sale_price').css("display", "inline-block");
                 $('#s-cost').focus();
@@ -157,7 +158,7 @@ function sell_validate_form() {
                 error_count += 1;
             }
         } else if (sell_or_rent == 2) {
-            if ($('#r-cost').val() == "") {
+            if (invalid_r_cost()) {
                 $('#error_rent_price').html("Please provide rent price");
                 $('#error_rent_price').css("display", "inline-block");
                 $('#r-cost').focus();
@@ -165,14 +166,14 @@ function sell_validate_form() {
                 error_count += 1;
             }
         } else if (sell_or_rent == 3) {
-            if ($('#s-cost').val() == "") {
+            if (invalid_s_cost()) {
                 $('#error_sale_price').html("Please provide the sale price");
                 $('#error_sale_price').css("display", "inline-block");
                 $('#s-cost').focus();
                 flag = true;
                 error_count += 1;
             }
-            if ($('#r-cost').val() == "") {
+            if (invalid_r_cost()) {
                 $('#error_rent_price').html("Please provide the rent price");
                 $('#error_rent_price').css("display", "inline-block");
                 $('#r-cost').focus();
@@ -181,19 +182,11 @@ function sell_validate_form() {
             }
         }
         
-        if ($('#captcha-input').val() == "") {
-            $('#error_captcha').html("Please input the captcha shown above");
-            $('#error_captcha').css("display", "inline-block");
-            $('#captcha-input').focus();
-            flag = true;
-            error_count += 1;
-        }
-
         event.preventDefault();
 
         if (flag) {
             var count_change = error_count - prev_error_count;
-            var sell_new_height = parseInt(sell_height) + 50 * count_change + 'px';
+            var sell_new_height = sell_height + 50 * count_change + 'px';
 
             $('#sell-container').css({
                 "height": sell_new_height
@@ -203,10 +196,9 @@ function sell_validate_form() {
 	    
     	    // should be removed once implementation of "help", "show password" is clear through :before, :after
             $('#help-popup').css('top', parseInt(help_popup_top) + 48 * before_pass + 'px');
-            $('#show-password').css('top', parseInt(show_pass_top) + 52 * before_pass + 'px');
-            $('#help').css('top', parseInt(help_top) + 50 * before_pass + 'px');
 
         } else {
+	    alert("Hello");
             save_seller_data_to_cookies();
             ajax_form_data_after_validations();
         }
@@ -221,16 +213,17 @@ function ajax_form_data_after_validations() {
     $.ajax({
          url: "sqldata.php",
         type: 'POST',
-        // data: $(this).serialize(),
         data: $('#sell-form').serialize(),
         success: function(result_addbook) {
-             $('#loading-gif').remove();
-            var response = JSON.parse(result_addbook);
-            console.log(response.status);
+            $('#loading-gif').remove();
+            
+	    var response = JSON.parse(result_addbook);
             if (response.status == "success") {
+		console.log(response.status);
                 $('#before-form-msg').hide();
                 $('#sell-form-wrap').hide();
                 $('#step-1').hide();
+		$('.head-text').text("book added successfully");
                 $('#entry').show();
 
                 $('#sell-container').css({
@@ -279,8 +272,7 @@ function hide_price() {
         $('#rent-price').slideUp(300);
         $('#s-cost').slideDown(300);
         $('#error_rent_price').slideUp(300);
-        if ($('#error_sale_price').html() != "") {
-            
+        if (!($('#error_sale_price').html())) {
             $('#error_sale_price').slideDown(300);
         }
     } else if (sell_or_rent == 2) {
@@ -288,19 +280,16 @@ function hide_price() {
         $('#r-cost').slideDown(300);
         $('#rent-price').slideDown(300);
         $('#error_sale_price').slideUp(300);
-        if ($('#error_rent_price').html() != "") {
-            
+        if (!($('#error_rent_price').html())) {
             $('#error_rent_price').slideDown(300);
         }
     } else if (sell_or_rent == 3) {
         $('#s-cost').slideDown(300);
         $('#r-cost').slideDown(300);
         $('#rent-price').slideDown(300);
-        if ($('#error_sale_price').html() != "") {
-            
+        if (!($('#error_sale_price').html())) {
             $('#error_sale_price').slideDown(300);
-        } if ($('#error_rent_price').html() != "") {
-            
+        } if (!($('#error_rent_price').html())) {
             $('#error_rent_price').slideDown(300);
         }
     }
@@ -347,6 +336,7 @@ function google_image_search() {
     });
 }
 
+// Currently not working due to positioning of tick image after password field is not coming out to be correct!
 function sell_validate_instantly(event) {
     CORRECT_IMAGE = "<img src='Styles/Images/correct.png' alt='correct input' class='correct-incorrect-img'></img>";
     INCORRECT_IMAGE = "<img src='Styles/Images/incorrect.png' alt='correct input' class='correct-incorrect-img'></img>";
@@ -408,6 +398,20 @@ function sell_validate_instantly(event) {
         }
      });
     
+    $('form #search-filters-college-search').on('keyup change paste',function (event){
+        if (event.keyCode != 9 && !event.shiftKey) {
+            $('#error_college').css("display", "inline-block"); 
+         
+            if (invalid_college()) {
+		$('#error_college').html(INCORRECT_IMAGE);
+		flag = true;
+            } else {
+		$('#error_college').html(CORRECT_IMAGE);
+		flag = false;
+            }
+        }
+     });
+
      $('#subject').on('keyup change paste',function (event){
         if (event.keyCode != 9 && !event.shiftKey) {         
             $('#error_category').css("display", "inline-block"); 
@@ -535,7 +539,7 @@ function sell_validate_instantly(event) {
 		'title': 'You cannot continue before filling all required fields correctly!'
 		});
 	} else {
-        save_seller_data_to_cookies();
+            save_seller_data_to_cookies();
 	    ajax_form_data_after_validations();
 	}
     });
@@ -546,28 +550,28 @@ function save_seller_data_to_cookies() {
     var email = $('#email').val();
     var phone = $('#phone').val();
     var password = $('#password').val();
-
-    console.log("Saving to cookie");
-    console.log(name,email,phone,password);
+    var college = $('#search-filters-college-search').val();
 
     setCookie('bookaway_name',name);
     setCookie('bookaway_email',email);
     setCookie('bookaway_phone',phone);
     setCookie('bookaway_password',password);
+    setCookie('bookaway_college',college);
 }
 
 function get_seller_data_from_cookies() {
     if(getCookie('bookaway_name')) {
-        $('#name').val(getCookie('bookaway_name'));
-        $('#email').val(getCookie('bookaway_email'));
-        $('#phone').val(getCookie('bookaway_phone'));
-        $('#password').val(getCookie('bookaway_password'));
+        $('#name').val(getCookie('bookaway_name')).trigger('change');
+        $('#email').val(getCookie('bookaway_email')).trigger('change');
+        $('#phone').val(getCookie('bookaway_phone')).trigger('change');
+        $('#password').val(getCookie('bookaway_password')).trigger('change');
+        $('#search-filters-college-search').val(getCookie('bookaway_college')).trigger('change');
     }
 }
 
 // Functions for validations of various input fields
 function invalid_name() {
-    if($('#name').val()) {
+    if(!$('#name').val()) {
 	return true;
     } else {
 	return false;
@@ -579,7 +583,7 @@ function invalid_email() {
     var emat = emval.indexOf("@");
     var emdot = emval.lastIndexOf(".");
 
-    if (emval || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2) {
+    if (!(emval || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2)) {
 	return true;
     } else {
 	return false;
@@ -588,7 +592,7 @@ function invalid_email() {
 }
 
 function invalid_phone() {
-    if ($('#phone').val() || $('#phone').val().length != 10 || isNaN($('#phone').val()) || $('#phone').val().indexOf(" ") != -1) {
+    if (!($('#phone').val()) || $('#phone').val().length != 10 || isNaN($('#phone').val()) || $('#phone').val().indexOf(" ") != -1) {
 	return true;
     } else {
 	return false;
@@ -596,7 +600,39 @@ function invalid_phone() {
 }
 
 function invalid_password() {
-    if ($('#password').val() || $('#password').val().length < 4) {
+    if (!($('#password').val()) || $('#password').val().length < 4) {
+	return true;
+    } else {
+	return false;
+    }
+}
+
+function invalid_college() {
+    if(!($('#search-filters-college-search').val())) {
+	return true;
+    } else {
+	return false;
+    }
+}
+
+function invalid_category() {
+    if ((!$('#subject :selected').val())) {
+	return true;
+    } else {
+	return false;
+    }
+}
+
+function invalid_book_title() {    
+    if (!($('#book').val())) {
+	return true;
+    } else {
+	return false;
+    }
+} 
+
+function invalid_author() {    
+    if (!($('#author').val())) {
 	return true;
     } else {
 	return false;
@@ -604,7 +640,7 @@ function invalid_password() {
 }
 
 function invalid_img_url() {
-    if ($('#cover-url').val() != "" &&
+    if (($('#cover-url').val()) &&
 	!((/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) &&
            !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) ||
           (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test($('#cover-url').val()) &&
@@ -615,32 +651,8 @@ function invalid_img_url() {
     }
 }
 
-function invalid_category() {
-    if ($('#subject :selected').val()) {
-	return true;
-    } else {
-	return false;
-    }
-}
-
-function invalid_book_title() {    
-    if ($('#book').val()) {
-	return true;
-    } else {
-	return false;
-    }
-} 
-
-function invalid_author() {    
-    if ($('#author').val()) {
-	return true;
-    } else {
-	return false;
-    }
-}
-
 function invalid_s_cost() {
-    if ($('#s-cost').val()) {
+    if (!($('#s-cost').val())) {
 	return true;
     } else {
 	return false;
@@ -648,8 +660,7 @@ function invalid_s_cost() {
 }
 
 function invalid_r_cost() {
-    alert("I should never be called!");
-    if ($('#r-cost').val()) {
+    if (!($('#r-cost').val())) {
 	return true;
     } else {
 	return false;

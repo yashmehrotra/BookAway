@@ -52,6 +52,7 @@ $captcha_gen = rand(100000,999999);
 		<?php
 	        require_once('colleges.php');
 		?>
+		<div id="error_college"></div>
               </fieldset>
 
               <fieldset id="book-details">
@@ -112,22 +113,16 @@ $captcha_gen = rand(100000,999999);
         <div id="entry">
           <div id="success-submit-wrap">
             <br>
-            <p id="successful-text">Form Successfully Submitted.<br>
+            <p id="successful-text">Congratulations, your book has been successfully added.<br>
               Hey, <span id="seller_name_span"></span><br>
               Your book id is <span id="book_id_span" style="color: red;"></span> .<br>
               Please note this book id for future reference.</p>
           </div>
-          <div class="links-list">
-
-            <div class="links-box">
-              <a href="index">Return to homepage</a>
-            </div>
-	    
-            <div class="links-box">
-              <a href="sell">Sell another Book</a>
-            </div>
-	    
+	  
+          <div class="links-box">
+            <a href="sell">Sell another Book</a>
           </div>
+	  
         </div>
       </div>
     </div>
