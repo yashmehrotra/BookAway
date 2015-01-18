@@ -198,7 +198,7 @@ function sell_validate_form() {
             $('#help-popup').css('top', parseInt(help_popup_top) + 48 * before_pass + 'px');
 
         } else {
-	    alert("Hello");
+	    // alert("Hello");
             save_seller_data_to_cookies();
             ajax_form_data_after_validations();
         }
@@ -218,8 +218,8 @@ function ajax_form_data_after_validations() {
             $('#loading-gif').remove();
             
 	    var response = JSON.parse(result_addbook);
+	    console.log(response.status);
             if (response.status == "success") {
-		console.log(response.status);
                 $('#before-form-msg').hide();
                 $('#sell-form-wrap').hide();
                 $('#step-1').hide();
@@ -298,7 +298,7 @@ function hide_price() {
 function image_append() {
     var cover_url = $('#cover-url').val();
 
-    if ( cover_url != '' &&
+    if (cover_url != '' &&
             ((/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test(cover_url) &&
             !/^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())) ||
             (!/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test(cover_url) &&

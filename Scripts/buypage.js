@@ -44,8 +44,9 @@ $(function() {
     $('#search-filters-college-search').selectToAutocomplete();
     
     input_college_text(clg_data_from_cookie);
-
+    
     filter();
+    input_keydowns();
     sort_by();
 
     $('.sub-cbox input:checked').parent().css('color', 'black');
@@ -258,7 +259,7 @@ function filter() {
     //Search  Sequence in descending order of priority
 
     // Name Based Search
-    $('#left-panel-search-btn').click(function(e) {
+    $('#left-panel-search-btn').on('click', function(e) {
         e.preventDefault();
         $(document).scrollTop(100);
 
@@ -424,6 +425,8 @@ function popup_for_clg() {
     $('#search-filters-college-search').css({'font-size':'18px','padding-left':'10px'});
     $('#search-filters-college-search').selectToAutocomplete();
 
+    // $('#buy-container').prepend("<div id='college-input-onload'><p>Please enter the name of your college to continue:</p> <?php require('colleges.php'); ?> <button class='pointer-onhover' id='bpopup-close'>Go</button></div>");
+
     $('#college-input-onload').bPopup();
     $('.ui-autocomplete-input').height(30);
 
@@ -514,22 +517,37 @@ function filter_everything() {
     auto_load_more();
 }
 
+function input_keydowns() {
 
-//=============================================================//
-// Backend Guys BEWARE , FROM HERE ON CSS STARTS , NA NA NA !  //
-//=============================================================//
+    $('.ui-autocomplete-input').keypress(function(event) {
+	if (event.which == 13) {
+	    event.preventDefault();
+	    $('#bpopup-close').trigger('click');
+	}
+    });
 
-//    ||    ||      //==\\     //======    ||    ||          |\    /|  ||======  ||    ||   ||===\\
-//    ||    ||     //    \\   =            ||    ||          |\\  //|  ||        ||    ||   ||    \\
-//     \\  //      ||    ||   =            ||    ||          ||\\//||  ||        ||    ||   ||    //
-//      \\//       ||====||    \\====\\    ||====||          || \/ ||  ||===     ||====||   ||===//
-//       ||        ||    ||           =    ||    ||          ||    ||  ||        ||    ||   ||   \\
-//       ||        ||    ||           =    ||    ||          ||    ||  ||        ||    ||   ||    \\
-//       ||        ||    ||    ======//    ||    ||          ||    ||  ||======  ||    ||   ||     \\
+    $('#left-panel-search-bar').keypress(function (event) {
+	if ( event.which == 13 ) {
+	    event.preventDefault();
+	    $('#left-panel-search-btn').trigger('click');
+	}
+    });
 
+    $('#range-min').keypress(function (event) {
+	if ( event.which == 13 ) {
+	    event.preventDefault();
+	    $('#price-range').trigger('click');
+	}
+    });
 
+    $('#range-max').keypress(function (event) {
+	if ( event.which == 13 ) {
+	    event.preventDefault();
+	    $('#price-range').trigger('click');
+	}
+    });
 
-// CSS RELATED Functions
+}
 
 function get_clg_data_from_cookies() {
     var temp = getCookie('bookaway_clg_id');
