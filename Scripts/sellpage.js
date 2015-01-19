@@ -297,6 +297,7 @@ function hide_price() {
 
 function image_append() {
     var cover_url = $('#cover-url').val();
+    	alert("Hello");
 
     if (cover_url != '' &&
             ((/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/.test(cover_url) &&
@@ -305,6 +306,7 @@ function image_append() {
             /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i.test($('#cover-url').val())))) {
         
         $('#cover-image').html('<img src="' + cover_url + '"alt="cover-image" id="cover-image-img-src">');
+	alert("Hello");
     } else {
 	$('#cover-image-img-src').remove();
     }
@@ -321,7 +323,7 @@ function auto_help_popup() {
 }
 
 function google_image_search() {
-    $('#author').on('blur',function (){
+    $('#author').on('blur',function () {
         var GOOGLE_IMG_URL_BEFORE_INPUT = "https://www.google.co.in/search?espv=2&biw=1317&bih=657&tbm=isch&sa=1&q=";
         var book_name = $('#book').val().split(" ").join("+");
         var book_author = $('#author').val().split(" ").join("+");

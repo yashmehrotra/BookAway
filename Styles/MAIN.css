@@ -440,7 +440,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset p#img-url-info a#img-search-link { color: blue; }
 
-#sell-container #sell-form-wrap form#sell-form .pure-g fieldset #cover-image img#cover-image-img-src { position: absolute; top: 570px; left: 750px; height: 200px; width: 150px; }
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset #cover-image img#cover-image-img-src { position: absolute; top: 1050px; right: 290px; height: 200px; width: 150px; }
 
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#book-for { width:150px; border-style:outset; color:black; }
 
