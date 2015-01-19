@@ -4,7 +4,6 @@
     <title>About Us | BookAway.in</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Styles/MAIN.css">
-    <!-- <script src="Scripts/jquery-2.1.1.min.js"></script> -->
     <script src="Scripts/header.js"></script>
   </head>
   <body>
@@ -13,30 +12,8 @@
     ?>
     <div class="outer-page-wrap">
       <div class="main-containers" id="about-us-container">
-	<h2 class="head-text">Our Team</h2>
-	<div class="developer-profile" id="profile1">
-	  <a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="profile-image" alt="img1"></a>
-	  <p>Avijit Gupta
-	    <br><br>
-	    Frontend Developer
-	  </p>
-	  <div onclick="location.href='www.facebook.com/526avijitgupta';" class="pointer-onhover fb"></div>
-	  <div onclick="location.href='www.twitter.com/526avijit';" class="pointer-onhover tw"></div>
-	  <div onclick="location.href='www.linkedin.com/pub/avijit-gupta/9a/22/6';" class="pointer-onhover li"></div>
-	  <div onclick="location.href='github.com/526avijitgupta';" class="pointer-onhover gi"></div>
-	</div>
-	<div class="developer-profile" id="profile2">
-	  <a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="profile-image" alt="img2"></a>
-	  <p>Yash Mehrotra
-	    <br><br>
-	    Backend Developer
-	  </p>
-	  <div onclick="location.href='www.facebook.com/yashm95';" class="pointer-onhover fb"></div>
-	  <div onclick="location.href='www.twitter.com/yashm95';" class="pointer-onhover tw"></div>
-	  <div onclick="location.href='in.linkedin.com/in/yashmehrotra';" class="pointer-onhover li"></div>
-	  <div onclick="location.href='github.com/yashmehrotra/';" class="pointer-onhover gi"></div>
-	</div>
-	<h2 class="head-text">About BookAway</h2>
+
+	<h2 class="head-text">about us</h2>
 	<div class="bookaway-desc-wrap container-style">
 	  <p class="bookaway-desc">
 	    Tired of searching book stores for cheap, used books or books that pile up every semester? The regular trips to library to save the big sum?<br>Here is a solution.<br>
@@ -49,6 +26,32 @@
 	    </ol>
 	  </p>
 	</div>
+
+	<h2 class="head-text">our team</h2>
+	<div class="developer-profile" id="profile1">
+	  <a href="Styles/Images/avijit.jpg"><img src="Styles/Images/avijit.jpg" class="profile-image" alt="img1"></a>
+	  <p>Avijit Gupta
+	    <br><br>
+	    Frontend Developer
+	  </p>
+	  <div onclick="location.href='www.facebook.com/526avijitgupta';" class="pointer-onhover fb"></div>
+	  <div onclick="location.href='www.twitter.com/526avijit';" class="pointer-onhover tw"></div>
+	  <div onclick="location.href='www.linkedin.com/pub/avijit-gupta/9a/22/6';" class="pointer-onhover li"></div>
+	  <div onclick="location.href='github.com/526avijitgupta';" class="pointer-onhover gi"></div>
+	</div>
+
+	<div class="developer-profile" id="profile2">
+	  <a href="Styles/Images/yash.jpg"><img src="Styles/Images/yash.jpg" class="profile-image" alt="img2"></a>
+	  <p>Yash Mehrotra
+	    <br><br>
+	    Backend Developer
+	  </p>
+	  <div onclick="location.href='www.facebook.com/yashm95';" class="pointer-onhover fb"></div>
+	  <div onclick="location.href='www.twitter.com/yashm95';" class="pointer-onhover tw"></div>
+	  <div onclick="location.href='in.linkedin.com/in/yashmehrotra';" class="pointer-onhover li"></div>
+	  <div onclick="location.href='github.com/yashmehrotra/';" class="pointer-onhover gi"></div>
+	</div>
+	
       </div>
     </div>
     <?php

@@ -38,7 +38,7 @@ $(function() {
     } else {
         clg_id_global = clg_data_from_cookie;
 	$('#college-input-onload').remove();
-        book_data_display(clg_data_from_cookie,'sell_price','DESC');
+        book_data_display(clg_data_from_cookie, 'id','ASC');
     }
 
     $('#search-filters-college-search').selectToAutocomplete();
@@ -94,11 +94,15 @@ String.prototype.toProperCase = function() {
 
 function get_clg_name() {
     $('#bpopup-close').on('click',function() {
-        var clg_id = $('select.sell-input:last :selected').data('college-id');
-        save_clg_data_to_cookies(clg_id);
-        clg_id_global = clg_id;
-        $('#college-input-onload').bPopup().close();
-        book_data_display(clg_id,'sell_price','DESC');
+        var clg_id = $('select.sell-input:last option:selected').data('college-id');
+	console.log(invalid_college(clg_id));
+	if (!invalid_college(clg_id)) {
+            save_clg_data_to_cookies(clg_id);
+            clg_id_global = clg_id;
+            $('#college-input-onload').bPopup().close();
+            book_data_display(clg_id,'id','ASC');
+	    input_college_text(clg_id);
+	}
     });
 }
 
@@ -275,9 +279,22 @@ function filter() {
     // College Based Search
     $('#search-filters-college-btn').on('click', function(e) {
         e.preventDefault();
+
+	var clg_id_save = $('select.sell-input option:selected').data('college-id');
+	console.log((clg_id_save));
+	console.log(invalid_college(clg_id_save));
+	if(invalid_college(clg_id_save)) {
+	    return;
+	}
+
         $(document).scrollTop(100);
 
         var user_college_name = $('.ui-autocomplete-input').val();
+
+	setCookie('bookaway_clg_id',clg_id_save);
+	
+	window.location.reload();
+
         filter_dict['college'] = user_college_name;
 
         filter_everything();
@@ -431,7 +448,9 @@ function popup_for_clg() {
 
     get_clg_name();
 
-    $('#search-filters-college-search').val();
+    // input_college_text(clg_data_from_cookie);
+
+    // $('#search-filters-college-search').val();
 }
 
 function convert_id_to_Ultimate_index(html_id) {
@@ -653,7 +672,6 @@ function clear_dict(index) {
 	    filter_dict['college'] = "";
 
 	    $('.ui-autocomplete-input').val("");
-	    $('ul[id^="ui-id"]').show();
 	} else if (index == 2) {
 	    filter_dict['name']['value'] = "";
 	    filter_dict['name']['category'] = "";
@@ -731,9 +749,39 @@ function clear_price_range() {
 }
 
 function clear_all() {
-    for (var i = 1; i < 5; i++) {
+    for (var i = 2; i < 5; i++) {
 	clear_dict(i);
     }
 
     filter_everything();
+}
+
+Array.prototype.clean = function(deleteValue) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] == deleteValue) {         
+      this.splice(i, 1);
+      i--;
+    }
+  }
+  return this;
+};
+
+function invalid_college(clg_id) {
+    var college_list_for_validate = [];
+    $('#search-filters-college-search option').each(function() {
+	college_list_for_validate.push($(this).data('college-id'));
+    });
+    // console.log(college_list_for_validate, clg_id);
+    // college_list_for_validate = college_list_for_validate.slice(1, college_list_for_validate.length);
+    college_list_for_validate = college_list_for_validate.clean(undefined);
+    // college_list_for_validate.filter(function(value) {
+	// return value !== "" && value !== undefined;
+    // });
+    console.log(college_list_for_validate, clg_id);
+    console.log($.inArray(clg_id, college_list_for_validate));
+    if ($.inArray(clg_id, college_list_for_validate) != -1) {
+	console.log($.inArray(college_list_for_validate, clg_id));
+	return false;
+    }
+    return true;
 }

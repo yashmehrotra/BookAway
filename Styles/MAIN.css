@@ -83,7 +83,7 @@ ul { list-style-type: none; }
 
 .header-wrapper-fixed .header .header-menu ul li a:hover { -webkit-transition:background-color .4s linear; -moz-transition:background-color .4s linear; -o-transition:background-color .4s linear; -ms-transition:background-color .4s linear; background-color:#1dc491; }
 
-.header-wrapper-fixed .header #favicon { width: 50px; height: 45px; position: relative; top: 10px; left: 100px; z-index: 2; }
+.header-wrapper-fixed .header #favicon { width: 60px; height: 45px; position: relative; top: 10px; left: 95px; z-index: 2; }
 
 .header .header-menu button#fork-on-github { color: white; font-size: 16px; font-family: Ubuntu; width: 200px; height: 40px; background-color: #1DC480; border: 1px solid transparent; border-radius: 5px; float: right; margin: 15px 15px 0 0; }
 
@@ -115,7 +115,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /********************  INDEX.PHP   ************************/
 
 
-#index-body { background: url('Images/3.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -webkit-transition: background 1.5s ease-out; -moz-transition: background 1.5s ease-out; -o-transition: background 1.5s ease-out; -ms-transition: background 1.5s ease-out; transition: background 1.5s ease-out; }
+#index-body { background: url('Images/1.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -webkit-transition: background 1.5s ease-out; -moz-transition: background 1.5s ease-out; -o-transition: background 1.5s ease-out; -ms-transition: background 1.5s ease-out; transition: background 1.5s ease-out; }
 
 /* SET MIN WIDTH AND MIN HEIGHT */
 #index-container { position: absolute; background-color: #2A2929; opacity: 0.8; min-width: 1300px; width: 100%; min-height: 550px; height: 100%; }
@@ -138,9 +138,14 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /********************  ABOUT.PHP   ************************/
 
 
-#about-us-container { width:1200px; margin: 0 auto 100px; text-align: justify; background-color: white; }
+#about-us-container { width: 1200px; margin: 0 auto 100px; text-align: justify; background-color: white; }
 
-#about-us-container .developer-profile { width:300px; margin:30px 0 50px 175px; padding:20px 20px 40px; float:left; display:inline-block; text-align:center; background-color:whitesmoke; }
+#about-us-container .bookaway-desc-wrap { width: 900px; margin: 0 auto; padding: 10px 20px; font: 20px Ubuntu; text-align: left; }
+
+#about-us-container .bookaway-desc-wrap > p,
+#about-us-container .bookaway-desc-wrap > ol > li { line-height: 160%; }
+
+#about-us-container .developer-profile { width: 300px; margin: 30px 0 50px 175px; padding:20px 20px 40px; display:inline-block; text-align:center; background-color:whitesmoke; }
 
 #about-us-container .developer-profile p.about-me { display:block; margin-top:100px; font-family:Josefin-Slab; line-height:150%; }
 
@@ -158,8 +163,6 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #about-us-container .developer-profile .gi { background: url("Images/icon-logos.png") -24px 41px; }
 
-#about-us-container .bookaway-desc-wrap { width: 900px; margin: 0 auto; padding: 10px 20px; line-height: 180%; font: 20px Bitter-Regular; text-align: left; }
-
 
 /********************    BUY.PHP    ************************/
 
@@ -170,7 +173,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container aside label#sort-by-label { font: 16px Ubuntu; display:block; margin-top: 20px; }
 
-#buy-container aside select#sort-by { margin: 10px auto 20px; width: 180px; height: 30px; border: 1px solid transparent; border-radius: 20px; padding: 10px; height: 40px; outline: 0; }
+#buy-container aside select#sort-by { margin: 10px auto 20px; width: 180px; height: 30px; border: 1px solid transparent; border-radius: 7px; padding: 10px; height: 40px; outline: 0; }
 
 #buy-container aside form { font-family: Ubuntu; margin: 8% auto 0; }
 
@@ -262,7 +265,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container #buy-content-container .category-buy-wrapper { height:35px; width:400px; left: 125px; top: 100px; font-size:17px; color: gray; padding-left:25px; }
 
-#buy-container #buy-content-container .desc-buy-wrapper { height:70px; width:580px; left:115px; top: 120px; font-size:14px; color:gray; padding-left:25px; }
+#buy-container #buy-content-container .desc-buy-wrapper { height: 70px; width: 580px; left: 125px; top: 133px; font-size: 14px; color: gray; padding-left: 25px; }
 
 #buy-container #buy-content-container .sell-buy-wrapper { height:40px; font-size:19px; top: 50px; left: 550px; width: 230px; overflow: hidden; }
 
@@ -271,8 +274,8 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #buy-container #buy-content-container .sell-buy-wrapper .ruppee-img,
 #buy-container #buy-content-container .rent-buy-wrapper .ruppee-img { height:18px; width:16px; margin:0 1px 0 2px; }
-
-#buy-container #go-to-top { background-color: #2DBE50; height: 35px; position: fixed; right:1.5%; bottom: 45%; width: 90px; z-index:500; }
+<
+#buy-container #go-to-top { background-color: #1DC491; height: 35px; position: fixed; right:1.5%; bottom: 45%; width: 90px; z-index:500; }
 
 #buy-container #go-to-top span { margin-left: 5%; font-size: 16px; display: inline-block; color: white; }
 
@@ -372,7 +375,7 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /*********************  FAQs.php  *************************/
 
 
-#faqs-container { width:900px; margin: 0 auto 150px; background-color:white; padding:10px 20px; line-height: 180%; }
+#faqs-container { width: 950px; margin: 0 auto 150px; background-color:white; padding:10px 20px; line-height: 180%; }
 
 #faqs-container h2.ques { font: 22px Ubuntu; text-align:left; }
 
@@ -399,6 +402,10 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 
 #sell-container {  width:800px; margin:50px auto 250px; background-color:white; padding-bottom: 50px; } 
+
+#before-form-msg { display: block; background-color:#efefef; color:black; font: 18px Ubuntu; padding: 10px 5px 10px 30px; text-align: left; line-height: 250%; border-radius: 10px; width:650px; margin: 0 auto; }
+
+#before-form-msg img { float: right; height:90px; width: 80px; position: relative; top:-45px; left:-20px; }
 
 #sell-container #sell-form-wrap { width:550px; margin: auto; text-align: left; line-height: 180%; font-size: 130%;  }
 
@@ -429,6 +436,10 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset textarea#book-desc { height: 80px; resize: none; }
 
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset p#img-url-info { font-size: 14px; margin: -5px 0 -25px 5px; box-shadow: 1px 1px 1px black; border: 1px solid transparent; border-radius: 10px; width: 460px; padding: 5px; text-align: left; background-color: #42CDA2; color: white; font-family: Ubuntu; padding: 10px; }
+
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset p#img-url-info a#img-search-link { color: blue; }
+
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset #cover-image img#cover-image-img-src { position: absolute; top: 570px; left: 750px; height: 200px; width: 150px; }
 
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#book-for { width:150px; border-style:outset; color:black; }
@@ -441,6 +452,8 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset #r-cost { width:310px; }
 
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset select#rent-price { width:150px; }
+
+#sell-container #sell-form-wrap form#sell-form .pure-g fieldset span#captcha { margin: 10px 20px 0 80px; display: inline-block; width: 80px; height: 30px; } 
 
 #sell-container #sell-form-wrap form#sell-form .pure-g fieldset input#captcha-input { width: 180px; margin: 10px 0 0 10px; display: inline-block; }
 
@@ -575,16 +588,5 @@ footer #copyright a { text-decoration:none; color:#1dc491; }
 /*  */
 .ui-helper-hidden-accessible { display:none; height: 80px; width: inherit; position: relative; }
 
-
-
-#captcha { margin: 10px 20px 0 80px; display: inline-block; width: 80px; height: 30px; } 
-
-.correct-incorrect-img { height: 24px; width: 24px;  }
-
-p#img-url-info { font-size: 14px; margin: -5px 0 -25px 5px; box-shadow:1px 1px 1px black; border:1px solid transparent; border-radius: 10px; width: 460px; padding: 5px; text-align: left; background-color: #42CDA2; color: white; font-family: Ubuntu; padding: 10px; }
-
-p#img-url-info a#img-search-link { color: blue; }
-
-#before-form-msg { display: block; background-color:#efefef; color:black; font: 18px Ubuntu; padding: 10px 5px 10px 30px; text-align: left; line-height: 250%; border-radius: 10px; width:650px; margin: 0 auto; }
-
-#before-form-msg img { float: right; height:90px; width: 80px; position: relative; top:-45px; left:-20px; }
+/* Uncomment when instant validation is enabled */
+/* .correct-incorrect-img { height: 24px; width: 24px;  } */

@@ -582,8 +582,12 @@ function invalid_email() {
     var emval = $('#email').val();
     var emat = emval.indexOf("@");
     var emdot = emval.lastIndexOf(".");
+    
+    console.log(emval, emat, emdot);
 
-    if (!(emval || emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2)) {
+    if (!emval) {
+	return true;
+    } else if (emat < -1 || emdot - emat < 2 || emval.length - emdot <= 2) {
 	return true;
     } else {
 	return false;

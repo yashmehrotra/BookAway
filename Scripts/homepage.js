@@ -1,9 +1,9 @@
-BACKGROUND_IMGS_LIST = ["Styles/Images/1.jpg", "Styles/Images/2.jpg", "Styles/Images/3.jpg", "Styles/Images/4.jpeg"];
+BACKGROUND_IMGS_LIST = ["Styles/Images/1.jpg", "Styles/Images/3.jpeg"];
 
-var index = 2;
+var index = 0;
 
 $(function () {
-    
+
     window_resize();
     setInterval(set_background, 5000);
 
@@ -26,7 +26,6 @@ function set_background() {
 	index = 0;
     }
     var bg = "url(" + '"' + BACKGROUND_IMGS_LIST[index] + '") repeat scroll 0% 0% / cover padding-box border-box';
-    // console.log(bg);
 
     $('#index-body').css('background', bg);
 }
