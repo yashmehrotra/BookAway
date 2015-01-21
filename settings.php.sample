@@ -1,0 +1,9 @@
+// We keep the MySQL settings here
+// Do remove the .sample extension before using
+<?php
+    $host_name = "localhost";    // MySQL host
+    $user_name = "root";         // MySQL username
+    $mysql_password = "password" // MySQL password
+    $database_name = "BookAway"  // BookAway Database
+    
+?>
