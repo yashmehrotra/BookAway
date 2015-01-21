@@ -16,6 +16,7 @@ $colleges_data = mysqli_query($database_connection,$query);
 
 echo $SELECT_BEGIN;
 while($row = mysqli_fetch_array($colleges_data)) {
+    
     $college_id            = $row['college_id'];
     $college_name          = $row['college'];
     $college_alt_spellings = $row['alt_spellings'];
