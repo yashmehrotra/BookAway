@@ -1,1 +1,21 @@
 php_flag engine off
+
+Options All -Indexes
+
+ErrorDocument 404 404.php
+
+Options +FollowSymlinks
+
+RewriteEngine on
+
+RewriteRule ^sell sell.php [nc]
+RewriteRule ^buy buy.php [nc]
+RewriteRule ^about about.php [nc]
+RewriteRule ^edit del.php [nc]
+RewriteRule ^contact contact.php [nc]
+RewriteRule ^ index.php [nc]
+RewriteRule ^home index.php [nc]
+RewriteRule ^index index.php [nc]
+RewriteRule ^faqs faqs.php [nc]
+RewriteRule ^feedback feedback.php [nc]
+RewriteRule ^nojs nojs.php [nc]
